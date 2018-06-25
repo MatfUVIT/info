@@ -1,3 +1,9 @@
+## Uvod u veb i internet tehnologije
+
+Ovaj sajt sadrži materijale za kurs UVIT na osnovnim studijama Matematičkog fakulteta Univerziteta u Beogradu.
+
+Plan i program kursa [Uvod u veb i internet tehnologije](http://www.math.rs/files/R130_-_Uvod_u_veb_i_internet_tehnologije.pdf){:target="_blank"} sa veb strane fakulteta.
+
 ## Welcome to GitHub Pages
 
 You can use the [editor on GitHub](https://github.com/MatfUVIT/UVIT/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
