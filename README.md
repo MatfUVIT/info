@@ -4,7 +4,7 @@ Ovaj sajt sadrži materijale za kurs UVIT na osnovnim studijama Matematičkog fa
 
 ## Osnovne informacije
 
-* **Plan i program kursa [Uvod u veb i internet tehnologije](/info/R130_-_Uvod_u_veb_i_internet_tehnologije.pdf){:target="_blank"**
+* **Plan i program kursa [Uvod u veb i internet tehnologije](/info/R130_-_Uvod_u_veb_i_internet_tehnologije.pdf){:target="_blank"}**
 
 ## Struktura sajta
 
