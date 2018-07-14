@@ -1,13 +1,13 @@
-# Uvod u veb i internet tehnologije
+# Увод у веб и интернет технологије
 
-Ovaj sajt sadrži materijale za kurs UVIT na osnovnim studijama Matematičkog fakulteta Univerziteta u Beogradu.
+Ова веб презентација сајт садржи материјале за курс УВИТ на основним студијама Математичког факултета Универзитета у Београду.
 
-## Osnovne informacije
+## Основне информације
 
-* **Plan i program kursa [Uvod u veb i internet tehnologije](/info/R130_-_Uvod_u_veb_i_internet_tehnologije.pdf){:target="_blank"}**
+* **План и програм курса [Увод у веб и интернет технологије](/info/R130_-_Uvod_u_veb_i_internet_tehnologije.pdf){:target="_blank"}**
 
-## Struktura sajta
+## Структура презентације
 
-* **[Instalacije](/INSTALACIJE.md)**
+* **[Инсталације](/INSTALACIJE.md)**
 
-* **[Veb resursi za učenje](/VEB-RESURSI-ZA-UCENJE.md)**
+* **[Веб ресурси за учење](/VEB-RESURSI-ZA-UCENJE.md)**

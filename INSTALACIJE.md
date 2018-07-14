@@ -1,19 +1,19 @@
 [povratak](/README.md)
 
-## UVIT - Instalacije
+## УВИТ - Инсталације
 
-Ovde su postavljene veze za dovlačenje softvera koji treba instlairati radi uspešnog rada na kursu **Uvod u veb i internet tehnologije**.
+Овде су постављене везе за довлачење софтвера који треба инстлаирати ради успешног рада на курсу **Увод у веб и интернет технологије**.
 
-* [Veb pregledač Chrome](https://www.google.com/chrome/){:target="_blank"} 
+* Веб прегледач [Chrome](https://www.google.com/chrome/){:target="_blank"} 
 
-* [Veb pregledač Firefox](https://www.mozilla.org/sr/firefox/new/){:target="_blank"}
+* Веб прегледач [Firefox](https://www.mozilla.org/sr/firefox/new/){:target="_blank"}
 
-* [Veb pregledač Yandex](https://browser.yandex.com/){:target="_blank"}
+* Веб прегледач [Yandex](https://browser.yandex.com/){:target="_blank"}
 
-* [Visual Studio Code](https://code.visualstudio.com/download){:target="_blank"}
+* Развојно окружење [Visual Studio Code](https://code.visualstudio.com/download){:target="_blank"}
 
-* [MongoDb Community Server](https://www.mongodb.com/download-center?jmp=nav#community){:target="_blank"}
+* NoSQL база [MongoDb Community Server](https://www.mongodb.com/download-center?jmp=nav#community){:target="_blank"}
 
-* [MongoDb Compass](https://www.mongodb.com/products/compass){:target="_blank"}
+* Алат [MongoDb Compass](https://www.mongodb.com/products/compass){:target="_blank"} за рад са NoSQL базом MongoDb
 
 [povratak](/README.md)
