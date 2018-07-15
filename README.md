@@ -4,7 +4,7 @@
 
 ## Основне информације
 
-* **План и програм курса [Увод у веб и интернет технологије](/info/R130_-_Uvod_u_veb_i_internet_tehnologije.pdf){:target="_blank"}**
+* **План и програм курса [Увод у веб и интернет технологије](/predavanja/info/R130_-_Uvod_u_veb_i_internet_tehnologije.pdf){:target="_blank"}**
 
 ## Структура веб презентације
 
