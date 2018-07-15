@@ -1,10 +1,10 @@
-[почетна страна](/README.md)
+# УВИТ - Инсталације
 
-## УВИТ - Инсталације
+[почетна страна](/README.md)
 
 Овде су постављене везе за довлачење софтвера који треба инстлаирати ради успешног рада на курсу **Увод у веб и интернет технологије**.
 
-* Веб прегледач [Chrome](https://www.google.com/chrome/){:target="_blank"} 
+* Веб прегледач [Chrome](https://www.google.com/chrome/){:target="_blank"}  
 
 * Веб прегледач [Firefox](https://www.mozilla.org/sr/firefox/new/){:target="_blank"}
 
