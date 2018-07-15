@@ -1,4 +1,4 @@
-[povratak](/README.md)
+[почетна страна](/README.md)
 
 ## УВИТ - Веб ресурси за учење 
 
@@ -35,4 +35,4 @@
     *  JavaScript библиотека [socket.io](https://socket.io/docs/){:target="_blank"}
 
 
-[povratak](/README.md)
+[почетна страна](/README.md)

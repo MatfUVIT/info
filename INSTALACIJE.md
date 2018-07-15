@@ -1,4 +1,4 @@
-[povratak](/README.md)
+[почетна страна](/README.md)
 
 ## УВИТ - Инсталације
 
@@ -16,4 +16,4 @@
 
 * Алат [MongoDb Compass](https://www.mongodb.com/products/compass){:target="_blank"} за рад са NoSQL базом MongoDb
 
-[povratak](/README.md)
+[почетна страна](/README.md)
