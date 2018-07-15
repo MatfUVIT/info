@@ -10,6 +10,8 @@
 
 * **[Предавања](/predavanja/README.md)**
 
+* **[Вежбе](/vezbe/README.md)**
+
 * **[Инсталације](/INSTALACIJE.md)**
 
 * **[Веб ресурси за учење](/VEB-RESURSI-ZA-UCENJE.md)**
