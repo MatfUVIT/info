@@ -1,0 +1,12 @@
+<p> Ovde ide nekakav tekst </p>
+<script>
+var ticks = 0;
+var clock = setInterval(function() {
+  console.log("tick", ticks++);
+  if (ticks == 10) {
+    clearInterval(clock);
+    console.log("stop.");
+  }
+}, 200);
+
+</script>

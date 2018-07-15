@@ -1,0 +1,174 @@
+      a {
+          color: #0084B4;
+	  text-decoration: none;
+      }
+
+      a:visited {
+	  color: #005484;
+      }
+
+      body {
+        font-family: Verdana;
+	max-width: 900px;
+	margin-top: 130px;
+	margin-left: auto;
+	margin-right: auto;
+	background-color: #F5F8FA;
+      }
+
+      /* nav */
+      nav {
+	  clear: both;
+      }
+      
+      nav ul {
+        list-style-type: none;
+        margin: 0;
+	padding: 0;
+	background-color: #0084B4;
+	overflow: auto;
+      }
+      
+      nav ul li {
+	  float: left;
+	  border-right: 1px solid white;
+      }
+      
+      nav ul li a {
+	display: block;
+	color: white;
+	padding: 8px 16px;
+	text-align: center;
+      }
+
+      nav ul li a:visited {
+        color: white;
+      }
+      
+      nav .active {
+	  background-color: #555;
+      }
+
+      nav ul li:hover {
+        background-color: #555;
+      }
+
+      /* header */
+      header {
+	position: fixed;
+	top: 0;
+	box-sizing: border-box;
+	width: 900px;
+	height: 110px;
+        background-color: white;
+        color: #555;
+	border: 1px solid #bfe0ec;
+	border-bottom: 5px solid #ccc;
+      }
+
+      header h1 {
+	  background-image: url("gimnazija.png");
+	  background-repeat: no-repeat;
+	  background-size: contain;
+	  padding: 0px 20px;
+	  padding-left: 50px;
+	  margin: 10px;
+      }
+
+      /* aside */
+      aside {
+	  width: 300px;
+	  float: right;
+      }
+
+      aside section {
+	  background-color: white;
+	  border: 1px solid #bfe0ec;
+	  border-radius: 5px;
+	  margin-bottom: 10px;
+      }
+
+      aside section h2 {
+	  font-size: 20px;
+	  background: linear-gradient(#0084b4, #0094c4);
+	  color: white;
+	  padding: 7px;
+	  margin: 0px;
+	  text-align: center;
+	  border-top-left-radius: inherit;
+	  border-top-right-radius: inherit;
+      }
+
+      aside article {
+	  margin: 10px;
+      }
+
+      aside article p {
+	  font-size: 14px;
+      }
+
+      /* footer */
+      footer {
+	  clear: both;
+	  font-size: 10px;
+	  text-align: center;
+	  background-color: #555;
+	  color: white;
+	  margin-top: 10px;
+	  padding: 2px;
+      }
+
+      /* main */
+      main {
+	  margin-right: 310px;
+	  background-color: white;
+	  min-height: 300px;
+	  padding: 10px;
+	  border: 1px solid #bfe0ec;
+      }
+
+      /* table */
+      table {
+	  width: 400px;
+	  border-collapse: collapse;
+	  margin: auto;
+	  box-shadow: 5px 5px 2px #888;
+      }
+
+      table td, table th {
+	  border: 1px solid #bfe0ec;
+	  padding-left: 20px;
+	  padding-right: 20px;
+	  text-align: center;
+      }
+
+      table th {
+	  background-color: #0084B4;
+	  color: white;
+      }
+
+      table tr:nth-child(even) {
+	  background-color: #e5f2f7;
+      }
+
+      table tr:hover {
+	  color: white;
+	  background-color: #555;
+      }
+
+      /* article */
+      main article {
+	  padding-bottom: 15px;
+	  border-bottom: 1px dashed #bfe0ec;
+      }
+
+      /* gallery */
+      #gallery {
+	  text-align: center;
+	  display: table-cell;
+      }
+      
+      #gallery img {
+          width: 30%;
+	  vertical-align: middle;
+      }

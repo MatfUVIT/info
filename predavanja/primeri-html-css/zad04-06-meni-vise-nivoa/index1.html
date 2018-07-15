@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="sr">
+
+<head>
+    <title>CSS List Menu - Primer 2</title>
+    <style type="text/css">
+        #navcontainer ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+        
+        #navcontainer a {
+            display: block;
+            color: #FFF;
+            background-color: #036;
+            width: 9em;
+            padding: 3px 12px 3px 8px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        
+        #navcontainer a:hover {
+            background-color: #369;
+            color: #FFF;
+        }
+        
+        #navcontainer li {
+            margin: 0px;
+            border-bottom: 1px solid #fff;
+        }
+        
+        #navcontainer li li a {
+            background-color: #69C;
+            padding: 3px 3px 3px 17px;
+            font-weight: normal;
+        }
+    </style>
+    <meta charset="utf-8" />
+</head>
+
+<body>
+    <div id="navcontainer">
+        <ul>
+            <li><a href="#">Milk</a>
+                <ul>
+                    <li><a href="#">Goat</a></li>
+                    <li><a href="#">Cow</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Eggs</a>
+                <ul>
+                    <li><a href="#">Free-range</a></li>
+                    <li><a href="#">Other</a></li>
+                </ul>
+            </li>
+            <li id="active"><a href="#">Cheese</a>
+                <ul>
+                    <li><a href="#">Smelly</a></li>
+                    <li><a href="#">Extra smelly</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+</body>
+
+</html>

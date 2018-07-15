@@ -1,0 +1,55 @@
+<!-- Primer prikazuje formulare -->
+<!DOCTYPE html>
+<html lang="sr">
+
+<head>
+    <title>Formulari</title>
+    <meta charset="utf-8" />
+</head>
+
+<body>
+    <form>
+        <label for="ime">Ime i prezime: </label>
+        <input type="text" id="ime" name="ime" />
+        <br />
+
+        <label for="ime">Lozinka: </label>
+        <input type="password" id="lozinka" name="lozinka" />
+        <br />
+
+        <label for="adresa">Adresa: </label>
+        <textarea id="adresa" name="adresa"></textarea>
+        <br />
+
+        <label for="vrsta">Vrsta pice: </label>
+        <select id="vrsta">
+            <option value="kaprićoza">Kaprićoza</option>
+            <option value="margarita">Margarita</option>
+            <option value="vegetarijana">Vegetarijana</option>
+        </select>
+        <br/>
+
+        <input type="radio" name="velicina" id="velika" value="velika" checked />
+        <label for="velika">Velika</label>
+        <br/>
+        <input type="radio" name="velicina" id="srednja" value="srednja" />
+        <label for="srednja">Srednja</label>
+        <br/>
+        <input type="radio" name="velicina" id="mala" value="mala" />
+        <label for="mala">Mala</label>
+        <br/>
+
+        <input type="checkbox" name="kecap" id="kecap" />
+        <label for="kecap">Kečap</label>
+        <input type="checkbox" name="origano" id="origano" />
+        <label for="origano">Origano</label>
+        <br />
+
+        <input type="button" value="Poništi" onclick="alert('Još nije implementirano')" />
+
+        <input type="submit" value="Naruči" />
+    </form>
+
+</body>
+
+</html>

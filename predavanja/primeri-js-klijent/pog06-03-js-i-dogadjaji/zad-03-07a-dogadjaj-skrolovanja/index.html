@@ -1,0 +1,32 @@
+<style>
+  .progress {
+    border: 1px solid blue;
+    width: 100px;
+    position: fixed;
+    top: 10px;
+    right: 10px;
+  }
+  
+  .progress > div {
+    height: 12px;
+    background: blue;
+    width: 0%;
+  }
+  
+  body {
+    height: 2000px;
+  }
+</style>
+<div class="progress">
+  <div></div>
+</div>
+<p>Scroll me...</p>
+<script>
+  var bar = document.querySelector(".progress div");
+  addEventListener("scroll", function() {
+    var max = document.body.scrollHeight - innerHeight;
+    var percent = (pageYOffset / max) * 100;
+    bar.style.width = percent + "%";
+  });
+
+</script>

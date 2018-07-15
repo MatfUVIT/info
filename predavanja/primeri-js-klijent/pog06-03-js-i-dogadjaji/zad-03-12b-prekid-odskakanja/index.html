@@ -1,0 +1,11 @@
+<script>
+  function displayCoords(event) {
+    document.body.textContent =
+      "Mouse at " + event.pageX + ", " + event.pageY;
+  }
+
+  addEventListener("mousemove", function(event) {
+        displayCoords(event);
+  });
+
+</script>

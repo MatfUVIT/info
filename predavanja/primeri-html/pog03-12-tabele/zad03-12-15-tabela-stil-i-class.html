@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="sr">
+
+<head>
+    <title>Tabele stilovi i atribut class</title>
+    <meta charset="utf-8" />
+    <style>
+        table,
+        th,
+        td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+        
+        th,
+        td {
+            padding: 5px;
+            text-align: left;
+        }
+        
+        table.names tr:nth-child(even) {
+            background-color: #eee;
+        }
+        
+        table.names tr:nth-child(odd) {
+            background-color: #fff;
+        }
+        
+        table.names th {
+            background-color: black;
+            color: white
+        }
+    </style>
+</head>
+
+<body>
+
+    <table style="width:80%">
+        <tr>
+            <th>Ime</th>
+            <th>Prezime</th>
+            <th>Broj poena</th>
+        </tr>
+        <tr>
+            <td>Marko</td>
+            <td>Marković</td>
+            <td>50</td>
+        </tr>
+        <tr>
+            <td>Miroslava</td>
+            <td>Marić-Petrović</td>
+            <td>94</td>
+        </tr>
+        <tr>
+            <td>Jovan</td>
+            <td>Hadži-Pešić</td>
+            <td>80</td>
+        </tr>
+    </table>
+
+    <p />
+
+    <table class="names" style="width:80%">
+        <tr>
+            <th>Ime</th>
+            <th>Prezime</th>
+            <th>Broj poena</th>
+        </tr>
+        <tr>
+            <td>Marko</td>
+            <td>Marković</td>
+            <td>50</td>
+        </tr>
+        <tr>
+            <td>Miroslava</td>
+            <td>Marić-Petrović</td>
+            <td>94</td>
+        </tr>
+        <tr>
+            <td>Jovan</td>
+            <td>Hadži-Pešić</td>
+            <td>80</td>
+        </tr>
+    </table>
+
+</body>
+
+</html>

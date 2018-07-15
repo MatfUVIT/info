@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="sr">
+
+<head>
+    <title>CSS List Menu - Primer 3</title>
+    <style type="text/css">
+        #menu ul {
+            list-style: none;
+            width: 200px;
+            float: left;
+            margin: 1px;
+            padding: 0px;
+            background: #ffffff;
+            border: 1px solid black;
+        }
+        
+        #menu {
+            position: absolute;
+        }
+        
+        #menu ul .item {
+            display: none;
+        }
+        
+        #menu ul:hover .item {
+            display: block;
+            background-color: #369;
+            color: #FFF;
+        }
+        
+        #menu a {
+            display: block;
+            color: #FFF;
+            text-decoration: none;
+        }
+        
+        #menu a:hover {
+            text-decoration: underline;
+            background-color: #360;
+        }
+        
+        #menu .top {
+            background-color: #036;
+            color: #fff;
+        }
+    </style>
+    <meta charset="utf-8" />
+</head>
+
+<body>
+    <p>Ovo je ispred menija</p>
+
+    <div id="menu">
+        <ul>
+            <li class='top'>XXX</li>
+            <li class='item'><a href="#">AAA</a></li>
+            <li class='item'><a href="#">BBB</a></li>
+        </ul>
+
+        <ul>
+            <li class='top'>YYY</li>
+            <li class='item'>CCC</li>
+            <li class='item'><a href="#">DDD</a></li>
+        </ul>
+    </div>
+
+    <p style="clear: both; margin-top: 50px;">Ovo je iza menija</p>
+</body>
+
+</html>

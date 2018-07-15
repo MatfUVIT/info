@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="sr">
+
+<head>
+    <title>CSS List Menu - Primer 1</title>
+    <style type="text/css">
+        #container {
+            width: 90%;
+            margin: 10px auto;
+            background-color: #fff;
+            color: #333;
+            border: 1px solid gray;
+            line-height: 130%;
+        }
+        
+        #top {
+            padding: .5em;
+            background-color: #ddd;
+            border-bottom: 1px solid gray;
+        }
+        
+        #top h1 {
+            padding: 0;
+            margin: 0;
+        }
+        
+        #leftnav {
+            float: left;
+            width: 160px;
+            margin: 0;
+            padding: 1em;
+        }
+        
+        #rightnav {
+            float: right;
+            width: 160px;
+            margin: 0;
+            padding: 1em;
+        }
+        
+        #content {
+            margin-left: 200px;
+            border-left: 1px solid gray;
+            margin-right: 200px;
+            padding: 1em;
+            max-width: 36em;
+            border-right: 1px solid gray;
+        }
+        
+        #footer {
+            clear: both;
+            margin: 0;
+            padding: .5em;
+            color: #333;
+            background-color: #ddd;
+            border-top: 1px solid gray;
+        }
+        
+        #leftnav p,
+        #rightnav p {
+            margin: 0 0 1em 0;
+        }
+        
+        #content h2 {
+            margin: 0 0 .5em 0;
+        }
+    </style>
+    <meta charset="utf-8" />
+</head>
+
+<body>
+    <h1> Ne treba ovako da se radi u HTML 5, već koristiti etikete header, nav, section, article, footer i aside! </h1>
+    <div id="container">
+        <div id="top">
+            <h1>Header</h1>
+        </div>
+
+        <div id="rightnav">
+            <p>
+                Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut.
+            </p>
+        </div>
+
+        <div id="leftnav">
+            <p>
+                Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut.
+            </p>
+        </div>
+        <div id="content">
+            <h2>Subheading</h2>
+            <p>
+                Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna
+                aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis
+                nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit
+                esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio
+                dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.
+            </p>
+            <p>
+                Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.
+                Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore
+                eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum
+                zzril delenit augue duis dolore te feugait nulla facilisi. Lorem ipsum dolor sit amet, consectetuer adipiscing
+                elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
+            </p>
+        </div>
+        <div id="footer">
+            Footer
+        </div>
+    </div>
+</body>
+
+</html>

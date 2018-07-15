@@ -1,0 +1,12 @@
+<p> Ovde ide nekakav tekst </p>
+<script>
+var bombTimer = setTimeout(function() {
+  console.log("BOOM!");
+}, 500);
+
+if (Math.random() < 0.5) { // 50% chance
+  console.log("Defused.");
+  clearTimeout(bombTimer);
+}
+
+</script>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="sr">
+
+<head>
+    <title>Formulari</title>
+    <meta charset="utf-8" />
+</head>
+
+<body>
+
+    <p>
+        Depending on browser support:
+        <br> Fixed steps will apply in the input field.
+    </p>
+
+    <form action="action_page.php">
+        Quantity:
+        <input type="number" name="points" min="0" max="100" step="10" value="30">
+        <input type="submit">
+    </form>
+
+    <p><b>Note:</b>type="number" is not supported in IE9 and earlier.
+    </p>
+
+</body>
+
+</html>

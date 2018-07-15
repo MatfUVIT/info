@@ -1,0 +1,11 @@
+<p data-classified="secret">The launch code is 00000000.</p>
+<p data-classified="unclassified">I have two feet.</p>
+
+<script>
+  var paras = document.body.getElementsByTagName("p");
+  Array.prototype.forEach.call(paras, function(para) {
+    if (para.getAttribute("data-classified") == "secret")
+      para.parentNode.removeChild(para);
+  });
+
+</script>

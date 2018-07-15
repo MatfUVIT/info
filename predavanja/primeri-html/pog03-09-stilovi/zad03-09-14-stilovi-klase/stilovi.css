@@ -1,0 +1,12 @@
+body {
+    background-color: lightgrey;
+}
+
+h1 {
+    color: darkred;
+}
+
+p {
+    background-color: darkgrey;
+    color: darkgreen;
+}

@@ -1,0 +1,13 @@
+
+<textarea>Type something here...</textarea>
+<script>
+  var textarea = document.querySelector("textarea");
+  var timeout;
+  textarea.addEventListener("keydown", function() {
+    clearTimeout(timeout);
+    timeout = setTimeout(function() {
+      console.log("You stopped typing.");
+    }, 500);
+  });
+
+</script>

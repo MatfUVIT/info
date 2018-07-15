@@ -1,0 +1,18 @@
+<p> Ovde ide neka prica...</p>
+<p style="text-align: center">
+  <img src="img/cat.jpg" style="position: relative">
+</p>
+<script>
+  var cat = document.querySelector("img");
+  var angle = 0, lastTime = null;
+  function animate(time) {
+    if (lastTime != null)
+      angle += (time - lastTime) * 0.001;
+    lastTime = time;
+    cat.style.top = 250+(Math.sin(angle) * 300) + "px";
+    cat.style.left = (Math.cos(angle) * 300) + "px";
+    requestAnimationFrame(animate);
+  }
+  requestAnimationFrame(animate);
+
+</script>

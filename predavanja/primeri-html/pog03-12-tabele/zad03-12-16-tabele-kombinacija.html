@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="sr">
+
+<head>
+    <title>Tabele</title>
+    <meta charset="utf-8" />
+    <style>
+        table,
+        th,
+        td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+        
+        th,
+        td {
+            padding: 5px;
+            text-align: left;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <article>
+        <h1>Jednostavna tabela</h1>
+        <table border="1">
+            <tr>
+                <td>1</td>
+                <td>2</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>4</td>
+            </tr>
+        </table>
+    </article>
+
+    <article>
+        <h1>Tabela sa naslovom spojenim vrstama i kolonama</h1>
+        <table border="1">
+            <caption>Broj učenika i učenica u odeljenjima</caption>
+            <tr>
+                <th rowspan="2" colspan="2">&nbsp;</th>
+                <th colspan="2">Пол</th>
+            </tr>
+            <tr>
+                <th>Мушки</th>
+                <th>Женски</th>
+            </tr>
+            <tr>
+                <th rowspan="2">Одељење</th>
+                <th>I1</th>
+                <td>18</td>
+                <td>19</td>
+            </tr>
+            <tr>
+                <th>I2</th>
+                <td>20</td>
+                <td>17</td>
+            </tr>
+        </table>
+    </article>
+
+    <article>
+        <h1>Tabela sa naslovom, zaglavljem, podnožjem i grupisanjem kolona</h1>
+        <table border="1">
+            <colgroup>
+                <col width="150" />
+                <col span="2" width="80" />
+            </colgroup>
+            <thead>
+                <tr>
+                    <th>Kvartal</th>
+                    <th>Troškovi</th>
+                    <th>Prihodi</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1. kvartal</td>
+                    <td>120</td>
+                    <td>130</td>
+                </tr>
+                <tr>
+                    <td>2. kvartal</td>
+                    <td>180</td>
+                    <td>170</td>
+                </tr>
+                <tr>
+                    <td>3. kvartal</td>
+                    <td>130</td>
+                    <td>150</td>
+                </tr>
+                <tr>
+                    <td>4. kvartal</td>
+                    <td>170</td>
+                    <td>150</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <th>Ukupno:</th>
+                    <td>600</td>
+                    <td>600</td>
+                </tr>
+            </tfoot>
+        </table>
+    </article>
+</body>
+
+</html>

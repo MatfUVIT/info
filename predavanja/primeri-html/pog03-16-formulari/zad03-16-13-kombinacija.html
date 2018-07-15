@@ -1,0 +1,82 @@
+<!-- Primer prikazuje formulare -->
+<!DOCTYPE html>
+<html lang="sr">
+
+<head>
+    <title>Formulari</title>
+    <meta charset="utf-8" />
+</head>
+
+<body>
+    <form>
+        <table>
+            <tr>
+                <td>
+                    <label for="ime">Ime i prezime: </label>
+                </td>
+                <td>
+                    <input type="text" id="ime" name="ime" />
+                </td>
+
+            </tr>
+            <tr>
+                <td>
+                    <label for="ime">Lozinka: </label>
+                </td>
+                <td>
+                    <input type="password" id="lozinka" name="lozinka" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="adresa">Adresa: </label>
+                </td>
+                <td>
+                    <textarea id="adresa" name="adresa"></textarea>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="vrsta">Vrsta pice: </label>
+                </td>
+                <td>
+                    <select id="vrsta">
+                        <option value="kaprićoza">Kaprićoza</option>
+                        <option value="margarita">Margarita</option>
+                        <option value="vegetarijana">Vegetarijana</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td> &nbsp; </td>
+                <td>
+                    <input type="radio" name="velicina" id="velika" value="velika" checked />
+                    <label for="velika">Velika</label>
+                    <br/>
+                    <input type="radio" name="velicina" id="srednja" value="srednja" />
+                    <label for="srednja">Srednja</label>
+                    <br/>
+                    <input type="radio" name="velicina" id="mala" value="mala" />
+                    <label for="mala">Mala</label>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <input type="checkbox" name="kecap" id="kecap" />
+                    <label for="kecap">Kečap</label>
+                    <input type="checkbox" name="origano" id="origano" />
+                    <label for="origano">Origano</label>
+                </td>
+            </tr>
+            <tr>
+                <td style="text-align:center" colspan="2">
+                    <input type="button" value="Poništi" onclick="alert('Još nije implementirano')" />
+                    <input type="submit" value="Naruči" />
+                </td>
+            </tr>
+        </table>
+    </form>
+
+</body>
+
+</html>
