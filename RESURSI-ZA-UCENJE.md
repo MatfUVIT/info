@@ -10,11 +10,13 @@
 
 * Књиге и туторијали за HTML i CSS
 
+  * Марић Ф.: [Основни елементи веба - скрипта](/predavanja/literatura/Maric F. - Skripta veb.pdf){:target="_blank"}
+
   * Wielgosik: [How to Code in HTML5 and CSS3](http://howtocodeinhtml.com/index.html#toc){:target="_blank"}
 
   * Gustafson: [Adaptive Web Design - Crafting Rich Experiences with Progressive Enhancement](https://adaptivewebdesign.info/1st-edition/read/){:target="_blank"}
 
-  * Hadži-Purić: [Основни елементи HTML-a](http://poincare.matf.bg.ac.rs/~jelenagr/op/htmlskola.htm){:target="_blank"}
+  * Хаџи-Пурић Ј.: [Основни елементи HTML-a](http://poincare.matf.bg.ac.rs/~jelenagr/op/htmlskola.htm){:target="_blank"}
 
 * Књиге и туторијали за JavaScript
 

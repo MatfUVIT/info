@@ -14,4 +14,4 @@
 
 * **[Инсталације](/INSTALACIJE.md)**
 
-* **[Веб ресурси за учење](/VEB-RESURSI-ZA-UCENJE.md)**
+* **[Ресурси за учење](/RESURSI-ZA-UCENJE.md)**
