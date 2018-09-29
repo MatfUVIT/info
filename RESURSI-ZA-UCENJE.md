@@ -6,9 +6,13 @@
 
 * Књиге и туторијали за рачунарке мреже и Интернет  
 
+  * Марић Ф.: [УВИТ - скрипта (стране 1-35)](/predavanja/literatura/Maric F. - Skripta UVIT.pdf){:target="_blank"}
+
   * Bonaventure: [Computer Networking : Principles, Protocols and Practice](https://www.saylor.org/site/wp-content/uploads/2012/02/Computer-Networking-Principles-Bonaventure-1-30-31-OTC1.pdf){:target="_blank"}  
 
 * Књиге и туторијали за HTML i CSS
+
+  * Марић Ф.: [УВИТ - скрипта (стране 36-103)](/predavanja/literatura/Maric F. - Skripta UVIT.pdf){:target="_blank"}
 
   * Марић Ф.: [Основни елементи веба - скрипта](/predavanja/literatura/Maric F. - Skripta veb.pdf){:target="_blank"}
 
@@ -20,6 +24,8 @@
 
 * Књиге и туторијали за JavaScript
 
+  * Марић Ф.: [УВИТ - скрипта (стране 104-125)](/predavanja/literatura/Maric F. - Skripta UVIT.pdf){:target="_blank"}
+
   * Haverbeke: [Eloquent JavaScript](https://eloquentjavascript.net/){:target="_blank"}, 3rd Edition  
 
 * Књиге и туторијали за NoSQL базе података  
@@ -27,6 +33,10 @@
   * Seguin: [The Little MongoDB Book](https://www.openmymind.net/mongodb.pdf){:target="_blank"}
 
   * [NoSQL Explained](https://www.mongodb.com/nosql-explained){:target="_blank"} - MongoDB  
+
+* Оптимизација претраге веб страна
+
+  * [Search Engine Optimization Starter Guide](/predavanja/literatura/Google team  - Search Engine Optimization Starter Guide.pdf){:target="_blank"} - Gooogle
 
 * Компоненте JavaScript екосистема
 
