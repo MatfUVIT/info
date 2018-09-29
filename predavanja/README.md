@@ -4,11 +4,11 @@
 
 Овде су постављена предавања из предмета **Увод у веб и интернет технологије**.
 
-[Уводне напомене о курсу](/predavanja/prezentacije/UVIT00-01-Koncepcija kursa.pdf){:target="_blank"}
+[Уводне напомене о курсу](/prezentacije/UVIT00-01-Koncepcija kursa.pdf){:target="_blank"}
 
 1. Увод у веб и интернет технологије  
 
-    1. [Увод у рачунарске мреже](/predavanja/prezentacije/UVIT01-01-Uvod u racunarske mreze.pdf){:target="_blank"}  
+    1. [Увод у рачунарске мреже](/prezentacije/UVIT01-01-Uvod u racunarske mreze.pdf){:target="_blank"}  
 
         1. Улога рачунарских мрежа
 
@@ -44,7 +44,7 @@
 
             1. Директне чвор-чвор везе
 
-    1. [Интернет](/predavanja/prezentacije/UVIT01-02-Uvod u Internet.pdf){:target="_blank"}
+    1. [Интернет](/prezentacije/UVIT01-02-Uvod u Internet.pdf){:target="_blank"}
 
 1. Језици за обележавање SGML и XML
 
