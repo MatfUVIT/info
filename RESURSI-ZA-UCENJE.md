@@ -30,6 +30,8 @@
 
 * Књиге и туторијали за NoSQL базе података  
 
+  * [NoSQL](/predavanja/literatura/InfoQ team - NoSQ.pdf){:target="_blank"} - InfoQ eMag, May 2013
+  
   * Seguin: [The Little MongoDB Book](https://www.openmymind.net/mongodb.pdf){:target="_blank"}
 
   * [NoSQL Explained](https://www.mongodb.com/nosql-explained){:target="_blank"} - MongoDB  
