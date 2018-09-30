@@ -1,8 +1,8 @@
 # УВИТ - Вежбе
 
-[повратак](../README.md)
+[почетна страна](../README.md)
 
-Овде су постављене вежбе из предмета **Увод у веб и интернет технологије**.
+Овде су постављене информације о вежбама из предмета **Увод у веб и интернет технологије**.
 
 1. Internet i servisi Interneta
 
@@ -52,4 +52,4 @@
 
        * Prikazati format zahteva i odgovora kroz veb konzolu i prodiskutovati znacenje najosnovnijih zaglavlja i statusne kodove
 
-[повратак](../README.md)
+[почетна страна](../README.md)

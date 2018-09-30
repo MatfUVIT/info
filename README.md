@@ -15,3 +15,9 @@
 * **[Инсталације](/INSTALACIJE.md)**
 
 * **[Ресурси за учење](/RESURSI-ZA-UCENJE.md)**
+
+* **[Колоквијуми](/kolokvijum/README.md)**
+
+* **[Писмени испити](/pismeni-ispit/README.md)**
+
+* **[Усмени испити](/usmeni-ispit/README.md)**
