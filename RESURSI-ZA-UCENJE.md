@@ -1,8 +1,8 @@
-# УВИТ - Веб ресурси за учење  
+# УВИТ - Ресурси за учење  
 
 [почетна страна](/README.md)
 
-Овде су постављене везе према веб ресурсима за учење, који могу помоћи при учењу садржаја који се обрађују на курсу **Увод у веб и интернет технологије**.
+Овде су постављене везе према ресурсима за учење на вебу, који могу помоћи при учењу садржаја који се обрађују на курсу **Увод у веб и интернет технологије**.
 
 * Књиге и туторијали за рачунарке мреже и Интернет  
 
@@ -26,13 +26,13 @@
 
   * Марић Ф.: [УВИТ - скрипта (стране 104-125)](/predavanja/literatura/Maric F. - Skripta UVIT.pdf){:target="_blank"}
 
-  * Haverbeke: [Eloquent JavaScript](https://eloquentjavascript.net/){:target="_blank"}, 3rd Edition, [књига](/predavanja/literatura/Haverbeke М. - Eloquent_JavaScript, 3rd Ed.pdf){:target="_blank"}
+  * Haverbeke: [Eloquent JavaScript](/predavanja/literatura/Haverbeke М. - Eloquent_JavaScript, 3rd Ed.pdf){:target="_blank"}, 3rd Edition, [веб сајт](https://eloquentjavascript.net/){:target="_blank"}
 
 * Књиге и туторијали за NoSQL базе података  
 
   * [NoSQL](/predavanja/literatura/InfoQ team - NoSQL.pdf){:target="_blank"} - InfoQ eMag, May 2013
   
-  * Seguin: [The Little MongoDB Book](https://www.openmymind.net/mongodb.pdf){:target="_blank"}
+  * Seguin: [The Little MongoDB Book](https://www.openmymind.net/mongodb.pdf){:target="_blank"}, [веб сајт](https://github.com/karlseguin/the-little-mongodb-book){:target="_blank"}
 
   * [NoSQL Explained](https://www.mongodb.com/nosql-explained){:target="_blank"} - MongoDB  
 
@@ -43,6 +43,8 @@
 * Компоненте JavaScript екосистема
 
   * [Node.js Tutorial](https://www.w3schools.com/nodejs/default.asp){:target="_blank"} - W3Schools
+
+  * [Node.js Tutorial](https://www.tutorialspoint.com/nodejs/index.htm){:target="_blank"} - TutorialsPoint
 
   * JavaScript библиотека [socket.io](https://socket.io/docs/){:target="_blank"}
 
