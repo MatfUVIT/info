@@ -54,7 +54,7 @@
 
             1. Технологије приступа Интернету
 
-    1. [Језици за обележавање](/prezentacije/UVIT02-01-Jezici za obelezavanje, SGML.pdf){:target="_blank"}
+    1. [Језици за обележавање](/prezentacije/UVIT02-01-Jezici za obelezavanje.pdf){:target="_blank"}
 
         1. Стандадни општи језик за обележавање - SGML
 
