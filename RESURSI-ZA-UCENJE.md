@@ -26,11 +26,11 @@
 
   * Марић Ф.: [УВИТ - скрипта (стране 104-125)](/predavanja/literatura/Maric F. - Skripta UVIT.pdf){:target="_blank"}
 
-  * Haverbeke: [Eloquent JavaScript](https://eloquentjavascript.net/){:target="_blank"}, 3rd Edition, [књига](/predavanja/literatura/Haverbeke М. - Eloquent_JavaScript, 3rd Ed.pdf){:target="_blank"} 
+  * Haverbeke: [Eloquent JavaScript](https://eloquentjavascript.net/){:target="_blank"}, 3rd Edition, [књига](/predavanja/literatura/Haverbeke М. - Eloquent_JavaScript, 3rd Ed.pdf){:target="_blank"}
 
 * Књиге и туторијали за NoSQL базе података  
 
-  * [NoSQL](/predavanja/literatura/InfoQ team - NoSQ.pdf){:target="_blank"} - InfoQ eMag, May 2013
+  * [NoSQL](/predavanja/literatura/InfoQ team - NoSQL.pdf){:target="_blank"} - InfoQ eMag, May 2013
   
   * Seguin: [The Little MongoDB Book](https://www.openmymind.net/mongodb.pdf){:target="_blank"}
 
