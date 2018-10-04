@@ -2,6 +2,6 @@
 
 [повратак у предавања](../README.md)
 
-1. [Пример коришћења DTD](primer01.html){:target="_blank"}  
+1. [Пример коришћења DTD ради провере коректности структуре HTML стране](primer-01-provera-korektnosti-preko-dtd.html){:target="_blank"}  
 
 [повратак у предавања](../README.md)  
