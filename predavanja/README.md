@@ -80,7 +80,7 @@
 
             - Дефиниције типа документа - DTD
 
-            - [Примери DTD](/primeri-dtd){:target="_blank"}
+            - [Примери DTD](/primeri-dtd/README.md){:target="_blank"}
 
         1. Прошириви језик за обележавање - XML
 
