@@ -16,21 +16,21 @@
         
         1. IP адреса
 
-            * IPv4
-            * IPv6
-            * IANA
-            * RNIDS - IANA огранак у Србији
+            - IPv4
+            - IPv6
+            - IANA
+            - RNIDS - IANA огранак у Србији
         
         1. DNS
         
         1. Алати: 
-            * `nslookup`
-            * `host`
-            * `ping` 
-            * `traceroute`
+            - `nslookup`
+            - `host`
+            - `ping` 
+            - `traceroute`
         
         1. Мрежни портови  
-            * алат `nmap`
+            - алат `nmap`
             
         1. Пример daytime клијента и сервера написан у програмском језику C: [daytime](/daytime.zip){:target="_blank"}
 
