@@ -78,9 +78,7 @@
 
             - Основни конструкти SGML
 
-            - Дефиниције типа документа - DTD
-
-            - [Примери DTD](/primeri-sgml-dtd-xml/README.md)
+            - Дефиниције типа документа - DTD [Примери](/primeri-sgml-dtd-xml/dtd/README.md)
 
         1. Прошириви језик за обележавање - XML
 
