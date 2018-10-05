@@ -80,7 +80,7 @@
 
             - Дефиниције типа документа - DTD
 
-            - [Примери DTD](/primeri-sgml-dtd-xml/README.md){:target="_blank"}
+            - [Примери DTD](/primeri-sgml-dtd-xml/README.md)
 
         1. Прошириви језик за обележавање - XML
 
@@ -100,7 +100,7 @@
 
             - Доменски језици засновани на XML-у
 
-    1. HTML 5
+    1. [HTML 5](/prezentacije/UVIT03-01-HTML 5.pdf){:target="_blank"}
 
         1. `html`, `head`, `body`
 
@@ -122,7 +122,10 @@
 
         10. `div`, `span`
 
-    1. CSS
+        - [Примери](/primeri-html/README.md)
+
+
+    1. [CSS](/prezentacije/UVIT04-01-CSS.pdf){:target="_blank"}
 
         1. Nачини укључивања CSS декларација  
 
