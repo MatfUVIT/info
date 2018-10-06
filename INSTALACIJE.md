@@ -12,7 +12,7 @@
 
 * Развојно окружење [Visual Studio Code](https://code.visualstudio.com/download){:target="_blank"}
 
-* [node.js](https://nodejs.org/en/){:target="_blank"}
+* Извршно окружење [Node.js](https://nodejs.org/en/){:target="_blank"}
 
 * NoSQL база [MongoDb Community Server](https://www.mongodb.com/download-center?jmp=nav#community){:target="_blank"}
 
