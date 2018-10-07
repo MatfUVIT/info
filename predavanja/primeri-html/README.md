@@ -12,4 +12,8 @@
 
     1. HTML целине [Веза](/pog03-01-html-osnove/zad03-01-03-html5-celine.html){:target="_blank"}  [Програмски код](https://github.com/MatfUVIT/UVIT/blob/master/predavanja/primeri-html/pog03-01-html-osnove/zad03-01-03-html5-celine.html){:target="_blank"}
 
+    1. HTML елеменат h [Веза](/pog03-01-html-osnove/zad03-01-04-elemenat-h.html){:target="_blank"}  [Програмски код](https://github.com/MatfUVIT/UVIT/blob/master/predavanja/primeri-html/pog03-01-html-osnove/zad03-01-04-elemenat-h.html){:target="_blank"}
+
+    1. HTML елеменат h (ћирилица) [Веза](/pog03-01-html-osnove/zad03-01-05-елеменат-h.html){:target="_blank"}  [Програмски код](https://github.com/MatfUVIT/UVIT/blob/master/predavanja/primeri-html/pog03-01-html-osnove/zad03-01-05-елеменат-h.html){:target="_blank"}
+
 [повратак у предавања](../README.md)  
