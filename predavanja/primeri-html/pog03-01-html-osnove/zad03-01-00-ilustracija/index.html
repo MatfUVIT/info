@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+<!-- Opis zaglavlja veb-strane -->
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Kako se prave veb-strane?</title>
+
+  <style type="text/css">
+    body {
+      /* Telo dokumenta: */
+      font-family: Arial;
+      /*font Arial*/
+      background-color: white;
+      /* bela boja pozadine */
+    }
+
+    header {
+      /* Zaglavlje: */
+      text-align: center;
+      /* centrirano poravnavanje */
+    }
+
+    main {
+      /* Glavni deo strane: */
+      background-color: #f0f0f0;
+      /* sivkasta boja pozadine */
+      width: 800px;
+      /* sirina 800 piksela */
+      margin: auto;
+      /* centriran glavni deo */
+      padding: 20px;
+      /* unutrasnja margina 20 piksela */
+      border: 1px solid grey;
+      /* okvir: 1 px, puna linija, siv */
+      box-shadow: 10px 10px 5px #888888;
+      /* senka */
+      border-radius: 10px;
+      /* zaobljene ivice */
+    }
+  </style>
+  <script type="text/javascript">
+    // kada se klikne na naslov, on postaje crven
+    document.getElementById('naslov').onclick = function () { this.style.color = 'red' };
+  </script>
+</head>
+
+<!-- Opis tela veb-stranice -->
+
+<body>
+  <header>
+    <img src="web-logos.png" alt="logotipi" width="300px" />
+  </header>
+  <main>
+    <h1 id="naslov">Jezici za opis veb-strana</h1>
+    <article>
+      <p>U opisu veb-strana koristi se vise jezika i tehnologija.</p>
+      <ul>
+        <li>Jezik <a href="https://www.w3.org/TR/html5/">HTML</a>
+          sluzi za opis sadrzaja veb-strana. Za opis sadrzaja
+          koriste se <i>HTML elementi</i> (na primer, &lt;html&gt;).</li>
+        <li>Jezik <a href="https://www.w3.org/Style/CSS/">CSS</a>
+          sluzi za opis stila (boja, fontova, rasporeda sadrzaja i
+          slicno) veb-strana.</li>
+        <li>Jezik <a href="https://en.wikipedia.org/wiki/JavaScript">
+            JavaScript</a> koristi se za dodavanje interaktivnosti
+          veb-stranama (na primer, u njemu cemo isprogramirati da
+          naslov promeni boju kada se klikne na njega).</li>
+      </ul>
+    </article>
+  </main>
+</body>
+
+</html>
