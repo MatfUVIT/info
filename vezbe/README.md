@@ -34,7 +34,7 @@
             
         1. Пример daytime клијента и сервера написан у програмском језику C: [daytime](/daytime.zip){:target="_blank"}
 
-    1. [Интернет протоколи](/prezentacije/UVIT02 - Internet protokoli.pdf){:target="_blank"}
+      1. [Интернет протоколи](/prezentacije/UVIT02 - Internet protokoli.pdf){:target="_blank"}
             1. TCP/IP протокол стек, TCP, UDP, IP
             
             1. Приступ удаљеним рачунарима, SSH, TELNET
