@@ -1,0 +1,27 @@
+<html>
+
+<head>
+    <title>AJAX jQuery demo</title>
+    <script src="jquery-1.7.1.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $("button").click(function() {
+                $("#myDiv").load("ajax.txt", function(responseTxt, statusTxt, xhr) {
+                    if (statusTxt == "success")
+                        console.log("Spoljašnji sadržaj je uspešno učitan!");
+                    if (statusTxt == "error")
+                        console.log("Error: " + xhr.status + ": " + xhr.statusText);
+                });
+            });
+        });
+    </script>
+</head>
+
+<body>
+
+    <h2>Odgovor dobijen putem AJAX-a i jQuery</h2>
+    <div id="myDiv"></div>
+    <button type="button"> Pošalji AJAX zahtev </button>
+</body>
+
+</html>
