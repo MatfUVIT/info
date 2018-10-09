@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
-targetNamespace="https://www.w3schools.com"
-xmlns="https://www.w3schools.com"
+targetNamespace="https://matfuvit.github.io"
+xmlns="https://matfuvit.github.io"
 elementFormDefault="qualified">
 
 

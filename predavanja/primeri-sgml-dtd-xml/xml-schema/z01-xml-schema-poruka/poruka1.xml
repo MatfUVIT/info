@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+
+<poruka xmlns="https://matfuvit.github.io" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="https://matfuvit.github.io/UVIT/primeri-sgml-dtd-xml/xml-schema/z01-xml-schema-poruka/poruka-struktura.xsd">
+  <prima>Sanja</prima>
+  <salje>Vlado</salje>
+  <naslov>Podsetnik</naslov>
+  <tekst>Kupi karte za utakmicu</tekst>
+</poruka>

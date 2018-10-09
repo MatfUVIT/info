@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE poruka PUBLIC "-/UVIT Tim//Struktura Poruke//SR" 
+"https://matfuvit.github.io/UVIT/predavanja/primeri-sgml-dtd-xml/xml-dtd/z02-xml-spoljasnji-dtd-poruka/poruka-struktura.dtd">
+
+<poruka>
+  <prima>Sanja</prima>
+  <salje>Vlado</salje>
+  <naslov>Podsetnik</naslov>
+  <tekst>Kupi karte za utakmicu</tekst>
+</poruka>
