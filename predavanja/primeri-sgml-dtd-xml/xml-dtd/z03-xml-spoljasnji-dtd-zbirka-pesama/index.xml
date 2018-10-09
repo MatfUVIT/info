@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!DOCTYPE zbirka SYSTEM "zbirka-pesama.dtd">
+<zbirka>
+    <pesma autor="Čika Jova Zmaj">
+        <naslov>Žaba čita novine </naslov>
+        <strofa>
+            <stih> Sedi žaba sama
+            <stih> na listu lokvanja.
+            <stih> od žarkoga sunca
+            <stih> štitom se zaklanja.
+        </strofa>  
+        <strofa>
+            <stih> Da novine čita
+            <stih> to vam slika kaže,
+            <stih> al' ne mož' da nađe
+            <stih> što joj oči traže.
+        </strofa>  
+        <strofa>
+            <stih> Znate već o čemu
+            <stih> žabe brigu vode:
+            <stih> hoće li se skoro
+            <stih> odseliti rode.
+        </strofa>  
+    </pesma>
+</zbirka>
