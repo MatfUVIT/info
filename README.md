@@ -20,8 +20,8 @@
 
 ## Колоквијуми и испити
 
-* **[Колоквијуми](/kolokvijum/README.md)**
+* **[Колоквијуми](/kolokvijumi/README.md)**
 
-* **[Писмени испити](/pismeni-ispit/README.md)**
+* **[Писмени испити](/pismeni-ispiti/README.md)**
 
-* **[Усмени испити](/usmeni-ispit/README.md)**
+* **[Усмени испити](/usmeni-ispiti/README.md)**

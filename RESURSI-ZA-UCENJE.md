@@ -16,6 +16,8 @@
 
   * Марић Ф.: [Основни елементи веба - скрипта](/predavanja/literatura/Maric F. - Skripta veb.pdf){:target="_blank"}
 
+  * Pilgrim M.: [Dive into HTML5](http://diveinto.html5doctor.com){:target="_blank"} [Mirror](http://diveinto.html5doctor.com){:target="_blank"}
+
   * Wielgosik: [How to Code in HTML5 and CSS3](http://howtocodeinhtml.com/index.html#toc){:target="_blank"}
 
   * Gustafson: [Adaptive Web Design - Crafting Rich Experiences with Progressive Enhancement](https://adaptivewebdesign.info/1st-edition/read/){:target="_blank"}
