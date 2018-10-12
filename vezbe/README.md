@@ -6,7 +6,7 @@
 
 1. Увод у Веб и Интернет технологије
 
-     1. [Основни појмови](/prezentacije/UVIT01 - osnovni pojmovi.pdf){:target="_blank"}
+    1. [Основни појмови](/prezentacije/UVIT01 - osnovni pojmovi.pdf){:target="_blank"}
 
         1. Интернет и Веб 
         
@@ -15,7 +15,6 @@
         1. Топологије рачунарских мрежа
         
         1. IP адреса
-
             - IPv4
             - IPv6
             - IANA
@@ -34,8 +33,7 @@
             
         1. Пример daytime клијента и сервера написан у програмском језику C: [daytime](/daytime.zip){:target="_blank"}
 
-
-     1. [Интернет протоколи](/prezentacije/UVIT02 - Internet protokoli.pdf){:target="_blank"}
+    1. [Интернет протоколи](/prezentacije/UVIT02 - Internet protokoli.pdf){:target="_blank"}
 
         1. TCP/IP протокол стек, TCP, UDP, IP
             
@@ -53,10 +51,9 @@
             
         1. Веб сервери
 		
+    1. Увод у HTML и CSS
 
-	 1. Увод у HTML и CSS
-
-		1. Увод у HTML
+        1. Увод у HTML
 
             1. Елементи и атрибути, коментари
 
@@ -87,7 +84,7 @@
             1. форматирање текста
 
             1. Додавање корисничких фонтова
-            
+
             - задатак 2
 
 [почетна страна](../README.md)
