@@ -1,0 +1,57 @@
+/*
+    Koriscena css svojstva (novine u odnosu na prethodne primere):
+        color - podesavanje boje slova
+        background-color - podesavanje boje pozadine
+
+        font-family - podesavanje fonta
+        font-size - podesavanje velicine slova
+        font-style - kontrola iskosenosti slova
+        font-weight - kontrola potamnjivanja slova 
+        letter-spacing - rastojanje izmedju slova
+        word-spacing - rastojanje izmedju reci
+        text-indent - uvlacenje prve linije teksta
+        text-align - pozicioniranje teksta
+*/
+
+@font-face {
+	font-family: 'Nas font';
+	src: url('cool_font.ttf');
+}
+
+#glavni_naslov {
+    text-align: center;
+	font-family: 'Nas font', Arial, Sans-Serif;
+	font-size: 50px;
+}
+
+#podnaslov {
+    text-align: center;
+	font-size: 25px;
+	font-family: Sans-Serif;
+}
+
+.intro {
+    color: SlateBlue;
+}  
+
+.html {
+    font-size: 14px; 
+    font-family: 'Tahoma', 'Arial', sans-serif;
+    letter-spacing: 2px;
+    text-indent: 20px;
+    text-align: justify;
+}
+
+#css {
+    color: rgb(60, 154, 109);
+    font-style: italic;
+}      
+
+main div h3 {
+    font-weight: bold; 
+}
+
+header h1, header h4{
+    background-color: violet;
+    color: white;
+}
