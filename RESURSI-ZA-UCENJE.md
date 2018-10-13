@@ -38,9 +38,11 @@
 
   * Марић Ф.: [Основни елементи веба - скрипта](/predavanja/literatura/Maric F. - Skripta veb.pdf){:target="_blank"}
 
-  * Pilgrim M.: [Dive into HTML5](http://diveinto.html5doctor.com){:target="_blank"} [Mirror](http://diveinto.html5doctor.com){:target="_blank"}
+  * Pilgrim M.: [Dive into HTML5](http://diveinto.html5doctor.com){:target="_blank"}
 
   * Хаџи-Пурић Ј.: [Основни елементи HTML-a](http://poincare.matf.bg.ac.rs/~jelenagr/op/htmlskola.htm){:target="_blank"}
+
+  * [HTML Tutorial](https://www.w3schools.com/html/){:target="_blank"} - W3Schools
 
   * [HTML Tutorial](https://www.tutorialspoint.com/html/){:target="_blank"} - TutorialsPoint
 
@@ -49,6 +51,8 @@
   * Wielgosik: [How to Code in HTML5 and CSS3](http://howtocodeinhtml.com/index.html#toc){:target="_blank"}
 
   * Gustafson: [Adaptive Web Design - Crafting Rich Experiences with Progressive Enhancement](https://adaptivewebdesign.info/1st-edition/read/){:target="_blank"}
+
+  * [CSS Tutorial](https://www.w3schools.com/css/){:target="_blank"} - W3Schools
 
   * [CSS Tutorial](https://www.tutorialspoint.com/css/){:target="_blank"} - TutorialsPoint
 
@@ -78,9 +82,7 @@
 
   * [jQuery Tutorial](https://www.w3schools.com/jquery/default.asp){:target="_blank"} - W3Schools
 
-  * [jQuery Tutorial](https://www.w3schools.com/jquery/default.asp){:target="_blank"} - W3Schools
-
-  * [XML DOM Tutorial](https://www.tutorialspoint.com/jquery/){:target="_blank"} - TutorialsPoint
+  * [jQuery Tutorial](https://www.tutorialspoint.com/jquery/){:target="_blank"} - TutorialsPoint
 
   * [HTML Canvas Tutorial](https://www.w3schools.com/graphics/canvas_intro.asp){:target="_blank"} - W3Schools
 
@@ -88,13 +90,13 @@
   
 * JavaScript процесирање на страни сервера
 
-  * [Node.js Documentation](https://nodejs.org/en/docs/){:target="_blank"}
+  * [Node.js Documentation](https://nodejs.org/en/docs/){:target="_blank"} - Node.js
   
   * [Node.js Tutorial](https://www.w3schools.com/nodejs/default.asp){:target="_blank"} - W3Schools
 
   * [Node.js Tutorial](https://www.tutorialspoint.com/nodejs/index.htm){:target="_blank"} - TutorialsPoint
 
-  * [Express Documentation](https://expressjs.com/)
+  * [Express Documentation](https://expressjs.com/){:target="_blank"} - Express
 
   * [Express Tutorial](https://www.tutorialspoint.com/nodejs/index.htm){:target="_blank"} - TutorialsPoint
 
@@ -105,6 +107,8 @@
   * Seguin: [The Little MongoDB Book](https://www.openmymind.net/mongodb.pdf){:target="_blank"}, [веб сајт](https://github.com/karlseguin/the-little-mongodb-book){:target="_blank"}
 
   * [NoSQL Explained](https://www.mongodb.com/nosql-explained){:target="_blank"} - MongoDB  
+
+  * [MongoDB Manual](https://docs.mongodb.com/manual/){:target="_blank"} - MongoDB
 
 * Оптимизација претраге веб страна
 
