@@ -12,7 +12,7 @@
 
   * [Internet Technologies Tutorial](https://www.tutorialspoint.com/internet_technologies/index.htm){:target="_blank"} - TutorialsPoint
 
-  * [HTTP Tutorial](https://www.tutorialspoint.com/http/http_message_examples.htm){:target="_blank"} - TutorialsPoint
+  * [HTTP Tutorial](https://www.tutorialspoint.com/http/http_message_examples.htm){:target="_blank"} - TutorialsPoint, [.pdf](/predavanja/literatura/TutorialsPoint HTTP.pdf){:target="_blank"}
 
 * Књиге и туторијали за језике за означавање
 
@@ -20,11 +20,11 @@
 
   * [DTD Tutorial](https://www.w3schools.com/xml/xml_dtd_intro.asp){:target="_blank"} - W3Schools
 
-  * [DTD Tutorial](https://www.tutorialspoint.com/dtd/index.htm){:target="_blank"} - TutorialsPoint
+  * [DTD Tutorial](https://www.tutorialspoint.com/dtd/index.htm){:target="_blank"} - TutorialsPoint, [.pdf](/predavanja/literatura/TutorialsPoint DTD.pdf){:target="_blank"}
 
   * [XML Tutorial](https://www.w3schools.com/xml/){:target="_blank"} - W3Schools
 
-  * [XML Tutorial](https://www.tutorialspoint.com/xml/){:target="_blank"} - TutorialsPoint
+  * [XML Tutorial](https://www.tutorialspoint.com/xml/){:target="_blank"} - TutorialsPoint, [.pdf](/predavanja/literatura/TutorialsPoint XML.pdf){:target="_blank"}
 
   * [XML Schema Tutorial](https://www.w3schools.com/xml/xml_schema.asp){:target="_blank"} - W3Schools
 
@@ -44,9 +44,9 @@
 
   * [HTML Tutorial](https://www.w3schools.com/html/){:target="_blank"} - W3Schools
 
-  * [HTML Tutorial](https://www.tutorialspoint.com/html/){:target="_blank"} - TutorialsPoint
+  * [HTML Tutorial](https://www.tutorialspoint.com/html/){:target="_blank"} - TutorialsPoint, [.pdf](/predavanja/literatura/TutorialsPoint HTML.pdf){:target="_blank"}
 
-  * [HTML 5 Tutorial](https://www.tutorialspoint.com/html5/index.htm){:target="_blank"} - TutorialsPoint
+  * [HTML 5 Tutorial](https://www.tutorialspoint.com/html5/index.htm){:target="_blank"} - TutorialsPoint, [.pdf](/predavanja/literatura/TutorialsPoint HTML 5.pdf){:target="_blank"}
 
   * Wielgosik: [How to Code in HTML5 and CSS3](http://howtocodeinhtml.com/index.html#toc){:target="_blank"}
 
@@ -54,7 +54,7 @@
 
   * [CSS Tutorial](https://www.w3schools.com/css/){:target="_blank"} - W3Schools
 
-  * [CSS Tutorial](https://www.tutorialspoint.com/css/){:target="_blank"} - TutorialsPoint
+  * [CSS Tutorial](https://www.tutorialspoint.com/css/){:target="_blank"} - TutorialsPoint, [.pdf](/predavanja/literatura/TutorialsPoint CSS.pdf){:target="_blank"}
 
 * Књиге и туторијали за JavaScript
 
@@ -68,7 +68,7 @@
   
   * [JavaScript Tutorial](https://www.w3schools.com/js/default.asp){:target="_blank"} - W3Schools
 
-  * [JavaScript Tutorial](https://www.tutorialspoint.com/javascript/index.htm){:target="_blank"} - TutorialsPoint
+  * [JavaScript Tutorial](https://www.tutorialspoint.com/javascript/index.htm){:target="_blank"} - TutorialsPoint, [.pdf](/predavanja/literatura/TutorialsPoint JavaScript.pdf){:target="_blank"}
 
 * JavaScript процесирање на страни клијента
 
@@ -82,7 +82,7 @@
 
   * [jQuery Tutorial](https://www.w3schools.com/jquery/default.asp){:target="_blank"} - W3Schools
 
-  * [jQuery Tutorial](https://www.tutorialspoint.com/jquery/){:target="_blank"} - TutorialsPoint
+  * [jQuery Tutorial](https://www.tutorialspoint.com/jquery/){:target="_blank"} - TutorialsPoint, [.pdf](/predavanja/literatura/TutorialsPoint jQuery.pdf){:target="_blank"}
 
   * [HTML Canvas Tutorial](https://www.w3schools.com/graphics/canvas_intro.asp){:target="_blank"} - W3Schools
 
@@ -94,11 +94,13 @@
   
   * [Node.js Tutorial](https://www.w3schools.com/nodejs/default.asp){:target="_blank"} - W3Schools
 
-  * [Node.js Tutorial](https://www.tutorialspoint.com/nodejs/index.htm){:target="_blank"} - TutorialsPoint
+  * [Node.js Tutorial](https://www.tutorialspoint.com/nodejs/index.htm){:target="_blank"} - TutorialsPoint, [.pdf](/predavanja/literatura/TutorialsPoint node.js.pdf){:target="_blank"}
 
   * [Express Documentation](https://expressjs.com/){:target="_blank"} - Express
 
-  * [Express Tutorial](https://www.tutorialspoint.com/nodejs/index.htm){:target="_blank"} - TutorialsPoint
+  * [Express Tutorial](https://www.tutorialspoint.com/nodejs/index.htm){:target="_blank"} - TutorialsPoint, [.pdf](/predavanja/literatura/TutorialsPoint ExpressJS.pdf){:target="_blank"}
+
+  * [Web Services Tutorial](http://www.tutorialspoint.com/webservices/){:target="_blank"} - TutorialsPoint
 
 * Књиге и туторијали за NoSQL базе података  
 
@@ -114,17 +116,19 @@
 
   * [Search Engine Optimization Starter Guide](/predavanja/literatura/Google team  - Search Engine Optimization Starter Guide.pdf){:target="_blank"} - Gooogle
 
-  * [SEO Tutorial](http://www.tutorialspoint.com/seo/){:target="_blank"} - TutorialsPoint
+  * [SEO Tutorial](http://www.tutorialspoint.com/seo/){:target="_blank"} - TutorialsPoint, [.pdf](/predavanja/literatura/TutorialsPoint SEO.pdf){:target="_blank"}
   
 * Компоненте JavaScript екосистема
 
   * [JSON Tutorial](https://www.w3schools.com/js/js_json_intro.asp){:target="_blank"} - W3Schools
 
-  * [JSON Tutorial](http://www.tutorialspoint.com/json/){:target="_blank"} - TutorialsPoint
+  * [JSON Tutorial](http://www.tutorialspoint.com/json/){:target="_blank"} - TutorialsPoint, [.pdf](/predavanja/literatura/TutorialsPoint JSON.pdf){:target="_blank"}
 
   * [AJAX JavaScript Tutorial](https://www.w3schools.com/js/js_ajax_intro.asp){:target="_blank"} - W3Schools
 
-  * [AJAX Tutorial](http://www.tutorialspoint.com/ajax/){:target="_blank"} - TutorialsPoint
+  * [AJAX Tutorial](http://www.tutorialspoint.com/ajax/){:target="_blank"} - TutorialsPoint, [.pdf](/predavanja/literatura/TutorialsPoint AJAX.pdf){:target="_blank"}
+
+  * [Web Sockets Tutorial](http://www.tutorialspoint.com/websockets/){:target="_blank"} - TutorialsPoint, [.pdf](/predavanja/literatura/TutorialsPoint Web Sockets.pdf){:target="_blank"}
 
   * JavaScript библиотека [socket.io](https://socket.io/docs/){:target="_blank"}
 
