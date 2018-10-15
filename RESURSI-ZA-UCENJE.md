@@ -4,7 +4,7 @@
 
 Овде су постављене везе према ресурсима за учење на вебу, који могу помоћи при учењу садржаја који се обрађују на курсу **Увод у веб и интернет технологије**.
 
-* Књиге и туторијали за рачунарке мреже и Интернет  
+* Књиге и упутства за рачунарке мреже и Интернет  
 
   * Марић Ф.: [УВИТ - скрипта (стране 1-35)](/predavanja/literatura/Maric F. - Skripta UVIT.pdf){:target="_blank"}
 
@@ -14,7 +14,7 @@
 
   * [HTTP Tutorial](https://www.tutorialspoint.com/http/http_message_examples.htm){:target="_blank"} - TutorialsPoint, [.pdf](/predavanja/literatura/TutorialsPoint HTTP.pdf){:target="_blank"}
 
-* Књиге и туторијали за језике за означавање
+* Књиге и упутства за језике за означавање
 
   * [Brief SGML Tutorial](https://www.w3.org/TR/WD-html40-970708/intro/sgmltut.html){:target="_blank"} - W3C
 
@@ -32,7 +32,7 @@
 
   * Mertz D.:  [XML Matters, Comparing W3C XML Schemas and Document Type Definitions (DTDs)](https://www.ibm.com/developerworks/library/x-matters7/){:target="_blank"} - IBM
 
-* Књиге и туторијали за HTML i CSS
+* Књиге и упутства за HTML i CSS
 
   * Марић Ф.: [УВИТ - скрипта (стране 36-103)](/predavanja/literatura/Maric F. - Skripta UVIT.pdf){:target="_blank"}
 
@@ -56,7 +56,7 @@
 
   * [CSS Tutorial](https://www.tutorialspoint.com/css/){:target="_blank"} - TutorialsPoint, [.pdf](/predavanja/literatura/TutorialsPoint CSS.pdf){:target="_blank"}
 
-* Књиге и туторијали за JavaScript
+* Књиге и упутства за JavaScript
 
   * Марић Ф.: [УВИТ - скрипта (стране 104-125)](/predavanja/literatura/Maric F. - Skripta UVIT.pdf){:target="_blank"}
 
@@ -100,9 +100,9 @@
 
   * [Express Tutorial](https://www.tutorialspoint.com/nodejs/index.htm){:target="_blank"} - TutorialsPoint, [.pdf](/predavanja/literatura/TutorialsPoint ExpressJS.pdf){:target="_blank"}
 
-  * [Web Services Tutorial](http://www.tutorialspoint.com/webservices/){:target="_blank"} - TutorialsPoint
+  * [Web Services Tutorial](http://www.tutorialspoint.com/webservices/){:target="_blank"} - TutorialsPoint, [.pdf](/predavanja/literatura/TutorialsPoint Web Services.pdf){:target="_blank"}
 
-* Књиге и туторијали за NoSQL базе података  
+* Књиге и упутства за NoSQL базе података  
 
   * [NoSQL](/predavanja/literatura/InfoQ team - NoSQL.pdf){:target="_blank"} - InfoQ eMag, May 2013
   
