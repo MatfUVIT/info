@@ -49,7 +49,7 @@
         
     1. Веб сервери
     
-1. Увод у HTML и CSS
+1. Увод у HTML и CSS. Модел кутије.
 
     1. Увод у HTML
 
@@ -96,5 +96,7 @@
         1. Појас елемента
 
         - задатак 3
+	
+	- [Материјали са вежби](/materijali/uvit_vezbe_materijali_svi.7z){:target="_blank"}
 
 [почетна страна](../README.md)
