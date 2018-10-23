@@ -4,13 +4,11 @@
 
 ## Информације о курсу
 
+* **[Важно! Информације о вежбама!](/vezbe/info/README.md)**
+
 * **[Основне информације](/informacije/README.md)**
 
 [comment]: # (* **[Информације о предавањима](/predavanja/info/README.md)**)
-
-* **[Важно! Информације о вежбама!](/vezbe/info/README.md)**
-
-## Настава
 
 * **[Инсталације](/INSTALACIJE.md)**
 
