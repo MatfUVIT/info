@@ -6,6 +6,8 @@
 
 [comment]: # (* **[Информације о предавањима](/predavanja/info/README.md)**)
 
+* **[Информације о вежбама](/vezbe/info/README.md)**
+
 ## Настава
 
 * **План и програм курса [Увод у веб и интернет технологије](/predavanja/info/R130_-_Uvod_u_veb_i_internet_tehnologije.pdf){:target="_blank"}**
