@@ -194,7 +194,7 @@
 
         10. `div`, `span`
 
-        - [Примери](/primeri-html/README.md)
+        - [Примери](./primeri-html/README.md)
 
     1. [CSS](/prezentacije/UVIT04-01-CSS.pdf){:target="_blank"}
 
