@@ -170,7 +170,7 @@
 
             - Доменски језици засновани на XML-у
 
-        1. [Примери](./primeri-sgml-dtd-xml/README.md)
+        1. [Примери](./primeri-sgml-dtd-xml//README.md)
 
     1. [HTML 5](/prezentacije/UVIT03-01-HTML 5.pdf){:target="_blank"}
 

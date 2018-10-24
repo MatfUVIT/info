@@ -1,6 +1,6 @@
 # УВИТ - Примери са предавања - HTML основе
 
- [Примери са предавања](../README.md)
+ [предавања](../README.md)
 
 [Програмски код свих примера који се односе на SGML, DTD i XML](https://github.com/MatfUVIT/UVIT/tree/master/predavanja/primeri-sgml-dtd-xml)
 
@@ -12,4 +12,4 @@
 
 1. XML Schema
 
-[Примери са предавања](../README.md)
+[предавања](../README.md)
