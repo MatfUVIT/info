@@ -8,7 +8,7 @@
 
   * Асистент: **[Ања Букуров](http://poincare.matf.bg.ac.rs/~anja_bukurov/){:target="_blank"}**
 
-  * Асистент: **[Никола Ајзенхамер](http://nikolaajzenhamer.rs/#/){:target="_blank"}**
+  * Асистент: **[Никола Ајзенхамер](http://poincare.matf.bg.ac.rs/~nikola_ajzenhamer/){:target="_blank"}**
 
 * План и програм курса
 
@@ -22,6 +22,6 @@
 
   *[Ања Букуров](http://poincare.matf.bg.ac.rs/~anja_bukurov/){:target="_blank"}*
 
-  *[Никола Ајзенхамер](http://nikolaajzenhamer.rs/#/){:target="_blank"}*
+  *[Никола Ајзенхамер](http://poincare.matf.bg.ac.rs/~nikola_ajzenhamer/){:target="_blank"}*
 
 [почетна страна](../README.md)
