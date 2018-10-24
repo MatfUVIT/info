@@ -6,10 +6,17 @@
     <meta charset="utf-8" />
     <!-- -->
     <style>
-        table,
-        th,
+        table {
+            width: 100%;
+            border: 1px solid brown;
+        }
+
+        th {
+            border: 1px solid cyan;
+        }
+
         td {
-            border: 1px solid black;
+            border: 1px dotted;
         }
     </style>
     <!-- -->
@@ -17,11 +24,11 @@
 
 <body>
 
-    <table style="width:100%">
+    <table>
         <tr>
-            <td>Marko</td>
-            <td>Marković</td>
-            <td>50</td>
+            <th>Marko</th>
+            <th>Marković</th>
+            <th>50</th>
         </tr>
         <tr>
             <td>Miroslava</td>
@@ -35,6 +42,21 @@
         </tr>
     </table>
 
+    <table>
+        <tr>
+            <td colspan="2">2</td>
+            <td>3</td>
+        </tr>
+        <tr>
+            <td rowspan="2">4</td>
+            <td>5</td>
+            <td>6</td>
+        </tr>
+        <tr>
+            <td>7</td>
+            <td>8</td>
+        </tr>
+    </table>
 
 </body>
 

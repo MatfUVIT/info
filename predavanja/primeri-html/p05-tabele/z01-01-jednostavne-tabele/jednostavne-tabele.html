@@ -4,21 +4,21 @@
 <head>
     <title>Jednostavne tabele</title>
     <meta charset="utf-8" />
-      
+
 </head>
 
 <body>
 
     <h2>HTML Tabele</h2>
 
-    <p>HTML tabele počinju sa etiketom table.</p>
-    <p>Vrste u tabeli se označavaju etiketom tr.</p>
-    <p>Podaci u tabeli tj. ćelije tabele se označavaju etiketom td.</p>
+    <p>HTML tabele počinju sa etiketom &lt;table&gt;.</p>
+    <p>Vrste u tabeli se označavaju etiketom &lt;tr&gt;.</p>
+    <p>Podaci u tabeli tj. ćelije tabele se označavaju etiketom &lt;td&gt;.</p>
 
-    <hr>
+    <hr/>
     <h2>Tabela sa jednom vrstom i jednom kolonom:</h2>
 
-    <table>
+    <table border="2">
         <tr>
             <td>Ja sam sam :(</td>
         </tr>
@@ -36,10 +36,11 @@
 
     <hr>
     <h2>Tabela sa tri vrste i tri kolone:</h2>
-    <table>
+    <table border="1" style="color:brown">
+        <caption> Tabela sa tri vrste i tri kolone </caption>
         <tr>
             <td>100</td>
-            <td>200</td>
+            <td style="color:blue">200</td>
             <td>300</td>
         </tr>
         <tr>
@@ -53,7 +54,7 @@
             <td>900</td>
         </tr>
     </table>
-
+    <!---->
     <hr>
 
 </body>
