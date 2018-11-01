@@ -2,13 +2,35 @@
 <html lang="sr">
 
 <head>
-    <title>Tabele sa sakupljenim ivicama</title>
+    <title>Tabela sa naslovom</title>
     <meta charset="utf-8" />
+    <style>
+        table,
+        th,
+        td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+        
+        th,
+        td {
+            padding: 5px;
+        }
+        
+        th {
+            text-align: left;
+        }
+        
+        caption{
+            font-size: x-large;
+        }
+    </style>
 </head>
 
 <body>
 
-    <table>
+    <table style="width:80%">
+        <caption>Rang lista</caption>
         <tr>
             <th>Ime</th>
             <th>Prezime</th>
