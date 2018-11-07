@@ -3,10 +3,10 @@ body {
 }
 
 h1 {
-    color: darkred;
+    color: darkblue;
 }
 
 p {
     background-color: darkgrey;
-    color: darkgreen;
+    color: rgb(7, 63, 7);
 }
