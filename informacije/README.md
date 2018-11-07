@@ -20,9 +20,9 @@
 
 ## Статусне информације
 
- * [Предавања](../predavanja/info){:target="_blank"}
+* [Предавања](../predavanja/info){:target="_blank"}
 
- * [Вежбе](../vezbe/info){:target="_blank"}
+* [Вежбе](../vezbe/info){:target="_blank"}
 
 ## Аутори веб страна курса
 
