@@ -2,26 +2,28 @@
 
 [почетна страна](../README.md)
 
-* Наставници и асистенти  
+## Наставници и асистенти  
 
-  * Наставник: **[проф. др Владимир Филиповић](https://vladofilipovic.github.io/index-en.html){:target="_blank"}**
+* Наставник: **[проф. др Владимир Филиповић](https://vladofilipovic.github.io/index-en.html){:target="_blank"}**
 
-  * Асистент: **[Ања Букуров](http://poincare.matf.bg.ac.rs/~anja_bukurov/){:target="_blank"}**
+* Асистент: **[Ања Букуров](http://poincare.matf.bg.ac.rs/~anja_bukurov/){:target="_blank"}**
 
-  * Асистент: **[Никола Ајзенхамер](http://poincare.matf.bg.ac.rs/~nikola_ajzenhamer/){:target="_blank"}**
+* Асистент: **[Никола Ајзенхамер](http://poincare.matf.bg.ac.rs/~nikola_ajzenhamer/){:target="_blank"}**
 
-* План и програм курса
+## План и програм курса
 
-  * **[Званичан план и програм курса](R130_-_Uvod_u_veb_i_internet_tehnologije.pdf){:target="_blank"}**
+* **[Званичан план и програм курса](R130_-_Uvod_u_veb_i_internet_tehnologije.pdf){:target="_blank"}**
 
-* Термини за консултације у академској 2018/19 години
+## Термини за консултације у академској 2018/19 години
 
-* Аутори веб страна курса
+* проф. др Владимир Филиповић: четвртком у 13 сати, кабинет 7, Јагићева (пожељна најава преко е-поште)
 
-  *[проф. др Владимир Филиповић](https://vladofilipovic.github.io/index-en.html){:target="_blank"}*
+## Аутори веб страна курса
 
-  *[Ања Букуров](http://poincare.matf.bg.ac.rs/~anja_bukurov/){:target="_blank"}*
+*[проф. др Владимир Филиповић](https://vladofilipovic.github.io/index-en.html){:target="_blank"}*
 
-  *[Никола Ајзенхамер](http://poincare.matf.bg.ac.rs/~nikola_ajzenhamer/){:target="_blank"}*
+*[Ања Букуров](http://poincare.matf.bg.ac.rs/~anja_bukurov/){:target="_blank"}*
+
+*[Никола Ајзенхамер](http://poincare.matf.bg.ac.rs/~nikola_ajzenhamer/){:target="_blank"}*
 
 [почетна страна](../README.md)
