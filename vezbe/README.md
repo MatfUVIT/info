@@ -161,6 +161,8 @@
 
         1. Елементи `figure` и `figcaption`.
 
+    - [Материјали са вежби](/materijali/uvit_vezbe_materijali_svi.7z){:target="_blank"}
+
 1. Рад са табелама. Листе. Везе. Псеудокласе.
 
     1. Рад са табелама.
