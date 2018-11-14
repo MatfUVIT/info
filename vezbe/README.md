@@ -22,6 +22,8 @@
     - корисничко име: student
     - лозинка: student
 
+- Упутство за увожење виртуалне машине у Oracle VM VirtualBox: [овде](/materijali/Додавање постојеће виртуалне машине за курс у Oracle VM VirtualBox.pdf){:target="_blank"}
+
 ## Садржај курса
 
 1. [Основни појмови](/prezentacije/UVIT01 - osnovni pojmovi.pdf){:target="_blank"}
@@ -194,6 +196,8 @@
         1. Псеудокласе `link`, `visited`, `hover` и `active`.
 
     1. Још неке псеудокласе и псеудоелементи.
+
+    - [Материјали са вежби](/materijali/uvit_vezbe_materijali_svi.7z){:target="_blank"}
 
 1. Прилагодљиви дизајн на вебу.
 
