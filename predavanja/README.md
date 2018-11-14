@@ -246,7 +246,9 @@
 
             - Атрибути који се односе на плутање (`float`, `clear`)
 
-    1. Програмски језик JavaScript
+    1. Програмски језик JavaScript (/prezentacije/UVIT-05-01-JavaScript.мд){:target="_blank"}
+
+        1. Увод
 
         1. Основни елелемти језика
 
