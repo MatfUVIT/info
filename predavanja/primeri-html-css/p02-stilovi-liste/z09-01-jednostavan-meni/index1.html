@@ -4,13 +4,13 @@
 <head>
     <title>CSS List Menu - Primer 1</title>
     <style>
-        #navcontainer ul {
+        #osnovni-meni ul {
             list-style-type: none;
             margin: 0;
             padding: 0;
         }
         
-        #navcontainer a {
+        #osnovni-meni a {
             color: #FFF;
             background-color: #036;
             display: block;
@@ -23,7 +23,7 @@
             border-bottom: 1px solid #036;
         }
         
-        #navcontainer a:hover {
+        #osnovni-meni a:hover {
             background-color: #369;
             border-top: 1px solid #036;
             border-left: 1px solid #036;
@@ -31,8 +31,8 @@
             border-bottom: 1px solid #fff;
         }
         
-        #navcontainer li {
-            margin: 0 0 .2em 0;
+        #osnovni-meni li {
+            margin: .2em 0 .2em 0;
         }
     </style>
     <meta charset="utf-8" />
@@ -40,16 +40,26 @@
 
 <body>
 
-    <div id="navcontainer">
+    <div id="osnovni-meni">
         <ul>
-            <li><a href="#">Milk</a></li>
-            <li><a href="#">Eggs</a></li>
-            <li id="active"><a href="#">Cheese</a></li>
-            <li><a href="#">Vegetables</a></li>
-            <li><a href="#">Fruit</a></li>
+            <li><a href="#mleko">Mleko</a></li>
+            <li><a href="#">Jaja</a></li>
+            <li id="active"><a href="#">Sir</a></li>
+            <li><a href="#">Povrće</a></li>
+            <li><a href="#voce">Voće</a></li>
         </ul>
     </div>
 
+    <div id ="mleko">
+        <h1>Mleko</h1>
+        <p> Mleko je belo.</p>
+    </div>
+
+    <div id ="voce">
+            <h1>Voće</h1>
+            <p> Voće je zdravo.</p>
+        </div>
+    
 </body>
 
 </html>

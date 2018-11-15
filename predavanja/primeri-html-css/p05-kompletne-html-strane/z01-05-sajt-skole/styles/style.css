@@ -9,7 +9,7 @@
 
       body {
         font-family: Verdana;
-	max-width: 900px;
+	    max-width: 900px;
 	margin-top: 130px;
 	margin-left: auto;
 	margin-right: auto;
@@ -68,7 +68,7 @@
 
       header h1 {
 	  background-image: url("gimnazija.png");
-	  background-repeat: no-repeat;
+	  background-repeat: repeat;
 	  background-size: contain;
 	  padding: 0px 20px;
 	  padding-left: 50px;

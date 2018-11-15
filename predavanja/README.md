@@ -246,11 +246,13 @@
 
             - Атрибути који се односе на плутање (`float`, `clear`)
 
-    1. [Програмски језик JavaScript](/prezentacije/UVIT05-01-JavaScript.md){:target="_blank"}
+    1. [Програмски језик ЈаваСкрипт](/prezentacije/UVIT05-01-JavaScript.md){:target="_blank"}
 
-        1. Увод
+        1. [Карактеристике језика ЈаваСкрипт](/prezentacije/UVIT05-01-JavaScript.md#карактеристике-јеѕика-јаваскрипт){:target="_blank"}
 
         1. Основни елелемти језика
+
+            1. [Бројеви](/prezentacije/UVIT05-01-JavaScript.md#бројеви){:target="_blank"}
 
         1. Извршавање и дебагирање JavaScript кода
 

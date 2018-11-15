@@ -9,7 +9,7 @@
             "type": "node",
             "request": "launch",
             "name": "Launch Program",
-            "program": "${workspaceFolder}/predavanja\\primeri-js\\pog05-01-js-vrednosti-tipovi-operatori\\zad-01-03-niske.js"
+            "program": "${workspaceFolder}/predavanja/primeri-js/p01-js-vrednosti-tipovi-operatori/zad-01-01-brojevi.js"
         }
     ]
 }
