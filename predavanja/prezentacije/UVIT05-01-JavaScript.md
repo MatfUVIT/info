@@ -1,5 +1,7 @@
 # Програмски језик ЈаваСкрипт
 
+## Увод
+
 Програмски језик **ЈаваСкрипт** је један од најпопуларнијих програмских језика на свету. Креиран је пре двадесетак година и прошао је дугачак пут од својих скромних почетака.
 
 Програмски језик ЈаваСкрипт је први и једини скрипт-језик који директно подржавају прегедачи веба (web browsers).
@@ -18,19 +20,38 @@
 
 Програмски јетик ЈаваСкрипт има следеће карактеристике:
 
-- High level: It provides abstractions that allow you to ignore the details of the machine where it’s running. It manages memory automatically with a garbage collector, so you can focus on the code instead of managing memory locations, and provides many constructs which allow you to deal with highly powerful variables and objects.
+- **Језик вискокг нивоа**: Обезбеђује апстракције које програмеру дозвољавају да игнорише детаље рачунара на коме се скрипт извршава. Даље, управљање меморијом је аутоматизовано коришчењем сакупљача отпадака (garbage collector), па се програмер може концентрисати на сам програмски код, уместо да се брине о мемориским локацијама. Последње, али не најмање важно је то што језик обезбеђује бројне конструкције које програмеру омогућавају да рукује моћним променљивима, објектима и функцијама.
 
-- Dynamic: As opposed to static programming languages, a dynamic language executes at runtime many of the things that a static language does at compile time. This has pros and cons, and it gives us powerful features like dynamic typing, late binding, reflection, functional programming, object runtime alteration, closures and much more.
+- **Динамичан**: Програми написани на динамичким програмским језицима че приликом извршавања реализовати многе ствари које програми написани на статичким програмским језицима реализују током превођења. такав приступ има бројне предности и мане, а њиме се обезбеђују и оћне каракеритике као што су: димамичкa типизaција (dynamic typing), касно повезивање (late binding), рефлексија, функционално програмирање, промена структуре објекта током извршавања, затворења итд..
 
-- Dynamically typed: A variable does not enforce a type. You can reassign any type to a variable, for example assigning an integer to a variable that holds a string.
+- **Динамички типизиран**: Променљива не утиче на тип. Програмер може доделити променљивој вредност ма ког типа, нпр. променљивој која је претходно садржавала целобројну вредност се може доделити ниска знакова (string).
 
-- Weakly typed: As opposed to strong typing, weakly (or loosely) typed languages do not enforce the type of an object. This allows more flexibility but denies us type safety and type checking (something that TypeScript and Flow aim to improve)
+- **Слабо типизиран**: За разлику од јако типизиранјих језика, овде тип не утиче на објекат. Дакле, овде објекти нису строго типизирани, чиме је програмеру допуштена већа флексибилност, али нема сигурности типа нити његове провере (то се покушава поправити у језицима TypeScript и Flow).
 
-- Interpreted: It’s commonly known as an interpreted language, which means that it does not need a compilation stage before a program can run, as opposed to C, Java or Go for example. In practice, browsers do compile JavaScript before executing it, for performance reasons, but this is transparent to you as there is no additional step involved.
+- **Интерпретиран**: Ово значи да је непотребна фаза превођења програма пре његовог извршавања, као што је то нпр. случај са програмским језиком C. У пракси, прегледачи веба обично (због бољих перформанси) преведу у међукод ЈаваСкрипт пре његовог извршења, али ово превођење је транспарентно и не захтева додатне кораке, тј. додатне акције корисника.
 
-- Multi-paradigm: The language does not enforce any particular programming paradigm, unlike Java for example which forces the use of object-oriented programming, or C that forces imperative programming. You can write JavaScript using an object-oriented paradigm, using prototypes and the new (as of ES6) classes syntax. You can write JavaScript in functional programming style, with its first-class functions, or even in an imperative style (C-like).
+- **Подржава више парадигми**: Сам језик не форсира једну фиксирану парадигму. Програмер може писати ЈаваСкрипт и користити објектно-оријентисану парадигму - и то на два начина: преко прототипа и преко класа (почев од верзије ES6). Даље, програмер може писати ЈаваСкрипт програме коришћењем функционалног програмског стила (где су функције "грађани првог реда"), или коришћењем императивне парадгигме (као што је случај у програмском језику C).
 
-In case you’re wondering, JavaScript has nothing to do with Java, it’s an unfortunate name choice but we have to live with it.
+Напомена: осим сличности имена, језик ЈаваСкрипт нема скоро ништа заједничко са језиком Јава, само је сплет околности је довео до такве ситуације.
+
+## Стилови кодирања
+
+JavaScript Coding Style is the set of conventions used when using JavaScript.
+
+Coding style is an agreement with yourself and your team, to keep consistency on a project.
+
+An if you don’t have a team, it’s an agreement with yourself, to always keep your code up to your standards.
+
+Having fixed rules on your code writing format helps a lot in order to have more readable and manageable code.
+
+Popular Style Guides
+There are a quite a few of them around, here are the 2 most common ones in the JavaScript world:
+
+- [The Google JavaScript Style Guide](https://google.github.io/styleguide/jsguide.html){:target="_blank"}
+
+- [The AirBnb JavaScript Style Guide](https://github.com/airbnb/javascript){:target="_blank"}
+
+It’s up to you to follow one of those, or create your own style guide.
 
 ## Бројеви
 
