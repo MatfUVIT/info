@@ -1,0 +1,31 @@
+<html>
+
+<head>
+    <title>AJAX demo</title>
+    <script type="text/javascript">
+        function loadXMLDoc() {
+            xmlhttp = new XMLHttpRequest();
+            xmlhttp.onreadystatechange = function() {
+                if (xmlhttp.readyState == 4 &&
+                    xmlhttp.status == 200) {
+                    document.getElementById("myDiv").innerHTML = xmlhttp.responseText;
+                    console.log("Spoljašnji sadržaj je uspešno učitan!");
+                } else
+                if (xmlhttp.status != 200 && xmlhttp.status != 0)
+                    console.log("Greška: " + xmlhttp.status + ": " + xmlhttp.statusText);
+            }
+            xmlhttp.open("GET", "ajax.txt", true);
+            xmlhttp.send();
+        }
+    </script>
+</head>
+
+<body>
+
+    <h2>Odgovor dobijen putem AJAX-a</h2>
+    <div id="myDiv"></div>
+    <button type="button" onclick="loadXMLDoc()"> Pošalji AJAX zahtev</button>
+
+</body>
+
+</html>

@@ -1,0 +1,1 @@
+Ako se ovo pojavi, to će znaćiti da je AJAX zahtev uspešno obrađen korišćenjem jquery

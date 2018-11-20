@@ -1,0 +1,2 @@
+Ako se ovo pojavi, to će znaciti da je AJAX zahtev uspešno obrađen 
+Trla baba lan
