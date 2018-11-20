@@ -4,7 +4,7 @@
 
 **[Важно! Термин надокнаде предавања](/predavanja/info/README.md)**
 
-**[Важно! Термин првог теста](/usmeni-ispit/info/README.md)**
+**[Важно! Термин првог теста](/usmeni-ispiti/info/README.md)**
 
 [comment]: # (* **[Информације о вежбама](/vezbe/info/README.md)**)
 
