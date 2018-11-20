@@ -119,7 +119,7 @@
 
         - задатак 3
 	
-	- [Материјали са вежби](/materijali/uvit_vezbe_materijali_svi.7z){:target="_blank"}
+	- [Материјали са вежби](/materijali/uvit_vezbe_materijali_svi.zip){:target="_blank"}
 
 1. Позиционирање елемената.
 
@@ -141,7 +141,7 @@
 
         1. Информативно о својствима `float`, `clear` и `overflow`
 
-    - [Материјали са вежби](/materijali/uvit_vezbe_materijali_svi.7z){:target="_blank"}
+    - [Материјали са вежби](/materijali/uvit_vezbe_materijali_svi.zip){:target="_blank"}
 
 1. Управљање позадином елемената. Рад са сликама. 
 
@@ -163,7 +163,7 @@
 
         1. Елементи `figure` и `figcaption`.
 
-    - [Материјали са вежби](/materijali/uvit_vezbe_materijali_svi.7z){:target="_blank"}
+    - [Материјали са вежби](/materijali/uvit_vezbe_materijali_svi.zip){:target="_blank"}
 
 1. Рад са табелама. Листе. Везе. Псеудокласе.
 
@@ -197,7 +197,7 @@
 
     1. Још неке псеудокласе и псеудоелементи.
 
-    - [Материјали са вежби](/materijali/uvit_vezbe_materijali_svi.7z){:target="_blank"}
+    - [Материјали са вежби](/materijali/uvit_vezbe_materijali_svi.zip){:target="_blank"}
 
 1. Прилагодљиви дизајн на вебу.
 
@@ -208,5 +208,7 @@
     1. Позиционирање. Медија упити.
 
     1. Окружење Bootstrap. Систем мреже. Маргине. Наслови.
+	
+	- [Материјали са вежби](/materijali/uvit_vezbe_materijali_svi.zip){:target="_blank"}
 
 [почетна страна](../README.md)
