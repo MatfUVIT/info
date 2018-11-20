@@ -64,8 +64,10 @@
 
   * Тодоровић М.: [JavaScript електронски курс](http://www.cleversolutions.rs/javascript/index.html){:target="_blank"}
 
-  * [The Modern JavaScript Tutorial - The JavaScript language](https://javascript.info/intro){:target="_blank"} - JavaScript.info
+  * [Complete JavaScript Handbook](https://medium.freecodecamp.org/the-complete-javascript-handbook-f26b2c71719c){:target="_blank"} - freeCodeCamp
   
+  * [The Modern JavaScript Tutorial - The JavaScript language](https://javascript.info/intro){:target="_blank"} - JavaScript.info
+
   * [JavaScript Tutorial](https://www.w3schools.com/js/default.asp){:target="_blank"} - W3Schools
 
   * [JavaScript Tutorial](https://www.tutorialspoint.com/javascript/index.htm){:target="_blank"} - TutorialsPoint, [.pdf](/predavanja/literatura/TutorialsPoint JavaScript.pdf){:target="_blank"}

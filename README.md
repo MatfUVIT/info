@@ -4,7 +4,11 @@
 
 ## Информације о курсу
 
-[comment]: # (* **[Информације о предавањима](/predavanja/info/README.md)**)
+**[Важно! Термин надокнаде предавања](/predavanja/info/README.md)**
+
+**[Важно! Термин првог теста](/usmeni-ispit/info/README.md)**
+
+[comment]: # (* **[Информације о вежбама](/vezbe/info/README.md)**)
 
 [comment]: # (* **[Информације о вежбама](/vezbe/info/README.md)**)
 
