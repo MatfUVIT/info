@@ -235,4 +235,6 @@
 
     1. Придруживање ослушкивача догађаја елементима.
 
+    - [Материјали са вежби](/materijali/uvit_vezbe_materijali_svi.zip){:target="_blank"}
+
 [почетна страна](../README.md)
