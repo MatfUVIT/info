@@ -95,43 +95,41 @@
 
 #### Логички тип
 
-JavaScript defines two reserved words for booleans: true and false. Many comparision operations == === < > (and so on) return either one or the other.
+Податак логичког типа може имати тачно једну од следеће две вредности: тачно (записује са  са `true`) и нетачно (тј.) `false`). Велики број оператора поређења: `==`, `===`, `<>` итд. као резулата враћу логичку вредност.
 
-if, while statements and other control structures use booleans to determine the flow of the program.
+Наредбе гранања (нпр `if` наредба) и наредбе циклуса (као што је `while` наредба) користе логичке вредности да би одредиле даљи ток извршавања програма.
 
-They don’t just accept true or false, but also accept truthy and falsy values.
+Контролне структуре за гранање и за циклусе нису превише стоге: оне поред чисто логичких података (тј. вредности `true` или  `false`), прихватају и податке других типова који се тумаче (интерпретирају) као тачни или као нетачни.
 
-Falsy values, values interpreted as false, are
+Вредности које се интерпретирају као нетачне су: `0`, `-0`, `NaN`, `undefined`, `null`, `''` тј. `""`. Све остале вредности се тумаче као тачне.
 
-0
--0
-NaN
-undefined
-null
-'' //empty string
-All the rest is considered a truthy value.
+#### Специјални тип `null`
 
-null
-null is a special value that indicates the absence of a value.
+Вредност `null` представља специјану вредност која указује на непостојање (одсуство) вреднпости.
 
-It’s a common concept in other languages as well, can be known as nil or None in Python for example.
+Сличан концепт постоји и у другим програмским језицима, нпр. `null` у језику C#, као и `nil` или `None` у језику Пајтон.
 
-undefined
-undefined indicates that a variable has not been initialized and the value is absent.
+#### Спцеијални тип `undefined`
 
-It’s commonly returned by functions with no return value. When a function accepts a parameter but that's not set by the caller, it's undefined.
+Вредност `undefined` указује да променљива још није иницијализована или да недостаје њена вредност.
 
-To detect if a value is undefined, you use the construct:
+Уобичајено је да `undefined` буде повратна вредност функције која не враће вредност. Поред тога, ако је приликом позива функције број аргумената у позиву мањи од броја параметара, тада ће на почетку извршавања функције вредност параметара којима није прослеђен аргумент бити `undefined`.
 
-typeof variable === 'undefined'
-Object types
-Anything that’s not a primitive type is an object type.
+Провера да ли је дата променљива `undefined` се врши тако што се тип променљиве (добијен применом `typeof` оператора) упореди без конверзије типова (тј, применом оператора  `===`) са типом `undefined`.
 
-Functions, arrays and what we call objects are object types. They are special on their own, but they inherit many properties of objects, like having properties and also having methods that can act on those properties.
+### Објектни типови
+
+Све што није примитивни тип, то представља објектни тип.
+
+Функције, низови и објекти су примери објектних типова. Свако од њих има своје специфичне карактеристике, али они истовремену наслеђују својства објектног типа - сви они имају особине (properties) и методе (methods) који могу деловати над њиховима особинама.
+
+Због важности [функција](#функције-и-затворења){:target="_blank"}, [низова](#низови){:target="_blank"} и [објеката](#објекти){:target="_blank"}, они ће бити обрађени касније, у посебним поглављима.
 
 ### [Програмски код примера](https://github.com/MatfUVIT/UVIT/tree/master/predavanja/primeri-js/p01-js-vrednosti-tipovi-operatori){:target="_blank"}
 
 ## Изрази
+
+Изрази су делови програмског кода који могу бити евалуирани и чија се вредност може израчунати. Постоје различите категорије израза.
 
 ### Примарни изрази
 
@@ -147,7 +145,7 @@ Functions, arrays and what we call objects are object types. They are special on
 #### Шаблони за ниске
 
 Introduced in ES2015, template strings are string literals that allow a more powerful way to define strings.
-emplate literals are enclosed by the back-tick (` `)  (grave accent) character instead of double or single quotes. Template literals can contain placeholders. These are indicated by the dollar sign and curly braces (${expression}). The expressions in the placeholders and the text between them get passed to a function. The default function just concatenates the parts into a single string. If there is an expression preceding the template literal (tag here), this is called a "tagged template". In that case, the tag expression (usually a function) gets called with the processed template literal, which you can then manipulate before outputting. To escape a back-tick in a template literal, put a backslash \ before the back-tick.
+emplate literals are enclosed by the back-tick (знак \`)  (grave accent) character instead of double or single quotes. Template literals can contain placeholders. These are indicated by the dollar sign and curly braces (${expression}). The expressions in the placeholders and the text between them get passed to a function. The default function just concatenates the parts into a single string. If there is an expression preceding the template literal (tag here), this is called a "tagged template". In that case, the tag expression (usually a function) gets called with the processed template literal, which you can then manipulate before outputting. To escape a back-tick in a template literal, put a backslash \ before the back-tick.
 
 Пример: 
 \`a string\`
@@ -330,10 +328,10 @@ ${something}`
 
 - Декларације променљивих: увек треба декларисти променљиве, како би се на тај начин избегло "загађивање" стварањем глобалних објеката. При декларисању проеменљивих не користити `var`. Препоручује се коришћењњ `const` за декларацију променљиве, а `let` трба користити само у случају када ће променљивој бити мењана вредност после инцијален доделе.
 
-- Beline: белине треба паметно користити ради повећања читљивости програмског кода. На пример, поставити размак иза кључе речи иза које следе отворена заграда; поставити размак пре и после бинарних операција (+ - * /); после сваке од секција унутар наредбе `for`; после сваког знака тачка-зарез (тј. знака ;); после сваког зареза (тј. знака ,), и сл.  
+- Beline: белине треба паметно користити ради повећања читљивости програмског кода. На пример, поставити размак иза кључне речи иза које следе отворена заграда; поставити размак пре и после бинарних операција (`+`, `-`, `*`, `/`); после сваке од секција унутар наредбе `for`; после сваког знака тачка-зарез (тј. знака `;`); после сваког зареза (тј. знака `,`), и сл.  
 
 - Знаци за крај линије: убацити празне линије како би се раздвојиле секвенце логички повезаних операција.
 
-- Апострофи и наводници: апостроф (тј. знак ') треба да има приоритет у односу на наводник (тј. знак "). Наиме, наводници су уобичајени код HTML атрибута, па коришљење апостофа помаже да се олакшају проблеми при раду са нискама које садрже HTML описе.
+- Апострофи и наводници: апостроф (тј. знак `'`) треба да има приоритет у односу на наводник (тј. знак `"`). Наиме, наводници су уобичајени код HTML атрибута, па коришљење апостофа помаже да се олакшају проблеми при раду са нискама које садрже HTML описе.
 
 **Напомена.** Ако радни оквир који се користи или већ усвојени стандард кодирањњ садржи другачуја правила, онда се треба њима прилагодити. Један од популарних алата који олакшава сређивање и  форматирање програмског кода је [Prettier](https://prettier.io/){:target="_blank"}.
