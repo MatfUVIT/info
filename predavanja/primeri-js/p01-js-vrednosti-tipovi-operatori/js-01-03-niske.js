@@ -1,17 +1,14 @@
-// zapis niske
-console.log(" Trla baba lan, da joj prođe dan ");
+/* запис ниске */
+" Trla baba lan, da joj prođe dan "
 
-// alternativni zapis niske
-console.log(' Trla baba lan, da joj prođe dan ');
+/* алтернативни запис ниске */
+' Trla baba lan, da joj prođe dan '
 
-// niska koja sadrži znak za kraj linije
-console.log(" Trla baba lan,\n da joj prođe dan ");
+/* ниска која садржи знак за крај линије */
+" Trla baba lan,\n da joj prođe dan "
 
-// niska koja sadrži sekvencu znakova "\n"
-console.log(" Trla baba lan,\"\\n\" da joj prođe dan ");
+/* ниска која садржи секвенцу знакова "\n" */
+" Trla baba lan,\"\\n\" da joj prođe dan "
 
-// niska koja sadrži sekvencu znakova "\n"
-console.log(' Trla baba lan,"\\n" da joj prođe dan ');
-
-// konkatenacija ili spajanje niski
-console.log(" Trla baba lan" + ' \n da' + " joj prođe dan ");
+/* ниска која садржи секвенцу знакова "\n" */
+' Trla baba lan,"\\n" da joj prođe dan '

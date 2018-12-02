@@ -5,7 +5,7 @@
 
 ## Увод
 
-Материјал курса који се однси на јазик ЈаваСкрипт је иyложен уз претпоставку да је слушалац овладао основним и напредним концептима програмирања у програмском језику C. Ако то није случај, слушалац се упућује на обимнију и једноставнију [литературу](../RESURSI-ZA-UCENJE.md#књиге-и-упутства-за-јаваскрипт){:target="_blank"}
+Материјал курса који се однси на јазик ЈаваСкрипт је иyложен уз претпоставку да је слушалац овладао основним и напредним концептима програмирања у програмском језику C. Ако то није случај, слушалац се упућује на обимнију и једноставнију [литературу](../RESURSI-ZA-UCENJE.md#књиге-и-упутства-за-јаваскрипт){:target="_blank"}.
 
 Програмски језик **ЈаваСкрипт** је један од најпопуларнијих програмских језика на свету. Креиран је пре двадесетак година и прошао је дугачак пут од својих скромних почетака.
 
@@ -39,20 +39,118 @@
 
 **Напомена.** Осим сличности имена, језик ЈаваСкрипт нема скоро ништа заједничко са језиком Јава, само је сплет околности је довео до такве ситуације.
 
-### Верзије језика ЈаваСкрипт
-
-#### Актуелна ECMAScript верзија
-
-#### Динамика појаве нових верзија
-
-#### Шта је то TC39
-
 ## Типови и вредности
 
-### Бројевне вредности
+Информација да језик јаваСкрипт нема типова није тачна. Наиме, једној променљивој се могу доделити вредности различитих типова, али вредности које се додљују имају сvој тип.
 
-Пример (запис бројева):
+[Типови](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures){:target="_blank"} у ЈаваСкрипту се деле у две основне групе:
+
+- Примитивни типови
+
+- Објектни типови
+
+### Примитивни типови
+
+Као што има само име каже, примитивни типови су најпростији. Вредности примитивног типа су немутирајуће (дакле, које се не могу мењати).
+
+Примитивни типови су:
+
+- Бројевни типови
+
+- Ниска тип (String)
+
+- Логички тип (Boolean)
+
+као и два специјална типа:
+
+- `null`
+
+- `undefined`
+
+**Напомена.** За разлику од програмског језика C, где је била допуштена измена садржаја ниске, у језику ЈаваСкрипт ниске су немутирајуће.
+
+Вредности примитивног типа се у литератури често значавају појмом "примитивне вредности".
+
+Сада ћемо се детаљније позабавити примитвним вредностима различитих типова.
+
+#### Бројеви
+
+Ако се посматра интерна репрезентација бројева у језику ЈаваСкрипт, Internally, могло би се рећи да постоји један тип за бројеве, тј. да је сваки број у ствари број у покретном зарезу.
+
+Бројевни литерал је број записан у програмском тј. изворном коду - у зависности од тога како је записан, то може бити целобројни литерал или литерал који представља број у покретном зарезу.
+
+Пример (бројевни литерали, тј. записи целих бројева и бројева у покретном зарезу):
 <script src="https://gist.github.com/vladofilipovic/407dc62f463fb74f09f984f9220b9795.js"></script>
+
+#### Ниске
+
+Ниска тип представља секвенцу знакова. У изворном коду она се дефинише помоћу ниска-литерала, који је ограничен апострофима или наводницима.
+
+Пример (записи ниски):
+<script src="https://gist.github.com/vladofilipovic/2503e9d2952e44c53a985f5aaffcec56.js"></script>
+
+'A string'
+"Another string"
+Strings can span across multiple lines by using the backslash
+
+"A \
+string"
+A string can contain escape sequences that can be interpreted when the string is printed, like \n to create a new line. The backslash is also useful when you need to enter for example a quote in a string enclosed in quotes, to prevent the char to be interpreted as a closing quote:
+
+'I\'m a developer'
+Strings can be joined using the + operator:
+
+"A " + "string"
+Template strings
+Introduced in ES2015, template strings are string literals that allow a more powerful way to define strings.
+
+`a string`
+You can perform string substitution, embedding the result of any JavaScript expression:
+
+`a string with ${something}`
+`a string with ${something+somethingElse}`
+`a string with ${obj.something()}`
+You can have multiline strings easily:
+
+`a string
+with
+${something}`
+
+Booleans
+
+JavaScript defines two reserved words for booleans: true and false. Many comparision operations == === < > (and so on) return either one or the other.
+
+if, while statements and other control structures use booleans to determine the flow of the program.
+
+They don’t just accept true or false, but also accept truthy and falsy values.
+
+Falsy values, values interpreted as false, are
+
+0
+-0
+NaN
+undefined
+null
+'' //empty string
+All the rest is considered a truthy value.
+
+null
+null is a special value that indicates the absence of a value.
+
+It’s a common concept in other languages as well, can be known as nil or None in Python for example.
+
+undefined
+undefined indicates that a variable has not been initialized and the value is absent.
+
+It’s commonly returned by functions with no return value. When a function accepts a parameter but that's not set by the caller, it's undefined.
+
+To detect if a value is undefined, you use the construct:
+
+typeof variable === 'undefined'
+Object types
+Anything that’s not a primitive type is an object type.
+
+Functions, arrays and what we call objects are object types. They are special on their own, but they inherit many properties of objects, like having properties and also having methods that can act on those properties.
 
 ## Изрази
 
@@ -169,16 +267,21 @@
 
 ### Циклуси и опсези важења
 
-
 ## Модули
 
 ### ES модули
 
 ### CommonJS
 
-## Карактеристике појединих верзија језика ЈаваСкрипт
-
 ## Стриктни мод
+
+## Верзије језика ЈаваСкрипт
+
+### Актуелна ECMAScript верзија
+
+### Динамика појаве нових верзија
+
+### Шта је то TC39
 
 ## Стилови кодирања
 
