@@ -86,32 +86,14 @@
 
 Ниска тип представља секвенцу знакова. У изворном коду она се дефинише помоћу ниска-литерала, који је ограничен апострофима или наводницима.
 
+Ниска може садржавати и тзв. ескејп-секвенцу која се интерпретира приликом приказа ниске - нпр. ескејп-секвенца \n представља знак ра крај линије. Исто као и у програмском језику C, скејп-секвенце починњу обрнутим слешом, тј. знаком \ . Ове секвенце су корисне и када наводник треба да се нађе у оквиру ниске коју ограничавају наводници, или када апостроф треба да се нађе у оквиру ниске коју ограничавају апострофи.
+
 Пример (записи ниски):
 <script src="https://gist.github.com/vladofilipovic/2503e9d2952e44c53a985f5aaffcec56.js"></script>
 
+Новији начин записа ниски, где се као огранићење користи обрнути апостороф (тј. знак \` ), назван [шаблон за ниску](#шаблони-за-ниске){:target="_blank"} је описан у секцији која описује изразе.
 
-A string can contain escape sequences that can be interpreted when the string is printed, like \n to create a new line. The backslash is also useful when you need to enter for example a quote in a string enclosed in quotes, to prevent the char to be interpreted as a closing quote:
-
-'I\'m a developer'
-Strings can be joined using the + operator:
-
-"A " + "string"
-Template strings
-Introduced in ES2015, template strings are string literals that allow a more powerful way to define strings.
-
-`a string`
-You can perform string substitution, embedding the result of any JavaScript expression:
-
-`a string with ${something}`
-`a string with ${something+somethingElse}`
-`a string with ${obj.something()}`
-You can have multiline strings easily:
-
-`a string
-with
-${something}`
-
-Booleans
+#### Логички тип
 
 JavaScript defines two reserved words for booleans: true and false. Many comparision operations == === < > (and so on) return either one or the other.
 
@@ -157,6 +139,28 @@ Functions, arrays and what we call objects are object types. They are special on
 <script src="https://gist.github.com/vladofilipovic/e99c66c6dda94f9233b5755b3ae6c750.js"></script>
 
 ### Логички изрази
+
+### Изрази са нискама
+
+#### Шаблони за ниске
+
+Introduced in ES2015, template strings are string literals that allow a more powerful way to define strings.
+emplate literals are enclosed by the back-tick (` `)  (grave accent) character instead of double or single quotes. Template literals can contain placeholders. These are indicated by the dollar sign and curly braces (${expression}). The expressions in the placeholders and the text between them get passed to a function. The default function just concatenates the parts into a single string. If there is an expression preceding the template literal (tag here), this is called a "tagged template". In that case, the tag expression (usually a function) gets called with the processed template literal, which you can then manipulate before outputting. To escape a back-tick in a template literal, put a backslash \ before the back-tick.
+
+Пример: 
+\`a string\`
+You can perform string substitution, embedding the result of any JavaScript expression:
+
+\`a string with ${something}``
+`a string with ${something+somethingElse}`
+`a string with ${obj.something()}`
+
+You can have multiline strings easily:
+
+``a string
+with
+${something}`
+
 
 ## Структура ЈаваСкрипт програма
 

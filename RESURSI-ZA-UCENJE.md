@@ -62,6 +62,8 @@
 
 * Haverbeke: [Eloquent JavaScript](/predavanja/literatura/Haverbeke М. - Eloquent_JavaScript, 3rd Ed.pdf){:target="_blank"}, 3rd Edition, [веб сајт](https://eloquentjavascript.net/){:target="_blank"}
 
+* [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript){:target="_blank"} - Mozzila Developer Network (MDN)
+
 * Тодоровић М.: [JavaScript електронски курс](http://www.cleversolutions.rs/javascript/index.html){:target="_blank"}
 
 * [Complete JavaScript Handbook](https://medium.freecodecamp.org/the-complete-javascript-handbook-f26b2c71719c){:target="_blank"} - freeCodeCamp
@@ -75,7 +77,7 @@
 ## Књиге и упуства за ЈаваСкрипт процесирање на страни клијента
 
 * [The Modern JavaScript Tutorial - Browser](https://javascript.info/browser-environment){:target="_blank"} - JavaScript.info
-  
+
 * [XML DOM Tutorial](https://www.tutorialspoint.com/dom/index.htm){:target="_blank"} - TutorialsPoint
 
 * [JavaScript HTML DOM Tutorial](https://www.w3schools.com/js/js_htmldom.asp){:target="_blank"} - W3Schools
