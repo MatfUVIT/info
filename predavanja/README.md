@@ -248,11 +248,11 @@
 
     1. [Програмски језик ЈаваСкрипт](JavaScript-Programski-Jezik.md){:target="_blank"}
 
-        1. [Карактеристике језика ЈаваСкрипт](JavaScript-Programski-Jezik.md#карактеристике-јеѕика-јаваскрипт){:target="_blank"}
+        1. [Карактеристике језика ЈаваСкрипт](JavaScript-Programski-Jezik.md#карактеристике-језика-јаваскрипт){:target="_blank"}
 
-        1. Основни елементи језика
+        1. [Типови и вредности](JavaScript-Programski-Jezik.md#типови-и-вредности){:target="_blank"}
 
-            1. [Бројеви](JavaScript.md#бројеви){:target="_blank"}
+            1. [Примитивни типови](JavaScript-Programski-Jezik.md#примитивни-типови){:target="_blank"}
 
         1. Извршавање и дебагирање JavaScript кода
 
