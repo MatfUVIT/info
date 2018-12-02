@@ -89,12 +89,7 @@
 Пример (записи ниски):
 <script src="https://gist.github.com/vladofilipovic/2503e9d2952e44c53a985f5aaffcec56.js"></script>
 
-'A string'
-"Another string"
-Strings can span across multiple lines by using the backslash
 
-"A \
-string"
 A string can contain escape sequences that can be interpreted when the string is printed, like \n to create a new line. The backslash is also useful when you need to enter for example a quote in a string enclosed in quotes, to prevent the char to be interpreted as a closing quote:
 
 'I\'m a developer'
