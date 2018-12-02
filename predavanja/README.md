@@ -252,7 +252,7 @@
 
         1. Основни елементи језика
 
-            1. [Бројеви](JavaScript-Programski-Jezik.md#бројеви){:target="_blank"}
+            1. [Бројеви](JavaScript.md#бројеви){:target="_blank"}
 
         1. Извршавање и дебагирање JavaScript кода
 
@@ -271,6 +271,8 @@
             - JavaScript објектна нотација  - JSON
 
         1. Функционални аспекти JavaScript-а
+
+        1. [Стилови кодирања у језику ЈаваСкрипт](JavaScript-Programski-Jezik.md#стилови-кодирања){:target="_blank"}
 
     1. JavaScript за програмирање на клијентској страни
 
