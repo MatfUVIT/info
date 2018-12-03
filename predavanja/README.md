@@ -170,7 +170,7 @@
 
             - Доменски језици засновани на XML-у
 
-        1. [Примери](./primeri-sgml-dtd-xml//README.md)
+        - [Примери](https://github.com/MatfUVIT/UVIT/tree/master/predavanja/primeri-sgml-dtd-xml){:target="_blank"}
 
     1. [HTML 5](/prezentacije/UVIT03-01-HTML 5.pdf){:target="_blank"}
 
@@ -194,7 +194,7 @@
 
         10. `div`, `span`
 
-        - [Примери](./primeri-html/README.md)
+        - [Примери](https://github.com/MatfUVIT/UVIT/tree/master/predavanja/primeri-html){:target="_blank"}
 
     1. [CSS](/prezentacije/UVIT04-01-CSS.pdf){:target="_blank"}
 
@@ -246,6 +246,8 @@
 
             - Атрибути који се односе на плутање (`float`, `clear`)
 
+        - [Примери](https://github.com/MatfUVIT/UVIT/tree/master/predavanja/primeri-html-css){:target="_blank"}
+
     1. [Програмски језик ЈаваСкрипт](JavaScript-Programski-Jezik.md){:target="_blank"}
 
         1. [Карактеристике језика ЈаваСкрипт](JavaScript-Programski-Jezik.md#карактеристике-језика-јаваскрипт){:target="_blank"}
@@ -274,7 +276,9 @@
 
         1. [Стилови кодирања у језику ЈаваСкрипт](JavaScript-Programski-Jezik.md#стилови-кодирања){:target="_blank"}
 
-    1. [ЈаваСкрипт за програмирање на клијентској страни](JavaScript-i-Pregledac-Veba.md){:target="_blank"} 
+        - [Примери](https://github.com/MatfUVIT/UVIT/tree/master/predavanja/primeri-js){:target="_blank"}
+
+    1. [ЈаваСкрипт за програмирање на клијентској страни](JavaScript-i-Pregledac-Veba.md){:target="_blank"}
 
         1. Дебагирање клијентског JavaScript кода уз помоћ веб прегледача
 
@@ -282,13 +286,19 @@
 
         1. јQuery
 
-    1. ЈаваСкрипт за програмирање на серверској страни
+        - [Примери](https://github.com/MatfUVIT/UVIT/tree/master/predavanja/primeri-js-klijent){:target="_blank"}
 
-        1. Карактеристике веб сервиса заснвованих на JavaScript-у
+    1. ЈаваСкрипт за програмирање на серверској страни
 
         1. Менаџер пакета `npm`
 
+        1. Мрежне апликације
+
+        1. Веб апликације
+
         1. Оквир за веб развој `express.js`
+
+        - [Примери](https://github.com/MatfUVIT/UVIT/tree/master/predavanja/primeri-js-server){:target="_blank"}
 
     1. NoSQL база података  
 
@@ -296,12 +306,18 @@
 
         1. NoSQL база података MongoDB
 
-    1. Програмирање веб апликација  
+        - [Примери](https://github.com/MatfUVIT/UVIT/tree/master/predavanja/primeri-mongodb){:target="_blank"}
+
+    1. Напредне серверске ЈаваСкрипт апликације  
 
         1. Веб апликације које користе базе података
+
+        1. Веб сервиси
 
         1. AJAX захтеви код веб апликација  
 
         1. Оптимизација рада претраживача (SEO)
+
+        - [Примери](https://github.com/MatfUVIT/UVIT/tree/master/predavanja/primeri-js-server-mongodb){:target="_blank"}
 
 [почетна страна](../README.md)
