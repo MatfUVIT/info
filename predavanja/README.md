@@ -1,6 +1,6 @@
 # УВИТ - Предавања
 
-[почетна страна](../README.md)
+[УВИТ](../README.md)
 
 Овде су постављена предавања из предмета **Увод у веб и интернет технологије**.
 
@@ -320,4 +320,4 @@
 
         - [Примери](https://github.com/MatfUVIT/UVIT/tree/master/predavanja/primeri-js-server-mongodb){:target="_blank"}
 
-[почетна страна](../README.md)
+[УВИТ](../README.md)
