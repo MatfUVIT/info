@@ -6,10 +6,9 @@
 
 ---
 
-[Обавештења](info/README.md)
-
 [Задаци](zadaci/README.md)
 
+[Решења](resenja/README.md)
 
 ---
 
