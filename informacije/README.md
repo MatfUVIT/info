@@ -28,6 +28,12 @@
 
 * [Вежбе](../vezbe/info){:target="_blank"}
 
+* [Колоквијуми](../kolokvijumi/info){:target="_blank"}
+
+* [Писмени испити](../pismeni-ispiti/info){:target="_blank"}
+
+* [Усмени испити](../usmeni-ispiti/info){:target="_blank"}
+
 ## Аутори веб страна курса
 
 *[проф. др Владимир Филиповић](https://vladofilipovic.github.io/index-en.html){:target="_blank"}*
