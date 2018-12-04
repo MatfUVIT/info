@@ -24,15 +24,15 @@
 
 ## Статусне информације
 
-* [Предавања](../predavanja/info){:target="_blank"}
+* [Предавања](../predavanja/info)
 
-* [Вежбе](../vezbe/info){:target="_blank"}
+* [Вежбе](../vezbe/info)
 
-* [Колоквијуми](../kolokvijumi/info){:target="_blank"}
+* [Колоквијуми](../kolokvijumi/info)
 
-* [Писмени испити](../pismeni-ispiti/info){:target="_blank"}
+* [Писмени испити](../pismeni-ispiti/info)
 
-* [Усмени испити](../usmeni-ispiti/info){:target="_blank"}
+* [Усмени испити](../usmeni-ispiti/info)
 
 ## Аутори веб страна курса
 
