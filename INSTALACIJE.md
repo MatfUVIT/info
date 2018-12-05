@@ -2,13 +2,13 @@
 
 [УВИТ](/README.md)
 
-Овде су постављене везе за довлачење софтвера који треба инстлаирати ради успешног рада на курсу **Увод у веб и интернет технологије**.
+Овде су постављене везе за довлачење софтвера који треба инсaтлирати ради успешног рада на курсу **Увод у веб и интернет технологије**.
 
-* Веб прегледач [Chrome](https://www.google.com/chrome/){:target="_blank"}  
+* Прегледач веба [Chrome](https://www.google.com/chrome/){:target="_blank"}  
 
-* Веб прегледач [Firefox](https://www.mozilla.org/sr/firefox/new/){:target="_blank"}
+* Прегледач веба [Firefox](https://www.mozilla.org/sr/firefox/new/){:target="_blank"}
 
-* Веб прегледач [Yandex](https://browser.yandex.com/){:target="_blank"}
+* Прегледач веба [Yandex](https://browser.yandex.com/){:target="_blank"}
 
 * Развојно окружење [Visual Studio Code](https://code.visualstudio.com/download){:target="_blank"}
 
