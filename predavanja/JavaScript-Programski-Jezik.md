@@ -600,6 +600,108 @@
 
 #### Евалуација израза уз имплицитну конверзију
 
+Следи неколико типова евалуација које садрже имплицитну конверзију а које се често јављају:
+
+##### Поређење помоћу оператора ==
+
+Један од најпознатијих примера имплицитне конверзије је “поређење прама једнакости”, након чега се добија логичка вредност. Алгоритам за одређивање логичке вредности која представља резултат поређења тј. `x == y` је следећи:
+
+1. Ако су `x` и `y` истог типа, тада се извршава стриктно поредјење `===`
+
+1. Ако је промењива `x` `null` или `undefined`, тада се враћа `true`
+
+1. Ако је промењива `x` `undefined` а промењива `y` `null`, тада се враћа `true`
+
+1. Ако је промењива `x` `Number` а промењива `y` `String`, онда враћа резултат поређења `x = ТоNumber(y)`
+
+1. Ако је промењива `x` `String` а промењива `y` `Number`, онда враћа резултат поређења `ТоNumber(x) = y`
+
+1. Ако је промењива `x` `Boolean` а промењива `y` `Number`, онда враћа резултат поређења `ТоNumber(x) = y`
+
+1. Ако је промењива `x` `Number` а промењива `y` `Boolean`, онда враћа резултат поређења `x = ТоNumber(y)`
+
+1. Ако је промењива `x` `Number` или `String` или `Symbol` а промењива `y` `Object`, онда враћа резултат поређења `x = ToPrimitive(y)`
+
+1. Ако је промењива `x` `Object` а промењива `y` `Number` или `String` или `Symbol`, онда враћа резултат поређења `ToPrimitive(x) = y`
+
+1. Ако није ништа од претходно наведеног, тада се враћа `False`
+
+У следећој табели су uписани сви случајеви између свих могућих типова за поређење оператором `==`:
+<table бордер="1px">
+<thead>
+<tr>
+<th scope="row">&nbsp;</th>
+<th style="text-align: center;" scope="col" colspan="7">Operand B</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th scope="row">&nbsp;</th>
+<td>&nbsp;</td>
+<td style="text-align: center;">Undefined</td>
+<td style="text-align: center;">Null</td>
+<td style="text-align: center;">Number</td>
+<td style="text-align: center;">String</td>
+<td style="text-align: center;">Boolean</td>
+<td style="text-align: center;">Object</td>
+</tr>
+<tr>
+<th scope="row" rowspan="6" colspan="1">Operand A</th>
+<td>Undefined</td>
+<td style="text-align: center;"><span>true</span></td>
+<td style="text-align: center;"><span>true</span></td>
+<td style="text-align: center;"><span>false</span></td>
+<td style="text-align: center;"><span>false</span></td>
+<td style="text-align: center;"><span>false</span></td>
+<td style="text-align: center;"><span>false</span></td>
+</tr>
+<tr>
+<td>Null</td>
+<td style="text-align: center;"><span>true</span></td>
+<td style="text-align: center;"><span>true</span></td>
+<td style="text-align: center;"><span>false</span></td>
+<td style="text-align: center;"><span>false</span></td>
+<td style="text-align: center;"><span>false</span></td>
+<td style="text-align: center;"><span>false</span></td>
+</tr>
+<tr>
+<td>Number</td>
+<td style="text-align: center;"><span>false</span></td>
+<td style="text-align: center;"><span>false</span></td>
+<td style="text-align: center;"><span>A === B</span></td>
+<td style="text-align: center;"><span>A === ToNumber(B)</span></td>
+<td style="text-align: center;"><span>A === ToNumber(B)</span></td>
+<td style="text-align: center;"><span>A == ToPrimitive(B)</span></td>
+</tr>
+<tr>
+<td>String</td>
+<td style="text-align: center;"><span>false</span></td>
+<td style="text-align: center;"><span>false</span></td>
+<td style="text-align: center;"><span>ToNumber(A) === B</span></td>
+<td style="text-align: center;"><span>A === B</span></td>
+<td style="text-align: center;"><span>ToNumber(A) === ToNumber(B)</span></td>
+<td style="text-align: center;"><span>A == ToPrimitive(B)</span></td>
+</tr>
+<tr>
+<td>Boolean</td>
+<td style="text-align: center;"><span>false</span></td>
+<td style="text-align: center;"><span>false</span></td>
+<td style="text-align: center;"><span>ToNumber(A) === B</span></td>
+<td style="text-align: center;"><span>ToNumber(A) === ToNumber(B)</span></td>
+<td style="text-align: center;"><span>A === B</span></td>
+<td style="text-align: center;"><span>ToNumber(A) == ToPrimitive(B)</span></td>
+</tr>
+<tr>
+<td>Object</td>
+<td style="text-align: center;"><span>false</span></td>
+<td style="text-align: center;"><span>false</span></td>
+<td style="text-align: center;"><span>ToPrimitive(A) == B</span></td>
+<td style="text-align: center;"><span>ToPrimitive(A) == B</span></td>
+<td style="text-align: center;"><span>ToPrimitive(A) == ToNumber(B)</span></td>
+<td style="text-align: center;"><span>A === B</span></td>
+</tr>
+</tbody>
+</table>
 
 Пример (евалуација израза уз имлицитну конверзију типова):
 <script src="https://gist.github.com/vladofilipovic/f3c52c66c729dc00b4357a85fcd6c8a0.js"></script>
