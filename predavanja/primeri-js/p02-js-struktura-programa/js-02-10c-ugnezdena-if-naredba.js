@@ -1,8 +1,13 @@
-// ugneždena if naredba
-var br = Number(prompt("Unesite broj"));
-if (br < 10)
-    alert(" Mали (мањи од 10) ");
-else if (br < 100)
-    alert(" Средњи (већи или једнак 10, мањи од 100) ");
+// ugnјeždena if naredba
+let br = 10 * Math.random() - 5;
+console.log(`Псеудо-случајни број има вредност ${br}`);
+if (br <= 0)
+    console.log(`Број је негативан`);
+else if (br == 0)
+    console.log(`Број је тачно 0`);
+else if (br < 2)
+    console.log(`Број је позитиван, мањи од 2`);
 else
-    alert(" Велики (већи од 100) ");
+    console.log(`Број је већи или једнак од 2`);
+
+

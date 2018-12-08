@@ -1,4 +1,5 @@
 // uslovno izvršavanje
-var br = Number(prompt("Unesite broj"));
-if (!isNaN(br))
-    alert(br + " je kvadratni koren broja " + br * br);
+let br = 10 * Math.random()  - 5
+console.log ( `Pseudo-slucajni broj ima vrednost ${br}` )
+if (br > 0 )
+    console.log (`Pseudo-slucajni broj je pozitivan`)
