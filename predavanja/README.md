@@ -252,13 +252,27 @@
 
         1. [Карактеристике језика ЈаваСкрипт](JavaScript-Programski-Jezik.md#карактеристике-језика-јаваскрипт){:target="_blank"}
 
-        1. [Типови и вредности](JavaScript-Programski-Jezik.md#типови-и-вредности){:target="_blank"}
+        1. [Типови вредности и изрази](JavaScript-Programski-Jezik.md#типови-вредности-и-изрази){:target="_blank"}
 
             1. [Примитивни типови](JavaScript-Programski-Jezik.md#примитивни-типови){:target="_blank"}
+
+            1. [Објектни типови](JavaScript-Programski-Jezik.md#објектни-типови){:target="_blank"}
+
+            1. [Изрази](JavaScript-Programski-Jezik.md#изрази){:target="_blank"}
 
             1. [Примери](https://github.com/MatfUVIT/UVIT/tree/master/predavanja/primeri-js/p01-js-vrednosti-tipovi-operatori){:target="_blank"}
 
         1. [Структура ЈаваСкрипт програма](JavaScript-Programski-Jezik.md#структура-јаваскрипт-програма){:target="_blank"}
+
+            1. [Лексичка структура језика](JavaScript-Programski-Jezik.md#лексичка-структура-језика){:target="_blank"}
+
+            1. [Променљиве](JavaScript-Programski-Jezik.md#променљиве){:target="_blank"}
+
+            1. [Наредбе и секвенце наредби](JavaScript-Programski-Jezik.md#наредбе-и-секвенце-наредби){:target="_blank"}
+
+            1. [Гранања](JavaScript-Programski-Jezik.md#гранања){:target="_blank"}
+
+            1. [Циклуси](JavaScript-Programski-Jezik.md#циклуси){:target="_blank"}
 
             1. [Примери](https://github.com/MatfUVIT/UVIT/tree/master/predavanja/primeri-js/p02-js-struktura-programa){:target="_blank"}
 
