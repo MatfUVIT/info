@@ -639,67 +639,67 @@
 <tr>
 <th scope="row">&nbsp;</th>
 <td>&nbsp;</td>
-<td style="text-align: center;">Undefined</td>
-<td style="text-align: center;">Null</td>
-<td style="text-align: center;">Number</td>
-<td style="text-align: center;">String</td>
-<td style="text-align: center;">Boolean</td>
-<td style="text-align: center;">Object</td>
+<td style="text-align: center;">`Undefined`</td>
+<td style="text-align: center;">`Null`</td>
+<td style="text-align: center;">`Number`</td>
+<td style="text-align: center;">`String`</td>
+<td style="text-align: center;">`Boolean`</td>
+<td style="text-align: center;">`Object`</td>
 </tr>
 <tr>
 <th scope="row" rowspan="6" colspan="1">Operand A</th>
 <td>Undefined</td>
-<td style="text-align: center;"><span>true</span></td>
-<td style="text-align: center;"><span>true</span></td>
-<td style="text-align: center;"><span>false</span></td>
-<td style="text-align: center;"><span>false</span></td>
-<td style="text-align: center;"><span>false</span></td>
-<td style="text-align: center;"><span>false</span></td>
+<td style="text-align: center;"><span>`true`</span></td>
+<td style="text-align: center;"><span>`true`</span></td>
+<td style="text-align: center;"><span>`false`</span></td>
+<td style="text-align: center;"><span>`false`</span></td>
+<td style="text-align: center;"><span>`false`</span></td>
+<td style="text-align: center;"><span>`false`</span></td>
 </tr>
 <tr>
 <td>Null</td>
-<td style="text-align: center;"><span>true</span></td>
-<td style="text-align: center;"><span>true</span></td>
-<td style="text-align: center;"><span>false</span></td>
-<td style="text-align: center;"><span>false</span></td>
-<td style="text-align: center;"><span>false</span></td>
-<td style="text-align: center;"><span>false</span></td>
+<td style="text-align: center;"><span>`true`</span></td>
+<td style="text-align: center;"><span>`true`</span></td>
+<td style="text-align: center;"><span>`false`</span></td>
+<td style="text-align: center;"><span>`false`</span></td>
+<td style="text-align: center;"><span>`false`</span></td>
+<td style="text-align: center;"><span>`false`</span></td>
 </tr>
 <tr>
 <td>Number</td>
-<td style="text-align: center;"><span>false</span></td>
-<td style="text-align: center;"><span>false</span></td>
-<td style="text-align: center;"><span>A === B</span></td>
-<td style="text-align: center;"><span>A === ToNumber(B)</span></td>
-<td style="text-align: center;"><span>A === ToNumber(B)</span></td>
-<td style="text-align: center;"><span>A == ToPrimitive(B)</span></td>
+<td style="text-align: center;"><span>`false`</span></td>
+<td style="text-align: center;"><span>`false`</span></td>
+<td style="text-align: center;"><span>`A === B`</span></td>
+<td style="text-align: center;"><span>`A === ToNumber(B)`</span></td>
+<td style="text-align: center;"><span>`A === ToNumber(B)`</span></td>
+<td style="text-align: center;"><span>`A == ToPrimitive(B)`</span></td>
 </tr>
 <tr>
 <td>String</td>
-<td style="text-align: center;"><span>false</span></td>
-<td style="text-align: center;"><span>false</span></td>
+<td style="text-align: center;"><span>`false`</span></td>
+<td style="text-align: center;"><span>`false`</span></td>
 <td style="text-align: center;"><span>ToNumber(A) === B</span></td>
-<td style="text-align: center;"><span>A === B</span></td>
-<td style="text-align: center;"><span>ToNumber(A) === ToNumber(B)</span></td>
-<td style="text-align: center;"><span>A == ToPrimitive(B)</span></td>
+<td style="text-align: center;"><span>`A === B`</span></td>
+<td style="text-align: center;"><span>`ToNumber(A) === ToNumber(B)`</span></td>
+<td style="text-align: center;"><span>`A == ToPrimitive(B)`</span></td>
 </tr>
 <tr>
 <td>Boolean</td>
-<td style="text-align: center;"><span>false</span></td>
-<td style="text-align: center;"><span>false</span></td>
-<td style="text-align: center;"><span>ToNumber(A) === B</span></td>
-<td style="text-align: center;"><span>ToNumber(A) === ToNumber(B)</span></td>
-<td style="text-align: center;"><span>A === B</span></td>
-<td style="text-align: center;"><span>ToNumber(A) == ToPrimitive(B)</span></td>
+<td style="text-align: center;"><span>`false`</span></td>
+<td style="text-align: center;"><span>`false`</span></td>
+<td style="text-align: center;"><span>`ToNumber(A) === B`</span></td>
+<td style="text-align: center;"><span>`ToNumber(A) === ToNumber(B)`</span></td>
+<td style="text-align: center;"><span>`A === B`</span></td>
+<td style="text-align: center;"><span>`ToNumber(A) == ToPrimitive(B)`</span></td>
 </tr>
 <tr>
 <td>Object</td>
-<td style="text-align: center;"><span>false</span></td>
-<td style="text-align: center;"><span>false</span></td>
-<td style="text-align: center;"><span>ToPrimitive(A) == B</span></td>
-<td style="text-align: center;"><span>ToPrimitive(A) == B</span></td>
-<td style="text-align: center;"><span>ToPrimitive(A) == ToNumber(B)</span></td>
-<td style="text-align: center;"><span>A === B</span></td>
+<td style="text-align: center;"><span>`false`</span></td>
+<td style="text-align: center;"><span>`false`</span></td>
+<td style="text-align: center;"><span>`ToPrimitive(A) == B`</span></td>
+<td style="text-align: center;"><span>`ToPrimitive(A) == B`</span></td>
+<td style="text-align: center;"><span>`ToPrimitive(A) == ToNumber(B)`</span></td>
+<td style="text-align: center;"><span>`A === B`</span></td>
 </tr>
 </tbody>
 </table>
