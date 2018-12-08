@@ -254,23 +254,23 @@
 <tr>
 <td>20</td>
 <td><span>( … )</span></td>
-<td><a href="https://developer.mozilla.org//en-US/docs/Web/JavaScript/Reference/Operators/Grouping" title="The grouping operator ( ) controls the precedence of evaluation in expressions."><span>заграде за груписање</span></a></td>
+<td><a href="https://developer.mozilla.org//en-US/docs/Web/JavaScript/Reference/Operators/Grouping"  target="_blank" title="The grouping operator ( ) controls the precedence of evaluation in expressions."><span>заграде за груписање</span></a></td>
 <td>н/д</td>
 </tr>
 <tr>
 <td rowspan="3">19</td>
 <td><span>… <strong>.</strong> …</span></td>
-<td><a href="https://developer.mozilla.org//en-US/docs/Web/JavaScript/Reference/Operators/Property_Accessors#Dot_notation" title="Property accessors provide access to an object's properties by using the dot notation or the bracket notation."><span>приступ особини објекта тачка-нотацијом</span></a></td>
+<td><a href="https://developer.mozilla.org//en-US/docs/Web/JavaScript/Reference/Operators/Property_Accessors#Dot_notation"  target="_blank" title="Property accessors provide access to an object's properties by using the dot notation or the bracket notation."><span>приступ особини објекта тачка-нотацијом</span></a></td>
 <td>слева удесно</td>
 </tr>
 <tr>
 <td><span>… [ … ]</span></td>
-<td><a href="https://developer.mozilla.org//en-US/docs/Web/JavaScript/Reference/Operators/Property_Accessors#Bracket_notation" title="Property accessors provide access to an object's properties by using the dot notation or the bracket notation."><span>приступ особини објекта нотацијом угластих заграда</span></a></td>
+<td><a href="https://developer.mozilla.org//en-US/docs/Web/JavaScript/Reference/Operators/Property_Accessors#Bracket_notation"  target="_blank" title="Property accessors provide access to an object's properties by using the dot notation or the bracket notation."><span>приступ особини објекта нотацијом угластих заграда</span></a></td>
 <td>слева удесно</td>
 </tr>
 <tr>
 <td><span>new … ( … )</span></td>
-<td>оператор <a href="https://developer.mozilla.org//en-US/docs/Web/JavaScript/Reference/Operators/new" title="The new operator creates an instance of a user-defined object type or of one of the built-in object types that has a constructor function."><span>new</span></a> (са аргументима)</td>
+<td>оператор <a href="https://developer.mozilla.org//en-US/docs/Web/JavaScript/Reference/Operators/new"  target="_blank" title="The new operator creates an instance of a user-defined object type or of one of the built-in object types that has a constructor function."><span>new</span></a> (са аргументима)</td>
 <td>н/д</td>
 </tr>
 <tr>
@@ -528,7 +528,7 @@
 </tr>
 <tr>
 <td><span>yield*&nbsp;…</span></td>
-<td>оператор <a href="https://developer.mozilla.org//en-US/docs/Web/JavaScript/Reference/Operators/yield*">yield*</a></td>
+<td>оператор <a href="https://developer.mozilla.org//en-US/docs/Web/JavaScript/Reference/Operators/yield*" target="_blank">yield*</a></td>
 <td>сдесна улево</td>
 </tr>
 <tr>
