@@ -256,11 +256,35 @@
 
             1. [Примитивни типови](JavaScript-Programski-Jezik.md#примитивни-типови){:target="_blank"}
 
-            1. [Примери за типове, вредности  и изразе](JavaScript-Programski-Jezik.md#примери-за-типове-вредности-и-изразе){:target="_blank"}
+            1. [Примери](https://github.com/MatfUVIT/UVIT/tree/master/predavanja/primeri-js/p01-js-vrednosti-tipovi-operatori){:target="_blank"}
 
         1. [Структура ЈаваСкрипт програма](JavaScript-Programski-Jezik.md#структура-јаваскрипт-програма){:target="_blank"}
 
+            1. [Примери](https://github.com/MatfUVIT/UVIT/tree/master/predavanja/primeri-js/p02-js-struktura-programa){:target="_blank"}
+
         1. [Функције и затворења](JavaScript-Programski-Jezik.md#функције-и-затворења){:target="_blank"}
+
+            1. [Примери](https://github.com/MatfUVIT/UVIT/tree/master/predavanja/primeri-js/p03-funkcije-zatvorenja){:target="_blank"}
+
+        1. [Низови и објекти](JavaScript-Programski-Jezik.md#низови-и-објекти){:target="_blank"}
+
+            1. [Примери](https://github.com/MatfUVIT/UVIT/tree/master/predavanja/primeri-js/p04-objekti-nizovi){:target="_blank"}
+
+        1. [Функције вишег реда](JavaScript-Programski-Jezik.md#функције-вишег-реда){:target="_blank"}
+
+            1. [Примери](https://github.com/MatfUVIT/UVIT/tree/master/predavanja/primeri-js/p05-funkcije-viseg-reda){:target="_blank"}
+
+        1. [Напредни објекти](JavaScript-Programski-Jezik.md#напредни-објекти){:target="_blank"}
+
+            1. [Примери](https://github.com/MatfUVIT/UVIT/tree/master/predavanja/primeri-js/p06-napredni-objekti){:target="_blank"}
+
+        1. [Изузетци](JavaScript-Programski-Jezik.md#изузетци){:target="_blank"}
+
+            1. [Примери](https://github.com/MatfUVIT/UVIT/tree/master/predavanja/primeri-js/p08-rukovanje-greskama){:target="_blank"}
+
+        1. [Модули](JavaScript-Programski-Jezik.md#модули){:target="_blank"}
+
+            1. [Примери](https://github.com/MatfUVIT/UVIT/tree/master/predavanja/primeri-js/p10-moduli){:target="_blank"}
 
         1. Извршавање и дебагирање JavaScript кода
 
