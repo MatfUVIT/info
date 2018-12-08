@@ -8,7 +8,9 @@
 
 * Марић Ф.: [УВИТ - скрипта (стране 1-35)](/predavanja/literatura/Maric F. - Skripta UVIT.pdf){:target="_blank"}
 
-* Bonaventure: [Computer Networking : Principles, Protocols and Practice](https://www.saylor.org/site/wp-content/uploads/2012/02/Computer-Networking-Principles-Bonaventure-1-30-31-OTC1.pdf){:target="_blank"}  
+* Bonaventure: [Computer Networking : Principles, Protocols and Practice](https://www.saylor.org/site/wp-content/uploads/2012/02/Computer-Networking-Principles-Bonaventure-1-30-31-OTC1.pdf){:target="_blank"}
+
+* Живановић, Д.: [Веб програмирање - мрежни протоколи](https://www.webprogramiranje.org/mrezni-protokoli-osnove/){:target="_blank"}
 
 * [Internet Technologies Tutorial](https://www.tutorialspoint.com/internet_technologies/index.htm){:target="_blank"} - TutorialsPoint
 
@@ -42,6 +44,8 @@
 
 * Хаџи-Пурић Ј.: [Основни елементи HTML-a](http://poincare.matf.bg.ac.rs/~jelenagr/op/htmlskola.htm){:target="_blank"}
 
+* Живановић, Д.: [Веб програмирање - HTML и CSS](https://www.webprogramiranje.org/strukturno-obelezavanje/){:target="_blank"}
+
 * [HTML Tutorial](https://www.w3schools.com/html/){:target="_blank"} - W3Schools
 
 * [HTML Tutorial](https://www.tutorialspoint.com/html/){:target="_blank"} - TutorialsPoint, [.pdf](/predavanja/literatura/TutorialsPoint HTML.pdf){:target="_blank"}
@@ -64,9 +68,11 @@
 
 * [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript){:target="_blank"} - Mozzila Developer Network (MDN)
 
-* Тодоровић М.: [JavaScript електронски курс](http://www.cleversolutions.rs/javascript/index.html){:target="_blank"}
+* Тодоровић М.: [ЈаваСкрипт електронски курс](http://www.cleversolutions.rs/javascript/index.html){:target="_blank"}
 
-* Copse F.: [Complete JavaScript Handbook](https://medium.freecodecamp.org/the-complete-javascript-handbook-f26b2c71719c){:target="_blank"} 
+* Живановић, Д.: [Веб програмирање - ЈаваСкрипт](https://www.webprogramiranje.org/scope-oblast-definisanosti-promenjive/){:target="_blank"}
+
+* Copse F.: [Complete JavaScript Handbook](https://medium.freecodecamp.org/the-complete-javascript-handbook-f26b2c71719c){:target="_blank"}
   
 * [The Modern JavaScript Tutorial - The JavaScript language](https://javascript.info/intro){:target="_blank"} - JavaScript.info
 
@@ -95,6 +101,8 @@
 ## Књиге и упуства за ЈаваСкрипт процесирање на страни сервера
 
 * [Node.js Documentation](https://nodejs.org/en/docs/){:target="_blank"} - Node.js
+
+* Живановић, Д.: [Веб програмирање - асинхрони ЈаваСкрипт](https://www.webprogramiranje.org/osnove-asinhronog-programiranja-u-javascript-u/){:target="_blank"}
   
 * [Node.js Tutorial](https://www.w3schools.com/nodejs/default.asp){:target="_blank"} - W3Schools
 
