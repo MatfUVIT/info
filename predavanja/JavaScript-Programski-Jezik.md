@@ -197,15 +197,16 @@
 
 #### Логички изрази
 
-Логички изрази приликом евалуације вераћу вредности логичког типа (`true` или `false`).
+Логички изрази приликом евалуације враћају вредности логичког типа (`true` или `false`).
 
 Пример (рад са логичким изразима):
 <script src="https://gist.github.com/vladofilipovic/e9be15b3154bccb7b5a1498f07afc232.js"></script>
 
 #### Ниска-изрази
 
-Пример (запис ниски):
-<script src="https://gist.github.com/vladofilipovic/2503e9d2952e44c53a985f5aaffcec56.js"></script>
+Ниска-изрази приликом евалуације враћају вредности знаковних ниски.
+
+Приликом креираљнових ниски, често се користи оператор спајања `+`.
 
 ##### Шаблони за ниске
 
@@ -215,7 +216,7 @@
 
 Код шаблона за ниске, белине )(знаци за крај линије, размаци, табови и сл.) не треба да се представљају промоћу ескејп-знакова, већ се могу директно унети у шаблон. Начин формирања ниски преко шаблона је елегантнији од "класичног" спајања ниски оператором `+` и продукује читљивији програмски код.
 
-Пример (рад са шаблонима за ниске):
+Пример (рад са оператором спајања и са шаблонима за ниске):
 <script src="https://gist.github.com/vladofilipovic/cae2937af170ff4e2a3bf2e4d89c83fe.js"></script>
 
 Ако се појави потреба да се у оквиру шаблона за ниску појави обрнути апостоф, то се може постићи помоћу одговарајуће ескејп-секвенце, тј. знака `\``.
@@ -235,6 +236,315 @@
 - Листе [аргумената](#pараметри-и-аргументи-функција){:target="_blank"}
 
 ### Оператори
+
+Под операторима се најчешће подразумева симболи који се користе када треба извршити неку стандардну често коришћену операцију као нпр. додела вредности, поредјење вредности, аритметичке операције и сл.
+
+Приоритет оператора одређује којим ће се редом оперантори примењивати, а асоцијативност оператораодређује са ког краја се одвија груписање операнада (почев од левог или од десног краја). Сваки оператор има свој ниво приоритета и своје  правило асоцијативности.
+
+У наредној табели су приказани оператори и њихова асоцијативност. Редослед оператора у табели је дат по њиховом приоритету - од најважнијег ка мање важним:
+
+<table>
+<tbody>
+<tr>
+<th>Приоиритет</th>
+<th>Ознака </th>
+<th>Назив</th>
+<th>Асоцијативност</th>
+</tr>
+<tr>
+<td>20</td>
+<td><span>( … )</span></td>
+<td><a href="https://developer.mozilla.org//en-US/docs/Web/JavaScript/Reference/Operators/Grouping" title="The grouping operator ( ) controls the precedence of evaluation in expressions."><span>Заграде за груписање</span></a></td>
+<td>n/a</td>
+</tr>
+<tr>
+<td rowspan="3">19</td>
+<td><span>… <strong>.</strong> …</span></td>
+<td><a href="https://developer.mozilla.org//en-US/docs/Web/JavaScript/Reference/Operators/Property_Accessors#Dot_notation" title="Property accessors provide access to an object's properties by using the dot notation or the bracket notation."><span>Приступ особини објекта тачка-нотацијом</em></span></a></td>
+<td>слева удесно</td>
+</tr>
+<tr>
+<td><span>… [ … ]</span></td>
+<td><a href="https://developer.mozilla.org//en-US/docs/Web/JavaScript/Reference/Operators/Property_Accessors#Bracket_notation" title="Property accessors provide access to an object's properties by using the dot notation or the bracket notation."><span>Pristup osobini objekta <em>&#8220;bracket notation&#8221;</em></span></a></td>
+<td>s&#8217; leva na desno</td>
+</tr>
+<tr>
+<td><span>new … ( … )</span></td>
+<td><a href="https://developer.mozilla.org//en-US/docs/Web/JavaScript/Reference/Operators/new" title="The new operator creates an instance of a user-defined object type or of one of the built-in object types that has a constructor function."><span>new</span></a> (sa argumentima)</td>
+<td>n/a</td>
+</tr>
+<tr>
+<td rowspan="2">18</td>
+<td><span>… (&nbsp;<var>…&nbsp;</var>)</span></td>
+<td><a href="https://developer.mozilla.org//en-US/docs/Web/JavaScript/Guide/Functions">Pozivanje Funkcije</a></td>
+<td>s&#8217; leva na desno</td>
+</tr>
+<tr>
+<td><span>new …</span></td>
+<td><a href="https://developer.mozilla.org//en-US/docs/Web/JavaScript/Reference/Operators/new" title="The new operator creates an instance of a user-defined object type or of one of the built-in object types that has a constructor function."><span>new</span></a>&nbsp;(bez argumenta)</td>
+<td>s&#8217; desna na levo</td>
+</tr>
+<tr>
+<td rowspan="2">17</td>
+<td><span>… ++</span></td>
+<td><a href="https://developer.mozilla.org//en-US/docs/Web/JavaScript/Reference/Operators/Arithmetic_Operators#Increment" title="Arithmetic operators take numerical values (either literals or variables) as their operands and return a single numerical value. The standard arithmetic operators are addition (+), subtraction (-), multiplication (*), and division (/)."><span>Postfix Increment</span></a></td>
+<td>n/a</td>
+</tr>
+<tr>
+<td><span>… &#8212;</span></td>
+<td><a href="https://developer.mozilla.org//en-US/docs/Web/JavaScript/Reference/Operators/Arithmetic_Operators#Decrement" title="Arithmetic operators take numerical values (either literals or variables) as their operands and return a single numerical value. The standard arithmetic operators are addition (+), subtraction (-), multiplication (*), and division (/)."><span>Postfix Decrement</span></a></td>
+<td>n/a</td>
+</tr>
+<tr>
+<td rowspan="9">16</td>
+<td><span>! …</span></td>
+<td><a href="https://developer.mozilla.org//en-US/docs/Web/JavaScript/Reference/Operators/Logical_Operators#Logical_NOT">Logical NOT</a></td>
+<td>s&#8217; desna na levo</td>
+</tr>
+<tr>
+<td><span>~ …</span></td>
+<td><a href="https://developer.mozilla.org//en-US/docs/Web/JavaScript/Reference/Operators/Bitwise_Operators#Bitwise_NOT">Bitwise NOT</a></td>
+<td>s&#8217; desna na levo</td>
+</tr>
+<tr>
+<td><span>+ …</span></td>
+<td><a href="https://developer.mozilla.org//en-US/docs/Web/JavaScript/Reference/Operators/Arithmetic_Operators#Unary_plus">Unary Plus</a></td>
+<td>s&#8217; desna na levo</td>
+</tr>
+<tr>
+<td><span>&#8211; …</span></td>
+<td><a href="https://developer.mozilla.org//en-US/docs/Web/JavaScript/Reference/Operators/Arithmetic_Operators#Unary_negation">Unary Negation</a></td>
+<td>s&#8217; desna na levo</td>
+</tr>
+<tr>
+<td><span>++ …</span></td>
+<td><a href="https://developer.mozilla.org//en-US/docs/Web/JavaScript/Reference/Operators/Arithmetic_Operators#Increment">Prefix Increment</a></td>
+<td>s&#8217; desna na levo</td>
+</tr>
+<tr>
+<td><span>&#8212; …</span></td>
+<td><a href="https://developer.mozilla.org//en-US/docs/Web/JavaScript/Reference/Operators/Arithmetic_Operators#Decrement">Prefix Decrement</a></td>
+<td>s&#8217; desna na levo</td>
+</tr>
+<tr>
+<td><span>typeof …</span></td>
+<td><a href="https://developer.mozilla.org//en-US/docs/Web/JavaScript/Reference/Operators/typeof">typeof</a></td>
+<td>s&#8217; desna na levo</td>
+</tr>
+<tr>
+<td><span>void …</span></td>
+<td><a href="https://developer.mozilla.org//en-US/docs/Web/JavaScript/Reference/Operators/void">void</a></td>
+<td>s&#8217; desna na levo</td>
+</tr>
+<tr>
+<td><span>delete …</span></td>
+<td><a href="https://developer.mozilla.org//en-US/docs/Web/JavaScript/Reference/Operators/delete">delete</a></td>
+<td>s&#8217; desna na levo</td>
+</tr>
+<tr>
+<td>15</td>
+<td><span>… ** …</span></td>
+<td><a href="https://developer.mozilla.org//en-US/docs/Web/JavaScript/Reference/Operators/Arithmetic_Operators#Exponentiation">Exponentiation</a></td>
+<td>s&#8217; desna na levo</td>
+</tr>
+<tr>
+<td rowspan="3">14</td>
+<td><span>… *&nbsp;…</span></td>
+<td><a href="https://developer.mozilla.org//en-US/docs/Web/JavaScript/Reference/Operators/Arithmetic_Operators#Multiplication">Multiplication</a></td>
+<td>s&#8217; leva na desno</td>
+</tr>
+<tr>
+<td><span>… /&nbsp;…</span></td>
+<td><a href="https://developer.mozilla.org//en-US/docs/Web/JavaScript/Reference/Operators/Arithmetic_Operators#Division">Division</a></td>
+<td>s&#8217; leva na desno</td>
+</tr>
+<tr>
+<td><span>… %&nbsp;…</span></td>
+<td><a href="https://developer.mozilla.org//en-US/docs/Web/JavaScript/Reference/Operators/Arithmetic_Operators#Remainder">Remainder</a></td>
+<td>s&#8217; leva na desno</td>
+</tr>
+<tr>
+<td rowspan="2">13</td>
+<td><span>… +&nbsp;…</span></td>
+<td><a href="https://developer.mozilla.org//en-US/docs/Web/JavaScript/Reference/Operators/Arithmetic_Operators#Addition">Addition</a></td>
+<td>s&#8217; leva na desno</td>
+</tr>
+<tr>
+<td><span>… &#8211;&nbsp;…</span></td>
+<td><a href="https://developer.mozilla.org//en-US/docs/Web/JavaScript/Reference/Operators/Arithmetic_Operators#Subtraction">Subtraction</a></td>
+<td>s&#8217; leva na desno</td>
+</tr>
+<tr>
+<td rowspan="3">12</td>
+<td><span>… &lt;&lt;&nbsp;…</span></td>
+<td><a href="https://developer.mozilla.org//en-US/docs/Web/JavaScript/Reference/Operators/Bitwise_Operators">Bitwise Left Shift</a></td>
+<td>s&#8217; leva na desno</td>
+</tr>
+<tr>
+<td><span>… &gt;&gt;&nbsp;…</span></td>
+<td><a href="https://developer.mozilla.org//en-US/docs/Web/JavaScript/Reference/Operators/Bitwise_Operators">Bitwise Right Shift</a></td>
+<td>s&#8217; leva na desno</td>
+</tr>
+<tr>
+<td><span>… &gt;&gt;&gt;&nbsp;…</span></td>
+<td><a href="https://developer.mozilla.org//en-US/docs/Web/JavaScript/Reference/Operators/Bitwise_Operators">Bitwise Unsigned Right Shift</a></td>
+<td>s&#8217; leva na desno</td>
+</tr>
+<tr>
+<td rowspan="6">11</td>
+<td><span>… &lt;&nbsp;…</span></td>
+<td><a href="https://developer.mozilla.org//en-US/docs/Web/JavaScript/Reference/Operators/Comparison_Operators#Less_than_operator">Less Than</a></td>
+<td>s&#8217; leva na desno</td>
+</tr>
+<tr>
+<td><span>… &lt;=&nbsp;…</span></td>
+<td><a href="https://developer.mozilla.org//en-US/docs/Web/JavaScript/Reference/Operators/Comparison_Operators#Less_than__or_equal_operator">Less Than Or Equal</a></td>
+<td>s&#8217; leva na desno</td>
+</tr>
+<tr>
+<td><span>… &gt;&nbsp;…</span></td>
+<td><a href="https://developer.mozilla.org//en-US/docs/Web/JavaScript/Reference/Operators/Comparison_Operators#Greater_than_operator">Greater Than</a></td>
+<td>s&#8217; leva na desno</td>
+</tr>
+<tr>
+<td><span>… &gt;=&nbsp;…</span></td>
+<td><a href="https://developer.mozilla.org//en-US/docs/Web/JavaScript/Reference/Operators/Comparison_Operators#Greater_than_or_equal_operator">Greater Than Or Equal</a></td>
+<td>s&#8217; leva na desno</td>
+</tr>
+<tr>
+<td><span>… in&nbsp;…</span></td>
+<td><a href="https://developer.mozilla.org//en-US/docs/Web/JavaScript/Reference/Operators/in">in</a></td>
+<td>s&#8217; leva na desno</td>
+</tr>
+<tr>
+<td><span>… instanceof&nbsp;…</span></td>
+<td><a href="https://developer.mozilla.org//en-US/docs/Web/JavaScript/Reference/Operators/instanceof">instanceof</a></td>
+<td>s&#8217; leva na desno</td>
+</tr>
+<tr>
+<td rowspan="4">10</td>
+<td><span>… ==&nbsp;…</span></td>
+<td><a href="https://developer.mozilla.org//en-US/docs/Web/JavaScript/Reference/Operators/Comparison_Operators#Equality">Equality</a></td>
+<td>s&#8217; leva na desno</td>
+</tr>
+<tr>
+<td><span>… !=&nbsp;…</span></td>
+<td><a href="https://developer.mozilla.org//en-US/docs/Web/JavaScript/Reference/Operators/Comparison_Operators#Inequality">Inequality</a></td>
+<td>s&#8217; leva na desno</td>
+</tr>
+<tr>
+<td><span>… ===&nbsp;…</span></td>
+<td><a href="https://developer.mozilla.org//en-US/docs/Web/JavaScript/Reference/Operators/Comparison_Operators#Identity">Strict Equality</a></td>
+<td>s&#8217; leva na desno</td>
+</tr>
+<tr>
+<td><span>… !==&nbsp;…</span></td>
+<td><a href="https://developer.mozilla.org//en-US/docs/Web/JavaScript/Reference/Operators/Comparison_Operators#Nonidentity">Strict Inequality</a></td>
+<td>s&#8217; leva na desno</td>
+</tr>
+<tr>
+<td>9</td>
+<td><span>… &amp;&nbsp;…</span></td>
+<td><a href="https://developer.mozilla.org//en-US/docs/Web/JavaScript/Reference/Operators/Bitwise_Operators#Bitwise_AND">Bitwise AND</a></td>
+<td>s&#8217; leva na desno</td>
+</tr>
+<tr>
+<td>8</td>
+<td><span>… ^&nbsp;…</span></td>
+<td><a href="https://developer.mozilla.org//en-US/docs/Web/JavaScript/Reference/Operators/Bitwise_Operators#Bitwise_XOR">Bitwise XOR</a></td>
+<td>s&#8217; leva na desno</td>
+</tr>
+<tr>
+<td>7</td>
+<td><span>… |&nbsp;…</span></td>
+<td><a href="https://developer.mozilla.org//en-US/docs/Web/JavaScript/Reference/Operators/Bitwise_Operators#Bitwise_OR">Bitwise OR</a></td>
+<td>s&#8217; leva na desno</td>
+</tr>
+<tr>
+<td>6</td>
+<td><span>… &amp;&amp;&nbsp;…</span></td>
+<td><a href="https://developer.mozilla.org//en-US/docs/Web/JavaScript/Reference/Operators/Logical_Operators#Logical_AND">Logical AND</a></td>
+<td>s&#8217; leva na desno</td>
+</tr>
+<tr>
+<td>5</td>
+<td><span>… ||&nbsp;…</span></td>
+<td><a href="https://developer.mozilla.org//en-US/docs/Web/JavaScript/Reference/Operators/Logical_Operators#Logical_OR">Logical OR</a></td>
+<td>s&#8217; leva na desno</td>
+</tr>
+<tr>
+<td>4</td>
+<td><span>… ? … : …</span></td>
+<td><a href="https://developer.mozilla.org//en-US/docs/Web/JavaScript/Reference/Operators/Conditional_Operator">Conditional</a></td>
+<td>s&#8217; desna na levo</td>
+</tr>
+<tr>
+<td rowspan="13">3</td>
+<td><span>… =&nbsp;…</span></td>
+<td rowspan="13"><a href="https://developer.mozilla.org//en-US/docs/Web/JavaScript/Reference/Operators/Assignment_Operators">Assignment</a></td>
+<td rowspan="13">s&#8217; desna na levo</td>
+</tr>
+<tr>
+<td><span>… +=&nbsp;…</span></td>
+</tr>
+<tr>
+<td><span>… -=&nbsp;…</span></td>
+</tr>
+<tr>
+<td><span>… **=&nbsp;…</span></td>
+</tr>
+<tr>
+<td><span>… *=&nbsp;…</span></td>
+</tr>
+<tr>
+<td><span>… /=&nbsp;…</span></td>
+</tr>
+<tr>
+<td><span>… %=&nbsp;…</span></td>
+</tr>
+<tr>
+<td><span>… &lt;&lt;=&nbsp;…</span></td>
+</tr>
+<tr>
+<td><span>… &gt;&gt;=&nbsp;…</span></td>
+</tr>
+<tr>
+<td><span>… &gt;&gt;&gt;=&nbsp;…</span></td>
+</tr>
+<tr>
+<td><span>… &amp;=&nbsp;…</span></td>
+</tr>
+<tr>
+<td><span>… ^=&nbsp;…</span></td>
+</tr>
+<tr>
+<td><span>… |=&nbsp;…</span></td>
+</tr>
+<tr>
+<td rowspan="2">2</td>
+<td><span>yield&nbsp;…</span></td>
+<td><a href="https://developer.mozilla.org//en-US/docs/Web/JavaScript/Reference/Operators/yield">yield</a></td>
+<td>s&#8217; desna na levo</td>
+</tr>
+<tr>
+<td><span>yield*&nbsp;…</span></td>
+<td><a href="https://developer.mozilla.org//en-US/docs/Web/JavaScript/Reference/Operators/yield*">yield*</a></td>
+<td>s&#8217; desna na levo</td>
+</tr>
+<tr>
+<td>1</td>
+<td><span>&#8230;</span>&nbsp;…</td>
+<td><a href="https://developer.mozilla.org//en-US/docs/Web/JavaScript/Reference/Operators/Spread_operator">Spread</a></td>
+<td>n/a</td>
+</tr>
+<tr>
+<td>0</td>
+<td><span>… ,&nbsp;…</span></td>
+<td><a href="https://developer.mozilla.org//en-US/docs/Web/JavaScript/Reference/Operators/Comma_Operator">Comma / Sequence</a></td>
+<td>s&#8217; leva na desno</td>
+</tr>
+</tbody>
+</table>
 
 ### [Примери за типове вредности  и изразе](https://github.com/MatfUVIT/UVIT/tree/master/predavanja/primeri-js/p01-js-vrednosti-tipovi-operatori){:target="_blank"}
 
