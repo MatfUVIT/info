@@ -16,21 +16,21 @@
 
 ## Књиге и упутства за језике за означавање
 
-  * [Brief SGML Tutorial](https://www.w3.org/TR/WD-html40-970708/intro/sgmltut.html){:target="_blank"} - W3C
+* [Brief SGML Tutorial](https://www.w3.org/TR/WD-html40-970708/intro/sgmltut.html){:target="_blank"} - W3C
 
-  * [DTD Tutorial](https://www.w3schools.com/xml/xml_dtd_intro.asp){:target="_blank"} - W3Schools
+* [DTD Tutorial](https://www.w3schools.com/xml/xml_dtd_intro.asp){:target="_blank"} - W3Schools
 
-  * [DTD Tutorial](https://www.tutorialspoint.com/dtd/index.htm){:target="_blank"} - TutorialsPoint, [.pdf](/predavanja/literatura/TutorialsPoint DTD.pdf){:target="_blank"}
+* [DTD Tutorial](https://www.tutorialspoint.com/dtd/index.htm){:target="_blank"} - TutorialsPoint, [.pdf](/predavanja/literatura/TutorialsPoint DTD.pdf){:target="_blank"}
 
-  * [XML Tutorial](https://www.w3schools.com/xml/){:target="_blank"} - W3Schools
+* [XML Tutorial](https://www.w3schools.com/xml/){:target="_blank"} - W3Schools
 
-  * [XML Tutorial](https://www.tutorialspoint.com/xml/){:target="_blank"} - TutorialsPoint, [.pdf](/predavanja/literatura/TutorialsPoint XML.pdf){:target="_blank"}
+* [XML Tutorial](https://www.tutorialspoint.com/xml/){:target="_blank"} - TutorialsPoint, [.pdf](/predavanja/literatura/TutorialsPoint XML.pdf){:target="_blank"}
 
-  * [XML Schema Tutorial](https://www.w3schools.com/xml/xml_schema.asp){:target="_blank"} - W3Schools
+* [XML Schema Tutorial](https://www.w3schools.com/xml/xml_schema.asp){:target="_blank"} - W3Schools
 
-  * [XML Schema Tutorial](https://www.tutorialspoint.com/xml/xml_schemas.htm){:target="_blank"} - TutorialsPoint
+* [XML Schema Tutorial](https://www.tutorialspoint.com/xml/xml_schemas.htm){:target="_blank"} - TutorialsPoint
 
-  * Mertz D.:  [XML Matters, Comparing W3C XML Schemas and Document Type Definitions (DTDs)](https://www.ibm.com/developerworks/library/x-matters7/){:target="_blank"} - IBM
+* Mertz D.:  [XML Matters, Comparing W3C XML Schemas and Document Type Definitions (DTDs)](https://www.ibm.com/developerworks/library/x-matters7/){:target="_blank"} - IBM
 
 ## Књиге и упутства за HTML i CSS
 
@@ -66,7 +66,7 @@
 
 * Тодоровић М.: [JavaScript електронски курс](http://www.cleversolutions.rs/javascript/index.html){:target="_blank"}
 
-* [Complete JavaScript Handbook](https://medium.freecodecamp.org/the-complete-javascript-handbook-f26b2c71719c){:target="_blank"} - freeCodeCamp
+* Copse F.: [Complete JavaScript Handbook](https://medium.freecodecamp.org/the-complete-javascript-handbook-f26b2c71719c){:target="_blank"} 
   
 * [The Modern JavaScript Tutorial - The JavaScript language](https://javascript.info/intro){:target="_blank"} - JavaScript.info
 

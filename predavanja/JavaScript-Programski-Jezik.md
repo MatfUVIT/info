@@ -144,22 +144,26 @@
 
 #### Шаблони за ниске
 
-Introduced in ES2015, template strings are string literals that allow a more powerful way to define strings.
-emplate literals are enclosed by the back-tick (знак \`)  (grave accent) character instead of double or single quotes. Template literals can contain placeholders. These are indicated by the dollar sign and curly braces (${expression}). The expressions in the placeholders and the text between them get passed to a function. The default function just concatenates the parts into a single string. If there is an expression preceding the template literal (tag here), this is called a "tagged template". In that case, the tag expression (usually a function) gets called with the processed template literal, which you can then manipulate before outputting. To escape a back-tick in a template literal, put a backslash \ before the back-tick.
+Шаблони за ниске, уведени у верзији ЈаваСкрипта ES2015, су ниска-литерали који допуштају моћнији начин за дефинисање ниски.
+
+Шаблони за ниске су, уместо апострофа или наводаника, ограничени обрнутим апостофом (тј. знаком \`). У оквиру шаблона за ниске се могу налази места за замену, која су означена тако што су обухваћена витичастим заградама испред којигх се налази знак за долар, нпр. `${izraz}`. У претходном примеру, `izraz` се налази унутар места за замену и он се прослеђује функцији, која врши спајање делова у једну ниску. Функција ће пре спајања у ниску извршити евалуцаију израза у оквиру места за замену и добијене реѕултате спојити у резултујућу ниску.  
+
+Овај начин формирања ниски је елегантнији од "класичног" спајања ниски оператором `+` и продукује читљивији програмски код.
 
 Пример:
-\`a string\`
-You can perform string substitution, embedding the result of any JavaScript expression:
+let x = 3
+let y = 6
 
-\`a string with ${something}``
-`a string with ${something+somethingElse}`
-`a string with ${obj.something()}`
+// STRING CONCATENATION
+console.log('Three plus six is ' + (x + y) + '.');
+// "Three plus six is 9."
 
-You can have multiline strings easily:
+// TEMPLATE LITERALS
+console.log(`Three plus six is ${x + y}.`);
+// "Three plus six is 9."
 
-``a string
-with
-${something}`
+
+Ако се појави потреба да се у оквиру шаблона за ниску појави обрнути апостоф, то се може постићи помоћу одговарајуће ескејп-секвенце, тј. знака `\\``.
 
 ## Структура ЈаваСкрипт програма
 
@@ -350,3 +354,11 @@ ${something}`
 - Апострофи и наводници: апостроф (тј. знак `'`) треба да има приоритет у односу на наводник (тј. знак `"`). Наиме, наводници су уобичајени код HTML атрибута, па коришљење апостофа помаже да се олакшају проблеми при раду са нискама које садрже HTML описе.
 
 **Напомена.** Ако радни оквир који се користи или већ усвојени стандард кодирањњ садржи другачуја правила, онда се треба њима прилагодити. Један од популарних алата који олакшава сређивање и  форматирање програмског кода је [Prettier](https://prettier.io/){:target="_blank"}.
+
+## Литература
+
+1. Haverbeke M.: [Eloquent JavaScript](https://eloquentjavascript.net/){:target="_blank"}
+
+1. [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript){:target="_blank"} - Mozzila Developer Network (MDN)
+
+1. Copes F.: [Complete JavaScript Handbook](https://medium.freecodecamp.org/the-complete-javascript-handbook-f26b2c71719c){:target="_blank"}
