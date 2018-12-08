@@ -214,7 +214,7 @@
 
 Шаблони за ниске су, уместо апострофа или наводаника, ограничени обрнутим апостофом (тј. знаком \`). У оквиру шаблона за ниске се могу налази места за замену, која су означена тако што су обухваћена витичастим заградама испред којигх се налази знак за долар, нпр. `${izraz}`. У претходном примеру, `izraz` се налази унутар места за замену и он се прослеђује функцији, која врши спајање делова у једну ниску. Функција ће пре спајања у ниску извршити евалуцаију израза у оквиру места за замену и добијене реѕултате спојити у резултујућу ниску.  
 
-Код шаблона за ниске, белине )(знаци за крај линије, размаци, табови и сл.) не треба да се представљају промоћу ескејп-знакова, већ се могу директно унети у шаблон. Начин формирања ниски преко шаблона је елегантнији од "класичног" спајања ниски оператором `+` и продукује читљивији програмски код.
+Код шаблона за ниске, белине (знаци за крај линије, размаци, табови и сл.) не треба да се представљају промоћу ескејп-знакова, већ се могу директно унети у шаблон. Начин формирања ниски преко шаблона је елегантнији од "класичног" спајања ниски оператором `+` и продукује читљивији програмски код.
 
 Пример (рад са оператором спајања и са шаблонима за ниске):
 <script src="https://gist.github.com/vladofilipovic/cae2937af170ff4e2a3bf2e4d89c83fe.js"></script>
@@ -243,7 +243,7 @@
 
 У наредној табели су приказани оператори и њихова асоцијативност. Редослед оператора у табели је дат по њиховом приоритету - од најважнијег ка мање важним:
 
-<table>
+<table border="1px">
 <tbody>
 <tr>
 <th>Приоиритет</th>
@@ -254,235 +254,235 @@
 <tr>
 <td>20</td>
 <td><span>( … )</span></td>
-<td><a href="https://developer.mozilla.org//en-US/docs/Web/JavaScript/Reference/Operators/Grouping" title="The grouping operator ( ) controls the precedence of evaluation in expressions."><span>Заграде за груписање</span></a></td>
-<td>n/a</td>
+<td><a href="https://developer.mozilla.org//en-US/docs/Web/JavaScript/Reference/Operators/Grouping" title="The grouping operator ( ) controls the precedence of evaluation in expressions."><span>заграде за груписање</span></a></td>
+<td>н/д</td>
 </tr>
 <tr>
 <td rowspan="3">19</td>
 <td><span>… <strong>.</strong> …</span></td>
-<td><a href="https://developer.mozilla.org//en-US/docs/Web/JavaScript/Reference/Operators/Property_Accessors#Dot_notation" title="Property accessors provide access to an object's properties by using the dot notation or the bracket notation."><span>Приступ особини објекта тачка-нотацијом</em></span></a></td>
+<td><a href="https://developer.mozilla.org//en-US/docs/Web/JavaScript/Reference/Operators/Property_Accessors#Dot_notation" title="Property accessors provide access to an object's properties by using the dot notation or the bracket notation."><span>приступ особини објекта тачка-нотацијом</span></a></td>
 <td>слева удесно</td>
 </tr>
 <tr>
 <td><span>… [ … ]</span></td>
-<td><a href="https://developer.mozilla.org//en-US/docs/Web/JavaScript/Reference/Operators/Property_Accessors#Bracket_notation" title="Property accessors provide access to an object's properties by using the dot notation or the bracket notation."><span>Pristup osobini objekta <em>&#8220;bracket notation&#8221;</em></span></a></td>
-<td>s&#8217; leva na desno</td>
+<td><a href="https://developer.mozilla.org//en-US/docs/Web/JavaScript/Reference/Operators/Property_Accessors#Bracket_notation" title="Property accessors provide access to an object's properties by using the dot notation or the bracket notation."><span>приступ особини објекта нотацијом угластих заграда</span></a></td>
+<td>слева удесно</td>
 </tr>
 <tr>
 <td><span>new … ( … )</span></td>
-<td><a href="https://developer.mozilla.org//en-US/docs/Web/JavaScript/Reference/Operators/new" title="The new operator creates an instance of a user-defined object type or of one of the built-in object types that has a constructor function."><span>new</span></a> (sa argumentima)</td>
-<td>n/a</td>
+<td>оператор <a href="https://developer.mozilla.org//en-US/docs/Web/JavaScript/Reference/Operators/new" title="The new operator creates an instance of a user-defined object type or of one of the built-in object types that has a constructor function."><span>new</span></a> (са аргументима)</td>
+<td>н/д</td>
 </tr>
 <tr>
 <td rowspan="2">18</td>
 <td><span>… (&nbsp;<var>…&nbsp;</var>)</span></td>
-<td><a href="https://developer.mozilla.org//en-US/docs/Web/JavaScript/Guide/Functions">Pozivanje Funkcije</a></td>
-<td>s&#8217; leva na desno</td>
+<td><a href="https://developer.mozilla.org//en-US/docs/Web/JavaScript/Guide/Functions">позив функције</a></td>
+<td>слева удесно</td>
 </tr>
 <tr>
 <td><span>new …</span></td>
-<td><a href="https://developer.mozilla.org//en-US/docs/Web/JavaScript/Reference/Operators/new" title="The new operator creates an instance of a user-defined object type or of one of the built-in object types that has a constructor function."><span>new</span></a>&nbsp;(bez argumenta)</td>
-<td>s&#8217; desna na levo</td>
+<td><a href="https://developer.mozilla.org//en-US/docs/Web/JavaScript/Reference/Operators/new" title="The new operator creates an instance of a user-defined object type or of one of the built-in object types that has a constructor function.">оператор <span>new</span></a>&nbsp;(без аргумената)</td>
+<td>сдесна улево</td>
 </tr>
 <tr>
 <td rowspan="2">17</td>
 <td><span>… ++</span></td>
-<td><a href="https://developer.mozilla.org//en-US/docs/Web/JavaScript/Reference/Operators/Arithmetic_Operators#Increment" title="Arithmetic operators take numerical values (either literals or variables) as their operands and return a single numerical value. The standard arithmetic operators are addition (+), subtraction (-), multiplication (*), and division (/)."><span>Postfix Increment</span></a></td>
-<td>n/a</td>
+<td><a href="https://developer.mozilla.org//en-US/docs/Web/JavaScript/Reference/Operators/Arithmetic_Operators#Increment" title="Arithmetic operators take numerical values (either literals or variables) as their operands and return a single numerical value. The standard arithmetic operators are addition (+), subtraction (-), multiplication (*), and division (/)."><span>постфиксно увећавање</span></a></td>
+<td>н/д</td>
 </tr>
 <tr>
 <td><span>… &#8212;</span></td>
-<td><a href="https://developer.mozilla.org//en-US/docs/Web/JavaScript/Reference/Operators/Arithmetic_Operators#Decrement" title="Arithmetic operators take numerical values (either literals or variables) as their operands and return a single numerical value. The standard arithmetic operators are addition (+), subtraction (-), multiplication (*), and division (/)."><span>Postfix Decrement</span></a></td>
-<td>n/a</td>
+<td><a href="https://developer.mozilla.org//en-US/docs/Web/JavaScript/Reference/Operators/Arithmetic_Operators#Decrement" title="Arithmetic operators take numerical values (either literals or variables) as their operands and return a single numerical value. The standard arithmetic operators are addition (+), subtraction (-), multiplication (*), and division (/)."><span>постфиксно умањивање</span></a></td>
+<td>н/д</td>
 </tr>
 <tr>
 <td rowspan="9">16</td>
 <td><span>! …</span></td>
-<td><a href="https://developer.mozilla.org//en-US/docs/Web/JavaScript/Reference/Operators/Logical_Operators#Logical_NOT">Logical NOT</a></td>
-<td>s&#8217; desna na levo</td>
+<td><a href="https://developer.mozilla.org//en-US/docs/Web/JavaScript/Reference/Operators/Logical_Operators#Logical_NOT">логичка негација</a></td>
+<td>сдесна улево</td>
 </tr>
 <tr>
 <td><span>~ …</span></td>
-<td><a href="https://developer.mozilla.org//en-US/docs/Web/JavaScript/Reference/Operators/Bitwise_Operators#Bitwise_NOT">Bitwise NOT</a></td>
-<td>s&#8217; desna na levo</td>
+<td><a href="https://developer.mozilla.org//en-US/docs/Web/JavaScript/Reference/Operators/Bitwise_Operators#Bitwise_NOT">битовна негација</a></td>
+<td>сдесна улево</td>
 </tr>
 <tr>
 <td><span>+ …</span></td>
-<td><a href="https://developer.mozilla.org//en-US/docs/Web/JavaScript/Reference/Operators/Arithmetic_Operators#Unary_plus">Unary Plus</a></td>
-<td>s&#8217; desna na levo</td>
+<td><a href="https://developer.mozilla.org//en-US/docs/Web/JavaScript/Reference/Operators/Arithmetic_Operators#Unary_plus">унарни плус</a></td>
+<td>сдесна улево</td>
 </tr>
 <tr>
 <td><span>&#8211; …</span></td>
-<td><a href="https://developer.mozilla.org//en-US/docs/Web/JavaScript/Reference/Operators/Arithmetic_Operators#Unary_negation">Unary Negation</a></td>
-<td>s&#8217; desna na levo</td>
+<td><a href="https://developer.mozilla.org//en-US/docs/Web/JavaScript/Reference/Operators/Arithmetic_Operators#Unary_negation">унарни минус</a></td>
+<td>сдесна улево</td>
 </tr>
 <tr>
 <td><span>++ …</span></td>
-<td><a href="https://developer.mozilla.org//en-US/docs/Web/JavaScript/Reference/Operators/Arithmetic_Operators#Increment">Prefix Increment</a></td>
-<td>s&#8217; desna na levo</td>
+<td><a href="https://developer.mozilla.org//en-US/docs/Web/JavaScript/Reference/Operators/Arithmetic_Operators#Increment">префиксно увећање</a></td>
+<td>сдесна улево</td>
 </tr>
 <tr>
 <td><span>&#8212; …</span></td>
-<td><a href="https://developer.mozilla.org//en-US/docs/Web/JavaScript/Reference/Operators/Arithmetic_Operators#Decrement">Prefix Decrement</a></td>
-<td>s&#8217; desna na levo</td>
+<td><a href="https://developer.mozilla.org//en-US/docs/Web/JavaScript/Reference/Operators/Arithmetic_Operators#Decrement">префиксно умањење</a></td>
+<td>сдесна улево</td>
 </tr>
 <tr>
 <td><span>typeof …</span></td>
-<td><a href="https://developer.mozilla.org//en-US/docs/Web/JavaScript/Reference/Operators/typeof">typeof</a></td>
-<td>s&#8217; desna na levo</td>
+<td>оператор <a href="https://developer.mozilla.org//en-US/docs/Web/JavaScript/Reference/Operators/typeof">typeof</a></td>
+<td>сдесна улево</td>
 </tr>
 <tr>
 <td><span>void …</span></td>
-<td><a href="https://developer.mozilla.org//en-US/docs/Web/JavaScript/Reference/Operators/void">void</a></td>
-<td>s&#8217; desna na levo</td>
+<td>оператор <a href="https://developer.mozilla.org//en-US/docs/Web/JavaScript/Reference/Operators/void">void</a></td>
+<td>сдесна улево</td>
 </tr>
 <tr>
 <td><span>delete …</span></td>
-<td><a href="https://developer.mozilla.org//en-US/docs/Web/JavaScript/Reference/Operators/delete">delete</a></td>
-<td>s&#8217; desna na levo</td>
+<td>оператор <a href="https://developer.mozilla.org//en-US/docs/Web/JavaScript/Reference/Operators/delete">delete</a></td>
+<td>сдесна улево</td>
 </tr>
 <tr>
 <td>15</td>
 <td><span>… ** …</span></td>
-<td><a href="https://developer.mozilla.org//en-US/docs/Web/JavaScript/Reference/Operators/Arithmetic_Operators#Exponentiation">Exponentiation</a></td>
-<td>s&#8217; desna na levo</td>
+<td><a href="https://developer.mozilla.org//en-US/docs/Web/JavaScript/Reference/Operators/Arithmetic_Operators#Exponentiation">степеновање</a></td>
+<td>сдесна улево</td>
 </tr>
 <tr>
 <td rowspan="3">14</td>
 <td><span>… *&nbsp;…</span></td>
-<td><a href="https://developer.mozilla.org//en-US/docs/Web/JavaScript/Reference/Operators/Arithmetic_Operators#Multiplication">Multiplication</a></td>
-<td>s&#8217; leva na desno</td>
+<td><a href="https://developer.mozilla.org//en-US/docs/Web/JavaScript/Reference/Operators/Arithmetic_Operators#Multiplication">множење</a></td>
+<td>слева удесно</td>
 </tr>
 <tr>
 <td><span>… /&nbsp;…</span></td>
-<td><a href="https://developer.mozilla.org//en-US/docs/Web/JavaScript/Reference/Operators/Arithmetic_Operators#Division">Division</a></td>
-<td>s&#8217; leva na desno</td>
+<td><a href="https://developer.mozilla.org//en-US/docs/Web/JavaScript/Reference/Operators/Arithmetic_Operators#Division">дељење</a></td>
+<td>слева удесно</td>
 </tr>
 <tr>
 <td><span>… %&nbsp;…</span></td>
-<td><a href="https://developer.mozilla.org//en-US/docs/Web/JavaScript/Reference/Operators/Arithmetic_Operators#Remainder">Remainder</a></td>
-<td>s&#8217; leva na desno</td>
+<td><a href="https://developer.mozilla.org//en-US/docs/Web/JavaScript/Reference/Operators/Arithmetic_Operators#Remainder">остатак при дељењу</a></td>
+<td>слева удесно</td>
 </tr>
 <tr>
 <td rowspan="2">13</td>
 <td><span>… +&nbsp;…</span></td>
-<td><a href="https://developer.mozilla.org//en-US/docs/Web/JavaScript/Reference/Operators/Arithmetic_Operators#Addition">Addition</a></td>
-<td>s&#8217; leva na desno</td>
+<td><a href="https://developer.mozilla.org//en-US/docs/Web/JavaScript/Reference/Operators/Arithmetic_Operators#Addition">сабирање</a></td>
+<td>слева удесно</td>
 </tr>
 <tr>
 <td><span>… &#8211;&nbsp;…</span></td>
-<td><a href="https://developer.mozilla.org//en-US/docs/Web/JavaScript/Reference/Operators/Arithmetic_Operators#Subtraction">Subtraction</a></td>
-<td>s&#8217; leva na desno</td>
+<td><a href="https://developer.mozilla.org//en-US/docs/Web/JavaScript/Reference/Operators/Arithmetic_Operators#Subtraction">одузимање</a></td>
+<td>слева удесно</td>
 </tr>
 <tr>
 <td rowspan="3">12</td>
 <td><span>… &lt;&lt;&nbsp;…</span></td>
-<td><a href="https://developer.mozilla.org//en-US/docs/Web/JavaScript/Reference/Operators/Bitwise_Operators">Bitwise Left Shift</a></td>
-<td>s&#8217; leva na desno</td>
+<td><a href="https://developer.mozilla.org//en-US/docs/Web/JavaScript/Reference/Operators/Bitwise_Operators">битовно померање улево</a></td>
+<td>слева удесно</td>
 </tr>
 <tr>
 <td><span>… &gt;&gt;&nbsp;…</span></td>
-<td><a href="https://developer.mozilla.org//en-US/docs/Web/JavaScript/Reference/Operators/Bitwise_Operators">Bitwise Right Shift</a></td>
-<td>s&#8217; leva na desno</td>
+<td><a href="https://developer.mozilla.org//en-US/docs/Web/JavaScript/Reference/Operators/Bitwise_Operators">битовно померање удесно</a></td>
+<td>слева удесно</td>
 </tr>
 <tr>
 <td><span>… &gt;&gt;&gt;&nbsp;…</span></td>
-<td><a href="https://developer.mozilla.org//en-US/docs/Web/JavaScript/Reference/Operators/Bitwise_Operators">Bitwise Unsigned Right Shift</a></td>
-<td>s&#8217; leva na desno</td>
+<td><a href="https://developer.mozilla.org//en-US/docs/Web/JavaScript/Reference/Operators/Bitwise_Operators">битовно неозначено померање удесно</a></td>
+<td>слева удесно</td>
 </tr>
 <tr>
 <td rowspan="6">11</td>
 <td><span>… &lt;&nbsp;…</span></td>
-<td><a href="https://developer.mozilla.org//en-US/docs/Web/JavaScript/Reference/Operators/Comparison_Operators#Less_than_operator">Less Than</a></td>
-<td>s&#8217; leva na desno</td>
+<td><a href="https://developer.mozilla.org//en-US/docs/Web/JavaScript/Reference/Operators/Comparison_Operators#Less_than_operator">мањи</a></td>
+<td>слева удесно</td>
 </tr>
 <tr>
 <td><span>… &lt;=&nbsp;…</span></td>
-<td><a href="https://developer.mozilla.org//en-US/docs/Web/JavaScript/Reference/Operators/Comparison_Operators#Less_than__or_equal_operator">Less Than Or Equal</a></td>
-<td>s&#8217; leva na desno</td>
+<td><a href="https://developer.mozilla.org//en-US/docs/Web/JavaScript/Reference/Operators/Comparison_Operators#Less_than__or_equal_operator">мањи или једнак</a></td>
+<td>слева удесно</td>
 </tr>
 <tr>
 <td><span>… &gt;&nbsp;…</span></td>
-<td><a href="https://developer.mozilla.org//en-US/docs/Web/JavaScript/Reference/Operators/Comparison_Operators#Greater_than_operator">Greater Than</a></td>
-<td>s&#8217; leva na desno</td>
+<td><a href="https://developer.mozilla.org//en-US/docs/Web/JavaScript/Reference/Operators/Comparison_Operators#Greater_than_operator">већи</a></td>
+<td>слева удесно</td>
 </tr>
 <tr>
 <td><span>… &gt;=&nbsp;…</span></td>
-<td><a href="https://developer.mozilla.org//en-US/docs/Web/JavaScript/Reference/Operators/Comparison_Operators#Greater_than_or_equal_operator">Greater Than Or Equal</a></td>
-<td>s&#8217; leva na desno</td>
+<td><a href="https://developer.mozilla.org//en-US/docs/Web/JavaScript/Reference/Operators/Comparison_Operators#Greater_than_or_equal_operator">већи или једнак</a></td>
+<td>слева удесно</td>
 </tr>
 <tr>
 <td><span>… in&nbsp;…</span></td>
-<td><a href="https://developer.mozilla.org//en-US/docs/Web/JavaScript/Reference/Operators/in">in</a></td>
-<td>s&#8217; leva na desno</td>
+<td>оператор <a href="https://developer.mozilla.org//en-US/docs/Web/JavaScript/Reference/Operators/in">in</a></td>
+<td>слева удесно</td>
 </tr>
 <tr>
 <td><span>… instanceof&nbsp;…</span></td>
-<td><a href="https://developer.mozilla.org//en-US/docs/Web/JavaScript/Reference/Operators/instanceof">instanceof</a></td>
-<td>s&#8217; leva na desno</td>
+<td>оператор <a href="https://developer.mozilla.org//en-US/docs/Web/JavaScript/Reference/Operators/instanceof">instanceof</a></td>
+<td>слева удесно</td>
 </tr>
 <tr>
 <td rowspan="4">10</td>
 <td><span>… ==&nbsp;…</span></td>
-<td><a href="https://developer.mozilla.org//en-US/docs/Web/JavaScript/Reference/Operators/Comparison_Operators#Equality">Equality</a></td>
-<td>s&#8217; leva na desno</td>
+<td><a href="https://developer.mozilla.org//en-US/docs/Web/JavaScript/Reference/Operators/Comparison_Operators#Equality">једнакост</a></td>
+<td>слева удесно</td>
 </tr>
 <tr>
 <td><span>… !=&nbsp;…</span></td>
-<td><a href="https://developer.mozilla.org//en-US/docs/Web/JavaScript/Reference/Operators/Comparison_Operators#Inequality">Inequality</a></td>
-<td>s&#8217; leva na desno</td>
+<td><a href="https://developer.mozilla.org//en-US/docs/Web/JavaScript/Reference/Operators/Comparison_Operators#Inequality">различитост</a></td>
+<td>слева удесно</td>
 </tr>
 <tr>
 <td><span>… ===&nbsp;…</span></td>
-<td><a href="https://developer.mozilla.org//en-US/docs/Web/JavaScript/Reference/Operators/Comparison_Operators#Identity">Strict Equality</a></td>
-<td>s&#8217; leva na desno</td>
+<td><a href="https://developer.mozilla.org//en-US/docs/Web/JavaScript/Reference/Operators/Comparison_Operators#Identity">идентичност</a></td>
+<td>слева удесно</td>
 </tr>
 <tr>
 <td><span>… !==&nbsp;…</span></td>
-<td><a href="https://developer.mozilla.org//en-US/docs/Web/JavaScript/Reference/Operators/Comparison_Operators#Nonidentity">Strict Inequality</a></td>
-<td>s&#8217; leva na desno</td>
+<td><a href="https://developer.mozilla.org//en-US/docs/Web/JavaScript/Reference/Operators/Comparison_Operators#Nonidentity">неидентичност</a></td>
+<td>слева удесно</td>
 </tr>
 <tr>
 <td>9</td>
 <td><span>… &amp;&nbsp;…</span></td>
-<td><a href="https://developer.mozilla.org//en-US/docs/Web/JavaScript/Reference/Operators/Bitwise_Operators#Bitwise_AND">Bitwise AND</a></td>
-<td>s&#8217; leva na desno</td>
+<td><a href="https://developer.mozilla.org//en-US/docs/Web/JavaScript/Reference/Operators/Bitwise_Operators#Bitwise_AND">битовна конјукција</a></td>
+<td>слева удесно</td>
 </tr>
 <tr>
 <td>8</td>
 <td><span>… ^&nbsp;…</span></td>
-<td><a href="https://developer.mozilla.org//en-US/docs/Web/JavaScript/Reference/Operators/Bitwise_Operators#Bitwise_XOR">Bitwise XOR</a></td>
-<td>s&#8217; leva na desno</td>
+<td><a href="https://developer.mozilla.org//en-US/docs/Web/JavaScript/Reference/Operators/Bitwise_Operators#Bitwise_XOR">битовна ексклузивна дисјункција</a></td>
+<td>слева удесно</td>
 </tr>
 <tr>
 <td>7</td>
 <td><span>… |&nbsp;…</span></td>
-<td><a href="https://developer.mozilla.org//en-US/docs/Web/JavaScript/Reference/Operators/Bitwise_Operators#Bitwise_OR">Bitwise OR</a></td>
-<td>s&#8217; leva na desno</td>
+<td><a href="https://developer.mozilla.org//en-US/docs/Web/JavaScript/Reference/Operators/Bitwise_Operators#Bitwise_OR">битовна дисјункција</a></td>
+<td>слева удесно</td>
 </tr>
 <tr>
 <td>6</td>
 <td><span>… &amp;&amp;&nbsp;…</span></td>
-<td><a href="https://developer.mozilla.org//en-US/docs/Web/JavaScript/Reference/Operators/Logical_Operators#Logical_AND">Logical AND</a></td>
-<td>s&#8217; leva na desno</td>
+<td><a href="https://developer.mozilla.org//en-US/docs/Web/JavaScript/Reference/Operators/Logical_Operators#Logical_AND">логичка конјукција</a></td>
+<td>слева удесно</td>
 </tr>
 <tr>
 <td>5</td>
 <td><span>… ||&nbsp;…</span></td>
-<td><a href="https://developer.mozilla.org//en-US/docs/Web/JavaScript/Reference/Operators/Logical_Operators#Logical_OR">Logical OR</a></td>
-<td>s&#8217; leva na desno</td>
+<td><a href="https://developer.mozilla.org//en-US/docs/Web/JavaScript/Reference/Operators/Logical_Operators#Logical_OR">логичка дисјункција</a></td>
+<td>слева удесно</td>
 </tr>
 <tr>
 <td>4</td>
 <td><span>… ? … : …</span></td>
-<td><a href="https://developer.mozilla.org//en-US/docs/Web/JavaScript/Reference/Operators/Conditional_Operator">Conditional</a></td>
-<td>s&#8217; desna na levo</td>
+<td><a href="https://developer.mozilla.org//en-US/docs/Web/JavaScript/Reference/Operators/Conditional_Operator">условни израз</a></td>
+<td>сдесна улево</td>
 </tr>
 <tr>
 <td rowspan="13">3</td>
 <td><span>… =&nbsp;…</span></td>
-<td rowspan="13"><a href="https://developer.mozilla.org//en-US/docs/Web/JavaScript/Reference/Operators/Assignment_Operators">Assignment</a></td>
-<td rowspan="13">s&#8217; desna na levo</td>
+<td rowspan="13"><a href="https://developer.mozilla.org//en-US/docs/Web/JavaScript/Reference/Operators/Assignment_Operators">додела</a></td>
+<td rowspan="13">сдесна улево</td>
 </tr>
 <tr>
 <td><span>… +=&nbsp;…</span></td>
@@ -523,25 +523,25 @@
 <tr>
 <td rowspan="2">2</td>
 <td><span>yield&nbsp;…</span></td>
-<td><a href="https://developer.mozilla.org//en-US/docs/Web/JavaScript/Reference/Operators/yield">yield</a></td>
-<td>s&#8217; desna na levo</td>
+<td>оператор <a href="https://developer.mozilla.org//en-US/docs/Web/JavaScript/Reference/Operators/yield">yield</a></td>
+<td>сдесна улево</td>
 </tr>
 <tr>
 <td><span>yield*&nbsp;…</span></td>
-<td><a href="https://developer.mozilla.org//en-US/docs/Web/JavaScript/Reference/Operators/yield*">yield*</a></td>
-<td>s&#8217; desna na levo</td>
+<td>оператор <a href="https://developer.mozilla.org//en-US/docs/Web/JavaScript/Reference/Operators/yield*">yield*</a></td>
+<td>сдесна улево</td>
 </tr>
 <tr>
 <td>1</td>
 <td><span>&#8230;</span>&nbsp;…</td>
-<td><a href="https://developer.mozilla.org//en-US/docs/Web/JavaScript/Reference/Operators/Spread_operator">Spread</a></td>
-<td>n/a</td>
+<td><a href="https://developer.mozilla.org//en-US/docs/Web/JavaScript/Reference/Operators/Spread_operator">проширење</a></td>
+<td>н/д</td>
 </tr>
 <tr>
 <td>0</td>
 <td><span>… ,&nbsp;…</span></td>
-<td><a href="https://developer.mozilla.org//en-US/docs/Web/JavaScript/Reference/Operators/Comma_Operator">Comma / Sequence</a></td>
-<td>s&#8217; leva na desno</td>
+<td><a href="https://developer.mozilla.org//en-US/docs/Web/JavaScript/Reference/Operators/Comma_Operator">зарез/секвенца</a></td>
+<td>слева удесно</td>
 </tr>
 </tbody>
 </table>
