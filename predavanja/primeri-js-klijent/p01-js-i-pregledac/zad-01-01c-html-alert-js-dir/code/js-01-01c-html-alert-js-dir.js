@@ -1,0 +1,1 @@
+alert("Zdravo, živo");

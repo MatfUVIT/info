@@ -147,7 +147,7 @@
 Introduced in ES2015, template strings are string literals that allow a more powerful way to define strings.
 emplate literals are enclosed by the back-tick (знак \`)  (grave accent) character instead of double or single quotes. Template literals can contain placeholders. These are indicated by the dollar sign and curly braces (${expression}). The expressions in the placeholders and the text between them get passed to a function. The default function just concatenates the parts into a single string. If there is an expression preceding the template literal (tag here), this is called a "tagged template". In that case, the tag expression (usually a function) gets called with the processed template literal, which you can then manipulate before outputting. To escape a back-tick in a template literal, put a backslash \ before the back-tick.
 
-Пример: 
+Пример:
 \`a string\`
 You can perform string substitution, embedding the result of any JavaScript expression:
 
@@ -160,7 +160,6 @@ You can have multiline strings easily:
 ``a string
 with
 ${something}`
-
 
 ## Структура ЈаваСкрипт програма
 
@@ -180,7 +179,23 @@ ${something}`
 
 #### Резервисане речи
 
+Кључне и резервисане речи су:
+
+`break` `case` `catch` `class` `const` `continue` `debugger`
+`default` `delete` `do` `else` `enum` `export` `extends` `false`
+`finally` `for` `function` `if` `implements` `import` `in`
+`instanceof` `interface` `let` `new` `null` `package` `private`
+`protected` `public` `return` `static` `super` `switch` `this`
+`throw` `true` `try` `typeof` `var` `void` `while` `with` `yield`
+
 ### Променљиве
+
+#### Окружење
+
+Када се програм покрене, окружење није празно - оно већ садржи 
+променљиве које су део језичког стандарда, као и променљиве
+које обезбеђују начин интеракције програма са системом који га
+окружује.
 
 ### Наредбе и секвенце наредби
 

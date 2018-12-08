@@ -1,3 +1,5 @@
 // sekvencijalno izvršavanje
-var br = Number(prompt("Unesite broj"));
-alert(br + " je kvadratni koren broja " + br * br);
+let br = Number("23");
+br = br - 10
+console.log (br + " je kvadratni koren broja " + br * br);
+
