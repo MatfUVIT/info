@@ -1,7 +1,8 @@
-// do while ciklus, traži unos od korisnika sve dok unos ne postane neprazan
+// do while ciklus
 let pokusaja = 0;
 do {
-    var slucajan = Math.random() - 0.1;
+    var slucajan = Math.random();
+    console.log(slucajan);
     pokusaja = pokusaja + 1;
-} while (slucajan >= 0);
-console.log(`Извучен је негативан случајан број ${slucajan} из покушаја бр. ${pokusaja}`);
+} while (slucajan >= 0.1);
+console.log(`Извучен је број ${slucajan} мањи од 0.1 из покушаја бр. ${pokusaja}`);
