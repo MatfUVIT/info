@@ -256,6 +256,12 @@
 
             1. [Примитивни типови](JavaScript-Programski-Jezik.md#примитивни-типови){:target="_blank"}
 
+            1. [Примери за типове, вредности  и изразе](JavaScript-Programski-Jezik.md#примери-за-типове-вредности-и-изразе){:target="_blank"}
+
+        1. [Структура ЈаваСкрипт програма](JavaScript-Programski-Jezik.md#структура-јаваскрипт-програма){:target="_blank"}
+
+        1. [Функције и затворења](JavaScript-Programski-Jezik.md#функције-и-затворења){:target="_blank"}
+
         1. Извршавање и дебагирање JavaScript кода
 
             - Дебагирање програмског кода - основни појмови
