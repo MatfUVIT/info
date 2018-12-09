@@ -28,6 +28,8 @@
 
 * **[Колоквијуми](/kolokvijumi/README.md)**
 
+* **[Теоријски тестови](/teorijski-testovi/README.md)**
+
 * **[Писмени испити](/pismeni-ispiti/README.md)**
 
 * **[Усмени испити](/usmeni-ispiti/README.md)**
