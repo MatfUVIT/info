@@ -24,7 +24,6 @@
 | `sub()` | Displays a string as subscript text |
 | `sup()` | Displays a string as superscript text |
 
-
 ## Објектни модел документа
 
 ### Петља за догађаје
