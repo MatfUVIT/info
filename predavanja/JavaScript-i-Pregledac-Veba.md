@@ -5,7 +5,27 @@
 
 ## Увод
 
-## Догађаји
+## ЈаваСкрипт функције и веб
+
+Следеће методе враћају стринг обавијен са HTML тагом (евентуално неким HTML атрибутом):
+| Назив методе          | Опис                                                |
+|-----------------------|-----------------------------------------------------|
+| `anchor()` | Creates an anchor |
+| `big()` | Displays a string using a big font |
+| `blink()` | Displays a blinking string  |
+| `bold()` | Displays a string in bold |
+| `fixed()` | Displays a string using a fixed-pitch font |
+| `fontcolor()` | Displays a string using a specified color |
+| `fontsize()`| Displays a string using a specified size |
+| `italics()` | Displays a string in italic |
+| `link()` | Displays a string as a hyperlink |
+| `small()` | Displays a string using a small font |
+| `strike()` | Displays a string with a strikethrough |
+| `sub()` | Displays a string as subscript text |
+| `sup()` | Displays a string as superscript text |
+
+
+## Објектни модел документа
 
 ### Петља за догађаје
 
