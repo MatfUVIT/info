@@ -196,7 +196,7 @@
 
         - [Примери](https://github.com/MatfUVIT/UVIT/tree/master/predavanja/primeri-html){:target="_blank"}
 
-    1. [CSS](/prezentacije/UVIT04-01-CSS.pdf){:target="_blank"}
+    1. [CSS](/prezentacije/UVIT04-01-Stilovi-CSS.pdf){:target="_blank"}
 
         1. Nачини укључивања CSS декларација  
 
