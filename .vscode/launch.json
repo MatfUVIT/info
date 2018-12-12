@@ -9,7 +9,7 @@
             "type": "node",
             "request": "launch",
             "name": "Launch Program",
-            "program": "${workspaceFolder}/predavanja/primeri-js/p01-js-vrednosti-tipovi-operatori/js-01-01-brojevi.js"
+            "program": "${workspaceFolder}/predavanja/пример002.js"
         }
     ]
 }

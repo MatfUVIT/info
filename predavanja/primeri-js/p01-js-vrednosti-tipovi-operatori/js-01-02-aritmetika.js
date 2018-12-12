@@ -4,7 +4,7 @@ console.log(100 + 4 * 11);
 // zagrade utiču na prioritet
 console.log((100 + 4) * 11);
 
-// operatori istog prioriteta se izvršavaju sdesna ulevo
+// operatori istog prioriteta se izvršavaju sleva udesno
 console.log(1 - 2 + 1);
 
 // operator za računanje ostatka pri deljenju
