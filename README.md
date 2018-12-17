@@ -4,11 +4,11 @@
 
 **[Важно! Термин надокнаде предавања](/predavanja/info/README.md)**
 
-**[Важно! Термин првог теоријског теста](/usmeni-ispiti/info/README.md)**
+[comment]: # (* **[Важно! Информације о вежбама](/vezbe/info/README.md)**)
 
-[comment]: # (* **[Информације о вежбама](/vezbe/info/README.md)**)
+[comment]: # (* **[Важно! Резултати колоквијума](/kolokvijumi/info/README.md)**)
 
-[comment]: # (* **[Важно! Резултатти колоквијума](/kolokvijumi/info/README.md)**)
+[comment]: # (* **[Важно! Термин првог теоријског теста](/usmeni-ispiti/info/README.md)**)
 
 ## Информације о курсу
 
