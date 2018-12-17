@@ -273,4 +273,6 @@
 
         1. Обрада формулара на клијентској страни.
 
+    - [Материјали са вежби](/materijali/uvit_vezbe_materijali_svi.zip){:target="_blank"}
+
 [УВИТ](../README.md)
