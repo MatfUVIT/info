@@ -252,7 +252,7 @@
 
         1. [Карактеристике језика ЈаваСкрипт](JavaScript-Programski-Jezik.md#карактеристике-језика-јаваскрипт){:target="_blank"}
 
-        1. [Типови вредности и изрази](JavaScript-Programski-Jezik.md#типови-вредности-и-изрази){:target="_blank"}
+        1. [Типови вредности изрази](JavaScript-Programski-Jezik.md#типови-вредности-изрази){:target="_blank"}
 
             1. [Примитивни типови](JavaScript-Programski-Jezik.md#примитивни-типови){:target="_blank"}
 
