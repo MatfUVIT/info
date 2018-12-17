@@ -300,9 +300,9 @@
 
             1. [Примери](https://github.com/MatfUVIT/UVIT/tree/master/predavanja/primeri-js/p10-moduli){:target="_blank"}
 
-        1. Извршавање и дебагирање JavaScript кода
+        1. Извршавање и дебагирање JavaScript кŏда
 
-            - Дебагирање програмског кода - основни појмови
+            - Дебагирање програмског кŏда - основни појмови
 
             - Радно окружење `node.js`
 
@@ -318,13 +318,13 @@
 
         1. Функционални аспекти JavaScript-а
 
-        1. [Стилови кодирања у језику ЈаваСкрипт](JavaScript-Programski-Jezik.md#стилови-кодирања){:target="_blank"}
+        1. [Стилови кŏдирања у језику ЈаваСкрипт](JavaScript-Programski-Jezik.md#стилови-кŏдирања){:target="_blank"}
 
         - [Примери](https://github.com/MatfUVIT/UVIT/tree/master/predavanja/primeri-js){:target="_blank"}
 
     1. [ЈаваСкрипт за програмирање на клијентској страни](JavaScript-i-Pregledac-Veba.md){:target="_blank"}
 
-        1. Дебагирање клијентског JavaScript кода уз помоћ веб прегледача
+        1. Дебагирање клијентског JavaScript кŏда уз помоћ веб прегледача
 
         1. DOM
 

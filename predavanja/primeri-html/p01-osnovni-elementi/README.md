@@ -6,9 +6,9 @@
 
 1. Основе HTML
 
-    1. HTML илустрација [Веза](./zad03-01-01-ilustracija/index.html){:target="_blank"}  [Програмски код](https://github.com/MatfUVIT/UVIT/blob/master/predavanja/primeri-html/p01-html-osnove/zad03-01-01-ilustracija/index.html){:target="_blank"}
+    1. HTML илустрација [Веза](./zad03-01-01-ilustracija/index.html){:target="_blank"}  [Програмски кŏд](https://github.com/MatfUVIT/UVIT/blob/master/predavanja/primeri-html/p01-html-osnove/zad03-01-01-ilustracija/index.html){:target="_blank"}
 
-    1. HTML костур [Веза](./zad03-01-02-html5-skeleton.html){:target="_blank"}  [Програмски код](https://github.com/MatfUVIT/UVIT/blob/master/predavanja/primeri-html/p01-html-osnove/zad03-01-02-html5-skeleton.html){:target="_blank"}
+    1. HTML костур [Веза](./zad03-01-02-html5-skeleton.html){:target="_blank"}  [Програмски кŏд](https://github.com/MatfUVIT/UVIT/blob/master/predavanja/primeri-html/p01-html-osnove/zad03-01-02-html5-skeleton.html){:target="_blank"}
 
     1. HTML целине [Веза](./zad03-01-03-html5-celine.html){:target="_blank"}  [Програмски код](https://github.com/MatfUVIT/UVIT/blob/master/predavanja/primeri-html/p01-html-osnove/zad03-01-03-html5-celine.html){:target="_blank"}
 
