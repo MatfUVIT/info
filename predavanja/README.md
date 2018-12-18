@@ -252,21 +252,21 @@
 
         1. [Карактеристике језика ЈаваСкрипт](JavaScript-Programski-Jezik.md#карактеристике-језика-јаваскрипт){:target="_blank"}
 
-        1. [Типови вредности изрази](JavaScript-Programski-Jezik.md#типови-вредности-изрази){:target="_blank"}
+        1. [Структура ЈаваСкрипт програма](JavaScript-Programski-Jezik.md#структура-јаваскрипт-програма){:target="_blank"}
 
-            1. [Примитивни типови](JavaScript-Programski-Jezik.md#примитивни-типови){:target="_blank"}
+            1. [Лексичка структура језика ЈаваСкрипт](JavaScript-Programski-Jezik.md#лексичка-структура-језика-јаваскрипт){:target="_blank"}
 
-            1. [Објектни типови](JavaScript-Programski-Jezik.md#објектни-типови){:target="_blank"}
+            1. [Типови и вредности](JavaScript-Programski-Jezik.md#типови-и-вредности){:target="_blank"}
+
+                1. [Примитивни типови](JavaScript-Programski-Jezik.md#примитивни-типови){:target="_blank"}
+
+                1. [Објектни типови](JavaScript-Programski-Jezik.md#објектни-типови){:target="_blank"}
+
+            1. [Променљиве](JavaScript-Programski-Jezik.md#променљиве){:target="_blank"}
 
             1. [Изрази](JavaScript-Programski-Jezik.md#изрази){:target="_blank"}
 
-            1. [Примери](https://github.com/MatfUVIT/UVIT/tree/master/predavanja/primeri-js/p01-js-vrednosti-tipovi-operatori){:target="_blank"}
-
-        1. [Структура ЈаваСкрипт програма](JavaScript-Programski-Jezik.md#структура-јаваскрипт-програма){:target="_blank"}
-
-            1. [Лексичка структура језика](JavaScript-Programski-Jezik.md#лексичка-структура-језика){:target="_blank"}
-
-            1. [Променљиве](JavaScript-Programski-Jezik.md#променљиве){:target="_blank"}
+            - [Примери](https://github.com/MatfUVIT/UVIT/tree/master/predavanja/primeri-js/p01-js-vrednosti-tipovi-operatori){:target="_blank"}
 
             1. [Наредбе и секвенце наредби](JavaScript-Programski-Jezik.md#наредбе-и-секвенце-наредби){:target="_blank"}
 
@@ -274,31 +274,33 @@
 
             1. [Циклуси](JavaScript-Programski-Jezik.md#циклуси){:target="_blank"}
 
-            1. [Примери](https://github.com/MatfUVIT/UVIT/tree/master/predavanja/primeri-js/p02-js-struktura-programa){:target="_blank"}
+            - [Примери](https://github.com/MatfUVIT/UVIT/tree/master/predavanja/primeri-js/p02-js-struktura-programa){:target="_blank"}
 
         1. [Функције и затворења](JavaScript-Programski-Jezik.md#функције-и-затворења){:target="_blank"}
 
-            1. [Примери](https://github.com/MatfUVIT/UVIT/tree/master/predavanja/primeri-js/p03-funkcije-zatvorenja){:target="_blank"}
+            - [Примери](https://github.com/MatfUVIT/UVIT/tree/master/predavanja/primeri-js/p03-funkcije-zatvorenja){:target="_blank"}
 
         1. [Низови и објекти](JavaScript-Programski-Jezik.md#низови-и-објекти){:target="_blank"}
 
-            1. [Примери](https://github.com/MatfUVIT/UVIT/tree/master/predavanja/primeri-js/p04-objekti-nizovi){:target="_blank"}
+            - [Примери](https://github.com/MatfUVIT/UVIT/tree/master/predavanja/primeri-js/p04-objekti-nizovi){:target="_blank"}
 
         1. [Функције вишег реда](JavaScript-Programski-Jezik.md#функције-вишег-реда){:target="_blank"}
 
-            1. [Примери](https://github.com/MatfUVIT/UVIT/tree/master/predavanja/primeri-js/p05-funkcije-viseg-reda){:target="_blank"}
+            - [Примери](https://github.com/MatfUVIT/UVIT/tree/master/predavanja/primeri-js/p05-funkcije-viseg-reda){:target="_blank"}
 
         1. [Напредни објекти](JavaScript-Programski-Jezik.md#напредни-објекти){:target="_blank"}
 
-            1. [Примери](https://github.com/MatfUVIT/UVIT/tree/master/predavanja/primeri-js/p06-napredni-objekti){:target="_blank"}
+            1. JavaScript објектна нотација  - JSON
+
+            - [Примери](https://github.com/MatfUVIT/UVIT/tree/master/predavanja/primeri-js/p06-napredni-objekti){:target="_blank"}
 
         1. [Изузетци](JavaScript-Programski-Jezik.md#изузетци){:target="_blank"}
 
-            1. [Примери](https://github.com/MatfUVIT/UVIT/tree/master/predavanja/primeri-js/p08-rukovanje-greskama){:target="_blank"}
+            - [Примери](https://github.com/MatfUVIT/UVIT/tree/master/predavanja/primeri-js/p08-rukovanje-greskama){:target="_blank"}
 
         1. [Модули](JavaScript-Programski-Jezik.md#модули){:target="_blank"}
 
-            1. [Примери](https://github.com/MatfUVIT/UVIT/tree/master/predavanja/primeri-js/p10-moduli){:target="_blank"}
+            - [Примери](https://github.com/MatfUVIT/UVIT/tree/master/predavanja/primeri-js/p10-moduli){:target="_blank"}
 
         1. Извршавање и дебагирање JavaScript кŏда
 
@@ -311,12 +313,6 @@
             - Развојно окружење Visual Studio Code
 
             - Извршавање и дебагирање коришћењем Visual Studio Code  
-
-        1. Објектни аспекти JavaScript-а
-
-            - JavaScript објектна нотација  - JSON
-
-        1. Функционални аспекти JavaScript-а
 
         1. [Стилови кŏдирања у језику ЈаваСкрипт](JavaScript-Programski-Jezik.md#стилови-кŏдирања){:target="_blank"}
 
