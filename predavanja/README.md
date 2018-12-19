@@ -268,15 +268,17 @@
 
             1. [Изрази](JavaScript-Programski-Jezik.md#изрази){:target="_blank"}
 
-            - [Примери](https://github.com/MatfUVIT/UVIT/tree/master/predavanja/primeri-js/p01-js-vrednosti-tipovi-operatori){:target="_blank"}
-
             1. [Наредбе и секвенце наредби](JavaScript-Programski-Jezik.md#наредбе-и-секвенце-наредби){:target="_blank"}
+
+            1. [Позиви предефинисаних функција](JavaScript-Programski-Jezik.md#позиви-предефинисаних-функција{:target="_blank"}
 
             1. [Гранања](JavaScript-Programski-Jezik.md#гранања){:target="_blank"}
 
             1. [Циклуси](JavaScript-Programski-Jezik.md#циклуси){:target="_blank"}
 
-            - [Примери](https://github.com/MatfUVIT/UVIT/tree/master/predavanja/primeri-js/p02-js-struktura-programa){:target="_blank"}
+            - [Примери (типови и вредности)](https://github.com/MatfUVIT/UVIT/tree/master/predavanja/primeri-js/p01-js-vrednosti-tipovi-operatori){:target="_blank"}
+
+            - [Примери (гранања и циклуси)](https://github.com/MatfUVIT/UVIT/tree/master/predavanja/primeri-js/p02-js-struktura-programa){:target="_blank"}
 
         1. [Функције и затворења](JavaScript-Programski-Jezik.md#функције-и-затворења){:target="_blank"}
 
