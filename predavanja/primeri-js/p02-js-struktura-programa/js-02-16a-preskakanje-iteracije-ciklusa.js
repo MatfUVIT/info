@@ -7,7 +7,7 @@ for (let i = 0; i < n; i++) {
       slucajan = Math.random();
       ukupnoPokusaja++;
       if( slucajan < 0.1)
-        continue;
+        continue centralna;
   }
 }
 console.log(`Укупан број покушаја је ${ukupnoPokusaja}`);

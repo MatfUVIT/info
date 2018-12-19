@@ -1,4 +1,4 @@
-// beskonačni for ciklus sa iskakanjem za računanje 3^5
+// beskonačni for ciklus sa iskakanjem izvlačenje negativnog pseudoslučajnog broja
 var slucajan = Math.random();
 console.log(slucajan);
 for(var pokusaja = 1; ; pokusaja++){

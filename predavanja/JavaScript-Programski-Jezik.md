@@ -1048,9 +1048,9 @@ JаваСкрипт програми се записују коришћењем 
 
 ##### Објекат `Console`
 
-Oвај објекат обезбеђује приступ било конзоли за дебагирање код прегледача, било конзоли за приказ код node.js. Ккнретни начин рада конзоле се разликује од једне до друге платформе, али увек постоји скуп функционалности које су обезбеђене - фактички је стандардизована функционалност конзоле. 
+Oвај објекат обезбеђује приступ било конзоли за дебагирање код прегледача, било конзоли за приказ код node.js. Конкретни начин рада конзоле се разликује од једне до друге платформе, али увек постоји скуп функционалности које су обезбеђене - фактички је стандардизована функционалност конзоле.
 
-Објекту `Console` се може приступити из ма ког глобалног објекта. 
+Објекту `Console` се може приступити из ма ког глобалног објекта - код прегледача је изложена као `Window.console`  и на њу се може једностано реферисати са `console`.
 
 **Пример.** Позив функције за приказ на конзолу:
 <script src="https://gist.github.com/vladofilipovic/4e183bd2b858ac5c6d0171a8c00407d8.js"></script>
@@ -1084,6 +1084,9 @@ Oвај објекат обезбеђује приступ било конзол
 **Пример.** Наредба `while`:
 <script src="https://gist.github.com/vladofilipovic/e2de7b756dbf81e3c56797b2d5b86880.js"></script>
 
+**Пример.** Циклуси и сажето ажурирање:
+<script src="https://gist.github.com/vladofilipovic/5026b3648df928050f821022bd017227.js"></script>
+
 #### Наредба do - while
 
 **Пример.** Наредба  `do`-`while`:
@@ -1094,17 +1097,35 @@ Oвај објекат обезбеђује приступ било конзол
 **Пример.** Наредба  `for`:
 <script src="https://gist.github.com/vladofilipovic/431715c98284ddf6120be93d2b59daf2.js"></script>
 
+**Пример.** Наредба  `for`:
+<script src="https://gist.github.com/vladofilipovic/63bf2ef2eff912fe15ae4b08c35caec3.js"></script>
+
+**Пример.** Наредба  `for` - циклус у циклусу:
+<script src="https://gist.github.com/vladofilipovic/84f9e866af82b61c731515d463fe0b1b.js"></script>
+
 #### Искакање из циклуса
 
-**Пример.** Наредба  `for`-`break`:
+**Пример.** Искакање из циклуса `for`:
 <script src="https://gist.github.com/vladofilipovic/10cd5f3e4391763dbcf94232050b64b0.js"></script>
 
-**Пример.** Циклуси и сажето ажурирање:
-<script src="https://gist.github.com/vladofilipovic/5026b3648df928050f821022bd017227.js"></script>
+**Пример.** Бесконачни `for` циклус са искакањем за извлачење малог псеудослучајног броја:
+<script src="https://gist.github.com/vladofilipovic/2f3e17c9b037e444391037ab5fa1ba3c.js"></script>
 
 #### Прескакање итерације циклуса
 
-#### Обележена искакање иа циклуса и прескакање итерације
+**Пример.** Необележено прескакње итерације:
+<script src="https://gist.github.com/vladofilipovic/638f3f69a88b97f232d19e44764cd6ad.js"></script>
+
+#### Обележено искакање иа циклуса и обележено прескакање итерације
+
+**Пример.** Необележено искакње из циклуса:
+<script src="https://gist.github.com/vladofilipovic/a16f75fef7d26ad5b7b417db20a76216.js"></script>
+
+**Пример.** Обележено искакње из циклуса:
+<script src="https://gist.github.com/vladofilipovic/1e08c5d1f5922d31bdcd1f91e126cd67.js"></script>
+
+**Пример.** Обележено прескакање итерације:
+<script src="https://gist.github.com/vladofilipovic/aac46cdc7c509dcbb04acfeff625b977.js"></script>
 
 #### Циклуси и опсези важења
 
