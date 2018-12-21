@@ -270,7 +270,7 @@
 
             1. [Наредбе и секвенце наредби](JavaScript-Programski-Jezik.md#наредбе-и-секвенце-наредби){:target="_blank"}
 
-            1. [Позиви предефинисаних функција](JavaScript-Programski-Jezik.md#позиви-предефинисаних-функција{:target="_blank"}
+            1. [Позиви предефинисаних функција](JavaScript-Programski-Jezik.md#позиви-предефинисаних-функција){:target="_blank"}
 
             1. [Гранања](JavaScript-Programski-Jezik.md#гранања){:target="_blank"}
 

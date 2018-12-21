@@ -1,7 +1,8 @@
+//'use strict'
 // do while ciklus
 let pokusaja = 0;
 do {
-    var slucajan = Math.random();
+    slucajan = Math.random();
     console.log(slucajan);
     pokusaja = pokusaja + 1;
 } while (slucajan >= 0.1);

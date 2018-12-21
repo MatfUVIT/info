@@ -4,6 +4,6 @@ var buka = function() {
     console.log(" Tras !");
 };
 
-buka();
+buka("Petar");
 buka();
 buka();

@@ -1,5 +1,6 @@
 // visestruko grananje koriscenjem naredbe switch
 let godisnjeDoba = Math.floor( (Math.random() * 40) % 5 );
+console.log( `Vrednost indikatora je ${godisnjeDoba}` );
 switch (godisnjeDoba) {
     case 0:
         console.log("Ponesite kišobran.");
@@ -15,4 +16,3 @@ switch (godisnjeDoba) {
         console.log("Ovo je neko nemoguće doba...");
         break; 
 }
-console.log( `Vrednost indikatora je ${godisnjeDoba}` );
