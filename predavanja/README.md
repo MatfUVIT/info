@@ -284,7 +284,7 @@
 
             - [Примери](https://github.com/MatfUVIT/UVIT/tree/master/predavanja/primeri-js/p03-funkcije-zatvorenja){:target="_blank"}
 
-        1. [Низови и објекти](JavaScript-Programski-Jezik.md#низови-и-објекти){:target="_blank"}
+        1. [Објекти и низови](JavaScript-Programski-Jezik.md#објекти-и-низови){:target="_blank"}
 
             - [Примери](https://github.com/MatfUVIT/UVIT/tree/master/predavanja/primeri-js/p04-objekti-nizovi){:target="_blank"}
 

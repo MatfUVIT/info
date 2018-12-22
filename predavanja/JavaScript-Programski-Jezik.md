@@ -1179,15 +1179,35 @@ Oвај објекат обезбеђује приступ било конзол
 **Пример.** Резукзивна функција за степеновање основе целобројним изложиоцем:
 <script src="https://gist.github.com/vladofilipovic/366c03dd5ead541ab29a268cbb2c3249.js"></script>
 
+**Пример.** Узајамна рекурзија при провери да ли је број паран/непаран:
+<script src="https://gist.github.com/vladofilipovic/2ad5105e70eaa8fed7a8c3abb7937437.js"></script>
+
+**Пример.** Нетривијално коришћење рекурзије:
+<script src="https://gist.github.com/vladofilipovic/fc511582f015162008698ff938fa5d50.js"></script>
+
 ### Затворења за функције
+
+**Пример.** Функција којим се омотава дата вредност:
+<script src="https://gist.github.com/vladofilipovic/a59e06b1f0ee9be9733fe9036da53cd5.js"></script>
+
+**Пример.** Функција помоћу које се генеришу друге функције (за множење датим бројем):
+<script src="https://gist.github.com/vladofilipovic/29294455586c75ae0867e838c3f66be2.js"></script>
+
+**Пример.** Функција помоћу које се генеришу друге функције (за степеновање):
+<script src="https://gist.github.com/vladofilipovic/ff0e1a08a40d56a29fbcb5a5f281a092.js"></script>
 
 ### Ламбда-функције
 
-## Низови и објекти
+**Пример.** Дефинисање функције помоћу ламбда израза:
+<script src="https://gist.github.com/vladofilipovic/6cda0c7e9fbe772ee2a1bdf1b27219e3.js"></script>
 
-### Низови
+**Пример.** Декларација и позив функције за степеновање дефинисане помоћу ламбда-израза:
+<script src="https://gist.github.com/vladofilipovic/77a805339e3faa39233d211b5115a4fa.js"></script>
 
-#### Низови и функције
+**Пример.** Генерисање функције за степеновање помоћу ламбда-израза:
+<script src="https://gist.github.com/vladofilipovic/8396f4e1504a1e59d9a5f1a380479dbd.js"></script>
+
+## Oбјекти и низови
 
 ### Објекти
 
@@ -1196,6 +1216,10 @@ Oвај објекат обезбеђује приступ било конзол
 #### Методи код објеката
 
 #### Сложени објекти и функције
+
+### Низови
+
+#### Низови и функције
 
 ## Функције вишег реда
 
