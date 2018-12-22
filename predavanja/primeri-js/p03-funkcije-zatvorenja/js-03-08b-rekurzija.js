@@ -16,5 +16,5 @@ function pronadjiResenje(cilj) {
     return pronadji(1, "1");
 }
 
-for(var i=1; i<71; i++)
+for(var i=1; i<11171; i++)
     console.log(i + " = "+ pronadjiResenje(i));

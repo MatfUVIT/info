@@ -1,4 +1,4 @@
-var nizBrojeva = [1, 2, 3];
+var nizBrojeva = ["Paja Patak", 1, 2, 3, "Miki Maus"];
 
 // treći, najopštiji, način, pomoću alert
 function zaSvaki(niz, akcija) {

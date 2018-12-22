@@ -1,5 +1,5 @@
 // kreiranje objekta
-var objekat = {
+let objekat = {
     levo: 1,
     desno: 2
 }

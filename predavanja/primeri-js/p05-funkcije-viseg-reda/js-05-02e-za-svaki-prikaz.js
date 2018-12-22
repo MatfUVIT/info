@@ -9,3 +9,5 @@ function zaSvaki(niz, akcija) {
 zaSvaki(nizBrojeva, function(x) {
     console.log(x)
 });
+
+zaSvaki(nizBrojeva, (x)=>{console.log(x)});

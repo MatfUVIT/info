@@ -11,3 +11,8 @@ prikazNaKonzolu = function(x){
 };
 
 zaSvaki(nizBrojeva, prikazNaKonzolu);
+
+
+prikazNaKonzolu2 = (x) =>{
+    console.log(x)}
+    zaSvaki(nizBrojeva, prikazNaKonzolu2);
