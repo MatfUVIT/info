@@ -10,12 +10,12 @@ console.log("one two three".indexOf("ee"));
 console.log(" okay \n ".trim());
 
 
-var niska = " abc ";
-// prikazuje 3
+var niska = "+abc ";
+// prikazuje 5
 console.log(niska.length);
 
-// prikazuje a
+// prikazuje +
 console.log(niska.charAt(0));
 
-// prikazuje b
+// prikazuje a
 console.log(niska[1]);

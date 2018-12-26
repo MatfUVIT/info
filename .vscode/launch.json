@@ -3,13 +3,12 @@
     // Hover to view descriptions of existing attributes.
     // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
-    "configurations": [
-    
+    "configurations": [    
         {
             "type": "node",
             "request": "launch",
             "name": "Launch Program",
-            "program": "${workspaceFolder}/predavanja/пример002.js"
+            "program": "${workspaceFolder}/predavanja/primeri-js/p04-objekti-nizovi/js-04-12a-niske.js"
         }
     ]
 }

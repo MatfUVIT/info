@@ -1,5 +1,5 @@
 // for ciklus
-const n = 20
+const n = 200
 let prosecnoPokusaja = 0
 for (let i = 0; i < n; i++) {
     var slucajan = Math.random();

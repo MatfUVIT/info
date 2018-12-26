@@ -1,7 +1,15 @@
-var niz = [1, 2, 3];
+let niz = [1, 2, 3];
 
 // prvi način
-for (var i = 0; i < niz.length; i++) {
-    var tekuci = niz[i];
+for (let i = 0; i < niz.length; i++) {
+    let tekuci = niz[i];
+    console.log(tekuci);
+}
+
+console.log("---");
+
+// prvi način, kolekcijski ciklus
+for (let i in niz) {
+    let tekuci = niz[i];
     console.log(tekuci);
 }

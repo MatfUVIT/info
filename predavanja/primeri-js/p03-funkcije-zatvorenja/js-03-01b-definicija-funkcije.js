@@ -6,4 +6,5 @@ var buka = function() {
 
 buka();
 buka();
-buka();
+// vidimo da se parametri mogu raylikovati od argumenata
+buka("Petar");

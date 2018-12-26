@@ -1,20 +1,40 @@
+
+let x = [1, 2, 3]
 // niz je objekat
-console.log(typeof [1, 2, 3]);
+console.log(`${x} - ${typeof(x)}`)
 
-console.log(typeof 1);
+x = {x:1.7, y:5.6}
+console.log(`${x} - ${typeof(x)}`)
 
-console.log(typeof -1.7);
+delete x.x
+delete x.y
+console.log(`${x} - ${typeof(x)}`)
 
-console.log(typeof -Infinity);
 
-console.log(typeof NaN);
+x = 1
+console.log(`${x} - ${typeof(x)}`)
 
-console.log(typeof '1');
+x = -1.7
+console.log(`${x} - ${typeof(x)}`)
 
-console.log(typeof "1");
 
-console.log(typeof true);
+x =-Infinity
+console.log(`${x} - ${typeof(x)}`)
 
-console.log(typeof undefined);
+x = NaN
+console.log(`${x} - ${typeof(x)}`)
 
-console.log(typeof null);
+x = '1'
+console.log(`${x} - ${typeof(x)}`)
+
+x = "1"
+console.log(`${x} - ${typeof(x)}`)
+
+x = true
+console.log(`${x} - ${typeof(x)}`)
+
+x = undefined
+console.log(`${x} - ${typeof(x)}`)
+
+x = null
+console.log(`${x} - ${typeof(x)}`)

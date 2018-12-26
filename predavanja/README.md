@@ -270,7 +270,7 @@
 
             1. [Наредбе и секвенце наредби](JavaScript-Programski-Jezik.md#наредбе-и-секвенце-наредби){:target="_blank"}
 
-            1. [Позиви предефинисаних функција](JavaScript-Programski-Jezik.md#позиви-предефинисаних-функција{:target="_blank"}
+            1. [Позиви предефинисаних функција](JavaScript-Programski-Jezik.md#позиви-предефинисаних-функција){:target="_blank"}
 
             1. [Гранања](JavaScript-Programski-Jezik.md#гранања){:target="_blank"}
 
@@ -284,7 +284,7 @@
 
             - [Примери](https://github.com/MatfUVIT/UVIT/tree/master/predavanja/primeri-js/p03-funkcije-zatvorenja){:target="_blank"}
 
-        1. [Низови и објекти](JavaScript-Programski-Jezik.md#низови-и-објекти){:target="_blank"}
+        1. [Објекти и низови](JavaScript-Programski-Jezik.md#објекти-и-низови){:target="_blank"}
 
             - [Примери](https://github.com/MatfUVIT/UVIT/tree/master/predavanja/primeri-js/p04-objekti-nizovi){:target="_blank"}
 

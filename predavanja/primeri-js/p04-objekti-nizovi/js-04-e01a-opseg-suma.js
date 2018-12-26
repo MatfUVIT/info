@@ -12,4 +12,4 @@ function suma(niz) {
     return suma;
 }
 
-console.log(suma(opseg(1, 10)));
+console.log(suma(opseg(100, 1)));

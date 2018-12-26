@@ -1,5 +1,5 @@
 var niska1 = "Fido";
-niska.novaOsobina = "vrednost";
+niska1.novaOsobina = "vrednost";
 
 // prikazuje undefined
 console.log ( niska1.novaOsobina ) ;
