@@ -308,6 +308,8 @@
         1. Рутирање захтева.
 
     - задатак 7
+	
+	- [Материјали са вежби](/materijali/uvit_vezbe_materijali_svi.zip){:target="_blank"}
 
 1. Увод у програмирање серверских апликација - део 3.
 
@@ -325,6 +327,6 @@
 
     - задатак 8
 
-    - задатак 9
+    - [Материјали са вежби](/materijali/uvit_vezbe_materijali_svi.zip){:target="_blank"}
 
 [УВИТ](../README.md)
