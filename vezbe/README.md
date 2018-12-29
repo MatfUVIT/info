@@ -26,6 +26,8 @@
 
 - Упутство за увожење виртуалне машине у Oracle VM VirtualBox: [овде](/materijali/Додавање постојеће виртуалне машине за курс у Oracle VM VirtualBox.pdf){:target="_blank"}
 
+- Упутство за инсталирање система за управљање базом података MongoDB за Ubuntu оперативни систем: [овде](/materijali/Инсталација система за управљање базом података MongoDB за Ubuntu оперативни систем.pdf){:target="_blank"}
+
 ## Садржај курса
 
 1. [Основни појмови](/prezentacije/UVIT01 - osnovni pojmovi.pdf){:target="_blank"}
