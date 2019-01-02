@@ -3,12 +3,12 @@ Funkcija za filterisanje niza
 */
 
 function filter(array, test) {
-    var passed = [];
-    for (var i = 0; i < array.length; i++) {
+    let rez = [];
+    for (let i = 0; i < array.length; i++) {
         if (test(array[i]))
-            passed.push(array[i]);
+            rez.push(array[i]);
     }
-    return passed;
+    return rez;
 }
 
 var opis = '[{"name":"Emma de Milliano","sex":"f","born":1876,"died":1956,"father":"Petrus de Milliano","mother":"Sophia van Damme"},'
@@ -39,17 +39,24 @@ var opis = '[{"name":"Emma de Milliano","sex":"f","born":1876,"died":1956,"fathe
     + "{\"name\": \"Lieven Haverbeke\", \"sex\": \"m\", \"born\": 1631, \"died\": 1676, \"father\": \"Pieter Haverbeke\", \"mother\": \"Anna van Hecke\"},"
     + '{"name":"Carolus Haverbeke","sex":"m","born":1832,"died":1905,"father":"Carel Haverbeke","mother":"Maria van Brussel"}]';
 
-var family = JSON.parse(opis);
+let family = JSON.parse(opis);
 
-// console.log(family.length);
-// for (var i = 0; i < family.length; i++)
-//     console.log(family[i].name + " " + family[i].sex + " " + family[i].born + " " + family[i].died);
-    
-    
-// console.log(filter(family, function(person) {
-//    return person.born > 1900 && person.born < 1925;
-// }));
+/*     
+console.log(family.length);
+for (let i = 0; i < family.length; i++)
+     console.log(family[i].name + " " + family[i].sex + " " + family[i].born + " " + family[i].died);
+
+     
+console.log(filter(family, function(person) {
+    return person.born > 1900 && person.born < 1925;
+ }));
+
+console.log(filter(family, (person) => person.born > 1900 && person.born < 1925));
+
+console.log( family.filter( (x) => x.born > 1900 && x.born < 1925));
+*/
 
 console.log(filter(family, function(person) {
    return person.sex=='m' && (person.born > 1900 && person.born < 1925);
 }));
+

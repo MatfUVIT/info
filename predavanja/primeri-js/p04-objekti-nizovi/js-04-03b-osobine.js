@@ -12,5 +12,6 @@ console.log(nizBrojeva["le" + 'ng' + "th"]);
 
 
 // ako ne postoji osobina sa prosleđenim 
-// imenov, vraće se odgovarajući odgovor
+// imenom, vraće se odgovarajući odgovor
+console.log(nizBrojeva.dužina);
 console.log(nizBrojeva["dužina"]);

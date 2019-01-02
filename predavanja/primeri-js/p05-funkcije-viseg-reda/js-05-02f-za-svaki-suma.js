@@ -1,7 +1,7 @@
-var nizBrojeva = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+let nizBrojeva = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
 function zaSvaki(niz, akcija) {
-    for (var i = 0; i < niz.length; i++)
+    for (let i = 0; i < niz.length; i++)
         akcija(niz[i]);
 }
 
@@ -11,6 +11,10 @@ var povecaj =  function(broj) {
 };
 
 // racuna sumu niza brojeva pomoću funkcije zaSvaki
-var sum = 0;
+let sum = 0;
 zaSvaki(nizBrojeva, povecaj);
+console.log(sum);
+
+sum = 0;
+zaSvaki(nizBrojeva, (broj)=>sum+=broj);
 console.log(sum);

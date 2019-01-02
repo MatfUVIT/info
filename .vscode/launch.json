@@ -8,7 +8,7 @@
             "type": "node",
             "request": "launch",
             "name": "Launch Program",
-            "program": "${workspaceFolder}/predavanja/primeri-js/p04-objekti-nizovi/js-04-12a-niske.js"
+            "program": "${workspaceFolder}/predavanja/primeri-js/p06-napredni-objekti/js-06-04a-konstruktori.js"
         }
     ]
 }

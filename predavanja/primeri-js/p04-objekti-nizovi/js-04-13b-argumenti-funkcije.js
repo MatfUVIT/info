@@ -10,4 +10,4 @@ function brojačArgumenata () {
 // Prikazuje "Prilikom poziva su prosleđena 4 argumenta."
 brojačArgumenata ("Ako kaniš " , "pobijediti" , " ne smiješ ", "izgubiti")
 brojačArgumenata ("Ako kaniš pobijediti" , " ne smiješ izgubiti")
-brojačArgumenata ("Ako kaniš pobijediti ne smiješ izgubiti", "")
+brojačArgumenata ("Ako kaniš pobijediti ne smiješ izgubiti")

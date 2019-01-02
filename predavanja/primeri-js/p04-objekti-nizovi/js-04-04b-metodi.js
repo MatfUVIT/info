@@ -1,5 +1,5 @@
 // neki od metoda koji se primenjuju na nizove 
-var poruka = [];
+let poruka = [];
 
 poruka.push("nema");
 poruka.push("povlačenja","nema");

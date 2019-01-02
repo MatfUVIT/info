@@ -13,3 +13,4 @@ for (let i in niz) {
     let tekuci = niz[i];
     console.log(tekuci);
 }
+

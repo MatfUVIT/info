@@ -8,9 +8,13 @@ var dan1 = {
 
 console.log(dan1.preobrazajVeverica);
 
+dan1.preobrazajVeverica = true;
+console.log(dan1["preobrazajVeverica"]);
+
 console.log(dan1.preobrazajVuk);
 
-dan1.preobrazajVuk = 42;
+dan1.preobrazajVuk = "Crvenkapa";
+dan1.preobrazajVuk += "AAA";
 console.log(dan1.preobrazajVuk);
 
 console.log(dan1.aktivnosti[1].charAt(0));
