@@ -8,7 +8,7 @@
             "type": "node",
             "request": "launch",
             "name": "Launch Program",
-            "program": "${workspaceFolder}/predavanja/primeri-js/p06-napredni-objekti/js-06-04a-konstruktori.js"
+            "program": "${workspaceFolder}/predavanja/primeri-js-server-nodejs/p03-form-processing/js-03-01-get/veb-server.js"
         }
     ]
 }
