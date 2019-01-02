@@ -26,6 +26,8 @@
 
 - Упутство за увожење виртуалне машине у Oracle VM VirtualBox: [овде](/materijali/Додавање постојеће виртуалне машине за курс у Oracle VM VirtualBox.pdf){:target="_blank"}
 
+- Упутство за инсталирање система за управљање базом података MongoDB за Ubuntu оперативни систем: [овде](/materijali/Инсталација система за управљање базом података MongoDB за Ubuntu оперативни систем.pdf){:target="_blank"}
+
 ## Садржај курса
 
 1. [Основни појмови](/prezentacije/UVIT01 - osnovni pojmovi.pdf){:target="_blank"}
@@ -209,6 +211,8 @@
 
     1. Позиционирање. Медија упити.
 
+        - задатак 5
+
     1. Окружење Bootstrap. Систем мреже. Маргине. Наслови.
 	
 	- [Материјали са вежби](/materijali/uvit_vezbe_materijali_svi.zip){:target="_blank"}
@@ -290,6 +294,40 @@
     1. Повезивање клијентских и серверских апликација.
 
         1. Метод `$.ajax` библиотеке jQuery.
+
+    - задатак 6
+
+    - [Материјали са вежби](/materijali/uvit_vezbe_materijali_svi.zip){:target="_blank"}
+
+1. Увод у програмирање серверских апликација - део 2.
+
+    1. Развојно окружење Express.js.
+
+        1. REST архитектура.
+
+        1. Парсирање тела захтева. Пакет `body-parser`.
+
+        1. Рутирање захтева.
+
+    - задатак 7
+	
+	- [Материјали са вежби](/materijali/uvit_vezbe_materijali_svi.zip){:target="_blank"}
+
+1. Увод у програмирање серверских апликација - део 3.
+
+    1. MongoDB база података.
+
+        1. MongoDB Compass алат.
+
+        1. MongoDB упити.
+
+    1. Повезивање на базу података из серверске апликације.
+
+        1. Схеме. Модели.
+    
+        1. Развојно окружење Mongoose.js.
+
+    - задатак 8
 
     - [Материјали са вежби](/materijali/uvit_vezbe_materijali_svi.zip){:target="_blank"}
 
