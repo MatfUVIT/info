@@ -290,15 +290,15 @@
 
             1. [Гранања](JavaScript-Programski-Jezik.md#гранања){:target="_blank"}
 
-                1. [Наредба if](JavaScript-Programski-Jezik.md#наредба-if){:target="_blank"}
+                1. [Наредба `if`](JavaScript-Programski-Jezik.md#наредба-if){:target="_blank"}
 
-                1. [Наредба switch](JavaScript-Programski-Jezik.md#наредба-switch){:target="_blank"}
+                1. [Наредба `switch`](JavaScript-Programski-Jezik.md#наредба-switch){:target="_blank"}
 
             1. [Циклуси](JavaScript-Programski-Jezik.md#циклуси){:target="_blank"}
 
-               1. [Циклус while](JavaScript-Programski-Jezik.md#циклус-while){:target="_blank"}
+               1. [Циклус `while`](JavaScript-Programski-Jezik.md#циклус-while){:target="_blank"}
 
-               1. [Циклус do while](JavaScript-Programski-Jezik.md#циклус-do-while){:target="_blank"}
+               1. [Циклус `do` - `while`](JavaScript-Programski-Jezik.md#циклус-do-while){:target="_blank"}
 
             - [Примери (типови и вредности)](https://github.com/MatfUVIT/UVIT/tree/master/predavanja/primeri-js/p01-vrednosti-tipovi-operatori){:target="_blank"}
 
@@ -350,19 +350,19 @@
 
         1. Догађаји
 
-        1. јQuery
+        1. `јQuery`
 
         - [Примери](https://github.com/MatfUVIT/UVIT/tree/master/predavanja/primeri-js-klijent){:target="_blank"}
 
-    1. [ЈаваСкрипт програмирање коришћењем окружења node]
+    1. [ЈаваСкрипт програмирање коришћењем окружења `node`]
 
-        1. Извршно окружење node
+        1. Извршно окружење `node`
 
             1. Опис окружења
 
-            1. Менаџер пакета npm
+            1. Менаџер пакета `npm`
 
-            1. Извршавање и дебагирање JavaScript кŏда са node
+            1. Извршавање и дебагирање JavaScript кŏда са `node`
 
                 1. Извршавање из командне линије
 
@@ -370,7 +370,7 @@
 
                 1. Извршавање и дебагирање коришћењем Visual Studio Code  
 
-        1. Догађаји код окружења node
+        1. Догађаји код окружења `node`
 
         1. Рад са датотекама
 
@@ -380,7 +380,7 @@
 
         - [Примери](https://github.com/MatfUVIT/UVIT/tree/master/predavanja/primeri-js-nodejs){:target="_blank"}
 
-    1. ЈаваСкрипт серверско програмирање помоћу node окружења
+    1. ЈаваСкрипт серверско програмирање помоћу `node` окружења
 
         1. Мрежне апликације
 
@@ -404,11 +404,11 @@
 
     1. ЈаваСкрипт програмирање MongoDB база података
 
-        1. NoSQL база података MongoDB
+        1. NoSQL база података `MongoDB`
 
             1. Карактеристике NoSQL база података
 
-            1. Опис MongoDB система
+            1. Опис `MongoDB` система
 
                 1. База
 
@@ -416,9 +416,9 @@
 
                 1. Документ
 
-            1. Коришћење алата за рад са MongoDB
+            1. Коришћење алата за рад са `MongoDB`
 
-        1. ЈаваСкрипт библиотека за рад са MongoDB базом
+        1. ЈаваСкрипт библиотека за рад са `MongoDB` базом
 
             1. Креирање базе и колекције
 
@@ -436,13 +436,15 @@
 
     1. Напредне серверске ЈаваСкрипт апликације  
 
-        1. Веб апликације са node које користе базе података
+        1. Напредне `node` веб апликације
 
-        1. AJAX захтеви код node веб апликација  
+            1. AJAX захтеви
 
-        1. Веб сервиси са node
+            1. Веб апликације које користе базе података
 
-        1. Веб апликације са express
+            1. Веб сервиси 
+
+        1. Напредне `express` веб апликације
 
         1. Оптимизација рада претраживача (SEO)
 
