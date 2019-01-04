@@ -456,7 +456,7 @@
 
             1. Спајање докумената
 
-        - [Примери](https://github.com/MatfUVIT/UVIT/tree/master/predavanja/primeri-nodejs-mongodb){:target="_blank"}
+        - [Примери](https://github.com/MatfUVIT/UVIT/tree/master/predavanja/primeri-js-nodejs-mongodb){:target="_blank"}
 
     1. [Напредне серверске ЈаваСкрипт апликације](Napredne-Serverske-JavaScript-Aplikacije.md){:target="_blank"}  
 
