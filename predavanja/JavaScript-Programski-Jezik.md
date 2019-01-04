@@ -1214,11 +1214,20 @@ Oвај објекат обезбеђује приступ било конзол
 
 #### Особине објеката
 
+**Пример.** Приступ особинама објекта:
+<script src="https://gist.github.com/vladofilipovic/632463a42b04edab82e287a9f66eb71c.js"></script>
+
 #### Методи код објеката
 
 #### Сложени објекти и функције
 
 ### Низови
+
+**Пример.** Дефиниција низа и приступ појединачним елементима низа:
+<script src="https://gist.github.com/vladofilipovic/25f9e2700eda00b5e032fc0ceec0d72e.js"></script>
+
+**Пример.** Приступ особинама низа:
+<script src="https://gist.github.com/vladofilipovic/91a9555a037f7baaf3d6d72297f99511.js"></script>
 
 #### Низови и функције
 

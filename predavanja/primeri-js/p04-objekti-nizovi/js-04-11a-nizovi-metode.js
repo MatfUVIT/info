@@ -1,24 +1,18 @@
-var podsetnik = [];
+// neki od metoda koji se primenjuju na nizove 
+let poruka = [];
 
-function podsetiMe(zadatak) {
-    podsetnik.push(zadatak);
-}
+poruka.push("nema");
+poruka.push("povlačenja","nema");
+poruka.push("predaje", 2 );
 
-function staJeSledece() {
-    return podsetnik.shift();
-}
+console.log(poruka);
 
-function hitnoMePodseti(zadatak) {
-    podsetnik.unshift(zadatak);
-}
+console.log(poruka.join(" "));
 
+console.log(poruka.join("+"));
 
-podsetiMe("priprema slajdova za predavanja");
-podsetiMe("priprema zadataka");
-hitnoMePodseti("odgovoriti na pisma");
-podsetiMe("kupovina knjige");
+console.log(poruka.pop());
 
-while (podsetnik.length != 0) {
-    console.log(staJeSledece());
-}
+poruka.pop()
 
+console.log(poruka);

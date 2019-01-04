@@ -1,5 +1,6 @@
-// sve vrednosti imaju osobine
+// sve vrednosti imaju osobine, pa i nizovi
 let nizBrojeva = [2, 3, 5, 7, 11];
+
 // osobini se moze pristupiti pomoću 
 // operatora-tačke
 console.log(nizBrojeva.length);
