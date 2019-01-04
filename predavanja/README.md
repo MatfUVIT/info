@@ -300,15 +300,41 @@
 
                1. [Циклус `do` - `while`](JavaScript-Programski-Jezik.md#циклус-do-while){:target="_blank"}
 
+               1. [Циклус `for`](JavaScript-Programski-Jezik.md#циклус-for){:target="_blank"}
+
+               1. [Искакање из циклуса и прескакње итерације](JavaScript-Programski-Jezik.md#искакање-из-циклуса-и-прескакње-итерације){:target="_blank"}
+
+               1. [Циклуси и опсези важења](JavaScript-Programski-Jezik.md#циклуси-и-опсези-важења){:target="_blank"}
+
             - [Примери (типови и вредности)](https://github.com/MatfUVIT/UVIT/tree/master/predavanja/primeri-js/p01-vrednosti-tipovi-operatori){:target="_blank"}
 
             - [Примери (гранања и циклуси)](https://github.com/MatfUVIT/UVIT/tree/master/predavanja/primeri-js/p02-struktura-programa){:target="_blank"}
 
         1. [Функције и затворења](JavaScript-Programski-Jezik.md#функције-и-затворења){:target="_blank"}
 
+            1. [Дефиниција и позив фуункције](JavaScript-Programski-Jezik.md#дефиниција-и-позив-фуункције){:target="_blank"}
+
+            1. [Декларација и позив функције](JavaScript-Programski-Jezik.md#декларација-и-позив-функције){:target="_blank"}
+
+            1. [Параметри и аргументи функција](JavaScript-Programski-Jezik.md#параметри-и-аргументи-функција){:target="_blank"}
+
+            1. [Опциони параметри функција](JavaScript-Programski-Jezik.md#опциони-параметри-функција){:target="_blank"}
+
+            1. [Дизање функције](JavaScript-Programski-Jezik.md#дизање-функције){:target="_blank"}
+
+            1. [Опсези важења за променљиве и функције](JavaScript-Programski-Jezik.md#опсези-важења-за-променљиве-и-функције){:target="_blank"}
+
+            1. [Затворења за функције](JavaScript-Programski-Jezik.md#затворења-за-функције){:target="_blank"}
+
+            1. [Ламбда изрази и функције](JavaScript-Programski-Jezik.md#ламбда-изрази-и-функције){:target="_blank"}
+
             - [Примери](https://github.com/MatfUVIT/UVIT/tree/master/predavanja/primeri-js/p03-funkcije-zatvorenja){:target="_blank"}
 
         1. [Објекти и низови](JavaScript-Programski-Jezik.md#објекти-и-низови){:target="_blank"}
+
+            1. [Објекти](JavaScript-Programski-Jezik.md#објекти){:target="_blank"}
+
+            1. [Низови](JavaScript-Programski-Jezik.md#дефиниција-и-позив-фуункције){:target="_blank"}
 
             - [Примери](https://github.com/MatfUVIT/UVIT/tree/master/predavanja/primeri-js/p04-objekti-nizovi){:target="_blank"}
 
@@ -342,11 +368,11 @@
 
         - [Примери](https://github.com/MatfUVIT/UVIT/tree/master/predavanja/primeri-js){:target="_blank"}
 
-    1. [ЈаваСкрипт програмирање на клијентској страни](JavaScript-i-Pregledac-Veba.md){:target="_blank"}
+    1. [ЈаваСкрипт програмирање на клијентској страни](JavaScript-Programiranje-Na-Klijentskoj-Strani.md){:target="_blank"}
 
         1. Дебагирање клијентског JavaScript кŏда уз помоћ веб прегледача
 
-        1. DOM
+        1. Објектни модел документа
 
         1. Догађаји
 
@@ -354,7 +380,7 @@
 
         - [Примери](https://github.com/MatfUVIT/UVIT/tree/master/predavanja/primeri-js-klijent){:target="_blank"}
 
-    1. [ЈаваСкрипт програмирање коришћењем окружења `node`]
+    1. [ЈаваСкрипт програмирање коришћењем окружења `node`])(JavaScript-Programiranje-Koriscenjem-Okruzenja-Node.md){:target="_blank"}
 
         1. Извршно окружење `node`
 
@@ -366,9 +392,7 @@
 
                 1. Извршавање из командне линије
 
-                1. Развојно окружење Visual Studio Code
-
-                1. Извршавање и дебагирање коришћењем Visual Studio Code  
+                1. Извршавање и дебагирање коришћењем развојног окружења Visual Studio Code
 
         1. Догађаји код окружења `node`
 
@@ -380,7 +404,7 @@
 
         - [Примери](https://github.com/MatfUVIT/UVIT/tree/master/predavanja/primeri-js-nodejs){:target="_blank"}
 
-    1. ЈаваСкрипт серверско програмирање помоћу `node` окружења
+    1. [ЈаваСкрипт серверско програмирање коришћењем окружења `node`](JavaScript-Serversko-Programiranje-Koriscenjem-Okruzenja-Node.md){:target="_blank"}
 
         1. Мрежне апликације
 
@@ -402,7 +426,7 @@
 
         - [Примери](https://github.com/MatfUVIT/UVIT/tree/master/predavanja/primeri-js-server-nodejs){:target="_blank"}
 
-    1. ЈаваСкрипт програмирање MongoDB база података
+    1. [ЈаваСкрипт програмирање MongoDB база података](JavaScript-Programiranje-MongoDb-Baza-Podataka.md){:target="_blank"}
 
         1. NoSQL база података `MongoDB`
 
@@ -434,15 +458,15 @@
 
         - [Примери](https://github.com/MatfUVIT/UVIT/tree/master/predavanja/primeri-nodejs-mongodb){:target="_blank"}
 
-    1. Напредне серверске ЈаваСкрипт апликације  
+    1. [Напредне серверске ЈаваСкрипт апликације](Napredne-Serverske-JavaScript-Aplikacije.md){:target="_blank"}  
 
         1. Напредне `node` веб апликације
 
-            1. AJAX захтеви
+            1. `AJAX` и `Fetch`
 
             1. Веб апликације које користе базе података
 
-            1. Веб сервиси 
+            1. Веб сервиси
 
         1. Напредне `express` веб апликације
 
