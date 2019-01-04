@@ -380,7 +380,7 @@
 
         - [Примери](https://github.com/MatfUVIT/UVIT/tree/master/predavanja/primeri-js-klijent){:target="_blank"}
 
-    1. [ЈаваСкрипт програмирање коришћењем окружења `node`])(JavaScript-Programiranje-Koriscenjem-Okruzenja-Node.md){:target="_blank"}
+    1. [ЈаваСкрипт програмирање коришћењем окружења `node`](JavaScript-Programiranje-Koriscenjem-Okruzenja-Node.md){:target="_blank"}
 
         1. Извршно окружење `node`
 
