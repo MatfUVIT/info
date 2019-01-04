@@ -1,4 +1,5 @@
-var nizBrojeva = [2, 3, 5, 7, 11, 13, 17];
+// sve vrednosti imaju osobine
+let nizBrojeva = [2, 3, 5, 7, 11];
 // osobini se moze pristupiti pomoću 
 // operatora-tačke
 console.log(nizBrojeva.length);
@@ -10,8 +11,10 @@ console.log(nizBrojeva["length"]);
 
 console.log(nizBrojeva["le" + 'ng' + "th"]);
 
+// pokusaj pristupa osobini koja ne postoji
+console.log(nizBrojeva.lenght);
 
-// ako ne postoji osobina sa prosleđenim 
-// imenom, vraće se odgovarajući odgovor
-console.log(nizBrojeva.dužina);
-console.log(nizBrojeva["dužina"]);
+// pokusaj pristupa osobini koja ne postoji
+console.log(nizBrojeva.duzina);
+
+

@@ -334,13 +334,21 @@
 
             1. [Објекти](JavaScript-Programski-Jezik.md#објекти){:target="_blank"}
 
-            1. [Низови](JavaScript-Programski-Jezik.md#дефиниција-и-позив-фуункције){:target="_blank"}
+            1. [Низови](JavaScript-Programski-Jezik.md#низови){:target="_blank"}
 
             - [Примери](https://github.com/MatfUVIT/UVIT/tree/master/predavanja/primeri-js/p04-objekti-nizovi){:target="_blank"}
 
         1. [Функције вишег реда](JavaScript-Programski-Jezik.md#функције-вишег-реда){:target="_blank"}
 
-            - [Примери](https://github.com/MatfUVIT/UVIT/tree/master/predavanja/primeri-js/p05-funkcije-viseg-reda){:target="_blank"}
+            1. [Функције вишег реда и рад са колекцијама](JavaScript-Programski-Jezik.md#функције-вишег-реда-и-рад-са-колекцијама){:target="_blank"}
+
+            1. [Мапирање и редукција помоћу функција вишег реда](JavaScript-Programski-Jezik.md#мапирање-и-редукција-помоћу-функција-вишег-реда){:target="_blank"}
+
+            1. [Повезивање функција](JavaScript-Programski-Jezik.md#повезивање-функција){:target="_blank"}
+
+            1. [Функцијски изрази који се одмах позивају](JavaScript-Programski-Jezik.md#функцијски-изрази-који-се-одмах-позивају){:target="_blank"}
+
+           - [Примери](https://github.com/MatfUVIT/UVIT/tree/master/predavanja/primeri-js/p05-funkcije-viseg-reda){:target="_blank"}
 
         1. [Напредни објекти](JavaScript-Programski-Jezik.md#напредни-објекти){:target="_blank"}
 
