@@ -1,6 +1,3 @@
-// objekat koji čuva stanje u večeri i 
-// aktivnosti tokom dana
-
 var dan1 = {
     preobrazajVeverica: false,
     aktivnosti: ["rad", "drvo", "pica", "trčanje", "televizija"]

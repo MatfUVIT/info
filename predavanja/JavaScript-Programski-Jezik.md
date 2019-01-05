@@ -52,9 +52,7 @@
 - Ред повратних позива (Callback Queue)
 - Петља за догађаје (Event loop)  
 
-<p align="center">
 ![ЈаваСкрипт окружење за извршавање](assets/images/event-loop-400-4.jpg)
-</p>
 
 **Напомена.** ЈаваСкрипт је програмски језик који се извршава у једној нити и он сам не може да извршава више истовремених паралелних радњи. Ипак, овако организовано окружење за извршавање омогућава више паралелних радњи (тзв. асихроно извршавање) - о томе ће бити речи касније.
 
@@ -431,7 +429,7 @@ JаваСкрипт програми се записују коришћењем 
 
 У том случају на ниску могу да се примене методе дате следећом табелом:
 
-| Назив методе                    | Опис                                                                                                             |
+| Назив методе                    | Опис                                                                          |
 |---------------------------------|------------------------------------------------------------------------------------------------------------------|
 |`charAt()`                       | враће знак на датој позицији                                                                                     |
 |`charCodeAt()`                   | враће Unicode вредност за знак на датој позицији                                                                 |
@@ -819,29 +817,29 @@ JаваСкрипт програми се записују коришћењем 
 Следи табела имплицитних конверзија:
 
 | Оригинална <br/> вредност | Конверзија у <br/> `Number` | Конверзија у <br/> `String` | Конверзија у <br/>`Boolean` |
-|:-----------------:|:-------------:|:-------------:|:---------------:|
-| `false`           | `0 `          | `“false”`     | `false`         |
-| `true`            | `1`           | `“true”`      | `true`          |
-| `0`               | `0`           | `“0”`         | `false`         |
-| `1`               | `1`           | `“1”`         | `true`          |
-| `“0”`             |`0`|`“0”`|`true`|
-| `“000”`           |`0`|`“000”`|`true`|
-| `“1”`             |`1`|`“1”`|`true`|
-| `NaN`             |`NaN`|`“NaN”`|`false`|
-| `Infinity`        |`Infinity`|`“Infinity”`|`true`|
-| `-Infinity`       |`-Infinity`|`“-Infinity”`|`true`|
-| `“”`              |`0`|`“”`|`false`|
-| `“20”`            |`20`|`“20”`|`true`|
-| `“twenty”`        |`NaN`|`“twenty”`|`true`|
-| `[]`              |`0`|`“”`|`true`|
-| `[20]`            |`20`|`“20”`|`true`|
-| `[10,20]`         |`NaN`|`“10,20”`|`true`|
-| `[“twenty”]`      |`NaN`|`“twenty”`|`true`|
-| `[“ten”,”twenty”]`|`NaN`|`“ten,twenty”`|`true`|
-| `function(){}`    |`NaN`|`“function(){}”`|`true`|
-| `{}`              |`NaN`|`“[object Object]”`|`true`|
-| `null`            |`0`|`“null”`|`false`|
-| `undefined`       |`NaN`|`“undefined”`|`false`|
+|:-----------------:|:-------------:|:-------------------:|:---------------:|
+| `false`           | `0 `          | `“false”`           | `false`         |
+| `true`            | `1`           | `“true”`            | `true`          |
+| `0`               | `0`           | `“0”`               | `false`         |
+| `1`               | `1`           | `“1”`               | `true`          |
+| `“0”`             | `0`           | `“0”`               | `true`          |
+| `“000”`           | `0`           | `“000”`             | `true`          |
+| `“1”`             | `1`           | `“1”`               | `true`          |
+| `NaN`             | `NaN`         | `“NaN”`             | `false`         |
+| `Infinity`        | `Infinity`    | `“Infinity”`        | `true`          |
+| `-Infinity`       | `-Infinity`   | `“-Infinity”`       | `true`          |
+| `“”`              | `0`           | `“”`                | `false`         |
+| `“20”`            | `20`          | `“20”`              | `true`          |
+| `“twenty”`        | `NaN`         | `“twenty”`          | `true`          |
+| `[]`              | `0`           | `“”`                | `true`          |
+| `[20]`            | `20`          | `“20”`              | `true`          |
+| `[10,20]`         | `NaN`         | `“10,20”`           | `true`          |
+| `[“twenty”]`      | `NaN`         | `“twenty”`          | `true`          |
+| `[“ten”,”twenty”]`| `NaN`         | `“ten,twenty”`      | `true`          |
+| `function(){}`    | `NaN`         | `“function(){}”`    | `true`          |
+| `{}`              | `NaN`         | `“[object Object]”` | `true`          |
+| `null`            | `0`           | `“null”`            | `false`         |
+| `undefined`       | `NaN`         | `“undefined”`       | `false`         |
 
 Најчешће су разлози за имплицитну конверзију поређење или нека друга математичка операција између различитих типова промењивих. Поред овога имплицитна конверзија се дешава и услед потребе за израчунавањем неког услова.
 
@@ -1020,26 +1018,26 @@ JаваСкрипт програми се записују коришћењем 
 
 Методе `Math` објекта узимају број/бројеве као argument а враћају резултат  математичке функције извршене над тим бројем/бројевима:
 
-| Метода објекта  | Опис                                                                           |
-|:---------------:|:------------------------------------------------------------------------------:|
-| abs(x)          | Returns the absolute value of x                                                |
-| acos(x)         | Returns the arccosine of x, in radians |
-| asin(x)         | Returns the arcsine of x, in radians |
-| atan(x)         | Returns the arctangent of x as a numeric value between -PI/2 and PI/2 radians |
-| atan2(y,x)      | Returns the arctangent of the quotient of its arguments |
-| ceil(x)         | Returns x, rounded upwards to the nearest integer |
-| cos(x)          | Returns the cosine of x (x is in radians) |
-| exp(x)          | Returns the value of Ex |
-| floor(x)        | Returns x, rounded downwards to the nearest integer |
-| log(x)          | Returns the natural logarithm (base E) of x |
-| max(x,y,z,…,n)  | Returns the number with the highest value |
-| min(x,y,z,…,n)  | Returns the number with the lowest value |
-| pow(x,y)        | Returns the value of x to the power of y |
-| random()        | Returns a random number between 0 and 1 |
-| round(x)        | Rounds x to the nearest integer |
-| sin(x)          | Returns the sine of x (x is in radians) |
-| sqrt(x)         | Returns the square root of x |
-| tan(x)          | Returns the tangent of an angle |
+| Метода објекта    | Опис                                                                                 |
+|:-----------------:|:------------------------------------------------------------------------------------:|
+| `abs(x)`          | Returns the absolute value of `x`                                                    |
+| `acos(x)`         | Returns the arccosine of `x`, in radians                                             |
+| `asin(x)`         | Returns the arcsine of `x`, in radians                                               |
+| `atan(x)`         | Returns the arctangent of `x` as a numeric value between `-PI/2` and `PI/2` radians  |
+| `atan2(y,x)`      | Returns the arctangent of the quotient of its arguments e.g. `y/x`                   |
+| `ceil(x)`         | Returns `x`, rounded upwards to the nearest integer                                  |
+| `cos(x)`          | Returns the cosine of `x` (`x` is in radians)                                        |
+| `exp(x)`          | Returns the value of `E`<sup>`x`</sup>                                               |
+| `floor(x)`        | Returns `x`, rounded downwards to the nearest integer                                |
+| `log(x)`          | Returns the natural logarithm (base `E`) of `x`                                      |
+| `max(x,y,z,…,n)`  | Returns the number with the highest value                                            |
+| `min(x,y,z,…,n)`  | Returns the number with the lowest value                                             |
+| `pow(x,y)`        | Returns the value of `x` to the power of `y`                                         |
+| `random()`        | Returns a pseudo random number between `0` and `1`                                   |
+| `round(x)`        | Rounds `x` to the nearest integer                                                    |
+| `sin(x)`          | Returns the sine of `x` (`x` is in radians)                                          |
+| `sqrt(x)`         | Returns the square root of `x`                                                       |
+| `tan(x)`          | Returns the tangent of an angle `x`                                                  |
 
 **Пример.** Позиви математичких функција:
 <script src="https://gist.github.com/vladofilipovic/4c458e2adeb128fd5c437254a1519d7c.js"></script>
@@ -1214,14 +1212,29 @@ Oвај објекат обезбеђује приступ било конзол
 
 ### Објекти
 
+**Пример.** Поређење објеката:
+<<script src="https://gist.github.com/vladofilipovic/8513e7922486892359644960fe44f19f.js"></script>
+
 #### Особине објеката
 
 **Пример.** Приступ особинама објекта:
 <script src="https://gist.github.com/vladofilipovic/632463a42b04edab82e287a9f66eb71c.js"></script>
 
+**Пример.** Oсобинe објекaта имају динамичку природу:
+<script src="https://gist.github.com/vladofilipovic/d4364c13a27d8d811839dd50f28683a7.js"></script>
+
+**Пример.** Пролазак кроз особинe објекaта:
+<script src="https://gist.github.com/vladofilipovic/63d92ea22630e07bb24f9d0d3bb8449e.js"></script>
+
 #### Методи код објеката
 
-#### Сложени објекти и функције
+Методи се могу посматрати као особине који реферишу на вредности-функције.
+
+**Пример.** Методи код објекaта имају динамичку природу:
+<script src="https://gist.github.com/vladofilipovic/a0f8ca3cddb23f40027a806bc4ec09b7.js"></script>
+
+**Пример.** Пролазак кроз особинe и методе објекaта:
+<script src="https://gist.github.com/vladofilipovic/d239722917b0706f58ac251f2f016737.js"></script>
 
 ### Низови
 
@@ -1231,15 +1244,66 @@ Oвај објекат обезбеђује приступ било конзол
 **Пример.** Приступ особинама низа:
 <script src="https://gist.github.com/vladofilipovic/91a9555a037f7baaf3d6d72297f99511.js"></script>
 
-#### Низови и функције
+#### Методи над низовима
+
+Слично као код објеката, методи се код низова могу посматрати као особине који реферишу на вредности-функције.
+
+**Пример.** Примена метода који се односе на низове:
+<<script src="https://gist.github.com/vladofilipovic/ea90a28fbf15e4a9c7dc578cce66b59f.js"></script>
+
+#### Низови и објекти
+
+**Пример.** Одређивање типа током извршавања (обухвата функције, низове и објекте):
+<script src="https://gist.github.com/vladofilipovic/b70c094255c2c6e00d6a8524faf34dc0.js"></script>
+
+**Пример.** Објекти који садрже низове и приступ појединим елементима у оквиру њих:
+<script src="https://gist.github.com/vladofilipovic/fc26e6cf9ead03d2675e6746e9e7a7af.js"></script>
+
+**Пример.** Низ који садржи објекте (који у себи садржи низове), кроз који се пролази коришћењем бројачког и колекцијског `for` циклуса:
+<script src="https://gist.github.com/vladofilipovic/fc26e6cf9ead03d2675e6746e9e7a7af.js"></script>
+
+### Ниске
+
+**Пример.** Ниска поседује тачно одређен скуп особина, које се не може проширивати:
+<script src="https://gist.github.com/vladofilipovic/8597adff0dab391cdc3c7b44c1d9e31b.js"></script>
+
+#### Методе над нискама
+
+Слично као код објеката, методи се код ниски могу посматрати као особине који реферишу на вредности-функције.
+
+**Пример.** Примена метода који се односе на ниске:
+<script src="https://gist.github.com/vladofilipovic/e7fe2612db7f0fb3c9cd12eed285d27c.js"></script>
 
 ## Функције вишег реда
 
-### Функције вишег реда и рад са колекцијама
+### Функције као аргументи функција
+
+**Пример.** Приказ свих елемената низа (без издвајања у посебну функцију):
+<script src="https://gist.github.com/vladofilipovic/7cf39660d932119bf29d19d1d834b858.js"></script>
+
+**Пример.** Приказ свих елемената низа (у посебној функцији је релиазован приказ):
+<script src="https://gist.github.com/vladofilipovic/3dcb8b84fe047daf1e5962807aee6810.js"></script>
+
+**Пример.** Приказ свих елемената низа (у посебној функцији је реализован пролазак кроз низ, а аргумент те функције је функција која описује шта тррба урадити са елементом низа):
+<script src="https://gist.github.com/vladofilipovic/fc4f486ed114a84287427e4831e8efdd.js"></script>
+
+**Пример.** Сума свих елемената низа:
+<<script src="https://gist.github.com/vladofilipovic/4bb33cdc9b03c3e2dd6eb6f860b8af25.js"></script>
+
+**Пример.** Функције које декоришу друге функције:
+<script src="https://gist.github.com/vladofilipovic/3f04ae223e8fd0145c02d337cee4815f.js"></script>
+
+### Функције као генератори функција
+
+**Пример.** Функције помоћу које се, позивима, креирају функције нижег реда:
+<script src="https://gist.github.com/vladofilipovic/7a0bef73f464c2a70a0aa7a6a91363f2.js"></script>
+
+### Повезивање функција при позиву
+
+**Пример.** Генерисање, декорисање и повезивање при позиву функција:
+<script src="https://gist.github.com/vladofilipovic/3acc705dc28383e63c6026b5f54d778f.js"></script>
 
 ### Мапирање и редукција помоћу функција вишег реда
-
-### Повезивање функција
 
 ### Функцијски изрази који се одмах позивају
 

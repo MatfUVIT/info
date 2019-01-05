@@ -8,7 +8,7 @@ for (let i = 0; i < niz.length; i++) {
 
 console.log("---");
 
-// prvi način, kolekcijski ciklus
+// drugi način, kolekcijski ciklus
 for (let i in niz) {
     let tekuci = niz[i];
     console.log(tekuci);

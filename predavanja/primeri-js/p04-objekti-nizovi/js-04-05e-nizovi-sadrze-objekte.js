@@ -13,17 +13,23 @@ let dnevnik = [
     "aktivnosti": ["lazanja", "naćosi", "pranje zuba", "rad"]
   }];
 
-console.log("=== Dan 1 ===")
-let dan1 = dnevnik[0];
-console.log(dan1.preobrazajVeverica);
-console.log(dan1.aktivnosti);
+console.log("=== Prvi dan ===")
+let prvi = dnevnik[0];
+console.log(prvi.preobrazajVeverica);
+console.log(prvi.aktivnosti);
 
-console.log("=== Dan 3 ===")
-let dan3 = dnevnik[2];
-console.log(dan3.preobrazajVeverica);
-console.log(dan3.aktivnosti);
+console.log("=== Poslednji dan ===")
+poslednji = dnevnik[dnevnik.length-1];
+console.log(poslednji.preobrazajVeverica);
+console.log(poslednji.aktivnosti);
 
-console.log("=== Svi dani ===")
+console.log("=== Ceo dnevnik ===")
+for (let i =0; i<dnevnik.length; i++) {
+  console.log(dnevnik[i].preobrazajVeverica);
+  console.log(dnevnik[i].aktivnosti);
+}
+
+console.log("=== Ceo dnevnik ===")
 for (let i in dnevnik) {
   console.log(dnevnik[i].preobrazajVeverica);
   console.log(dnevnik[i].aktivnosti);

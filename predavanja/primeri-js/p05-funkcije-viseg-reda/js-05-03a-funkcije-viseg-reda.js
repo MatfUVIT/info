@@ -1,6 +1,3 @@
-/*
-Funkcija koja kreira nove funkcije
-*/
 function veciOd(n) {
     return function(m) { 
         return m > n; };

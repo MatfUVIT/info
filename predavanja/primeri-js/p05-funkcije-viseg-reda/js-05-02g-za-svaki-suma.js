@@ -6,8 +6,18 @@ function zaSvaki(niz, akcija) {
 }
 
 // racuna sumu niza brojeva pomoću funkcije zaSvaki
-var sum = 0;
-zaSvaki(nizBrojeva, function(broj) {
+let sum = 0;
+zaSvaki(nizBrojeva, function (broj) {
     sum += broj;
 });
+console.log(sum);
+
+// racuna sumu niza brojeva pomoću lambda izraza
+sum = 0;
+zaSvaki(nizBrojeva, x => sum += x);
+console.log(sum);
+
+// racuna sumu niza brojeva pomoću metoda forEach
+sum = 0;
+nizBrojeva.forEach(x => sum += x);
 console.log(sum);

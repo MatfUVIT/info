@@ -1,6 +1,3 @@
-/*
-Funkcija koja modifikuje funkciju
-*/
 function bucna(f) {
     return function(arg) {
         console.log("poziv sa argumentom ", arg);

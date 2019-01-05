@@ -1,4 +1,3 @@
-// neki od metoda koji se primenjuju na nizove 
 let poruka = [];
 
 poruka.push("nema");

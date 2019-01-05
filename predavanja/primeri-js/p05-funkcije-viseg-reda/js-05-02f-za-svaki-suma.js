@@ -15,6 +15,7 @@ let sum = 0;
 zaSvaki(nizBrojeva, povecaj);
 console.log(sum);
 
+// racuna sumu niza brojeva pomoću funkcije zaSvaki i lambda izraza
 sum = 0;
 zaSvaki(nizBrojeva, (broj)=>sum+=broj);
 console.log(sum);

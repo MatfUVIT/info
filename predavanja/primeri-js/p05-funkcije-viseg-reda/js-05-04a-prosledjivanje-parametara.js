@@ -1,6 +1,3 @@
-/*
-Funkcije koje obezbeđuju novu vrstu kontrole toka
-*/
 function bucna2(f) {
     return function() {
         console.log("poziv sa argumentima ", arguments);
