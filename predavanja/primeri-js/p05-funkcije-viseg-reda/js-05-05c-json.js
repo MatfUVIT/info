@@ -1,8 +1,4 @@
-/*
-Kreira nisku pomoću JSON-a 
-*/
-
-var family = [
+let family = [
   {"name": "Emma de Milliano", "sex": "f",
    "born": 1876, "died": 1956,
    "father": "Petrus de Milliano",
@@ -13,5 +9,5 @@ var family = [
    "mother": "Maria van Brussel"}
 ];
 
-var niska = JSON.stringify(family);
+let niska = JSON.stringify(family);
 console.log(niska);

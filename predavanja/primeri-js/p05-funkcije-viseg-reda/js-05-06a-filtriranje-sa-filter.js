@@ -1,7 +1,6 @@
 /*
 Funkcija za filterisanje niza
 */
-
 function filter(array, test) {
     let rez = [];
     for (let i = 0; i < array.length; i++) {
@@ -41,22 +40,26 @@ var opis = '[{"name":"Emma de Milliano","sex":"f","born":1876,"died":1956,"fathe
 
 let family = JSON.parse(opis);
 
-/*     
-console.log(family.length);
-for (let i = 0; i < family.length; i++)
-     console.log(family[i].name + " " + family[i].sex + " " + family[i].born + " " + family[i].died);
-
-     
-console.log(filter(family, function(person) {
+// prikaz ljudi rodjenih izmedju 1900 i 1925     
+console.log(`---`);
+console.log(filter(family, function (person) {
     return person.born > 1900 && person.born < 1925;
- }));
-
-console.log(filter(family, (person) => person.born > 1900 && person.born < 1925));
-
-console.log( family.filter( (x) => x.born > 1900 && x.born < 1925));
-*/
-
-console.log(filter(family, function(person) {
-   return person.sex=='m' && (person.born > 1900 && person.born < 1925);
 }));
 
+// prikaz ljudi rodjenih izmedju 1900 i 1925     
+console.log(`---`);
+console.log(filter(family, (person) => person.born > 1900 && person.born < 1925));
+
+// prikaz rodjenih izmedju 1900 i 1925     
+console.log(`---`);
+console.log(family.filter((x) => x.born > 1900 && x.born < 1925));
+
+// prikaz muskaraca rodjenih izmedju 1900 i 1925     
+console.log(`---`);
+console.log(filter(family, function (person) {
+    return person.sex == 'm' && (person.born > 1900 && person.born < 1925);
+}));
+
+// prikaz muskaraca rodjenih izmedju 1900 i 1925     
+console.log(`---`);
+console.log(family.filter(person => person.sex == 'm' && person.born > 1900 && person.born < 1925));

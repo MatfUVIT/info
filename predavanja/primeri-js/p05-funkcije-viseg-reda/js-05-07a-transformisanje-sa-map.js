@@ -48,24 +48,30 @@ var opis = `[{"name":"Emma de Milliano","sex":"f","born":1876,"died":1956,"fathe
 
 let family = JSON.parse(opis);
 
-/*
-console.log(family.length);
-for (var i = 0; i < family.length; i++)
-    console.log(family[i].name + " " + family[i].sex + " " + family[i].born + " " + family[i].died);
-
-*/
-var starijiOd90 = filter(family, function(person) {
+// filtriranje tako da se zadrže samo stariji od 90
+console.log('---');
+let starijiOd90 = filter(family, function (person) {
     return person.died - person.born > 90;
 });
 console.log(starijiOd90);
 
-console.log(map(starijiOd90, function(person) {
+// transformisanje starijih od 90 pomoću map
+console.log('---');
+console.log(map(starijiOd90, function (person) {
     return person.name + " " + (person.died - person.born);
 }));
 
-/*
-var starijiOd60 = family.filter( (person) => (person.died - person.born > 60));
-console.log(map(starijiOd60, (person)=> (person.name + " " + (person.died - person.born))));
-*/
 
+// filtriranje tako da se zadrže samo stariji od 70
+console.log('---');
+let starijiOd70 = filter(family, (person) => (person.died - person.born > 70));
+console.log(starijiOd70);
+
+// transformisanje starijih od 60 pomoću map
+console.log('---');
+console.log(map(starijiOd70, (person) => (person.name + " " + (person.died - person.born))));
+
+// filtriranje i transformisanje pomoću metoda niza
+console.log('---');
+console.log(family.filter(x => x.died - x.born > 70).map(x=>x.name + " " + (x.died-x.born)));
 

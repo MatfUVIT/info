@@ -1,6 +1,3 @@
-/*
-Funkcije za sumiranje
-*/
 
 function reduce(array, combine, start) {
     let current = start;
@@ -10,37 +7,55 @@ function reduce(array, combine, start) {
 }
 
 let niz = [2, 4, 3, 1, -5, 12, 7];
+
+// prikaz svih clanova niza
+console.log('--- Clanovi niza ---');
 console.log(niz);
 
-console.log(reduce(niz, function(a, b) {
+// odredjivanje sume svih clanova niza
+console.log('--- Suma ---');
+console.log(reduce(niz, function (a, b) {
     return a + b;
 }, 0));
 
 
+// odredjivanje sume svih clanova niza
+console.log('--- Suma ---');
 console.log(reduce(niz, (a, b) => a + b, 0));
 
-console.log( niz.reduce((a, b) => a + b, 0));
+// odredjivanje sume svih clanova niza pomocu metoda niza
+console.log('--- Suma ---');
+console.log(niz.reduce((a, b) => a + b, 0));
 
-console.log( niz.filter((a)=>a>=0).reduce((a, b) => a + b, 0));
+// odredjivanje sume svih pozitivnih clanova niza
+console.log('--- Suma pozitivnih ---');
+console.log(niz.filter((a) => a >= 0).reduce((a, b) => a + b, 0));
 
-
+// odredjivanje sume svih clanova niza
+console.log('--- Proizvod ---');
 console.log(reduce(niz, (a, b) => a * b, 1));
 
-console.log(reduce(niz, function(a, b) {
+// odredjivanje minimuma svih clanova niza
+console.log('--- Minimum ---');
+console.log(reduce(niz, function (a, b) {
     if (a < b)
         return a;
     return b;
 }, Infinity));
 
+// odredjivanje minimuma svih clanova niza
+console.log('--- Minimum ---');
+console.log(reduce(niz, (a, b) => (a < b) ? a : b, Infinity));
 
-console.log(reduce(niz, (a, b)=>(a < b)? a : b, Infinity));
-
-
-console.log(reduce(niz, function(a, b) {
+// odredjivanje maksimuma svih clanova niza
+console.log('--- Maksimum ---');
+console.log(reduce(niz, function (a, b) {
     if (a > b)
         return a;
     return b;
 }, -Infinity));
 
-console.log(reduce(niz, (a, b)=>(a > b)? a : b, -Infinity));
+// odredjivanje maksimuma svih clanova niza
+console.log('--- Maksimum ---');
+console.log(reduce(niz, (a, b) => (a > b) ? a : b, -Infinity));
 

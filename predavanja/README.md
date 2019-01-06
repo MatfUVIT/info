@@ -336,6 +336,10 @@
 
             1. [Низови](JavaScript-Programski-Jezik.md#низови){:target="_blank"}
 
+            1. [Ниске](JavaScript-Programski-Jezik.md#ниске){:target="_blank"}
+
+            1. [JSON](JavaScript-Programski-Jezik.md#json){:target="_blank"}
+
             - [Примери](https://github.com/MatfUVIT/UVIT/tree/master/predavanja/primeri-js/p04-objekti-nizovi){:target="_blank"}
 
         1. [Функције вишег реда](JavaScript-Programski-Jezik.md#функције-вишег-реда){:target="_blank"}
