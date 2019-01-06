@@ -1288,7 +1288,7 @@ Oвај објекат обезбеђује приступ било конзол
 <script src="https://gist.github.com/vladofilipovic/fc4f486ed114a84287427e4831e8efdd.js"></script>
 
 **Пример.** Сума свих елемената низа:
-<<script src="https://gist.github.com/vladofilipovic/4bb33cdc9b03c3e2dd6eb6f860b8af25.js"></script>
+<script src="https://gist.github.com/vladofilipovic/4bb33cdc9b03c3e2dd6eb6f860b8af25.js"></script>
 
 **Пример.** Функције које декоришу друге функције:
 <script src="https://gist.github.com/vladofilipovic/3f04ae223e8fd0145c02d337cee4815f.js"></script>
