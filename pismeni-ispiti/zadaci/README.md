@@ -4,7 +4,7 @@
 
 ---
 
-[Пример испита](Primer_ispita.pdf)
+[Пример испита](primer_ispita.zip)
 
 ---
 
