@@ -4,6 +4,9 @@
 
 **[Важно! Пријава за полагање испита у Јануару 1](pismeni-ispiti/info/README.md)**
 
+
+**[Решење примера испита](pismeni-ispiti/resenja/README.md)**
+
 [comment]: # (* **[Важно! Термин надокнаде предавања](/predavanja/info/README.md)**)
 
 [comment]: # (* **[Важно! Информације о вежбама](/vezbe/info/README.md)**)

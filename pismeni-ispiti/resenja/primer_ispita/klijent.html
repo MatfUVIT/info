@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Studenti</title>
+    <link rel="stylesheet" type="text/css" href="bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="klijent.css">
+    <script type="text/javascript" src="jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="klijent.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 mt-3">
+                <div id="greska"></div>
+                <h4 id="infoS"> Informacije o studentima </h4>
+                <div id="studenti1">
+                    <form id="form1">
+                        <div class="form-group">
+                            <label for="indeks1">Indeks:</label>
+                            <input type="text" id="indeks1" name="indeks1" class="form-control" title="Unesite indeks studenta ili ostavite prazno da dohvatite informacije o svim studentima">
+                        </div>
+
+                        <input type="submit" value="Posalji podatke" class="btn btn-primary">
+                    </form>
+                </div>
+
+
+                <h4 id="infoI"> Informacije o ispitima </h4>
+                <div id="ispiti1">
+                    <form id="form2">
+                        <div class="form-group">
+                            <label for="productId1">Parametar za pretrage:</label>
+                            <input type="text" id="parametar" name="parametar" class="form-control" title="Unesite indeks studenta ili ostavite prazno da dohvatite informacije o svim studentima">
+                        </div>
+
+                        <div class="form-group">
+                            Pretraga po:
+
+                            <div class="form-check form-check-inline">
+                                <input name="polje" id="polje_1" value="predmet" type="radio" class="form-check-input">
+                                <label for="polje_1" class="form-check-label">predmetu</label>
+                            </div>
+
+                            <div class="form-check form-check-inline">
+                                <input name="polje" id="polje_2" value="indeks" type="radio" class="form-check-input">
+                                <label for="polje_2" class="form-check-label">indeksu</label>
+                            </div>
+
+                            <div class="form-check form-check-inline">
+                                <input name="polje" id="polje_3" value="bodovi" type="radio" class="form-check-input">
+                                <label for="polje_3" class="form-check-label">bodovima</label>
+                            </div>
+
+                            <div class="form-check form-check-inline">
+                                <input name="polje" id="polje_4" value="svi" type="radio" class="form-check-input">
+                                <label for="polje_4" class="form-check-label">svemu</label>
+                            </div>
+                        </div>
+
+                        <input type="submit" value="Posalji podatke" class="btn btn-primary">
+                    </form>
+                </div>
+
+                
+                <h4 id="dodajS"> Dodaj/izmeni studenta </h4>
+                <div id="studenti2">
+                    <form id="form3">
+                        
+                        <div class="form-group">
+                            <label for="indeks2">Indeks:</label>
+                            <input type="text" id="indeks2" name="indeks2" class="form-control" title="Unesite indeks studenta ili ostavite prazno da dohvatite informacije o svim studentima">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="ime">Ime:</label>
+                            <input type="text" id="ime" name="ime" class="form-control" title="Unesite indeks studenta ili ostavite prazno da dohvatite informacije o svim studentima">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="prezime">Prezime:</label>
+                            <input type="text" id="prezime" name="prezime" class="form-control" title="Unesite indeks studenta ili ostavite prazno da dohvatite informacije o svim studentima">
+                        </div>
+
+                        <div class="form-check">
+                            <input name="izmeni" id="izmeni" type="checkbox" class="form-check-input">
+                            <label for="izmeni" class="form-check-label">izmeni</label>
+                        </div>
+
+                        <input type="submit" value="Posalji podatke" class="btn btn-primary">
+                    </form>
+                </div>
+                
+                <h4 id="dodajI"> Dodaj ispit </h4>
+                <div id="ispiti2">
+                    <form id="form4">
+                        <div class="form-group">
+                            <label for="predmet">Predmet:</label>
+                            <input type="text" id="predmet" name="predmet" class="form-control" title="Unesite indeks studenta ili ostavite prazno da dohvatite informacije o svim studentima">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="indeks3">Indeks:</label>
+                            <input type="text" id="indeks3" name="indeks3" class="form-control" title="Unesite indeks studenta ili ostavite prazno da dohvatite informacije o svim studentima">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="bodovi">Bodovi:</label>
+                            <input type="text" id="bodovi" name="bodovi" class="form-control" title="Unesite indeks studenta ili ostavite prazno da dohvatite informacije o svim studentima">
+                        </div>
+                        <input type="submit" value="Posalji podatke" class="btn btn-primary">
+                    </form>
+                </div>
+                
+                <h4 id="obrisiP"> Obrisi podatke </h4>
+                <div id="podaci">
+                    <form id="form5">
+                        
+                        <div class="form-group">
+                            <label for="indeks4">Indeks:</label>
+                            <input type="text" id="indeks4" name="indeks4" class="form-control" title="Unesite indeks studenta ili ostavite prazno da dohvatite informacije o svim studentima">
+                        </div>
+    
+                        <div class="form-check">
+                            <input name="obrisi" id="obrisi" type="checkbox" class="form-check-input">
+                            <label for="obrisi" class="form-check-label">Obrisi podatke o studentu</label>
+                        </div>
+    
+                        <input type="submit" value="Posalji podatke" class="btn btn-primary">
+                    </form>
+                </div>
+            </div>
+                
+            
+
+            <div class="col-md-5 offset-md-1 mt-3" id="rezultat">
+            </div>
+        </div>
+    </div>
+</body>
+</html>
