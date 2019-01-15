@@ -82,13 +82,15 @@ RTextCell.prototype.draw = function (width, height) {
   return result;
 };
 
-console.log(new RTextCell("A") instanceof RTextCell);
+let rta = new  RTextCell("A");
+console.log(rta instanceof RTextCell);
 // → true
 
-console.log(new RTextCell("A") instanceof TextCell);
+console.log(rta instanceof TextCell);
 // → true
 
-console.log(new TextCell("A") instanceof RTextCell);
+let ta = new TextCell("A");
+console.log( ta instanceof RTextCell);
 // → false
 
 console.log([1] instanceof Array);

@@ -2,16 +2,16 @@ let fs = require('fs');
 
 let sadrzaj = require('./sadrzaj');
 
-function prikazStrane(response, pathName, queryData) {
+function prikazStrane(response, pathName, submittedData) {
   if (sadrzaj.contentMap[pathName]) {
     let izbor = sadrzaj.contentMap[pathName];
-    if ("pozdrav".includes(izbor)) {
+    if ( izbor == "pozdrav") {
       response.writeHead(200);
       response.write(
         `<html>
       <body>
-      Dobro dosli, ${queryData.ime}<br>
-      Vasa email adresa je: ${queryData.email} 
+      Dobro dosli, ${submittedData.ime}<br>
+      Vasa email adresa je: ${submittedData.email} 
       </body>
       </html>`);
       response.end();

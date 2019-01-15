@@ -1,6 +1,3 @@
-/*
-Funkcije za filterisanje i mapiranje niza
-*/
 
 function filter(array, test) {
     let passed = [];

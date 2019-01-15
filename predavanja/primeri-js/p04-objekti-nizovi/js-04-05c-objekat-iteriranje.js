@@ -19,3 +19,4 @@ obj = {
 
 for (let osobina in obj)
    console.log(`${osobina} - ${obj[osobina]}`)
+

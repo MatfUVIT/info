@@ -34,3 +34,10 @@ for (let i in dnevnik) {
   console.log(dnevnik[i].preobrazajVeverica);
   console.log(dnevnik[i].aktivnosti);
 }
+
+
+console.log("=== Ceo dnevnik ===")
+for (let x of dnevnik) {
+  console.log(x.preobrazajVeverica);
+  console.log(x.aktivnosti);
+}

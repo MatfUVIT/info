@@ -29,9 +29,9 @@ console.log(niz.reduce((a, b) => a + b, 0));
 
 // odredjivanje sume svih pozitivnih clanova niza
 console.log('--- Suma pozitivnih ---');
-console.log(niz.filter((a) => a >= 0).reduce((a, b) => a + b, 0));
+console.log(niz.filter(a => a >= 0).reduce((a, b) => a + b, 0));
 
-// odredjivanje sume svih clanova niza
+// odredjivanje proizvoda svih clanova niza
 console.log('--- Proizvod ---');
 console.log(reduce(niz, (a, b) => a * b, 1));
 

@@ -1,11 +1,11 @@
-const EventEmitter = require('events');
+const Dogadjaj = require('events')
 
-class EmitorDogadjaja extends EventEmitter {}
+class EmiterDogadjaja extends Dogadjaj {}
 
-const emitor = new EmitorDogadjaja();
+const emiter = new EmiterDogadjaja()
 
-emitor.on('dogadjaj', () => {
-  console.log('Desio se dogadjaj!');
-});
+emiter.on('dogadjaj', () => {
+  console.log('Odgovaram na emitovani dogadjaj!')
+})
 
-emitor.emit('dogadjaj');
+emiter.emit('dogadjaj')

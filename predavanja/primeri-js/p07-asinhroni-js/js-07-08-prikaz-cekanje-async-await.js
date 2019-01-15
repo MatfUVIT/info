@@ -10,13 +10,13 @@ function prikaziNisku(niska) {
     })
 }
 
-async function prikaziSveRedom() {
+async function prikaziDvaRedom() {
     await prikaziNisku("A")
     await prikaziNisku("B")
-    await prikaziNisku("C")
-    await prikaziNisku("D")
-    await prikaziNisku("E")
+    prikaziNisku("C")
+    prikaziNisku("D")
+    prikaziNisku("E")
 }
 
 
-prikaziSveRedom()
+prikaziDvaRedom()

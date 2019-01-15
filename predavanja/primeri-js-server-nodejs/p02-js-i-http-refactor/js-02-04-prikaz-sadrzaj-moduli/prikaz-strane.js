@@ -1,10 +1,10 @@
 
-let sadrzaj = require('./sadrzaj');
+let s = require('./sadrzaj');
 
 function prikazStrane(response, pathName) {
-    if (sadrzaj.contentMap[pathName]) {
+    if (s.sadrzaj[pathName]) {
       response.writeHead(200, { 'Content-Type': 'text/html' });
-      response.write(sadrzaj.contentMap[pathName]);
+      response.write(s.sadrzaj[pathName]);
       response.end();
     } else {
       response.writeHead(404, { 'Content-Type': 'text/html' })

@@ -1,6 +1,6 @@
-const EventEmitter = require('events');
+const KlasaZaEmitovanjeDogadjaja = require('events');
 
-class EmitorDogadjaja extends EventEmitter {}
+class EmitorDogadjaja extends KlasaZaEmitovanjeDogadjaja {}
 
 const emitor = new EmitorDogadjaja();
 

@@ -1,6 +1,5 @@
 let http = require('http');
 let url = require('url');
-let querystring = require('querystring');
 let fs = require('fs');
 
 http.createServer(function (request, response) {

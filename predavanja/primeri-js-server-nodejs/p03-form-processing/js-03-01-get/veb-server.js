@@ -4,7 +4,7 @@ let querystring = require('querystring');
 
 let prikaz = require('./prikaz-strane');
 
-http.createServer(onRequest).listen(8888);
+http.createServer(onRequest).listen(7000);
 console.log('Server has started');
 
 function onRequest(request, response) {

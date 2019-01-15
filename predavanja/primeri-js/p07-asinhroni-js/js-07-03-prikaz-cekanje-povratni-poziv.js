@@ -11,9 +11,11 @@ function prikaziNisku(niska, povratniPoziv){
   function prikaziSve(){
     prikaziNisku("A", ()=>{})
     prikaziNisku("B", ()=>{})
-    prikaziNisku("C", ()=>{})
-    prikaziNisku("D", ()=>{})
+    prikaziNisku("C", ()=>{prikaziNisku("D", ()=>{})})
     prikaziNisku("E", ()=>{})
   }
 
   prikaziSve()
+  
+  
+ 

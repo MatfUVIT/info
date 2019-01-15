@@ -1,6 +1,5 @@
 let http = require('http');
 let url = require('url');
-let querystring = require('querystring');
 
 http.createServer(function (request, response) {
     response.writeHead(200, { 'Content-type': 'text/plan' });

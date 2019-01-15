@@ -1,10 +1,8 @@
 let fs = require('fs')
 
-fs.writeFile('text2.txt', 'Ovo je proba', 'utf8',
-    (err, data) => {
+fs.writeFile('text3.txt', 'Ovo je neka mala proba', 'utf8',
+    (err) => {
         if (err) {
             console.log(err)
         }
-        console.log(data);
-
     })

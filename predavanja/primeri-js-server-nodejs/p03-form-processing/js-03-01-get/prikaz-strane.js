@@ -5,7 +5,7 @@ let sadrzaj = require('./sadrzaj');
 function prikazStrane(response, pathName, queryData) {
   if (sadrzaj.contentMap[pathName]) {
     let izbor = sadrzaj.contentMap[pathName];
-    if ("pozdrav".includes(izbor)) {
+    if (izbor == "pozdrav") {
       response.writeHead(200);
       response.write(
         `<html>
@@ -17,7 +17,7 @@ function prikazStrane(response, pathName, queryData) {
       response.end();
     }
     else {
-      fs.readFile(__dirname+ '/' + izbor, function (err, data) {
+      fs.readFile(__dirname + '/' + izbor, function (err, data) {
         if (err) {
           response.writeHead(500, { 'Content-type': 'text/plan' });
           response.write(

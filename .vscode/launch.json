@@ -8,7 +8,7 @@
             "type": "node",
             "request": "launch",
             "name": "Launch Program",
-            "program": "${workspaceFolder}/predavanja/primeri-js/p07-asinhroni-js/js-07-04-prikaz-cekanje-povratni-poziv.js"
+            "program": "${workspaceFolder}/predavanja/primeri-js-nodejs/p03-tokovi/js-03-03-tok-broj-citanja.js"
         }
     ]
 }

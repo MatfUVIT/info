@@ -1,4 +1,4 @@
-var contentMap = {
+let contentMap = {
     '/': '<h1> Dobrodosli na sajt </h1>',
     '/kontakt': '<h1> Kontaktne informacije </h1>',
     '/opis': '<h1> Opis sajta </h1>',
@@ -6,4 +6,4 @@ var contentMap = {
     '/privatno': '<h1> Privatni podaci </h1>'
   }
 
-  exports.contentMap = contentMap;
+  exports.sadrzaj = contentMap;

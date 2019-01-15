@@ -2,9 +2,11 @@ let net = require('net');
 
 let klijent = new net.Socket();
 
-klijent.connect(1337, '127.0.0.1', () => {
+adresa = '127.0.0.1';
+port = 1337;
+klijent.connect(port, adresa, () => {
     console.log('Povezan sa serverom');
-    klijent.write('Pozdrav za server! Poydrav salje klijent.');
+    klijent.write('Pozdrav za server! Pozdrav salje klijent.');
 });
 
 klijent.on('data',  (data) => {

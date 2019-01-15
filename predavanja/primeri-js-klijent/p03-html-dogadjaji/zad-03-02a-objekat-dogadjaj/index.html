@@ -1,6 +1,6 @@
-<button>Click me any way you want</button>
+<button>Pritisni me kako god mislis da je najpametnije</button>
 <script>
-  var button = document.querySelector("button");
+  let button = document.querySelector("button");
   button.addEventListener("mousedown", function(event) {
     if (event.which == 1)
       console.log("Left button");
@@ -8,7 +8,7 @@
       console.log("Middle button");
     else if (event.which == 3)
       console.log("Right button");
-    console.log(event.pageX);
+    console.log(`(x,y):(${event.pageX},${event.pageY})`);
   });
 
 </script>
