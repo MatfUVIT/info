@@ -232,6 +232,28 @@ JаваСкрипт програми се записују коришћењем 
 Бројевни литерал је број записан у програмском тј. изворном кŏду - у зависности од тога како је записан, то може бити целобројни литерал или литерал који представља број у покретном зарезу.
 
 **Пример.** Бројевни литерали, тј. записи целих бројева и бројева у покретном зарезу:
+
+```js
+/* Zapis broja u fiksnom zarezu */
+42;
+
+/* Zapis broja u fiksnom zarezu */
+0x42 // 66;
+
+/* Zapis broja u fiksnom zarezu */
+5354576767321;
+
+/* Zapis broja u pokretnom zarezu */
+9.81;
+
+/* Zapis broja u pokretnom zarezu */
+.1234; // 0.1234
+
+/* Zapis broja u pokretnom zarezu */
+2.998e8; //2.998 * 10^8
+
+```
+
 <script src="https://gist.github.com/vladofilipovic/407dc62f463fb74f09f984f9220b9795.js"></script>
 
 ##### Ниске
