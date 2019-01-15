@@ -1,0 +1,36 @@
+h4 {
+    border-bottom: 2px groove pink; 
+    padding-left: 5px;
+    margin-bottom: 20px;
+}
+
+h4:hover {
+    cursor: pointer;
+}
+
+h4 + div {
+    display: none;
+    padding-left: 5px;
+    margin: 10px;
+}
+
+caption { 
+    caption-side: top;
+}
+
+td, th{
+    border-bottom: 2px groove pink;
+    width: 150px;
+    text-align: center;
+}
+
+p {
+    border: 2px ridge pink;
+    width: 200px;
+    padding: 10px;
+    margin: 10px;
+}
+
+#rezultat {
+    border: 2px groove pink;
+}
