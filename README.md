@@ -4,6 +4,8 @@
 
 **[Важно! Полагање испита у роковима Јануар1 и Јануар2](/pismeni-ispiti/info/README.md)**
 
+**[Важно! Резултати накнадног колоквијума](/kolokvijumi/info/README.md)**
+
 [comment]: # (* **[Важно! Термин надокнаде предавања](/predavanja/info/README.md)**)
 
 [comment]: # (* **[Важно! Информације о вежбама](/vezbe/info/README.md)**)
