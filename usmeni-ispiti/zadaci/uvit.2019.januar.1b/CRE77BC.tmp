@@ -1,0 +1,205 @@
+\documentclass[a4paper]{article}
+\usepackage[cm]{fullpage}
+\usepackage[serbian]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T2A]{fontenc}
+\pagestyle{empty}
+
+\begin{document}
+
+\begin{center}
+\textbf{УВИТ, јануар 2019, теоријски де испита, група Б}  
+\end{center}
+
+Име и презиме: \hrulefill, Број индекса: \hrulefill
+
+\begin{enumerate}
+
+% 1
+\item Описати који су основни задаци мрежног слоја (network layer). \hrulefill
+
+\hrulefill
+
+\hrulefill
+
+% 2
+\item Шта је то хаб, чему служи, које су му карактеристике, на ком слоју ради? \hrulefill
+
+\hrulefill
+
+\hrulefill
+
+
+% 3
+\item Чему служе IP адресе? Како се записују? На ком слоју комуникације се оне користе?\hrulefill
+
+\hrulefill
+
+\hrulefill
+
+
+% 4
+\item Шта је то мрежни порт? Чему служи и како се користи? \hrulefill
+
+\hrulefill
+
+
+\hrulefill
+
+
+% 5
+\item Од којих се елемената састоји HTTP одговор?\hrulefill
+
+\hrulefill
+
+\hrulefill
+
+
+% 6
+\item Који елементи на веб страни су изабрани селектором \verb|p.small #desc|? \hrulefill
+
+\hrulefill
+
+\hrulefill
+
+
+% 7 
+\item На које карактеристике ЈаваСкрипта се односи тврдња да је то слабо типизиран језик? \hrulefill
+
+\hrulefill
+
+\hrulefill
+
+% 8 
+\item Шта је то ред повратних позива код ЈаваСкрипт окружења за извршавање, чему служи и како ради? \hrulefill
+
+\hrulefill
+
+\hrulefill
+
+% 9
+\item Шта су то приватне адресе?\hrulefill
+
+\hrulefill
+
+\hrulefill 
+
+
+% 10
+\item Описати основе разлике између TCP и UDP протокола.\hrulefill
+
+\hrulefill
+
+\hrulefill 
+
+\hrulefill 
+
+
+% 11
+\item Навести примере елемента, етикета, атрибута и ентитета у SGML-у.\hrulefill
+
+\hrulefill 
+
+\hrulefill 
+
+\hrulefill 
+
+
+% 12
+\item Како у HTML-у постићи да једна ћелија табеле обухвати три суседне ћелије табеле у истој врсти? \hrulefill
+
+\hrulefill 
+
+
+% 13
+\item Шта је то стилски лист, каква му је структура? Навести пример. \hrulefill
+
+\hrulefill
+
+\hrulefill
+
+% 14
+\item Шта је то стилски лист, каква му је структура? Навести пример. \hrulefill
+
+\hrulefill
+
+\hrulefill
+
+% 15
+\item Шта је то стилски лист, каква му је структура? Навести пример. \hrulefill
+
+\hrulefill
+
+\hrulefill
+
+% 16
+\item Шта је то стилски лист, каква му је структура? Навести пример. \hrulefill
+
+\hrulefill
+
+\hrulefill
+
+
+% 17
+\item Шта је то стилски лист, каква му је структура? Навести пример. \hrulefill
+
+\hrulefill
+
+\hrulefill
+
+% 18
+\item Шта је то стилски лист, каква му је структура? Навести пример. \hrulefill
+
+\hrulefill
+
+\hrulefill
+
+% 19
+\item Шта је то стилски лист, каква му је структура? Навести пример. \hrulefill
+
+\hrulefill
+
+\hrulefill
+
+% 20
+\item Шта је то стилски лист, каква му је структура? Навести пример. \hrulefill
+
+\hrulefill
+
+\hrulefill
+
+% 21
+\item Шта је то стилски лист, каква му је структура? Навести пример. \hrulefill
+
+\hrulefill
+
+\hrulefill
+% 22
+\item Шта је то стилски лист, каква му је структура? Навести пример. \hrulefill
+
+\hrulefill
+
+\hrulefill
+% 23
+\item Шта је то стилски лист, каква му је структура? Навести пример. \hrulefill
+
+\hrulefill
+
+\hrulefill
+
+% 24
+\item Шта је то стилски лист, каква му је структура? Навести пример. \hrulefill
+
+\hrulefill
+
+\hrulefill
+
+% 25
+\item Шта је то стилски лист, каква му је структура? Навести пример. \hrulefill
+
+\hrulefill
+
+\hrulefill
+
+\end{enumerate}
+\end{document}
