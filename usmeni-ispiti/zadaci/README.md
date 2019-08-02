@@ -6,9 +6,13 @@
 
 ---
 
-[Испитни рок Јун 2010](./uvit.2010.jun.ispit.pdf){:target="_blank"}
+[Испитни рок Јануар 2019, група А](./uvit.2019.januar.1a/uvit.2019.januar.1a.pdf){:target="_blank"}
 
-[Испитни рок Октобар 2010](./uvit.2010.oktobar.ispit.pdf){:target="_blank"}
+[Испитни рок Јануар 2019, група Б](./uvit.2019.januar.1b/uvit.2019.januar.1b.pdf){:target="_blank"}
+
+[Испитни рок Јануар 2019, група В](./uvit.2019.januar.1c/uvit.2019.januar.1c.pdf){:target="_blank"}
+
+[Испитни рок Јануар 2019, група Г](./uvit.2019.januar.1d/uvit.2019.januar.1d.pdf){:target="_blank"}
 
 ---
 
