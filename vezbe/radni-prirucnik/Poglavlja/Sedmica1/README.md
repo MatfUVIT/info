@@ -1,4 +1,4 @@
-[Radni priručnik](../../RadniPrirucnik.md)
+[Radni priručnik](../../README.md)
 
 # 1. Sedmica 1
 

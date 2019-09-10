@@ -1,8 +1,8 @@
-[Radni priručnik](../RadniPrirucnik.md)
+[Radni priručnik](../../README.md)
 
 # Predgovor
 
-Ovaj radni priručnik obuhvata plan i program za pripremu dva istoimena kursa na Matematičkom fakultetu Univerziteta u Beogradu - prvi je obavezni kurs na 2. godini smera Informatika, a drugi je izborni kurs na 4. godini smera Računarstvo i Informatika. Radni priručnik je koncipiran na osnovu časova vežbi iz navedenih kurseva, održanih u okviru jesenjeg semestra akademskih 2018/2019. i 2019/2020. godina. Radni priručnik predstavlja prateći materijal uz knjigu "Uvod u Veb i Internet Tehnologije" od istih autora. Knjigu je moguće pronaći na adresi [https://matfuvit.github.io/UVIT/vezbe/knjiga/Knjiga.md](https://matfuvit.github.io/UVIT/vezbe/knjiga/Knjiga.md).
+Ovaj radni priručnik obuhvata plan i program za pripremu dva istoimena kursa na Matematičkom fakultetu Univerziteta u Beogradu - prvi je obavezni kurs na 2. godini smera Informatika, a drugi je izborni kurs na 4. godini smera Računarstvo i Informatika. Radni priručnik je koncipiran na osnovu časova vežbi iz navedenih kurseva, održanih u okviru jesenjeg semestra akademskih 2018/2019. i 2019/2020. godina. Radni priručnik predstavlja prateći materijal uz knjigu "Uvod u Veb i Internet Tehnologije" od istih autora. Knjigu je moguće pronaći na adresi [https://matfuvit.github.io/UVIT/vezbe/knjiga/](https://matfuvit.github.io/UVIT/vezbe/knjiga/).
 
 Radni priručnik je podeljen po delovima koja prate delove u knjizi. Svaki deo je dalje podeljen po sedmicama kojima su se održavali časovi. U svakoj sedmici su navedeni delovi iz knjige čije su teme bile pokrivene tim časovima. Zatim slede domaći zadaci koji su studentima zadati kao neobavezna aktivnost i koji služe za provežbavanje savladanog gradiva na osnovu obrađenih tema u toj sedmici. Studenti se na ovaj način ohrabruju da redovno prelaze gradivo kako bi temeljnije bili spremni za provere praktičnog znanja. Kako bi podsticali studente da sami rešavaju zadatke umesto da gradivo "savladavaju" čitanjem koda, priručnik ne sadrži rešenja domaćih zadataka.
 

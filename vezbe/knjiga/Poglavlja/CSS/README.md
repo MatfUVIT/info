@@ -1,4 +1,4 @@
-[Knjiga](../../Knjiga.md)
+[Knjiga](../../README.md)
 
 # 2. Stilizovanje Veb dokumenata kroz CSS
 

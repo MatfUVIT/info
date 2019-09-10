@@ -5,11 +5,11 @@ Autori:
 - [Ajzenhamer Nikola](https://www.nikolaajzenhamer.rs)
 - [Bukurov Anja](http://www.math.rs/~anja_bukurov)
 
-[Predgovor](./Poglavlja/Predgovor.md)
+[Predgovor](./Poglavlja/Predgovor/README.md)
 
 ## Deo 1 - Osnovni elementi Veba
 
-### [Poglavlje 1. Struktuiranje Veb dokumenata kroz HTML](./Poglavlja/HTML/HTML.md)
+### [Poglavlje 1. Struktuiranje Veb dokumenata kroz HTML](./Poglavlja/HTML/README.md)
 
 1. Osnovni elementi HTML dokumenata
 
@@ -29,7 +29,7 @@ Autori:
    
    4. Citati
 
-### [Poglavlje 2. Stilizovanje Veb dokumenata kroz CSS](./Poglavlja/CSS/CSS.md)
+### [Poglavlje 2. Stilizovanje Veb dokumenata kroz CSS](./Poglavlja/CSS/README.md)
 
 1. Osnovni elementi jezika CSS
 

@@ -1,4 +1,4 @@
-[Knjiga](../../Knjiga.md)
+[Knjiga](../../README.md)
 
 # 1. Struktuiranje Veb dokumenata kroz HTML
 
