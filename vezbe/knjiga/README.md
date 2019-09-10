@@ -60,3 +60,19 @@ Autori:
    4. Svojstvo `border-radius`
 
    5. Pojas elementa
+
+6. Koordinatni sistem veb pregledača
+
+7. Pozicioniranje elemenata
+   
+   1. Statičko pozicioniranje
+
+   2. Relativno pozicioniranje
+
+   3. Apsolutno pozicioniranje
+
+   4. Fiksno pozicioniranje
+
+   5. Z-pozicioniranje elemenata
+
+   6. Svojstva `display` i `visibility`
