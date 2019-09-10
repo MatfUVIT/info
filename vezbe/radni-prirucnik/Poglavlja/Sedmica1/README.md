@@ -1,5 +1,7 @@
 [Radni priručnik](../../README.md)
 
+---
+
 # 1. Sedmica 1
 
 ## 1.1 Teme
@@ -47,6 +49,8 @@
 <table><tr><td>
 <img src="./Slike/zadatak3.png" alt="Zadatak 3">
 </td></tr></table>
+
+---
 
 [Radni priručnik](../../README.md)
 

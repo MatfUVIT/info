@@ -1,5 +1,7 @@
 [Knjiga](../../README.md)
 
+---
+
 # 1. Struktuiranje Veb dokumenata kroz HTML
 
 *HyperText Markup Language* (skr. *HTML*) predstavlja najosnovniji blok za izgradnju Veba. HTML jezik se koristi za opisivanje logičke strukture stranice, odnosno, na koji način je Veb dokument izgrađen. Na primer, u HTML jeziku možemo zadati koji deo stranice čini naslov ili paragraf, gde se nalazi slika, kako se podaci predstavljaju tabelom i slično.
@@ -295,6 +297,8 @@ Element `blockquote` se obično koristi ukoliko želimo da istaknemo neki citat.
 <table><tr><td>
 <img src="./Slike/blockquote.png" alt="Primeri upotrebe elementa blockquote.">
 </td></tr></table>
+
+---
 
 [Knjiga](../../README.md)
 

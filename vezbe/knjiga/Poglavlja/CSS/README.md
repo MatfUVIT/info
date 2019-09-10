@@ -1,5 +1,7 @@
 [Knjiga](../../README.md)
 
+---
+
 # 2. Stilizovanje Veb dokumenata kroz CSS
 
 *Cascading Style Sheets* (skr. *CSS*) predstavlja jezik koji služi za stilizovanje HTML elemenata. Za razliku od jezika HTML, koji opisuje logičku strukturu veb dokumenta, jezikom CSS se služimo da bismo opisali na koji način se elementi te logičke strukture prikazuju. Na primer, korišćenjem jezika CSS možemo podesiti poziciju elemenata, boju teksta, okvire, pozadinu i dr.
@@ -299,7 +301,7 @@ Naredni kod ilustruje upotrebu različitih modela boja, a na narednoj slici prik
 <img src="./Slike/boje.png" alt="Primer korišćenja različitih modela boja.">
 </td></tr></table>
 
-#### Više informacija
+### Više informacija
 
 Za više informacijama o temama koje su obrađene u ovoj sekciji, možete posetiti naredne korisne veb prezentacije:
 
@@ -562,7 +564,7 @@ Nakon navođenja ovog pravila, novouvedenu familiju fontova možemo koristiti ka
 <img src="./Slike/font_face.png" alt="Primer uvođenja i korišćenja korisnički-definisane familije fontova.">
 </td></tr></table>
 
-#### Više informacija
+### Više informacija
 
 Za više informacijama o temama koje su obrađene u ovoj sekciji, možete posetiti naredne korisne veb prezentacije:
 
@@ -1060,6 +1062,650 @@ Naredni primer i prateća slika ilustruju opisano ponašanje.
 <table><tr><td>
 <img src="./Slike/inline_margin.png" alt="Linijski elementi nemaju gornji i donji pojas, ali imaju levi i desni pojas.">
 </td></tr></table>
+
+### Više informacija
+
+Za više informacijama o temama koje su obrađene u ovoj sekciji, možete posetiti naredne korisne veb prezentacije:
+
+- Mi smo predstavili osnovni model kutije, međutim, postoji mnogo više modela kutija - i u  HTML5 i u CSS3 jeziku. Detaljniji opis svih modela kutija možete pronaći na ovoj adresi:
+[https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/The_box_model](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/The_box_model)
+
+## 2.6 Koordinatni sistem veb pregledača
+
+<!-- TODO: Dopuniti -->
+
+## 2.7 Pozicioniranje elemenata
+
+Jednostavno "slaganje" elemenata u HTML kodu može nam poslužiti tek toliko. Za konstrukciju kompleksnijih veb prezentacija, neophodno je da razumemo kako je moguće iskoristiti CSS za precizno pozicioniranje elemenata na veb stranici. Pozicioniranje elemenata može biti veoma naporna stvar pri dizajnu veb prezentacije ukoliko se u potpunosti ne razumeju svi detalji i bočni efekti koji nastaju prilikom pozicioniranja elemenata.
+
+Da bismo uspešno pozicionirali HTML element na željenu poziciju na veb prezentaciji, potrebno je da uradimo naredna dve koraka:
+
+1. Odrediti tip pozicioniranja.
+2. Iskoristiti neka od svojstava za pozicioniranje elementa, imajući u vidu karakteristike odabranog tipa pozicioniranja.
+
+Za određivanje tipa pozicioniranja koristi se svojstvo `position`. Moguće vrednosti ovog svojstva su: `static`, `relative`, `absolute` i `fixed`. U nastavku teksta ćemo detaljno diskutovati o svakoj od navedenih vrednosti.
+
+Sa druge strane, za definisanje precizne pozicije elementa koriste se neki od svojstava `top`, `right`, `bottom` i `left`. Njihovo opšte značenje jeste da udaljava element na koji se primenjuju za datu dužinu od gornje, desne, donje i leve ivice nekog elementa, redom. Od ivice kojeg elementa se dati element udaljava zavisi od odabranog tipa pozicioniranja. Podrazumevana vrednost za svako svojstvo jeste `0`.
+
+Udaljavanje elementa se vrši u skladu sa pravilima koje definiše koordinatni sistem. Na primer, ako je vrednost svojstva `top` pozitivna dužina, element će biti pomeren "na dole" (u pravcu rasta *y*-ose koordinatnog sistema), a ako je vrednost tog svojstva negativna dužina, element će biti pomeren "na gore" (u pravcu opadanja *y*-ose koordinatnog sistema).
+
+Ukoliko se u nekom pravilu iskoristi neko od ovih svojstava, a u tom pravilu nije iskorišćeno svojstvo `position` (tj. nije određen tip pozicioniranja), onda ta svojstva neće imati nikakav uticaj na poziciju elementa.
+
+### 2.7.1 Statičko pozicioniranje
+
+Ovo je podrazumevan način pozicioniranja elemenata. Postavljanje vrednosti za neko od svojstava `top`, `right`, `bottom` ili `left` nema uticaja na poziciju elementa sa statičkim pozicioniranjem.
+
+Elementi se ređaju na stranici jedan nakon drugog, u skladu sa njihovim dimenzijama i drugim karakteristikama. Na primer, linijski elementi ređaju se jedan pored drugog dok se blokovski elementi ređaju jedan ispod drugog. Ovaj tok ređanja elemenata se naziva *normalni tok* (engl. *normal flow*). 
+
+Naredni kod i prateća slika ilustruju upotrebu statičkog pozicioniranja. Veb prezentacija se sastoji od tri `div` elementa, pri čemu je drugom elementu postavljeno pozicioniranje na statičko[^1] i podešeno je da bude pozicioniran `30px` od gornje ivice i `80px` od leve ivice. Kao što je prikazano na slici, elementi se ređaju jedan ispod drugog, što je i očekivano.
+
+[^1]: Zapravo, i preostalim `div` elementima je postavljeno pozicioniranje na statičko, zbog toga što je to podrazumevano ponašanje, iako ga nismo eksplicitno napisali u CSS delu koda.
+
+```html
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Primer</title>
+    <meta charset="UTF-8">
+
+    <style>
+        #prvi {
+            height: 100px;
+            width: 300px;
+            background-color: rgb(231, 43, 103);
+        }
+
+        #drugi {
+            height: 100px;
+            width: 300px;
+            background-color: rgb(24, 243, 232);
+            position: static;
+            top: 30px;
+            left: 80px;
+        }
+
+        #treci {
+            height: 100px;
+            width: 300px;
+            background-color: rgb(180, 55, 252);
+        }
+    </style>
+</head>
+
+<body>
+    <div id="prvi"></div>
+    <div id="drugi"></div>
+    <div id="treci"></div>
+</body>
+
+</html>
+```
+
+<table><tr><td>
+<img src="./Slike/static.png" alt="Primer statičkog pozicioniranja.">
+</td></tr></table>
+
+### 2.7.2. Relativno pozicioniranje
+
+Pomenuli smo ranije da svaki tip pozicioniranja definiše šta za taj tip znači "ivica" u odnosu na koju se element pomera. Pri relativnom pozicioniranju "ivica" od koje se element pomera je ivica tog elementa pri statičkom pozicioniranju. Jednostavnije rečeno, postavljanje vrednosti za svojstva `top`, `right`, `bottom` i `left` pomeriće element u odnosu na njegovu statičku poziciju. 
+
+Važno je zapamtiti da izmene u poziciji elementa koji je relativno pozicioniran nemaju uticaja na preostali sadržaj stranice - svi ostali elementi ostaju na svojim pozicijama. Posledica ovog efekta jeste pojavljivanje "prazne" površine na mestu gde se relativno-pozicionirani pomereni element nalazio pre pomeranja.
+
+Naredni kod predstavlja izmenu prethodnog koda u kojem je promenjen samo tip pozicioniranja drugog `div` elementa sa statičkog na relativno. Kao što se vidi na pratećoj slici, drugi `div` element je pomeren za `30px` "na dole" i `80px` "na desno" u odnosu na njegovu poziciju koja mu je bila dodeljena pri statičkom pozicioniranju. Preostala dva `div` elementa su ostala na svojim pozicijama, što dovodi do efekta "prazne" površine između njih - na mestu gde je drugi `div` element bio pozicioniran pri statičkom pozicioniranju.
+
+```html
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Primer</title>
+    <meta charset="UTF-8">
+
+    <style>
+        #prvi {
+            height: 100px;
+            width: 300px;
+            background-color: rgb(231, 43, 103);
+        }
+
+        #drugi {
+            height: 100px;
+            width: 300px;
+            background-color: rgb(24, 243, 232);
+            position: relative;
+            top: 30px;
+            left: 80px;
+        }
+
+        #treci {
+            height: 100px;
+            width: 300px;
+            background-color: rgb(180, 55, 252);
+        }
+    </style>
+</head>
+
+<body>
+    <div id="prvi"></div>
+    <div id="drugi"></div>
+    <div id="treci"></div>
+</body>
+
+</html>
+```
+
+<table><tr><td>
+<img src="./Slike/relative.png" alt="Primer relativnog pozicioniranja.">
+</td></tr></table>
+
+### 2.7.3 Apsolutno pozicioniranje
+
+Apsolutno pozicioniranje je najzahtevnije za razumevanje od svih tipova pozicioniranja. Pri apsolutnom pozicioniranju "ivica" od koje se element pomera je ivica prvog pretka tog elementa u DOM stablu koji nije statički pozicioniran. Ukoliko ne postoji predak koji zadovoljava taj uslov, onda se za "ivicu" smatra ivica elementa `body`.
+
+U skladu sa ovom složenom definicijom postoje dva slučaja koja možemo razmatrati. Prvi slučaj je kada su svi preci elementa koji je apsolutno pozicioniran statički pozicionirani. U tom slučaju, element se pomera od ivice elementa `body`. Takav slučaj je predstavljen narednim kodom i pratećom slikom. Jedini predak (do elementa `body`) drugog `div` elementa je element `div` koji ima postavljen identifikator na vrednost `omotac` (nazovimo ovaj element "omotač"). Bez obzira što se drugi `div` element nalazi kao potomak omotača, s obzirom da je omotač statički pozicioniran, onda će drugi `div` element biti pozicioniran u odnosu na ivicu `body` elementa.
+
+```html
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Primer</title>
+    <meta charset="UTF-8">
+
+    <style>
+        #omotac {
+            margin-top: 100px;
+            height: 400px;
+            width: 400px;
+            background-color: rgba(218, 165, 32, 0.5);
+        }
+    
+        #prvi {
+            height: 100px;
+            width: 300px;
+            background-color: rgb(231, 43, 103);
+        }
+
+        #drugi {
+            height: 100px;
+            width: 300px;
+            background-color: rgb(24, 243, 232);
+            position: absolute;
+            top: 30px;
+            left: 80px;
+        }
+
+        #treci {
+            height: 100px;
+            width: 300px;
+            background-color: rgb(180, 55, 252);
+        }
+    </style>
+</head>
+
+<body>
+    <div id="omotac">
+        <div id="prvi"></div>
+        <div id="drugi"></div>
+        <div id="treci"></div>
+    </div>
+</body>
+
+</html>
+```
+
+<table><tr><td>
+<img src="./Slike/absolute_body.png" alt="Primer relativnog pozicioniranja elementa čiji su svi preci statički pozicionirani.">
+</td></tr></table>
+
+Međutim, šta ukoliko bi omotač bio nestatički pozicioniran? Ukoliko postavimo da omotač bude, na primer, relativno pozicioniran kao u narednom kodu, onda ćemo dobiti situaciju kao na narednoj slici. Sada drugi `div` element nije više pozicioniran u odnosu na ivicu `body` elementa zato što postoji makar jedan predak koji nije statički pozicioniran (a to je omotač), te se drugi `div` element pozicionira u odnosu na njegovu ivicu.
+
+```html
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Primer</title>
+    <meta charset="UTF-8">
+
+    <style>
+        #omotac {
+            position: relative;
+            margin-top: 100px;
+            height: 400px;
+            width: 400px;
+            background-color: rgba(218, 165, 32, 0.5);
+        }
+    
+        #prvi {
+            height: 100px;
+            width: 300px;
+            background-color: rgb(231, 43, 103);
+        }
+
+        #drugi {
+            height: 100px;
+            width: 300px;
+            background-color: rgb(24, 243, 232);
+            position: absolute;
+            top: 30px;
+            left: 80px;
+        }
+
+        #treci {
+            height: 100px;
+            width: 300px;
+            background-color: rgb(180, 55, 252);
+        }
+    </style>
+</head>
+
+<body>
+    <div id="omotac">
+        <div id="prvi"></div>
+        <div id="drugi"></div>
+        <div id="treci"></div>
+    </div>
+</body>
+
+</html>
+```
+
+<table><tr><td>
+<img src="./Slike/absolute_wrapper.png" alt="Primer relativnog pozicioniranja elementa u odnosu na prvog nestatički-pozicioniranog pretka.">
+</td></tr></table>
+
+Primetimo još jednu veoma važnu stvar - u oba slučaja treći `div` element se pomerio na mesto gde bi drugi `div` element bio pozicioniran pri statičkom pozicioniranju! "Prazan" prostor koji je bio prisutan pri relativnom pozicioniranju je nestao. Razlog za ovo ponašanje jeste da se apsolutno-pozicionirani elementi izbacuju iz normalnog toka raspoređivanja elemenata. Drugim rečima, ostali elementi se raspoređuju u skladu sa normalnim tokom kao da apsolutno-pozicionirani elementi ne postoje.
+
+### 2.7.4 Fiksno pozicioniranje
+
+Pri fiksnom pozicioniranju "ivica" od koje se element pomera je ivica pogleda veb pregledača. Međutim, za fiksno pozicioniranje važi još jedno pravilo po čemu se on razlikuje od ostalih pozicioniranja. Element sa fiksnim pozicioniranjem se nalaze na istoj poziciji na ekranu, čak i kada se stranica skroluje. 
+
+Slično kao u slučaju apsolutnog pozicioniranja, elementi sa fiksnim pozicioniranjem se izbacuju iz normalnog toka, tj. ne ostaju "prazne" površine tamo gde bi se element našao pri statičkom pozicioniranju.
+
+Naredni kod pozicionira drugi `div` element `30px` od gornje ivice pogleda veb pregledača i `0` od desne ivice veb pregledača. Na narednoj slici su predstavljene situacije prilikom skrolovanja visoke veb prezentacije. U prvoj situaciji je prikazan početak veb prezentacije na kojoj su svi elementi vidljivi (slika A). Međutim, prilikom skrolovanja stranice, elementi koji nisu fiksno pozicionirani izlaze iz pogleda veb pregledača, dok fiksno pozicionirani element ostaje na svojoj poziciji (slika B).
+
+```html
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Primer</title>
+    <meta charset="UTF-8">
+
+    <style>
+        body {
+            height: 3000px;
+        }
+
+        #omotac {
+            position: relative;
+            margin-top: 100px;
+            height: 400px;
+            width: 400px;
+            background-color: rgba(218, 165, 32, 0.5);
+        }
+    
+        #prvi {
+            height: 100px;
+            width: 300px;
+            background-color: rgb(231, 43, 103);
+        }
+
+        #drugi {
+            height: 100px;
+            width: 300px;
+            background-color: rgb(24, 243, 232);
+            position: fixed;
+            top: 30px;
+            right: 0;
+        }
+
+        #treci {
+            height: 100px;
+            width: 300px;
+            background-color: rgb(180, 55, 252);
+        }
+    </style>
+</head>
+
+<body>
+    <div id="omotac">
+        <div id="prvi"></div>
+        <div id="drugi"></div>
+        <div id="treci"></div>
+    </div>
+</body>
+
+</html>
+```
+
+<table><tr><td>
+<img src="./Slike/fixed1.png" alt="">
+</td></tr></table>
+
+(A) Primer fiksnog pozicioniranja. Veb stranica je tek učitana. Svi elementi su vidljivi.
+
+<table><tr><td>
+<img src="./Slike/fixed2.png" alt="">
+</td></tr></table>
+
+(B) Primer fiksnog pozicioniranja. Veb stranica je skrolovana. Jedino je drugi `div` element na svojoj poziciji, dok je većina ostalih elemenata, koji nisu fiksno pozicionirani, izašla iz pogleda veb pregledača.
+
+### 2.7.5 Z-pozicioniranje elemenata
+
+Prilikom pozicioniranja elemenata, može se desiti da se neki od njih preklope. Postavlja se pitanje na koji način će ti elementi biti prikazani, tj. koji element će biti ispred kog elementa. 
+
+U skladu sa koordinatnim sistemom veb pregledača, elementu može biti dodeljena pozitivna ili negativna vrednost za *z-dubinu* (engl. *z-depth*). Element koji ima veću vrednost z-dubine biće pozicioniran ispred elemenata sa manjom vrednošću za z-dubinu. Ukoliko se dva elementa sa jednakim vrednostima za z-dubinu preklope, onda onaj element koji je poslednji pozicioniran biti ispred ostalih elemenata sa kojima se preklapa.
+
+Podrazumevano svi elementi imaju z-dubinu jednaku 0. U primeru sa relativnim pozicioniranjem, drugi i treći `div` elementi se preklapaju, pri čemu se drugi `div` element nalazi ispred trećeg. Međutim, validno je postaviti pitanje zašto je drugi `div` element poslednji pozicioniran, a ne treći kad se on u HTML kodu nalazi nakon drugog elementa. Da bismo razumeli ovo ponašanje, moramo da razumemo kako veb pregledač formira veb prezentaciju.
+
+Bez ulaženja u detalje, veb pregledač prvo dohvata HTML kod i na osnovu njega vrši pozicioniranje elemenata. Tek kada su ti elementi raspoređeni, onda se vrši stilizovanje dokumenta na osnovu CSS koda. U primeru sa relativnim pozicioniranjem, veb pregledač nije pronašao nikakav kod za pozicioniranje prvog i trećeg `div` elementa, te nije menjao njihove pozicije. Međutim, pronašao je kod za pozicioniranje drugog `div` elementa, pa je onda izvršio njegovo pozicioniranje ponovo. Samim tim, dolazimo do zaključka da je drugi `div` element poslednji pozicioniran, te on ima najveću prednost prilikom prikazivanja.
+
+Svojstvo `z-index` određuje kako se elementi slažu jedan preko drugog, tj. određuje vrednost z-dubine. Naredni kod predstavlja modifikaciju primera sa relativnim pozicioniranjem u kojem je z-dubina drugog `div` elementa postavljena na vrednost `-5`, što predstavlja manju vrednost od podrazumevane vrednosti za treći `div` element (a to je `0`). Sa ovom izmenom, drugi `div` element će biti prikazan iza trećeg `div` elementa, bez obzira što je poslednji pozicioniran, kao što je prikazano na narednoj slici.
+
+```html
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Primer</title>
+    <meta charset="UTF-8">
+
+    <style>
+        #prvi {
+            height: 100px;
+            width: 300px;
+            background-color: rgb(231, 43, 103);
+        }
+
+        #drugi {
+            height: 100px;
+            width: 300px;
+            background-color: rgb(24, 243, 232);
+            position: relative;
+            top: 30px;
+            left: 80px;
+            z-index: -5;
+        }
+
+        #treci {
+            height: 100px;
+            width: 300px;
+            background-color: rgb(180, 55, 252);
+        }
+    </style>
+</head>
+
+<body>
+    <div id="prvi"></div>
+    <div id="drugi"></div>
+    <div id="treci"></div>
+</body>
+
+</html>
+```
+
+<table><tr><td>
+<img src="./Slike/z-index.png" alt="Primer korišćenja svojstva z-index.">
+</td></tr></table>
+
+### 2.7.6 Svojstva `display` i `visibility`
+
+Do sada smo videli na koje sve načine je moguće raspoređivati elemente na veb prezentaciji zajedno sa svim bočnim efektima koje se javljaju. Sada ćemo opisati još dva svojstva koja, iako se ne koriste direktno za pozicioniranje elemenata već za način njihovog prikazivanja, mogu na neki način uticati na raspored elemenata na stranici.
+
+Pomoću svojstva `display` određujemo na koji način će element biti prikazan. Štaviše, možemo upravljati time da li će element uopšte biti prikazan na stranici! Svaki HTML element ima podrazumevanu vrednost za ovo svojstvo u zavisnosti od tipa elementa. Za većinu elemenata podrazumevana vrednost je definisana HTML5 standarom. Pogledajmo još neke vrednosti ovog svojstva i njihova značenja:
+
+- Vrednost `initial` postavlja prikazivanje elementa na podrazumevano.
+
+- Vrednost `block` definiše da se element prikazuje kao blokovski element. Element će dobiti sve karakteristike za prikazivanje blokovskih elemenata, bez obzira na njegovu originalnu kategoriju.
+
+- Vrednost `inline` definiše da se element prikazuje kao linijski element. Element će dobiti sve karakteristike za prikazivanje linijskih elemenata, bez obzira na njegovu originalnu kategoriju.
+
+- Vrednost `inline-block` definiše da se element prikazuje kao linijski element, sa time da je moguće menjati dimenzije sadržaja pomoću svojstva `width` i `height`[^2].
+
+- Vrednost `none` jeste da se dati element i njegov sadržaj u potpunosti uklanjaju iz prikaza.
+
+[^2]: Prisetimo se da linijskim elementima nije moguće promeniti dimenzije sadržaja korišćenjem svojstava `width` i `height`.
+
+Važno je napomenuti da promena svojstva `display` ne povlači promenu kategorije elementa. Tako, na primer, linijski element koji ima postavljeno `display` svojstvo na vrednost `block` i dalje ne sme da sadrži blokovske elemente u svom sadržaju!
+
+Naredni HTML kod ilustruje korišćenje svojstva `display` za "pozicioniranje" elemenata tako da budu prikazano kao na pratećoj slici. Crveni i žuti `div` elementi su automatski raspoređeni jedan pored drugog, iako su oba elementa predstavnici blokovskih elemenata, zbog činjenice da je njihov prikaz promenjen na `inline-block`.
+
+```html
+<html>
+
+<head>
+    <title>Primer</title>
+    <meta charset="UTF-8">
+
+    <style type="text/css">
+        #omotac {
+            border: 1px solid black;
+            margin-left: auto;
+            margin-right: auto;
+            width: 400px;
+            position: relative;
+        }
+
+        #zeleni {
+            width: 400px;
+            height: 50px;
+            background-color: rgb(83, 255, 103);
+        }
+
+        #crveni {
+            width: 100px;
+            height: 200px;
+            background-color: rgb(255, 53, 57);
+            display: inline-block;
+        }
+
+        #zuti {
+            width: 300px;
+            height: 200px;
+            background-color: rgb(255, 255, 65);
+            display: inline-block;
+        }
+
+        #plavi {
+            width: 400px;
+            height: 50px;
+            background-color: rgb(39, 230, 233);
+        }
+    </style>
+
+</head>
+
+<body>
+    <div id="omotac">
+        <div id="zeleni"></div>
+        <div id="crveni"></div><div id="zuti"></div>
+        <div id="plavi"></div>
+    </div>
+</body>
+
+</html>
+```
+
+<table><tr><td>
+<img src="./Slike/inline-block.png" alt="Korišćenje svojstva display za promene tipa prikaza elemenata.">
+</td></tr></table>
+
+Obratimo pažnju na jedan skriveni "hack" koji smo uradili u prethodnom kodu. Prikažimo ponovo HTML sadržaj tela dokumenta:
+
+```html
+<div id="omotac">
+    <div id="zeleni"></div>
+    <div id="crveni"></div><div id="zuti"></div>
+    <div id="plavi"></div>
+</div>
+```
+
+Ovaj deo koda je namerno formatiran na ovaj način. Ovo se pre svega odnosi na narednu liniju koda:
+
+```html
+<div id="crveni"></div><div id="zuti"></div>
+```
+
+Zašto nismo prelomili ova dva `div` elementa u zasebni red? Na narednoj slici je dat prikaz modifikacije prethodnog koda sa narednom izmenom u sadržaju tela HTML dokumenta:
+
+```html
+<div id="omotac">
+    <div id="zeleni"></div>
+    <div id="crveni"></div>
+    <div id="zuti"></div>
+    <div id="plavi"></div>
+</div>
+```
+
+<table><tr><td>
+<img src="./Slike/inline-block-with-a-problem.png" alt="Skriveni problem sa inline-block elementima.">
+</td></tr></table>
+
+Zašto je ova promena dovela do neispravnog prikaza? Jedina stvar koju smo uradili jeste razvojili crveni i žuti `div` element u zasebne linije u HTML kodu. Prethodno smo rekli da beline u HTML kodu ne utiču na prikaz elemenata. Zašto je onda žuti `div` element "prešao" u novu liniju u prikazu veb pregledača?
+
+Da bismo razumeli ovu posledicu, moramo da razumemo šta je sve uticalo na prikaz ovih elemenata:
+
+- Omotač zauzima `400px` širine.
+- Zbir širina crvenog i žutog `div` elementa je tačno `400px`.
+- Elementi sa `inline-block` prikazom se ređaju jedni pored drugih (poput linijskih elemenata) sve dok u istoj liniji ima mesta za sve njih. **Ukoliko za neki element sa `inline-block` prikazom nema mesta u liniji, on će preći u novi red**.
+
+Ako uzmemo u obzir ove činjenice, jedino što može da dovede do toga da žuti `div` element pređe u novi red jeste rečenica koja je podebljana u tekstu - za žuti `div` element nije bilo mesta, te je on morao da pređe u novi red! Međutim, zbog čega nije bilo mesta kada je zbir širina crvenog i žutog `div` elementa jednak širini omotača? Odgovor je u tome da, zbog novog formata HTML koda, postoji jedan karakter razmaka između crvenog i žutog elementa. S obzirom da je širina karaktera razmaka uvek strogo pozitivna vrednost, zbir širina crvenog i žutog `div` elementa, kao i širine karaktera razmaka, premašuje širinu omotača, zbog čega za žuti `div` element nema više mesta u istoj liniji i on prelazi u novi red u prikazu.
+
+Ostalo je još samo da razjasnimo odakle se pojavio karakter razmaka koji je napravio ovaj problem. U novom formatu HTML koda stoji
+
+```html
+<div id="omotac">
+    <div id="zeleni"></div>
+    <div id="crveni"></div>
+    <div id="zuti"></div>
+    <div id="plavi"></div>
+</div>
+```
+
+Između fragmenata koda `<div id="crveni"></div>` i `<div id="zuti"></div>` postoji jedan karakter za novi red i potencijalno 4 karaktera razmaka (ili jedan karakter tabulatora). Veb pregledač, prilikom parsiranja ovog koda, pronalazi nabrojane beline i u prikazu ih zamenjuje jednim karakterom razmaka, kao što to i inače radi. Zbog toga smo u inicijalnoj verziji koda sprečili ovo tako što nismo ostavili nijedan karakter beline između datih fragmenata koda:
+
+```html
+<div id="omotac">
+    <div id="zeleni"></div>
+    <div id="crveni"></div><div id="zuti"></div>
+    <div id="plavi"></div>
+</div>
+```
+
+Postoji još jedan način kako je ovo moguće rešiti ako želimo da crveni i žuti `div` elementi budu u zasebnim linijama. S obzirom da je dovoljno sprečiti veb pregledač da naiđe na beline između ovih fragmenata koda, možemo postaviti HTML komentar, koji će biti odbačen u celosti prilikom parsiranja HTML koda, kao u narednom delu koda:
+
+```html
+<div id="omotac">
+    <div id="zeleni"></div>
+    <div id="crveni"></div><!--
+ --><div id="zuti"></div>
+    <div id="plavi"></div>
+</div>
+```
+
+Iako je ova situacija nešto što se ređe pronalazi u praksi, primer predstavlja dobru ilustraciju činjenice da je neophodno da u potpunosti razumemo funkcionisanje HTML5 i CSS3 jezika pre nego što se upustimo u iole naprednije dizajniranje veb prezentacija.
+
+Preostala je još jedna vrednost svojstva `display` koju je potrebno objasniti, a to je vrednost `none`. Pomenuli smo da se postavljanjem ovog svojstva na ovu vrednost, HTML element uklanja iz prikaza veb pregledača, zajedno sa svojim sadržajem. Takođe, svi ostali elementi se raspoređuju kao da se taj element nikada nije ni nalazio u veb prezentaciji.
+
+Blisko ponašanje se može postići postavljanjem svojstva `visibility`, čija je podrazumevana vrednost `visible`, na vrednost `hidden`. Element će i u ovom slučaju biti sakriven iz prikaza. Međutim, razlika u odnosu na postavljanje svojstva `display` na vrednost `none` je u tome što će element i dalje zauzimati isti prostor kao i ranije, samo što će biti sakriven iz prikaza.
+
+Naredni kod i prateća slika ilustruju razliku između ovih svojstava. U prvom omotaču, crvenom `div` elementu je postavljeno svojstvo `display` na vrednost `none`, te se on u potpunosti uklanja iz prikaza. Žuti i narandžasti `div` elementi se pozicioniraju kao da crveni element nije ni postojao. U drugom omotaču, plavom `div` elementu je postavljeno svojstvo `visibility` na vrednost `hidden`, te se on jednostavno sakriva iz prikaza. Zeleni i ljubičasti `div` elementi zadržavaju svoje pozicije, kao da plavi element nije ni bio sakriven.
+
+```html
+<html>
+
+<head>
+    <title>Primer</title>
+    <meta charset="UTF-8">
+
+    <style type="text/css">
+        #omotac1, #omotac2 {
+            border: 1px solid black;
+            width: 400px;
+        }
+
+        #omotac2 {
+            position: relative;
+            top: 50px;
+        }
+
+        #zuti {
+            width: 400px;
+            height: 50px;
+            background-color: rgb(252, 249, 111);
+        }
+
+        #crveni {
+            width: 400px;
+            height: 50px;
+            background-color: rgb(255, 117, 83);
+            display: none;
+        }
+
+        #narandzasti {
+            width: 400px;
+            height: 50px;
+            background-color: rgb(255, 186, 83);
+        }
+
+        #zeleni {
+            width: 400px;
+            height: 50px;
+            background-color: rgb(81, 224, 140);
+        }
+
+        #plavi {
+            width: 400px;
+            height: 50px;
+            background-color: rgb(83, 109, 255);
+            visibility: hidden;
+        }
+
+        #ljubicasti {
+            width: 400px;
+            height: 50px;
+            background-color: rgb(192, 83, 255);
+        }
+    </style>
+
+</head>
+
+<body>
+    <div id="omotac1">
+        <div id="zuti"></div>
+        <div id="crveni"></div>
+        <div id="narandzasti"></div>
+    </div>
+    <div id="omotac2">
+        <div id="zeleni"></div>
+        <div id="plavi"></div>
+        <div id="ljubicasti"></div>
+    </div>
+</body>
+
+</html>
+```
+
+<table><tr><td>
+<img src="./Slike/display_visibility.png" alt="Razlika u prikazivanju između elementa koji ima podešeno svojstvo display na vrednost none i elementa koji ima podešeno svojstvo visibility na vrednost hidden.">
+</td></tr></table>
+
+### Više informacija
+
+Za više informacijama o temama koje su obrađene u ovoj sekciji, možete posetiti naredne korisne veb prezentacije:
+
+- Pozicioniranje elemenata:
+[https://www.w3schools.com/css/css_positioning.asp](https://www.w3schools.com/css/css_positioning.asp)
+
+- Svojstva `display` i `visibility` i njihove razlike: 
+[https://www.w3schools.com/cssref/pr_class_display.asp](https://www.w3schools.com/cssref/pr_class_display.asp)
+[https://www.w3schools.com/cssref/pr_class_visibility.asp](https://www.w3schools.com/cssref/pr_class_visibility.asp)
+[https://www.w3schools.com/css/css_display_visibility.asp](https://www.w3schools.com/css/css_display_visibility.asp).
+
+---
 
 [Knjiga](../../README.md)
 
