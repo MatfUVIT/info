@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Primer</title>
+    <style>
+        /* Prvo pravilo je specificnije u DOM stablu od drugog, 
+        te se zato ono primenjuje na treci paragraf,
+        bez obzira na to sto drugo pravilo obuhvata isti element. */
+
+        /* Prvo pravilo */
+        p#paragraf {
+            color: blue;
+        }
+
+        /* Drugo pravilo */
+        body p {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <p>
+        Ovo je 1. paragraf.
+    </p>
+    <p>
+        Ovo je 2. paragraf.
+    </p>
+    <p id="paragraf">
+        Ovo je 3. paragraf.
+    </p>
+</body>
+
+</html>

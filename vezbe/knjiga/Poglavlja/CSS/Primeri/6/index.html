@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Primer</title>
+    <style>
+        p#p1 {
+            font-size: 1.5em;
+
+            /* Nije preporuceno */
+            font-family: 'Gill Sans';
+        }
+
+        p#p2 {
+            /* Preporuceno */
+            font-family: 'Gill Sans', Helvetica, sans-serif;
+        }
+    </style>
+</head>
+
+<body>
+    <p id="p1">
+        Ovaj tekst bi trebalo da bude prikazan u 
+        beskukicavoj familiji fontova Gill Sans.
+    </p>
+    <hr>
+    <p id="p2">
+        Ovaj tekst bi trebalo da bude prikazan u 
+        beskukicavoj familiji fontova Gill Sans.
+        <br><br>
+        Ako ona nije dostupna veb pregledacu, <br>
+        onda ce biti koriscena beskukicava familija Helvetica.
+        Ako ni ona nije dostupna veb pregledacu, <br>
+        onda ce on odabrati neku od beskukicavih familija fontova <br>
+        koje su mu na raspolaganju.
+    </p>
+</body>
+
+</html>
