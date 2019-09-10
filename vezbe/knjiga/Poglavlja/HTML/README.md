@@ -8,7 +8,7 @@
 
 HTML dokument se izgrađuje od velikog broja HTML *elemenata* (engl. *element*). Neki od njih definišu *metainformacije* (engl. *metadata*), odnosno, informacije o samom dokumentu, a drugi definišu konkretan sadržaj, kao što su paragraf, slika i dr. Struktura jednog elementa se sastoji od dve *etikete* (engl. *tag*), otvarajuće i zatvarajuće, između kojih se nalazi *sadržaj* (engl. *content*) tog elementa. Sadržaj može biti tekstualnog tipa ili može biti niz nekih drugih HTML elemenata. Naredni kod ilustruje primer HTML elementa `p`.
 
-```HTML
+```html
 <p>                     <!-- Otvarajuca etiketa za element "p". -->
     Tekst ide ovde.     <!-- Sadrzaj elementa. -->
 </p>                    <!-- Zatvarajuca etiketa za element "p". -->
@@ -16,7 +16,7 @@ HTML dokument se izgrađuje od velikog broja HTML *elemenata* (engl. *element*).
 
 Takođe, postoje elementi koji imaju samozatvarajuću etiketu. Naredni kod ilustruje primer samozatvarajućeg HTML elementa `img`.
 
-```HTML
+```html
 <img>                   <!-- Samozatvarajuca etiketa za element "img". -->
 ```
 
@@ -26,7 +26,7 @@ U prethodnim primerima smo videli i primer HTML komentara. Svaki HTML komentar p
 
 Elemente možemo dodatno okarakterisati *atributima* (engl. *attribute*). Svaki HTML element definiše skup atributa kojima se može okarakterisati. Svaki atribut definiše domen iz kojeg se mogu uzimati vrednosti tog atributa. Atributi su oblika `atribut="vrednost"` i navode se isključivo u okviru otvorene etikete. Naredni kod ilustruje element `body` koji je okarakterisan atributom `id` čija je vrednost `telo`.
 
-```HTML
+```html
 <body id="telo">
     ...
 </body>
@@ -40,7 +40,7 @@ HTML dokumenti se na Vebu prepoznaju po ekstenziji `html`. HTML dokumenti predst
 
 Osnovna struktura svakog HTML dokumenta data je u narednom kodu.
 
-```HTML
+```html
 <!DOCTYPE html>
 <html>
     <head>
@@ -156,7 +156,7 @@ Pored naslova, tekst možemo obeležiti i blokovskim elementom `p` koji definiš
 
 Na narednoj slici dat je prikaz HTML dela koda u nastavku, koji definiše tri paragrafa teksta. Kao što se vidi sa slike, bez obzira na broj belina u okviru teksta koji predstavlja sadržaj elementa `p`, veb pregledači prikazuju najviše jedan znaka razmaka između reči. Ovo pravilo važi u opštem slučaju, ne samo za paragraf `p`.
 
-```HTML
+```html
 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam luctus enim 
 eu nulla ultricies finibus. Sed a lacus vulputate, scelerisque tellus eu, iaculis 
 justo. Curabitur aliquet velit vel odio lacinia tristique ultricies vitae odio. 
@@ -192,7 +192,7 @@ Quisque pharetra et purus fringilla placerat.</p>
 
 Ukoliko želimo da tekst prelomimo u novi red, potrebno je da na odgovarajućoj poziciji umetnemo samozatvarajući element `<br>`. Na narednoj slici dat je prikaz paragrafa koji je prelomljen na dva mesta - prvi put sa jednim prelomom, a drugi put sa tri preloma (koji prikazuju dve prazne linije teksta). Još jednom skrećemo pažnju da bez obzira na broj belina u tekstu, veb pregledač generiše najviše jedan karakter razmaka, kao što je prikazano na datoj slici, koja je generisana narednim delom HTML koda.
 
-```HTML
+```html
 <p>
     For 50 years, WWF has been protecting the future of nature.
     <br>
@@ -216,7 +216,7 @@ Ukoliko želimo da tekst prelomimo u novi red, potrebno je da na odgovarajućoj 
 
 Standardom HTML5 je definisano ponašanje elementa `hr` kao definisanje tematske podele u HTML dokumentu, na primer, promenu teme. On se koristi ukoliko želimo da razdvojimo sadržaj ili definišemo promenu na HTML stranici. U prethodnim HTML standardima, ovaj element je služio kao horizontalna linija, te se zbog toga u većini veb pregledača danas on i prikazuje kao horizontalna linija. Ipak, njegovo značenje je danas više semantičko nego prezentaciono. Naredni kod ilustruje upotrebu ovog elementa, a njegov prikaz je dat na narednoj slici.
 
-```HTML
+```html
 <p>
     Ovaj paragraf bi trebalo da sadrzi tekst koji govori nesto o 
     HTML jeziku za obelezavanje teksta.
@@ -238,7 +238,7 @@ Standardom HTML5 je definisano ponašanje elementa `hr` kao definisanje tematske
 
 Element `span` definiše deo teksta, najčešće jednu reč ili deo rečenice (ali ne nužno). Veličina elementa zavisi od veličine teksta koji se nalazi kao njegov sadržaj. Očigledno, ova karakteristika potiče od činjenice da je element `span` predstavnik linijskih elemenata. Na narednoj slici je dat prikaz narednog dela HTML koda, koji definiše dva `span` elementa u okviru paragrafa. Sa slike se jasno vidi da element `span` u oba slučaja zauzima samo onoliko prostora koliko zauzima njegov sadržaj.
 
-```HTML
+```html
 <p>
     Lorem ipsum dolor sit amet, 
     <span>
@@ -263,7 +263,7 @@ Element `span` definiše deo teksta, najčešće jednu reč ili deo rečenice (a
 
 Citati se mogu prikazati na više načina. Na primer, linijskim elementom `q` veb pregledač obično doda znake navoda oko teksta koji predstavlja sadržaj tog elementa. Na narednoj slici dat je prikaz narednog dela HTML koda.
 
-```HTML
+```html
 <p>
     Browsers usually insert quotation marks around the q element.
 </p>
@@ -280,7 +280,7 @@ Citati se mogu prikazati na više načina. Na primer, linijskim elementom `q` ve
 
 Element `blockquote` se obično koristi ukoliko želimo da istaknemo neki citat. Veb pregledač će obično uvući prikaz teksta koji predstavlja citat. Element `blockquote` je predstavnik blokovskih elemenata, što je vidljivo na narednoj slici koja daje prikaz narednog dela HTML koda.
 
-```HTML
+```html
 <span>Begin quote</span>
 <blockquote cite="http://www.worldwildlife.org/who/index.html">
     For 50 years, WWF has been protecting the future of nature.

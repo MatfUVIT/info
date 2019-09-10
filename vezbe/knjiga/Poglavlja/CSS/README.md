@@ -62,7 +62,7 @@ Verovatno najkorišćeniji i najpraktičniji metod jeste izdvajanje CSS pravila 
 
 Jedan primer navođenja elementa `link` može biti sledeći:
 
-```HTML
+```html
 <link rel="stylesheet" type="text/css" href="dokument.css">
 ```
 
@@ -88,7 +88,7 @@ Najveću težinu imaju stilovi definisani korišćenjem atributa `style`, zatim 
 
 Naredni kod prikazuje HTML datoteku `index.html` i CSS datoteku `index.css` koja definišu pravila za tri paragrafa koja se prikazuju u HTML datoteci. Na narednoj slici dat je prikaz koda u veb pregledaču. Primetimo da je pravilo koje boji treći paragraf u plavo korišćenjem atributa `style` "pobedilo" pravila koja su definisana za isti paragraf i u elementu `style` (u kojem je navedeno da se taj paragraf boji zelenom bojom) i u spoljnim kaskadnim listovima `index.css` (u kojima je navedeno da se taj paragraf boji narandžastom bojom).
 
-```HTML
+```html
 <!DOCTYPE html>
 <html>
 
@@ -120,7 +120,7 @@ Naredni kod prikazuje HTML datoteku `index.html` i CSS datoteku `index.css` koja
 </html>
 ```
 
-```CSS
+```css
 p#id1, 
 p#id2, 
 p#id3 {
@@ -157,7 +157,7 @@ Instanca ovog problema bi bila ako se, na primer, nad celim telom dokumenta defi
 
 Opisana situacija se može rešiti pravilima koja važe u slučaju *preklapanja usled primenjivanja istog pravila na različitim nivoima hijerarhije DOM stabla*. Što je selektor iz pravila specifičniji, to pravilo ima veću prednost. U prethodnom primeru, paragraf će biti obojen plavom bojom, jer je ono bilo definisano specifičnije u odnosu na pravilo koje ceo tekst boji u crvenu boju. Naredni kod prikazuje ovu situaciju, a na narednoj slici dat je prikaz koda u veb pregledaču. S obzirom da je prvo pravilo specifičnije od drugog, ono će biti primenjeno na treći element, iako se nalazi pre drugog pravila u kaskadnom slaganju.
 
-```HTML
+```html
 <!DOCTYPE html>
 <html>
 
@@ -202,7 +202,7 @@ Opisana situacija se može rešiti pravilima koja važe u slučaju *preklapanja 
 
 Ipak, postoji način da se forsira određeni stil bez obzira na ova pravila, a to je navođenjem ključne reči `!important` u okviru CSS deklaracije, pre karaktera za kraj deklaracije (`;`). Korišćenjem ove ključne reči, navedena deklaracija će uvek imati prednost nad svim ostalima. Naredni kod predstavlja izmenjeni prethodni primer, u kojem je drugom pravilu dodeljena ključna reč `!important`, čime se prethodni efekat poništava i treći paragraf ipak biva obojen crvenom bojom, kao što je vidljivo na narednoj slici.
 
-```HTML
+```html
 <!DOCTYPE html>
 <html>
 
@@ -259,7 +259,7 @@ Vrednosti za boje se mogu specifikovati na više načina, a mi navodimo sledeće
 
 Naredni kod ilustruje upotrebu različitih modela boja, a na narednoj slici prikazan je odgovarajući dokument u veb pregledaču.
 
-```HTML
+```html
 <!DOCTYPE html>
 <html>
 
@@ -344,7 +344,7 @@ Sada ćemo se upoznati sa nekim svojstvima kojima je moguće uticati na prikaz t
 
 Naredni kod demonstrira upotrebu opisanih svojstava i dužina. Na narednoj slici je dat prikaz koda u veb pregledaču.
 
-```HTML
+```html
 <!DOCTYPE html>
 <html>
 
@@ -464,7 +464,7 @@ Takođe, moguće je staviti više fontova odvojenih karakterom `,` da bi veb pre
 
 Naredni kod ilustruje upotrebu različitih familija fontova i njegov prikaz u veb pregledaču je dat na narednoj slici.
 
-```HTML
+```html
 <!DOCTYPE html>
 <html>
 
@@ -528,7 +528,7 @@ Objasnimo kako funkcioniše ova naredba. Svojstvom `font-family` dodeljujemo naz
 
 Nakon navođenja ovog pravila, novouvedenu familiju fontova možemo koristiti kao i svaku drugu, navođenjem njenog dodeljenog imena kao vrednost svojstva `font-family`. Naredni kod ilustruje upotrebu ovog pravila, a rezultat prikaza koda u veb pregledaču je dat na narednoj slici.
 
-```HTML
+```html
 <!DOCTYPE html>
 <html>
 
@@ -612,7 +612,7 @@ Blokovski elementi se podrazumevano prostiru celom širinom roditeljskog element
 
 Naredni kod ilustruje upotrebu ovih svojstava u promeni veličine sadržaja za blokovski element `div`. Naredna slika ilustruje prikaz ovog koda u veb pregledaču.
 
-```HTML
+```html
 <!DOCTYPE html>
 <html>
 <head>
@@ -641,7 +641,7 @@ Naredni kod ilustruje upotrebu ovih svojstava u promeni veličine sadržaja za b
 
 Kada su linijski elementi u pitanju, površina njihovog sadržaja zavisi isključivo od površine samog sadržaja koji se prikazuje u okviru njih. Na linijske elemente nije moguće uticati svojstvima `width` i `height`. Naredni kod ilustruje ovo ponašanje, a na narednoj slici je dat njegov prikaz u veb pregledaču.
 
-```HTML
+```html
 <!DOCTYPE html>
 <html>
 <head>
@@ -674,7 +674,7 @@ Punjenje elementa možemo zadati u jeziku CSS pomoću svojstva `padding` koje is
 
 Naredni HTML kod i prateća slika ilustruju postavljanje punjenja za svaku stranu ponaosob. Primetimo da elementu `div` nije promenjena veličina sadržaja, tj. sadržaj će zauzimati onoliko mesta koliko mu je potrebno. Međutim, zbog postojanja punjenja, sadržaj neće zauzimati celu širinu veb pregledača. Takođe, ono što je interesantno primetiti jeste da će svojstvo `background-color` takođe obojiti površinu punjenja zajedno sa površinom sadržaja.
 
-```HTML
+```html
 <!DOCTYPE html>
 <html>
 <head>
@@ -719,7 +719,7 @@ Takođe, ukoliko želimo da definišemo različite stilove za svaku ivicu ponaos
 
 Naredni HTML kod i prateća slika ilustruju podešavanje stila ivica. Podešena je i širina ivice na `10px` kako bi stilovi bili bolje prikazani.
 
-```HTML
+```html
 <!DOCTYPE html>
 <html>
 
@@ -826,7 +826,7 @@ Ukoliko se ne navede neka od (2) ili (3), koristiće se njihove podrazumevane vr
 
 Naredni HTML kod i prateća slika ilustruju podešavanje ivica svojstvom `border`.
 
-```HTML
+```html
 <!DOCTYPE html>
 <html>
 
@@ -865,7 +865,7 @@ Ukoliko navedemo jednu vrednost, svi ćoškovi će biti zakrivljeni tom vrednoš
 
 Naredni kod i prateća slika ilustruju upotrebu ovog svojstva.
 
-```HTML
+```html
 <!DOCTYPE html>
 <html>
 
@@ -920,7 +920,7 @@ Slično kao i za punjenje elementa, ovo svojstvo može uzimati jednu ili četiri
 
 Naredni primer ilustruje upotrebu margina nad paragrafom koji je smešten kao sadržaj elementa `div`. Naredna slika daje prikaz koda u veb pregledaču.
 
-```HTML
+```html
 <!DOCTYPE html>
 <html>
 
@@ -969,7 +969,7 @@ Jedan zanimljiv efekat koji se može postići pomoću svojstva `margin` jeste da
 
 Naredni primer i prateća slika ilustruju opisano ponašanje.
 
-```HTML
+```html
 <!DOCTYPE html>
 <html>
 
@@ -1013,7 +1013,7 @@ Za razliku od blokovskih elemenata, linijski elementi imaju specifično ponašan
 
 Naredni primer i prateća slika ilustruju opisano ponašanje.
 
-```HTML
+```html
 <!DOCTYPE html>
 <html>
 
