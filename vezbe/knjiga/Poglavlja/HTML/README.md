@@ -296,6 +296,8 @@ Element `blockquote` se obično koristi ukoliko želimo da istaknemo neki citat.
 <img src="./Slike/blockquote.png" alt="Primeri upotrebe elementa blockquote.">
 </td></tr></table>
 
+[Knjiga](../../README.md)
+
 <!--
 <table><tr><td>
 <img src="./Slike/.png" alt="">

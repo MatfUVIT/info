@@ -9,3 +9,5 @@ Knjiga je koncipirana na osnovu materijala [Anđelke Zečević](http://poincare.
 Ovaj materijal ne može zameniti pohađanje vežbi niti drugu preporučenu literaturu. Ovaj tekst je u ranoj fazi formiranja i nije recenziran. Ukoliko ste pažljivi čitalac ove knjige, i ukoliko uočite bilo kakvu grešku ili propust, možete se javiti autorima putem elektronske pošte na adresu [nikola_ajzenhamer@math.rs](mailto:nikola_ajzenhamer@math.rs). Potrebno je da u naslovu elektronske poruke stavite tekst "[UVIT] Knjiga". Svi komentari, sugestije, kritike, ali i pohvale vezane za ovaj materijal su dobrodošli.
 
 Autori
+
+[Knjiga](../../README.md)

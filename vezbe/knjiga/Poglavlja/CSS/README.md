@@ -1061,6 +1061,8 @@ Naredni primer i prateća slika ilustruju opisano ponašanje.
 <img src="./Slike/inline_margin.png" alt="Linijski elementi nemaju gornji i donji pojas, ali imaju levi i desni pojas.">
 </td></tr></table>
 
+[Knjiga](../../README.md)
+
 <!--
 <table><tr><td>
 <img src="./Slike/.png" alt="">

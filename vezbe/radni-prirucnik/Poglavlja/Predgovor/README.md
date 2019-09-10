@@ -9,3 +9,5 @@ Radni priručnik je podeljen po delovima koja prate delove u knjizi. Svaki deo j
 Ovaj materijal ne može zameniti pohađanje vežbi niti drugu preporučenu literaturu. Ovaj tekst je u ranoj fazi formiranja i nije recenziran. Ukoliko ste pažljivi čitalac ove skripte, i ukoliko uočite bilo kakvu grešku ili propust, možete se javiti autorima putem elektronske pošte na adresu [nikola_ajzenhamer@math.rs](mailto:nikola_ajzenhamer@math.rs). Potrebno je da u naslovu elektronske poruke stavite tekst "[UVIT] Radni priručnik". Svi komentari, sugestije, kritike, ali i pohvale vezane za ovaj materijal su dobrodošli.
 
 Autori
+
+[Radni priručnik](../../README.md)

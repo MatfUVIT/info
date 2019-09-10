@@ -48,6 +48,8 @@
 <img src="./Slike/zadatak3.png" alt="Zadatak 3">
 </td></tr></table>
 
+[Radni priručnik](../../README.md)
+
 <!--
 <table><tr><td>
 <img src="./Slike/.png" alt="">
