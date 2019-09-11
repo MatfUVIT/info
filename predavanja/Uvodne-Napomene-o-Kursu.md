@@ -1,8 +1,6 @@
 
 # УВИТ - Уводне напомене о курсу
 
-[Владимир Филиповић](https://vladofilipovic.github.io/index-cy.html){:target="_blank"}
-
 ## Концепција курса
 
 Елементи:
