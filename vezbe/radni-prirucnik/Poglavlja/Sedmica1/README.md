@@ -1,3 +1,5 @@
+[Vežbe](../README.md)
+
 [Radni priručnik](../../README.md)
 
 ---
@@ -53,6 +55,8 @@
 ---
 
 [Radni priručnik](../../README.md)
+
+[Vežbe](../README.md)
 
 <!--
 <table><tr><td>

@@ -1,3 +1,5 @@
+[Vežbe](../README.md)
+
 [Knjiga](../../README.md)
 
 ---
@@ -1735,6 +1737,8 @@ Za više informacijama o temama koje su obrađene u ovoj sekciji, možete poseti
 ---
 
 [Knjiga](../../README.md)
+
+[Vežbe](../README.md)
 
 <!--
 <table><tr><td>

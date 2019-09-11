@@ -1,3 +1,5 @@
+[Vežbe](../README.md)
+
 [Knjiga](../../README.md)
 
 ---
@@ -301,6 +303,8 @@ Element `blockquote` se obično koristi ukoliko želimo da istaknemo neki citat.
 ---
 
 [Knjiga](../../README.md)
+
+[Vežbe](../README.md)
 
 <!--
 <table><tr><td>
