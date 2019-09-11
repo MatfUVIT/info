@@ -6,7 +6,7 @@
 
 1. Увод у веб и интернет технологије  
 
-    1. [Уводне напомене о курсу](/prezentacije/UVIT00-01-Koncepcija kursa.pdf){:target="_blank"}
+    1. [Уводне напомене о курсу](Uvodne-Napomene-o-Kursu.md){:target="_blank"}
 
     1. [Увод у рачунарске мреже](/prezentacije/UVIT01-01-Uvod u racunarske mreze.pdf){:target="_blank"}  
 

@@ -1,0 +1,3656 @@
+ PDF To Markdown Converter
+Debug View
+Result View
+Ajzenhamer Nikola
+Bukurov Anja
+UVOD U VEB I INTERNET
+TEHNOLOGIJE
+24. januar 2019.
+Sadržaj
+Predgovor
+1 Čas
+1.1 Uvod u HTML
+1.1.1 Elementi i atributi, komentari
+1.1.2 Struktura HTML dokumenta
+1.1.3 HTML zaglavlje
+1.1.4 HTML telo
+1.1.5 HTML5 semantički elementi (header, nav, ...).
+1.1.6 Elementi za naslove (h1, ..., h6)
+1.1.7 Elementi p i span
+1.1.8 Blokovski i linijski elementi
+1.1.9 Grupisanje elemenata (div) i novi red (br).
+1.2 Uvod u CSS
+1.2.1 CSS sintaksa.
+1.2.2 Dodeljivanje boje elementu
+1.2.3 Formatiranje teksta.
+1.2.4 Dodavanje korisničkih fontova
+1.3 Model kutije
+1.3.1 Sadržaj elementa
+1.3.2 Punjenje elementa
+1.3.3 Ivica elementa.
+1.3.4 Pojas elementa.
+2 Čas
+2.1 Pozicioniranje elemenata
+2.1.1 Statičko pozicioniranje.
+2.1.2 Relativno pozicioniranje
+2.1.3 Apsolutno pozicioniranje.
+2.1.4 Fiksno pozicioniranje.
+2.1.5 Z-pozicioniranje elemenata
+2.1.6 Svojstvo display
+2.1.7 Svojstvo float
+2.1.8 Svojstvo clear
+2.1.9 Svojstvo overflow
+3 Čas
+3.1 Upravljanje pozadinom elemenata.
+3.1.1 Slika kao pozadina
+3.1.2 Gradijentna pozadina.
+3.2 Rad sa slikama
+4 Čas
+4.1 Rad sa tabelama.
+4.1.1 Razna podešavanja prikaza tabela.
+4.1.2 Spajanje kolona i redova.
+4.1.3 Stilizovanje redova tabela.
+4.2 Liste.
+4.2.1 Nenumerisane liste.
+4.2.2 Numerisane liste
+4.2.3 Stilizovanje liste.
+4.2.4 Ugnježdene liste.
+4.2.5 De೰nicione liste
+4.3 Veze
+4.3.1 Pseudoklase
+4.4 Pseudoklase i pseudoelementi
+5 Čas
+5.1 Pogled.
+5.2 Prikazivanje slike
+5.3 Pozicioniranje
+5.4 Bootstrap.
+6 Čas
+6.1 Osnovne jezičke strukture.
+6.1.1 Programske strukture
+6.2 Izvršavanje JavaScript koda u veb pregledaču
+6.3 Rad sa DOM stablom.
+6.4 Rad sa konzolom veb pregledača
+6.5 Pridruživanje osluškivača događaja elementima
+7 Čas
+7.1 HTML formulari.
+7.2 Obrada podataka u formularu
+8 Čas
+8.1 Asinhrono programiranje
+8.1.1 Po-potrebi-pozivne funkcije
+8.1.2 XMLHttpRequestobjekat
+8.2 Biblioteka jQuery
+8.2.1 Dodavanje jQuery-ja
+8.2.2 Osnovna jQuery sintaksa.
+8.2.3 "Dokument je spreman" događaj.
+8.2.4 jQuery selektori
+8.2.5 jQuery metodi zasnovani na događajima
+8.2.6 jQuery efekti i animacije.
+8.2.7 Korišćenje funkcionalnosti reda
+8.2.8 Po-potrebi-pozivne funkcije i animacije
+8.2.9 Lančanje metoda
+8.2.10Upravljanje DOM stablom.
+8.2.11Upravljanje stilovima.
+8.2.12Upravljanje modelom kutije.
+9 Čas
+9.1 Moduli.
+9.1.1 Paketi
+9.1.2 Node upravljač paketima
+9.1.3 CommonJS
+9.2 Kreiranje serverskih aplikacija.
+10Čas
+10.1Razvojno okruženje Express.js
+11Čas
+11.1MongoDB.
+11.1.1Alat MongoDB Compass
+11.1.2Upiti
+11.2Razvojno okruženje Mongoose.js.
+Dodatak
+Lista kodova.
+Predgovor
+Ovaj tekst predstavlja skriptu iz kursa "Uvod u Veb i Internet Tehnologije", na
+godini smera Informatika na Matematičkom fakultetu Univerziteta u Beogradu.
+Skripta je koncipirana na osnovu materijala koleginiceAnđelke Zečevićsa časova
+vežbi. Skripta je prateći materijal pre svega studentima koji ovaj kurs slušaju u
+okviru svojih studija, ali i svima Vama koji biste želeli da se upoznate sa ovom te-
+matikom. Ovaj materijal ne može zameniti pohađanje vežbi niti drugu preporučenu
+literaturu.
+Ovaj tekst je u ranoj fazi formiranja. Ukoliko ste pažljivi čitalac ove skripte, i
+ukoliko uočite bilo kakvu grešku ili propust, možete se javiti autorima na adresu
+nikola_ajzenhamer@math.rs. Svi komentari, sugestije, kritike, ali i pohvale ve-
+zane za ovaj materijal su dobrodošli.
+
+Autori
+1 Čas 3
+Cilj ovog časa je upoznavanje studenata sa osnovnim elementima jezika za obe-
+ležavanje teksta HTML i CSS, kao i sa modelom kutije u jeziku CSS.
+
+1.1 Uvod u HTML
+HTML ( HyperText Markup Language ) predstavlja najosnovniji blok za izgradnju
+Veba. Njime se opisuje logički sadržaj stranice^1. Na primer, u HTML-u zadajemo
+koji deo stranice čini naslov ili paragraf, ili gde se nalazi slika.
+
+1.1.1 Elementi i atributi, komentari
+HTML stranica se izgrađuje od velikog broja HTML elemenata. Neki od njih
+de೰nišu meta-informacije (odnosno, informacije o samoj stranici), a drugi de೰nišu
+konkretan sadržaj. Struktura jednog elementa se sastoji od dve etikete , otvarajuće
+i zatvarajuće, između kojih se nalazi nekakav sadržaj (tekst ili ugnežđeni elementi):
+
+...
+Takođe, postoje elementi koji imaju samozatvarajuću etiketu. Njihova struktura
+je oblika:
+
+<!Samozatvarajuca etiketa za element "img" >
+
+U nastavku teksta ćemo, kada uvodimo novi element, podrazumevati da je reč o
+elementu koji ima otvarajuću i zatvarajuću etiketu. Posebno ćemo naglasiti ukoliko
+je reč o samozatvarajućem elementu.
+U prethodnim primerima smo videli i primer HTML komentara. Svaki HTML ko-
+mentar počinje oznakom <! i završava se oznakom >. Sve što je unutar ove
+dveoznakenećebitiprikazanonastranici,sličnokaoštokomentariuprogramskom
+jeziku C ne utiču na kompiliranje i izvršavanje koda.
+Elementemožemododatnookarakterisati atributima oblikaatribut="vrednost".
+Atributi se navode u okviru otvorene etikete. Na primer,
+
+Postoje generički atributi koji se mogu primeniti na svim elementima, a postoje i
+speci೰čniatributizapojedineelemente. Naprimer,svielementimoguimatiatribut
+id, dok samo element form može imati atribut onsubmit.
+
+1.1.2 Struktura HTML dokumenta
+Osnovna struktura HTML dokumenta podrazumeva narednu strukturu:
+Kod 1:primeri/uvod_u_html/osnovna_struktura.html
+
+(^1) HTML stranice se čuvaju kao HTML dokumenti, tj. sa ekstenzijom html.
+
+
+
+Deklaracijadokumenta<!DOCTYPEhtml> predstavljaposebnuvrstuelementako-
+jom se de೰niše verzija HTML dokumenta koja se koristi. Konkretno, ovom dekla-
+racijom navodimo da ćemo koristiti HTML5 verziju. Elementom html de೰nišemo
+sadržaj html dokumenta. HTML dokumenti imaju dva glavna dela:
+
+zaglavlje — sadrži informacije o samom dokumentu, kao i linkove ka de೰ni-
+cijama stilova (CSS) i programskih elemenata (JavaScript). Ove informacije
+služe da opišu dokument i one nisu vidljive na stranici. Primeri informacija su:
+naslov, opis, jezik, ključne reči, itd. Zaglavlje je de೰nisano elementom head.
+telo — sadrži vizuelne elemente koji će biti prikazani korisniku. Sve što se
+nalazi u telu dokumenta je vidljivo u okviru veb pregledača. Takođe, sve što
+želimo da bude vidljivo, moramo da stavimo u telo dokumenta. Telo je de೰ni-
+sano elementom body.
+Element titleslužizadavanjesemantičkognaslovadokumenta. Ovajnaslovće
+se prikazivati u većini veb pregledača kao ime kartice u kojoj je dokument otvoren,
+ali i u rezultatima pretrage. Element meta nudi različite mogućnosti za dodavanje
+
+metainformacija dokumentu. Na primer, atributom charset="UTF 8 " postavlja se
+UTF-8 kao kodna shema za dokument. U nastavku ćemo videti još neke primere
+metainformacija.
+U prethodnom primeru takođe vidimo obaveznu strukturu svakog HTML doku-
+menta, de೰nisanu HTML speci೰kacijom. Možemo testirati da li naš html dokument
+predstavlja validno napisan dokument pomoću HTML validatora. Jedan primer va-
+lidatorajemoguće pronaćina adresihttps://html5.validator.nu/. Naprimer, dasmo
+izostavili element title, validator bi se pobunio i prikazao nam odgovarajuću po-
+ruku:
+
+1.1.3 HTML zaglavlje
+Kaoštosmorekli,zaglavljeHTMLdokumentapredstavljenojeelementom head.
+Takođe, upoznali smo se sa dva važna elementa zaglavlja: title, koji de೰niše na-
+slov dokumenta i meta koji zadaje metainformacije o dokumentu. Najveći broj
+
+metainformacija se zadaje u obliku para atributa name="..." i content="...". U
+sledećoj tabeli dat je spisak nekih metainformacija i primer njihovog korišćenja:
+
+Naziv meta-
+informacije
+Primer upotrebe
+language <meta name="language" content="sr">
+author <meta name="author" content="Ajzenhamer N, Bukurov A.">
+keywords <meta name="keywords" lang="sr" content="html, css, uvit">
+description
+<meta name="description"
+content="Primer HTML i CSS datoteke">
+generator <meta name="generator" content="Visual Studio Code">
+1.1.4 HTML telo
+Telo HTML dokumenta je određeno elementom body. U okviru njega, potrebno
+je da vršimo ugnežđavanje elemenata koje želimo da prikažemo korisniku. Eleme-
+nata ima raznih, i u nastavku ćemo se upoznati sa velikim brojem ovih elemenata.
+
+1.1.5 HTML5 semantički elementi (header, nav, ...).
+HTML5 je uveo nove elemente koji označavaju glavne delove HTML dokumena-
+ta. Ti elementi su:
+
+header — element za naslovni sadržaj
+nav — element za navigaciju
+main — glavni sadržaj
+footer — element za završni sadržaj
+...
+Ovi elementi de೰nišu isključivo semantičku organizaciju elemenata na stranici,
+odnosno, oni dodeljuju odgovarajuće značenje elementima koje sadrže i ne podra-
+zumevaju nikakav poseban način prikazivanja tih elemenata. Naredna slika daje
+primer upotrebe ovih elemenata.
+
+1.1.6 Elementi za naslove (h1, ..., h6)
+Tekst možemo istaknuti u vidu naslova koristeći elemente
+
+do
+. Oni
+takođe dodeljuju semantički značaj tekstu koji obeležavaju. Takođe, oni podrazu-
+mevaju i odgovarajući prikaz teksta koji je dat na sledećoj slici
+1.1.7 Elementi p i span
+Pored naslova, tekst možemo obeležiti i elementima:
+p — de೰niže paragraf teksta. Podrazumevano, tekst obeležen ovim elemen-
+tom se prostire celom širinom elementa u kojem se nalazi. Tako, na primer,
+ukolikosenalaziuelementu body,tekstćeseprostiraticelomširinomprozora
+veb pregledača:
+span — de೰niše deo teksta, najčešće jednu reč ili deo rečenice (ali ne nužno).
+Veličina elementa zavisi od veličine teksta koji se nalazi kao njegov sadržaj.
+1.1.8 Blokovski i linijski elementi
+Prethodno opisani elementi su predstavnici dveju bitnih kategorija elemenata:
+blokovski i linijski^2. Veb pregledači blokovske elemente tipično prikazuju sa pra-
+znim redom pre i nakon elementa. Možemo ih vizualizovati kao naslagane kutije.
+Blok elementi zauzimaju čitavu širinu elementa u kojem se nalaze. Za razliku od
+njih, linijski elementi mogu da počinju bilo gde u liniji (ne nužno u novom redu),
+i njihova veličina zavisi od njihovog sadržaja. Blokovski elementi mogu da sadr-
+že linijske elemente i (obično) druge blok elemente, dok linijski elementi mogu da
+sadrže samo linijske elemente.
+Na primeru opisanih elemenata možemo demonstrirati ovo ponašanje. Na na-
+rednoj slici su obeleženi tekst koji se nalazi u okviru elementa p (levo) i tekst koji
+
+se nalazi u okviru elementa span (desno)
+
+1.1.9 Grupisanje elemenata (div) i novi red (br).
+Grupisanje elemenata najčešće služi za izdvajanje logičkih celina, koje se po-
+tom veoma često i vizualno izdvajaju od ostalih celina. HTML5 semantički elementi
+omogućavaju jedan način grupisanja elemenata, na način na koji smo već videli.
+Dodatno, na raspolaganju nam je blokovski element div, koji takođe ne podrazu-
+meva poseban način prikazivanja (osim što je u pitanju blokovski element, te ima
+njihova svojstva), već pomoću njega možemo da izdvojimo i, najčešće, imenujemo
+celine koje ćemo stilizovati na neki način.
+Forsiranje prelaska u novi red se, pored korišćenja blokovskih elemenata, može
+izvesti i upotrebom samozatvarajućeg elementa br.
+
+(^2) Ove klase su de೰nisane standardom pre HTML5, dok se u verziji HTML5 de೰nišu nove kategorije.
+
+Zadatak 1.1:
+Napisati HTML datoteku koja odgovara stranici na narednoj slici
+Rešenje:
+
+Kod 2:zadaci/001/strana.html
+
+
+
+
+
+
+
+
+<body>
+<! primer HTML komentara >
+<header>
+<h1>HTMLi CSS</h1>
+<h4>Uvod </h4>
+</header>
+<main>
+<! Deo o HTMLu>
+<div>
+<h3>HTML</h3>
+<p>
+HTML (engl. HyperTextMarkup Language, jezikza označavanje
+hiperteksta) jeopisnijezik specijalnonamenjen opisu
+veb stranica. Pomocunjega sejednostavno moguodvojiti
+elementikao što sunaslovi, paragrafi, citatii slicno.
+Pored toga, u HTMLstandard suugrađenielementi koji
+detaljnijeopisuju sam dokumentkao što sukratak opis
+dokumenta, ključne reči, podacio autorui slično. Ovi
+podacisu opštepoznatikao metapodaci ijasno su
+odvojeniod sadržajadokumenta.
+Aktuelnaverzija standarda jeHTML 5, a sam standard
+održava Konzorcijumza Veb (W3C, World WideWeb
+Consortium).
+</p>
+</div>
+<! Deo o CSSu >
+<div>
+<h3>CSS</h3>
+<p>
+CSS sintaksase sastojiod opisa izgleda elemenatau
+dokumentu. Opis možedadefiniše izgledvišeelemenata,
+i višeopisa možeda definišejedan element. Na taj
+način seopisi slažu jedan preko drugogdabi definisali
+konačni izgled određenogelementa (otuda naziv
+Cascading dabi sedočaraloslaganje jednogstila preko
+drugogu definisanju konačnogizgleda elementa).
+</p>
+</div>
+</main>
+<footer>
+<p>15.oktobar 2018.</p>
+</footer>
+1.2 Uvod u CSS
+CSS (engl. Cascading Style Sheets ) je jezik koji služi za stilizovanje HTML ele-
+menata^3. CSS možemo koristiti na tri načina:
+
+1.Navođenjem stilova u odvojenim CSS datotekama (uz njihovo linkovanje u
+HTML datoteci). Element oblika
+<link rel="stylesheet" type="text/css" href="dokument.css">
+navodi se u okviru head elementa HTML dokumenta. Ovim se omogućava da
+višeHTMLdatotekamožedapristupijednomCSSdokumentu(čimesepostiže
+modularnost i smanjenje redundantnih stilova).
+2.Putem HTML elementa style (koji se takođe navodi u okviru head elementa
+kojiimaatributtype="text/css"),učijemsadržajusenalazestilovi. Navedeni
+stilovivažezaceodokumentučijemzaglavljusenalaze,alinisuvidljividrugim
+HTML dokumentima.
+(^3) Kaskadni stilski listovi se čuvaju kao CSS dokumenti, tj. sa ekstenzijom css.
+
+3.Korišćenjem generičkog atributa style nad elementima^4. Stilovi de೰nisani
+na ovakav način su vidljivi i važe isključivo nad pojedinačnim elementom nad
+kojim su de೰nisani.
+Ono što je važno napomenuti jeste da često dolazi do preklapanja stilova. Na
+primer, moguće je nad celim dokumentom de೰nisati da svi paragra೰ budu obojeni
+crvenom bojom, a zatim posebno de೰nisati za jedan paragraf da je obojen plavom
+bojom. U tu svrhu, de೰nisana su pravila kojim se određuje koje svojstvo dolazi do
+izražaja u slučaju preklapanja.
+Najveću težinu imaju stilovi de೰nisani korišćenjem atributa style, zatim atri-
+
+buti de೰nisani u zaglavlju HTML dokumenta (korišćenjem elementa style i ugne-
+
+žđavanjem eksternih CSS dokumenata), i na kraju, najmanju težinu imaju podrazu-
+mevane vrednosti veb pregledača.
+Takođe,potrebnojeobratitipažnjunaredosledelemenatastyle i link(kojivr-
+
+ši ugnežđavanje eksternog CSS dokumenta) u zaglavlju HTML dokumenta. Na pri-
+mer, pretpostavimo da eksterna CSS datotekaplavi_naslov.cssde೰niše da naslov
+h1 treba biti obojen u plavu boju. Takođe, neka je dat element style u zaglavlju
+
+koji de೰niše da naslov h1 treba biti obojen u narandžastu boju. Na narednoj slici
+
+su dati rezultati kada se element style nalazi nakon elementa link (levo) i kada
+
+se element linknalazi nakon elementa style (desno). Vidimo da veću težinu ima
+
+ono pravilo koje je poslednje pronađeno (tj. ono je kaskadno poslednje složeno).
+
+Ipak, postoji način da se forsira određeni stil, a to je navođenjem !important
+ključne reči u okviru CSS deklaracije. Korišćenjem ove ključne reči, navedena de-
+klaracijaćeuvekimatiprednostnadsvimostalima. Višeodeklaracijamaunastavku
+teksta.
+
+1.2.1 CSS sintaksa.
+CSS jezik se sastoji od niza pravila. Svako pravilo je oblika:
+selektor {
+
+svojstvo1:vrednost_1; /*deklaracija 1 */
+...
+svojstvoN:vrednost_N!important; /*deklaracija N */
+}
+Objasnimo sada svaku od predstavljenih stavki:
+Selektor predstavlja način za de೰nisanje nad kojim HTML elementima će stil
+bitiprimenjen. Postojivelikibrojselektora,amićemopredstavitinekeodnjih:
+(^4) Da li razumete razliku između elementa stylei atributastyle?
+
+Selektor Primer Objašnjenje
+Ime
+elementa
+p Primeniće stil nad svim elementimap
+Identiೢka-
+tor
+#mojid
+Primeniće stil nad svim elementima koji imaju
+postavljen generički atribut id="mojid".
+Poželjno je da na nivou dokumenta postoji samo
+jedan element koji ima svoj identi೰kator, čime se
+on jedinstveno određuje.
+Klasa .mojakl
+Primeniće stil nad svim elementima koji imaju
+postavljen generički atribut class="mojakl".
+Stilovi se de೰nišu pomoću klasa kada je potrebno
+na isti način predstaviti vizualno srodne elemente
+na stranici, na primer, kartice sa obaveštenjima.
+Ugnežđeni sel1sel
+Primeniće stil na sve elemente odabrane sa
+sel2, a koji se nalaze u okviru elemenata
+odabranih sasel1.
+Kompozicija div p.mkl
+Primeniće stil na sve pasuse (elementep) sa
+atributom class="mkl", a koji se nalaze u
+okviru elemenatadiv.
+Grupisanje div, p
+Primeniće stil na sve elemente div i sve
+elementep.
+Deklaracija opisuje način na koji se vrši stilizovanje selektovanih elemenata.
+Deklaracije se međusobno razdvajaju karakterom ;.
+Svaka deklaracija sadrži par svojstvo i vrednost. Svaki element ima de೰nisana
+svojstva koja je moguće primeniti nad njime. Takođe, svako svojstvo ima de೰-
+nisan opseg vrednosti koje može uzimati. U nastavku teksta ćemo se upoznati
+za raznim svojstvima i odgovarajućim vrednostima.
+Komentari se u jeziku CSS navode između /* i */.
+Možemo testirati da li naš CSS dokument predstavlja validno napisan doku-
+ment pomoću CSS validatora. Jedan primer validatora je moguće pronaći na adresi
+http://jigsaw.w3.org/css-validator/.
+
+1.2.2 Dodeljivanje boje elementu
+U CSS jeziku, za dodeljivanje boje elementu možemo koristiti sledeća dva svoj-
+stva:
+
+color — zadaje boju teksta koji se nalazi u sadržaju elementa
+backgroundcolor — zadaje boju pozadine elementa
+Vrednosti za boje se mogu speci೰kovati na više načina, a mi navodimo sledeće:
+Pomoćuimenaboje,naprimer,Red,Orange,DodgerBlue, Violet,MediumSeaGreen,
+itd. Spisaksvihdostupnihimenabojajedostupannaovojadresi(w3schools.com).
+Pomoću RGB i RGBA modela. Ovim modelima je potrebno zadati vrednosti
+iz opsega[ 0 ; 255 ]za crvenu (R), zelenu (G) i plavu (B) boju čijim se "meša-
+njem"dobijaoko16,7Mboja. VarijantaRGBAdodatnoomogućavadasepodesi
+prozirnost boje (alfa kanal, A) u opsegu[ 0 : 0 ; 1 : 0 ]. Na primer,
+color: rgb(255, 0, 0); /*crvena boja */
+backgroundcolor:rgba(0, 255, 0, 0.5); /*zelena boja sa prozirnoscu
+od 50%*/
+Pomoću HEX modela. Ovim modelom se za svaku od crvene, zelene i plave,
+redom, navodi dvocifreni heksadekadni broj iz intervala[ 00 FF ]. Na primer,
+color: #0000ff; /plava boja/
+Više o modelima boja se može pronaći naovoj adresi (w3schools.com).
+1.2.3 Formatiranje teksta.
+Sada ćemo se upoznati sa nekim svojstvima kojima je moguće uticati na prikaz
+teksta:
+
+fontfamily — zadaje familiju fonta koji se koristi. Familija fonta se može
+zadati po imenu, na primer Arial ili 'DejaVu Serif' (ukoliko ima znak raz-
+maka, stavljaju se navodnici), ili se može nazvati generička familija fontova,
+pa se ostavlja veb pregledaču da odabere konkretan font iz te familije koji mu
+je dostupan. Na primer, SansSerif je familija fontova bez kukica (npr. Ari-
+al, Helvetica, ...). Analogno tome, Serif je familija fontova sa kukicama (npr.
+Timew New Roman, Georgia, ...). Takođe, moguće je staviti više fontova odvo-
+jenih karakterom , da bi veb pregledač, u slučaju da mu nije dostupan neki
+font, prikazao odgovarajuću zamenu. Na primer
+fontfamily: 'Neki kulfont kojimozda nijedostupan', Arial,
+SansSerif;
+fontsize—podešavaveličinuslova. Vrednostisemoguiskazatiupikselima
+(px), u em (važi 1 em = 16 px ), ili u procentima, pri čemu se razmatra okolina
+teksta da bi se zaključio odnos. Ove jedinice se nazivaju dužinama , i više o
+njima se može pronaći naovoj adresi (w3schools.com).
+fontstyle — kontroliše iskošenosti slova. Vrednosti su: normal (uspravna
+slova), italic(iskošenaslova)i oblique (nakošenaslova, sličnokaoitalic,
+ali manje pdržano od veb pregledača).
+fontweight—kontrolišepotamnjivanjeslova. Vrednostisu: normal(podra-
+zumevanadebljina), bold(deblje), bolder(višepodebljano), lighter (tanje)
+ilibrojeviod 100 do 900 (sakorakom100), pričemubroj 400 odgovaravred-
+nosti normal, a 700 odgovara vrednosti bold.
+textalign —kontrolišehorizontalnoporavnanjeteksta. Vrednostisu: left
+(levo poravnato), right (desno poravnato), center (centrirano) i justify
+(poravnato sa obe strane).
+letterspacing — podešava rastojanje između slova. Vrednosti su: normal
+(podrazumevano rastojanje) ili neka od dužina.
+wordspacing—podešavarastojanjeizmeđureči. Vrednostisu: normal(pod-
+razumevano rastojanje) ili neka od dužina.
+textindent — kontroliše nazubljivanje prve linije teksta. Vrednosti su neka
+od dužina.
+textshadow — dodaje senku tekstu elementa kome postavljamo svojstvo.
+Ima 2-4 vrednosti. Prva vrednost predstavlja pomeraj po horizontali, druga
+pomeraj po vertikali u odnosi na tekst. Treća vrednost omogućava zamućenje
+senke i može se izostaviti. Četvrta vrednost predstavlja boju senke i ona se
+takođe može izostaviti.
+Više o fontovima se može pronaći naovoj adresi (w3schools.com), dok se više o
+tekstualnim promenama može pronaći naovoj adresi (w3schools.com).
+
+1.2.4 Dodavanje korisničkih fontova
+Ukoliko želimo da koristimo svoj font, možemo ga de೰nisati u CSS dokumentu
+pomoću @fontface naredbe. Njena struktura je oblika:
+
+@fontface {
+fontfamily: 'Naziv fonta';
+src: url('./lokacija/do/mog/fonta/Naziv Fonta.ttf');
+}
+
+Svojstvom fontfamily dodeljujemo naziv korisničkom fontu. Dalje se font
+može koristiti pomoću već opisanog postupka korišćenjem svojstva fontfamily.
+
+Svojstvom src zadajemo putanju ka datoteci koja sadrži informacije o fontu. Ona
+se može nalaziti u lokalnom računaru ili na nekoj veb lokaciji, ali se u oba slučaja
+navodi korišćenjem vrednosti url('...').
+
+Zadatak 1.2:
+Napisati HTML datoteku i CSS datoteku koja odgovara stranici na narednoj
+slici
+Rešenje:
+
+Kod 3:zadaci/002/strana.html
+
+
+
+<link rel="stylesheet" type="text/css" href="stil.css">
+<style type="text/css">
+/*
+PrimerCSS komentara
+*/
+</style>
+</head>
+<body>
+<! primer HTML komentara >
+<header>
+<h1 id="glavni_naslov">HTMLi CSS</h1>
+<h4 id="podnaslov">Uvod </h4>
+</header>
+<main>
+<! Deo o HTMLu>
+<div>
+<h3>HTML</h3>
+<pclass="intro html">
+HTML (engl. <span style="color: #DA5FA6;">HyperText Markup
+Language</span>,jezik zaoznačavanje hiperteksta) je
+opisnijezik specijalnonamenjen opisu vebstranica.
+Pomocunjega se jednostavnomogu odvojitielementikao
+što sunaslovi, paragrafi, citatii slicno. Pored toga,
+u HTMLstandard suugrađenielementi kojidetaljnije
+opisuju sam dokumentkao što sukratak opisdokumenta,
+ključne reči, podacio autorui slično. Ovi podacisu
+opštepoznatikao metapodaci i jasno suodvojeniod
+sadržajadokumenta.
+Aktuelnaverzija standarda jeHTML 5, a sam standard
+održava Konzorcijumza Veb (W3C, World WideWeb
+Consortium).
+</p>
+</div>
+<! Deo o CSSu >
+<div>
+<h3>CSS</h3>
+<p id="css" class="intro">
+CSS sintaksase sastojiod opisa izgleda elemenatau
+dokumentu. Opis možedadefiniše izgledvišeelemenata,
+i višeopisa možeda definišejedan element. Na taj
+način seopisi slažu jedan preko drugogdabi definisali
+konačni izgled određenogelementa (otuda naziv
+Cascading dabi sedočaraloslaganje jednogstila preko
+drugogu definisanju konačnogizgleda elementa).
+</p>
+</div>
+</main>
+<footer>
+<p>15.oktobar 2018.</p>
+</footer>
+Kod 4:zadaci/002/stil.css
+@fontface {
+fontfamily: 'Nas font';
+src: url('cool_font.ttf');
+}
+
+#glavni_naslov{
+textalign:center;
+fontfamily: 'Nas font', Arial, SansSerif;
+fontsize: 50 px;
+textshadow: 2 px 2 px grey;
+}
+
+#podnaslov {
+textalign:center;
+fontsize: 25 px;
+fontfamily: SansSerif;
+}
+
+.intro {
+color: SlateBlue;
+}
+
+.html{
+fontsize: 14 px;
+fontfamily: 'Tahoma','Arial', sansserif;
+letterspacing: 2 px;
+textindent: 20 px;
+textalign:justify;
+}
+
+#css {
+color: rgb(60, 154, 109);
+fontstyle:italic;
+}
+
+main div h3{
+fontweight: bold;
+}
+
+header h1, headerh4{
+backgroundcolor:violet;
+color: white;
+}
+
+1.3 Model kutije
+Sve HTML elemente možemo posmatrati kao pravougaonike na ekranu, te se
+stoga zovu ponekad i kutije. U jeziku CSS, termin model kutije opisuje kutiju koja
+okružujesadržaj svakog elementa. Naredna slika demonstrira prikazmodela kutije
+
+Dakle, model kutije se sastoji od sledećih elemenata (elementi su nabrajani tako
+da svaki sledeći uokviruje sve prethodne):
+
+Sadržaj (engl. Content ) — kutija u kojoj se prikazuje tekst, slika ili drugi sadr-
+žaj HTML elementa.
+Punjenje (engl. Padding ) — prostor oko sadržaja, ali koji se još uvek smatra
+"unutrašnošću"elementa, sobziromdasenalaziunutarivice. Punjenjejeuvek
+prozirno.
+Ivica (engl. Border ) — kutija koja deli unutrašnjost elementa od spoljašnjosti
+(odn. od drugih elemenata).
+Pojas (engl. Margin ) — prostor oko ivice elementa, koji pre svega služi da
+stvori bezbedni pojas oko elementa i odvoji ga od okolnih elemenata (otuda i
+njegov prevod). Pojas je uvek proziran.
+1.3.1 Sadržaj elementa
+Veličinakutijesadržajazavisioddvestvari. Prvo,kojajevrstaelementaupitanju
+(linijski i blokovski), a zatim i od postavljenih svojstava width (širina) i height
+
+(visina).
+
+Veličina kutije sadržaja linijskih elemenata zavisi isključivo od veličine njihovog
+sadržaja. Na linijske elemente nije moguće uticati svojstvima width i height.
+
+Naredni primer ilustruje ovo ponašanje
+
+Kod 5:primeri/model_kutije/box_model_inline.html
+<style type="text/css">
+#s1{
+/heighti width svojstvonemajunikakvog efekta/
+height: 100px;
+width: 1000px;
+backgroundcolor: rgb(193, 22, 193);
+}
+
+TESTSADRZAJ TESTSADRZAJ
+Kaoštovidimonanarednojslici,iakosmopodesilivisinuiširinu,linijskielement
+span je zauzeo samo onoliko prostora koliko mu je neophodno za njegov sadržaj.
+Za razliku od njih, na veličinu sadržaja blokovskih elemenata se može uticati
+ovim dvama svojstvima. Oni mogu uzimati naredne vrednosti: auto (prepušta se
+veb pregledaču da izračuna širinu/visinu elementa, što je podrazumevano ponaša-
+nje), dužina ili procenat. Naredni primer ilustruje ovo ponašanje
+
+Kod 6:primeri/model_kutije/block_sirina_visina.html
+Ovaj divelement ima visinu od 200 px i sirinuod 50%.
+Kao što vidimo na narednoj slici, blokovski element div ima ispravno podešenu
+visinu i širinu.
+
+1.3.2 Punjenje elementa
+PunjenjeelementamožemozadatiujezikuCSSpomoćusvojstva paddingkojeis-
+tovremeno podešava gornje, desno, donje i levo punjenje. Međutim, ukoliko želimo
+da speci೰kujemo posebnu veličinu punjenja na nekoj strani, možemo iskoristiti ne-
+ko od svojstava paddingtop, paddingright, paddingbottomili paddingleft.
+
+Vrednosti za sva opisana svojstva su: dužina ili procenat. Podrazumevana vrednost
+je 0.
+Naredni primer i prateća slika ilustruju postavljanje punjenja za svaku stranu
+ponaosob. Dodatno, element div iz primera sadrži crnu ivicu kako bi se lakše ra-
+
+zumeo efekat punjenja. Primetimo da će svojstvo backgroundcolor takođe obojiti
+
+i boju punjenja.
+
+Kod 7:primeri/model_kutije/block_padding.html
+Ovaj divelement ima gornje punjenjeod 50 px, desno punjenjeod 30 px, donjepunjenje od 100 pxi levopunjenje od 280 px.
+Punjenje proizvodi isti efekat i za linijske i za blokovske elemente.
+1.3.3 Ivica elementa.
+U CSS jeziku, svojstvom border je moguće postaviti stil, širinu i boju kutije
+koja odvaja unutrašnjost elementa od njegovog pojasa (odnosno, od okoliko ukoliko
+pojas ne postoji). Ipak, prvo ćemo se upoznati sa svojstvima koja postavljaju ove tri
+stavke odvojeno, pre nego što pokažemo kako ih je moguće ukombinovati pomoću
+svojstva border.
+
+Stilivice Stilivicede೰nišemopomoćusvojstva borderstyle. Mogućevrednosti
+
+su: dotted, dashed, solid, double, groove, ridge, inset, outset, none ili
+
+hidden. Naredna slika ilustruje svaki od ovih stilova.
+Takođe, ukoliko želimo da de೰nišemo različite stilove za svaku ivicu ponaosob,
+umesto navođenja jedne vrednosti (čime podešavamo sve četiri ivice), možemo na-
+vesti četiri vrednosti koje će postaviti stilove za gornju, desnu, donju i levu ivicu,
+redom. Na primer, rezultat narednog pravila
+
+p.mix {
+borderstyle:dotted dashedsolid double;
+}
+
+dat je na narednoj slici
+Napomenimodanijednaodpreostaladvasvojstva, širinaiboja, nećebitividljiva
+ukoliko nije podešen stil ivice.
+
+Širina ivice Širinu ivice de೰nišemo pomoću svojstva borderwidth. Moguće
+
+vrednosti su: dužine, thin, medium ili thick. Poput svojstva za stil ivice, i ovo
+svojstvo može imati jednu ili četiri vrednosti. Semantika ovih dveju deklaracija je
+identična kao za prethodno svojstvo. Podrazumevana vrednost za širinu je 1 px.
+
+Boja ivice Boju ivice de೰nišemo pomoću svojstva bordercolor. Moguće vred-
+nostisu: imeboje,bojazadatauHEXmodelu,bojazadatauRGBiliRGBAmodelima
+ilitransparent. Kaoiprethodnadvasvojstva,iovosvojstvomožeimatijednuiliče-
+
+tiri vrednosti, uz identičnu semantiku. Podrazumevana vrednost za boju je black.
+
+Navođenje konkretne ivice Svako od prethodna tri svojstva ima i varijantu ko-
+jomsenavodinakojustranuivicesvojstvotrebadaseprimeni. Tako,naprimer,po-
+redsvojstvaborderstyle,postojeisvojstvabordertopstyle, borderrightstyle,
+
+borderdownstyleiborderleftstyle. Analognovažiizasvojstvaborderwidth
+i bordercolor.
+
+Svojstvo border Dakle, ukoliko želimo za ivicu da detaljno speci೰kujemo izgled,
+moramo da navedemo tri deklaracije, po jednu za stil, širinu i boju. Navedene tri
+deklaracije se mogu skratiti u jednu tako što se koristi svojstvo border (ili neko od
+
+svojstava bordertop, ..., borderleft za svaku ivicu ponaosob). Vrednost ovog
+
+svojstvačine: (1)vrednostzastil(obavezno), (2)vrednostzaširinui(3)vrednostza
+boju, odvojenu znakom razmaka. Ukoliko se ne navede neka od (2) ili (3), koristiće
+se podrazumevane vrednosti. Na primer, CSS pravilom
+
+p {
+border: 5 pxsolid red;
+}
+
+proizvodi se
+dok se CSS pravilom
+p {
+borderleft: solid 10 px;
+backgroundcolor:lightgrey;
+}
+
+proizvodi
+Svojstvo borderradius Svojstvo borderradiusslužizakontroluzakrivljenosti
+ćoškova elementa. Moguće vrednosti su: dužina ili procenat. Ukoliko navedemo
+jednu vrednost, svi ćoškovi će se zakriviti. Alternativno, možemo navesti četiri
+vrednosti koje će zakriviti gornji-levi, gornji-desni, donji-desni i donji-levi ćošak,
+redom. Na primer, naredni kod
+
+Kod 8:primeri/model_kutije/border_radius.html
+<style type="text/css">
+#example1{
+border: 2px solid red;
+padding: 10px;
+borderradius: 25px;
+}
+#example2{
+border: 2px solid red;
+padding: 10px;
+borderradius: 50px 20 px 50 px 50 px;
+}
+
+borderradius: 25px:
+<div id="example1">
+<p>Svojstvoborderradiusdefinisezakrivljenjecoskova elementa.</p>
+</div>
+<h2>borderradius: 50px 20 px 50 px 50 px:</h2>
+Mozemostaviti jednu vrednostzasve coskove, ilicetiri vrednosti , zasvaki cosak od gornjeglevog dodonjeglevog pojednu.
+
+formatira se u prikaz na narednoj slici
+1.3.4 Pojas elementa.
+CSS svojstvo margin koristi se za podešavanje prostora oko elementa, tj. oko
+njegove ivice. Slično kao i za punjenje elementa, ovo svojstvo može uzimati jednu
+ili četiri vrednosti, u zavisnosti od toga da li želimo da postavimo jednu vrednost za
+sva četiri pojasa ili svaku vrednost pojedinačno (u tom slučaju navodimo vrednosti
+za gornji, desni, donji i levi pojas, redom). Takođe, moguće je podesiti vrednosti za
+
+četiri pojasa korišćenjem svojstava margintop, marginright, marginbottom i
+
+marginleft.
+Vrednosti ovih svojstava mogu biti:
+auto — čime se prepušta pregledaču da izračuna margine
+dužina (px, pt, cm, ...)
+procenat
+Naredni primer ilustruje upotrebu ovog svojstva nad blokovskim elementom p
+Kod 9:primeri/model_kutije/block_margin.html
+<div>
+<p>
+Ovajelement ima gornju marginuod 100 px, desnu marginu od20%,
+donju marginu od 100 pxi levumarginu od 20%.
+</p>
+</div>
+Horizontalno centriranje pomocu svojstva margin Jedan zanimljiv efekat koji
+
+se može postići pomoću svojstva margin jeste da se element horizontalno centri-
+
+ra, u odnosu na element koji ga sadrži. Postavljanjem deklaracije margin:auto;,
+
+elementćeprvozauzetiodgovarajućiprostorsvojomširinom,azatimćesepreosta-
+li horizontalni prostor podeliti jednako među levom i desnom marginom. Naredni
+primer ovo ilustruje
+
+Kod 10:primeri/model_kutije/margin_auto.html
+<h2>Koriscenjemargin:auto</h2>
+<div>
+Ovaj elementdiv ce bitihorizontalnoporavnat jer imapostavljenu
+deklaraciju margin: auto;
+</div>
+Linijski elementi i svojstvo margin Za razliku od blokovskih elemenata, linijski
+
+elementi imaju speci೰čno ponašanje kada se na njih primeni svojstvo margin. Na-
+ime, na njih nema uticaja vrednosti koje su postavljene za gornju i donju marginu,
+alivrednostipostavljenezalevuidesnumarginuseočekivanoprimenjuju. Naredni
+primer ovo ilustruje
+
+Kod 11:primeri/model_kutije/inline_margin.html
+<h2>Linijskielementi i svojstvomargin</h2>
+<span>
+Linijskielement span nemagornjui donju marginu
+</span>
+<span>
+Linijskielement span nemagornjui donju marginu
+</span>
+<br>
+<span>
+Linijskielement span nemagornjui donju marginu
+</span>
+<span>
+Linijskielement span nemagornjui donju marginu
+</span>
+<br>
+Zadatak 1.3:
+Napisati HTML datoteku i CSS datoteku koja odgovara stranici na narednoj
+slici
+Rešenje:
+
+Kod 12:zadaci/003/strana.html
+
+
+
+
+
+<body>
+<header>
+<h1> HTMLi CSS </h1>
+<h4>model kutije </h4>
+</header>
+<main>
+<div>
+<h3> HTML </h3>
+<pclass='intro html' title='tekst jepreuzet saVikipedije'>
+HTML енгл(. <span style='color:mediumseagreen;'> HyperText
+MarkupLanguage </span>, jezik zaoznačavanje
+hiperteksta) je opisnijezik specijalnonamenjenopisu
+veb stranica. Pomoćunjega sejednostavno moguodvojiti
+elementikao što sunaslovi, paragrafi, citatii slično.
+Pored toga, u HTMLstandard suugrađenielementi koji
+detaljnijeopisuju sam dokumentkao što sukratak opis
+dokumenta, ključne reči, podacio autorui slično. Ovi
+podacisu opštepoznatikao metapodaci ijasno su
+odvojeniod sadržajadokumenta.
+<br>
+Aktuelnaverzija standarda jeHTML 5, a sam standard
+održava Konzorcijumza Veb (W3C, World WideWeb
+Consortium).
+<br>
+<br>
+</p>
+<span class='example html' title='tekst je preuzetsa
+Vikipedije'>
+PrimerHTML etikete: &lt;div&gt;
+<br>
+PrimerHTML atributatitle=&quot;tekst jepreuzet sa
+vikipedije&quot;
+<br>
+preostali entiteti: &apos; &amp;
+</span>
+</div>
+<div>
+<h3> CSS </h3>
+<p id='css' class='intro'>
+CSS sintaksase sastojiod opisa izgleda elemenatau
+dokumentu. Opis možedadefiniše izgledvišeelemenata,
+i višeopisa možeda definišejedan element. Na taj
+način seopisi slažu jedan preko drugogdabi definisali
+konačni izgled određenogelementa (otuda naziv
+Cascading (engl. cascade crijep) dabi sedočaralo
+slaganjejednog stilapreko drugog u definisanju
+konačnogizgleda elementa).
+</p>
+</div>
+</main>
+<footer>
+<p> ::Oktobar 2018. :: </p>
+</footer>
+Kod 13:zadaci/003/stil.css
+@fontface{
+
+/Vanessa Bays @ http://bythebutterfly.com/
+fontfamily: 'TestFont';
+src: url('test_font.ttf');
+}
+
+body{
+
+/*leva i desna margina postavljene na auto omogucavaju centriranje
+preduslov je promeniti sirinu tako da bude manja od 100%*/
+width: 800 px;
+marginleft:auto;
+marginright:auto;
+borderleft: 1 px dashedrgb(211, 17, 79);
+borderright: 3 pxdottedrgb(211, 17, 79);
+borderbottom: 1 px solidrgb(211, 17, 79);
+paddingleft: 25 px;
+paddingright:25px;
+boxshadow: 0 px 15 px 10 px 0 px gray;
+}
+
+header{
+textalign:center;
+}
+
+header h1{
+textalign:center;
+fontfamily: 'TestFont', cursive;
+fontsize: 50 px;
+color: rgb(53, 88, 71);
+}
+
+header h4{
+backgroundcolor:mediumseagreen;
+color: white;
+
+/*TODO: eksperimentisati sa razlicitim vrednostima providnostiod 0
+do 1 */
+opacity: 0.7;
+}
+
+.intro{
+color: rgb(211, 17, 79);
+}
+
+.example {
+color: mediumseagreen;
+}
+
+.html{
+fontsize: 14 px;
+fontfamily: 'Tahoma','Arial', sansserif;
+letterspacing: 2 px;
+textindent: 20 px;
+textalign:justify;
+}
+
+#css{
+border: 2 pxsolid mediumseagreen;
+borderradius: 10 px;
+padding: 10 px;
+color: rgb(211, 17, 79);
+fontstyle:italic;
+
+/*TODO: eksperimentisati sa razlicitim visinama bloka */
+height: 100 px;
+overflow: auto;
+}
+
+main div h3{
+fontweight: bold;
+fontstyle:oblique;
+}
+
+footer{
+textalign:center;
+texttransform:lowercase;
+border: 2 pxsolid rgb(211, 17, 79);
+marginbottom: 30 px;
+}
+
+2 Čas 4
+Ciljovogčasajeupoznavanjestudenatasapojmovimavezanimza pozicioniranje
+elemenata.
+
+2.1 Pozicioniranje elemenata
+Svojstvo position određuje tip metoda za pozicioniranje koje se koristi za odre-
+đeni element. Moguće vrednosti ovog svojstva su:
+
+static
+relative
+absolute
+fixed
+Elementi se pozicioniraju korišćenjem svojstava top, right, bottom, left.
+Ova svojstva neće imati nikakvog efekta na pozicioniranje elemenata ukoliko pre
+toga nije postavljena vrednost za svojstvo position. U zavisnosti od odabranog
+
+metoda za pozicioniranje ova svojstva će imati različite efekte na pozicioniranje
+elementa na stranici, što je opisano u nastavku.
+
+2.1.1 Statičko pozicioniranje.
+Ovo je podrazumevan način pozicioniranja elemenata. Postavljanje vrednosti za
+neko od svojstava top, right, bottom, left nema uticaj na poziciju elementa sa
+
+statičkim pozicioniranjem.
+Elementiseređajunastranicipremanormalnomtokustranice. Linijskielementi
+ređaju se jedan pored drugog, dok se blokovski ređaju jedan ispod drugog. Na
+primer, ako na stranici imamo 3 elementa div, redom označene identi೰katorima
+"prvi", "drugi" i "treci", i na njih primenjena sledeća CSS pravila
+
+#prvi{
+height: 100 px;
+width: 300 px;
+backgroundcolor:rgb(231, 43, 103);
+}
+
+#drugi{
+height: 100 px;
+width: 300 px;
+backgroundcolor:rgb(24, 243, 232);
+position:static;
+}
+
+#treci{
+height: 100 px;
+width: 300 px;
+backgroundcolor:rgb(180, 55, 252);
+}
+
+dobijamo
+
+Vidimo da su elementi poređani jedan ispod drugog, kao što se dešava i kad
+svojstvo position nije podešeno.
+
+2.1.2 Relativno pozicioniranje
+Relativno pozicioniranje elementa je pozicioniranje u odnosu na njegovu nor-
+malnu poziciju, odnosno onu poziciju na kojoj bi se element našao da mu je svojstvo
+position postavljeno na static. Postavljanje vrednosti za svojstva top, right,
+bottom, leftpomerićeelementuodnosunanjegovunormalnupoziciju. Oveizme-
+ne nemaju uticaja na preostali sadržaj stranice tako da ako se stvori neka praznina
+ona neće biti popunjena elementima koji bi mogli da tu stanu. Ako u prethodnom
+primeru izmenimo CSS za drugi div na sledeći način
+
+#drugi{
+height: 100 px;
+width: 300 px;
+backgroundcolor:rgb(24, 243, 232);
+position:relative;
+top: 30 px;
+left: 80 px;
+}
+
+dobićemo
+
+2.1.3 Apsolutno pozicioniranje.
+Element sa apsolutnim pozicioniranjem postavlja se na stranicu u odnosu na
+prvogpretkakojiimapostavljenopozicioniranje^5. Ukolikotakavpredaknepostoji,
+element se pozicionira u odnosu na body.
+
+Ako drugom elemntu div iz prvog primera postavimo sledeća CSS svojstva:
+#drugi{
+height: 100 px;
+width: 300 px;
+backgroundcolor:rgb(24, 243, 232);
+position:absolute;
+top: 30 px;
+left: 80 px;
+}
+
+dobićemo
+
+Kako ovaj element nema pretka pozicioniran je u odnosu na body.
+
+Ako dodamo novi element div sa identi೰katorom "omotac" u koji ćemo smestiti
+prethodna 3 elementa dodelimo mu sledeća CSS svojstva:
+
+#omotac{
+height: 400 px;
+width: 400 px;
+backgroundcolor:rgb(112, 212, 87);
+position: relative;
+top: 50 px;
+}
+
+dobićemo
+
+(^5) Smatramo da je pozicioniranje postavljeno ako svojstvo position ima bilo koju vrednost osim
+static.
+
+Kako sad element sa apsolutnim pozicioniranjem ima pretka sa postavljenim po-
+zicioniranjem,njegovopozicioniranjeodređujeseuodnosunapretka,aneuodnosu
+na element body, kao u prethodnom primeru.
+
+2.1.4 Fiksno pozicioniranje.
+Element sa ೰ksnim pozicioniranjem nalazi se na istoj poziciji na ekranu, čak i
+kada se stranica skroluje. U slučaju ovakvog pozicioniranja, ne ostaju praznine
+tamo gde bi se element inače našao. Izmenimo ponovo prethodni primer, tako što
+ćemo dodati jedan omotač oko tri elementadiv, a drugi div izmeniti tako da sada
+ima sledeća CSS svojstva:
+
+#omotac{
+height: 900 px;
+width: 400 px;
+backgroundcolor:rgb(112, 212, 87);
+
+}
+
+#drugi{
+height: 100 px;
+width: 300 px;
+backgroundcolor:rgb(24, 243, 232);
+position:fixed;
+top: 0 px;
+right: 0 px;
+}
+
+Time dobijamo
+
+a kad skrolujemo stranicu
+2.1.5 Z-pozicioniranje elemenata
+Kadapozicioniramoelementemožesedesitidasenekipreklope. Svojstvozindex
+određuje kako se elementi slažu jedan preko drugog, odnoso koji će element biti
+ispred ostalih.
+Element može imati pozitivan ili negativan z-indeks. Onaj koji ima veći indeks
+biće pozicioniran ispred onog sa manjim. Ukoliko se dva elementa vez određenih
+z-indeksa preklope, onda će ispred biti onaj element koji je poslednji pozicioniran.
+U primeru sa relativnim pozicioniranjem, drugi i treći div se preklapaju, a nismo
+
+imodrediliz-indekse. Kakojedrugidiv poslednjipozicioniran,onsenalaziispred.
+Ukoliko bismo u tom primeru izmenili svojstva drugog tako da ima određen z-
+indeks:
+
+#drugi{
+height: 100 px;
+width: 300 px;
+backgroundcolor:rgb(24, 243, 232);
+position:relative;
+top: 30 px;
+left: 80 px;
+/kontrola preklapanja elemenata/
+zindex: 5;
+}
+dobijamo ovakav raspored elemenata
+
+2.1.6 Svojstvo display
+Pomoćusvojstva displayodređujemodaliikakoćeelementbitiprikazan. Svaki
+HTML element ima podrezumevanu vrednost za ovo svojsto u zavisnosti od tipa
+elementa. Za većinu elemenata podrazumevana vrednost je block ili inline.
+Podestimo se, blokovski elementi uvek počinju u novom redu i zauzimaju punu
+širinu koja je slobodna, odnosno prostiru se od leve do desne ivice roditeljskog ele-
+
+menta. U ove elemente spadaju div, h1-h6, p, header, footer, itd. Sa druge
+strane, linijski elementi ne počinju u novom redu i zauzimaju onoliko prostora koli-
+
+ko im je neophodno. Neko od linijskih elemenata su img, span, a, itd.
+
+Podrazumevana vrednost se može izmeniti tako da, na primer, stavke liste budu
+prikazane sve u istoj liniji ili da veza zauzme celu liniju. Promena svojstva display
+može biti korisna za postizanje odgovarajućeg izgleda stranice, a da se pritom ne
+naruše standardi Veba. Na primer, česta struktura stranice je da naslovni deo bude
+na vrhu, zatim navigacija i sadržaj stranice u istoj linije ispod naslovnog dela, i na
+dnu futer, kao na slici
+
+Dabismopostigli ovakavrasporedelemenata, nepohodnoje dacrvenomi žutom
+elementuizmenimonačinprikaza, odnosnodasvojstvodisplay, kojejezaelement
+
+div podrazumevano postavljeno na block, izmenimo na vrednost inlineblock.
+Tako dobijamo da se blokovski elementi ređaju u istoj liniji, pri čemu i dalje zadr-
+žavaju svojstva blokovskog elementa. Naredni kod daje ovakav izlged stranice:
+
+Kod 14:primeri/pozicioniranje/inlineblock.html
+
+
+<style type="text/css">
+#wrapper{
+marginleft: auto;
+marginright: auto;
+width: 400px;
+position: relative;
+}
+#header{
+width: 400px;
+height: 50px;
+backgroundcolor: rgb(83, 255, 103);
+}
+#nav{
+width: 100px;
+height: 200px;
+backgroundcolor: rgb(255, 53, 57);
+display: inlineblock;
+verticalalign: top;
+}
+#content{
+width: 300px;
+height: 200px;
+backgroundcolor: rgb(255, 255, 65);
+display: inlineblock;
+verticalalign: top;
+}
+#footer{
+width: 400px;
+height: 50px;
+backgroundcolor: rgb(39, 230, 233);
+}
+</style>
+</head>
+Ako bismo ovim elementima postavili vrednost inline umesto inlineblock
+oni bi se potpuno ponašali kao linijski elementi, odnosno zauzimali bi samo onoliko
+prostora koliko im je zaista potrebno.
+
+Skrivanjeelementa postižesepostavljanjemvrednosti nonezasvojstvodisplay.
+
+Ukolikoelementimapodešenoovosvojstvoonnećebitiprikazannastranici, aline-
+će ni biti prikazana praznina tamo gde bi se on inače našao, odnosno ne utiče na
+raspored elemenata koji su vidljivi.
+Akoželimodaskrivenielementutičenarasporedtj. dasepojaviprazninananje-
+govom mestu, umesto svojdstva display možemo iskoristiti svojstvo visibility
+
+sa vrednošću hidden.
+
+Zadatak 2.1:
+Napisati HTML datoteku koja odgovara stranici na narednoj slici
+Napomena: iskoristiti svojstvo position za poozicioniranje elemenata.
+Rešenje: Zadatak zahteva da koristimo svojstvoposition, ali nije naglašeno koju
+
+vrednost treba iskoristiti.
+Ukoliko koristimo relativno pozicioniranje potrebno je da žuti element pomeri-
+mo nagore za visinu i nalevo za širinu crvenog elementa kako bi ga pozicionirali
+na odgovarajuće mesto. Međutim, tu posao nije gotov. Pošto je iskorišćeno relativ-
+no pozicioniranje, ostaje praznina na normalnoj poziciji elementa, pa je potrebno
+pomeriti i plavi element nagore.
+
+Kod 15:zadaci/004/relativno.html
+Kod 16:zadaci/004/relativno.css
+#wrapper{
+marginleft: auto;
+
+marginright:auto;
+width: 400 px;
+position: relative;
+}
+
+#header{
+width: 400 px;
+height: 50 px;
+backgroundcolor:rgb(83, 255, 103);
+}
+
+#nav{
+width: 100 px;
+height: 200 px;
+backgroundcolor:rgb(255, 53, 57);
+}
+
+#content{
+width: 300 px;
+height: 200 px;
+backgroundcolor:rgb(255, 255, 65);
+position: relative;
+top:200px;
+left:100px;
+}
+
+#footer{
+width: 400 px;
+height: 50 px;
+backgroundcolor:rgb(39, 230, 233);
+position: relative;
+top: 200 px;
+
+/*dodatno css svojstvo koje koristimo ako hocemo da obrisemo prazan
+prostor koji
+ostaje ispod sheme
+*/
+/*
+marginbottom: 200px;
+*/
+}
+Drugi način bio bi korišćenje apsolutnog pozicioniranja. Prisetimo da se apso-
+lutno pozicioniranje određuje u odnosu na prvog roditelja sa relativnim pozicio-
+niranjem. Pošto su svi elementi u okviru jednog omotača, njegovo pozicioniranje
+postavljamo na relativno, ali ga nećemo pomerati. Ostaje još da žutom elementu
+postavimo pozicioniranje na apsolutno i u odnosu na omotač pomerimo od gornje i
+leve ivice za odgovarajuće vrednosti. U nastavku je data CSS datoteka sa izmenje-
+nim pozicioniranjem, a HTML ostaje isti.
+
+Kod 17:zadaci/004/apsolutno.css
+#wrapper{
+marginleft: auto;
+
+marginright:auto;
+width: 400 px;
+position: relative;
+}
+
+#header{
+width: 400 px;
+height: 50 px;
+backgroundcolor:rgb(83, 255, 103);
+}
+
+#nav{
+width: 100 px;
+height: 200 px;
+backgroundcolor:rgb(255, 53, 57);
+}
+
+#content{
+width: 300 px;
+height: 200 px;
+backgroundcolor:rgb(255, 255, 65);
+position: absolute;
+top:50px;
+left:100px;
+}
+
+#footer{
+width: 400 px;
+height: 50 px;
+backgroundcolor:rgb(39, 230, 233);
+}
+
+2.1.7 Svojstvo float
+Svojstvo float određuje kako elementi treba da plutaju na stranici. Može imati
+neku od sledećih vrednosti:
+
+left - element pluta prema levoj strani elementa koji ga okružuje
+right - element pluta prema desnoj strani elementa koji ga okružuje
+none - element ne pluta (podrazumevana vrednost)
+inherit - element pluta na isti način kao i roditelj
+2.1.8 Svojstvo clear
+Pomoću svojstva clear određujemo koji elementi mogu da plutaju pored ele-
+menta sa ovim svojstvom i na kojoj strani. Može imati sledeća svojstva:
+
+none - svi elementi mogu da plutaju sa obe strane (podrazumevana vrednost)
+left - nisu dozvoljeni plutajući elementi sa leve strane
+right - nisu dozvoljeni plutajući elementi sa desne strane
+both - nisu dozvoljeni plutajući elementi na obe strane
+inherit - nasleđuje vrednost ovog svojstva od roditelja
+Ovo svojstvo se najčešće koristi nakon što je svojstvo float iskorišćeno na ele-
+mentu. Plutajući element ostaje da pluta na stranici, međutim, element sa posta-
+vljenim svojstvom clear pojaviće se ispod plutajućeg.
+
+Ukoliko se na nivou elementa de೰nise clear svojstvo, ono onemogućava pre-
+klapanje elementa sa elementima koji su pozicionirani pomoću ೱoat svojstva. Na
+primer, ako je na nivou elementa de೰nisano svojstvo clear:right; ono onemo-
+
+gućava preklapanje elementa sa elementima koji imaju de೰nisano float:right;
+svojstvo. Ovo je ilustrovano narednim primerom.
+
+Kod 18:primeri/float/clear.html
+<style type='text/css'>
+#d1{
+height: 200px;
+width: 200px;
+backgroundcolor: rgb(219, 56, 41);
+float:left;
+}
+#d2{
+height: 350px;
+width: 200px;
+backgroundcolor: #F2E422;
+float:left;
+}
+#d3{
+height: 300px;
+width: 200px;
+backgroundcolor: rgb(255, 172, 17);
+float:right;
+}
+#d4{
+/*TODO: posmatratista se dogadjakada sevrednosti postave na
+none, left, right i both*/
+clear: none;
+height: 150px;
+backgroundcolor: rgb(135, 180, 68);
+}
+</style>
+</head>
+Ovakav kod daje nam sledeći izgled stranice
+Kao što možemo videti, zeleni element preklopio se sa ostalim jer je svojstvo
+clear postavljeno na none. Ako ga izmenimo na left, zeleni element je pomeren
+ispod otalih kako se ne bi preklapao sa njima
+
+Isti rezultat bismo dobili i postavljanjem ovog svojstva na vrednost both jer je
+element koji pluta na levu stranu viši. Ako bismo ga izmenili na right, zeleni ele-
+
+ment pomeriće se ispod ostalih, ali sada dolazi do preklapanja sa žutim jer njegovo
+plutajuće svojstvo ima vrednost left i to preklapanje je dozvoljeno.
+
+Rasporedelemenatakaouprethodnomzadatkumožesedobitiikombinacijomsvoj-
+stava float i clear. Rešenje je dato narednim kodom.
+
+Kod 19:zadaci/004/float.css
+#wrapper{
+width: 400 px;
+margin: auto;
+border: 1 pxsolid black;
+}
+
+#header{
+height: 50 px;
+width: 400 px;
+backgroundcolor:#ff9966;
+}
+
+#nav{
+float: left;
+height: 200 px;
+width: 100 px;
+backgroundcolor:#00cc99;
+}
+
+#content{
+float: left;
+height: 200 px;
+width: 300 px;
+backgroundcolor:#6666ff;
+border: 3 pxsolid white;
+boxsizing: borderbox;
+}
+
+#footer{
+clear: left;
+height: 50 px;
+width: 400 px;
+backgroundcolor:#993366;
+}
+
+2.1.9 Svojstvo overflow
+S obzirom da pregledač izbacuje plutajuće elemente iz regularnog toka prikaza,
+imamo promene u izgledu njihovih roditeljskih elemenata. Može se desiti da ele-
+ment koji smo postavili da pluta u okviru nekog elementa bude veće visine od njega
+i tada će ispasti iz okvira tog elementa, kao u primeru
+
+Kao rešenje ovog problema može se dodati svojstvo float i roditeljskom ele-
+mentu. To ima smisla ako želimo da elementi budu poravnati sa levom ili desnom
+ivicom. Drugi način bi bio da dodamo još jedan element koji će imati postavljeno
+clear svojstvo. Treći način je korišćenje svojstva overflow sa vrednošću auto.
+Sva tri načina za rezultat imaju sledeći prikaz
+
+Ovaj prikaz postižemo narednim kodom
+Kod 20:primeri/float/parent.html
+
+
+backgroundrepeat:repeat; /*Podrazumevano */
+Ovosemožeispravitipostavljanjemodgovarajućevrednostizasvojstvobackgroundrepeat,
+kao u narednom primeru:
+
+Kod 23:primeri/pozadina/background_repeatrepeatx.html
+backgroundrepeat:repeatx;
+Pozicija pozadine Podrazumevano, slika za pozadinu je postavljena uz gornji le-
+vi ugao elementa. Ipak, ovo podešavanje se može izmeniti korišćenjem svojstva
+backgroundposition. On uzima dve vrednosti, jednu za horizontalnu, a drugu za
+
+vertikalnu poziciju. Ove vrednosti se mogu navesti na različite načine:
+
+Zaprvuvrednostmožemonavesti left,right ilicenter, dokzadruguvred-
+nost možemo navesti top, center, bottom. Dakle, na ovaj način možemo
+zadati ukupno 9 vrednosti.
+Procenti — gornji levi ugao je 0% 0%. Donji desni ugao je 100% 100%.
+Dužine—gornjileviugaoje 0 0. Kakovrednostirastu,tosepozadinapomera
+udesno (po x-osi) i nadole (po y-osi).
+Dajemo naredni primer (na prikazu je naknadno dodata ivica radi prikaza ivica
+prozora veb pregledača):
+
+Kod 24:primeri/pozadina/background_position.html
+Happy halloween!
+From: ____________________
+To: ______________________
+
+Veličina pozadine Podrazumevano, veličina pozadine će biti postavljena na di-
+menzije slike koja se koristi za pozadinu. Ovo može predstavljati problem ukoliko
+je slika velikih dimenzija, a element manjih dimenzija. Kontrola veličine pozadine
+se ostvaruje pomoću svojstva backgroundsize. Njegove vrednosti mogu biti:
+
+auto — podrazumevano ponašanje.
+dužina — navode se dve vrednosti: prva za širinu pozadine, a druga za visinu
+pozadine.
+procenat—navodesedvevrednosti: prvazaširinupozadine,adrugazavisinu
+pozadine. Ove vrednosti se posmatraju u odnosu na roditeljski element.
+cover — vrši se automatsko skaliranje slike tako da prekrije ceo element. U
+ovom slučaju može doći do "razvlačenja"slike ili odsecanja po nekoj ivici.
+contain — vrši se automatsko skaliranje slike tako da bude cela vidljiva.
+Naredniprimerilustrujekakosemenjaponašanjekadasemenjajuopisanevred-
+nosti za svojstvo backgroundsize:
+
+Kod 25:primeri/pozadina/background_size.html
+3.1.2 Gradijentna pozadina.
+CSSgradijentiomogućavajuprikazivanjeravnomernetranzicijeizmeđudveboje
+ili više boja. U jeziku CSS, de೰nisane su dve vrste gradijenata:
+
+linearni gradijent
+radijalni gradijent
+Gradijenti se postavljaju korišćenjem svojstva backgroundimage. U zavisnosti
+od toga koja se CSS funkcija koristi, biće postavljen linearni ili radijalni gradijent.
+
+Linearni gradijent Funkcija koja se koristi za de೰nisanje linearnog gradijenta
+ima narednu de೰niciju:
+
+lineargradient(direction, colorstop1, colorstop2, ...);
+Da bismo kreirali linearni gradijent, potrebno je da speci೰kujemo:
+Nagib prave u čijem pravcu se gradijent prostire (direction), korišćenjem:
+- ključnih reči oblika to right, to bottomright, i sl.
+- navođenjem ugla nagiba, na primer, 60 deg
+
+Boje na osnovu kojih će se gradijent napraviti. Možemo navesti proizvoljan
+brojboja,odvojenihkarakterom, ubilokommodeluboja(colorstop1, colorstop2, ...).
+Ukoliko želimo da preciznije de೰nišemo prelaske iz jedne boje u drugu, možemo
+nakon zadavanja boje dodati procenat kojim govorimo do koje tačke u gradijentu
+treba ta boja da se pronađe. Na primer, ukoliko stavimo
+
+backgroundimage:lineargradient(to right, black 75%,white);
+
+rezultat će biti takav da će u prvih 75%gradijenta vladati crna boja, a zatim će
+se do kraja vršiti prelaz do bele boje. Ovim se mogu postići neki zanimljivi efekti
+(na primer, pojavljivanje štrafti, što naredni primer ilustruje):
+
+Kod 26:primeri/pozadina/linear_gradient.html
+<style type='text/css'>
+div#gradijent{
+height: 200px;
+width: 1000px;
+backgroundimage: lineargradient(tobottom, #4FB2B2, #FFA3E7,
+#8AFFFF);
+}
+div#strafte{
+height: 200px;
+width: 1000px;
+backgroundimage: lineargradient(toright, #4FB2B20%, #4
+FB2B2 25%, #FFA3E725%, #FFA3E750%, #8AFFFF50%, #8AFFFF
+100%);
+margintop: 50px;
+}
+</style>
+</head>
+<body>
+<div id='gradijent'>
+</div>
+Radijalni gradijent Funkcija koja se koristi za de೰nisanje radijalnog gradijenta
+ima narednu de೰niciju:
+
+radialgradient(shape sizeat position, startcolor, ..., lastcolor);
+
+Da bismo kreirali linearni gradijent, potrebno je da speci೰kujemo:
+Oblik (shape), čije vrednosti mogu biti:
+- ellipse (podrazumevana vrednost)
+- circle
+Veličinu (size), čije vrednosti mogu biti:
+- farthestcorner (podrazumevana vrednost)
+- closestside
+- closestcorner
+- farthestside
+Poziciju (position), čije vrednosti mogu biti:
+- ključne reči oblika center, topright, i sl.
+- Dužine (po dve vrednosti za horizontalnu i vertikalnu poziciju)
+- Procenti (po dve vrednosti za horizontalnu i vertikalnu poziciju)
+Boje na osnovu kojih će se gradijent napraviti. Možemo navesti proizvoljan
+brojboja,odvojenihkarakterom, ubilokommodeluboja(startcolor, ..., lastcolor).
+Naredni primer ilustruje korišćenje nekih od opisanih vrednosti:
+Kod 27:primeri/pozadina/radial_gradient.html
+<title>Gradijenti</title>
+<style type='text/css'>
+div {
+position: absolute;
+height: 200px;
+width: 40%;
+}
+div#radijalniravnomerni{
+top: 0px;
+left: 0%;
+backgroundimage: radialgradient(rgb(168, 13, 199),
+rgb(41, 139, 250));
+}
+div#radijalnineravnomerni{
+top: 0px;
+left: 50%;
+backgroundimage: radialgradient(rgb(168, 13, 199) 50%,
+rgb(41, 139, 250));
+}
+div#radijalnikrug{
+top: 250px;
+left: 0%;
+backgroundimage: radialgradient(circleat 30% 50%,
+rgb(168, 13, 199), rgb(41, 139, 250));
+}
+div#radijalnisize1{
+top: 250px;
+left: 50%;
+backgroundimage: radialgradient(closestside,
+rgb(168, 13, 199) 0%,rgb(168, 13, 199) 50%,
+rgb(41, 139, 250) 50%, rgb(41, 139, 250) 100%);
+}
+div#radijalnisize2{
+top: 500px;
+left: 0%;
+backgroundimage: radialgradient(farthestcorner,
+rgb(168, 13, 199) 0%,rgb(168, 13, 199) 50%,
+rgb(41, 139, 250) 50%, rgb(41, 139, 250) 100%);
+}
+
+3.2 Rad sa slikama
+Slike često predstavljaju nezaobilazni element stranica na vebu. Najosnovniji
+način za uključivanje slika u HTML dokumenta je pomoću samozatvarajućeg ele-
+
+menta img. Kako bismo naveli koji resurs želimo da uključimo kao sliku, potrebno
+
+je da zadamo lokaciju resursa kao vrednost atributa src. Na primer,
+
+Kod 28:primeri/rad_sa_slikama/img.html
+Noc Vestica �31. oktobar
+U prethodnom primeru vidimo da je upotrebljen i atribut alt. Njegova uloga
+je da prikaže alternativni tekst, ukoliko iz bilo kog razloga klijent nije u stanju da
+prikaže željeni resurs (na primer, ako ne može da mu pristupi, najčešće zato što
+resurs ne postoji na traženoj lokaciji ili ako korisnik koristi "čitače ekrana"). Ko-
+rišćenje ovog atributa se smatra dobrom praksom, te ćemo ga mi koristiti. Osim
+što predstavlja dobru praksu, HTML standard zahteva korišćenje ovog atributa i u
+suprotnom, stranica neće biti validirana.
+Veličina slike se može podesiti atributima width i height, čije su vrednosti celi
+
+brojevi koji predstavljaju veličine u pikselima. Naravno, dimenzija elementa img
+
+semožepodesitiiujezikuCSS,zadavanjemsvojstava width i height, čijeveličine
+
+mogu biti bilo koja od dužina.
+Ipak,smatrasepoželjnimnavođenjevrednostiovihatributa,dabivebpregledač
+pri konstrukciji izgleda stranice, znao koliko prostora mu je potrebno da odvoji za
+ovaj element, čak i pre nego što se slika učita (pogotovo ako je veličina resursa
+velika ili se učitava na sporoj konekciji).
+Naravno, ukoliko želimo da se zaštitimo od toga da neka druga CSS pravila (na
+primer, ona koja dolaze iz neke eksterne datoteke) utiču na prikaz slika u našem
+
+dokumentu,ondajepoželjnijekoristitiCSSsvojstvawidth iheightuokvirustyle
+
+atributa elementa img. Naredni primer ilustruje ovo ponašanje:
+
+Kod 29:primeri/rad_sa_slikama/img_override.html
+Stilizovanjeslicica
+Slika ispodima vrednost atributawidth postavljenu na 128 piksela, ali je tavrednostpregazena od straneeksterneCSS datoteke, kojapostavlja CSS svojstvowidth na100%.
+
+Noc Vestica �31. oktobar
+Slika ispodkoristi style atribut, u kojem je CSS svojstvowidth postavljeno na 128 piksela. S obziromda ovakvaupotrebaima najveci prioritet,vrednost CSS svojstvawidth od100% jepregazena.
+
+Noc Vestica �31. oktobar
+Kod 30:primeri/rad_sa_slikama/img_override.css
+img {
+width: 100%;
+}
+
+Figure i naslovi Jedan zanimljiv blokovski element koji služi za anotaciju drugih
+elemenata, pre svega slika, ilustracija, kodova, ali i drugih elemenata, naziva se
+figure. U njemu možemo staviti bilo koji element koji predstavlja nekakav sadr-
+
+žaj, a njegov značaj se odgleda u podelementu figcaption, čija je uloga anotacija
+
+sadržaja. Naredni primer ilustruje upotrebu ovih elemenata:
+
+Kod 31:primeri/rad_sa_slikama/figure.html
+
+
+
+<style type='text/css'>
+figure {
+width: 500px;
+/*Centriranjefigure u odnosunaroditelja (body) */
+margin: auto;
+border: 1px solid red;
+}
+figcaption{
+textalign: center;
+}
+
+Jesen
+Slika1: Jesen, šareno godišnjedoba
+
+Naravno, anotacijapomoćuelementa figcaptionjeopciona. Dodatno, možemo
+staviti prvo sadržaj, pa zatim anotaciju (kao što je urađeno u primeru), a možemo i
+staviti prvo anotaciju, pa zatim sadržaj.
+
+4 Čas 6
+Cilj ovog časa je upoznavanje studenata sa radom sa tabelama, zatim korišće-
+njem lista, povezivanjem stranica i pseudoklasama koje se mogu dodeliti elementi-
+ma.
+
+4.1 Rad sa tabelama.
+Tabele predstavljaju najjednostavniji način za prikazivanje podataka u više di-
+menzija. Tabele imaju redove i kolone u čijim presecima se nalaze ćelije. U HTML
+jeziku, tabele posmatramo kao redove ćelija, što će se prirodno preslikati u odgo-
+varajuće elemente.
+Osnovni element od kojeg polazimo kada formiramo tabelu jeste table. Njegov
+
+sadržaj čine, kao što smo rekli, redovi, koji se preslikavaju u elemente tr (skr.
+table row ). Redovi se sastoje od ćelija, koje mogu biti predstavljene elementima:
+
+th (skr. table header ) — koriste se za opis zaglavlja, ukoliko tabela ima za-
+glavlje. Podrazumevano, zaglavlja su podebljana i centrirana.
+td (skr. table data ) — koriste se za prikaz jedne ćelije, u kojoj se nalazi neki
+podatak (tekst, slika, lista, druga tabela, i dr.).
+Pored logičkog smeštanja podataka u tabelu i najjednostavnijeg tabelarnog pri-
+kaza podataka, tabele nemaju posebne prikaze. Ukoliko želimo da postavimo ivicu
+za celu tabelu, red ili ćeliju, moramo da podesimo CSS svojstvo border (ili nje-
+mu slična svojstva). Naredni primer ilustruje tabelu bez posebnih stilova, a zatim
+dodavanje jednostavne ivice za celu tabelu i svaku pojedinačnu ćeliju:
+
+Kod 32:primeri/tabele/table.html
+<style type="text/css">
+div table, div th, div td {
+border: 1px solid black;
+}
+div {
+margintop: 50px;
+}
+
+<td>Anja</td>
+</tr>
+<tr>
+<td>2/2076</td>
+<td>Nikola</td>
+</tr>
+</table>
+Identifikator	Ime studenta
+1/2076
+Identifikator	Ime studenta
+1/2076	Anja
+2/2076	Nikola
+Ukoliko želimo da svaka ćelija ima ivicu, ali ne da budu zasebne, već da dve su-
+sednećelijedeleivicu,tomožemouraditipostavljanjemCSSsvojstvabordercollapse
+
+na vrednosti collapse, kao u narednom primeru:
+
+Kod 33:primeri/tabele/table_collapsed.html
+Identifikator	Ime studenta
+1/2076	Anja
+2/2076	Nikola
+4.1.1 Razna podešavanja prikaza tabela.
+Anotiranje tabela Poput elementafigure, i tabele mogu biti anotirane. Za ano-
+
+tiranje tabela koristi se element caption. Za razliku od elementa figcaption koji
+
+se može pojaviti bilo ispred ili nakon glavnog sadržaja, element caption mora biti
+
+prvinaslednikelementatable. SamapozicijaanotacijasepostavljaCSSsvojstvom
+
+captionside, čije su vrednosti top ili bottom.
+Razmak između ćelija i prikazivanje praznih ćelija Ukoliko želimo da de೰ni-
+šemo globalni razmak između ćelija, možemo nad elementom table podesiti CSS
+
+svojstvo borderspacing čija je vrednost neka od dužina.
+
+Ukoliko tabela sadrži prazne ćelije, možemo izbeći njihovo prikazivanje podeša-
+vanjem CSS svojstva emptycells. Njegove vrednosti su: hide ili show.
+
+Dimenzije redova i ćelija Elementutrmožemopridružitisvojstvo height, dok
+
+elementima td i th možemo pridružiti svojstva height i width, da bismo im po-
+
+desili željenu dimenziju. Ono na šta treba obratiti pažnju jeste da se visina vrste
+prilagođava visini najviše ćelije, dok se širina kolone prilagođava širini najduže će-
+lije.
+Naredni primer ilustruje upotrebu anotacije tabele, razmaka između ćelija, pri-
+kazivanje praznih ćelija i dimenzije redova i ćelija:
+
+Kod 34:primeri/tabele/table_misc.html
+
+
+
+1, 4	2, 3
+5	6
+4.1.3 Stilizovanje redova tabela.
+Pomoću selektora nthchild(n) možemo da de೰nišemo kako svako n -to dete
+treba da izgleda. U slučaju tabele, de೰nišemo kako će n -ta vrsta izgledati. U za-
+gradama navodimo vrednost za n , koja može biti neki broj. Dodatno, ako želimo
+da de೰nišemo kako će izgledati parne i neparne vrste, možemo iskoristiti vrednosti
+even i odd, kao u narednom primeru
+
+Kod 36:primeri/tabele/table_stilovi.html
+Hari Poteruniverzum
+Ime	Prezime	Godine
+Hermiona	Grejndzer	17
+Oliver	Wood	20
+Pomona	Spraut	55
+4.2 Liste.
+Liste su blok elementi koji se koriste prilikom nabrajanja. Razlikujemo nenume-
+risane, numerisane i de೰nicione liste.
+
+4.2.1 Nenumerisane liste.
+Nenumerisane ili neuređene liste obeležavamo elementom ul. Svakaka stav-
+ka liste treba da se nađe između otvarajućeg i zatvarajućeg taga ovog elementa, a
+jednu stavku obeležavamo elementom li. Ovaj element može, i ne mora, da ima
+zatvarajući tag. Stvake mogu biti obeležene različitim znacima. Pomoću CSS svoj-
+stva liststyletype možemo odrediti koji znak će biti prikazan. Vrednosti za
+ovo svojstvo su:
+
+disc - popunjen krug (podrazumevana vrednost)
+square - popunjen kvadrat
+circle - prazan krug
+none - nema prikaza znaka
+Ako bismo postavili svojstvo na vrednost square dobili bismo ovakvu listu
+Pored toga, možemo koristiti i slike za obeležavanje stavki. Za to koristimo svoj-
+stvo liststyleimage koji za vrednost treba da dobije putanju do slike koju ko-
+
+ristimo, a navodimo je pomoću url("putanja/do/slike"). Evo jednog primera
+
+Naredni kod daje nam stranicu sa prethodne dve liste.
+
+Kod 37:primeri/liste/nenumerisana.html
+
+
+
+
+<body>
+<ul style="liststyletype: square;">
+<li>stavka ..</li>
+<li>stavka ..</li>
+<li>stavka ..</li>
+<li>stavka ..</li>
+</ul>
+stavka ..
+stavka ..
+stavka ..
+stavka ..
+4.2.2 Numerisane liste
+Numerisaneiliuređenelisteobeležavamoelementom ol. Zaobeležavanjestav-
+ki takođe koristimo element li, kao i kod nenumerisane liste. Stvake možemo
+
+numerisati različitim simbolima, korišćenjem svojstva liststyletype koje za
+
+numerisane liste može imati neku od sledećih vrednosti:
+
+decimal - dekadni brojevi
+loweralpha - malo slovo abecede
+upperalpha - veliko slovo abecede
+lowerroman - mali rimski brojevi
+upperroman - veliki rimski brojevi
+Na primer, ako postavimo vrednost ovog svojstva na loweralpha dobićemo
+ovakvu listu
+
+Ako je izmenimo na decimal dobićemo
+Naredni kod daje nam stranicu sa prethodne dve liste.
+
+Kod 38:primeri/liste/numerisana.html
+
+
+
+
+<body>
+<ol style="liststyletype: loweralpha;">
+<li>Prva stavka... </li>
+<li>Druga stavka... </li>
+<li>Treća stavka... </li>
+<li>Četvrta stavka... </li>
+</ol>
+Prva stavka
+Druga stavka
+Treća stavka
+Četvrta stavka
+I za ove liste možemo koristiti slike za obeležavanje stavki, s tim da tada gubimo
+svojstvo uređenosti jer će svaka stavka biti obeležena istom slikom.
+
+Pozicioniranje stavki Stavke liste, numerisane ili nenumerisane, možemo pozi-
+cionirati tako da bude izvan ili unutar okvira predviđenog za tu stavku. Svojstvo
+liststyleposition može imati vrednosti outside (podrazumevano) i inside.
+
+Sledeći primer ilustruje primenu ovog svojstva
+
+Kod 39:primeri/liste/pozicioniranje.html
+
+
+
+The first paragraph.
+
+Drugi pasus.
+
+Prvalinija. 
+Druga linija.
+Treća linija.
+
+<p class="treci_pasus">
+Treći pasus.
+</p>
+<p id="intro">
+Pseudoklase :hover i :activesemogu primenjivatii naelemente
+kojinisu linkovi.
+</p>
+<p lang="sr">
+Možemokombinovati više pseudoklasa.
+
+5 Čas 7
+Cilj ovog časa je upoznavanje studenata sa responsive dizajnom, odnosno sa po-
+dešavanjem izgleda stranica u zavisnosti od veličine uređaja na kom se prikazuju.
+
+5.1 Pogled.
+Kada god pravimo responsive dizajn moramo navesti informacije o prostoru u
+okviru kojeg pregledač prikazuje sadržaj — pogled (engl. viewport ). Kroz meta
+element možemo navesti informacije o pogledu i tako kontrolisati način prikaza
+sadržaja. Obično podešavamo da:
+
+širina prikaza bude jednaka širini uređaja postavljanjem vrednosti width na
+devicewidth
+veličina prikaza nije skalirana (uvećana ili umanjena), što se često dešava na
+mobilnim telefonima i tabletima, postavljanjem vrednosti initialscale na
+1.0
+korisnik može da skalira (uvećava ili umanjuje) prikaz do neke granice (na
+primer, ne manje od 0.7) postavljanjem vrednosti userscalable na yes i
+vrednosti minimumscale na 0.7.
+Pregledač širinu okvira u CSS pikselima računa tako što se ೰zička dimenzija
+uređaja podeli odnosom ೢzičkih i CSS piksela (engl. device pixel ratio , skr. DPR).
+Na primer, ako je ೰zička širina ekrana 800px, a DPR ima vrednost 2, pogled će biti
+širine 400px.
+
+5.2 Prikazivanje slike
+Možemokontrolisatiiprikazslikeuzavisnostiodveličineuređaja. Postavljanjem
+css svojstva maxwidth na 100% postižemo da se slika smanjuje ukoliko mora tako
+da cela bude prikazana na ekranu. Ukoliko je ekran dovoljno veliki da se cela slika
+prikaže na njemu, slika će biti originalne veličine.
+U nastavku je dat primer koji ilustruje način upotrebe opisanih html atributa i
+css svojstava. Eksperimentisati sa različitim veličinama pregledača i posmatrati
+kako se menja prikaz stranice.
+
+Kod 46:primeri/responsive/viewport.html
+// Pravimoprvi paragraf let pasus1= document.createElement("p"); pasus1.className= "komentar"; pasus1.setAttribute("title", "Pasus napravljen koriscenjem programskog jezikaJavaScript!");
+let sadrzaj = document.createTextNode("Ovo jeprvi pasus");
+pasus1.appendChild(sadrzaj);
+document.body.appendChild(pasus1);
+// Pravimodrugi paragraf
+let pasus2= document.createElement("p");
+pasus2.className= "komentar";
+pasus2.setAttribute("title", "Pasus napravljen koriscenjem
+programskog jezikaJavaScript!");
+sadrzaj = document.createTextNode("Ovo jedrugi pasus");
+pasus2.appendChild(sadrzaj);
+document.body.insertBefore(pasus2, pasus1);
+// Pravimotreci paragraf
+let pasus3= document.createElement("p");
+pasus3.className= "komentar";
+pasus3.setAttribute("title", "Pasus napravljen koriscenjem
+programskog jezikaJavaScript!");
+sadrzaj = document.createTextNode("Ovo jetreci pasus");
+pasus3.appendChild(sadrzaj);
+document.body.appendChild(pasus3);
+// Brisemotreci paragraf
+document.body.removeChild(pasus3);
+
+6.4 Rad sa konzolom veb pregledača
+Kao što smo do sada videli, u okviru veb pregledača nam je dostupna konzola za
+izvršavanje JavaScript kodova, kao i za ispisivanje nekakvih poruka. Objekat koji
+radisakonzolomvebpregledačaje console. Dosadasmovidelikorišćenjemetoda
+
+log koji jednostavno ispisuje kontrolne poruke. Međutim, nad ovim objektom su
+de೰nisani i drugi metodi:
+
+error — ispisuje poruku u vidu greške
+warn — ispisuje poruku u vidu upozorenja
+info — ispisuje poruku u vidu obaveštenja
+Naredni primer ilustruje korišćenje opisanih metoda:
+Kod 60:primeri/javascript1/05_console.html
+
+
+<metacharset="UTF8">
+Pratiti ispis u konzoli pregledača.
+<scripttype="text/javascript">
+console.log("Zdravo svima!");
+console.error("Primer greske!");
+console.warn("Primerupozorenja");
+console.info("Primerobavestenja");
+
+6.5 Pridruživanje osluškivača događaja elementima
+Nad raznim HTML elementima su de೰nisani osluškivači događaja (engl. event
+listener ). Kada je neki događaj dogodi, na primer, kada se klikne tasterom miša na
+neki element, može se de೰nisati kakvu akciju treba veb pregledač da preduzme.
+Postoji više načina da se ovo učini.
+Prvi način je da se nad elementom iskoristi atribut, čija je vrednost JavaScript
+kod. Ovakav način pridruživanja podrazumeva postojanje odgovarajućih atributa
+na nivou elementa. Neki od atributa koji postoje su:
+
+onclick de೰niše šta se događa kada korisnik klikne na površinu elementa
+onchange de೰niše šta se događa kada korisnik promeni vrednost, na primer,
+input elementa ili select elementa
+onfocus de೰niše šta se događa kada element dobije fokus (kada se korisnik
+pozicionira bilo mišem biloTABtasterom na ovo polje)
+onblur de೰niše šta se događa kada element izgubi fokus
+onhover de೰niše šta se događa kada se pređe preko površine elementa kur-
+sorom
+onkeydown de೰niše šta se događa kada korisnik pritisne taster na tastaturi
+(spust tastera)
+onkeyup de೰niše šta se događa kada korisnik pusti pritisnuti taster na tasta-
+turi
+...
+Drugi način je da se u kodu JavaScript pristupi odgovarajućem svojstvu elemen-
+ta. Ovakav način pridruživanja zahteva pristup elementu i de೰nisanje odgovaraju-
+ćeg svojstva. Vrednost svojstva je anonimna funkcija sa akcijom koja treba da se
+dogodi.
+Naredni primer ilustruje opisana dva pristupa:
+
+Kod 61:primeri/javascript1/06_pridruzivanje_osluskivaca.html
+
+
+<metacharset="UTF8">
+
+<style type="text/css">
+.dugme {
+width: 200px;
+height: 50px;
+lineheight: 50px;
+textalign: center;
+backgroundcolor: green;
+color: white;
+}
+.dugme:hover{
+cursor: pointer;
+backgroundcolor: blue;
+}
+.unos{
+border: 1px solid black;
+paddingleft: 20px;
+height: 50px;
+width: 400px;
+lineheight: 50px;
+}
+
+Klikzapregled poruke 
+Klikza pregled poruke
+Nakon sto jaizgubim fokus , prikazace seporuka
+<scripttype="text/javascript">
+functionprikazi_poruku() {
+window.alert("Poruka!");
+}
+let moderno_dugme = document.querySelector("#dugme2");
+moderno_dugme.onclick = function() {
+prikazi_poruku();
+};
+moderno_dugme = document.querySelector("#dugme3");
+moderno_dugme.onblur= function() {
+prikazi_poruku();
+};
+
+7 Čas 9
+Cilj časa je osposobljavanje studenta za rad sa HTML formularima — njihovo
+kreiranje i obradu podataka na klijentskoj strani pomoću jezika JavaScript.
+
+7.1 HTML formulari.
+Da bismo sakupili informacije od korisnika, na raspolaganju nam je veliki izbor
+HTMLelemenatapomoćukojihmožemodaomogućimokorisnikudaunesepodatke
+ili da odabere neke od prede೰nisanih podataka. Ovi elementi se nazivaju elementi
+formulara , i obuhvaćeni su u elementu koji predstavlja jedan formular — element
+form. Više o tome kako se podaci iz formulara šalju ka serveru biće reči kada
+budemo pričali o načinu obrađivanja podataka na serveru.
+Najjednostavniji način za unos podataka jeste putem elementa input. Njegov
+
+prikaz zavisi od vrednosti njegovog atributa type:
+
+Za jednolinijski tekstualni unos koristi se vrednost text. Tekst koji se unosi
+može biti proizvoljan.
+Za unos lozinke koristi se vrednost password. Veb pregledač će najčešće pri-
+kazati karaktere zvezdice ili tačkice umesto stvarnog teksta koji se unosi.
+Za de೰nisanje proizvoljnog dugmeta koji treba da izvrši neku akciju koristi se
+vrednost button. Vrednost atributa onclick de೰niše JavaScript kod koji će
+se izvršiti klikom na dugme:
+Alternativno, može se koristiti element button, sa sličnom sintaksom:
+<button type="button" onclick="alert('Hello World!')">Click Me!</button
+>
+Za de೰nisanje dugmeta koji će poslati podatke iz formulara ka serveru koristi
+sevrednostsubmit. Ovajelementimasmislade೰nisatisamouokviruelemen-
+ta form.
+Za de೰nisanje dugmeta koji briše sve unete podatke iz formulara koristi se
+vrednost reset.
+Za odabir tačno jednog od više ponuđenih izbora koristi se vrednost radio.
+Ovaj element ima smisla de೰nisati samo u okviru elementa form. Da bi se
+znalo za koju opciju se vezuje koji izbor, ovim elementima je potrebno dodeliti
+atribut name. Na primer:
+
+<inputtype="radio" name="gender" value="male" checked>Male
+
+
+<inputtype="radio" name="gender" value="female"> Female
+
+
+<inputtype="radio" name="gender" value="other"> Other
+Primetimo da svaki element ima i atribut value kojim se de೰niše izbor za
+opciju koja se nalazi kao vrednost atributa name. Ovaj element predstavlja
+samo jedno dugme za izbor, ali ne i prateći tekst, te je potrebno dodati opis
+naknadno, kao u gornjem primeru.
+Zaodabirproizvoljnogbrojaodvišeponuđenihizborakoristisevrednostcheckbox.
+Ovaj tip elementa funkcioniše na sličan način kao i prethodni tip. Razlika je u
+tome što ne moramo da ih vežemo za speci೰čnu opciju, već svaki izbor može
+da predstavlja svoju opciju. Na primer:
+
+<inputtype="checkbox" name="vehicle1" value="Bike"> I have a bike
+
+
+<inputtype="checkbox" name="vehicle2" value="Car"> I havea car
+Zadatak 7.1:
+HTML5standardde೰nišejošvišetipovazaelement input. Istražitide೰nisane
+tipove na adresihttps://www.w3schools.com/html/html_form_input_types.asp
+u sekciji "HTML5 Input Types" i obratiti pažnju na kompatibilnost veb pregle-
+dača za svaki od njih.
+Element input ima i određeni broj atributa speci೰čnih za njega:
+Kao što smo videli, atributom name de೰nišemo naziv opcije.
+Atribut value određuje vrednost za to polje.
+Atribut readonly određuje da vrednost ne bi trebalo da se menja. Važno je
+napomenuti da ovaj atribut nema vrednost, već samo njegovih navođenjem
+speci೰kujemo da element ima to svojstvo.
+Atributdisabled određujedapoljeneprimaunos. Njegovavrednostnećebiti
+poslata kao deo podataka iz formulara ka serveru. On se takođe samo navodi,
+poput prethodnog atributa.
+Atribut size de೰niše veličinu polja (u karakterima).
+Atribut maxlength de೰niše najveći broj karaktera koji element može da primi.
+Zadatak 7.2:
+HTML5standardde೰nišejošvišeatributazaelement input. Istražitide೰nisa-
+neatributenaadresihttps://www.w3schools.com/html/html_form_attributes.asp
+u sekciji "HTML5 Attributes" i obratiti pažnju na kompatibilnost veb pregleda-
+ča za svaki od njih.
+Pored elementa input, HTML jezik de೰niše i druge elemente za unos podataka.
+Element select predstavlja padajuću listu (engl. dropdown list ) sa izborima.
+Atributom name de೰nišemo naziv te opcije, a svaki od izbora je predstavljen ele-
+
+mentom option,čijiatributvalue de೰nišejedanizbor. Elementioptionsenalaze
+
+kao sadržaj elementa select. Sadržaj elementa option predstavlja tekst koji se
+
+prikazuje prilikom izbora opcije. Na primer:
+
+
+
+Podrazumevano je prvi element option označen kao odabrani, ali to se može
+rede೰nisati dodeljivanjem atributa selected izboru koji želimo da bude podrazu-
+mevano označen:
+
+Fiat
+
+Ako nad elementom select postavimo atribut multiple, onda je moguće oda-
+brati više opcija pomoću tasteraCTRLiliCMD:
+
+VolvoSaabFiatAudi
+
+Ako želimo da izvršimo grupisanje opcija, to možemo uraditi pomoću elementa
+optgroup, kao u narednom primeru:
+
+
+Postoji i još jedan način za izlistavanje opcija. Moguće je da za input elemente
+de೰nišemo prede೰nisane vrednosti koje mogu biti odabrane korišćenjem elementa
+datalist. Korišćenjem ovog elementa u kombinaciji sa input elementom (koji
+
+u tom slučaju mora da ima atribut list čija je vrednost identi೰kator elementa
+
+datalist), to input polje će dobiti opciju automatskog dopunjavanja. Navedimo
+da ovaj element nije dostupan u Safari pregledačima.
+
+
+Element textarea de೰niše višelinijski unos teksta. Atributima rows i cols se
+de೰niše vidljivi broj vrsta, odnosno, kolona, redom:
+
+The cat was playing inthe garden.
+
+ Dodatno, veličinu ovog elementa možemo de೰nisati i korišćenjem CSS svojstava
+width i height:
+The cat was playing inthe garden.
+
+Za grupisanje više elemenata formulara koji su međusobno povezani u jednu
+celinu,možemokoristitielementfieldset. Ovajelementćenacrtatipravougaonik
+oko elemenata koje obuhvata. Da bismo anotirali ovakvu jednu celinu, možemo
+koristiti element legend, čiji je tekstualni sadržaj naslov celine koja je de೰nisana
+
+fieldset elementom.
+Još jedan način za semantičko obeležavanje elemenata formulara jeste upotreba
+elementa label. Ovim elementom se de೰niše oznaka za elemente button, input,
+
+meter, output, progress, select, ili textarea. Ovaj element se ne renderuje
+za korisnika kao drugi vizualni elementi, ali omogućava da kada korisnici kliknu na
+tekstualni sadržaj ovog elementa, odgovarajuća kontrola na koju se odnosi element
+label postaje aktivna. Da bismo povezali element label sa nekim elementom
+
+formulara, koristimo njegov atribut for, čija je vrednost identi೰kator elementa za
+kojeg ga vezujemo.
+Naredni primer ilustruje korišćenje opisanih elemenata:
+
+Kod 62:primeri/javascript2/01_formulari.html
+
+
+<link rel="stylesheet" type="text/css" href="bootstrap.css">
+<style type="text/css">
+.greska{
+color:red;
+fontsize: 14px;
+margintop: 25px;
+marginbottom: 25px;
+}
+fieldsetlegend {
+color:orange;
+}
+
+<fieldset class="formgroup">
+<legend> Lični podaci </legend>
+<divclass="formgroup">
+<labelfor="ime_prezime"> Ime i prezime*:
+<inputid="ime_prezime"type="text" placeholder="Pera Peric"
+maxlength=" 30 " name="ime_prezime" required
+class="formcontrol">
+</div>
+<divclass="formgroup">
+<labelfor="datum_rodjenja"> Datum rodjenja: </label>
+<inputid="datum_rodjenja" type="date" name="datum_rodjenja"
+class="formcontrol">
+</div>
+<divclass="formgroup">
+<labelfor="email"> Email: </label>
+<inputid="email" name="email" type="email" class="
+formcontrol">
+</div>
+<divclass="formgroup">
+<labelfor="veb_adresa"> Veb adresa: </label>
+<inputid="veb_adresa" name="veb_adresa" autocomplete="off"
+type="url" class="formcontrol">
+</div>
+<divclass="formgroup">
+<labelfor="username"> Korisnickoime*:
+<inputid="username" type="text" name="korisnicko_ime"
+requiredclass="formcontrol">
+</div>
+<divclass="formgroup">
+<labelfor="password"> Sifra*:
+<inputid="password" name="sifra" required type="password"
+class="formcontrol">
+</div>
+</fieldset>
+<fieldset class="formgroup">
+<legend> Obrazovanje </legend>
+<divclass="formgroup row">
+<divclass="colmd 6 ">
+<labelfor="fakultet"class="controllabel"> Fakultet:</
+label>
+<select name="fakultet" id="fakultet" class="formcontrol">
+<option value=""> </option>
+<optgroup label="tehničkifakulteti">
+<option value="matf"> MATF </option>
+<option value="etf"> ETF </option>
+<option value="fon"> FON </option>
+</optgroup>
+<optgroup label="društvene nauke">
+<option value="f"> Filološki fakultet</option>
+</optgroup>
+<optgroup label="umetnost">
+<option value="fdu" selected="selected"> FDU </option
+>
+</optgroup>
+</select>
+</div>
+<divclass="colmd 6 ">
+<labelfor="univerzitet" class="controllabel"> Univerzitet
+: 
+<inputlist="svi_univerziteti" id="univerzitet" name="
+univerzitet" type="text" class="formcontrol">
+<divclass="formgroup">
+Godinastudija:
+
+<divclass="formcheck formcheckinline">
+<inputname="godina" id="godina_1" value=" 1 " type="radio"
+class="formcheckinput">
+<labelfor="godina_1"class="formchecklabel">1</label>
+</div>
+<divclass="formcheck formcheckinline">
+<inputname="godina" id="godina_2" value=" 2 " type="radio"
+class="formcheckinput">
+<labelfor="godina_2"class="formchecklabel">2</label>
+</div>
+<divclass="formcheck formcheckinline">
+<inputname="godina" id="godina_3" value=" 3 " type="radio"
+class="formcheckinput">
+<labelfor="godina_3"class="formchecklabel">3</label>
+</div>
+<divclass="formcheck formcheckinline">
+<inputname="godina" id="godina_4" value=" 4 " type="radio"
+class="formcheckinput">
+<labelfor="godina_4"class="formchecklabel">4</label>
+</div>
+</div>
+<divclass="formgroup">
+Lista interesovanja:
+<divclass="formcheck">
+<inputname="veb" id="veb" type="checkbox"checked class="
+formcheckinput">
+<labelfor="veb" class="formchecklabel">veb
+programiranje</label>
+</div>
+<divclass="formcheck">
+<inputname="paradigme" id="paradigme" type="checkbox"
+class="formcheckinput">
+<labelfor="paradigme" class="formchecklabel">programske
+paradigme</label>
+</div>
+<divclass="formcheck">
+<inputname="grafika"id="grafika" type="checkbox" class="
+formcheckinput">
+<labelfor="grafika" class="formchecklabel">računarska
+grafika</label>
+</div>
+<divclass="formcheck">
+<inputname="algoritmi" id="algoritmi" type="checkbox"
+class="formcheckinput">
+<labelfor="algoritmi" class="formchecklabel">algoritmi<
+/label>
+</div>
+</div>
+Napomena:
+Unesite napomenu...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Šifra *:
+
+<inputtype="password" id="sifra1" name="sifra1"class="
+formcontrol">
+
+Ponovitešifru *:
+
+<inputtype="password" id="sifra2" name="sifra2"class="
+formcontrol">
+
+Prijavite seza vesti Oblast: 
+<divclass="formgorup">
+<divclass="formgroupcheck">
+<inputtype="radio" name="vesti" id="vesti_d" value="d"
+class="formcheckinput">
+<labelfor="vesti_d" class="formchecklabel">
+Dnevne
+</label>
+</div>
+<divclass="formgroupcheck">
+<inputtype="radio" name="vesti" id="vesti_n" value="n"
+checked class="formcheckinput">
+<labelfor="vesti_n" class="formchecklabel">
+Nedeljne
+</label>
+</div>
+<divclass="formgroupcheck">
+<inputtype="radio" name="vesti" id="vesti_m" value="m"
+class="formcheckinput">
+<labelfor="vesti_m" class="formchecklabel">
+Mesečne
+</label>
+</div>
+</div>
+</div>
+<p id="izvestaj">
+</p>
+<input type="submit" value="Posaljipodatke" class="btn btnprimary">
+<input type="reset" value="Reset" class="btn btndanger">
+<span style="position: absolute; right: 15 px;"> polja obeležena sa
+* su obavezna
+</form>
+<script type="text/javascript" src="js/jquery 3 .3.1.min.js"></script>
+<script type="text/javascript" src="provera_formulara.js"></script>
+Kod 68:primeri/javascript3/provera_formulara.js
+$(document).ready(function() {
+
+// Proveraza korisnickoime
+$("input[name='username']").blur(function()
+{
+if ($(this).val() == "")
+{
+$(this).next().addClass("greska").text("Ovo polje jeobavezno!");
+}
+else
+{
+$(this).next().removeClass("greska").text("");
+}
+});
+// Proveraza elektronsku adresu
+$("input[name='email']").blur(function()
+{
+if ($(this).val() == "")
+{
+if (!$(this).next().hasClass("greska"))
+{
+$(this).after("<spanclass='greska'> Ovo poljeje obavezno! </
+span>");
+}
+}
+else
+{
+$(this).next(".greska").remove();
+}
+});
+
+// Proveraza lozinku
+$("input[name='sifra1']").keyup(function()
+{
+if ($(this).val().length<= 5)
+{
+if (!$(this).next().hasClass("greska"))
+{
+$(this).after("<spanclass='greska'> kratkašifra! ");
+}
+}
+else
+{
+$(this).next(".greska").remove();
+}
+});
+
+// Prikazivanje/sakrivanjepolja zavesti
+$("input:checkbox").change(function()
+{
+if ($(this).is(":checked"))
+{
+$("#vesti").slideDown(1000);
+}
+else
+{
+$("#vesti").slideUp(1000);
+}
+});
+
+// Validacijaformulara pri slanjupodataka
+$("form").submit(function ()
+{
+// Proveravamokorisnicko ime
+let username= $("input[name='username']").val();
+if (username=== "")
+{
+$("#izvestaj").text("Korisničkoime je obavezno!");
+$("input[name='username']").focus();
+returnfalse;
+
+}
+// Proveravamoelektronsku adresu
+let email = $("input[name='email']").val();
+if (email === "")
+{
+$("#izvestaj").text("Email adresaje obavezna!");
+$("input[name='email']").focus();
+returnfalse;
+}
+
+let manki = email.indexOf("@");
+let poslednjaTackica= email.lastIndexOf(".");
+if (manki === 1 ||poslednjaTackica=== 1 ||manki >
+poslednjaTackica)
+{
+$("#izvestaj").text("Uneta email adresanijekorektna!");
+returnfalse;
+}
+
+// Proveravamosifre (originalnui ponovljenusifru).
+let sifra_original= $("input[name='sifra1']").val();
+let sifra_potvrda = $("input[name='sifra2']").val();
+
+if (sifra_original=== "" || sifra_original.length <= 5 ||
+sifra_potvrda === "" || sifra_original!=sifra_potvrda)
+{
+$("#izvestaj").text("Ponovopopunite polja zašifru!");
+$("input[name='sifra1']").focus();
+returnfalse;
+}
+
+// Proveravamoda lise korisnikprijaviona vesti
+if ($("input:checkbox").is(":checked"))
+{
+let oblast= $("select[name='oblast']").val();
+if (oblast=== "")
+{
+window.alert("Niste odabralioblastza vesti!");
+returnfalse;
+}
+
+let vesti = $("input:radio[name='vesti']:checked").val();
+let dinamika;
+switch(vesti)
+{
+case"d":
+dinamika= "dnevnom";
+break;
+case"n":
+dinamika= "nedeljnom";
+break;
+case"m":
+dinamika= "mesecnom";
+break;
+}
+window.alert(`Odabraliste daprimate vesti na ${dinamika} nivou`)
+;
+}
+// Ako jesve u redu, u poljuza izvestajse nakratkomoze videti
+zahvalnica...
+$("#izvestaj").text("Hvala što ste seprijavili!");
+return true;
+});
+$("form").on("reset", function()
+{
+$("span").text("");
+// Sakrivanjepolja zavesti ukoliko subile aktivne
+if ($("input:checkbox").is(":checked"))
+{
+$("#vesti").slideUp(1000);
+};
+});
+});
+
+9 Čas 11
+Cilj časa je upoznavanje studenta sa razvojem aplikacija koje se izvršavaju na
+serveru u okruženju Node.js. Na početku ćemo govoriti o arhitekturi serverskih
+aplikacija kroz pakete (engl. package ) i module (engl. modules ), o upravljaču pa-
+keta u ovom okruženju i demonstriraćemo kako možemo koristiti pakete koji nam
+dolaze pri instalaciji Node.js okruženja kroz jednostavne primere.
+
+9.1 Moduli.
+Modul (engl. module ) je deo programa koji speci೰kuje na koje se druge delo-
+ve programa on oslanja i koje mogućnosti on daje ostalim delovima programa. Te
+funkcionalnosti koje su izložene "svetu" zajedno se nazivaju interfejs (engl. interfa-
+ce ) modula. Sve ostalo se smatra privatnim za taj modul, i o tome svet ne mora da
+vodi računa. Korišćenjem modula se smanjuje celokupna povezanost delova pro-
+grama, odnosno, tendencija da "sve zna za sve", što se smatra lošom praksom za
+programiranje.
+Odnosi između modula se nazivaju zavisnosti (engl. dependency ). Kada modul
+zahtevadeoiznekogdrugogmodula,kažemodatajmodulzavisioddrugogmodula.
+Da bismo razdvojili module, potrebno je da svaki modul ima svoj, privatan domet.
+
+9.1.1 Paketi
+Paketi (engl. package ) predstavljaju delove koda koji se mogu distribuirati (ko-
+pirati i instalirati). Paket može da sadrži jedan ili više modula i ima informacije
+o tome od kojih drugih paketa zavisi. Paket obično sadrži i dokumentaciju. Kada
+se problem pronađe u paketu ili se doda nova mogućnost, paket se ažurira. Ta-
+da, programi koji zavise od paketa (koji takođe mogu biti drugi paketi) mogu da se
+jednostavno ažuriraju na novu verziju.
+
+9.1.2 Node upravljač paketima
+Rad na ovakav način zahteva infrastrukturu — mesto za skladištenje i pronala-
+ženjepaketa,kaoijednostavannačinzanjihovoinstaliranjeiažuriranje. UsvetuJa-
+vaScriptjezika,ovakvainfrastrukturajeobezbeđenaodstraneNPM(https://npmjs.org).
+NPM predstavlja dve stvari:
+
+1.veb servis odakle je moguće preuzeti (i postaviti) pakete
+2.program (koji dolazi uz Node.js okruženje za JavaScript) koji pomaže instali-
+ranje i upravljanje paketima
+U tekstu ćemo videti kako možemo instalirati različite pakete za naše programe
+koje budemo pisali.
+
+9.1.3 CommonJS
+OvajnačinpredstavljaverovatnonajrasprostranjenijinačinzakreiranjeJavaScript
+modula. Sistem Node.js koristi upravo ovaj način, a takođe i većina paketa na NPM
+sistemu, te ćemo mu se zbog toga i posvetiti.
+Glavni koncept u CommonJS modulima jeste funkcija require. Kada pozovemo
+
+ovu funkciju sa imenom modula od kojeg zavisi naš modul, funkcija se postara da je
+modul učitan i vraća nam njegov interfejs. Pošto učitavanje postavlja omotač nad
+
+kodom modula u funkciji, moduli automatski dobijaju svoj lokalni domet. Sve što
+oni treba da urade jeste da require pozivima dohvataju pakete od kojih zavise, a
+
+svoj interfejs stave u objekat koji se vezuje za exports. Zanimljiva stavka Com-
+monJS modula je da, iako sistem modula kreira prazan objekat-interfejs za nas (koji
+je vezan za promenljivu exports), mi ga možemo zameniti bilo kojom vrednošću
+
+tako što pregazimo vrednost module.exports i time de೰nišemo šta je to što naš
+
+modul isporučuje korisnicima. Tako možemo imati mnoge "skrivene" funkcije koje
+predstavljaju implementaciju, a koje korisnici neće videti (jer to za njih i nije zna-
+čajno) tako što ih jednostavno ne izvezemo kroz promenljivu module.exports. Ovo
+
+je urađeno u velikom broju postojećih modula da bi se exportovala jedna vrednost
+umesto objekta-interfejsa.
+Kadaputanjazaučitavanjepaketanijerelativna,Node.jsćepogledatiinstalirane
+pakete i potražiće u njima paket sa prosleđenim imenom. Instaliranje paketa u
+korenom direktorijumu projekta se može izvrsiti komandom
+
+$ npm install imePaketa
+
+KrozprimerekojisledevidećemorazneupotrebeCommonJSnačinazakreiranje
+i uvoženje modula.
+Da bismo kreirali novi Node.js projekat, koji će u našem slučaju predstavljati
+novu serversku aplikaciju, potrebno je da pokrenemo komandu
+
+$ npm init
+
+Komanda je interaktivnog tipa i od nas će tražiti podatke tipa "Kako se zove da-
+totekaodkojesepokrećeaplikacija?","Kojijenazivprojekta?","Kojajelicencapro-
+jekta?" i mnoge druge. Mi ćemo sve naše serverske aplikacije kreirati odserver.js
+datoteke. Ova komanda će kreiratipackage.jsondatoteku koja sadrži unete vred-
+nosti. Naravno, moguće je jednostavno izmeniti ovu datoteku ukoliko odlučimo da
+ažuriramo neku vrednost. Ono što je glavna prednost inicijalizacije novog projekta
+jeste što sada možemo da instaliramo pakete od kojih naša aplikacija zavisi, i te za-
+visnosti će biti zapamćene upackage.jsondatoteci. To znači da možemo proslediti
+našizvornikodprojektazajednosatomdatotekomdrugojosobi, kojamožepodesiti
+projekat jednostavnom komandom
+
+$ npm install
+
+kojom će se pogledati od kojih sve paketa zavisi naš projekat i oni će se instali-
+rati. Svi paketi koji se instaliraju se čuvaju pod korenim direktorijumom projekta u
+direktorijumunode_modules. Ovaj direktorijum nije potrebno niti poželjno proslediti
+uz izvorni kod (ili postaviti na sistem za kontrolu verzija, ukoliko se takav sistem
+koristi).
+
+9.2 Kreiranje serverskih aplikacija.
+Osnovnipaketkojićemokoristitizakreiranjeserverskihaplikacijajepakethttp^10.
+On nam nudi mnogobrojne metode za rad, a mi ćemo koristiti metod createServer
+kojim se kreira nova instanca veb servera. Dakle, da bismo učitali pakethttpi
+kreirali instancu veb servera, možemo uraditi:
+
+const http = require("http");
+const server =http.createServer();
+
+(^10) Dokumentacijazaovajpaketjedostupnanaadresihttps://nodejs.org/docs/latest-v10.x/api/http.html
+
+Ono što je potrebno uraditi jeste registrovati funkcije kojima će server odrea-
+govati na određene događaje, kao što je na primer, događaj koji se okine kada pri-
+stigne novi HTTP zahtev. Da bismo postavili osluškivač, možemo koristiti metode
+on(eventName, listener)^11 i once(eventName, listener)^12. Razlika između ovih
+
+metoda je u tome što prvi metod će izvršiti po-potrebi-pozivnu funkciju listener
+
+svaki put kada je događaj predstavljen niskom eventName okinut, a drugi metod će
+samo jednom. Tako, na primer, za osluškivanje novih zahteva možemo koristiti do-
+gađaj "request"^13 koji će proslediti po-potrebi-pozivnoj funkciji dva objekta: prvi
+predstavlja HTTP zahtev od klijenta, a drugi predstavlja HTTP odgovor od servera.
+
+server.on("request",function(req, res)
+{
+// Odgovaramonazahtev odkorisnika ovde...
+}
+
+Da bismo zapravo rekli serveru da treba da se pokrene, moramo pozvati me-
+tod listen([port[,host[,backlog]]][, callback])^14 ,kojojjedovoljnoproslediti
+
+broj porta na koji se pokreće serverska aplikacija.
+
+const port = 3000;
+server.listen(port);
+
+Ukoliko želimo da izvršimo neku akciju kada je server spreman, možemo regi-
+strovati po-potrebi-pozivnu funkciju nad događajem "listening"^15 :
+
+server.once("listening",function()
+{
+console.log(Go tohttp://localhost:${port});
+});
+
+Vratimo se na događaj "request" i objekte koje on prosleđuje, a sa kojima mi
+možemo da radimo: HTTP zahtev^16 i HTTP odgovor^17. Nad ovim objektima su de೰-
+nisana razna svojstva i metodi koje možemo koristiti. Na primer, nad HTTP zahte-
+vom imamo de೰nisano:
+
+Svojstvo headers sadrži objekat čija su svojstva zaglavlja HTTP zahteva
+Svojstvo method sadrži nisku sa HTTP metodom
+Svojstvo url sadrži nisku sa url-om u HTTP zahtevu
+Nad HTTP odgovorom imamo de೰nisano:
+Metod setHeader(name, value) postavlja vrednost value za jedno zaglavlje
+čijijenazivname. Akozaglavljevećimade೰nisanuvrednost,bićeupotrebljena
+nova vrednost umesto nje. Potrebno ga je pozvati pre metoda writeHead.
+(^11) Dokumentacija
+(^12) Dokumentacija
+(^13) Dokumentacija
+(^14) Dokumentacija
+(^15) Dokumentacija
+(^16) Dokumentacija
+(^17) Dokumentacija
+
+Metod writeHead(statusCode[,statusMessage][, headers]) šalje HTTP za-
+glavlja. Možemo mu proslediti statusnu poruku i objekat čija su svojstva za-
+glavlja odgovora. Ako prosledimo zaglavlja koja su ranije postavljena pomoću
+metoda setHeader, onda će vrednosti prosleđene ovom metodu imati priori-
+tet. Metod mora biti pozvan tačno jednom i to pre poziva metoda write i
+end.
+Metod write(chunk[,encoding][, callback]) postavlja telo odgovora. Me-
+tod se može pozvati više puta svaki put dodajući nastavak tela.
+Metod end([data][, encoding][, callback])kojimsezavršavaobradaHTTP
+zahteva i šalje se HTTP odgovor. Metod signalizira da su sva zaglavlja i telo
+poslati, te se mora pozvati nad svakim odgovorom.
+Da bismo pokrenuli našu serversku aplikaciju, potrebno je da se u terminalu
+pozicioniramo u koreni direktorijum projekta i ukucamo komandu
+
+$ nodemon server.js
+
+Nodemon (https://nodemon.io/) predstavlja alat kojom se mogu lakše restarto-
+vati pokrenuti serveri prilikom izmena u izvornom kodu. Ovaj alat prati da li je
+došlo do izmene nekog izvornog fajla i ako jeste, onda će automatski ugasiti server,
+primeniti izmene i ponovo ga pokrenuti, što je korisno ako testiramo rad servera
+i pravimo izmene u isto vreme. Da bismo ga instalirali, potrebno je da izvršimo
+komandu
+
+$ npm install g nodemon
+
+Primer 9.1:
+Napisati serversku aplikaciju koja se pokreće na portu 3000 i koja treba da
+opslužuje naredne HTTP zahteve:
+• Bilo koji zahtev nadhttp://localhost:3000/*
+- Potrebno je da se vrati tekst "Hello world!" u telu odgovora. Tip
+odgovora jetext/plain, a statusni kod je 200.
+
+Rešenje:
+
+Kod 69:primeri/nodejs1/001/server.js
+const http = require("http");
+
+const server =http.createServer();
+server.on("request",function(req, res)
+{
+res.writeHead(200, {
+"contenttype": "text/plain"
+});
+
+res.write("Hello World!");
+res.end();
+});
+
+const port = 3000;
+
+server.listen(port);
+server.once("listening",function()
+{
+console.log(Hello World server listeningon port${port});
+console.log(Go tohttp://localhost:${port});
+});
+
+Prethodni primer ilustruje jednostavnost kreiranja i podizanja serverskih apli-
+kacija. Naravno, što su zahtevi naših zadataka veći, to je i kod kojim se ti zadaci
+rešavajuveći. Međutim, onoštojepoditivnakarakteristikaNode.jsrazvojnogokru-
+ženja jeste da se aplikacije jednostavno skaliraju, kao i da je za korišćenje novih
+paketa dovoljno da razumemo API koji ti paketi nude. Pogledajmo naredni primer.
+
+Primer 9.2:
+Napisati serversku aplikaciju koja se pokreće na portu 3000 i koja treba da
+opslužuje naredne HTTP zahteve:
+• GET zahtev nadhttp://localhost:3000/*
+- Izračunati skalarni proizvod vektora x =( x 1 ; x 2 ; x 3 )i y =( y 1 ; y 2 ; y 3 )
+koji se prosleđuju serveru preko svojih koordinata.
+
+• OPTIONS zahtev nadhttp://localhost:3000/*
+- Server odgovara da su dostupni metodi OPTIONS i GET.
+
+IspravnoimplementiratiCORSmehanizamzaštite. Zatim, kreiratiformularna
+klijentskoj strani, stilizovan pomoću biblioteke Bootstrap, i pomoću biblioteke
+jQuery izvršiti odgovarajuće validacije i poslati asinhroni zahtev ka serverskoj
+aplikaciji sa odgovarajućim podacima.
+Rešenje: Kao što vidimo, u odnosu na prethodni primer, naši zahtevi su se značaj-
+no usložnili. Međutim, nakon ovog primera, razumećemo kako da ispravno pove-
+žemo našu klijentsku aplikaciju koja se pokreće iz veb pregledača sa serverskom
+aplikacijom koja se izvršava kao Node.js aplikacija. Za početak, krenimo od imple-
+mentiranja serverske strane aplikacije, čiji će kostur biti nešto izmenjeno rešenje
+iz prethodnog primera:
+
+const http = require('http');
+
+const server =http.createServer();
+server.on('request',function(req, res)
+{
+let teloOdgovora= {};
+let statusniKod = 200;
+
+// Obradazahteva ide ovde...
+res.writeHead(statusniKod, {
+'AccessControlAllowOrigin': '*',
+'AccessControlAllowHeaders': 'ContentType'
+});
+res.write(JSON.stringify(teloOdgovora));
+res.end();
+});
+
+const port = 3000;
+server.listen(port);
+server.once('listening',function()
+{
+console.log(http://localhost:${port});
+});
+
+Ono što vidimo da je drugačije u odnosu na prethodni primer jeste što smo iz-
+dvojili statusni kod i telo odgovora u posebne promenljive, koje ćemo izmeniti u
+zavisnosti od toga na koji zahtev treba da odgovorimo, kao i na šta je to što ćemo
+vratiti kao odgovor.
+Dodatno,vidimodaustartupostavljamozaglavljaAccessControlAllowOrigin,
+kaoiAccessControlAllowHeaders. Ovojeuvezizanečimštozovemo deljenjere-
+sursa među različitim izvorima (engl. Cross-Origin Resource Sharing , skr. CORS ).
+U pitanju je mehanizam koji koristi dodatna HTTP zaglavlja u odgovoru da nazna-
+či veb pregledaču da dopusti da veb aplikacija koja se izvršava sa jednog izvora
+(domena) ima pravo da koristi resurse sa servera koji se nalazi na drugom izvo-
+ru (domenu). Veb aplikacija kreira HTTP zahtev među različitim izvorima (engl.
+cross-origin HTTP request ) kada zahteva resurs koji ima drugačiji izvor u odnosu
+na njegov izvor. Pod "izvorom" podrazumevamo domen, protokol i port. Da bismo
+ispravno implementirali obradu CORS zahteva, potrebno je da naša serverska apli-
+kacija naznači sa kojih izvora CORS zahtevi mogu biti prihvaćeni, što se kontroliše
+
+zaglavljemAccessControlAllowOrigin. Ukoliko je njegova vrednost*, onda su
+sviizvoridostupni. Inače, mogusesamonekiizvorismatratikaovalidni, naprimer,
+http://foo.examplei tada bismo vratili zaglavlje:
+
+AccessControlAllowOrigin: http://foo.example
+
+Slično, možemokoristitizaglavljeAccessControlAllowHeadersdabismospe-
+ci೰kovali koja zaglavlja klijent može da pošalje ka serveru (pored nekih podrazu-
+mevanih koje veb pregledač automatski dodaje, kao što suAcceptiUserAgent).
+U primeru smo postavili da je dozvoljeno zaglavlje još iContentType. Ovime smo
+uspešno implementirali CORS mehanizam, te možemo preći na obradu zahteva.
+S obzirom da je potrebno da obradimo samo zahteveGETiOPTIONS, potrebno je
+da izdvojimo informaciju o metodu iz HTTP zahteva, a zatim da obezbedimo da se
+samo ti metodi obrađuju:
+
+let method = req.method;
+
+if (method === "GET")
+{
+// ObradaGET zahteva ide ovde...
+}
+else if(method=== "OPTIONS")
+{
+// ObradaOPTIONS zahteva ide ovde...
+}
+else
+{
+statusniKod = 405;
+res.setHeader('AccessControlAllowMethods', 'OPTIONS, GET');
+
+}
+Vidimo da se u slučaju slanja nepodržanog metoda u zahtevu vraća statusni kod
+405, kaoidasepostavljazaglavljeAccessControlAllowMethods, čijajevrednost
+spisak metoda koje server podržava.
+Da bi se sprečilo da klijent šalje nepodržane metode, često klijentske aplikaci-
+je prvo pošaljuOPTIONSmetod ka serveru pre nego što pošalju sam zahtev. HTTP
+metodOPTIONSsluži da se od servera dobije informacija o tome koji su HTTP meto-
+di implementirani na serveru. Potrebno je da server pošalje ovu informaciju kroz
+zaglavljeAccessControlAllowMethods:
+
+else if(method=== "OPTIONS")
+{
+statusniKod = 200;
+res.setHeader('AccessControlAllowMethods', 'OPTIONS, GET');
+}
+
+Pređimo sada na glavni deo naše serverske aplikacije: implementiranje obrade
+GETzahteva. Kada se podaci od klijenta šalju putem zahtevaGET, pravilo je da ti
+podaci budu zapisani kao deo URL-a ka kojem se zahtev šalje, i to u vidu dela URL-
+akojisenaziva upit (engl. query ). UpitseodostatkadelaURL-aodvajakarakterom
+?iza kojeg slede podaci zapisani u formatuime=vrednostodvojeni karakterom&, na
+primer:
+
+field1=value1&field2=value2&field3=value3...
+
+S obzirom da mi očekujemo koordinate vektora x =( x 1 ; x 2 ; x 3 )i y =( y 1 ; y 2 ; y 3 ),
+očekujemo da će klijent poslatiGETzahtev ka URL-u:
+
+http://localhost:3000?x1=0&x2=0&x3=0&y1=0&y2=0&y3=0
+
+Naravno, nule u gornjem URL-u će biti zamenjene vrednostima koje klijent zai-
+sta bude poslao ka serveru. Da bismo dohvatili URL zahteva klijenta, potrebno je
+da pristupimo svojstvu url objekta zahteva req. Sada je potrebno da izvučemo
+
+informacije iz ovog URL-a, što se može postići upotrebom paketaurlkoji dolazi
+instaliran uz Node.js. Funkcijom url.parse^18 možemo parsirati URL nisku, či-
+
+me dobijamo objekat koji sadrži razne informacije o parsiranom URL-u. Nama je
+korisno svojstvo query, čija je vrednost objekat koji ima svojstva koji odgovaraju
+prosleđenim podacima:
+
+const url = require('url');
+
+// ...
+
+if (method === "GET")
+{
+let urlString = req.url;
+let urlObj= url.parse(urlString,true);
+let getPodaci = urlObj.query;
+let x = [getPodaci.x1, getPodaci.x2, getPodaci.x3];
+let y = [getPodaci.y1, getPodaci.y2, getPodaci.y3];
+
+// Ostatakobrade GET zahteva ideovde...
+}
+
+(^18) Dokumentacija
+
+Primetimodajepotrebnodaprosledimokaodrugiargumentfunkcije url.parse
+vrednost true da bi se parsirao i upit kao deo URL-a (podrazumevano neće biti
+parsiran).
+Sada kada smo dohvatili podatke, kreirajmo funkciju koja će izračunati skalarni
+proizvod. Zapravo, kreiraćemo svoj CommonJS modul, da bismo ispoštovali arhi-
+tekturu Node.js okruženja:
+
+// U okvirudatoteke'skalarniproizvod.js'
+
+function skalarni_proizvod(x, y)
+{
+let sp = 0;
+for (let i= 0; i < x.length; ++i)
+{
+
+sp +=x[i] *y[i];
+}
+return sp;
+}
+
+module.exports.skalarni_proizvod = skalarni_proizvod;
+
+Vidimo da modul eksportuje jednu funkciju, koju možemo dohvatiti njegovim
+uključivanjem userver.jsdatoteku:
+
+const {skalarni_proizvod} = require('./skalarniproizvod');
+
+Sada možemo da koristimo funkciju skalarni_proizvod iz našeg modula:
+if (method === "GET")
+{
+// ...
+
+let rezultat= skalarni_proizvod(x, y);
+res.setHeader('ContentType', 'application/json');
+teloOdgovora= {rezultat};
+}
+
+Primetimo da smo morali da stavimo vitičaste zagrade oko naziva funkcije. To je
+zato što ćemo pozivom funkcije require dohvatiti objekat koji sadrži tu funkciju.
+
+Mogli smo napisati i
+
+const spPaket = require('./skalarniproizvod');
+
+čime bismo onda umesto poziva skalarni_proizvod(x, y) morali da koristimo
+spPaket.skalarni_proizvod(x, y).
+Takođe, primećujemo još jednu novu sintaksu koju možemo da koristimo. Ka-
+da napišemo {rezultat}, kreiraće se objekat koji ima svojstvo rezultat, a čija
+
+vrednost će biti jednaka vrednosti istoimene promenljive u istom dometu. Drugim
+rečima, izraz {rezultat} je skraćeni zapis izraza {rezultat: rezultat}.
+Ceo izvorni kod implementacije na serveru dat je u nastavku:
+
+Kod 70:primeri/nodejs1/002/server.js
+const http = require('http');
+
+const url = require('url');
+const {skalarni_proizvod} = require('./skalarniproizvod');
+
+const server =http.createServer();
+server.on('request',function(req, res)
+{
+let teloOdgovora= {};
+let statusniKod = 200;
+
+let method= req.method;
+if (method=== "GET")
+{
+let urlString = req.url;
+let urlObj= url.parse(urlString, true);
+let getPodaci = urlObj.query;
+let x = [getPodaci.x1, getPodaci.x2, getPodaci.x3];
+let y = [getPodaci.y1, getPodaci.y2, getPodaci.y3];
+let rezultat= skalarni_proizvod(x, y);
+res.setHeader('ContentType', 'application/json');
+teloOdgovora= {rezultat};
+}
+else if(method=== "OPTIONS")
+{
+res.setHeader('AccessControlAllowMethods', 'OPTIONS, GET');
+}
+else
+{
+statusniKod = 405;
+res.setHeader('AccessControlAllowMethods', 'OPTIONS, GET');
+}
+res.writeHead(statusniKod, {
+'AccessControlAllowOrigin': '*',
+'AccessControlAllowHeaders': 'ContentType'
+});
+res.write(JSON.stringify(teloOdgovora));
+res.end();
+});
+
+const port = 3000;
+server.listen(port);
+server.once('listening',function()
+{
+console.log(http://localhost:${port});
+});
+
+Kod 71:primeri/nodejs1/002/skalarniproizvod.js
+function skalarni_proizvod(x, y)
+{
+let sp = 0;
+
+for (let i= 0; i < x.length; ++i)
+{
+sp +=x[i] *y[i];
+}
+return sp;
+}
+
+module.exports.skalarni_proizvod = skalarni_proizvod;
+
+Pozabavimo se sada implementacijom na klijentskoj strani. Da bismo prosledili
+podatke iz veb pregledača našoj serverskoj aplikaciji, možemo da napravimo for-
+mular kao na slici:
+
+Validaciju podataka ćemo raditi na klijentskoj strani, slično kao i na prethodnim
+časovima:
+
+$("#f").submit(function()
+{
+// Brisanjerezultata odproslog izacunavanja
+$("#rezultat").val("");
+
+// Dohvatanjevrednosti i validacija
+let x1 = Number.parseInt($("#x1").val());
+let x2 = Number.parseInt($("#x2").val());
+let x3 = Number.parseInt($("#x3").val());
+let y1 = Number.parseInt($("#y1").val());
+let y2 = Number.parseInt($("#y2").val());
+let y3 = Number.parseInt($("#y3").val());
+if (isNaN(x1) ||isNaN(x2) || isNaN(x3) || isNaN(y1) ||isNaN(y2) ||
+isNaN(y3))
+{
+$("#greska").text("Treba da unesetebrojeve!");
+return false;
+}
+let podaci= {x1, x2, x3, y1, y2,y3};
+// Slanjeasinhronogzahteva ide ovde...
+// Cistimopolje za gresku
+$("#greska").text("");
+// Sprecavanjeda veb pregledac prosledipodatke nastranicuzadatu u
+atributuaction
+return false;
+}
+
+Videli smo kako je moguće proslediti asinhroni zahtev ka serveru korišćenjem
+objekta klase XMLHttpRequest. Međutim, uverili smo se da je čak i na jednostav-
+
+nim primerima rad sa ovim objektom veoma neugodan i kod ne izgleda lepo. Na
+našu sreću, biblioteka jQuery de೰niše svoju funkciju za slanje asinhronih poziva:
+$.ajax(url [,settings]). Argumenti ove funkcije su:
+
+url — Niska koja sadrži putanju na koju je potrebno poslati asinhroni zahtev.
+settings — Objekat kojim se vrši kon೰guracija asinhronog zahteva. Neke od
+vrednosti koje možemo podešavati su:
+- method — Niska koja sadrži HTTP metod zahteva.
+- data — Objekat koji de೰niše podatke koji se šalju u zahtevu. Ukoliko je
+za method izabranGETzahtev, podaci će biti prosleđeni kao upit u URL-u.
+Inače, možemo birati u kom formatu ćemo poslati podatke — na primer,
+ukoliko želimo da podaci budu poslati u JSON formatu, potrebno ih je se-
+rijalizovati tako što se proslede funkciji JSON.stringify() i potrebno je
+postaviti vrednost contentType na 'application/json' (videti ispod).
+- contentType — Niska kojom se de೰niše MIME tip podataka koji se šalje.
+- success — Po-potrebi-pozivna funkcija koja će se izvršiti ukoliko zahtev
+prođe uspešno. Funkcija može primiti tri argumenta:
+(a) data — Telo odgovora od servera.
+(b) textStatus — Statusna poruka koja je dobijena od servera.
+(c) jqXHR—SpecijalanjQueryobjekatkojipredstavljanadskupXMLHttpRequest
+klase^19.
+- error —Po-potrebi-pozivnafunkcijakojaćeseizvršitiukolikozahtevpro-
+đe neuspešno. Funkcija može primiti tri argumenta:
+(a) jqXHR—SpecijalanjQueryobjekatkojipredstavljanatklasuXMLHttpRequest
+klase^20. To znači da možemo da koristimo ista svojstva i metode kao
+nad običnim XMLHttpRequest objektom, kao što smo to radili u sekciji
+8.1.2.
+(^19) Dokumentacija
+(^20) Dokumentacija
+
+(b) textStatus— Statusna poruka koja je dobijena od servera. Može biti
+neka od: "timeout", "error", "abort" ili "parsererror".
+(c) errorThrown — Objekat koji predstavlja grešku.
+Slanje asinhronog zahteva sada možemo uraditi na sledeći način:
+$.ajax("http://localhost:3000", {
+method: "GET",
+data: podaci,
+success: function(data, textStatus, jqXHR)
+{
+if (data.hasOwnProperty("rezultat"))
+{
+$("#rezultat").val(data.rezultat);
+}
+},
+error: function(jqXHR, textStatus, errorThrown)
+{
+$("#greska").text("Postoji greskasa zahtevom: " + textStatus);
+}
+});
+
+Primetimodasmonadobjektomkojipredstavljateloodgovoraodserverapozvali
+metod hasOwnProperty koji do sada nismo videli. Ovaj metod služi da proveri da li
+
+objekat nad kojim se poziva sadrži svojstvo koje se zadaje kao argument metoda,
+pre nego što mu zapravo pristupimo.
+Onoštotrebadazapamtimokodasinhronihzahtevakreiranihnaovajnačinjeste
+da će uvek biti izvršena ili funkcija success ili funkcija error, nikada obe.
+Ceo izvorni kod implementacije na klijentu dat je u nastavku:
+
+Kod 72:primeri/nodejs1/002/skalarni_proizvod.html
+ <linkrel="stylesheet" type="text/css" href="bootstrap.css">
+ Vektorx
+x:
+
+
+
+ Vektory
+y: 
+ 
+ 
+ Skalarniproizvod
+Rezultat: 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+This is a offline tool, your data stays locally and is not send to any server!Feedback & Bug Reports
