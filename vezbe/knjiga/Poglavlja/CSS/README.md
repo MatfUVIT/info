@@ -1072,7 +1072,7 @@ Za više informacijama o temama koje su obrađene u ovoj sekciji, možete poseti
 - Mi smo predstavili osnovni model kutije, međutim, postoji mnogo više modela kutija - i u  HTML5 i u CSS3 jeziku. Detaljniji opis svih modela kutija možete pronaći na ovoj adresi:
 [https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/The_box_model](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/The_box_model)
 
-## 2.6 Koordinatni sistem veb pregledača
+## 2.6 Koordinatni sistemi veb pregledača
 
 Naredna tema o kojoj želimo da diskutujemo jeste pozicioniranje elemenata. Međutim, da bismo razumeli način na koji se koriste mere pri raspoređivanju elemenata na veb prezentaciji, moramo da razumemo kako funkcioniše koordinatni sistem veb pregledača.
 
@@ -1733,6 +1733,58 @@ Za više informacijama o temama koje su obrađene u ovoj sekciji, možete poseti
 [https://www.w3schools.com/cssref/pr_class_display.asp](https://www.w3schools.com/cssref/pr_class_display.asp)
 [https://www.w3schools.com/cssref/pr_class_visibility.asp](https://www.w3schools.com/cssref/pr_class_visibility.asp)
 [https://www.w3schools.com/css/css_display_visibility.asp](https://www.w3schools.com/css/css_display_visibility.asp).
+
+## 2.8 Slike
+
+Veličina slike se može podesiti atributima `width` i `height`, čije su vrednosti celi brojevi koji predstavljaju veličine u pikselima. Naravno, dimenzija elementa `img` se može podesiti i u jeziku CSS, zadavanjem svojstava `width` i `height`, čije veličine mogu biti bilo koja od dužina.
+
+S obzirom da veličinu slike možemo navesti pomoću atributa elementa `img`, ali i pomoću CSS svojstava, prirodno se postavlja pitanje - šta je bolje za korišćenje? Jedan praktičan savet jeste da se koriste obe načina - sada ćemo opisati zašto. 
+
+Prilikom dohvatanja HTML dokumenta, svaki savremeni veb pregledač izgrađuje DOM stablo prilikom parsiranja dokumenta i već započinje proces prikazivanja veb stranice dok se dohvataju drugi resursi, kao što su spoljni kaskadni stilovi, slike i dr. Ukoliko veb pregledač nema informaciju o veličini slike, on će zauzeti minimalan prostor za njeno prikazivanje. U trenutku kada slika pristigne preko mreže, ukoliko je ona velikih dimenzija, nakon što je veb pregledač prikaže, ona će sada zauzeti veću površinu i ostali elementi na stranici će biti ispremeštani kako bi slika zauzela potrebnu veličinu. Ukoliko ima mnogo slika na veb stranici koje se ovako ponašaju, korisniku će ovo premeštanje okolnih elemenata izgledati haotično. Sa druge strane, ukoliko je veb pregledač već iz HTML koda dobio informaciju o veličini slike (korišćenjem atributa `width` i `height` elementa `img`), on će moći da "rezerviše" potreban prostor za sliku dok ona ne bude preuzeta i prikazana. Time se postiže mnogo lepši utisak u korisničkom iskustvu.
+
+Međutim, kao što smo rekli, atributima `width` i `height` elementa `img` se dodeljuju celi brojevi koji uvek predstavljaju piksele na ekranu. Nekada nam je neophodno da koristimo druge mere za postavljanje dimenzije slika. Takođe, uključivanjem nekog spoljnog kaskadnog lista može se desiti da se uključi pravilo koje postavlja veličinu svih slika na neku dimenziju koja nama ne odgovara, a koja će "pregaziti" vrednosti iz HTML koda. Zbog toga se takođe preporučuje korišćenje CSS svojstava `width` i `height` za dodeljivanje dimenzija slike.
+
+Naredni kodovi iz datoteka `index.html` i `img_override.css`, redom, i prateća slika ilustruju ovo ponašanje.
+
+```html
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Primer</title>
+    <meta charset="UTF-8">
+
+    <link rel="stylesheet" type="text/css" href="img_override.css">
+</head>
+
+<body>
+    <h1>Podešavanje veličine sličica</h1>
+
+    <p>
+        Slika ispod ima vrednost atributa width postavljenu na 128 piksela, 
+        ali je ta vrednost "pregažena" od strane spoljnih kaskadnih listova, 
+        koji postavljaju CSS svojstvo width svih slika na 100%.
+    </p>
+    <img src="october31.jpeg" alt="Noc Vestica - 31. oktobar" 
+         width="128" height="128">
+
+    <p>
+        Slika ispod koristi atribut style, 
+        u kojem je CSS svojstvo width postavljeno na 128 piksela. 
+        S obzirom da ovakva upotreba ima najveći prioritet, 
+        vrednost CSS svojstva width od 100% iz spoljnih kaskadnih listova je "pregažena".
+    </p>
+    <img src="october31.jpeg" alt="Noc Vestica - 31. oktobar" 
+         width="128" height="128"
+         style="width:128px; height:128px;">
+</body>
+
+</html>
+```
+
+<table><tr><td>
+<img src="./Slike/img_override.png" alt="Primer kada su spoljni kaskadni listovi narušili veličinu slike koja je postavljena u HTML kodu.">
+</td></tr></table>
 
 ---
 
