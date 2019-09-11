@@ -1,4 +1,4 @@
-[Vežbe](../README.md)
+[Vežbe](../../../README.md)
 
 [Knjiga](../../README.md)
 
@@ -369,7 +369,7 @@ Dajmo i dve napomene koje se tiču korišćenja ovih elemenata:
 
 [Knjiga](../../README.md)
 
-[Vežbe](../README.md)
+[Vežbe](../../../README.md)
 
 <!--
 <table><tr><td>

@@ -1,4 +1,4 @@
-[Vežbe](../README.md)
+[Vežbe](../../../README.md)
 
 [Knjiga](../../README.md)
 
@@ -18,4 +18,4 @@ Autori
 
 [Knjiga](../../README.md)
 
-[Vežbe](../README.md)
+[Vežbe](../../../README.md)

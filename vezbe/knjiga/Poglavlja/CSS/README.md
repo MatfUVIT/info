@@ -1,4 +1,4 @@
-[Vežbe](../README.md)
+[Vežbe](../../../README.md)
 
 [Knjiga](../../README.md)
 
@@ -1790,7 +1790,7 @@ Naredni kodovi iz datoteka `index.html` i `img_override.css`, redom, i prateća 
 
 [Knjiga](../../README.md)
 
-[Vežbe](../README.md)
+[Vežbe](../../../README.md)
 
 <!--
 <table><tr><td>

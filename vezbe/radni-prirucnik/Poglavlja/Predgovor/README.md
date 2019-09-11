@@ -1,4 +1,4 @@
-[Vežbe](../README.md)
+[Vežbe](../../../README.md)
 
 [Radni priručnik](../../README.md)
 
@@ -14,4 +14,4 @@ Autori
 
 [Radni priručnik](../../README.md)
 
-[Vežbe](../README.md)
+[Vežbe](../../../README.md)
