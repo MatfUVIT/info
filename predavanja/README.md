@@ -8,6 +8,14 @@
 
     1. [Уводне напомене о курсу](Uvodne-Napomene-o-Kursu.md){:target="_blank"}
 
+        1. [Концепција курса](Uvodne-Napomene-o-Kursu#концепција-курса){:target="_blank"}
+
+        1. [Садржај курса](Uvodne-Napomene-o-Kursu#садржај-курса){:target="_blank"}
+
+        1. [Оцењивање и бодовање](Uvodne-Napomene-o-Kursu#оцењивање-и-бодовање){:target="_blank"}
+
+        1. [Литература](Uvodne-Napomene-o-Kursu#литература){:target="_blank"}
+
     1. [Увод у рачунарске мреже](/prezentacije/UVIT01-01-Uvod u racunarske mreze.pdf){:target="_blank"}  
 
         1. Улога рачунарских мрежа
