@@ -1,3 +1,7 @@
+[Vežbe](../README.md)
+
+---
+
 # Radni priručnik uz knjigu "Uvod u Veb i Internet Programiranje"
 
 Autori:
@@ -10,3 +14,9 @@ Autori:
 ## Deo 1 - Osnovni elementi Veba
 
 ### [Sedmica 1](./Poglavlja/Sedmica1/README.md)
+
+### [Sedmica 2](./Poglavlja/Sedmica2/README.md)
+
+---
+
+[Vežbe](../README.md)

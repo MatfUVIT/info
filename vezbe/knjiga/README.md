@@ -1,3 +1,7 @@
+[Vežbe](../README.md)
+
+---
+
 # Uvod u Veb i Internet Programiranje
 
 Autori:
@@ -28,6 +32,10 @@ Autori:
    3. Linijski tekst
    
    4. Citati
+
+6. Slike
+
+   1. Figure i anotiranje elemenata
 
 ### [Poglavlje 2. Stilizovanje Veb dokumenata kroz CSS](./Poglavlja/CSS/README.md)
 
@@ -76,3 +84,9 @@ Autori:
    5. Z-pozicioniranje elemenata
 
    6. Svojstva `display` i `visibility`
+
+8. Slike
+
+---
+
+[Vežbe](../README.md)

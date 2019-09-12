@@ -1,3 +1,5 @@
+[Vežbe](../../../README.md)
+
 [Knjiga](../../README.md)
 
 ---
@@ -298,9 +300,76 @@ Element `blockquote` se obično koristi ukoliko želimo da istaknemo neki citat.
 <img src="./Slike/blockquote.png" alt="Primeri upotrebe elementa blockquote.">
 </td></tr></table>
 
+## 1.6 Slike
+
+Slike često predstavljaju nezaobilazni element veb prezentacija. Najosnovniji način za uključivanje slika u HTML dokument je pomoću samozatvarajućeg elementa `img`. Kako bismo naveli koji resurs želimo da uključimo kao sliku, potrebno je da zadamo lokaciju resursa kao vrednost atributa `src`.
+
+Pored atributa `src` element `img` ima i jedan važan obavezni atribut `alt`. Njegova uloga je da prikaže alternativni tekst, ukoliko iz bilo kog razloga klijent nije u stanju da prikaže željeni resurs. Na primer, ako ne može da mu pristupi, najčešće zato što resurs ne postoji na traženoj lokaciji ili ako korisnik koristi *čitače ekrana* (engl. *screen reader*). Korišćenje ovog atributa se smatra dobrom praksom, te ćemo ga mi koristiti. Osim što predstavlja dobru praksu, kao što smo rekli, HTML standard zahteva korišćenje ovog atributa i u suprotnom, stranica neće biti validirana.
+
+Naredni primer i prateća slika ilustruju korišćenje elementa `img`.
+
+```html
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Primer</title>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+    <img src="october31.jpeg" alt="Noc Vestica - 31. oktobar">
+</body>
+
+</html>
+```
+
+<table><tr><td>
+<img src="./Slike/img.png" alt="Primer korišćenja elementa img.">
+</td></tr></table>
+
+### 1.6.1 Figure i anotiranje elemenata
+
+Jedan zanimljiv blokovski element koji služi za anotaciju drugih elemenata, pre svega slika, ilustracija, kodova, ali i drugih elemenata, naziva se `figure`. Ovaj element možemo razumeti kao "obuhvatajući element", koji sadrži nekakav sadržaj i prateći tekst za taj sadržaj koji je potrebno smestiti kao sadržaj elementa `figcaption`. Sadržaj predstavlja ono što želimo da istaknemo, a prateći tekst ima ulogu anotacije tog sadržaja.
+
+Naredni kod i prateća slika ilustruju primer korišćenja ovih elemenata.
+
+```html
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Primer</title>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+    <figure>
+        <img src="jesen.jpg" alt="Šarena ilustracija jeseni">
+        <figcaption>
+            <p>Slika 1: Jesen, šareno godišnje doba</p>
+        </figcaption>
+    </figure>
+</body>
+
+</html>
+```
+
+<table><tr><td>
+<img src="./Slike/figure.png" alt="Primer korišćenja elemenata figure i figcaption.">
+</td></tr></table>
+
+Dajmo i dve napomene koje se tiču korišćenja ovih elemenata:
+
+- Anotacija pomoću elementa `figcaption` je opciona. Element `figure` ne mora biti anotiran. Ali ako jeste, onda se element `figcaption` mora javiti kao njegov direktni potomak (dete).
+
+- U primeru je anotacija prikazana ispod sadržaja. Ukoliko želimo da prikažemo anotaciju iznad sadržaja, dovoljno je da obrnemo redosled elemenata `figcaption` i `img` u HTML kodu. Drugim rečima, dovoljno je prvo kodirati anotaciju, a zatim sadržaj.
+
 ---
 
 [Knjiga](../../README.md)
+
+[Vežbe](../../../README.md)
 
 <!--
 <table><tr><td>

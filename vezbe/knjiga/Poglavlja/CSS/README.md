@@ -1,3 +1,5 @@
+[Vežbe](../../../README.md)
+
 [Knjiga](../../README.md)
 
 ---
@@ -1070,9 +1072,36 @@ Za više informacijama o temama koje su obrađene u ovoj sekciji, možete poseti
 - Mi smo predstavili osnovni model kutije, međutim, postoji mnogo više modela kutija - i u  HTML5 i u CSS3 jeziku. Detaljniji opis svih modela kutija možete pronaći na ovoj adresi:
 [https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/The_box_model](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/The_box_model)
 
-## 2.6 Koordinatni sistem veb pregledača
+## 2.6 Koordinatni sistemi veb pregledača
 
-<!-- TODO: Dopuniti -->
+Naredna tema o kojoj želimo da diskutujemo jeste pozicioniranje elemenata. Međutim, da bismo razumeli način na koji se koriste mere pri raspoređivanju elemenata na veb prezentaciji, moramo da razumemo kako funkcioniše koordinatni sistem veb pregledača.
+
+Veb pregledači raspolažu dvama koordinatnim sistemima koji se razlikuju po njihovom centru, dok su im ostale karakteristike identične. Oni su:
+
+1. Koordinatni sistem relativan u odnosu na pogled veb pregledača (nadalje ga zovemo koordinatni sistem veb pregledača). U ovom koordinatnom sistemu, za centar se smatra gornji levi ugao pogleda veb pregledača. *Pogled* (engl. *viewport*) predstavlja prozor veb pregledača u kojem se prikazuje veb prezentacija. Koordinate elementa u ovom sistemu ćemo obeležavati `clientX` i `clientY`.
+
+2. Koordinatni sistem relativan u odnosu na veb stranicu (nadalje ga zovemo koordinatni sistem veb stranice). U ovom koordinatnom sistemu, za centar se smatra gornji levi ugao veb stranice. Koordinate elementa u ovom sistemu ćemo obeležavati `pageX` i `pageY`.
+
+Naredna slika ilustruje razliku između pozicija elementa u jednom i drugom koordinatnom sistemu. Kao što vidimo, prilikom skrolovanja stranice na sam početak, oba koordinatna sistema imaju isti centar, te su i koordinate elementa jednake. Međutim, prilikom skrolovanja stranice naniže, koordinate koje su relativne u odnosu na pogled veb pregledača se menjaju jer se i elementi pomeraju u odnosu na njega. Za razliku od toga, koordinate koje su relativne u odnosu na stranicu ostaju iste, jer je sada i sam centar koordinatnog sistema veb stranice pomeren zajedno sa stranicom (ovaj centar je pomeren izvan pogleda veb pregledača, što je prikazano delimičnom prozirnošću na slici).
+
+<table><tr><td>
+<img src="./Slike/koordinatni_sistemi.png" alt="Razlika između koordinatnih sistema u veb pregledaču.">
+</td></tr></table>
+
+Pojam pozicioniranja nije jedinstveno određen, već su definisana različita ponašanja za različite tipove pozicioniranja, sa kojima ćemo se upoznati u narednoj sekciji. Neki od njih pozicioniraju elemente u odnosu na koordinatni sistem veb pregledača, a neki od njih pozicioniraju elemente u odnosu na koordinatni sistem dokumenta.
+
+Ipak, ova dva koordinatna sistema imaju i dosta zajedničkih karakteristika. Neke od njih su:
+
+- Vrednosti na *x*-osi rastu sleva na desno, a opadaju zdesna na levo. 
+- Vrednosti na *y*-osi rastu odozgo na dole, a opadaju odozdo na gore.
+- Vrednosti na obema osama mogu biti pozitivne i negativne. 
+- Vrednosti na obema osama mogu biti bilo koja od dužina. Od jedinice mere za dužinu zavisi koliko će element biti pomeren.
+
+Iako je ekran veb pregledača dvodimenzionalan i svi elementi koji se prikazuju su dvodimenzionalni, postoji mogućnost da se više elemenata preklapaju jedni sa drugima. Zbog toga, uvedena je i treća koordinatna osa, *z*-osa, koja definiše dubinu na kojoj se dvodimenzionalni elementi smeštaju. Više o ovome biće reći u narednoj sekciji, ali radi kompletnosti ove sekcije, napomenimo da vrednosti na *z*-osi rastu u smeru od veb pregledača ka korisniku, dok te vrednosti opadaju u smeru od korisnika ka veb pregledaču. Naredna slika daje prikaz punog koordinatnog sistema, u odnosu na prozor veb pregledača.
+
+<table><tr><td>
+<img src="./Slike/pun_koordinatni_sistem.png" alt="Pun koordinatni sistem u veb pregledaču.">
+</td></tr></table>
 
 ## 2.7 Pozicioniranje elemenata
 
@@ -1146,7 +1175,7 @@ Naredni kod i prateća slika ilustruju upotrebu statičkog pozicioniranja. Veb p
 <img src="./Slike/static.png" alt="Primer statičkog pozicioniranja.">
 </td></tr></table>
 
-### 2.7.2. Relativno pozicioniranje
+### 2.7.2 Relativno pozicioniranje
 
 Pomenuli smo ranije da svaki tip pozicioniranja definiše šta za taj tip znači "ivica" u odnosu na koju se element pomera. Pri relativnom pozicioniranju "ivica" od koje se element pomera je ivica tog elementa pri statičkom pozicioniranju. Jednostavnije rečeno, postavljanje vrednosti za svojstva `top`, `right`, `bottom` i `left` pomeriće element u odnosu na njegovu statičku poziciju. 
 
@@ -1397,7 +1426,7 @@ Naredni kod pozicionira drugi `div` element `30px` od gornje ivice pogleda veb p
 
 Prilikom pozicioniranja elemenata, može se desiti da se neki od njih preklope. Postavlja se pitanje na koji način će ti elementi biti prikazani, tj. koji element će biti ispred kog elementa. 
 
-U skladu sa koordinatnim sistemom veb pregledača, elementu može biti dodeljena pozitivna ili negativna vrednost za *z-dubinu* (engl. *z-depth*). Element koji ima veću vrednost z-dubine biće pozicioniran ispred elemenata sa manjom vrednošću za z-dubinu. Ukoliko se dva elementa sa jednakim vrednostima za z-dubinu preklope, onda onaj element koji je poslednji pozicioniran biti ispred ostalih elemenata sa kojima se preklapa.
+U skladu sa koordinatnim sistemom, elementu može biti dodeljena pozitivna ili negativna vrednost za *z-dubinu* (engl. *z-depth*). Element koji ima veću vrednost z-dubine biće pozicioniran ispred elemenata sa manjom vrednošću za z-dubinu. Ukoliko se dva elementa sa jednakim vrednostima za z-dubinu preklope, onda onaj element koji je poslednji pozicioniran biti ispred ostalih elemenata sa kojima se preklapa.
 
 Podrazumevano svi elementi imaju z-dubinu jednaku 0. U primeru sa relativnim pozicioniranjem, drugi i treći `div` elementi se preklapaju, pri čemu se drugi `div` element nalazi ispred trećeg. Međutim, validno je postaviti pitanje zašto je drugi `div` element poslednji pozicioniran, a ne treći kad se on u HTML kodu nalazi nakon drugog elementa. Da bismo razumeli ovo ponašanje, moramo da razumemo kako veb pregledač formira veb prezentaciju.
 
@@ -1705,9 +1734,63 @@ Za više informacijama o temama koje su obrađene u ovoj sekciji, možete poseti
 [https://www.w3schools.com/cssref/pr_class_visibility.asp](https://www.w3schools.com/cssref/pr_class_visibility.asp)
 [https://www.w3schools.com/css/css_display_visibility.asp](https://www.w3schools.com/css/css_display_visibility.asp).
 
+## 2.8 Slike
+
+Veličina slike se može podesiti atributima `width` i `height`, čije su vrednosti celi brojevi koji predstavljaju veličine u pikselima. Naravno, dimenzija elementa `img` se može podesiti i u jeziku CSS, zadavanjem svojstava `width` i `height`, čije veličine mogu biti bilo koja od dužina.
+
+S obzirom da veličinu slike možemo navesti pomoću atributa elementa `img`, ali i pomoću CSS svojstava, prirodno se postavlja pitanje - šta je bolje za korišćenje? Jedan praktičan savet jeste da se koriste obe načina - sada ćemo opisati zašto. 
+
+Prilikom dohvatanja HTML dokumenta, svaki savremeni veb pregledač izgrađuje DOM stablo prilikom parsiranja dokumenta i već započinje proces prikazivanja veb stranice dok se dohvataju drugi resursi, kao što su spoljni kaskadni stilovi, slike i dr. Ukoliko veb pregledač nema informaciju o veličini slike, on će zauzeti minimalan prostor za njeno prikazivanje. U trenutku kada slika pristigne preko mreže, ukoliko je ona velikih dimenzija, nakon što je veb pregledač prikaže, ona će sada zauzeti veću površinu i ostali elementi na stranici će biti ispremeštani kako bi slika zauzela potrebnu veličinu. Ukoliko ima mnogo slika na veb stranici koje se ovako ponašaju, korisniku će ovo premeštanje okolnih elemenata izgledati haotično. Sa druge strane, ukoliko je veb pregledač već iz HTML koda dobio informaciju o veličini slike (korišćenjem atributa `width` i `height` elementa `img`), on će moći da "rezerviše" potreban prostor za sliku dok ona ne bude preuzeta i prikazana. Time se postiže mnogo lepši utisak u korisničkom iskustvu.
+
+Međutim, kao što smo rekli, atributima `width` i `height` elementa `img` se dodeljuju celi brojevi koji uvek predstavljaju piksele na ekranu. Nekada nam je neophodno da koristimo druge mere za postavljanje dimenzije slika. Takođe, uključivanjem nekog spoljnog kaskadnog lista može se desiti da se uključi pravilo koje postavlja veličinu svih slika na neku dimenziju koja nama ne odgovara, a koja će "pregaziti" vrednosti iz HTML koda. Zbog toga se takođe preporučuje korišćenje CSS svojstava `width` i `height` za dodeljivanje dimenzija slike.
+
+Naredni kodovi iz datoteka `index.html` i `img_override.css`, redom, i prateća slika ilustruju ovo ponašanje.
+
+```html
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Primer</title>
+    <meta charset="UTF-8">
+
+    <link rel="stylesheet" type="text/css" href="img_override.css">
+</head>
+
+<body>
+    <h1>Podešavanje veličine sličica</h1>
+
+    <p>
+        Slika ispod ima vrednost atributa width postavljenu na 128 piksela, 
+        ali je ta vrednost "pregažena" od strane spoljnih kaskadnih listova, 
+        koji postavljaju CSS svojstvo width svih slika na 100%.
+    </p>
+    <img src="october31.jpeg" alt="Noc Vestica - 31. oktobar" 
+         width="128" height="128">
+
+    <p>
+        Slika ispod koristi atribut style, 
+        u kojem je CSS svojstvo width postavljeno na 128 piksela. 
+        S obzirom da ovakva upotreba ima najveći prioritet, 
+        vrednost CSS svojstva width od 100% iz spoljnih kaskadnih listova je "pregažena".
+    </p>
+    <img src="october31.jpeg" alt="Noc Vestica - 31. oktobar" 
+         width="128" height="128"
+         style="width:128px; height:128px;">
+</body>
+
+</html>
+```
+
+<table><tr><td>
+<img src="./Slike/img_override.png" alt="Primer kada su spoljni kaskadni listovi narušili veličinu slike koja je postavljena u HTML kodu.">
+</td></tr></table>
+
 ---
 
 [Knjiga](../../README.md)
+
+[Vežbe](../../../README.md)
 
 <!--
 <table><tr><td>

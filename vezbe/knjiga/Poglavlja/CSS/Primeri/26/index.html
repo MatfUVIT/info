@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Primer</title>
+    <meta charset="UTF-8">
+
+    <link rel="stylesheet" type="text/css" href="img_override.css">
+</head>
+
+<body>
+    <h1>Podešavanje veličine sličica</h1>
+
+    <p>
+        Slika ispod ima vrednost atributa width postavljenu na 128 piksela,
+        ali je ta vrednost "pregažena" od strane spoljnih kaskadnih listova,
+        koji postavljaju CSS svojstvo width svih slika na 100%.
+    </p>
+    <img src="october31.jpeg" alt="Noc Vestica - 31. oktobar" 
+         width="128" height="128">
+
+    <p>
+        Slika ispod koristi atribut style,
+        u kojem je CSS svojstvo width postavljeno na 128 piksela.
+        S obzirom da ovakva upotreba ima najveći prioritet,
+        vrednost CSS svojstva width od 100% iz spoljnih kaskadnih listova je "pregažena".
+    </p>
+    <img src="october31.jpeg" alt="Noc Vestica - 31. oktobar" 
+        width="128" height="128"
+        style="width:128px; height:128px;">
+</body>
+
+</html>

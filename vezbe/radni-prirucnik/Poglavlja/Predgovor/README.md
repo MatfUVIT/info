@@ -1,3 +1,5 @@
+[Vežbe](../../../README.md)
+
 [Radni priručnik](../../README.md)
 
 # Predgovor
@@ -11,3 +13,5 @@ Ovaj materijal ne može zameniti pohađanje vežbi niti drugu preporučenu liter
 Autori
 
 [Radni priručnik](../../README.md)
+
+[Vežbe](../../../README.md)
