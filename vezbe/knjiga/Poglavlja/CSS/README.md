@@ -307,11 +307,14 @@ Naredni kod ilustruje upotrebu različitih modela boja, a na narednoj slici prik
 
 Za više informacijama o temama koje su obrađene u ovoj sekciji, možete posetiti naredne korisne veb prezentacije:
 
-- CSS imena boja: 
+- Spisak imena boja: 
 [https://www.w3schools.com/colors/colors_names.asp](https://www.w3schools.com/colors/colors_names.asp).
 
-- CSS modeli boja: 
+- Uopšteno o modelima boja: 
 [https://www.w3schools.com/cssref/css_colors_legal.asp](https://www.w3schools.com/cssref/css_colors_legal.asp).
+
+- Biranje boja u editoru VS Code:
+[https://mspoweruser.com/visual-studio-code-now-really-useful-color-picker-built/](https://mspoweruser.com/visual-studio-code-now-really-useful-color-picker-built/)
 
 ## 2.4 Stilizovanje teksta
 
@@ -570,19 +573,19 @@ Nakon navođenja ovog pravila, novouvedenu familiju fontova možemo koristiti ka
 
 Za više informacijama o temama koje su obrađene u ovoj sekciji, možete posetiti naredne korisne veb prezentacije:
 
-- CSS dužine: 
+- Uopšteno o CSS dužinama: 
 [https://www.w3schools.com/cssref/css_units.asp](https://www.w3schools.com/cssref/css_units.asp).
 
-- CSS svojstva za stilizovanje teksta: 
+- Uopšteno o CSS svojstvima za stilizovanje teksta: 
 [https://www.w3schools.com/css/css_text.asp](https://www.w3schools.com/css/css_text.asp).
 
-- CSS svojstvo za postavljanje familije fontova: 
+- Uopšteno o CSS svojstvu `font-family`: 
 [https://www.w3schools.com/css/css_font.asp](https://www.w3schools.com/css/css_font.asp).
 
-- CSS svojstvo za uvođenje korisničkih fontova: 
+- Uopšteno o CSS pravilu `@font-face`: 
 [https://www.w3schools.com/cssref/css3_pr_font-face_rule.asp](https://www.w3schools.com/cssref/css3_pr_font-face_rule.asp).
 
-- Familije fontova: 
+- Više o familijama fontova sa primerima: 
 [https://www.w3.org/Style/Examples/007/fonts.en.html](https://www.w3.org/Style/Examples/007/fonts.en.html).
 
 ## 2.5 Model kutije
@@ -1069,7 +1072,10 @@ Naredni primer i prateća slika ilustruju opisano ponašanje.
 
 Za više informacijama o temama koje su obrađene u ovoj sekciji, možete posetiti naredne korisne veb prezentacije:
 
-- Mi smo predstavili osnovni model kutije, međutim, postoji mnogo više modela kutija - i u  HTML5 i u CSS3 jeziku. Detaljniji opis svih modela kutija možete pronaći na ovoj adresi:
+- Uopšteno o CSS modelu kutije:
+[https://internetingishard.com/html-and-css/css-box-model/](https://internetingishard.com/html-and-css/css-box-model/)
+
+- Detaljniji opis svih modela kutija (u HTML i u CSS jezicima):
 [https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/The_box_model](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/The_box_model)
 
 ## 2.6 Koordinatni sistemi veb pregledača
@@ -1726,10 +1732,10 @@ Naredni kod i prateća slika ilustruju razliku između ovih svojstava. U prvom o
 
 Za više informacijama o temama koje su obrađene u ovoj sekciji, možete posetiti naredne korisne veb prezentacije:
 
-- Pozicioniranje elemenata:
+- Uopšteno o pozicioniranju elemenata:
 [https://www.w3schools.com/css/css_positioning.asp](https://www.w3schools.com/css/css_positioning.asp)
 
-- Svojstva `display` i `visibility` i njihove razlike: 
+- O svojstvima `display` i `visibility` i njihovim razlikama: 
 [https://www.w3schools.com/cssref/pr_class_display.asp](https://www.w3schools.com/cssref/pr_class_display.asp)
 [https://www.w3schools.com/cssref/pr_class_visibility.asp](https://www.w3schools.com/cssref/pr_class_visibility.asp)
 [https://www.w3schools.com/css/css_display_visibility.asp](https://www.w3schools.com/css/css_display_visibility.asp).
@@ -1785,6 +1791,494 @@ Naredni kodovi iz datoteka `index.html` i `img_override.css`, redom, i prateća 
 <table><tr><td>
 <img src="./Slike/img_override.png" alt="Primer kada su spoljni kaskadni listovi narušili veličinu slike koja je postavljena u HTML kodu.">
 </td></tr></table>
+
+## 2.9 Pozadina elemenata
+
+Korišćenjem jezika CSS možemo podesiti pozadinu elemenata na dva načina:
+
+1. Postavljanjem slike za pozadinu
+
+2. Postavljanjem gradijentne pozadine
+
+### 2.9.1 Slike kao pozadine
+
+Ukoliko nam je na raspolaganju neka slika, možemo je postaviti kao pozadinu za proizvoljni element korišćenjem svojstva `background−image`. Za vrednost ovog svojstva se postavlja lokacija slike koju navodimo kao pozadinu, korišćenjem CSS funkcije `url`.
+
+Naredni kod i prateća slika demonstriraju najjednostavniju upotrebu ovog svojstva, kada veličina pozadinske slike odgovara veličini elementa.
+
+```html
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Primer</title>
+    <meta charset="UTF-8">
+
+    <style type='text/css'>
+        #test_div {
+            height: 600px;
+            width: 900px;
+
+            background-image: url('halloween.jpeg');
+        }
+
+        #test_div p {
+            color: white;
+            text-align: center;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 50px;
+            margin: 0px;
+            padding-top: 1cm;
+        }
+    </style>
+</head>
+
+<body>
+    <div id='test_div'>
+        <p>Ready for Halloween?</p>
+    </div>
+</body>
+
+</html>
+```
+
+<table><tr><td>
+<img src="./Slike/background_image.png" alt="Primer korišćenja svojstva background-image.">
+</td></tr></table>
+
+Podrazumevano, pozadina se ponavlja horizontalno (tj. po *x*-osi) i vertikalno (tj. po *y*-osi), što je najjednostavnije videti ukoliko su dimenzije unutrašnjosti elementa veće od dimenzije slike koja se koristi kao pozadina. CSS svojstvo `background−repeat` se koristi za kontrolisanje ponavljanja. Ovo svojstvo može uzimati jednu od narednih vrednosti:
+
+- Vrednost `repeat` predstavlja već opisano podrazumevano ponašanje u kojem se pozadina ponavlja po obema osama.
+
+- Vrednost `repeat-x` predstavlja da se pozadina ponavlja samo po horizontalnoj osi.
+
+- Vrednost `repeat-y` predstavlja da se pozadina ponavlja samo vertikalnoj osi.
+
+- Vrednost `no-repeat` predstavlja da se pozadina ne ponavlja ni po jednoj osi.
+
+Ovim CSS svojstvom možemo izbeći neka neobična ponašanja, kao na primer, kada slika nije namenjena da se ponavlja po nekoj od osa, kao što je ilustrovano narednim kodom i pratećom slikom.
+
+```html
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Primer</title>
+    <meta charset="UTF-8">
+
+    <style>
+        body {
+            background-image: url("gradient_bg.png");
+        }
+    </style>
+</head>
+
+<body>
+    <h1>background-repeat: repeat; /* Podrazumevano */</h1>
+</body>
+
+</html>
+```
+
+<table><tr><td>
+<img src="./Slike/background_repeat.png" alt="Podešavanje ponavljanja pozadine elementa">
+</td></tr></table>
+
+Podrazumevano, pozicija slike koja čini pozadinu je postavljena uz gornji levi ugao elementa. Ipak, ovo podešavanje se može izmeniti korišćenjem svojstva `background−position`. On uzima dve vrednosti, jednu za horizontalnu, a drugu za vertikalnu poziciju, redom. Ove vrednosti se mogu zadati na različite načine:
+
+- Korišćenjem ključnih reči možemo definisati poziciju pozadine u odnosu na ključne "ćoškove" elementa. Za prvu vrednost možemo navesti `left`, `right` ili `center`, dok za drugu vrednost možemo navesti `top`, `center` ili `bottom`. Dakle, na ovaj način možemo zadati ukupno 9 vrednosti.
+
+- Drugi način je da navodimo dužine. Gornji levi ugao je zadat koordinatama `0 0`. Kako vrednosti rastu, to se pozadina pomera udesno po *x*-osi i nadole po *y*-osi. Specijalno, u slučaju procenata gornji levi ugao je definisan koordinatama `0% 0%`, dok je donji desni ugao definisan koordinatama `100% 100%`.
+
+Naredni kod i prateća slika ilustruju jedan primer pozicioniranja pozadinske slike za telo veb dokumenta korišćenjem opisanog svojstva.
+
+```html
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Primer</title>
+    <meta charset="UTF-8">
+
+    <style>
+        body {
+            background-image: url("halloween_card.jpg");
+            background-repeat: repeat-y;
+
+            background-position: right top;
+        }
+
+        #monospaced {
+            font-family: monospace;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Happy halloween!</h1>
+    <p id="monospaced">
+        From: ____________________ <br>
+        To: ______________________
+    </p>
+</body>
+
+</html>
+```
+
+<table><tr><td>
+<img src="./Slike/background_position.png" alt="Primer postavljanja pozadine elementa">
+</td></tr></table>
+
+Podrazumevano, veličina pozadine će biti postavljena na dimenzije slike koja se koristi za pozadinu. Ovo može predstavljati problem ukoliko se veličina slike razlikuje od veličine unutrašnjosti elementa. Ukoliko su dimenzije slike manje od dimenzija elementa, onda će slika biti ponavljana (osim ukoliko ne podesimo drugačije korišćenjem već opisanog svojstva `background-repeat`). Sa druge strane, ukoliko su dimenzije slike veće od dimenzija elementa, onda će slika biti odsečena. Ukoliko želimo da preciznije kontrolišemo veličinu pozadine, možemo koristiti svojstvo `background-size`. Ovo svojstvo može uzimati naredne vrednosti:
+
+- Vrednost `auto` definiše podrazumevano ponašanje u kojem je veličina slike u veb dokumentu ekvivalentna veličini slike na disku.
+
+- Vrednošću `cover` vršimo automatsko skaliranje slike tako da cela unutrašnjost elementa bude prekrivena pozadinskom slikom. U ovom slučaju može doći do "razvlačenja" ili odsecanja slike po nekoj ivici, u zavisnosti od veličine slike.
+
+- Vrednošću `contain` vršimo automatsko skaliranje slike tako da slika bude vidljiva u celosti u okviru unutrašnjosti elementa. Suprotno od vrednosti `cover`, postavljanjem ove vrednosti unutrašnjost elementa ne mora biti u potpunosti prekrivena, ali neće dolaziti do odsecanja slike. 
+
+- Veličinu slike možemo podesiti korišćenjem dužina. U tom slučaju navodimo dve vrednosti: prva vrednost definiše širinu pozadine, a druga definiše visinu pozadine. Specijalno, u slučaju procenata, navedene vrednosti se posmatraju u odnosu na unutrašnost elementa. Na primer, vrednosti `50% 25%` definišu da će slika zauzeti 50% širine i 25% visine unutrašnjosti elementa.
+
+Naredni kod i prateća slika ilustruju korišćenje opisanog svojstva.
+
+```html
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Primer</title>
+    <meta charset="UTF-8">
+
+    <style>
+        div {
+            background-image: url("halloween_cartoon.jpeg");
+            background-repeat: no-repeat;
+            width: 40%;
+            height: 200px;
+            border: 1px solid black;
+            position: absolute;
+        }
+
+        #halloween1 {
+            top: 0px;
+            left: 0%;
+            background-size: auto;
+        }
+
+        #halloween2 {
+            top: 0px;
+            left: 50%;
+            background-size: 350px 150px;
+        }
+
+        #halloween3 {
+            top: 225px;
+            left: 0%;
+            background-size: 90% 90%;
+        }
+
+        #halloween4 {
+            top: 225px;
+            left: 50%;
+            background-size: cover;
+        }
+
+        #halloween5 {
+            top: 450px;
+            left: 0%;
+            background-size: contain;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="halloween1"></div>
+    <div id="halloween2"></div>
+    <div id="halloween3"></div>
+    <div id="halloween4"></div>
+    <div id="halloween5"></div>
+</body>
+
+</html>
+```
+
+<table><tr><td>
+<img src="./Slike/background_size.png" alt="">
+</td></tr></table>
+
+### 2.9.2 Gradijentna pozadina
+
+CSS gradijenti omogućavaju prikazivanje ravnomerne tranzicije između dve boje ili više boja. U jeziku CSS, definisane su dve vrste gradijenata: linearni i elipsoidni gradijent. Kao što im i sama imena govore, linearni gradijent vrši tranziciju između boja po nekoj linearnoj pravoj dok elipsoidni gradijent iscrtava niz koncentričnih elipsoida po kojima se vrši tranzicija boja.
+
+Kao i u slučaju postavljanja slike za pozadinu gradijenti se postavljaju korišćenjem svojstva `background−image`. U zavisnosti od toga koja se CSS funkcija koristi kao vrednost ovog svojstva, biće postavljen linearni ili elipsoidni gradijent.
+
+Funkcija koja se koristi za definisanje linearnog gradijenta je oblika:
+```css
+linear−gradient(direction, start−color, ..., last−color)
+```
+
+Da bismo kreirali linearni gradijent, potrebno je da specifikujemo naredne elemente kao argumente funkcije `linear-gradient`:
+
+- Nagib prave u čijem pravcu se gradijent prostire (argument `direction`). Ovaj nagib možemo specifikovati korišćenjem: 
+   - Ključnih reči oblika `to right`, `to bottom right`, i sl. 
+   - Navođenjem ugla nagiba prave, na primer, `60deg`
+
+- Boje na osnovu kojih će se gradijent napraviti. Možemo navesti proizvoljan
+broj boja odvojenih karakterom `,` u bilo kom modelu boja (argumenti `start−color`, ..., `last−color`).
+
+Ukoliko želimo da preciznije definišemo prelaske iz jedne boje u drugu, možemo nakon zadavanja boje u nekom modelu, a pre navođenja karaktera `,`, zadati procenat kojim se određuje do koje tačke na pravoj treba da se pronađe ta boja u gradijentu. Na primer, ukoliko stavimo svojstvo
+
+```css
+background−image: linear−gradient(to right, black 75%, white);
+```
+
+rezultat će biti takav da će u prvih 75% gradijenta vladati crna boja, a zatim će se od 75% do kraja gradijenta vršiti prelaz do bele boje. Ovim se mogu postići neki zanimljivi efekti, na primer, pojavljivanje "štrafti".
+
+Naredni kod i prateća slika ilustruju linearni gradijent, sa i bez specifikovanja prelazaka boja.
+
+```html
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Primer</title>
+    <meta charset="UTF-8">
+
+    <style type="text/css">
+        #obican-gradijent {
+            height: 200px;
+            width: 100%;
+            background-image: linear-gradient(to bottom, #4FB2B2, #FFA3E7, #8AFFFF);
+        }
+
+        #strafte {
+            height: 200px;
+            width: 100%;
+            background-image: linear-gradient(to right, #4FB2B2 0%, #4FB2B2 25%, #FFA3E7 25%, #FFA3E7 50%, #8AFFFF 50%, #8AFFFF 100%);
+            position: relative;
+            top: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="obican-gradijent">
+    </div>
+
+    <div id="strafte">
+    </div>
+</body>
+
+</html>
+```
+
+<table><tr><td>
+<img src="./Slike/linear-gradient.png" alt="Primeri linearnih gradijenata">
+</td></tr></table>
+
+Elipsoidni gradijent je nešto složenije definisan od linearnog. Naime, elipsoidni gradijent je definisan pomoću četiri vrednosti: (1) pozicije centra, (2) krajnjeg oblika, (3) dve boje ili više boja i (4) veličine krajnjeg oblika. Na narednoj slici dat je prikaz nekih od ovih elemenata.
+
+<table><tr><td>
+<img src="./Slike/radial_gradient_definition.png" alt="">
+</td></tr></table>
+
+Elipsoidni gradijent se kreira korišćenjem CSS funkcije oblika:
+
+```css
+radial−gradient(shape size at position, start−color, ..., last−color); 
+```
+
+Da bismo kreirali kružni gradijent, potrebno je da specifikujemo naredne elemente kao argumente funkcije `radial-gradient`:
+
+- Krajnji oblika gradijenta (argument `shape`) može uzimati naredne vrednosti: 
+
+   - Vrednošću `ellipse` će se gradijent širiti po osama srazmerno širini i visini elementa. Ovo ponašanje je podrazumevano. Drugim rečima, sam gradijent je oblika elipse (poluose elipse su različitih dimenzija).
+
+   - Vrednošću `circle` se možemo osigurati da bez obzira na širinu i visinu elementa, gradijent će se prostirati u koncentričnim krugovima. Drugim rečima, sam gradijent je oblika kruga (poluose elipse su jednakih dimenzija).
+
+- Veličina krajnjeg oblika (argument `size`) može uzimati naredne vrednosti:
+   
+   - Navođenjem vrednosti `closest−side` krajnji oblik gradijenta dodiruje ivicu elementa koja je najbliža njegovom centru (ako je gradijent kružni) ili dodiruje horizontalnu i vertikalnu ivicu elementa koje su najbliže njegovom centru (ako je gradijent elipsoidni).
+   
+   - Navođenjem vrednosti `closest−corner` veličina krajnjeg oblika gradijenta je takva da on tačno dodiruje "ćošak" elementa koji je najbliži njegovom centru.
+   
+   - Navođenjem vrednosti `farthest−side` krajnji oblik gradijenta dodiruje ivicu elementa koja je najudaljenija od njegovog centra (ako je gradijent kružni) ili dodiruje horizontalnu i vertikalnu ivicu elementa koje su najudaljenije od njegovog centra (ako je gradijent elipsoidni).
+
+   - Navođenjem vrednosti `farthest−corner` veličina krajnjeg oblika gradijenta je takva da on tačno dodiruje "ćošak" elementa koji je najudaljeniji od njegovog centra. Ovo je podrazumevano ponašanje.
+
+- Pozicija centra gradijenta (argument `position`) može uzimati iste vrednosti kao svojstvo `background-position`.
+
+- Boje na osnovu kojih će se gradijent napraviti. Tačke do kojih se boje prostiru se pozicioniraju na zamišljenom virtualnom zraku koji se prostire po horizontalnoj osi od centra gradijenta. Možemo navesti proizvoljan broj boja, odvojenih karakterom `,` u bilo kom modelu boja (argumenti `start−color`, ..., `last−color`).
+
+Naredni kod i prateća slika ilustruju korišćenje nekih od opisanih vrednosti za kreiranje jednostavnih elipsoidnih gradijenata.
+
+```html
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Primer</title>
+    <meta charset="UTF-8">
+
+    <style type="text/css">
+        div {
+            position: absolute;
+            height: 200px;
+            width: 40%;
+        }
+
+        div#radijalni-ravnomerni {
+            top: 0px;
+            left: 0%;
+            background-image: radial-gradient(rgb(168, 13, 199),
+                    rgb(41, 139, 250));
+        }
+
+        div#radijalni-neravnomerni {
+            top: 0px;
+            left: 50%;
+            background-image: radial-gradient(rgb(168, 13, 199) 50%,
+                    rgb(41, 139, 250));
+        }
+
+        div#radijalni-krug {
+            top: 250px;
+            left: 0%;
+            background-image: radial-gradient(circle at 30% 50%,
+                    rgb(168, 13, 199), rgb(41, 139, 250));
+        }
+
+        div#radijalni-size1 {
+            top: 250px;
+            left: 50%;
+            background-image: radial-gradient(closest-side,
+                    rgb(168, 13, 199) 0%, rgb(168, 13, 199) 50%,
+                    rgb(41, 139, 250) 50%, rgb(41, 139, 250) 100%);
+        }
+
+        div#radijalni-size2 {
+            top: 500px;
+            left: 0%;
+            background-image: radial-gradient(farthest-corner,
+                    rgb(168, 13, 199) 0%, rgb(168, 13, 199) 50%,
+                    rgb(41, 139, 250) 50%, rgb(41, 139, 250) 100%);
+        }
+    </style>
+</head>
+
+<body>
+    <div id="radijalni-ravnomerni"></div>
+    <div id="radijalni-neravnomerni"></div>
+
+    <div id="radijalni-krug"></div>
+    <div id="radijalni-size1"></div>
+
+    <div id="radijalni-size2">
+    </div>
+</body>
+
+</html>
+```
+
+<table><tr><td>
+<img src="./Slike/radial_gradient_1.png" alt="">
+</td></tr></table>
+
+Naredni kod i prateća slika ilustruju uticaj pozicioniranja centra elipsoidnog gradijenta na njegov krajnji oblik.
+
+```html
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        .grad {
+            height: 250px;
+            width: 250px;
+            display: inline-block;
+        }
+
+        #grad1 {
+            background-image: radial-gradient(closest-side, red, yellow, black);
+        }
+
+        #grad1-pos {
+            background-image: radial-gradient(closest-side at 30% 50%, red, yellow, black);
+        }
+
+        #grad2 {
+            background-image: radial-gradient(farthest-side, red, yellow, black);
+        }
+
+        #grad2-pos {
+            background-image: radial-gradient(farthest-side at 30% 50%, red, yellow, black);
+        }
+
+        #grad3 {
+            background-image: radial-gradient(closest-corner, red, yellow, black);
+        }
+
+        #grad3-pos {
+            background-image: radial-gradient(closest-corner at 30% 50%, red, yellow, black);
+        }
+
+        #grad4 {
+            background-image: radial-gradient(farthest-corner, red, yellow, black);
+        }
+
+        #grad4-pos {
+            background-image: radial-gradient(farthest-corner at 30% 50%, red, yellow, black);
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Radial Gradients - Different size keywords and positions</h1>
+
+    <h2>closest-side:</h2>
+    <div id="grad1" class="grad"></div>
+    <div id="grad1-pos" class="grad"></div>
+
+    <h2>farthest-side:</h2>
+    <div id="grad2" class="grad"></div>
+    <div id="grad2-pos" class="grad"></div>
+
+    <h2>closest-corner:</h2>
+    <div id="grad3" class="grad"></div>
+    <div id="grad3-pos" class="grad"></div>
+
+    <h2>farthest-corner (default):</h2>
+    <div id="grad4" class="grad"></div>
+    <div id="grad4-pos" class="grad"></div>
+
+    <p><strong>Note:</strong> Internet Explorer 9 and earlier versions do not support gradients.</p>
+</body>
+
+</html>
+```
+
+<table><tr><td>
+<img src="./Slike/radial_gradient_2a.png" alt="">
+<img src="./Slike/radial_gradient_2b.png" alt="">
+</td></tr></table>
+
+### Više informacija
+
+Za više informacijama o temama koje su obrađene u ovoj sekciji, možete posetiti naredne korisne veb prezentacije:
+
+- Uopšteno o pozadinama: 
+[https://www.w3schools.com/css/css_background.asp](https://www.w3schools.com/css/css_background.asp).
+
+- Postavljanje više od jedne pozadine:
+[https://www.w3schools.com/css/css3_backgrounds.asp](https://www.w3schools.com/css/css3_backgrounds.asp)
+
+- Uopšteno o gradijentima:
+[https://www.w3schools.com/css/css3_gradients.asp](https://www.w3schools.com/css/css3_gradients.asp)
+
+- Detaljnije o elipsoidnim gradijentima:
+[https://www.webdirections.org/blog/css3-radial-gradients/](https://www.webdirections.org/blog/css3-radial-gradients/)
+[https://medium.com/@masakudamatsu/the-best-tutorial-on-css-radial-gradient-e44fec35ec2b](https://medium.com/@masakudamatsu/the-best-tutorial-on-css-radial-gradient-e44fec35ec2b)
+[https://www.impressivewebs.com/css3-radial-gradient-syntax/](https://www.impressivewebs.com/css3-radial-gradient-syntax/)
 
 ---
 
