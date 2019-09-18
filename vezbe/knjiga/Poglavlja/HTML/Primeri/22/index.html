@@ -4,57 +4,35 @@
 <head>
     <title>Primer</title>
     <meta charset="UTF-8">
+
+    <link rel="stylesheet" type="text/css" href="index.css">
 </head>
 
-<body>
-    <h1>Horoskopski znaci u godišnjim dobima</h1>
+<body id="naslov">
+    <h1>Veze u HTML jeziku</h1>
 
-    <ol>
-        <li>
-            Proleće
-            <dl>
-                <dt>Ovan</dt>
-                <dd>21. mart - 19. april</dd>
-                <dt>Bik</dt>
-                <dd>20. april - 20. maj</dd>
-                <dt>Blizanci</dt>
-                <dd>21. maj - 20. jun</dd>
-            </dl>
-        </li>
-        <li>
-            Leto
-            <dl>
-                <dt>Rak</dt>
-                <dd>21. jun - 22. jul</dd>
-                <dt>Lav</dt>
-                <dd>23. jul - 22. avgust</dd>
-                <dt>Devica</dt>
-                <dd>23. avgust - 22. septembar</dd>
-            </dl>
-        </li>
-        <li>
-            Jesen
-            <dl>
-                <dt>Vaga</dt>
-                <dd>23. septembar - 22. oktobar</dd>
-                <dt>Škorpija</dt>
-                <dd>23. oktobar - 21. novembar</dd>
-                <dt>Strelac</dt>
-                <dd>22. novembar - 21. decembar</dd>
-            </dl>
-        </li>
-        <li>
-            Zima
-            <dl>
-                <dt>Jarac</dt>
-                <dd>22. decembar - 19. januar</dd>
-                <dt>Vodolija</dt>
-                <dd>20. januar - 18. februar</dd>
-                <dt>Ribe</dt>
-                <dd>19. februar - 20. mart</dd>
-            </dl>
-        </li>
-    </ol>
+    <div>
+        <a href="./stranice/druga.html"
+           type="text/html">
+            Ovo je spoljašnja veza ka drugom dokumentu u okviru istog veb servera. Ova veza je realizovana relativnom
+            putanjom u odnosu na tekući direktorijum.
+        </a>
+    </div>
+
+    <div>
+        <a href="https://www.youtube.com/watch?v=mU6anWqZJcc" 
+           target="_blank"
+           hreflang="en">
+            Ovo je spoljašnja veza ka veb resursu u okviru drugog veb servera u odnosu na ovaj dokument. Ova veza je realizovana apsolutnom
+            putanjom u vidu URL pitanje. Dodatno, ova veza bi trebalo da se otvori u novoj kartici.
+        </a>
+    </div>
+
+    <div id="pomeri-na-dno">
+        <a href="#naslov">
+            Ako klikneš na mene, bićeš vraćen na vrh dokumenta. Ova veza predstavlja primer unutrašnje veze.
+        </a>
+    </div>
 </body>
 
 </html>

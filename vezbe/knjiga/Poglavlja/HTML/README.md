@@ -56,6 +56,10 @@ Osnovna struktura svakog HTML dokumenta data je u narednom kodu.
 </html>
 ```
 
+<a style="border: 2px solid gray; display: inline-block; padding: 15px; background-color: rgb(114, 211, 250); color: black;"
+   href="./Primeri/1/index.html"
+   target="_blank">Pogledaj primer uživo</a>
+
 Deklaracija dokumenta `<!DOCTYPE html>` predstavlja posebnu vrstu elementa kojom se definiše verzija HTML dokumenta koja se koristi. Konkretno, ovom deklaracijom navodimo da ćemo koristiti verziju 5 HTML standarda.
 
 Elementom `html` definišemo sadržaj HTML dokumenta. Svi HTML dokumenti se sastoje od dva dela:
@@ -110,11 +114,19 @@ Na primeru opisanih elemenata možemo demonstrirati ovo ponašanje. Na narednim 
 
 (A) Primer blokovskog elementa
 
+<a style="border: 2px solid gray; display: inline-block; padding: 15px; background-color: rgb(114, 211, 250); color: black;"
+   href="./Primeri/2/index.html"
+   target="_blank">Pogledaj primer uživo</a>
+
 <table><tr><td>
 <img src="./Slike/inline.png" alt="Primer prikaza jednog blokovskog elementa (A) i jednog linijskog elementa (B). Obama elementima je postavljena boja pozadine na žutu boju kako bi se  razlikovali od ostalih elemenata koji se nalaze oko njih.">
 </td></tr></table>
 
 (B) Primer linijskog elementa
+
+<a style="border: 2px solid gray; display: inline-block; padding: 15px; background-color: rgb(114, 211, 250); color: black;"
+   href="./Primeri/3/index.html"
+   target="_blank">Pogledaj primer uživo</a>
 
 ## 1.4 Elementi za grupisanje sadržaja
 
@@ -153,6 +165,10 @@ Tekst možemo istaknuti u vidu naslova koristeći blokovske elemente `<h1>` do `
 <table><tr><td>
 <img src="./Slike/naslovi.png" alt="Primer prikaza naslova h1 do h6 u Veb pregledaču.">
 </td></tr></table>
+
+<a style="border: 2px solid gray; display: inline-block; padding: 15px; background-color: rgb(114, 211, 250); color: black;"
+   href="./Primeri/4/index.html"
+   target="_blank">Pogledaj primer uživo</a>
 
 ### 1.5.2 Paragraf, novi red i separacija sadržaja
 
@@ -194,6 +210,10 @@ Quisque pharetra et purus fringilla placerat.</p>
 <img src="./Slike/paragraf.png" alt="Primeri upotrebe elementa p. Elementi su stilizovani radi prikazivanja  njihovih karakteristika kao predstavnici blokovskih elemenata.">
 </td></tr></table>
 
+<a style="border: 2px solid gray; display: inline-block; padding: 15px; background-color: rgb(114, 211, 250); color: black;"
+   href="./Primeri/5/index.html"
+   target="_blank">Pogledaj primer uživo</a>
+
 Ukoliko želimo da tekst prelomimo u novi red, potrebno je da na odgovarajućoj poziciji umetnemo samozatvarajući element `<br>`. Na narednoj slici dat je prikaz paragrafa koji je prelomljen na dva mesta - prvi put sa jednim prelomom, a drugi put sa tri preloma (koji prikazuju dve prazne linije teksta). Još jednom skrećemo pažnju da bez obzira na broj belina u tekstu, veb pregledač generiše najviše jedan karakter razmaka, kao što je prikazano na datoj slici, koja je generisana narednim delom HTML koda.
 
 ```html
@@ -218,6 +238,10 @@ Ukoliko želimo da tekst prelomimo u novi red, potrebno je da na odgovarajućoj 
 <img src="./Slike/br.png" alt="Primeri upotrebe elementa br.">
 </td></tr></table>
 
+<a style="border: 2px solid gray; display: inline-block; padding: 15px; background-color: rgb(114, 211, 250); color: black;"
+   href="./Primeri/6/index.html"
+   target="_blank">Pogledaj primer uživo</a>
+
 Standardom HTML5 je definisano ponašanje elementa `hr` kao definisanje tematske podele u HTML dokumentu, na primer, promenu teme. On se koristi ukoliko želimo da razdvojimo sadržaj ili definišemo promenu na HTML stranici. U prethodnim HTML standardima, ovaj element je služio kao horizontalna linija, te se zbog toga u većini veb pregledača danas on i prikazuje kao horizontalna linija. Ipak, njegovo značenje je danas više semantičko nego prezentaciono. Naredni kod ilustruje upotrebu ovog elementa, a njegov prikaz je dat na narednoj slici.
 
 ```html
@@ -237,6 +261,10 @@ Standardom HTML5 je definisano ponašanje elementa `hr` kao definisanje tematske
 <table><tr><td>
 <img src="./Slike/hr.png" alt="Primeri upotrebe elementa hr.">
 </td></tr></table>
+
+<a style="border: 2px solid gray; display: inline-block; padding: 15px; background-color: rgb(114, 211, 250); color: black;"
+   href="./Primeri/7/index.html"
+   target="_blank">Pogledaj primer uživo</a>
 
 ### 1.5.3 Linijski tekst
 
@@ -263,6 +291,10 @@ Element `span` definiše deo teksta, najčešće jednu reč ili deo rečenice (a
 <img src="./Slike/span.png" alt="Primeri upotrebe elementa span. Elementi su stilizovani radi prikazivanja njihovih karakteristika kao predstavnici linijskih elemenata. Boja pozadine prvog span elementa je postavljena na ljubičastu boju, a boja pozadine drugog span elementa je postavljena na crvenu boju.">
 </td></tr></table>
 
+<a style="border: 2px solid gray; display: inline-block; padding: 15px; background-color: rgb(114, 211, 250); color: black;"
+   href="./Primeri/8/index.html"
+   target="_blank">Pogledaj primer uživo</a>
+
 ### 1.5.4 Citati
 
 Citati se mogu prikazati na više načina. Na primer, linijskim elementom `q` veb pregledač obično doda znake navoda oko teksta koji predstavlja sadržaj tog elementa. Na narednoj slici dat je prikaz narednog dela HTML koda.
@@ -282,6 +314,10 @@ Citati se mogu prikazati na više načina. Na primer, linijskim elementom `q` ve
 <img src="./Slike/q.png" alt="Primeri upotrebe elementa q.">
 </td></tr></table>
 
+<a style="border: 2px solid gray; display: inline-block; padding: 15px; background-color: rgb(114, 211, 250); color: black;"
+   href="./Primeri/9/index.html"
+   target="_blank">Pogledaj primer uživo</a>
+
 Element `blockquote` se obično koristi ukoliko želimo da istaknemo neki citat. Veb pregledač će obično uvući prikaz teksta koji predstavlja citat. Element `blockquote` je predstavnik blokovskih elemenata, što je vidljivo na narednoj slici koja daje prikaz narednog dela HTML koda.
 
 ```html
@@ -299,6 +335,10 @@ Element `blockquote` se obično koristi ukoliko želimo da istaknemo neki citat.
 <table><tr><td>
 <img src="./Slike/blockquote.png" alt="Primeri upotrebe elementa blockquote.">
 </td></tr></table>
+
+<a style="border: 2px solid gray; display: inline-block; padding: 15px; background-color: rgb(114, 211, 250); color: black;"
+   href="./Primeri/10/index.html"
+   target="_blank">Pogledaj primer uživo</a>
 
 ## 1.6 Slike
 
@@ -327,6 +367,10 @@ Naredni primer i prateća slika ilustruju korišćenje elementa `img`.
 <table><tr><td>
 <img src="./Slike/img.png" alt="Primer korišćenja elementa img.">
 </td></tr></table>
+
+<a style="border: 2px solid gray; display: inline-block; padding: 15px; background-color: rgb(114, 211, 250); color: black;"
+   href="./Primeri/11/index.html"
+   target="_blank">Pogledaj primer uživo</a>
 
 ### 1.6.1 Figure i anotiranje elemenata
 
@@ -358,6 +402,10 @@ Naredni kod i prateća slika ilustruju primer korišćenja ovih elemenata.
 <table><tr><td>
 <img src="./Slike/figure.png" alt="Primer korišćenja elemenata figure i figcaption.">
 </td></tr></table>
+
+<a style="border: 2px solid gray; display: inline-block; padding: 15px; background-color: rgb(114, 211, 250); color: black;"
+   href="./Primeri/12/index.html"
+   target="_blank">Pogledaj primer uživo</a>
 
 Dajmo i dve napomene koje se tiču korišćenja ovih elemenata:
 
@@ -404,6 +452,10 @@ Naredni primer ilustruje najjednostavniju upotrebu opisanih elemenata. Kao što 
 <img src="./Slike/table.png" alt="">
 </td></tr></table>
 
+<a style="border: 2px solid gray; display: inline-block; padding: 15px; background-color: rgb(114, 211, 250); color: black;"
+   href="./Primeri/13/index.html"
+   target="_blank">Pogledaj primer uživo</a>
+
 Tabele često imaju zaglavlje koje opisuje šta svaki od elemenata te tabele predstavlja. HTML jezik podržava korišćenje zaglavlja pomoću elemenata `th` (engl. *table header*) koji se koriste umesto elemenata `td`, na isti način. Naredni kod i prateća slika ilustruju korišćenje zaglavlja nad prethodnim primerom tabele. Ono što možemo primetiti jeste da veb pregledači u ćelijama zaglavlja obično prikazuju tekst sa podebljanjem i horizontalnim poravnanjem.
 
 ```html
@@ -442,6 +494,10 @@ Tabele često imaju zaglavlje koje opisuje šta svaki od elemenata te tabele pre
 <img src="./Slike/table_zaglavlje.png" alt="">
 </td></tr></table>
 
+<a style="border: 2px solid gray; display: inline-block; padding: 15px; background-color: rgb(114, 211, 250); color: black;"
+   href="./Primeri/14/index.html"
+   target="_blank">Pogledaj primer uživo</a>
+
 Poput slika i tabele često bivaju anotirane. Za anotiranje tabele koristi se element `caption` koji, ukoliko se koristi, mora biti prvo dete elementa `table` u DOM stablu da bi dokument bio u skladu sa standardom. Za podešavanje pozicije anotacije se koristi odgovarajuće svojstvo u jeziku CSS. Naredni primer i prateća sliku ilustruju anotiranje tabela.
 
 ```html
@@ -471,7 +527,6 @@ Poput slika i tabele često bivaju anotirane. Za anotiranje tabele koristi se el
             <td>Kalciferol</td>
             <td>Masti</td>
         </tr>
-        <caption></caption>
     </table>
 </body>
 
@@ -481,6 +536,10 @@ Poput slika i tabele često bivaju anotirane. Za anotiranje tabele koristi se el
 <table><tr><td>
 <img src="./Slike/table_caption.png" alt="">
 </td></tr></table>
+
+<a style="border: 2px solid gray; display: inline-block; padding: 15px; background-color: rgb(114, 211, 250); color: black;"
+   href="./Primeri/15/index.html"
+   target="_blank">Pogledaj primer uživo</a>
 
 Kao što smo najavili, možemo organizovati podatke tako da, umesto da zauzimaju tačno jednu ćeliju, oni se prostiru kroz više redova ili kolona. Ukoliko želimo da neka ćelija zauzme površinu većeg broja redova, onda je toj ćeliji potrebno dodeliti atribut `rowspan` čija je vrednost broj redova kroz koji se ćelija prostire. Sličan pristup važi i za prostiranje kroz kolone, sa razlikom da se koristi atribut `colspan`. Međutim, ovo nije jedina stvar koju je potrebno uraditi. Da bi tabela bila validna, potrebno je iz njene HTML strukture izbaciti sve ćelije čija je pozicija "zauzeta" onim ćelijama koje se prostiru kroz više redova ili kolona.
 
@@ -551,6 +610,10 @@ Takođe, tabela je stilizovana radi preglednijeg prostiranja ćelija. Svi stilov
 <img src="./Slike/table_spanning.png" alt="">
 </td></tr></table>
 
+<a style="border: 2px solid gray; display: inline-block; padding: 15px; background-color: rgb(114, 211, 250); color: black;"
+   href="./Primeri/16/index.html"
+   target="_blank">Pogledaj primer uživo</a>
+
 ## 1.8 Liste
 
 Pored tabela, nabrajanja podataka, pojmova, kategorija i drugih stavki su takođe veoma česta u veb prezentacijama. Sva ova nabrajanja se mogu obeležiti listama u jeziku HTML. U zavisnosti od tipa nabrajanja razlikujemo tri tipa listi:
@@ -611,6 +674,10 @@ Naredni primer i prateća slika ilustruju upotrebu nenumerisanih listi. Kao što
 <img src="./Slike/ul.png" alt="">
 </td></tr></table>
 
+<a style="border: 2px solid gray; display: inline-block; padding: 15px; background-color: rgb(114, 211, 250); color: black;"
+   href="./Primeri/17/index.html"
+   target="_blank">Pogledaj primer uživo</a>
+
 ### 1.8.2 Numerisane liste
 
 *Numerisane* ili *uređene liste* (engl. *ordered list*) služe za nabrajanje stavki liste u kojima je poredak elemenata važan. Ove liste obeležavamo elementom `ol`. Za obeležavanje stavki takođe koristimo element `li`, kao i kod nenumerisanih listi.
@@ -652,6 +719,10 @@ Naredni primer i prateća slika ilustruju upotrebu numerisanih listi. Kao što v
 <img src="./Slike/ol.png" alt="">
 </td></tr></table>
 
+<a style="border: 2px solid gray; display: inline-block; padding: 15px; background-color: rgb(114, 211, 250); color: black;"
+   href="./Primeri/18/index.html"
+   target="_blank">Pogledaj primer uživo</a>
+
 Podrazumevano, nabrajanje stavki počinje brojem 1. Međutim, ovo ponašanje je pomuće izmeniti tako što se nad elementom `ol` primeni atribut `start` čija je vrednost pozicija od koje se započinje nabrajanje. Naredni primer i prateća sliku ilustruju korišćenje ovog atributa.
 
 ```html
@@ -689,6 +760,10 @@ Podrazumevano, nabrajanje stavki počinje brojem 1. Međutim, ovo ponašanje je 
 <img src="./Slike/ol_start.png" alt="">
 </td></tr></table>
 
+<a style="border: 2px solid gray; display: inline-block; padding: 15px; background-color: rgb(114, 211, 250); color: black;"
+   href="./Primeri/19/index.html"
+   target="_blank">Pogledaj primer uživo</a>
+
 ### 1.8.3 Opisne liste
 
 *Opisne liste* (engl. *description list*) služe za nabrajanje pojmova i njihovih definicija, opisa i sl. Sama lista se obeležava elementom `dl`, dok je svaka stavka predstavljena dvama elementima: `dt` obeležava sam pojam koji se opisuje (engl. *data term*), a `dd` obeležava opis tog pojma (engl. *data description*).
@@ -723,6 +798,10 @@ Naredni primer i prateća slika ilustruju korišćenje opisne liste.
 <table><tr><td>
 <img src="./Slike/dl.png" alt="">
 </td></tr></table>
+
+<a style="border: 2px solid gray; display: inline-block; padding: 15px; background-color: rgb(114, 211, 250); color: black;"
+   href="./Primeri/20/index.html"
+   target="_blank">Pogledaj primer uživo</a>
 
 ### 1.8.4 Ugnežđene liste
 
@@ -796,6 +875,10 @@ Naredni primer i prateća slika ilustruju ugnežđavanje opisnih listi u numeris
 <table><tr><td>
 <img src="./Slike/ugnezdjene_liste.png" alt="">
 </td></tr></table>
+
+<a style="border: 2px solid gray; display: inline-block; padding: 15px; background-color: rgb(114, 211, 250); color: black;"
+   href="./Primeri/21/index.html"
+   target="_blank">Pogledaj primer uživo</a>
 
 ## 1.9 Veze
 
@@ -919,7 +1002,7 @@ Sadržaj datoteke `druga.html` je:
 </html>
 ```
 
-Sadržaj datoteke `index.css` dajemo radi kompletnosti, ali napomenimo da je njegova uloga u proširivanju visine veb pregledača da bi veza, koja je pomerena na dno veb stranice bila bolje ilustrovana. Dodatno, datoteka predefiniše stil nekih elemenata kako bi bili ilustrativniji.
+Sadržaj datoteke `index.css` dajemo radi kompletnosti primera i bez namene u udubljavanju u njen sadržaj. Napomenimo da je uloga ove datoteke u proširivanju visine veb pregledača da bi veza, koja je pomerena na dno veb stranice bila bolje ilustrovana. Dodatno, datoteka predefiniše stil nekih elemenata kako bi bili ilustrativniji u prikazu uživo.
 
 ```css
 body {
@@ -940,7 +1023,7 @@ div {
 ```
 
 <a style="border: 2px solid gray; display: inline-block; padding: 15px; background-color: rgb(114, 211, 250); color: black;"
-   href="./Primeri/23/index.html"
+   href="./Primeri/22/index.html"
    target="_blank">Pogledaj primer uživo</a>
 
 ---
@@ -958,5 +1041,5 @@ div {
 <!-- 
 <a style="border: 2px solid gray; display: inline-block; padding: 15px; background-color: rgb(114, 211, 250); color: black;"
    href="./Primeri/X/index.html"
-   target="_blank">Pogledaj primer uživo</a>¨
+   target="_blank">Pogledaj primer uživo</a>
 -->
