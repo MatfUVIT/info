@@ -47,12 +47,15 @@ Osnovna struktura svakog HTML dokumenta data je u narednom kodu.
 ```html
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Naslov</title>
-        <meta charset="UTF-8">
-    </head>
-    <body>
-    </body>
+
+<head>
+    <title>Naslov</title>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+</body>
+
 </html>
 ```
 
@@ -160,7 +163,28 @@ HTML definiše nekoliko grupa elemenata za prikaz teksta. Neki od njih su:
 
 ### 1.5.1 Naslovi
 
-Tekst možemo istaknuti u vidu naslova koristeći blokovske elemente `<h1>` do `<h6>`. Oni takođe dodeljuju semantički značaj tekstu koji obeležavaju. Takođe, oni podrazumevaju i odgovarajući prikaz teksta, koji je dat na narednoj slici.
+Tekst možemo istaknuti u vidu naslova koristeći blokovske elemente `<h1>` do `<h6>`. Oni takođe dodeljuju semantički značaj tekstu koji obeležavaju. Takođe, oni podrazumevaju i odgovarajući prikaz teksta, koji je dat na narednoj slici koja prati naredni kod.
+
+```html
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Primer 4</title>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+    <h1>Heading 1</h1>
+    <h2>Heading 2</h2>
+    <h3>Heading 3</h3>
+    <h4>Heading 4</h4>
+    <h5>Heading 5</h5>
+    <h6>Heading 6</h6>
+</body>
+
+</html>
+```
 
 <table><tr><td>
 <img src="./Slike/naslovi.png" alt="Primer prikaza naslova h1 do h6 u Veb pregledaču.">
@@ -174,36 +198,48 @@ Tekst možemo istaknuti u vidu naslova koristeći blokovske elemente `<h1>` do `
 
 Pored naslova, tekst možemo obeležiti i blokovskim elementom `p` koji definiše jedan paragraf teksta. Podrazumevano, tekst obeležen ovim elementom se prostire celom širinom elementa u kojem se nalazi (kao i svaki drugi blokovski element). Tako, na primer, ukoliko se nalazi u elementu `body`, tekst će se prostirati celom širinom prozora veb pregledača.
 
-Na narednoj slici dat je prikaz HTML dela koda u nastavku, koji definiše tri paragrafa teksta. Kao što se vidi sa slike, bez obzira na broj belina u okviru teksta koji predstavlja sadržaj elementa `p`, veb pregledači prikazuju najviše jedan znaka razmaka između reči. Ovo pravilo važi u opštem slučaju, ne samo za paragraf `p`.
+Na narednoj slici dat je prikaz HTML koda u nastavku, koji definiše tri paragrafa teksta. Kao što se vidi sa slike, bez obzira na broj belina u okviru teksta koji predstavlja sadržaj elementa `p`, veb pregledači prikazuju najviše jedan znaka razmaka između reči. Ovo pravilo važi u opštem slučaju, ne samo za paragraf `p`.
 
 ```html
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam luctus enim 
-eu nulla ultricies finibus. Sed a lacus vulputate, scelerisque tellus eu, iaculis 
-justo. Curabitur aliquet velit vel odio lacinia tristique ultricies vitae odio. 
-Quisque pharetra et purus fringilla placerat.</p>
+<!DOCTYPE html>
+<html>
 
-<p>
-    Aliquam sed velit sed urna varius semper. Proin vehicula dui sed mauris 
-    rhoncus, nec molestie leo ullamcorper. Morbi ultricies interdum nisi, quis 
-    volutpat orci tempor eget. Nulla magna lectus, condimentum ac tellus id, 
-    aliquam euismod ipsum. Nunc eget egestas metus, a congue orci.
-</p>
+<head>
+    <title>Primer 5</title>
+    <meta charset="UTF-8">
+</head>
 
-<p>
-    Donec ut              vestibulum nulla, 
-  
-    nec        scelerisque lectus. Donec rhoncus,                   massa et
-  
-  
-    hendrerit euismod
-    , ex enim congue 
-  
-  
-    diam, a feugiat felis
-  
-  
-    diam id ante. Praesent dapibus orci lorem. Aliquam at elit eros.
-</p>
+<body>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam luctus enim
+        eu nulla ultricies finibus. Sed a lacus vulputate, scelerisque tellus eu, iaculis
+        justo. Curabitur aliquet velit vel odio lacinia tristique ultricies vitae odio.
+        Quisque pharetra et purus fringilla placerat.</p>
+
+    <p>
+        Aliquam sed velit sed urna varius semper. Proin vehicula dui sed mauris
+        rhoncus, nec molestie leo ullamcorper. Morbi ultricies interdum nisi, quis
+        volutpat orci tempor eget. Nulla magna lectus, condimentum ac tellus id,
+        aliquam euismod ipsum. Nunc eget egestas metus, a congue orci.
+    </p>
+
+    <p>
+        Donec ut vestibulum nulla,
+
+        nec scelerisque lectus. Donec rhoncus, massa et
+
+
+        hendrerit euismod
+        , ex enim congue
+
+
+        diam, a feugiat felis
+
+
+        diam id ante. Praesent dapibus orci lorem. Aliquam at elit eros.
+    </p>
+</body>
+
+</html>
 ```
 
 <table><tr><td>
@@ -214,24 +250,36 @@ Quisque pharetra et purus fringilla placerat.</p>
    href="./Primeri/5/index.html"
    target="_blank">Pogledaj primer uživo</a>
 
-Ukoliko želimo da tekst prelomimo u novi red, potrebno je da na odgovarajućoj poziciji umetnemo samozatvarajući element `<br>`. Na narednoj slici dat je prikaz paragrafa koji je prelomljen na dva mesta - prvi put sa jednim prelomom, a drugi put sa tri preloma (koji prikazuju dve prazne linije teksta). Još jednom skrećemo pažnju da bez obzira na broj belina u tekstu, veb pregledač generiše najviše jedan karakter razmaka, kao što je prikazano na datoj slici, koja je generisana narednim delom HTML koda.
+Ukoliko želimo da tekst prelomimo u novi red, potrebno je da na odgovarajućoj poziciji umetnemo samozatvarajući element `<br>`. Na narednoj slici dat je prikaz paragrafa koji je prelomljen na dva mesta - prvi put sa jednim prelomom, a drugi put sa tri preloma (koji prikazuju dve prazne linije teksta). Još jednom skrećemo pažnju da bez obzira na broj belina u tekstu, veb pregledač generiše najviše jedan karakter razmaka, kao što je prikazano na datoj slici, koja je generisana narednim HTML kodom.
 
 ```html
-<p>
-    For 50 years, WWF has been protecting the future of nature.
-    <br>
-    The world's leading conservation organization,
-    
-    
-    
-    
-    WWF works in 100 countries and is supported by
-    <br>
-    <br>
-    <br>
-    1.2 million members in the United States and
-    close to 5 million globally.
-</p>
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Primer 6</title>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+    <p>
+        For 50 years, WWF has been protecting the future of nature.
+        <br>
+        The world's leading conservation organization,
+
+
+
+
+        WWF works in 100 countries and is supported by
+        <br>
+        <br>
+        <br>
+        1.2 million members in the United States and
+        close to 5 million globally.
+    </p>
+</body>
+
+</html>
 ```
 
 <table><tr><td>
@@ -245,17 +293,29 @@ Ukoliko želimo da tekst prelomimo u novi red, potrebno je da na odgovarajućoj 
 Standardom HTML5 je definisano ponašanje elementa `hr` kao definisanje tematske podele u HTML dokumentu, na primer, promenu teme. On se koristi ukoliko želimo da razdvojimo sadržaj ili definišemo promenu na HTML stranici. U prethodnim HTML standardima, ovaj element je služio kao horizontalna linija, te se zbog toga u većini veb pregledača danas on i prikazuje kao horizontalna linija. Ipak, njegovo značenje je danas više semantičko nego prezentaciono. Naredni kod ilustruje upotrebu ovog elementa, a njegov prikaz je dat na narednoj slici.
 
 ```html
-<p>
-    Ovaj paragraf bi trebalo da sadrzi tekst koji govori nesto o 
-    HTML jeziku za obelezavanje teksta.
-</p>
+<!DOCTYPE html>
+<html>
 
-<hr>
+<head>
+    <title>Primer 7</title>
+    <meta charset="UTF-8">
+</head>
 
-<p>
-    Ovaj paragraf bi trebalo da sadrzi tekst koji govori nesto o 
-    CSS jeziku za stilizovanje.
-</p>
+<body>
+    <p>
+        Ovaj paragraf bi trebalo da sadrzi tekst koji govori nesto o
+        HTML jeziku za obelezavanje teksta.
+    </p>
+
+    <hr>
+
+    <p>
+        Ovaj paragraf bi trebalo da sadrzi tekst koji govori nesto o
+        CSS jeziku za stilizovanje.
+    </p>
+</body>
+
+</html>
 ```
 
 <table><tr><td>
@@ -268,23 +328,35 @@ Standardom HTML5 je definisano ponašanje elementa `hr` kao definisanje tematske
 
 ### 1.5.3 Linijski tekst
 
-Element `span` definiše deo teksta, najčešće jednu reč ili deo rečenice (ali ne nužno). Veličina elementa zavisi od veličine teksta koji se nalazi kao njegov sadržaj. Očigledno, ova karakteristika potiče od činjenice da je element `span` predstavnik linijskih elemenata. Na narednoj slici je dat prikaz narednog dela HTML koda, koji definiše dva `span` elementa u okviru paragrafa. Sa slike se jasno vidi da element `span` u oba slučaja zauzima samo onoliko prostora koliko zauzima njegov sadržaj.
+Element `span` definiše deo teksta, najčešće jednu reč ili deo rečenice (ali ne nužno). Veličina elementa zavisi od veličine teksta koji se nalazi kao njegov sadržaj. Očigledno, ova karakteristika potiče od činjenice da je element `span` predstavnik linijskih elemenata. Na narednoj slici je dat prikaz narednog HTML koda, koji definiše dva `span` elementa u okviru paragrafa. Sa slike se jasno vidi da element `span` u oba slučaja zauzima samo onoliko prostora koliko zauzima njegov sadržaj.
 
 ```html
-<p>
-    Lorem ipsum dolor sit amet, 
-    <span>
-        consectetur
-    </span> 
-    adipiscing elit. Aliquam luctus enim eu nulla ultricies finibus. 
-    Sed a lacus vulputate, scelerisque tellus eu, 
-    <span>
-        iaculis justo. Curabitur aliquet velit vel odio lacinia 
-        tristique ultricies vitae odio. Quisque pharetra et purus 
-        fringilla
-    </span> 
-    placerat.
-</p>
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Primer 8</title>
+    <meta charset="UTF-8">
+
+    <link rel="stylesheet" type="text/css" href="index.css">
+</head>
+
+<body>
+    <p>
+        Lorem ipsum dolor sit amet,
+
+        <span>consectetur</span>
+
+        adipiscing elit. Aliquam luctus enim eu nulla ultricies finibus.
+        Sed a lacus vulputate, scelerisque tellus eu,
+
+        <span>iaculis justo. Curabitur aliquet velit vel odio lacinia tristique ultricies vitae odio. Quisque pharetra et purus fringilla</span>
+        
+        placerat.
+    </p>
+</body>
+
+</html>
 ```
 
 <table><tr><td>
@@ -297,17 +369,29 @@ Element `span` definiše deo teksta, najčešće jednu reč ili deo rečenice (a
 
 ### 1.5.4 Citati
 
-Citati se mogu prikazati na više načina. Na primer, linijskim elementom `q` veb pregledač obično doda znake navoda oko teksta koji predstavlja sadržaj tog elementa. Na narednoj slici dat je prikaz narednog dela HTML koda.
+Citati se mogu prikazati na više načina. Na primer, linijskim elementom `q` veb pregledač obično doda znake navoda oko teksta koji predstavlja sadržaj tog elementa. Na narednoj slici dat je prikaz narednog HTML koda.
 
 ```html
-<p>
-    Browsers usually insert quotation marks around the q element.
-</p>
+<!DOCTYPE html>
+<html>
 
-<p>
-    WWF's goal is to: 
-    <q>Build a future where people live in harmony with nature.</q>
-</p>
+<head>
+    <title>Primer 9</title>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+    <p>
+        Browsers usually insert quotation marks around the q element.
+    </p>
+
+    <p>
+        WWF's goal is to:
+        <q>Build a future where people live in harmony with nature.</q>
+    </p>
+</body>
+
+</html>
 ```
 
 <table><tr><td>
@@ -318,18 +402,30 @@ Citati se mogu prikazati na više načina. Na primer, linijskim elementom `q` ve
    href="./Primeri/9/index.html"
    target="_blank">Pogledaj primer uživo</a>
 
-Element `blockquote` se obično koristi ukoliko želimo da istaknemo neki citat. Veb pregledač će obično uvući prikaz teksta koji predstavlja citat. Element `blockquote` je predstavnik blokovskih elemenata, što je vidljivo na narednoj slici koja daje prikaz narednog dela HTML koda.
+Element `blockquote` se obično koristi ukoliko želimo da istaknemo neki citat. Veb pregledač će obično uvući prikaz teksta koji predstavlja citat. Element `blockquote` je predstavnik blokovskih elemenata, što je vidljivo na narednoj slici koja daje prikaz narednog HTML koda.
 
 ```html
-<span>Begin quote</span>
-<blockquote cite="http://www.worldwildlife.org/who/index.html">
-    For 50 years, WWF has been protecting the future of nature.
-    The world's leading conservation organization,
-    WWF works in 100 countries and is supported by
-    1.2 million members in the United States and
-    close to 5 million globally.
-</blockquote>
-<span>End quote</span>
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Primer 10</title>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+    <span>Begin quote</span>
+    <blockquote cite="http://www.worldwildlife.org/who/index.html">
+        For 50 years, WWF has been protecting the future of nature.
+        The world's leading conservation organization,
+        WWF works in 100 countries and is supported by
+        1.2 million members in the United States and
+        close to 5 million globally.
+    </blockquote>
+    <span>End quote</span>
+</body>
+
+</html>
 ```
 
 <table><tr><td>
@@ -353,7 +449,7 @@ Naredni primer i prateća slika ilustruju korišćenje elementa `img`.
 <html>
 
 <head>
-    <title>Primer</title>
+    <title>Primer 11</title>
     <meta charset="UTF-8">
 </head>
 
@@ -383,7 +479,7 @@ Naredni kod i prateća slika ilustruju primer korišćenja ovih elemenata.
 <html>
 
 <head>
-    <title>Primer</title>
+    <title>Primer 12</title>
     <meta charset="UTF-8">
 </head>
 
@@ -426,7 +522,7 @@ Naredni primer ilustruje najjednostavniju upotrebu opisanih elemenata. Kao što 
 <html>
 
 <head>
-    <title>Primer</title>
+    <title>Primer 13</title>
     <meta charset="UTF-8">
 </head>
 
@@ -463,7 +559,7 @@ Tabele često imaju zaglavlje koje opisuje šta svaki od elemenata te tabele pre
 <html>
 
 <head>
-    <title>Primer</title>
+    <title>Primer 14</title>
     <meta charset="UTF-8">
 </head>
 
@@ -505,7 +601,7 @@ Poput slika i tabele često bivaju anotirane. Za anotiranje tabele koristi se el
 <html>
 
 <head>
-    <title>Primer</title>
+    <title>Primer 15</title>
     <meta charset="UTF-8">
 </head>
 
@@ -552,7 +648,7 @@ Takođe, tabela je stilizovana radi preglednijeg prostiranja ćelija. Svi stilov
 <html>
 
 <head>
-    <title>Primer</title>
+    <title>Primer 16</title>
     <meta charset="UTF-8">
 
     <link rel="stylesheet" type="text/css" href="index.css">
@@ -635,7 +731,7 @@ Naredni primer i prateća slika ilustruju upotrebu nenumerisanih listi. Kao što
 <html>
 
 <head>
-    <title>Primer</title>
+    <title>Primer 17</title>
     <meta charset="UTF-8">
 </head>
 
@@ -689,7 +785,7 @@ Naredni primer i prateća slika ilustruju upotrebu numerisanih listi. Kao što v
 <html>
 
 <head>
-    <title>Primer</title>
+    <title>Primer 18</title>
     <meta charset="UTF-8">
 </head>
 
@@ -730,7 +826,7 @@ Podrazumevano, nabrajanje stavki počinje brojem 1. Međutim, ovo ponašanje je 
 <html>
 
 <head>
-    <title>Primer</title>
+    <title>Primer 19</title>
     <meta charset="UTF-8">
 </head>
 
@@ -775,7 +871,7 @@ Naredni primer i prateća slika ilustruju korišćenje opisne liste.
 <html>
 
 <head>
-    <title>Primer</title>
+    <title>Primer 20</title>
     <meta charset="UTF-8">
 </head>
 
@@ -814,7 +910,7 @@ Naredni primer i prateća slika ilustruju ugnežđavanje opisnih listi u numeris
 <html>
 
 <head>
-    <title>Primer</title>
+    <title>Primer 21</title>
     <meta charset="UTF-8">
 </head>
 
@@ -936,7 +1032,7 @@ Sadržaj datoteke `index.html` je:
 <html>
 
 <head>
-    <title>Primer</title>
+    <title>Primer 22</title>
     <meta charset="UTF-8">
 
     <link rel="stylesheet" type="text/css" href="index.css">
@@ -979,7 +1075,7 @@ Sadržaj datoteke `druga.html` je:
 <html>
 
 <head>
-    <title>Primer</title>
+    <title>Primer 22</title>
     <meta charset="UTF-8">
 
     <!-- Sve relativne putanje su u odnosu na roditeljski direktorijum -->
