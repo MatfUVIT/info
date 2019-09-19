@@ -2,31 +2,63 @@
 <html>
 
 <head>
-    <title>Primer</title>
+    <title>Primer 31</title>
     <meta charset="UTF-8">
 
     <style type="text/css">
-        #obican-gradijent {
+        div {
+            position: absolute;
             height: 200px;
-            width: 100%;
-            background-image: linear-gradient(to bottom, #4FB2B2, #FFA3E7, #8AFFFF);
+            width: 40%;
         }
 
-        #strafte {
-            height: 200px;
-            width: 100%;
-            background-image: linear-gradient(to right, #4FB2B2 0%, #4FB2B2 25%, #FFA3E7 25%, #FFA3E7 50%, #8AFFFF 50%, #8AFFFF 100%);
-            position: relative;
-            top: 50px;
+        div#radijalni-ravnomerni {
+            top: 0px;
+            left: 0%;
+            background-image: radial-gradient(rgb(168, 13, 199),
+                    rgb(41, 139, 250));
+        }
+
+        div#radijalni-neravnomerni {
+            top: 0px;
+            left: 50%;
+            background-image: radial-gradient(rgb(168, 13, 199) 50%,
+                    rgb(41, 139, 250));
+        }
+
+        div#radijalni-krug {
+            top: 250px;
+            left: 0%;
+            background-image: radial-gradient(circle at 30% 50%,
+                    rgb(168, 13, 199), rgb(41, 139, 250));
+        }
+
+        div#radijalni-size1 {
+            top: 250px;
+            left: 50%;
+            background-image: radial-gradient(closest-side,
+                    rgb(168, 13, 199) 0%, rgb(168, 13, 199) 50%,
+                    rgb(41, 139, 250) 50%, rgb(41, 139, 250) 100%);
+        }
+
+        div#radijalni-size2 {
+            top: 500px;
+            left: 0%;
+            background-image: radial-gradient(farthest-corner,
+                    rgb(168, 13, 199) 0%, rgb(168, 13, 199) 50%,
+                    rgb(41, 139, 250) 50%, rgb(41, 139, 250) 100%);
         }
     </style>
 </head>
 
 <body>
-    <div id="obican-gradijent">
-    </div>
+    <div id="radijalni-ravnomerni"></div>
+    <div id="radijalni-neravnomerni"></div>
 
-    <div id="strafte">
+    <div id="radijalni-krug"></div>
+    <div id="radijalni-size1"></div>
+
+    <div id="radijalni-size2">
     </div>
 </body>
 

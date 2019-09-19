@@ -2,32 +2,34 @@
 <html>
 
 <head>
-    <title>Primer</title>
+    <title>Primer 27</title>
     <meta charset="UTF-8">
 
-    <style type='text/css'>
-        #test_div {
-            height: 600px;
-            width: 900px;
-
-            background-image: url('halloween.jpeg');
+    <style>
+        #bg-1,
+        #bg-2 {
+            display: inline-block;
+            width: 40%;
+            height: 450px;
+            border: 1px solid black;
+            background-image: url("gradient_bg.png");
         }
 
-        #test_div p {
-            color: white;
-            text-align: center;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            font-size: 50px;
-            margin: 0px;
-            padding-top: 1cm;
+        #bg-1 {
+            /* Podrazumevano ponašanje */
+            background-repeat: repeat;
+        }
+
+        #bg-2 {
+            /* Ponavljanje samo po x-osi */
+            background-repeat: repeat-x;
         }
     </style>
 </head>
 
 <body>
-    <div id='test_div'>
-        <p>Ready for Halloween?</p>
-    </div>
+    <div id="bg-1">background-repeat: repeat;</div>
+    <div id="bg-2">background-repeat: repeat-x;</div>
 </body>
 
 </html>
