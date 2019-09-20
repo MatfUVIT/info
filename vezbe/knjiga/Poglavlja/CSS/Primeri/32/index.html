@@ -2,64 +2,70 @@
 <html>
 
 <head>
-    <title>Primer</title>
+    <title>Primer 32</title>
     <meta charset="UTF-8">
 
-    <style type="text/css">
-        div {
-            position: absolute;
-            height: 200px;
-            width: 40%;
+    <style>
+        .grad {
+            height: 250px;
+            width: 250px;
+            display: inline-block;
         }
 
-        div#radijalni-ravnomerni {
-            top: 0px;
-            left: 0%;
-            background-image: radial-gradient(rgb(168, 13, 199),
-                    rgb(41, 139, 250));
+        #grad1 {
+            background-image: radial-gradient(closest-side, red, yellow, black);
         }
 
-        div#radijalni-neravnomerni {
-            top: 0px;
-            left: 50%;
-            background-image: radial-gradient(rgb(168, 13, 199) 50%,
-                    rgb(41, 139, 250));
+        #grad1-pos {
+            background-image: radial-gradient(closest-side at 30% 50%, red, yellow, black);
         }
 
-        div#radijalni-krug {
-            top: 250px;
-            left: 0%;
-            background-image: radial-gradient(circle at 30% 50%,
-                    rgb(168, 13, 199), rgb(41, 139, 250));
+        #grad2 {
+            background-image: radial-gradient(farthest-side, red, yellow, black);
         }
 
-        div#radijalni-size1 {
-            top: 250px;
-            left: 50%;
-            background-image: radial-gradient(closest-side,
-                    rgb(168, 13, 199) 0%, rgb(168, 13, 199) 50%,
-                    rgb(41, 139, 250) 50%, rgb(41, 139, 250) 100%);
+        #grad2-pos {
+            background-image: radial-gradient(farthest-side at 30% 50%, red, yellow, black);
         }
 
-        div#radijalni-size2 {
-            top: 500px;
-            left: 0%;
-            background-image: radial-gradient(farthest-corner,
-                    rgb(168, 13, 199) 0%, rgb(168, 13, 199) 50%,
-                    rgb(41, 139, 250) 50%, rgb(41, 139, 250) 100%);
+        #grad3 {
+            background-image: radial-gradient(closest-corner, red, yellow, black);
+        }
+
+        #grad3-pos {
+            background-image: radial-gradient(closest-corner at 30% 50%, red, yellow, black);
+        }
+
+        #grad4 {
+            background-image: radial-gradient(farthest-corner, red, yellow, black);
+        }
+
+        #grad4-pos {
+            background-image: radial-gradient(farthest-corner at 30% 50%, red, yellow, black);
         }
     </style>
 </head>
 
 <body>
-    <div id="radijalni-ravnomerni"></div>
-    <div id="radijalni-neravnomerni"></div>
+    <h1>Radial Gradients - Different size keywords and positions</h1>
 
-    <div id="radijalni-krug"></div>
-    <div id="radijalni-size1"></div>
+    <h2>closest-side:</h2>
+    <div id="grad1" class="grad"></div>
+    <div id="grad1-pos" class="grad"></div>
 
-    <div id="radijalni-size2">
-    </div>
+    <h2>farthest-side:</h2>
+    <div id="grad2" class="grad"></div>
+    <div id="grad2-pos" class="grad"></div>
+
+    <h2>closest-corner:</h2>
+    <div id="grad3" class="grad"></div>
+    <div id="grad3-pos" class="grad"></div>
+
+    <h2>farthest-corner (default):</h2>
+    <div id="grad4" class="grad"></div>
+    <div id="grad4-pos" class="grad"></div>
+
+    <p><strong>Note:</strong> Internet Explorer 9 and earlier versions do not support gradients.</p>
 </body>
 
 </html>

@@ -2,34 +2,30 @@
 <html>
 
 <head>
-    <title>Primer</title>
+    <title>Primer 28</title>
     <meta charset="UTF-8">
 
     <style>
-        #bg-1,
-        #bg-2 {
-            display: inline-block;
-            width: 40%;
-            height: 450px;
-            border: 1px solid black;
-            background-image: url("gradient_bg.png");
+        body {
+            background-image: url("halloween_card.jpg");
+            background-repeat: repeat-y;
+
+            background-position: right top;
         }
 
-        #bg-1 {
-            /* Podrazumevano ponašanje */
-            background-repeat: repeat;
-        }
-
-        #bg-2 {
-            /* Ponavljanje samo po x-osi */
-            background-repeat: repeat-x;
+        #monospaced {
+            font-family: monospace;
+            font-size: 18px;
         }
     </style>
 </head>
 
 <body>
-    <div id="bg-1">background-repeat: repeat;</div>
-    <div id="bg-2">background-repeat: repeat-x;</div>
+    <h1>Happy halloween!</h1>
+    <p id="monospaced">
+        From: ____________________ <br>
+        To: ______________________
+    </p>
 </body>
 
 </html>

@@ -98,7 +98,7 @@ Naredni kod prikazuje HTML datoteku `index.html` i CSS datoteku `index.css` koja
 
 <head>
     <meta charset="UTF-8">
-    <title>Primer</title>
+    <title>Primer 1</title>
     <link rel="stylesheet" type="text/css" href="index.css">
     <style>
         p#id2,
@@ -137,6 +137,10 @@ p#id3 {
 <img src="./Slike/preklapanje1.png" alt="Primer preklapanja stilova usled primenjivanja istog pravila iz različitih izvora.">
 </td></tr></table>
 
+<a style="border: 2px solid gray; display: inline-block; padding: 15px; background-color: rgb(114, 211, 250); color: black;"
+   href="./Primeri/1/index.html"
+   target="_blank">Pogledaj primer uživo</a>
+
 Međutim, da bi ovo pravilo bilo ispunjeno, potrebno je obratiti pažnju na redosled elemenata `style` i `link` u zaglavlju HTML dokumenta. Na primer, pretpostavimo da eksterna CSS datoteka `plavi_naslov.css` definiše da naslov `h1` treba biti obojen u plavu boju. Takođe, neka je dat element `style` u zaglavlju sa pravilom koji definiše da naslov `h1` treba biti obojen u narandžastu boju. Na narednoj slici dati su rezultati kada se element `style` navede nakon elementa `link` (slika A) i kada se element `link` navede nakon elementa `style` (slika B).
 
 <table><tr><td>
@@ -155,7 +159,7 @@ Da bismo razumeli kako ovo pravilo funkcioniše, moramo da precizno razumemo kak
 
 Slično pitanje se može postaviti posmatranjem nešto drugačijeg problema. Pre nego što opišemo problem, uvedimo nekoliko novih termina. Kažemo da je selektor `A` *širi* od selektora `B` ukoliko on obuhvata sve elemente koje obuhvata i selektor `B`, ali obuhvata i neke dodatne elemente uz hijerarhiju DOM stabla. U ovoj situaciji, takođe kažemo da je selektor `B` *specifičniji* od selektora `A`. Sada možemo uvesti naredni problem:
 
-> Neka postoje dva pravila sa selektorima `A` i `B` koja definišu istu deklaraciju, ali sa različitom vrednošću. Takođe, neka je selektor `A` širi od selektora `B` (`B` je specifičniji selektor od selektora `B`). Pitanje koje se može postaviti jeste koji će od data dva stila biti primenjen nad elementima koji su selektovani selektorom `B`?
+> Neka postoje dva pravila sa selektorima `A` i `B` koja definišu istu deklaraciju, ali sa različitom vrednošću. Takođe, neka je selektor `A` širi od selektora `B` (`B` je specifičniji selektor od selektora `A`). Pitanje koje se može postaviti jeste koji će od data dva stila biti primenjen nad elementima koji su selektovani selektorom `B`?
 
 Instanca ovog problema bi bila ako se, na primer, nad celim telom dokumenta definiše da svi paragrafi budu obojeni crvenom bojom, a zatim se posebno definiše za jedan paragraf da je obojen plavom bojom. Da li će taj paragraf biti obojen crvenom ili plavom bojom?
 
@@ -167,7 +171,7 @@ Opisana situacija se može rešiti pravilima koja važe u slučaju *preklapanja 
 
 <head>
     <meta charset="UTF-8">
-    <title>Primer</title>
+    <title>Primer 2</title>
     <style>
         /* Prvo pravilo je specificnije u DOM stablu od drugog, 
         te se zato ono primenjuje na treci paragraf,
@@ -204,6 +208,10 @@ Opisana situacija se može rešiti pravilima koja važe u slučaju *preklapanja 
 <img src="./Slike/preklapanje2.png" alt="Primer preklapanja stilova usled primenjivanja istog pravila na različitim nivoima hijerarhije DOM stabla.">
 </td></tr></table>
 
+<a style="border: 2px solid gray; display: inline-block; padding: 15px; background-color: rgb(114, 211, 250); color: black;"
+   href="./Primeri/2/index.html"
+   target="_blank">Pogledaj primer uživo</a>
+
 Ipak, postoji način da se forsira određeni stil bez obzira na ova pravila, a to je navođenjem ključne reči `!important` u okviru CSS deklaracije, pre karaktera za kraj deklaracije (`;`). Korišćenjem ove ključne reči, navedena deklaracija će uvek imati prednost nad svim ostalima. Naredni kod predstavlja izmenjeni prethodni primer, u kojem je drugom pravilu dodeljena ključna reč `!important`, čime se prethodni efekat poništava i treći paragraf ipak biva obojen crvenom bojom, kao što je vidljivo na narednoj slici.
 
 ```html
@@ -212,7 +220,7 @@ Ipak, postoji način da se forsira određeni stil bez obzira na ova pravila, a t
 
 <head>
     <meta charset="UTF-8">
-    <title>Primer</title>
+    <title>Primer 3</title>
     <style>
         /* Prvo pravilo */
         p#paragraf {
@@ -245,6 +253,10 @@ Ipak, postoji način da se forsira određeni stil bez obzira na ova pravila, a t
 <img src="./Slike/preklapanje3.png" alt="Primer korišćenja ključne reči !important.">
 </td></tr></table>
 
+<a style="border: 2px solid gray; display: inline-block; padding: 15px; background-color: rgb(114, 211, 250); color: black;"
+   href="./Primeri/3/index.html"
+   target="_blank">Pogledaj primer uživo</a>
+
 ## 2.3 Rad sa bojama
 
 U CSS jeziku, za dodeljivanje boje elementu možemo koristiti sledeća dva svojstva:
@@ -269,7 +281,7 @@ Naredni kod ilustruje upotrebu različitih modela boja, a na narednoj slici prik
 
 <head>
     <meta charset="UTF-8">
-    <title>Primer</title>
+    <title>Primer 4</title>
     <style>
         p#p1 {
             /* Zadavanje boje preko imena */
@@ -302,6 +314,10 @@ Naredni kod ilustruje upotrebu različitih modela boja, a na narednoj slici prik
 <table><tr><td>
 <img src="./Slike/boje.png" alt="Primer korišćenja različitih modela boja.">
 </td></tr></table>
+
+<a style="border: 2px solid gray; display: inline-block; padding: 15px; background-color: rgb(114, 211, 250); color: black;"
+   href="./Primeri/4/index.html"
+   target="_blank">Pogledaj primer uživo</a>
 
 ### Više informacija
 
@@ -357,7 +373,7 @@ Naredni kod demonstrira upotrebu opisanih svojstava i dužina. Na narednoj slici
 
 <head>
     <meta charset="UTF-8">
-    <title>Primer</title>
+    <title>Primer 5</title>
     <style>
         p#p2 {
             font-size: 2em;
@@ -443,6 +459,10 @@ Naredni kod demonstrira upotrebu opisanih svojstava i dužina. Na narednoj slici
 <img src="./Slike/tekst_stilovi.png" alt="Primer korišćenja različitih svojstava za stilizovanje teksta i dužina.">
 </td></tr></table>
 
+<a style="border: 2px solid gray; display: inline-block; padding: 15px; background-color: rgb(114, 211, 250); color: black;"
+   href="./Primeri/5/index.html"
+   target="_blank">Pogledaj primer uživo</a>
+
 ### 2.4.1 Rad sa fontovima
 
 Pored stilizovanja izgleda teksta raznim svojstvima koje smo prethodno demonstrirali, moguće je postavljanje familije fonta teksta. *Familija fontova* (engl. *font family*) definiše generalni izgled svakog karaktera. Ugrubo, sve familije fontova se mogu podeliti u narednih pet grupa:
@@ -477,7 +497,7 @@ Naredni kod ilustruje upotrebu različitih familija fontova i njegov prikaz u ve
 
 <head>
     <meta charset="UTF-8">
-    <title>Primer</title>
+    <title>Primer 6</title>
     <style>
         p#p1 {
             font-size: 1.5em;
@@ -518,6 +538,10 @@ Naredni kod ilustruje upotrebu različitih familija fontova i njegov prikaz u ve
 <img src="./Slike/font_family.png" alt="Primer navođenja familija fontova za tekstualni sadržaj.">
 </td></tr></table>
 
+<a style="border: 2px solid gray; display: inline-block; padding: 15px; background-color: rgb(114, 211, 250); color: black;"
+   href="./Primeri/6/index.html"
+   target="_blank">Pogledaj primer uživo</a>
+
 #### Dodavanje korisničkih fontova
 
 Nekada želimo da tekst bude prikazan u familiji fontova koja nije dostupna veb pregledaču. Jedan način jeste da instaliramo željenu familiju fontova na operativnim sistemima svih uređaja na kojima će dokument biti prikazan. Očigledno, ovaj proces je zamoran i gotovo uvek nemoguć.
@@ -541,7 +565,7 @@ Nakon navođenja ovog pravila, novouvedenu familiju fontova možemo koristiti ka
 
 <head>
     <meta charset="UTF-8">
-    <title>Primer</title>
+    <title>Primer 7</title>
     <style>
         @font-face {
             font-family: 'Ants Valley';
@@ -568,6 +592,10 @@ Nakon navođenja ovog pravila, novouvedenu familiju fontova možemo koristiti ka
 <table><tr><td>
 <img src="./Slike/font_face.png" alt="Primer uvođenja i korišćenja korisnički-definisane familije fontova.">
 </td></tr></table>
+
+<a style="border: 2px solid gray; display: inline-block; padding: 15px; background-color: rgb(114, 211, 250); color: black;"
+   href="./Primeri/7/index.html"
+   target="_blank">Pogledaj primer uživo</a>
 
 ### Više informacija
 
@@ -622,10 +650,11 @@ Naredni kod ilustruje upotrebu ovih svojstava u promeni veličine sadržaja za b
 ```html
 <!DOCTYPE html>
 <html>
+
 <head>
-    <title>Primer</title>
+    <title>Primer 8</title>
     <meta charset="UTF-8">
-    
+
     <style type="text/css">
         div {
             height: 200px;
@@ -634,11 +663,13 @@ Naredni kod ilustruje upotrebu ovih svojstava u promeni veličine sadržaja za b
         }
     </style>
 </head>
+
 <body>
     <div>
         Ovaj div element ima visinu od 200px i sirinu od 50%.
     </div>
 </body>
+
 </html>
 ```
 
@@ -646,13 +677,17 @@ Naredni kod ilustruje upotrebu ovih svojstava u promeni veličine sadržaja za b
 <img src="./Slike/block_sirina_visina.png" alt="Blokovskim elementima je moguće promeniti širinu i visinu sadržaja.">
 </td></tr></table>
 
+<a style="border: 2px solid gray; display: inline-block; padding: 15px; background-color: rgb(114, 211, 250); color: black;"
+   href="./Primeri/8/index.html"
+   target="_blank">Pogledaj primer uživo</a>
+
 Kada su linijski elementi u pitanju, površina njihovog sadržaja zavisi isključivo od površine samog sadržaja koji se prikazuje u okviru njih. Na linijske elemente nije moguće uticati svojstvima `width` i `height`. Naredni kod ilustruje ovo ponašanje, a na narednoj slici je dat njegov prikaz u veb pregledaču.
 
 ```html
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Primer</title>
+    <title>Primer 9</title>
     <meta charset="UTF-8">
     
     <style type="text/css">
@@ -675,6 +710,10 @@ Kada su linijski elementi u pitanju, površina njihovog sadržaja zavisi isklju�
 <img src="./Slike/box_model_inline.png" alt="CSS svojstva width i height ne utiču na veličinu sadržaja linijskih elemenata.">
 </td></tr></table>
 
+<a style="border: 2px solid gray; display: inline-block; padding: 15px; background-color: rgb(114, 211, 250); color: black;"
+   href="./Primeri/9/index.html"
+   target="_blank">Pogledaj primer uživo</a>
+
 ### 2.5.2 Punjenje elementa
 
 Punjenje elementa možemo zadati u jeziku CSS pomoću svojstva `padding` koje istovremeno podešava gornje, desno, donje i levo punjenje, tim redosledom. Međutim, ukoliko želimo da specifikujemo zasebnu veličinu punjenja na nekoj strani, možemo iskoristiti neko od svojstava `padding-top`, `padding-right`, `padding-bottom` ili `padding-left`. Vrednosti za sva opisana svojstva su dužine. Podrazumevana vrednost je `0`.
@@ -685,7 +724,7 @@ Naredni HTML kod i prateća slika ilustruju postavljanje punjenja za svaku stran
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Primer</title>
+    <title>Primer 10</title>
     <meta charset="UTF-8">
     
     <style type="text/css">
@@ -710,6 +749,10 @@ Naredni HTML kod i prateća slika ilustruju postavljanje punjenja za svaku stran
 <img src="./Slike/block_padding.png" alt="Ukupna veličina elementa div se povećala zbog postojanja punjenja. Sam sadržaj zauzima podrazumevanu veličinu za blokovske elemente.">
 </td></tr></table>
 
+<a style="border: 2px solid gray; display: inline-block; padding: 15px; background-color: rgb(114, 211, 250); color: black;"
+   href="./Primeri/10/index.html"
+   target="_blank">Pogledaj primer uživo</a>
+
 Punjenje proizvodi isti efekat i za linijske i za blokovske elemente.
 
 ### 2.5.3 Ivica elementa
@@ -731,7 +774,7 @@ Naredni HTML kod i prateća slika ilustruju podešavanje stila ivica. Podešena 
 <html>
 
 <head>
-    <title>Primer</title>
+    <title>Primer 11</title>
     <meta charset="UTF-8">
 
     <style type="text/css">
@@ -807,6 +850,10 @@ Naredni HTML kod i prateća slika ilustruju podešavanje stila ivica. Podešena 
 <img src="./Slike/ivica_stilovi.png" alt="Različiti stilovi ivice postignuti korišćenjem svojstva border-style.">
 </td></tr></table>
 
+<a style="border: 2px solid gray; display: inline-block; padding: 15px; background-color: rgb(114, 211, 250); color: black;"
+   href="./Primeri/11/index.html"
+   target="_blank">Pogledaj primer uživo</a>
+
 Ono što je veoma važno napomenuti jeste da nijedna od preostalih svojstava koja se tiču ivice - širina i boja - neće proizvesti efekat ukoliko svojstvo za stil nije takođe postavljeno.
 
 #### Širina ivice 
@@ -838,7 +885,7 @@ Naredni HTML kod i prateća slika ilustruju podešavanje ivica svojstvom `border
 <html>
 
 <head>
-    <title>Primer</title>
+    <title>Primer 12</title>
     <meta charset="UTF-8">
 
     <style type="text/css">
@@ -864,6 +911,10 @@ Naredni HTML kod i prateća slika ilustruju podešavanje ivica svojstvom `border
 <img src="./Slike/border.png" alt="Sve detalje ivice elementa je moguće podesiti svojstvom border za sve ivice, odnosno nekim od border-top, border-right, border-bottom ili border-left za samo jednu ivicu.">
 </td></tr></table>
 
+<a style="border: 2px solid gray; display: inline-block; padding: 15px; background-color: rgb(114, 211, 250); color: black;"
+   href="./Primeri/12/index.html"
+   target="_blank">Pogledaj primer uživo</a>
+
 ### 2.5.4 Svojstvo `border-radius`
 
 Još jedno korisno svojstvo za upravljanje površinom unutrašnjosti elementa jeste svojstvo `border-radius`. Ovo svojstvo služi za kontrolu zakrivljenosti ćoškova pravougaonika kojim je element predstavljen. Moguće vrednosti su neke od dužina. 
@@ -877,7 +928,7 @@ Naredni kod i prateća slika ilustruju upotrebu ovog svojstva.
 <html>
 
 <head>
-    <title>Primer</title>
+    <title>Primer 13</title>
     <meta charset="UTF-8">
 
     <style type="text/css">
@@ -919,6 +970,10 @@ Naredni kod i prateća slika ilustruju upotrebu ovog svojstva.
 <img src="./Slike/border_radius.png" alt="Ćoškove unutrašnjosti elementa je moguće zakriviti svojstvom border-radius.">
 </td></tr></table>
 
+<a style="border: 2px solid gray; display: inline-block; padding: 15px; background-color: rgb(114, 211, 250); color: black;"
+   href="./Primeri/13/index.html"
+   target="_blank">Pogledaj primer uživo</a>
+
 ### 2.5.5 Pojas elementa
 
 Do sada opisani elementi čine unutrašnjost HTML elemenata. CSS svojstvo `margin` se koristi za podešavanje površine prostora oko elementa, tj. oko njegove ivice. Pojas elementa se obično koristi ukoliko želimo da osiguramo da HTML elementi budu odvojeni jedni od drugih. 
@@ -932,7 +987,7 @@ Naredni primer ilustruje upotrebu margina nad paragrafom koji je smešten kao sa
 <html>
 
 <head>
-    <title>Primer</title>
+    <title>Primer 14</title>
     <meta charset="UTF-8">
 
     <style>
@@ -970,6 +1025,10 @@ Naredni primer ilustruje upotrebu margina nad paragrafom koji je smešten kao sa
 <img src="./Slike/block_margin.png" alt="Svojsvom margin podešavamo površinu pojasa oko elementa.">
 </td></tr></table>
 
+<a style="border: 2px solid gray; display: inline-block; padding: 15px; background-color: rgb(114, 211, 250); color: black;"
+   href="./Primeri/14/index.html"
+   target="_blank">Pogledaj primer uživo</a>
+
 #### Horizontalno poravnanje elemenata pomoću svojstva `margin`
 
 Jedan zanimljiv efekat koji se može postići pomoću svojstva `margin` jeste da se element horizontalno poravna, u odnosu na širinu roditeljskog elementa koji ga sadrži. Postavljanjem deklaracije `margin: auto;`, element će prvo zauzeti odgovarajući prostor svojom širinom, a zatim će se preostali horizontalni prostor podeliti na dva jednaka dela i te dve površine će biti postavljene za levi i desni pojas elementa.
@@ -981,7 +1040,7 @@ Naredni primer i prateća slika ilustruju opisano ponašanje.
 <html>
 
 <head>
-    <title>Primer</title>
+    <title>Primer 15</title>
     <meta charset="UTF-8">
 
     <style>
@@ -1014,6 +1073,10 @@ Naredni primer i prateća slika ilustruju opisano ponašanje.
 <img src="./Slike/margin_auto.png" alt="Elemente možemo horizontalno poravnati postavljanjem svojstva margin na vrednost auto.">
 </td></tr></table>
 
+<a style="border: 2px solid gray; display: inline-block; padding: 15px; background-color: rgb(114, 211, 250); color: black;"
+   href="./Primeri/15/index.html"
+   target="_blank">Pogledaj primer uživo</a>
+
 #### Linijski elementi i svojstvo `margin` 
 
 Za razliku od blokovskih elemenata, linijski elementi imaju specifično ponašanje kada se na njih primeni svojstvo `margin`. Naime, na njih nemaju uticaja vrednosti koje su postavljene za gornji i donji pojas, ali vrednosti postavljene za levi i desni pojas se očekivano primenjuju.
@@ -1025,7 +1088,7 @@ Naredni primer i prateća slika ilustruju opisano ponašanje.
 <html>
 
 <head>
-    <title>Primer</title>
+    <title>Primer 16</title>
     <meta charset="UTF-8">
 
     <style>
@@ -1067,6 +1130,10 @@ Naredni primer i prateća slika ilustruju opisano ponašanje.
 <table><tr><td>
 <img src="./Slike/inline_margin.png" alt="Linijski elementi nemaju gornji i donji pojas, ali imaju levi i desni pojas.">
 </td></tr></table>
+
+<a style="border: 2px solid gray; display: inline-block; padding: 15px; background-color: rgb(114, 211, 250); color: black;"
+   href="./Primeri/16/index.html"
+   target="_blank">Pogledaj primer uživo</a>
 
 ### Više informacija
 
@@ -1141,7 +1208,7 @@ Naredni kod i prateća slika ilustruju upotrebu statičkog pozicioniranja. Veb p
 <html>
 
 <head>
-    <title>Primer</title>
+    <title>Primer 17</title>
     <meta charset="UTF-8">
 
     <style>
@@ -1181,6 +1248,10 @@ Naredni kod i prateća slika ilustruju upotrebu statičkog pozicioniranja. Veb p
 <img src="./Slike/static.png" alt="Primer statičkog pozicioniranja.">
 </td></tr></table>
 
+<a style="border: 2px solid gray; display: inline-block; padding: 15px; background-color: rgb(114, 211, 250); color: black;"
+   href="./Primeri/17/index.html"
+   target="_blank">Pogledaj primer uživo</a>
+
 ### 2.7.2 Relativno pozicioniranje
 
 Pomenuli smo ranije da svaki tip pozicioniranja definiše šta za taj tip znači "ivica" u odnosu na koju se element pomera. Pri relativnom pozicioniranju "ivica" od koje se element pomera je ivica tog elementa pri statičkom pozicioniranju. Jednostavnije rečeno, postavljanje vrednosti za svojstva `top`, `right`, `bottom` i `left` pomeriće element u odnosu na njegovu statičku poziciju. 
@@ -1194,7 +1265,7 @@ Naredni kod predstavlja izmenu prethodnog koda u kojem je promenjen samo tip poz
 <html>
 
 <head>
-    <title>Primer</title>
+    <title>Primer 18</title>
     <meta charset="UTF-8">
 
     <style>
@@ -1234,6 +1305,10 @@ Naredni kod predstavlja izmenu prethodnog koda u kojem je promenjen samo tip poz
 <img src="./Slike/relative.png" alt="Primer relativnog pozicioniranja.">
 </td></tr></table>
 
+<a style="border: 2px solid gray; display: inline-block; padding: 15px; background-color: rgb(114, 211, 250); color: black;"
+   href="./Primeri/18/index.html"
+   target="_blank">Pogledaj primer uživo</a>
+
 ### 2.7.3 Apsolutno pozicioniranje
 
 Apsolutno pozicioniranje je najzahtevnije za razumevanje od svih tipova pozicioniranja. Pri apsolutnom pozicioniranju "ivica" od koje se element pomera je ivica prvog pretka tog elementa u DOM stablu koji nije statički pozicioniran. Ukoliko ne postoji predak koji zadovoljava taj uslov, onda se za "ivicu" smatra ivica elementa `body`.
@@ -1245,7 +1320,7 @@ U skladu sa ovom složenom definicijom postoje dva slučaja koja možemo razmatr
 <html>
 
 <head>
-    <title>Primer</title>
+    <title>Primer 19</title>
     <meta charset="UTF-8">
 
     <style>
@@ -1294,6 +1369,10 @@ U skladu sa ovom složenom definicijom postoje dva slučaja koja možemo razmatr
 <img src="./Slike/absolute_body.png" alt="Primer relativnog pozicioniranja elementa čiji su svi preci statički pozicionirani.">
 </td></tr></table>
 
+<a style="border: 2px solid gray; display: inline-block; padding: 15px; background-color: rgb(114, 211, 250); color: black;"
+   href="./Primeri/19/index.html"
+   target="_blank">Pogledaj primer uživo</a>
+
 Međutim, šta ukoliko bi omotač bio nestatički pozicioniran? Ukoliko postavimo da omotač bude, na primer, relativno pozicioniran kao u narednom kodu, onda ćemo dobiti situaciju kao na narednoj slici. Sada drugi `div` element nije više pozicioniran u odnosu na ivicu `body` elementa zato što postoji makar jedan predak koji nije statički pozicioniran (a to je omotač), te se drugi `div` element pozicionira u odnosu na njegovu ivicu.
 
 ```html
@@ -1301,7 +1380,7 @@ Međutim, šta ukoliko bi omotač bio nestatički pozicioniran? Ukoliko postavim
 <html>
 
 <head>
-    <title>Primer</title>
+    <title>Primer 20</title>
     <meta charset="UTF-8">
 
     <style>
@@ -1351,6 +1430,10 @@ Međutim, šta ukoliko bi omotač bio nestatički pozicioniran? Ukoliko postavim
 <img src="./Slike/absolute_wrapper.png" alt="Primer relativnog pozicioniranja elementa u odnosu na prvog nestatički-pozicioniranog pretka.">
 </td></tr></table>
 
+<a style="border: 2px solid gray; display: inline-block; padding: 15px; background-color: rgb(114, 211, 250); color: black;"
+   href="./Primeri/20/index.html"
+   target="_blank">Pogledaj primer uživo</a>
+
 Primetimo još jednu veoma važnu stvar - u oba slučaja treći `div` element se pomerio na mesto gde bi drugi `div` element bio pozicioniran pri statičkom pozicioniranju! "Prazan" prostor koji je bio prisutan pri relativnom pozicioniranju je nestao. Razlog za ovo ponašanje jeste da se apsolutno-pozicionirani elementi izbacuju iz normalnog toka raspoređivanja elemenata. Drugim rečima, ostali elementi se raspoređuju u skladu sa normalnim tokom kao da apsolutno-pozicionirani elementi ne postoje.
 
 ### 2.7.4 Fiksno pozicioniranje
@@ -1366,7 +1449,7 @@ Naredni kod pozicionira drugi `div` element `30px` od gornje ivice pogleda veb p
 <html>
 
 <head>
-    <title>Primer</title>
+    <title>Primer 21</title>
     <meta charset="UTF-8">
 
     <style>
@@ -1428,6 +1511,10 @@ Naredni kod pozicionira drugi `div` element `30px` od gornje ivice pogleda veb p
 
 (B) Primer fiksnog pozicioniranja. Veb stranica je skrolovana. Jedino je drugi `div` element na svojoj poziciji, dok je većina ostalih elemenata, koji nisu fiksno pozicionirani, izašla iz pogleda veb pregledača.
 
+<a style="border: 2px solid gray; display: inline-block; padding: 15px; background-color: rgb(114, 211, 250); color: black;"
+   href="./Primeri/21/index.html"
+   target="_blank">Pogledaj primer uživo</a>
+
 ### 2.7.5 Z-pozicioniranje elemenata
 
 Prilikom pozicioniranja elemenata, može se desiti da se neki od njih preklope. Postavlja se pitanje na koji način će ti elementi biti prikazani, tj. koji element će biti ispred kog elementa. 
@@ -1445,7 +1532,7 @@ Svojstvo `z-index` određuje kako se elementi slažu jedan preko drugog, tj. odr
 <html>
 
 <head>
-    <title>Primer</title>
+    <title>Primer 22</title>
     <meta charset="UTF-8">
 
     <style>
@@ -1486,6 +1573,10 @@ Svojstvo `z-index` određuje kako se elementi slažu jedan preko drugog, tj. odr
 <img src="./Slike/z-index.png" alt="Primer korišćenja svojstva z-index.">
 </td></tr></table>
 
+<a style="border: 2px solid gray; display: inline-block; padding: 15px; background-color: rgb(114, 211, 250); color: black;"
+   href="./Primeri/22/index.html"
+   target="_blank">Pogledaj primer uživo</a>
+
 ### 2.7.6 Svojstva `display` i `visibility`
 
 Do sada smo videli na koje sve načine je moguće raspoređivati elemente na veb prezentaciji zajedno sa svim bočnim efektima koje se javljaju. Sada ćemo opisati još dva svojstva koja, iako se ne koriste direktno za pozicioniranje elemenata već za način njihovog prikazivanja, mogu na neki način uticati na raspored elemenata na stranici.
@@ -1512,7 +1603,7 @@ Naredni HTML kod ilustruje korišćenje svojstva `display` za "pozicioniranje" e
 <html>
 
 <head>
-    <title>Primer</title>
+    <title>Primer 23</title>
     <meta charset="UTF-8">
 
     <style type="text/css">
@@ -1567,6 +1658,10 @@ Naredni HTML kod ilustruje korišćenje svojstva `display` za "pozicioniranje" e
 <table><tr><td>
 <img src="./Slike/inline-block.png" alt="Korišćenje svojstva display za promene tipa prikaza elemenata.">
 </td></tr></table>
+
+<a style="border: 2px solid gray; display: inline-block; padding: 15px; background-color: rgb(114, 211, 250); color: black;"
+   href="./Primeri/23/index.html"
+   target="_blank">Pogledaj primer uživo</a>
 
 Obratimo pažnju na jedan skriveni "hack" koji smo uradili u prethodnom kodu. Prikažimo ponovo HTML sadržaj tela dokumenta:
 
@@ -1653,7 +1748,7 @@ Naredni kod i prateća slika ilustruju razliku između ovih svojstava. U prvom o
 <html>
 
 <head>
-    <title>Primer</title>
+    <title>Primer 24</title>
     <meta charset="UTF-8">
 
     <style type="text/css">
@@ -1728,6 +1823,10 @@ Naredni kod i prateća slika ilustruju razliku između ovih svojstava. U prvom o
 <img src="./Slike/display_visibility.png" alt="Razlika u prikazivanju između elementa koji ima podešeno svojstvo display na vrednost none i elementa koji ima podešeno svojstvo visibility na vrednost hidden.">
 </td></tr></table>
 
+<a style="border: 2px solid gray; display: inline-block; padding: 15px; background-color: rgb(114, 211, 250); color: black;"
+   href="./Primeri/24/index.html"
+   target="_blank">Pogledaj primer uživo</a>
+
 ### Više informacija
 
 Za više informacijama o temama koje su obrađene u ovoj sekciji, možete posetiti naredne korisne veb prezentacije:
@@ -1757,7 +1856,7 @@ Naredni kodovi iz datoteka `index.html` i `img_override.css`, redom, i prateća 
 <html>
 
 <head>
-    <title>Primer</title>
+    <title>Primer 25</title>
     <meta charset="UTF-8">
 
     <link rel="stylesheet" type="text/css" href="img_override.css">
@@ -1792,6 +1891,10 @@ Naredni kodovi iz datoteka `index.html` i `img_override.css`, redom, i prateća 
 <img src="./Slike/img_override.png" alt="Primer kada su spoljni kaskadni listovi narušili veličinu slike koja je postavljena u HTML kodu.">
 </td></tr></table>
 
+<a style="border: 2px solid gray; display: inline-block; padding: 15px; background-color: rgb(114, 211, 250); color: black;"
+   href="./Primeri/25/index.html"
+   target="_blank">Pogledaj primer uživo</a>
+
 ## 2.9 Pozadina elemenata
 
 Korišćenjem jezika CSS možemo podesiti pozadinu elemenata na dva načina:
@@ -1811,7 +1914,7 @@ Naredni kod i prateća slika demonstriraju najjednostavniju upotrebu ovog svojst
 <html>
 
 <head>
-    <title>Primer</title>
+    <title>Primer 26</title>
     <meta charset="UTF-8">
 
     <style type='text/css'>
@@ -1846,6 +1949,10 @@ Naredni kod i prateća slika demonstriraju najjednostavniju upotrebu ovog svojst
 <img src="./Slike/background_image.png" alt="Primer korišćenja svojstva background-image.">
 </td></tr></table>
 
+<a style="border: 2px solid gray; display: inline-block; padding: 15px; background-color: rgb(114, 211, 250); color: black;"
+   href="./Primeri/26/index.html"
+   target="_blank">Pogledaj primer uživo</a>
+
 Podrazumevano, pozadina se ponavlja horizontalno (tj. po *x*-osi) i vertikalno (tj. po *y*-osi), što je najjednostavnije videti ukoliko su dimenzije unutrašnjosti elementa veće od dimenzije slike koja se koristi kao pozadina. CSS svojstvo `background−repeat` se koristi za kontrolisanje ponavljanja. Ovo svojstvo može uzimati jednu od narednih vrednosti:
 
 - Vrednost `repeat` predstavlja već opisano podrazumevano ponašanje u kojem se pozadina ponavlja po obema osama.
@@ -1863,18 +1970,34 @@ Ovim CSS svojstvom možemo izbeći neka neobična ponašanja, kao na primer,
 <html>
 
 <head>
-    <title>Primer</title>
+    <title>Primer 27</title>
     <meta charset="UTF-8">
 
     <style>
-        body {
+        #bg-1,
+        #bg-2 {
+            display: inline-block;
+            width: 40%;
+            height: 450px;
+            border: 1px solid black;
             background-image: url("gradient_bg.png");
+        }
+
+        #bg-1 {
+            /* Podrazumevano ponašanje */
+            background-repeat: repeat;
+        }
+
+        #bg-2 {
+            /* Ponavljanje samo po x-osi */
+            background-repeat: repeat-x;
         }
     </style>
 </head>
 
 <body>
-    <h1>background-repeat: repeat; /* Podrazumevano */</h1>
+    <div id="bg-1">background-repeat: repeat;</div>
+    <div id="bg-2">background-repeat: repeat-x;</div>
 </body>
 
 </html>
@@ -1883,6 +2006,10 @@ Ovim CSS svojstvom možemo izbeći neka neobična ponašanja, kao na primer,
 <table><tr><td>
 <img src="./Slike/background_repeat.png" alt="Podešavanje ponavljanja pozadine elementa">
 </td></tr></table>
+
+<a style="border: 2px solid gray; display: inline-block; padding: 15px; background-color: rgb(114, 211, 250); color: black;"
+   href="./Primeri/27/index.html"
+   target="_blank">Pogledaj primer uživo</a>
 
 Podrazumevano, pozicija slike koja čini pozadinu je postavljena uz gornji levi ugao elementa. Ipak, ovo podešavanje se može izmeniti korišćenjem svojstva `background−position`. On uzima dve vrednosti, jednu za horizontalnu, a drugu za vertikalnu poziciju, redom. Ove vrednosti se mogu zadati na različite načine:
 
@@ -1897,7 +2024,7 @@ Naredni kod i prateća slika ilustruju jedan primer pozicioniranja pozadinske sl
 <html>
 
 <head>
-    <title>Primer</title>
+    <title>Primer 28</title>
     <meta charset="UTF-8">
 
     <style>
@@ -1910,6 +2037,7 @@ Naredni kod i prateća slika ilustruju jedan primer pozicioniranja pozadinske sl
 
         #monospaced {
             font-family: monospace;
+            font-size: 18px;
         }
     </style>
 </head>
@@ -1929,6 +2057,10 @@ Naredni kod i prateća slika ilustruju jedan primer pozicioniranja pozadinske sl
 <img src="./Slike/background_position.png" alt="Primer postavljanja pozadine elementa">
 </td></tr></table>
 
+<a style="border: 2px solid gray; display: inline-block; padding: 15px; background-color: rgb(114, 211, 250); color: black;"
+   href="./Primeri/28/index.html"
+   target="_blank">Pogledaj primer uživo</a>
+
 Podrazumevano, veličina pozadine će biti postavljena na dimenzije slike koja se koristi za pozadinu. Ovo može predstavljati problem ukoliko se veličina slike razlikuje od veličine unutrašnjosti elementa. Ukoliko su dimenzije slike manje od dimenzija elementa, onda će slika biti ponavljana (osim ukoliko ne podesimo drugačije korišćenjem već opisanog svojstva `background-repeat`). Sa druge strane, ukoliko su dimenzije slike veće od dimenzija elementa, onda će slika biti odsečena. Ukoliko želimo da preciznije kontrolišemo veličinu pozadine, možemo koristiti svojstvo `background-size`. Ovo svojstvo može uzimati naredne vrednosti:
 
 - Vrednost `auto` definiše podrazumevano ponašanje u kojem je veličina slike u veb dokumentu ekvivalentna veličini slike na disku.
@@ -1946,7 +2078,7 @@ Naredni kod i prateća slika ilustruju korišćenje opisanog svojstva.
 <html>
 
 <head>
-    <title>Primer</title>
+    <title>Primer 29</title>
     <meta charset="UTF-8">
 
     <style>
@@ -2006,6 +2138,10 @@ Naredni kod i prateća slika ilustruju korišćenje opisanog svojstva.
 <img src="./Slike/background_size.png" alt="">
 </td></tr></table>
 
+<a style="border: 2px solid gray; display: inline-block; padding: 15px; background-color: rgb(114, 211, 250); color: black;"
+   href="./Primeri/29/index.html"
+   target="_blank">Pogledaj primer uživo</a>
+
 ### 2.9.2 Gradijentna pozadina
 
 CSS gradijenti omogućavaju prikazivanje ravnomerne tranzicije između dve boje ili više boja. U jeziku CSS, definisane su dve vrste gradijenata: linearni i elipsoidni gradijent. Kao što im i sama imena govore, linearni gradijent vrši tranziciju između boja po nekoj linearnoj pravoj dok elipsoidni gradijent iscrtava niz koncentričnih elipsoida po kojima se vrši tranzicija boja.
@@ -2041,7 +2177,7 @@ Naredni kod i prateća slika ilustruju linearni gradijent, sa i bez specifikovan
 <html>
 
 <head>
-    <title>Primer</title>
+    <title>Primer 30</title>
     <meta charset="UTF-8">
 
     <style type="text/css">
@@ -2075,6 +2211,10 @@ Naredni kod i prateća slika ilustruju linearni gradijent, sa i bez specifikovan
 <table><tr><td>
 <img src="./Slike/linear-gradient.png" alt="Primeri linearnih gradijenata">
 </td></tr></table>
+
+<a style="border: 2px solid gray; display: inline-block; padding: 15px; background-color: rgb(114, 211, 250); color: black;"
+   href="./Primeri/30/index.html"
+   target="_blank">Pogledaj primer uživo</a>
 
 Elipsoidni gradijent je nešto složenije definisan od linearnog. Naime, elipsoidni gradijent je definisan pomoću četiri vrednosti: (1) pozicije centra, (2) krajnjeg oblika, (3) dve boje ili više boja i (4) veličine krajnjeg oblika. Na narednoj slici dat je prikaz nekih od ovih elemenata.
 
@@ -2117,7 +2257,7 @@ Naredni kod i prateća slika ilustruju korišćenje nekih od opisanih vrednost
 <html>
 
 <head>
-    <title>Primer</title>
+    <title>Primer 31</title>
     <meta charset="UTF-8">
 
     <style type="text/css">
@@ -2184,6 +2324,10 @@ Naredni kod i prateća slika ilustruju korišćenje nekih od opisanih vrednost
 <img src="./Slike/radial_gradient_1.png" alt="">
 </td></tr></table>
 
+<a style="border: 2px solid gray; display: inline-block; padding: 15px; background-color: rgb(114, 211, 250); color: black;"
+   href="./Primeri/31/index.html"
+   target="_blank">Pogledaj primer uživo</a>
+
 Naredni kod i prateća slika ilustruju uticaj pozicioniranja centra elipsoidnog gradijenta na njegov krajnji oblik.
 
 ```html
@@ -2191,6 +2335,9 @@ Naredni kod i prateća slika ilustruju uticaj pozicioniranja centra elipsoidnog 
 <html>
 
 <head>
+    <title>Primer 32</title>
+    <meta charset="UTF-8">
+
     <style>
         .grad {
             height: 250px;
@@ -2261,6 +2408,10 @@ Naredni kod i prateća slika ilustruju uticaj pozicioniranja centra elipsoidnog 
 <img src="./Slike/radial_gradient_2a.png" alt="">
 <img src="./Slike/radial_gradient_2b.png" alt="">
 </td></tr></table>
+
+<a style="border: 2px solid gray; display: inline-block; padding: 15px; background-color: rgb(114, 211, 250); color: black;"
+   href="./Primeri/32/index.html"
+   target="_blank">Pogledaj primer uživo</a>
 
 ### Više informacija
 

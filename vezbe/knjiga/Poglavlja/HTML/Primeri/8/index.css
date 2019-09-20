@@ -1,0 +1,7 @@
+p span:first-child {
+    background-color: rgba(105, 90, 205, 0.75);
+}
+
+p span:last-child {
+    background-color: rgba(250, 128, 114, 0.75);
+}
