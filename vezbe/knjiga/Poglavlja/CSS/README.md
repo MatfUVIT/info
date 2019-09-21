@@ -4,6 +4,8 @@
 
 ---
 
+<div style="text-align: justify;">
+
 # 2. Stilizovanje Veb dokumenata kroz CSS
 
 *Cascading Style Sheets* (skr. *CSS*) predstavlja jezik koji služi za stilizovanje HTML elemenata. Za razliku od jezika HTML, koji opisuje logičku strukturu veb dokumenta, jezikom CSS se služimo da bismo opisali na koji način se elementi te logičke strukture prikazuju. Na primer, korišćenjem jezika CSS možemo podesiti poziciju elemenata, boju teksta, okvire, pozadinu i dr.
@@ -2430,6 +2432,8 @@ Za više informacijama o temama koje su obrađene u ovoj sekciji, možete poseti
 [https://www.webdirections.org/blog/css3-radial-gradients/](https://www.webdirections.org/blog/css3-radial-gradients/)
 [https://medium.com/@masakudamatsu/the-best-tutorial-on-css-radial-gradient-e44fec35ec2b](https://medium.com/@masakudamatsu/the-best-tutorial-on-css-radial-gradient-e44fec35ec2b)
 [https://www.impressivewebs.com/css3-radial-gradient-syntax/](https://www.impressivewebs.com/css3-radial-gradient-syntax/)
+
+</div>
 
 ---
 
