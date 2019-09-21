@@ -256,117 +256,117 @@
 
         - [Примери](https://github.com/MatfUVIT/UVIT/tree/master/predavanja/primeri-html-css){:target="_blank"}
 
-    1. [Програмски језик ЈаваСкрипт](tekstovi/JavaScript-Programski-Jezik.md){:target="_blank"}
+    1. [Програмски језик ЈаваСкрипт](tekstovi/JavaScript-Programski-Jezik-Karakteristike-Okruzenje.md){:target="_blank"}
 
-        1. [Карактеристике језика ЈаваСкрипт](tekstovi/JavaScript-Programski-Jezik.md#карактеристике-језика-јаваскрипт){:target="_blank"}
+        1. [Карактеристике језика ЈаваСкрипт](tekstovi/JavaScript-Programski-Jezik-Karakteristike-Okruzenje.md#карактеристике-језика-јаваскрипт){:target="_blank"}
 
-        1. [ЈаваСкрипт окружење за извршавање](tekstovi/JavaScript-Programski-Jezik.md#јаваскрипт-окружење-за-извршавање){:target="_blank"}
+        1. [ЈаваСкрипт окружење за извршавање](tekstovi/JavaScript-Programski-Jezik-Karakteristike-Okruzenje.md#јаваскрипт-окружење-за-извршавање){:target="_blank"}
 
-            1. [ЈаваСкрипт машина](tekstovi/JavaScript-Programski-Jezik.md#jаваскрипт-машина){:target="_blank"}
+            1. [ЈаваСкрипт машина](tekstovi/JavaScript-Programski-Jezik-Karakteristike-Okruzenje.md#jаваскрипт-машина){:target="_blank"}
 
-            1. [Спољашњи API](tekstovi/JavaScript-Programski-Jezik.md#спољашњи-API){:target="_blank"}
+            1. [Спољашњи API](tekstovi/JavaScript-Programski-Jezik-Karakteristike-Okruzenje.md#спољашњи-API){:target="_blank"}
 
-            1. [Ред повратних позива](tekstovi/JavaScript-Programski-Jezik.md#ред-повратних-позива){:target="_blank"}
+            1. [Ред повратних позива](tekstovi/JavaScript-Programski-Jezik-Karakteristike-Okruzenje.md#ред-повратних-позива){:target="_blank"}
 
-            1. [Петља за догађаје](tekstovi/JavaScript-Programski-Jezik.md#петља-за-догађаје){:target="_blank"}
+            1. [Петља за догађаје](tekstovi/JavaScript-Programski-Jezik-Karakteristike-Okruzenje.md#петља-за-догађаје){:target="_blank"}
 
-        1. [Структура ЈаваСкрипт програма](tekstovi/JavaScript-Programski-Jezik.md#структура-јаваскрипт-програма){:target="_blank"}
+        1. [Структура ЈаваСкрипт програма](tekstovi/JavaScript-Programski-Jezik-Struktura-Programa.md#структура-јаваскрипт-програма){:target="_blank"}
 
-            1. [Основни елементи језика ЈаваСкрипт](tekstovi/JavaScript-Programski-Jezik.md#основни-елементи-језика-јаваскрипт){:target="_blank"}
+            1. [Основни елементи језика ЈаваСкрипт](tekstovi/JavaScript-Programski-Jezik-Struktura-Programa.md#основни-елементи-језика-јаваскрипт){:target="_blank"}
 
-            1. [Типови и вредности](tekstovi/JavaScript-Programski-Jezik.md#типови-и-вредности){:target="_blank"}
+            1. [Типови и вредности](tekstovi/JavaScript-Programski-Jezik-Struktura-Programa.md#типови-и-вредности){:target="_blank"}
 
-                1. [Примитивни типови](tekstovi/JavaScript-Programski-Jezik.md#примитивни-типови){:target="_blank"}
+                1. [Примитивни типови](tekstovi/JavaScript-Programski-Jezik-Struktura-Programa.md#примитивни-типови){:target="_blank"}
 
-                1. [Објектни типови](tekstovi/JavaScript-Programski-Jezik.md#објектни-типови){:target="_blank"}
+                1. [Објектни типови](tekstovi/JavaScript-Programski-Jezik-Struktura-Programa.md#објектни-типови){:target="_blank"}
 
-            1. [Променљиве](tekstovi/JavaScript-Programski-Jezik.md#променљиве){:target="_blank"}
+            1. [Променљиве](tekstovi/JavaScript-Programski-Jezik-Struktura-Programa.md#променљиве){:target="_blank"}
 
-            1. [Изрази](tekstovi/JavaScript-Programski-Jezik.md#изрази){:target="_blank"}
+            1. [Изрази](tekstovi/JavaScript-Programski-Jezik-Struktura-Programa.md#изрази){:target="_blank"}
 
-            1. [Конверзија типова и евалуација израза](tekstovi/JavaScript-Programski-Jezik.md#конверзија-типова-и-евалуација-израза){:target="_blank"}
+            1. [Конверзија типова и евалуација израза](tekstovi/JavaScript-Programski-Jezik-Struktura-Programa.md#конверзија-типова-и-евалуација-израза){:target="_blank"}
 
-            1. [Наредбе и секвенце наредби](tekstovi/JavaScript-Programski-Jezik.md#наредбе-и-секвенце-наредби){:target="_blank"}
+            1. [Наредбе и секвенце наредби](tekstovi/JavaScript-Programski-Jezik-Struktura-Programa.md#наредбе-и-секвенце-наредби){:target="_blank"}
 
-                1. [Наредбе доделе вредности](tekstovi/JavaScript-Programski-Jezik.md#наредбе-доделе-вредности){:target="_blank"}
+                1. [Наредбе доделе вредности](tekstovi/JavaScript-Programski-Jezik-Struktura-Programa.md#наредбе-доделе-вредности){:target="_blank"}
 
-                1. [Комбиноване наредбе доделе](tekstovi/JavaScript-Programski-Jezik.md#комбиноване-наредбе-доделе){:target="_blank"}
+                1. [Комбиноване наредбе доделе](tekstovi/JavaScript-Programski-Jezik-Struktura-Programa.md#комбиноване-наредбе-доделе){:target="_blank"}
 
-                1. [Наредбе сажетог ажурирања](tekstovi/JavaScript-Programski-Jezik.md#наредбе-сажетог-ажурирања){:target="_blank"}
+                1. [Наредбе сажетог ажурирања](tekstovi/JavaScript-Programski-Jezik-Struktura-Programa.md#наредбе-сажетог-ажурирања){:target="_blank"}
 
-                1. [Позиви предефинисаних функција](tekstovi/JavaScript-Programski-Jezik.md#позиви-предефинисаних-функција){:target="_blank"}
+                1. [Позиви предефинисаних функција](tekstovi/JavaScript-Programski-Jezik-Struktura-Programa.md#позиви-предефинисаних-функција){:target="_blank"}
 
-            1. [Гранања](tekstovi/JavaScript-Programski-Jezik.md#гранања){:target="_blank"}
+            1. [Гранања](tekstovi/JavaScript-Programski-Jezik-Struktura-Programa.md#гранања){:target="_blank"}
 
-                1. [Наредба `if`](tekstovi/JavaScript-Programski-Jezik.md#наредба-if){:target="_blank"}
+                1. [Наредба `if`](tekstovi/JavaScript-Programski-Jezik-Struktura-Programa.md#наредба-if){:target="_blank"}
 
-                1. [Наредба `switch`](tekstovi/JavaScript-Programski-Jezik.md#наредба-switch){:target="_blank"}
+                1. [Наредба `switch`](tekstovi/JavaScript-Programski-Jezik-Struktura-Programa.md#наредба-switch){:target="_blank"}
 
-            1. [Циклуси](tekstovi/JavaScript-Programski-Jezik.md#циклуси){:target="_blank"}
+            1. [Циклуси](tekstovi/JavaScript-Programski-Jezik-Struktura-Programa.md#циклуси){:target="_blank"}
 
-               1. [Циклус `while`](tekstovi/JavaScript-Programski-Jezik.md#циклус-while){:target="_blank"}
+               1. [Циклус `while`](tekstovi/JavaScript-Programski-Jezik-Struktura-Programa.md#циклус-while){:target="_blank"}
 
-               1. [Циклус `do` - `while`](tekstovi/JavaScript-Programski-Jezik.md#циклус-do-while){:target="_blank"}
+               1. [Циклус `do` - `while`](tekstovi/JavaScript-Programski-Jezik-Struktura-Programa.md#циклус-do-while){:target="_blank"}
 
-               1. [Циклус `for`](tekstovi/JavaScript-Programski-Jezik.md#циклус-for){:target="_blank"}
+               1. [Циклус `for`](tekstovi/JavaScript-Programski-Jezik-Struktura-Programa.md#циклус-for){:target="_blank"}
 
-               1. [Искакање из циклуса и прескакње итерације](tekstovi/JavaScript-Programski-Jezik.md#искакање-из-циклуса-и-прескакње-итерације){:target="_blank"}
+               1. [Искакање из циклуса и прескакње итерације](tekstovi/JavaScript-Programski-Jezik-Struktura-Programa.md#искакање-из-циклуса-и-прескакње-итерације){:target="_blank"}
 
-               1. [Циклуси и опсези важења](tekstovi/JavaScript-Programski-Jezik.md#циклуси-и-опсези-важења){:target="_blank"}
+               1. [Циклуси и опсези важења](tekstovi/JavaScript-Programski-Jezik-Struktura-Programa.md#циклуси-и-опсези-важења){:target="_blank"}
 
             - [Примери (типови и вредности)](https://github.com/MatfUVIT/UVIT/tree/master/predavanja/primeri-js/p01-vrednosti-tipovi-operatori){:target="_blank"}
 
             - [Примери (гранања и циклуси)](https://github.com/MatfUVIT/UVIT/tree/master/predavanja/primeri-js/p02-struktura-programa){:target="_blank"}
 
-        1. [Функције и затворења](tekstovi/JavaScript-Programski-Jezik.md#функције-и-затворења){:target="_blank"}
+        1. [Функције и затворења](tekstovi/JavaScript-Programski-Jezik-Funkcije-Zatvorenja.md#функције-и-затворења){:target="_blank"}
 
-            1. [Дефиниција и позив фуункције](tekstovi/JavaScript-Programski-Jezik.md#дефиниција-и-позив-фуункције){:target="_blank"}
+            1. [Дефиниција и позив фуункције](tekstovi/JavaScript-Programski-Jezik-Funkcije-Zatvorenja.md#дефиниција-и-позив-фуункције){:target="_blank"}
 
-            1. [Декларација и позив функције](tekstovi/JavaScript-Programski-Jezik.md#декларација-и-позив-функције){:target="_blank"}
+            1. [Декларација и позив функције](tekstovi/JavaScript-Programski-Jezik-Funkcije-Zatvorenja.md#декларација-и-позив-функције){:target="_blank"}
 
-            1. [Параметри и аргументи функција](tekstovi/JavaScript-Programski-Jezik.md#параметри-и-аргументи-функција){:target="_blank"}
+            1. [Параметри и аргументи функција](tekstovi/JavaScript-Programski-Jezik-Funkcije-Zatvorenja.md#параметри-и-аргументи-функција){:target="_blank"}
 
-            1. [Опциони параметри функција](tekstovi/JavaScript-Programski-Jezik.md#опциони-параметри-функција){:target="_blank"}
+            1. [Опциони параметри функција](tekstovi/JavaScript-Programski-Jezik-Funkcije-Zatvorenja.md#опциони-параметри-функција){:target="_blank"}
 
-            1. [Дизање функције](tekstovi/JavaScript-Programski-Jezik.md#дизање-функције){:target="_blank"}
+            1. [Дизање функције](tekstovi/JavaScript-Programski-Jezik-Funkcije-Zatvorenja.md#дизање-функције){:target="_blank"}
 
-            1. [Опсези важења за променљиве и функције](tekstovi/JavaScript-Programski-Jezik.md#опсези-важења-за-променљиве-и-функције){:target="_blank"}
+            1. [Опсези важења за променљиве и функције](tekstovi/JavaScript-Programski-Jezik-Funkcije-Zatvorenja.md#опсези-важења-за-променљиве-и-функције){:target="_blank"}
 
-            1. [Затворења за функције](tekstovi/JavaScript-Programski-Jezik.md#затворења-за-функције){:target="_blank"}
+            1. [Затворења за функције](tekstovi/JavaScript-Programski-Jezik-Funkcije-Zatvorenja.md#затворења-за-функције){:target="_blank"}
 
-            1. [Ламбда изрази и функције](tekstovi/JavaScript-Programski-Jezik.md#ламбда-изрази-и-функције){:target="_blank"}
+            1. [Ламбда изрази и функције](tekstovi/JavaScript-Programski-Jezik-Funkcije-Zatvorenja.md#ламбда-изрази-и-функције){:target="_blank"}
 
             - [Примери](https://github.com/MatfUVIT/UVIT/tree/master/predavanja/primeri-js/p03-funkcije-zatvorenja){:target="_blank"}
 
-        1. [Објекти и низови](tekstovi/JavaScript-Programski-Jezik.md#објекти-и-низови){:target="_blank"}
+        1. [Објекти и низови](tekstovi/JavaScript-Programski-Jezik-Objekti-Nizovi.md#објекти-и-низови){:target="_blank"}
 
-            1. [Објекти](tekstovi/JavaScript-Programski-Jezik.md#објекти){:target="_blank"}
+            1. [Објекти](tekstovi/JavaScript-Programski-Jezik-Objekti-Nizovi.md#објекти){:target="_blank"}
 
-            1. [Низови](tekstovi/JavaScript-Programski-Jezik.md#низови){:target="_blank"}
+            1. [Низови](tekstovi/JavaScript-Programski-Jezik-Objekti-Nizovi.md#низови){:target="_blank"}
 
-            1. [Ниске](tekstovi/JavaScript-Programski-Jezik.md#ниске){:target="_blank"}
+            1. [Ниске](tekstovi/JavaScript-Programski-Jezik-Objekti-Nizovi.md#ниске){:target="_blank"}
 
-            1. [JSON](tekstovi/JavaScript-Programski-Jezik.md#json){:target="_blank"}
+            1. [JSON](tekstovi/JavaScript-Programski-Jezik-Objekti-Nizovi.md#json){:target="_blank"}
 
             - [Примери](https://github.com/MatfUVIT/UVIT/tree/master/predavanja/primeri-js/p04-objekti-nizovi){:target="_blank"}
 
-        1. [Функције вишег реда](tekstovi/JavaScript-Programski-Jezik.md#функције-вишег-реда){:target="_blank"}
+        1. [Функције вишег реда](tekstovi/JavaScript-Programski-Jezik-Funkcije-Viseg-Reda.md#функције-вишег-реда){:target="_blank"}
 
-            1. [Функције вишег реда и рад са колекцијама](tekstovi/JavaScript-Programski-Jezik.md#функције-вишег-реда-и-рад-са-колекцијама){:target="_blank"}
+            1. [Функције вишег реда и рад са колекцијама](tekstovi/JavaScript-Programski-Jezik-Funkcije-Viseg-Reda.md#функције-вишег-реда-и-рад-са-колекцијама){:target="_blank"}
 
             1. [Мапирање и редукција помоћу функција вишег реда](Jtekstovi/avaScript-Programski-Jezik.md#мапирање-и-редукција-помоћу-функција-вишег-реда){:target="_blank"}
 
-            1. [Повезивање функција](tekstovi/JavaScript-Programski-Jezik.md#повезивање-функција){:target="_blank"}
+            1. [Повезивање функција](tekstovi/JavaScript-Programski-Jezik-Funkcije-Viseg-Reda.md#повезивање-функција){:target="_blank"}
 
-            1. [Функцијски изрази који се одмах позивају](tekstovi/JavaScript-Programski-Jezik.md#функцијски-изрази-који-се-одмах-позивају){:target="_blank"}
+            1. [Функцијски изрази који се одмах позивају](tekstovi/JavaScript-Programski-Jezik-Funkcije-Viseg-Reda.md#функцијски-изрази-који-се-одмах-позивају){:target="_blank"}
 
            - [Примери](https://github.com/MatfUVIT/UVIT/tree/master/predavanja/primeri-js/p05-funkcije-viseg-reda){:target="_blank"}
 
-        1. [Напредни објекти](tekstovi/JavaScript-Programski-Jezik.md#напредни-објекти){:target="_blank"}
+        1. [Напредни објекти](tekstovi/JavaScript-Programski-Jezik-Napredni-Objekti.md#напредни-објекти){:target="_blank"}
 
            - [Примери](https://github.com/MatfUVIT/UVIT/tree/master/predavanja/primeri-js/p06-napredni-objekti){:target="_blank"}
 
-        1. [Асинхрони ЈаваСкрипт](tekstovi/JavaScript-Programski-Jezik.md#асинхрони-јаваскрипт){:target="_blank"}
+        1. [Асинхрони ЈаваСкрипт](tekstovi/JavaScript-Programski-Jezik-Dogajdaji-Asinhrono-Programiranje.md#асинхрони-јаваскрипт){:target="_blank"}
 
             1. Повратни позиви
 
@@ -376,15 +376,15 @@
 
            - [Примери](https://github.com/MatfUVIT/UVIT/tree/master/predavanja/primeri-js/p07-asinhroni-js){:target="_blank"}
 
-        1. [Изузетци](tekstovi/JavaScript-Programski-Jezik.md#изузетци){:target="_blank"}
+        1. [Изузетци](tekstovi/JavaScript-Programski-Jezik-Izuzetci.md#изузетци){:target="_blank"}
 
             - [Примери](https://github.com/MatfUVIT/UVIT/tree/master/predavanja/primeri-js/p08-rukovanje-greskama){:target="_blank"}
 
-        1. [Модули](tekstovi/JavaScript-Programski-Jezik.md#модули){:target="_blank"}
+        1. [Модули](tekstovi/JavaScript-Programski-Jezik-Moduli.md#модули){:target="_blank"}
 
             - [Примери](https://github.com/MatfUVIT/UVIT/tree/master/predavanja/primeri-js/p10-moduli){:target="_blank"}
 
-        1. [Стилови кŏдирања у језику ЈаваСкрипт](tekstovi/JavaScript-Programski-Jezik.md#стилови-кŏдирања){:target="_blank"}
+        1. [Врзије и Стилови кŏдирања у језику ЈаваСкрипт](tekstovi/JavaScript-Programski-Jezik-Verzije-Stilovi-Kodiranja.md#стилови-кŏдирања){:target="_blank"}
 
         - [Примери](https://github.com/MatfUVIT/UVIT/tree/master/predavanja/primeri-js){:target="_blank"}
 
