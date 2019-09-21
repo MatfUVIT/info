@@ -6,15 +6,15 @@
 
 1. Увод у веб и интернет технологије  
 
-    1. [Уводне напомене о курсу](tekstov/Uvodne-Napomene-o-Kursu.md){:target="_blank"}
+    1. [Уводне напомене о курсу](tekstovi/Uvodne-Napomene-o-Kursu.md){:target="_blank"}
 
-        1. [Концепција курса](tekstov/Uvodne-Napomene-o-Kursu#концепција-курса){:target="_blank"}
+        1. [Концепција курса](tekstovi/Uvodne-Napomene-o-Kursu#концепција-курса){:target="_blank"}
 
-        1. [Садржај курса](tekstov/Uvodne-Napomene-o-Kursu#садржај-курса){:target="_blank"}
+        1. [Садржај курса](tekstovi/Uvodne-Napomene-o-Kursu#садржај-курса){:target="_blank"}
 
-        1. [Оцењивање и бодовање](tekstov/Uvodne-Napomene-o-Kursu#оцењивање-и-бодовање){:target="_blank"}
+        1. [Оцењивање и бодовање](tekstovi/Uvodne-Napomene-o-Kursu#оцењивање-и-бодовање){:target="_blank"}
 
-        1. [Литература](tekstov/Uvodne-Napomene-o-Kursu#литература){:target="_blank"}
+        1. [Литература](tekstovi/Uvodne-Napomene-o-Kursu#литература){:target="_blank"}
 
     1. [Увод у рачунарске мреже](/prezentacije/UVIT01-01-Uvod u racunarske mreze.pdf){:target="_blank"}  
 
