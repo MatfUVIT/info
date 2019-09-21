@@ -4,8 +4,6 @@
 
 ---
 
-<div style="text-align: justify;">
-
 # 1. Struktuiranje Veb dokumenata kroz HTML
 
 *HyperText Markup Language* (skr. *HTML*) predstavlja najosnovniji blok za izgradnju Veba. HTML jezik se koristi za opisivanje logičke strukture stranice, odnosno, na koji način je Veb dokument izgrađen. Na primer, u HTML jeziku možemo zadati koji deo stranice čini naslov ili paragraf, gde se nalazi slika, kako se podaci predstavljaju tabelom i slično.
@@ -1123,8 +1121,6 @@ div {
 <a style="border: 2px solid gray; display: inline-block; padding: 15px; background-color: rgb(114, 211, 250); color: black;"
    href="./Primeri/22/index.html"
    target="_blank">Pogledaj primer uživo</a>
-
-</div>
 
 ---
 
