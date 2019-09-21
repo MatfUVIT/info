@@ -133,9 +133,9 @@ p#id3 {
 }
 ```
 
-<table><tr><td>
-<img src="./Slike/preklapanje1.png" alt="Primer preklapanja stilova usled primenjivanja istog pravila iz različitih izvora.">
-</td></tr></table>
+<div style="max-width: 98%;">
+<img style="max-width: 100%;" src="./Slike/preklapanje1.png" alt="Primer preklapanja stilova usled primenjivanja istog pravila iz različitih izvora.">
+</div>
 
 <a style="border: 2px solid gray; display: inline-block; padding: 15px; background-color: rgb(114, 211, 250); color: black;"
    href="./Primeri/1/index.html"
@@ -143,15 +143,15 @@ p#id3 {
 
 Međutim, da bi ovo pravilo bilo ispunjeno, potrebno je obratiti pažnju na redosled elemenata `style` i `link` u zaglavlju HTML dokumenta. Na primer, pretpostavimo da eksterna CSS datoteka `plavi_naslov.css` definiše da naslov `h1` treba biti obojen u plavu boju. Takođe, neka je dat element `style` u zaglavlju sa pravilom koji definiše da naslov `h1` treba biti obojen u narandžastu boju. Na narednoj slici dati su rezultati kada se element `style` navede nakon elementa `link` (slika A) i kada se element `link` navede nakon elementa `style` (slika B).
 
-<table><tr><td>
-<img src="./Slike/style.png" alt="Primer drugačijeg stilizovanja elementa h1 usled različitog rasporeda elemenata link i style u zaglavlju HTML dokumenta.">
-</td></tr></table>
+<div style="max-width: 98%;">
+<img style="max-width: 100%;" src="./Slike/style.png" alt="Primer drugačijeg stilizovanja elementa h1 usled različitog rasporeda elemenata link i style u zaglavlju HTML dokumenta.">
+</div>
 
 (A) Primer kada je prethodno definisan element `style` naveden nakon elementa `link`. Pravilo iz elementa `style` je "pobedilo".
 
-<table><tr><td>
-<img src="./Slike/link.png" alt="Primer drugačijeg stilizovanja elementa h1 usled različitog rasporeda elemenata link i style u zaglavlju HTML dokumenta.">
-</td></tr></table>
+<div style="max-width: 98%;">
+<img style="max-width: 100%;" src="./Slike/link.png" alt="Primer drugačijeg stilizovanja elementa h1 usled različitog rasporeda elemenata link i style u zaglavlju HTML dokumenta.">
+</div>
 
 (B) Primer kada je prethodno definisan element `link` naveden nakon elementa `style`. Pravilo iz elementa `link` (tj. iz spoljnih kaskadnih listova) je "pobedilo".
 
@@ -204,9 +204,9 @@ Opisana situacija se može rešiti pravilima koja važe u slučaju *preklapanja 
 </html>
 ```
 
-<table><tr><td>
-<img src="./Slike/preklapanje2.png" alt="Primer preklapanja stilova usled primenjivanja istog pravila na različitim nivoima hijerarhije DOM stabla.">
-</td></tr></table>
+<div style="max-width: 98%;">
+<img style="max-width: 100%;" src="./Slike/preklapanje2.png" alt="Primer preklapanja stilova usled primenjivanja istog pravila na različitim nivoima hijerarhije DOM stabla.">
+</div>
 
 <a style="border: 2px solid gray; display: inline-block; padding: 15px; background-color: rgb(114, 211, 250); color: black;"
    href="./Primeri/2/index.html"
@@ -249,9 +249,9 @@ Ipak, postoji način da se forsira određeni stil bez obzira na ova pravila, a t
 </html>
 ```
 
-<table><tr><td>
-<img src="./Slike/preklapanje3.png" alt="Primer korišćenja ključne reči !important.">
-</td></tr></table>
+<div style="max-width: 98%;">
+<img style="max-width: 100%;" src="./Slike/preklapanje3.png" alt="Primer korišćenja ključne reči !important.">
+</div>
 
 <a style="border: 2px solid gray; display: inline-block; padding: 15px; background-color: rgb(114, 211, 250); color: black;"
    href="./Primeri/3/index.html"
@@ -311,9 +311,9 @@ Naredni kod ilustruje upotrebu različitih modela boja, a na narednoj slici prik
 </html>
 ```
 
-<table><tr><td>
-<img src="./Slike/boje.png" alt="Primer korišćenja različitih modela boja.">
-</td></tr></table>
+<div style="max-width: 98%;">
+<img style="max-width: 100%;" src="./Slike/boje.png" alt="Primer korišćenja različitih modela boja.">
+</div>
 
 <a style="border: 2px solid gray; display: inline-block; padding: 15px; background-color: rgb(114, 211, 250); color: black;"
    href="./Primeri/4/index.html"
@@ -455,9 +455,9 @@ Naredni kod demonstrira upotrebu opisanih svojstava i dužina. Na narednoj slici
 </html>
 ```
 
-<table><tr><td>
-<img src="./Slike/tekst_stilovi.png" alt="Primer korišćenja različitih svojstava za stilizovanje teksta i dužina.">
-</td></tr></table>
+<div style="max-width: 98%;">
+<img style="max-width: 100%;" src="./Slike/tekst_stilovi.png" alt="Primer korišćenja različitih svojstava za stilizovanje teksta i dužina.">
+</div>
 
 <a style="border: 2px solid gray; display: inline-block; padding: 15px; background-color: rgb(114, 211, 250); color: black;"
    href="./Primeri/5/index.html"
@@ -479,9 +479,9 @@ Pored stilizovanja izgleda teksta raznim svojstvima koje smo prethodno demonstri
 
 S obzirom da su prve dve grupe familija fontova najviše korišćene, na narednoj slici dat je prikaz razlike između jedne beskukičave i jedne kukičave familije fontova.
 
-<table><tr><td>
-<img src="./Slike/fontovi.png" alt="Razlika između kukičavih i beskukičavih familija fontova. Levo je prikazan karakter slova F u beskukičavoj familiji fontova, u sredini je prikazan karakter slova F u kukičavoj familiji fontova, a desno su crvenom bojom prikazane kukice koje predstavljaju razlike između ove dve familije fontova.">
-</td></tr></table>
+<div style="max-width: 98%;">
+<img style="max-width: 100%;" src="./Slike/fontovi.png" alt="Razlika između kukičavih i beskukičavih familija fontova. Levo je prikazan karakter slova F u beskukičavoj familiji fontova, u sredini je prikazan karakter slova F u kukičavoj familiji fontova, a desno su crvenom bojom prikazane kukice koje predstavljaju razlike između ove dve familije fontova.">
+</div>
 
 #### Korišćenje postojećih fontova
 
@@ -534,9 +534,9 @@ Naredni kod ilustruje upotrebu različitih familija fontova i njegov prikaz u ve
 </html>
 ```
 
-<table><tr><td>
-<img src="./Slike/font_family.png" alt="Primer navođenja familija fontova za tekstualni sadržaj.">
-</td></tr></table>
+<div style="max-width: 98%;">
+<img style="max-width: 100%;" src="./Slike/font_family.png" alt="Primer navođenja familija fontova za tekstualni sadržaj.">
+</div>
 
 <a style="border: 2px solid gray; display: inline-block; padding: 15px; background-color: rgb(114, 211, 250); color: black;"
    href="./Primeri/6/index.html"
@@ -589,9 +589,9 @@ Nakon navođenja ovog pravila, novouvedenu familiju fontova možemo koristiti ka
 </html>
 ```
 
-<table><tr><td>
-<img src="./Slike/font_face.png" alt="Primer uvođenja i korišćenja korisnički-definisane familije fontova.">
-</td></tr></table>
+<div style="max-width: 98%;">
+<img style="max-width: 100%;" src="./Slike/font_face.png" alt="Primer uvođenja i korišćenja korisnički-definisane familije fontova.">
+</div>
 
 <a style="border: 2px solid gray; display: inline-block; padding: 15px; background-color: rgb(114, 211, 250); color: black;"
    href="./Primeri/7/index.html"
@@ -632,9 +632,9 @@ U prethodnom poglavlju smo diskutovali o tome kako je HTML elemente moguće razm
 
 Kao što je prikazano na narednoj slici, svaki od kasnije navedenih površina obuhvata sve prethodne površine. Sada ćemo se upoznati detaljnije sa svakom od navedenih koncepata i videti na koje načine možemo upravljati njima.
 
-<table><tr><td>
-<img src="./Slike/box_model.png" alt="Ilustracija modela kutije.">
-</td></tr></table>
+<div style="max-width: 98%;">
+<img style="max-width: 100%;" src="./Slike/box_model.png" alt="Ilustracija modela kutije.">
+</div>
 
 ### 2.5.1 Sadržaj elementa
 
@@ -673,9 +673,9 @@ Naredni kod ilustruje upotrebu ovih svojstava u promeni veličine sadržaja za b
 </html>
 ```
 
-<table><tr><td>
-<img src="./Slike/block_sirina_visina.png" alt="Blokovskim elementima je moguće promeniti širinu i visinu sadržaja.">
-</td></tr></table>
+<div style="max-width: 98%;">
+<img style="max-width: 100%;" src="./Slike/block_sirina_visina.png" alt="Blokovskim elementima je moguće promeniti širinu i visinu sadržaja.">
+</div>
 
 <a style="border: 2px solid gray; display: inline-block; padding: 15px; background-color: rgb(114, 211, 250); color: black;"
    href="./Primeri/8/index.html"
@@ -706,9 +706,9 @@ Kada su linijski elementi u pitanju, površina njihovog sadržaja zavisi isklju�
 </html>
 ```
 
-<table><tr><td>
-<img src="./Slike/box_model_inline.png" alt="CSS svojstva width i height ne utiču na veličinu sadržaja linijskih elemenata.">
-</td></tr></table>
+<div style="max-width: 98%;">
+<img style="max-width: 100%;" src="./Slike/box_model_inline.png" alt="CSS svojstva width i height ne utiču na veličinu sadržaja linijskih elemenata.">
+</div>
 
 <a style="border: 2px solid gray; display: inline-block; padding: 15px; background-color: rgb(114, 211, 250); color: black;"
    href="./Primeri/9/index.html"
@@ -745,9 +745,9 @@ Naredni HTML kod i prateća slika ilustruju postavljanje punjenja za svaku stran
 </html>
 ```
 
-<table><tr><td>
-<img src="./Slike/block_padding.png" alt="Ukupna veličina elementa div se povećala zbog postojanja punjenja. Sam sadržaj zauzima podrazumevanu veličinu za blokovske elemente.">
-</td></tr></table>
+<div style="max-width: 98%;">
+<img style="max-width: 100%;" src="./Slike/block_padding.png" alt="Ukupna veličina elementa div se povećala zbog postojanja punjenja. Sam sadržaj zauzima podrazumevanu veličinu za blokovske elemente.">
+</div>
 
 <a style="border: 2px solid gray; display: inline-block; padding: 15px; background-color: rgb(114, 211, 250); color: black;"
    href="./Primeri/10/index.html"
@@ -846,9 +846,9 @@ Naredni HTML kod i prateća slika ilustruju podešavanje stila ivica. Podešena 
 </html>
 ```
 
-<table><tr><td>
-<img src="./Slike/ivica_stilovi.png" alt="Različiti stilovi ivice postignuti korišćenjem svojstva border-style.">
-</td></tr></table>
+<div style="max-width: 98%;">
+<img style="max-width: 100%;" src="./Slike/ivica_stilovi.png" alt="Različiti stilovi ivice postignuti korišćenjem svojstva border-style.">
+</div>
 
 <a style="border: 2px solid gray; display: inline-block; padding: 15px; background-color: rgb(114, 211, 250); color: black;"
    href="./Primeri/11/index.html"
@@ -907,9 +907,9 @@ Naredni HTML kod i prateća slika ilustruju podešavanje ivica svojstvom `border
 </html>
 ```
 
-<table><tr><td>
-<img src="./Slike/border.png" alt="Sve detalje ivice elementa je moguće podesiti svojstvom border za sve ivice, odnosno nekim od border-top, border-right, border-bottom ili border-left za samo jednu ivicu.">
-</td></tr></table>
+<div style="max-width: 98%;">
+<img style="max-width: 100%;" src="./Slike/border.png" alt="Sve detalje ivice elementa je moguće podesiti svojstvom border za sve ivice, odnosno nekim od border-top, border-right, border-bottom ili border-left za samo jednu ivicu.">
+</div>
 
 <a style="border: 2px solid gray; display: inline-block; padding: 15px; background-color: rgb(114, 211, 250); color: black;"
    href="./Primeri/12/index.html"
@@ -966,9 +966,9 @@ Naredni kod i prateća slika ilustruju upotrebu ovog svojstva.
 </html>
 ```
 
-<table><tr><td>
-<img src="./Slike/border_radius.png" alt="Ćoškove unutrašnjosti elementa je moguće zakriviti svojstvom border-radius.">
-</td></tr></table>
+<div style="max-width: 98%;">
+<img style="max-width: 100%;" src="./Slike/border_radius.png" alt="Ćoškove unutrašnjosti elementa je moguće zakriviti svojstvom border-radius.">
+</div>
 
 <a style="border: 2px solid gray; display: inline-block; padding: 15px; background-color: rgb(114, 211, 250); color: black;"
    href="./Primeri/13/index.html"
@@ -1021,9 +1021,9 @@ Naredni primer ilustruje upotrebu margina nad paragrafom koji je smešten kao sa
 </html>
 ```
 
-<table><tr><td>
-<img src="./Slike/block_margin.png" alt="Svojsvom margin podešavamo površinu pojasa oko elementa.">
-</td></tr></table>
+<div style="max-width: 98%;">
+<img style="max-width: 100%;" src="./Slike/block_margin.png" alt="Svojsvom margin podešavamo površinu pojasa oko elementa.">
+</div>
 
 <a style="border: 2px solid gray; display: inline-block; padding: 15px; background-color: rgb(114, 211, 250); color: black;"
    href="./Primeri/14/index.html"
@@ -1069,9 +1069,9 @@ Naredni primer i prateća slika ilustruju opisano ponašanje.
 </html>
 ```
 
-<table><tr><td>
-<img src="./Slike/margin_auto.png" alt="Elemente možemo horizontalno poravnati postavljanjem svojstva margin na vrednost auto.">
-</td></tr></table>
+<div style="max-width: 98%;">
+<img style="max-width: 100%;" src="./Slike/margin_auto.png" alt="Elemente možemo horizontalno poravnati postavljanjem svojstva margin na vrednost auto.">
+</div>
 
 <a style="border: 2px solid gray; display: inline-block; padding: 15px; background-color: rgb(114, 211, 250); color: black;"
    href="./Primeri/15/index.html"
@@ -1127,9 +1127,9 @@ Naredni primer i prateća slika ilustruju opisano ponašanje.
 </html>
 ```
 
-<table><tr><td>
-<img src="./Slike/inline_margin.png" alt="Linijski elementi nemaju gornji i donji pojas, ali imaju levi i desni pojas.">
-</td></tr></table>
+<div style="max-width: 98%;">
+<img style="max-width: 100%;" src="./Slike/inline_margin.png" alt="Linijski elementi nemaju gornji i donji pojas, ali imaju levi i desni pojas.">
+</div>
 
 <a style="border: 2px solid gray; display: inline-block; padding: 15px; background-color: rgb(114, 211, 250); color: black;"
    href="./Primeri/16/index.html"
@@ -1157,9 +1157,9 @@ Veb pregledači raspolažu dvama koordinatnim sistemima koji se razlikuju po nji
 
 Naredna slika ilustruje razliku između pozicija elementa u jednom i drugom koordinatnom sistemu. Kao što vidimo, prilikom skrolovanja stranice na sam početak, oba koordinatna sistema imaju isti centar, te su i koordinate elementa jednake. Međutim, prilikom skrolovanja stranice naniže, koordinate koje su relativne u odnosu na pogled veb pregledača se menjaju jer se i elementi pomeraju u odnosu na njega. Za razliku od toga, koordinate koje su relativne u odnosu na stranicu ostaju iste, jer je sada i sam centar koordinatnog sistema veb stranice pomeren zajedno sa stranicom (ovaj centar je pomeren izvan pogleda veb pregledača, što je prikazano delimičnom prozirnošću na slici).
 
-<table><tr><td>
-<img src="./Slike/koordinatni_sistemi.png" alt="Razlika između koordinatnih sistema u veb pregledaču.">
-</td></tr></table>
+<div style="max-width: 98%;">
+<img style="max-width: 100%;" src="./Slike/koordinatni_sistemi.png" alt="Razlika između koordinatnih sistema u veb pregledaču.">
+</div>
 
 Pojam pozicioniranja nije jedinstveno određen, već su definisana različita ponašanja za različite tipove pozicioniranja, sa kojima ćemo se upoznati u narednoj sekciji. Neki od njih pozicioniraju elemente u odnosu na koordinatni sistem veb pregledača, a neki od njih pozicioniraju elemente u odnosu na koordinatni sistem dokumenta.
 
@@ -1172,9 +1172,9 @@ Ipak, ova dva koordinatna sistema imaju i dosta zajedničkih karakteristika. Nek
 
 Iako je ekran veb pregledača dvodimenzionalan i svi elementi koji se prikazuju su dvodimenzionalni, postoji mogućnost da se više elemenata preklapaju jedni sa drugima. Zbog toga, uvedena je i treća koordinatna osa, *z*-osa, koja definiše dubinu na kojoj se dvodimenzionalni elementi smeštaju. Više o ovome biće reći u narednoj sekciji, ali radi kompletnosti ove sekcije, napomenimo da vrednosti na *z*-osi rastu u smeru od veb pregledača ka korisniku, dok te vrednosti opadaju u smeru od korisnika ka veb pregledaču. Naredna slika daje prikaz punog koordinatnog sistema, u odnosu na prozor veb pregledača.
 
-<table><tr><td>
-<img src="./Slike/pun_koordinatni_sistem.png" alt="Pun koordinatni sistem u veb pregledaču.">
-</td></tr></table>
+<div style="max-width: 98%;">
+<img style="max-width: 100%;" src="./Slike/pun_koordinatni_sistem.png" alt="Pun koordinatni sistem u veb pregledaču.">
+</div>
 
 ## 2.7 Pozicioniranje elemenata
 
@@ -1244,9 +1244,9 @@ Naredni kod i prateća slika ilustruju upotrebu statičkog pozicioniranja. Veb p
 </html>
 ```
 
-<table><tr><td>
-<img src="./Slike/static.png" alt="Primer statičkog pozicioniranja.">
-</td></tr></table>
+<div style="max-width: 98%;">
+<img style="max-width: 100%;" src="./Slike/static.png" alt="Primer statičkog pozicioniranja.">
+</div>
 
 <a style="border: 2px solid gray; display: inline-block; padding: 15px; background-color: rgb(114, 211, 250); color: black;"
    href="./Primeri/17/index.html"
@@ -1301,9 +1301,9 @@ Naredni kod predstavlja izmenu prethodnog koda u kojem je promenjen samo tip poz
 </html>
 ```
 
-<table><tr><td>
-<img src="./Slike/relative.png" alt="Primer relativnog pozicioniranja.">
-</td></tr></table>
+<div style="max-width: 98%;">
+<img style="max-width: 100%;" src="./Slike/relative.png" alt="Primer relativnog pozicioniranja.">
+</div>
 
 <a style="border: 2px solid gray; display: inline-block; padding: 15px; background-color: rgb(114, 211, 250); color: black;"
    href="./Primeri/18/index.html"
@@ -1365,9 +1365,9 @@ U skladu sa ovom složenom definicijom postoje dva slučaja koja možemo razmatr
 </html>
 ```
 
-<table><tr><td>
-<img src="./Slike/absolute_body.png" alt="Primer relativnog pozicioniranja elementa čiji su svi preci statički pozicionirani.">
-</td></tr></table>
+<div style="max-width: 98%;">
+<img style="max-width: 100%;" src="./Slike/absolute_body.png" alt="Primer relativnog pozicioniranja elementa čiji su svi preci statički pozicionirani.">
+</div>
 
 <a style="border: 2px solid gray; display: inline-block; padding: 15px; background-color: rgb(114, 211, 250); color: black;"
    href="./Primeri/19/index.html"
@@ -1426,9 +1426,9 @@ Međutim, šta ukoliko bi omotač bio nestatički pozicioniran? Ukoliko postavim
 </html>
 ```
 
-<table><tr><td>
-<img src="./Slike/absolute_wrapper.png" alt="Primer relativnog pozicioniranja elementa u odnosu na prvog nestatički-pozicioniranog pretka.">
-</td></tr></table>
+<div style="max-width: 98%;">
+<img style="max-width: 100%;" src="./Slike/absolute_wrapper.png" alt="Primer relativnog pozicioniranja elementa u odnosu na prvog nestatički-pozicioniranog pretka.">
+</div>
 
 <a style="border: 2px solid gray; display: inline-block; padding: 15px; background-color: rgb(114, 211, 250); color: black;"
    href="./Primeri/20/index.html"
@@ -1499,15 +1499,15 @@ Naredni kod pozicionira drugi `div` element `30px` od gornje ivice pogleda veb p
 </html>
 ```
 
-<table><tr><td>
-<img src="./Slike/fixed1.png" alt="">
-</td></tr></table>
+<div style="max-width: 98%;">
+<img style="max-width: 100%;" src="./Slike/fixed1.png" alt="">
+</div>
 
 (A) Primer fiksnog pozicioniranja. Veb stranica je tek učitana. Svi elementi su vidljivi.
 
-<table><tr><td>
-<img src="./Slike/fixed2.png" alt="">
-</td></tr></table>
+<div style="max-width: 98%;">
+<img style="max-width: 100%;" src="./Slike/fixed2.png" alt="">
+</div>
 
 (B) Primer fiksnog pozicioniranja. Veb stranica je skrolovana. Jedino je drugi `div` element na svojoj poziciji, dok je većina ostalih elemenata, koji nisu fiksno pozicionirani, izašla iz pogleda veb pregledača.
 
@@ -1569,9 +1569,9 @@ Svojstvo `z-index` određuje kako se elementi slažu jedan preko drugog, tj. odr
 </html>
 ```
 
-<table><tr><td>
-<img src="./Slike/z-index.png" alt="Primer korišćenja svojstva z-index.">
-</td></tr></table>
+<div style="max-width: 98%;">
+<img style="max-width: 100%;" src="./Slike/z-index.png" alt="Primer korišćenja svojstva z-index.">
+</div>
 
 <a style="border: 2px solid gray; display: inline-block; padding: 15px; background-color: rgb(114, 211, 250); color: black;"
    href="./Primeri/22/index.html"
@@ -1655,9 +1655,9 @@ Naredni HTML kod ilustruje korišćenje svojstva `display` za "pozicioniranje" e
 </html>
 ```
 
-<table><tr><td>
-<img src="./Slike/inline-block.png" alt="Korišćenje svojstva display za promene tipa prikaza elemenata.">
-</td></tr></table>
+<div style="max-width: 98%;">
+<img style="max-width: 100%;" src="./Slike/inline-block.png" alt="Korišćenje svojstva display za promene tipa prikaza elemenata.">
+</div>
 
 <a style="border: 2px solid gray; display: inline-block; padding: 15px; background-color: rgb(114, 211, 250); color: black;"
    href="./Primeri/23/index.html"
@@ -1690,9 +1690,9 @@ Zašto nismo prelomili ova dva `div` elementa u zasebni red? Na narednoj slici j
 </div>
 ```
 
-<table><tr><td>
-<img src="./Slike/inline-block-with-a-problem.png" alt="Skriveni problem sa inline-block elementima.">
-</td></tr></table>
+<div style="max-width: 98%;">
+<img style="max-width: 100%;" src="./Slike/inline-block-with-a-problem.png" alt="Skriveni problem sa inline-block elementima.">
+</div>
 
 Zašto je ova promena dovela do neispravnog prikaza? Jedina stvar koju smo uradili jeste razvojili crveni i žuti `div` element u zasebne linije u HTML kodu. Prethodno smo rekli da beline u HTML kodu ne utiču na prikaz elemenata. Zašto je onda žuti `div` element "prešao" u novu liniju u prikazu veb pregledača?
 
@@ -1819,9 +1819,9 @@ Naredni kod i prateća slika ilustruju razliku između ovih svojstava. U prvom o
 </html>
 ```
 
-<table><tr><td>
-<img src="./Slike/display_visibility.png" alt="Razlika u prikazivanju između elementa koji ima podešeno svojstvo display na vrednost none i elementa koji ima podešeno svojstvo visibility na vrednost hidden.">
-</td></tr></table>
+<div style="max-width: 98%;">
+<img style="max-width: 100%;" src="./Slike/display_visibility.png" alt="Razlika u prikazivanju između elementa koji ima podešeno svojstvo display na vrednost none i elementa koji ima podešeno svojstvo visibility na vrednost hidden.">
+</div>
 
 <a style="border: 2px solid gray; display: inline-block; padding: 15px; background-color: rgb(114, 211, 250); color: black;"
    href="./Primeri/24/index.html"
@@ -1887,9 +1887,9 @@ Naredni kodovi iz datoteka `index.html` i `img_override.css`, redom, i prateća 
 </html>
 ```
 
-<table><tr><td>
-<img src="./Slike/img_override.png" alt="Primer kada su spoljni kaskadni listovi narušili veličinu slike koja je postavljena u HTML kodu.">
-</td></tr></table>
+<div style="max-width: 98%;">
+<img style="max-width: 100%;" src="./Slike/img_override.png" alt="Primer kada su spoljni kaskadni listovi narušili veličinu slike koja je postavljena u HTML kodu.">
+</div>
 
 <a style="border: 2px solid gray; display: inline-block; padding: 15px; background-color: rgb(114, 211, 250); color: black;"
    href="./Primeri/25/index.html"
@@ -1945,9 +1945,9 @@ Naredni kod i prateća slika demonstriraju najjednostavniju upotrebu ovog svojst
 </html>
 ```
 
-<table><tr><td>
-<img src="./Slike/background_image.png" alt="Primer korišćenja svojstva background-image.">
-</td></tr></table>
+<div style="max-width: 98%;">
+<img style="max-width: 100%;" src="./Slike/background_image.png" alt="Primer korišćenja svojstva background-image.">
+</div>
 
 <a style="border: 2px solid gray; display: inline-block; padding: 15px; background-color: rgb(114, 211, 250); color: black;"
    href="./Primeri/26/index.html"
@@ -2003,9 +2003,9 @@ Ovim CSS svojstvom možemo izbeći neka neobična ponašanja, kao na primer,
 </html>
 ```
 
-<table><tr><td>
-<img src="./Slike/background_repeat.png" alt="Podešavanje ponavljanja pozadine elementa">
-</td></tr></table>
+<div style="max-width: 98%;">
+<img style="max-width: 100%;" src="./Slike/background_repeat.png" alt="Podešavanje ponavljanja pozadine elementa">
+</div>
 
 <a style="border: 2px solid gray; display: inline-block; padding: 15px; background-color: rgb(114, 211, 250); color: black;"
    href="./Primeri/27/index.html"
@@ -2053,9 +2053,9 @@ Naredni kod i prateća slika ilustruju jedan primer pozicioniranja pozadinske sl
 </html>
 ```
 
-<table><tr><td>
-<img src="./Slike/background_position.png" alt="Primer postavljanja pozadine elementa">
-</td></tr></table>
+<div style="max-width: 98%;">
+<img style="max-width: 100%;" src="./Slike/background_position.png" alt="Primer postavljanja pozadine elementa">
+</div>
 
 <a style="border: 2px solid gray; display: inline-block; padding: 15px; background-color: rgb(114, 211, 250); color: black;"
    href="./Primeri/28/index.html"
@@ -2134,9 +2134,9 @@ Naredni kod i prateća slika ilustruju korišćenje opisanog svojstva.
 </html>
 ```
 
-<table><tr><td>
-<img src="./Slike/background_size.png" alt="">
-</td></tr></table>
+<div style="max-width: 98%;">
+<img style="max-width: 100%;" src="./Slike/background_size.png" alt="">
+</div>
 
 <a style="border: 2px solid gray; display: inline-block; padding: 15px; background-color: rgb(114, 211, 250); color: black;"
    href="./Primeri/29/index.html"
@@ -2208,9 +2208,9 @@ Naredni kod i prateća slika ilustruju linearni gradijent, sa i bez specifikovan
 </html>
 ```
 
-<table><tr><td>
-<img src="./Slike/linear-gradient.png" alt="Primeri linearnih gradijenata">
-</td></tr></table>
+<div style="max-width: 98%;">
+<img style="max-width: 100%;" src="./Slike/linear-gradient.png" alt="Primeri linearnih gradijenata">
+</div>
 
 <a style="border: 2px solid gray; display: inline-block; padding: 15px; background-color: rgb(114, 211, 250); color: black;"
    href="./Primeri/30/index.html"
@@ -2218,9 +2218,9 @@ Naredni kod i prateća slika ilustruju linearni gradijent, sa i bez specifikovan
 
 Elipsoidni gradijent je nešto složenije definisan od linearnog. Naime, elipsoidni gradijent je definisan pomoću četiri vrednosti: (1) pozicije centra, (2) krajnjeg oblika, (3) dve boje ili više boja i (4) veličine krajnjeg oblika. Na narednoj slici dat je prikaz nekih od ovih elemenata.
 
-<table><tr><td>
-<img src="./Slike/radial_gradient_definition.png" alt="">
-</td></tr></table>
+<div style="max-width: 98%;">
+<img style="max-width: 100%;" src="./Slike/radial_gradient_definition.png" alt="">
+</div>
 
 Elipsoidni gradijent se kreira korišćenjem CSS funkcije oblika:
 
@@ -2320,9 +2320,9 @@ Naredni kod i prateća slika ilustruju korišćenje nekih od opisanih vrednost
 </html>
 ```
 
-<table><tr><td>
-<img src="./Slike/radial_gradient_1.png" alt="">
-</td></tr></table>
+<div style="max-width: 98%;">
+<img style="max-width: 100%;" src="./Slike/radial_gradient_1.png" alt="">
+</div>
 
 <a style="border: 2px solid gray; display: inline-block; padding: 15px; background-color: rgb(114, 211, 250); color: black;"
    href="./Primeri/31/index.html"
@@ -2404,10 +2404,10 @@ Naredni kod i prateća slika ilustruju uticaj pozicioniranja centra elipsoidnog 
 </html>
 ```
 
-<table><tr><td>
-<img src="./Slike/radial_gradient_2a.png" alt="">
-<img src="./Slike/radial_gradient_2b.png" alt="">
-</td></tr></table>
+<div style="max-width: 98%;">
+<img style="max-width: 100%;" src="./Slike/radial_gradient_2a.png" alt="">
+<img style="max-width: 100%;" src="./Slike/radial_gradient_2b.png" alt="">
+</div>
 
 <a style="border: 2px solid gray; display: inline-block; padding: 15px; background-color: rgb(114, 211, 250); color: black;"
    href="./Primeri/32/index.html"
@@ -2438,7 +2438,7 @@ Za više informacijama o temama koje su obrađene u ovoj sekciji, možete poseti
 [Vežbe](../../../README.md)
 
 <!--
-<table><tr><td>
-<img src="./Slike/.png" alt="">
-</td></tr></table>
+<div style="max-width: 98%;">
+<img style="max-width: 100%;" src="./Slike/.png" alt="">
+</div>
 -->
