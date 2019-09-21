@@ -36,7 +36,19 @@ Elemente možemo dodatno okarakterisati *atributima* (engl. *attribute*). Svaki 
 </body>
 ```
 
-Postoje generički atributi koji se mogu primeniti na svim elementima, a postoje i specifični atributi za pojedine elemente. Na primer, svi elementi mogu imati atribut `id`, dok samo element `form` može imati atribut `onsubmit`. U ovom poglavlju knjige ćemo se posvetiti upoznavanju različitih HTML elemenata i atributima kojima oni mogu biti okarakterisani.
+Postoje generički atributi koji se mogu primeniti na svim elementima, a postoje i specifični atributi za pojedine elemente. Na primer, svi elementi mogu imati atribut `id`, dok samo element `form` može imati atribut `onsubmit`. U ovom poglavlju knjige ćemo se posvetiti upoznavanju različitih HTML elemenata i atributima kojima oni mogu biti okarakterisani. Pre nego što pređemo na pojedinačne elemente, prikažimo i objasnimo neke od generičkih atributa:
+
+- Atribut `class` se koristi za određivanje *klasa* (engl. *class*) kojima element pripada. Element može pripadati jednoj klasi ili više njih. Takođe, jedna klasa može biti dodeljena većem broju elemenata. Vrednost ovog atributa je niz naziva klasa koje se pridodaju elementu, odvojenih znakon razmaka. Na primer, u kodu `<div class="obavestenje"></div>` elementu `div` je dodeljena klasa čiji je naziv `obavestenje`, dok u kodu `<p class="crveni-tekst velika-slova"></p>` elementu `p` su dodeljene dve klase: `crveni-tekst` i `velika-slova`. Nazivi klasa se mogu sastojati od karaktera slova (`a`-`z`, `A`-`Z`), cifara (`0`-`9`), crtice (`-`) i podvlake (`_`) i moraju počinjati karakterom slova.
+
+- Atribut `id` se koristi za određivanje *identifikatora* (engl. *identifier*) elementa. Za razliku od atributa klasa, svaki element može imati najviše jedan identifikator i najviše jedan element može imati neki identifikator. HTML dokument nije validan ukoliko je isti identifikator dodeljen većem broju elemenata. Na primer, u kodu `<nav id="navigacija"></nav>` elementu `nav` je dodeljen identifikator `navigacija`. Pravila imenovanja za identifikatore su identična pravilima za imenovanje klasa.
+
+- Atribut `style` služi za postavljenje stilova nad jednim elementom korišćenjem jezika CSS. Više o ovom atributu će biti reči u narednom poglavlju.
+
+- Atribut `title` služi za navođenje dodatnih informacija o elementu. Veb pregledači najčešće prikazuju ove informacije u vidu *informacione poruke* (engl. *tooltip*) prilikom postavljanja kursora miša na element.
+
+- Atribut `lang` služi za navođenje jezika za sadržaj elementa. Vrednost ovog atributa je kod jezika koji želimo da postavimo. Kompletan spisak kodova jezika se može pronaći na adresi [https://www.w3schools.com/tags/ref_language_codes.asp](https://www.w3schools.com/tags/ref_language_codes.asp).
+
+Sada kada smo upoznati sa osnovnim elementima jezika HTML, započnimo kreiranje naših prvih HTML dokumenata.
 
 ## 1.2 Kreiranje HTML dokumenata
 
