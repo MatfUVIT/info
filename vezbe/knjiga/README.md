@@ -21,16 +21,16 @@ Autori:
 
 3. Blokovski i linijski elementi
 
-4. [Elementi za grupisanje sadržaja](./Poglavlja/HTML/README.md#1.4-elementi-za-grupisanje-sadrzaja){:target="_blank"}
+4. [Elementi za grupisanje sadržaja](./Poglavlja/HTML/README.md#14-elementi-za-grupisanje-sadržaja){:target="_blank"}
 
 5. Elementi za prikaz teksta
-   
+
    1. Naslovi
-   
+
    2. Paragraf, novi red i separacija sadržaja
-   
-   3. Linijski tekst
-   
+
+   3. Linijski tekst(./Poglavlja/HTML/README.md#23-linijski'tekst){:target="_blank"}
+
    4. Citati
 
 ### [Poglavlje 2. Stilizovanje Veb dokumenata kroz CSS](./Poglavlja/CSS/README.md){:target="_blank"}
