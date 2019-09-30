@@ -29,7 +29,7 @@ Autori:
 
    2. Paragraf, novi red i separacija sadržaja
 
-   3. Linijski tekst(./Poglavlja/HTML/README.md#23-linijski'tekst){:target="_blank"}
+   3. [Linijski tekst](./Poglavlja/HTML/README.md#153-linijski-tekst){:target="_blank"}
 
    4. Citati
 
