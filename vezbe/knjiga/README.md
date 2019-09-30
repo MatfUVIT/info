@@ -33,10 +33,6 @@ Autori:
    
    4. Citati
 
-6. Slike
-
-   1. Figure i anotiranje elemenata
-
 ### [Poglavlje 2. Stilizovanje Veb dokumenata kroz CSS](./Poglavlja/CSS/README.md)
 
 1. Osnovni elementi jezika CSS
@@ -68,24 +64,6 @@ Autori:
    4. Svojstvo `border-radius`
 
    5. Pojas elementa
-
-6. Koordinatni sistem veb pregledača
-
-7. Pozicioniranje elemenata
-   
-   1. Statičko pozicioniranje
-
-   2. Relativno pozicioniranje
-
-   3. Apsolutno pozicioniranje
-
-   4. Fiksno pozicioniranje
-
-   5. Z-pozicioniranje elemenata
-
-   6. Svojstva `display` i `visibility`
-
-8. Slike
 
 ---
 
