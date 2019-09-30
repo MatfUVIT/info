@@ -13,7 +13,7 @@ Autori:
 
 ## Deo 1 - Osnovni elementi Veba
 
-### [Poglavlje 1. Struktuiranje Veb dokumenata kroz HTML](./Poglavlja/HTML/README.md)
+### [Poglavlje 1. Struktuiranje Veb dokumenata kroz HTML](./Poglavlja/HTML/README.md){:target="_blank"}
 
 1. Osnovni elementi HTML dokumenata
 
@@ -21,7 +21,7 @@ Autori:
 
 3. Blokovski i linijski elementi
 
-4. Elementi za grupisanje sadržaja
+4. [Elementi za grupisanje sadržaja](./Poglavlja/HTML/README.md#1-4-elementi-za-grupisanje-sadržaja){:target="_blank"}
 
 5. Elementi za prikaz teksta
    
@@ -33,7 +33,7 @@ Autori:
    
    4. Citati
 
-### [Poglavlje 2. Stilizovanje Veb dokumenata kroz CSS](./Poglavlja/CSS/README.md)
+### [Poglavlje 2. Stilizovanje Veb dokumenata kroz CSS](./Poglavlja/CSS/README.md){:target="_blank"}
 
 1. Osnovni elementi jezika CSS
 
