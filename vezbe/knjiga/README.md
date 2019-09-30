@@ -21,7 +21,7 @@ Autori:
 
 3. Blokovski i linijski elementi
 
-4. [Elementi za grupisanje sadržaja](./Poglavlja/HTML/README.md#1-4-elementi-za-grupisanje-sadržaja){:target="_blank"}
+4. [Elementi za grupisanje sadržaja](./Poglavlja/HTML/README.md#1.4-elementi-za-grupisanje-sadržaja){:target="_blank"}
 
 5. Elementi za prikaz teksta
    
