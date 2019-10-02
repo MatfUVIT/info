@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Primer 35</title>
+    <meta charset="UTF-8">
+
+    <style>
+        table,
+        table td {
+            border: 2px solid black;
+        }
+
+        table {
+            border-spacing: 20px;
+        }
+
+        table td {
+            width: 30px;
+            height: 30px;
+        }
+
+        table#t1 {
+            empty-cells: show;
+        }
+
+        table#t2 {
+            empty-cells: hide;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Razmak između ćelija. <br> Prazne ćelije u tabelama</h1>
+
+    <p>Sa prikazivanjem praznih ćelija</p>
+
+    <table id="t1">
+        <tr>
+            <td>1</td>
+            <td></td>
+            <td>3</td>
+            <td></td>
+            <td>5</td>
+            <td></td>
+        </tr>
+    </table>
+
+    <p>Bez prikazivanja praznih ćelija</p>
+
+    <table id="t2">
+        <tr>
+            <td></td>
+            <td>8</td>
+            <td></td>
+            <td>10</td>
+            <td></td>
+            <td>12</td>
+        </tr>
+    </table>
+</body>
+
+</html>
