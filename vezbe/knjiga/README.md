@@ -15,55 +15,43 @@ Autori:
 
 ### [Poglavlje 1. Struktuiranje Veb dokumenata kroz HTML](./Poglavlja/HTML/README.md){:target="_blank"}
 
-1. Osnovni elementi HTML dokumenata
+1. [Osnovni elementi HTML dokumenata](./Poglavlja/HTML/README.md#11-osnovni-elementi-html-dokumenata){:target="_blank"}
 
-2. Kreiranje HTML dokumenata
+2. [Kreiranje HTML dokumenata](./Poglavlja/HTML/README.md/#12-kreiranje-html-dokumenata){:target="_blank"}
 
-3. Blokovski i linijski elementi
+3. [Blokovski i linijski elementi](./Poglavlja/HTML/README.md#13-blokovski-i-linijski-elementi){:target="_blank"}
 
 4. [Elementi za grupisanje sadržaja](./Poglavlja/HTML/README.md#14-elementi-za-grupisanje-sadržaja){:target="_blank"}
 
-5. Elementi za prikaz teksta
-
-   1. Naslovi
-
-   2. Paragraf, novi red i separacija sadržaja
-
+5. [Elementi za prikaz teksta](./Poglavlja/HTML/README.md#15-elementi-za-prikaz-teksta){:target="_blank"}
+   
+   1. [Naslovi](./Poglavlja/HTML/README.md#151-naslovi){:target="_blank"}
+   
+   2. [Paragraf, novi red i separacija sadržaja](./Poglavlja/HTML/README.md#152-paragraf-novi-red-i-separacija-sadržaja){:target="_blank"}
+   
    3. [Linijski tekst](./Poglavlja/HTML/README.md#153-linijski-tekst){:target="_blank"}
-
-   4. Citati
+   
+   4. [Citati](./Poglavlja/HTML/README.md#154-citati){:target="_blank"}
 
 ### [Poglavlje 2. Stilizovanje Veb dokumenata kroz CSS](./Poglavlja/CSS/README.md){:target="_blank"}
 
-1. Osnovni elementi jezika CSS
+1. [Osnovni elementi jezika CSS](./Poglavlja/CSS/README.md#21-osnovni-elementi-jezika-css){:target="_blank"}
 
-2. Načini za zadavanje pravila za stilizovanje
+2. [Načini za zadavanje pravila za stilizovanje](./Poglavlja/CSS/README.md#22-načini-za-zadavanje-pravila-za-stilizovanje){:target="_blank"}
    
-   1. Spoljni kaskadni listovi
+   1. [Spoljni kaskadni listovi](./Poglavlja/CSS/README.md#221-spoljni-kaskadni-listovi){:target="_blank"}
    
-   2. Element style
+   2. [Element style](./Poglavlja/CSS/README.md#222-element-style){:target="_blank"}
    
-   3. Atribut style
+   3. [Atribut style](./Poglavlja/CSS/README.md#223-atribut-style){:target="_blank"}
    
-   4. Preklapanje stilova
+   4. [Preklapanje stilova](./Poglavlja/CSS/README.md#224-preklapanje-stilova){:target="_blank"}
 
-3. Rad sa bojama
+3. [Rad sa bojama](./Poglavlja/CSS/README.md#23-rad-sa-bojama){:target="_blank"}
 
-4. Stilizovanje teksta
+4. [Stilizovanje teksta](./Poglavlja/CSS/README.md#24-stilizovanje-teksta){:target="_blank"}
    
-   1. Rad sa fontovima
-
-5. Model kutije
-
-   1. Sadržaj elementa
-
-   2. Punjenje elementa
-
-   3. Ivica elementa
-
-   4. Svojstvo `border-radius`
-
-   5. Pojas elementa
+   1. [Rad sa fontovima](./Poglavlja/CSS/README.md#241-rad-sa-fontovima){:target="_blank"}
 
 ---
 

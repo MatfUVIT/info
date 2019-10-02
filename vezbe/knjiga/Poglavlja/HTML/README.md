@@ -447,7 +447,7 @@ Element `blockquote` se obično koristi ukoliko želimo da istaknemo neki citat.
 <a style="border: 2px solid gray; display: inline-block; padding: 15px; background-color: rgb(114, 211, 250); color: black;"
    href="./Primeri/10/index.html"
    target="_blank">Pogledaj primer uživo</a>
-
+   
 ---
 
 [Knjiga](../../README.md)
