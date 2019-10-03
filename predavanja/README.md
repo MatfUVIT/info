@@ -14,7 +14,7 @@
 
         1. [Оцењивање и бодовање](tekstovi/Uvodne-Napomene-o-Kursu#оцењивање-и-бодовање){:target="_blank"}
 
-        1. [Литература](tekstovi/Uvodne-Napomene-o-Kursu#литература){:target="_blank"}
+        1. [Литература](tekstovi/Uvodne-Napomene-o-Kursu#изабрана-литература){:target="_blank"}
 
     1. [Увод у рачунарске мреже](/prezentacije/UVIT01-01-Uvod u racunarske mreze.pdf){:target="_blank"}  
 
