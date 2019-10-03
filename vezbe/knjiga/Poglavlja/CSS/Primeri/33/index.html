@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Primer 33</title>
+    <meta charset="UTF-8">
+
+    <style>
+        table,
+        p {
+            font-size: 20px;
+        }
+
+        table#t1,
+        table#t1 tr,
+        table#t1 tr td {
+            border: 2px solid black;
+        }
+
+        table#t2 {
+            border: 5px solid slateblue;
+            border-collapse: collapse;
+        }
+
+        table#t2 tr#naslovni-red {
+            border-bottom: 5px solid steelblue;
+        }
+
+        table#t2 tr.ostali-redovi td {
+            border: 5px dashed darksalmon;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Stilizovanje ivice tabela</h1>
+
+    <p>Stilizovanje sa razdvojenim ivicama</p>
+
+    <table id="t1">
+        <tr>
+            <td>Proizvod</td>
+            <td>Cena</td>
+        </tr>
+        <tr>
+            <td>Kafa</td>
+            <td>150</td>
+        </tr>
+        <tr>
+            <td>Plazma</td>
+            <td>100</td>
+        </tr>
+    </table>
+
+    <p>Stilizovanje sa spojenim ivicama</p>
+
+    <table id="t2">
+        <tr id="naslovni-red">
+            <td>Proizvod</td>
+            <td>Cena</td>
+        </tr>
+        <tr class="ostali-redovi">
+            <td>Kafa</td>
+            <td>150</td>
+        </tr>
+        <tr class="ostali-redovi">
+            <td>Plazma</td>
+            <td>100</td>
+        </tr>
+    </table>
+</body>
+
+</html>
