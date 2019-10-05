@@ -8,27 +8,21 @@
 
     1. [Уводне напомене о курсу](tekstovi/Uvodne-Napomene-o-Kursu.md){:target="_blank"}
 
-        1. [Концепција курса](tekstovi/Uvodne-Napomene-o-Kursu#концепција-курса){:target="_blank"}
-
         1. [Садржај курса](tekstovi/Uvodne-Napomene-o-Kursu#садржај-курса){:target="_blank"}
 
-        1. [Оцењивање и бодовање](tekstovi/Uvodne-Napomene-o-Kursu#оцењивање-и-бодовање){:target="_blank"}
-
-        1. [Литература](tekstovi/Uvodne-Napomene-o-Kursu#изабрана-литература){:target="_blank"}
+        1. [Изабрана литература](tekstovi/Uvodne-Napomene-o-Kursu#изабрана-литература){:target="_blank"}
 
     1. [Увод у рачунарске мреже](/prezentacije/UVIT01-01-Uvod u racunarske mreze.pdf){:target="_blank"}  
 
-        1. [Улога рачунарских мрежа](tekstovi/Racunarske-Mreze-Uvod.md#улога-и-начин-рада-рачунарских-мрежа){:target="_blank"}
-
-        1. Начин рада у мрежи
+        1. [Улога и начин рада рачунарских мрежа](tekstovi/Racunarske-Mreze-Uvod.md#улога-и-начин-рада-рачунарских-мрежа){:target="_blank"}
 
         1. [Компоненте рачунарских мрежа](tekstovi/Racunarske-Mreze-Uvod.md#компоненте-рачунарских-мрежа){:target="_blank"}
 
-            - Мрежни хардвер
+            - [Мрежни хардвер](tekstovi/Racunarske-Mreze-Uvod.md#мрежни-хардвер){:target="_blank"}
 
-            - Комуникациони канали
+            - [Комуникациони канали](tekstovi/Racunarske-Mreze-Uvod.md#комуникациони-канали){:target="_blank"}
 
-            - Мрежни софтвер
+            - [Мрежни софтвер](tekstovi/Racunarske-Mreze-Uvod.md#мрежни-софтвер){:target="_blank"}
 
         1. Распон рачунарских мрежа
 
