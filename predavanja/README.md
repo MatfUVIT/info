@@ -18,7 +18,7 @@
 
     1. [Увод у рачунарске мреже](/prezentacije/UVIT01-01-Uvod u racunarske mreze.pdf){:target="_blank"}  
 
-        1. Улога рачунарских мрежа
+        1. [Улога рачунарских мрежа](tekstovi/Racunarske-Mreze-Uvod.md#улога-и-начин-рада-рачунарских-мрежа){:target="_blank"}
 
         1. Начин рада у мрежи
 
