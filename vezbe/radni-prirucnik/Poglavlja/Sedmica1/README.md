@@ -2,7 +2,7 @@
 
 [Radni priručnik](../../README.md)
 
----
+-----
 
 # 1. Sedmica 1
 
@@ -30,29 +30,15 @@
 
    - Sekcija 4. Stilizovanje teksta
 
-   - Sekcija 5. Model kutije
-
 ## 1.2 Domaći zadaci
 
 1. Napisati HTML i CSS kod koji odgovara stranici na narednoj slici. Pomoću validatora osigurati se da je kod napisan u skladu sa HTML5 standardom.
-
-<table><tr><td>
-<img src="./Slike/zadatak1.png" alt="Zadatak 1">
-</td></tr></table>
+<img style="max-width: 100%;" src="./Slike/zadatak1.png" alt="">
 
 2. Napisati HTML i CSS kod koji odgovara stranici na narednoj slici. Familiju fontova koja se koristi u zadatku moguće je pronaći na [ovoj lokaciji](./Resursi/zadatak2_font.ttf). Pomoću validatora osigurati se da je kod napisan u skladu sa HTML5 i CSS3 standardom.
+<img style="max-width: 100%;" src="./Slike/zadatak2.png" alt="">
 
-<table><tr><td>
-<img src="./Slike/zadatak2.png" alt="Zadatak 2">
-</td></tr></table>
-
-3. Napisati HTML i CSS kod koji odgovara stranici na narednoj slici. Familiju fontova koja se koristi u zadatku moguće je pronaći na [ovoj lokaciji](./Resursi/zadatak3_font.ttf). Pomoću validatora osigurati se da je kod napisan u skladu sa HTML5 i CSS3 standardom.
-
-<table><tr><td>
-<img src="./Slike/zadatak3.png" alt="Zadatak 3">
-</td></tr></table>
-
----
+-----
 
 [Radni priručnik](../../README.md)
 

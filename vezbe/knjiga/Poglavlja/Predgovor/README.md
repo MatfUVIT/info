@@ -2,7 +2,7 @@
 
 [Knjiga](../../README.md)
 
----
+-----
 
 # Predgovor
 
@@ -14,7 +14,7 @@ Ovaj materijal ne može zameniti pohađanje vežbi niti drugu preporučenu liter
 
 Autori
 
----
+-----
 
 [Knjiga](../../README.md)
 
