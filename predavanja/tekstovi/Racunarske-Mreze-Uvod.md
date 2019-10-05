@@ -25,7 +25,7 @@
 
 - Дељење хардверских ресурса: штампача, скенера итд.
 
-![пример рачунарске мреже](assets/images/network-example01.jpg)
+![Пример рачунарске мреже](assets/images/network-example01.jpg){:allign="center"}{:alt="Пример рачунарске мреже"}
 
 Најчешћи начини извршавања послова у рачунарским мрежама су:
 
@@ -37,7 +37,7 @@
 
 - Мрежа равноправних рачунара (peer-to-peer, P2P): BitTorrent
 
-![клијент-сервер и мрежа равноправних рачуара](assets/images/klijent-server-peer-to-peer.png)
+![Клијент-сервер и мрежа равноправних рачуара](assets/images/klijent-server-peer-to-peer.png){:allign="center"}
 
 ## Компоненте рачунарских мрежа
 
