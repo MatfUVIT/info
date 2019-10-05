@@ -1,6 +1,6 @@
 [Vežbe](../README.md)
 
----
+-----
 
 # Radni priručnik uz knjigu "Uvod u Veb i Internet Programiranje"
 
@@ -17,6 +17,6 @@ Autori:
 
 ### [Sedmica 2](./Poglavlja/Sedmica2/README.md)
 
----
+-----
 
 [Vežbe](../README.md)

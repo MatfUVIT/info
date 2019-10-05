@@ -2,7 +2,7 @@
 
 [Knjiga](../../README.md)
 
----
+-----
 
 # 2. Stilizovanje Veb dokumenata kroz CSS
 
@@ -12,7 +12,7 @@
 
 CSS jezik se sastoji od niza *pravila* (engl. *rule*). Svako pravilo je oblika:
 
-```
+```css
 selektor {
     svojstvo-1: vrednost-1; /∗ deklaracija 1 ∗/
     ...
@@ -616,7 +616,1286 @@ Za više informacijama o temama koje su obrađene u ovoj sekciji, možete poseti
 - Više o familijama fontova sa primerima: 
 [https://www.w3.org/Style/Examples/007/fonts.en.html](https://www.w3.org/Style/Examples/007/fonts.en.html).
 
----
+## 2.5 Model kutije
+
+U prethodnom poglavlju smo diskutovali o tome kako je HTML elemente moguće razmatrati kao pravougaonike koji se slažu jedni ispod drugih, odnosno, jedni do drugih, u zavisnosti od različitih faktora, kao što je, na primer, činjenica da je neki element blokovski ili linijski. Ovaj koncept ćemo sada detaljnije analizirati kroz pojam modela kutije.
+
+*Model kutije* (engl. *box model*) podrazumeva da se svaki HTML element prostire odgovarajućom dvodimenzionalnom površinom na veb prezentaciji. Veličina ove površine zavisi od četiri veličine, koje ujedno čine i model kutije:
+
+- *Sadržaj* (engl. *content*) predstavlja površinu u kojoj se prikazuje tekst, slika ili drugi sadržaj HTML elementa.
+
+- *Punjenje* (engl. *padding*) predstavlja površinu oko sadržaja, ali koji se još uvek smatra "unutrašnošću" elementa. Punjenje je podrazumevano prozirno.
+
+- *Ivica* (engl. *border*) predstavlja površinu koja deli unutrašnjost elementa od spoljašnjosti, odnosno, od drugih elemenata. Ivica podrazumevano nije postavljena.
+
+- *Pojas* (engl. *margin*) predstavlja površinu oko ivice elementa, koji pre svega služi da stvori bezbedni pojas oko elementa i odvoji ga od okolnih elemenata (otuda i njegov prevod). Pojas je uvek proziran.
+
+Kao što je prikazano na narednoj slici, svaki od kasnije navedenih površina obuhvata sve prethodne površine. Sada ćemo se upoznati detaljnije sa svakom od navedenih koncepata i videti na koje načine možemo upravljati njima.
+
+<div style="max-width: 98%;">
+<img style="max-width: 100%;" src="./Slike/box_model.png" alt="Ilustracija modela kutije.">
+</div>
+
+### 2.5.1 Sadržaj elementa
+
+Veličina površine koja predstavlja sadržaj elementa zavisi od dve stvari:
+
+1. Da li je u pitanju blokovski ili linijski element?
+2. Koje su vrednosti CSS svojstava `width` i `height`?
+
+Blokovski elementi se podrazumevano prostiru celom širinom roditeljskog elementa u čijem se sadržaju nalaze, dok njihovu visinu izračunava veb pregledač na osnovu sadržaja u tim elementima. Ovaj, pdorazumevani efekat, potiče od činjenice da su svakom elementu podrazumevano postavljena svojstva `width` i `height` na vrednost `auto`. Međutim, za blokovske elemente, moguće je podešavati ova svojstva tako da veličina sadržaja bude drugačija. Vrednosti koje ova dva svojstva uzimaju su dužine.
+
+Naredni kod ilustruje upotrebu ovih svojstava u promeni veličine sadržaja za blokovski element `div`. Naredna slika ilustruje prikaz ovog koda u veb pregledaču.
+
+```html
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Primer 8</title>
+    <meta charset="UTF-8">
+
+    <style type="text/css">
+        div {
+            height: 200px;
+            width: 50%;
+            background-color: powderblue;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        Ovaj div element ima visinu od 200px i sirinu od 50%.
+    </div>
+</body>
+
+</html>
+```
+
+<div style="max-width: 98%;">
+<img style="max-width: 100%;" src="./Slike/block_sirina_visina.png" alt="Blokovskim elementima je moguće promeniti širinu i visinu sadržaja.">
+</div>
+
+<a style="border: 2px solid gray; display: inline-block; padding: 15px; background-color: rgb(114, 211, 250); color: black;"
+   href="./Primeri/8/index.html"
+   target="_blank">Pogledaj primer uživo</a>
+
+Kada su linijski elementi u pitanju, površina njihovog sadržaja zavisi isključivo od površine samog sadržaja koji se prikazuje u okviru njih. Na linijske elemente nije moguće uticati svojstvima `width` i `height`. Naredni kod ilustruje ovo ponašanje, a na narednoj slici je dat njegov prikaz u veb pregledaču.
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Primer 9</title>
+    <meta charset="UTF-8">
+    
+    <style type="text/css">
+        #s1 {
+            /* Svojstva height i width nemaju nikakvog efekta */
+            height: 100px;
+            width: 1000px;
+            background-color: rgb(193, 22, 193);
+        }
+    </style>
+</head>
+<body>
+    <span id="s1">TEST SADRZAJ</span>
+    <span id="s2">TEST SADRZAJ</span>
+</body>
+</html>
+```
+
+<div style="max-width: 98%;">
+<img style="max-width: 100%;" src="./Slike/box_model_inline.png" alt="CSS svojstva width i height ne utiču na veličinu sadržaja linijskih elemenata.">
+</div>
+
+<a style="border: 2px solid gray; display: inline-block; padding: 15px; background-color: rgb(114, 211, 250); color: black;"
+   href="./Primeri/9/index.html"
+   target="_blank">Pogledaj primer uživo</a>
+
+### 2.5.2 Punjenje elementa
+
+Punjenje elementa možemo zadati u jeziku CSS pomoću svojstva `padding` koje istovremeno podešava gornje, desno, donje i levo punjenje, tim redosledom. Međutim, ukoliko želimo da specifikujemo zasebnu veličinu punjenja na nekoj strani, možemo iskoristiti neko od svojstava `padding-top`, `padding-right`, `padding-bottom` ili `padding-left`. Vrednosti za sva opisana svojstva su dužine. Podrazumevana vrednost je `0`.
+
+Naredni HTML kod i prateća slika ilustruju postavljanje punjenja za svaku stranu ponaosob. Primetimo da elementu `div` nije promenjena veličina sadržaja, tj. sadržaj će zauzimati onoliko mesta koliko mu je potrebno. Međutim, zbog postojanja punjenja, sadržaj neće zauzimati celu širinu veb pregledača. Takođe, ono što je interesantno primetiti jeste da će svojstvo `background-color` takođe obojiti površinu punjenja zajedno sa površinom sadržaja.
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Primer 10</title>
+    <meta charset="UTF-8">
+    
+    <style type="text/css">
+        div {
+            background-color: lightblue;
+            padding-top: 50px;
+            padding-right: 30px;
+            padding-bottom: 100px;
+            padding-left: 280px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        Ovaj div element ima gornje punjenje od 50px, desno punjenje od 30px, donje punjenje od 100px i levo punjenje od 280px.
+    </div>
+</body>
+</html>
+```
+
+<div style="max-width: 98%;">
+<img style="max-width: 100%;" src="./Slike/block_padding.png" alt="Ukupna veličina elementa div se povećala zbog postojanja punjenja. Sam sadržaj zauzima podrazumevanu veličinu za blokovske elemente.">
+</div>
+
+<a style="border: 2px solid gray; display: inline-block; padding: 15px; background-color: rgb(114, 211, 250); color: black;"
+   href="./Primeri/10/index.html"
+   target="_blank">Pogledaj primer uživo</a>
+
+Punjenje proizvodi isti efekat i za linijske i za blokovske elemente.
+
+### 2.5.3 Ivica elementa
+
+U CSS jeziku, svojstvom `border` je moguće postaviti stil, širinu i boju površine koja odvaja unutrašnjost elementa od njegovog pojasa (odnosno, od okoline ukoliko pojas ne postoji). Ova površina, kao što smo rekli, naziva se ivica elementa. 
+
+Međutim, pre nego što razumemo kako ovo svojstvo funkcioniše, prvo ćemo se upoznati sa svojstvima koja služe da postavljaju navedena tri elementa ivice odvojeno.
+
+#### Stil ivice
+
+Stilom ivice upravljamo koristeći svojstvo `border-style`. Moguće vrednosti za ovo svojstvo su: `dotted` (tačkasti stil), `dashed` (isprekidani stil), `solid` (stil pune linije), `double` (stil duple pune linije), `groove` (duplo tisnuti stil), `ridge` (reljefni stil), `inset` (utisnuti stil), `outset` (otisnuti stil), `none` (bez ivice) ili `hidden` (ivica je sakrivena). Naredna slika ilustruje svaki od ovih stilova.
+
+Takođe, ukoliko želimo da definišemo različite stilove za svaku ivicu ponaosob, umesto navođenja jedne vrednosti (čime podešavamo isti stil za sve četiri ivice), možemo navesti četiri vrednosti koje će postaviti stilove za gornju, desnu, donju i levu ivicu, tim redosledom.
+
+Naredni HTML kod i prateća slika ilustruju podešavanje stila ivica. Podešena je i širina ivice na `10px` kako bi stilovi bili bolje prikazani.
+
+```html
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Primer 11</title>
+    <meta charset="UTF-8">
+
+    <style type="text/css">
+        p {
+            border-width: 10px;
+        }
+
+        p.dotted {
+            border-style: dotted;
+        }
+
+        p.dashed {
+            border-style: dashed;
+        }
+
+        p.solid {
+            border-style: solid;
+        }
+
+        p.double {
+            border-style: double;
+        }
+
+        p.groove {
+            border-style: groove;
+        }
+
+        p.ridge {
+            border-style: ridge;
+        }
+
+        p.inset {
+            border-style: inset;
+        }
+
+        p.outset {
+            border-style: outset;
+        }
+
+        p.none {
+            border-style: none;
+        }
+
+        p.hidden {
+            border-style: hidden;
+        }
+
+        p.mix {
+            border-style: dotted dashed solid double;
+        }
+    </style>
+</head>
+
+<body>
+    <p class="dotted">A dotted border.</p>
+    <p class="dashed">A dashed border.</p>
+    <p class="solid">A solid border.</p>
+    <p class="double">A double border.</p>
+    <p class="groove">A groove border.</p>
+    <p class="ridge">A ridge border.</p>
+    <p class="inset">An inset border.</p>
+    <p class="outset">An outset border.</p>
+    <p class="none">No border.</p>
+    <p class="hidden">A hidden border.</p>
+
+    <p class="mix">A mixed border.</p>
+</body>
+
+</html>
+```
+
+<div style="max-width: 98%;">
+<img style="max-width: 100%;" src="./Slike/ivica_stilovi.png" alt="Različiti stilovi ivice postignuti korišćenjem svojstva border-style.">
+</div>
+
+<a style="border: 2px solid gray; display: inline-block; padding: 15px; background-color: rgb(114, 211, 250); color: black;"
+   href="./Primeri/11/index.html"
+   target="_blank">Pogledaj primer uživo</a>
+
+Ono što je veoma važno napomenuti jeste da nijedna od preostalih svojstava koja se tiču ivice - širina i boja - neće proizvesti efekat ukoliko svojstvo za stil nije takođe postavljeno.
+
+#### Širina ivice 
+
+Širinu ivice definišemo pomoću svojstva `border-width`. Moguće vrednosti za ovo svojstvo su: dužine, `thin` (tanka ivica), `medium` (ivica srenje širine) ili `thick` (deblja ivica). Poput svojstva za stil ivice, i ovo svojstvo može imati jednu ili četiri vrednosti. Semantika ovih varijanti je identična kao za prethodno svojstvo. Podrazumevana vrednost za širinu ivice je `1px`.
+
+#### Boja ivice 
+
+Boju ivice definišemo pomoću svojstva `border-color`. Moguće vrednosti za ovo svojstvo su: boja zadata u nekom modelu boja ili `transparent` (providna ivica). Kao i prethodna dva svojstva, i ovo svojstvo može imati jednu ili četiri vrednosti, uz identičnu semantiku. Podrazumevana vrednost za boju ivice je `black`.
+
+#### Navođenje konkretne ivice 
+
+Svako od prethodna tri svojstva ima i varijantu kojom se navodi na kojoj strani ivice to svojstvo treba da se primeni. Tako, na primer, pored svojstva `border-style`, postoje i svojstva `border-top-style`, `border-right-style`, `border-down-style` i `border-left-style`. Čitaocu bi trebalo da bude jasan način upotrebe ovih svojstava na osnovu njihovih naziva. Analogno važi i za svojstva `border-width` i `border-color`.
+
+#### Svojstvo `border`
+
+Dakle, ukoliko želimo za ivicu da detaljno specifikujemo izgled, moramo da navedemo tri deklaracije, po jednu za stil (`border-style`), širinu (`border-width`) i boju (`border-color`). Ipak, navedene tri deklaracije se mogu skratiti u jednu tako što se koristi svojstvo `border`. Vrednost ovog svojstva čine tri vrednosti, odvojene karakterom razmaka: 
+
+1. Vrednost za stil ivice (ovo je obavezno navesti)
+2. Vrednost za širinu ivice 
+3. Vrednost za boju ivice
+
+Ukoliko se ne navede neka od (2) ili (3), koristiće se njihove podrazumevane vrednosti. Takođe, moguće je podesiti stil za samo jednu stranu ivice korišćenjem odgovarajućeg svojstva `border-top`, `border-right`, `border-bottom`, `border-left`, koji uzimaju iste vrednosti kao i svojstvo `border`.
+
+Naredni HTML kod i prateća slika ilustruju podešavanje ivica svojstvom `border`.
+
+```html
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Primer 12</title>
+    <meta charset="UTF-8">
+
+    <style type="text/css">
+        p.full-border {
+            border: 5px solid red;
+        }
+
+        p.left-border-only {
+            border-left: solid 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <p class="full-border">Some text.</p>
+    <p class="left-border-only">Some text.</p>
+</body>
+
+</html>
+```
+
+<div style="max-width: 98%;">
+<img style="max-width: 100%;" src="./Slike/border.png" alt="Sve detalje ivice elementa je moguće podesiti svojstvom border za sve ivice, odnosno nekim od border-top, border-right, border-bottom ili border-left za samo jednu ivicu.">
+</div>
+
+<a style="border: 2px solid gray; display: inline-block; padding: 15px; background-color: rgb(114, 211, 250); color: black;"
+   href="./Primeri/12/index.html"
+   target="_blank">Pogledaj primer uživo</a>
+
+### 2.5.4 Svojstvo `border-radius`
+
+Još jedno korisno svojstvo za upravljanje površinom unutrašnjosti elementa jeste svojstvo `border-radius`. Ovo svojstvo služi za kontrolu zakrivljenosti ćoškova pravougaonika kojim je element predstavljen. Moguće vrednosti su neke od dužina. 
+
+Ukoliko navedemo jednu vrednost, svi ćoškovi će biti zakrivljeni tom vrednošću. Alternativno, možemo navesti četiri vrednosti koje će zakriviti gornji-levi, gornji-desni, donji-desni i donji-levi ćošak, tim redosledom. 
+
+Naredni kod i prateća slika ilustruju upotrebu ovog svojstva.
+
+```html
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Primer 13</title>
+    <meta charset="UTF-8">
+
+    <style type="text/css">
+        #example1 {
+            border: 2px solid red;
+            padding: 10px;
+            border-radius: 25px;
+        }
+
+        #example2 {
+            border: 2px solid red;
+            padding: 10px;
+            border-radius: 50px 20px 50px 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>border-radius: 25px:</h2>
+
+    <div id="example1">
+        <p>Svojstvo border-radius definise zakrivljenje coskova elementa.</p>
+    </div>
+
+    <h2>border-radius: 50px 20px 50px 50px:</h2>
+
+    <div id="example2">
+        <p>
+            Mozemo staviti jednu vrednost za sve coskove, 
+            ili cetiri vrednosti, za svaki cosak 
+            od gornjeg-levog do donjeg-levog po jednu.</p>
+    </div>
+</body>
+
+</html>
+```
+
+<div style="max-width: 98%;">
+<img style="max-width: 100%;" src="./Slike/border_radius.png" alt="Ćoškove unutrašnjosti elementa je moguće zakriviti svojstvom border-radius.">
+</div>
+
+<a style="border: 2px solid gray; display: inline-block; padding: 15px; background-color: rgb(114, 211, 250); color: black;"
+   href="./Primeri/13/index.html"
+   target="_blank">Pogledaj primer uživo</a>
+
+### 2.5.5 Pojas elementa
+
+Do sada opisani elementi čine unutrašnjost HTML elemenata. CSS svojstvo `margin` se koristi za podešavanje površine prostora oko elementa, tj. oko njegove ivice. Pojas elementa se obično koristi ukoliko želimo da osiguramo da HTML elementi budu odvojeni jedni od drugih. 
+
+Slično kao i za punjenje elementa, ovo svojstvo može uzimati jednu ili četiri vrednosti, u zavisnosti od toga da li želimo da postavimo jednu vrednost za sva četiri pojasa ili svaku vrednost pojedinačno (u drugom slučaju navodimo vrednosti za gornji, desni, donji i levi pojas, redom). Takođe, moguće je podesiti vrednosti za četiri pojasa pojedinačno korišćenjem svojstava `margin-top`, `margin-right`, `margin-bottom` i `margin-left`. Vrednosti ovih svojstava mogu biti ili `auto`, čime se prepušta pregledaču da izračuna margine, ili neka od dužina.
+
+Naredni primer ilustruje upotrebu margina nad paragrafom koji je smešten kao sadržaj elementa `div`. Naredna slika daje prikaz koda u veb pregledaču.
+
+```html
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Primer 14</title>
+    <meta charset="UTF-8">
+
+    <style>
+        div {
+            border: black solid 1px;
+        }
+
+        p {
+            border: 1px solid black;
+            margin-top: 100px;
+            margin-bottom: 100px;
+            margin-right: 20%;
+            margin-left: 20%;
+            background-color: lightblue;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div>
+        <p>
+            Ovaj element ima gornju marginu od 100px,
+            desnu marginu od 20%, donju marginu od 100px
+            i levu marginu od 20%.
+        </p>
+    </div>
+
+</body>
+
+</html>
+```
+
+<div style="max-width: 98%;">
+<img style="max-width: 100%;" src="./Slike/block_margin.png" alt="Svojsvom margin podešavamo površinu pojasa oko elementa.">
+</div>
+
+<a style="border: 2px solid gray; display: inline-block; padding: 15px; background-color: rgb(114, 211, 250); color: black;"
+   href="./Primeri/14/index.html"
+   target="_blank">Pogledaj primer uživo</a>
+
+#### Horizontalno poravnanje elemenata pomoću svojstva `margin`
+
+Jedan zanimljiv efekat koji se može postići pomoću svojstva `margin` jeste da se element horizontalno poravna, u odnosu na širinu roditeljskog elementa koji ga sadrži. Postavljanjem deklaracije `margin: auto;`, element će prvo zauzeti odgovarajući prostor svojom širinom, a zatim će se preostali horizontalni prostor podeliti na dva jednaka dela i te dve površine će biti postavljene za levi i desni pojas elementa.
+
+Naredni primer i prateća slika ilustruju opisano ponašanje.
+
+```html
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Primer 15</title>
+    <meta charset="UTF-8">
+
+    <style>
+        body {
+            border: 1px solid black;
+        }
+
+        div {
+            width: 300px;
+            border: 1px solid red;
+
+            /* Horizontalno poravnanje */
+            margin: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Koriscenje margin:auto</h2>
+    <div>
+        Ovaj element div ce biti horizontalno poravnat
+        jer ima postavljenu deklaraciju margin: auto;
+    </div>
+</body>
+
+</html>
+```
+
+<div style="max-width: 98%;">
+<img style="max-width: 100%;" src="./Slike/margin_auto.png" alt="Elemente možemo horizontalno poravnati postavljanjem svojstva margin na vrednost auto.">
+</div>
+
+<a style="border: 2px solid gray; display: inline-block; padding: 15px; background-color: rgb(114, 211, 250); color: black;"
+   href="./Primeri/15/index.html"
+   target="_blank">Pogledaj primer uživo</a>
+
+#### Linijski elementi i svojstvo `margin` 
+
+Za razliku od blokovskih elemenata, linijski elementi imaju specifično ponašanje kada se na njih primeni svojstvo `margin`. Naime, na njih nemaju uticaja vrednosti koje su postavljene za gornji i donji pojas, ali vrednosti postavljene za levi i desni pojas se očekivano primenjuju.
+
+Naredni primer i prateća slika ilustruju opisano ponašanje.
+
+```html
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Primer 16</title>
+    <meta charset="UTF-8">
+
+    <style>
+        body {
+            border: 1px solid black;
+        }
+
+        span {
+            margin: 100px 50px 100px 50px;
+            border: 1px solid red;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Linijski elementi i svojstvo margin</h2>
+
+    <span>
+        Linijski element
+    </span>
+    <span>
+        Linijski element
+    </span>
+
+    <br>
+
+    <span>
+        Linijski element
+    </span><span>
+        Linijski element
+    </span>
+
+    <br>
+</body>
+
+</html>
+```
+
+<div style="max-width: 98%;">
+<img style="max-width: 100%;" src="./Slike/inline_margin.png" alt="Linijski elementi nemaju gornji i donji pojas, ali imaju levi i desni pojas.">
+</div>
+
+<a style="border: 2px solid gray; display: inline-block; padding: 15px; background-color: rgb(114, 211, 250); color: black;"
+   href="./Primeri/16/index.html"
+   target="_blank">Pogledaj primer uživo</a>
+
+### Više informacija
+
+Za više informacijama o temama koje su obrađene u ovoj sekciji, možete posetiti naredne korisne veb prezentacije:
+
+- Uopšteno o CSS modelu kutije:
+[https://internetingishard.com/html-and-css/css-box-model/](https://internetingishard.com/html-and-css/css-box-model/)
+
+- Detaljniji opis svih modela kutija (u HTML i u CSS jezicima):
+[https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/The_box_model](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/The_box_model)
+
+## 2.6 Koordinatni sistemi veb pregledača
+
+Naredna tema o kojoj želimo da diskutujemo jeste pozicioniranje elemenata. Međutim, da bismo razumeli način na koji se koriste mere pri raspoređivanju elemenata na veb prezentaciji, moramo da razumemo kako funkcioniše koordinatni sistem veb pregledača.
+
+Veb pregledači raspolažu dvama koordinatnim sistemima koji se razlikuju po njihovom centru, dok su im ostale karakteristike identične. Oni su:
+
+1. Koordinatni sistem relativan u odnosu na pogled veb pregledača (nadalje ga zovemo koordinatni sistem veb pregledača). U ovom koordinatnom sistemu, za centar se smatra gornji levi ugao pogleda veb pregledača. *Pogled* (engl. *viewport*) predstavlja prozor veb pregledača u kojem se prikazuje veb prezentacija. Koordinate elementa u ovom sistemu ćemo obeležavati `clientX` i `clientY`.
+
+2. Koordinatni sistem relativan u odnosu na veb stranicu (nadalje ga zovemo koordinatni sistem veb stranice). U ovom koordinatnom sistemu, za centar se smatra gornji levi ugao veb stranice. Koordinate elementa u ovom sistemu ćemo obeležavati `pageX` i `pageY`.
+
+Naredna slika ilustruje razliku između pozicija elementa u jednom i drugom koordinatnom sistemu. Kao što vidimo, prilikom skrolovanja stranice na sam početak, oba koordinatna sistema imaju isti centar, te su i koordinate elementa jednake. Međutim, prilikom skrolovanja stranice naniže, koordinate koje su relativne u odnosu na pogled veb pregledača se menjaju jer se i elementi pomeraju u odnosu na njega. Za razliku od toga, koordinate koje su relativne u odnosu na stranicu ostaju iste, jer je sada i sam centar koordinatnog sistema veb stranice pomeren zajedno sa stranicom (ovaj centar je pomeren izvan pogleda veb pregledača, što je prikazano delimičnom prozirnošću na slici).
+
+<div style="max-width: 98%;">
+<img style="max-width: 100%;" src="./Slike/koordinatni_sistemi.png" alt="Razlika između koordinatnih sistema u veb pregledaču.">
+</div>
+
+Pojam pozicioniranja nije jedinstveno određen, već su definisana različita ponašanja za različite tipove pozicioniranja, sa kojima ćemo se upoznati u narednoj sekciji. Neki od njih pozicioniraju elemente u odnosu na koordinatni sistem veb pregledača, a neki od njih pozicioniraju elemente u odnosu na koordinatni sistem dokumenta.
+
+Ipak, ova dva koordinatna sistema imaju i dosta zajedničkih karakteristika. Neke od njih su:
+
+- Vrednosti na *x*-osi rastu sleva na desno, a opadaju zdesna na levo. 
+- Vrednosti na *y*-osi rastu odozgo na dole, a opadaju odozdo na gore.
+- Vrednosti na obema osama mogu biti pozitivne i negativne. 
+- Vrednosti na obema osama mogu biti bilo koja od dužina. Od jedinice mere za dužinu zavisi koliko će element biti pomeren.
+
+Iako je ekran veb pregledača dvodimenzionalan i svi elementi koji se prikazuju su dvodimenzionalni, postoji mogućnost da se više elemenata preklapaju jedni sa drugima. Zbog toga, uvedena je i treća koordinatna osa, *z*-osa, koja definiše dubinu na kojoj se dvodimenzionalni elementi smeštaju. Više o ovome biće reći u narednoj sekciji, ali radi kompletnosti ove sekcije, napomenimo da vrednosti na *z*-osi rastu u smeru od veb pregledača ka korisniku, dok te vrednosti opadaju u smeru od korisnika ka veb pregledaču. Naredna slika daje prikaz punog koordinatnog sistema, u odnosu na prozor veb pregledača.
+
+<div style="max-width: 98%;">
+<img style="max-width: 100%;" src="./Slike/pun_koordinatni_sistem.png" alt="Pun koordinatni sistem u veb pregledaču.">
+</div>
+
+## 2.7 Pozicioniranje elemenata
+
+Jednostavno "slaganje" elemenata u HTML kodu može nam poslužiti tek toliko. Za konstrukciju kompleksnijih veb prezentacija, neophodno je da razumemo kako je moguće iskoristiti CSS za precizno pozicioniranje elemenata na veb stranici. Pozicioniranje elemenata može biti veoma naporna stvar pri dizajnu veb prezentacije ukoliko se u potpunosti ne razumeju svi detalji i bočni efekti koji nastaju prilikom pozicioniranja elemenata.
+
+Da bismo uspešno pozicionirali HTML element na željenu poziciju na veb prezentaciji, potrebno je da uradimo naredna dve koraka:
+
+1. Odrediti tip pozicioniranja.
+2. Iskoristiti neka od svojstava za pozicioniranje elementa, imajući u vidu karakteristike odabranog tipa pozicioniranja.
+
+Za određivanje tipa pozicioniranja koristi se svojstvo `position`. Moguće vrednosti ovog svojstva su: `static`, `relative`, `absolute` i `fixed`. U nastavku teksta ćemo detaljno diskutovati o svakoj od navedenih vrednosti.
+
+Sa druge strane, za definisanje precizne pozicije elementa koriste se neki od svojstava `top`, `right`, `bottom` i `left`. Njihovo opšte značenje jeste da udaljava element na koji se primenjuju za datu dužinu od gornje, desne, donje i leve ivice nekog elementa, redom. Od ivice kojeg elementa se dati element udaljava zavisi od odabranog tipa pozicioniranja. Podrazumevana vrednost za svako svojstvo jeste `0`.
+
+Udaljavanje elementa se vrši u skladu sa pravilima koje definiše koordinatni sistem. Na primer, ako je vrednost svojstva `top` pozitivna dužina, element će biti pomeren "na dole" (u pravcu rasta *y*-ose koordinatnog sistema), a ako je vrednost tog svojstva negativna dužina, element će biti pomeren "na gore" (u pravcu opadanja *y*-ose koordinatnog sistema).
+
+Ukoliko se u nekom pravilu iskoristi neko od ovih svojstava, a u tom pravilu nije iskorišćeno svojstvo `position` (tj. nije određen tip pozicioniranja), onda ta svojstva neće imati nikakav uticaj na poziciju elementa.
+
+### 2.7.1 Statičko pozicioniranje
+
+Ovo je podrazumevan način pozicioniranja elemenata. Postavljanje vrednosti za neko od svojstava `top`, `right`, `bottom` ili `left` nema uticaja na poziciju elementa sa statičkim pozicioniranjem.
+
+Elementi se ređaju na stranici jedan nakon drugog, u skladu sa njihovim dimenzijama i drugim karakteristikama. Na primer, linijski elementi ređaju se jedan pored drugog dok se blokovski elementi ređaju jedan ispod drugog. Ovaj tok ređanja elemenata se naziva *normalni tok* (engl. *normal flow*). 
+
+Naredni kod i prateća slika ilustruju upotrebu statičkog pozicioniranja. Veb prezentacija se sastoji od tri `div` elementa, pri čemu je drugom elementu postavljeno pozicioniranje na statičko[^1] i podešeno je da bude pozicioniran `30px` od gornje ivice i `80px` od leve ivice. Kao što je prikazano na slici, elementi se ređaju jedan ispod drugog, što je i očekivano.
+
+[^1]: Zapravo, i preostalim `div` elementima je postavljeno pozicioniranje na statičko, zbog toga što je to podrazumevano ponašanje, iako ga nismo eksplicitno napisali u CSS delu koda.
+
+```html
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Primer 17</title>
+    <meta charset="UTF-8">
+
+    <style>
+        #prvi {
+            height: 100px;
+            width: 300px;
+            background-color: rgb(231, 43, 103);
+        }
+
+        #drugi {
+            height: 100px;
+            width: 300px;
+            background-color: rgb(24, 243, 232);
+            position: static;
+            top: 30px;
+            left: 80px;
+        }
+
+        #treci {
+            height: 100px;
+            width: 300px;
+            background-color: rgb(180, 55, 252);
+        }
+    </style>
+</head>
+
+<body>
+    <div id="prvi"></div>
+    <div id="drugi"></div>
+    <div id="treci"></div>
+</body>
+
+</html>
+```
+
+<div style="max-width: 98%;">
+<img style="max-width: 100%;" src="./Slike/static.png" alt="Primer statičkog pozicioniranja.">
+</div>
+
+<a style="border: 2px solid gray; display: inline-block; padding: 15px; background-color: rgb(114, 211, 250); color: black;"
+   href="./Primeri/17/index.html"
+   target="_blank">Pogledaj primer uživo</a>
+
+### 2.7.2 Relativno pozicioniranje
+
+Pomenuli smo ranije da svaki tip pozicioniranja definiše šta za taj tip znači "ivica" u odnosu na koju se element pomera. Pri relativnom pozicioniranju "ivica" od koje se element pomera je ivica tog elementa pri statičkom pozicioniranju. Jednostavnije rečeno, postavljanje vrednosti za svojstva `top`, `right`, `bottom` i `left` pomeriće element u odnosu na njegovu statičku poziciju. 
+
+Važno je zapamtiti da izmene u poziciji elementa koji je relativno pozicioniran nemaju uticaja na preostali sadržaj stranice - svi ostali elementi ostaju na svojim pozicijama. Posledica ovog efekta jeste pojavljivanje "prazne" površine na mestu gde se relativno-pozicionirani pomereni element nalazio pre pomeranja.
+
+Naredni kod predstavlja izmenu prethodnog koda u kojem je promenjen samo tip pozicioniranja drugog `div` elementa sa statičkog na relativno. Kao što se vidi na pratećoj slici, drugi `div` element je pomeren za `30px` "na dole" i `80px` "na desno" u odnosu na njegovu poziciju koja mu je bila dodeljena pri statičkom pozicioniranju. Preostala dva `div` elementa su ostala na svojim pozicijama, što dovodi do efekta "prazne" površine između njih - na mestu gde je drugi `div` element bio pozicioniran pri statičkom pozicioniranju.
+
+```html
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Primer 18</title>
+    <meta charset="UTF-8">
+
+    <style>
+        #prvi {
+            height: 100px;
+            width: 300px;
+            background-color: rgb(231, 43, 103);
+        }
+
+        #drugi {
+            height: 100px;
+            width: 300px;
+            background-color: rgb(24, 243, 232);
+            position: relative;
+            top: 30px;
+            left: 80px;
+        }
+
+        #treci {
+            height: 100px;
+            width: 300px;
+            background-color: rgb(180, 55, 252);
+        }
+    </style>
+</head>
+
+<body>
+    <div id="prvi"></div>
+    <div id="drugi"></div>
+    <div id="treci"></div>
+</body>
+
+</html>
+```
+
+<div style="max-width: 98%;">
+<img style="max-width: 100%;" src="./Slike/relative.png" alt="Primer relativnog pozicioniranja.">
+</div>
+
+<a style="border: 2px solid gray; display: inline-block; padding: 15px; background-color: rgb(114, 211, 250); color: black;"
+   href="./Primeri/18/index.html"
+   target="_blank">Pogledaj primer uživo</a>
+
+### 2.7.3 Apsolutno pozicioniranje
+
+Apsolutno pozicioniranje je najzahtevnije za razumevanje od svih tipova pozicioniranja. Pri apsolutnom pozicioniranju "ivica" od koje se element pomera je ivica prvog pretka tog elementa u DOM stablu koji nije statički pozicioniran. Ukoliko ne postoji predak koji zadovoljava taj uslov, onda se za "ivicu" smatra ivica elementa `body`.
+
+U skladu sa ovom složenom definicijom postoje dva slučaja koja možemo razmatrati. Prvi slučaj je kada su svi preci elementa koji je apsolutno pozicioniran statički pozicionirani. U tom slučaju, element se pomera od ivice elementa `body`. Takav slučaj je predstavljen narednim kodom i pratećom slikom. Jedini predak (do elementa `body`) drugog `div` elementa je element `div` koji ima postavljen identifikator na vrednost `omotac` (nazovimo ovaj element "omotač"). Bez obzira što se drugi `div` element nalazi kao potomak omotača, s obzirom da je omotač statički pozicioniran, onda će drugi `div` element biti pozicioniran u odnosu na ivicu `body` elementa.
+
+```html
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Primer 19</title>
+    <meta charset="UTF-8">
+
+    <style>
+        #omotac {
+            margin-top: 100px;
+            height: 400px;
+            width: 400px;
+            background-color: rgba(218, 165, 32, 0.5);
+        }
+    
+        #prvi {
+            height: 100px;
+            width: 300px;
+            background-color: rgb(231, 43, 103);
+        }
+
+        #drugi {
+            height: 100px;
+            width: 300px;
+            background-color: rgb(24, 243, 232);
+            position: absolute;
+            top: 30px;
+            left: 80px;
+        }
+
+        #treci {
+            height: 100px;
+            width: 300px;
+            background-color: rgb(180, 55, 252);
+        }
+    </style>
+</head>
+
+<body>
+    <div id="omotac">
+        <div id="prvi"></div>
+        <div id="drugi"></div>
+        <div id="treci"></div>
+    </div>
+</body>
+
+</html>
+```
+
+<div style="max-width: 98%;">
+<img style="max-width: 100%;" src="./Slike/absolute_body.png" alt="Primer relativnog pozicioniranja elementa čiji su svi preci statički pozicionirani.">
+</div>
+
+<a style="border: 2px solid gray; display: inline-block; padding: 15px; background-color: rgb(114, 211, 250); color: black;"
+   href="./Primeri/19/index.html"
+   target="_blank">Pogledaj primer uživo</a>
+
+Međutim, šta ukoliko bi omotač bio nestatički pozicioniran? Ukoliko postavimo da omotač bude, na primer, relativno pozicioniran kao u narednom kodu, onda ćemo dobiti situaciju kao na narednoj slici. Sada drugi `div` element nije više pozicioniran u odnosu na ivicu `body` elementa zato što postoji makar jedan predak koji nije statički pozicioniran (a to je omotač), te se drugi `div` element pozicionira u odnosu na njegovu ivicu.
+
+```html
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Primer 20</title>
+    <meta charset="UTF-8">
+
+    <style>
+        #omotac {
+            position: relative;
+            margin-top: 100px;
+            height: 400px;
+            width: 400px;
+            background-color: rgba(218, 165, 32, 0.5);
+        }
+    
+        #prvi {
+            height: 100px;
+            width: 300px;
+            background-color: rgb(231, 43, 103);
+        }
+
+        #drugi {
+            height: 100px;
+            width: 300px;
+            background-color: rgb(24, 243, 232);
+            position: absolute;
+            top: 30px;
+            left: 80px;
+        }
+
+        #treci {
+            height: 100px;
+            width: 300px;
+            background-color: rgb(180, 55, 252);
+        }
+    </style>
+</head>
+
+<body>
+    <div id="omotac">
+        <div id="prvi"></div>
+        <div id="drugi"></div>
+        <div id="treci"></div>
+    </div>
+</body>
+
+</html>
+```
+
+<div style="max-width: 98%;">
+<img style="max-width: 100%;" src="./Slike/absolute_wrapper.png" alt="Primer relativnog pozicioniranja elementa u odnosu na prvog nestatički-pozicioniranog pretka.">
+</div>
+
+<a style="border: 2px solid gray; display: inline-block; padding: 15px; background-color: rgb(114, 211, 250); color: black;"
+   href="./Primeri/20/index.html"
+   target="_blank">Pogledaj primer uživo</a>
+
+Primetimo još jednu veoma važnu stvar - u oba slučaja treći `div` element se pomerio na mesto gde bi drugi `div` element bio pozicioniran pri statičkom pozicioniranju! "Prazan" prostor koji je bio prisutan pri relativnom pozicioniranju je nestao. Razlog za ovo ponašanje jeste da se apsolutno-pozicionirani elementi izbacuju iz normalnog toka raspoređivanja elemenata. Drugim rečima, ostali elementi se raspoređuju u skladu sa normalnim tokom kao da apsolutno-pozicionirani elementi ne postoje.
+
+### 2.7.4 Fiksno pozicioniranje
+
+Pri fiksnom pozicioniranju "ivica" od koje se element pomera je ivica pogleda veb pregledača. Međutim, za fiksno pozicioniranje važi još jedno pravilo po čemu se on razlikuje od ostalih pozicioniranja. Element sa fiksnim pozicioniranjem se nalaze na istoj poziciji na ekranu, čak i kada se stranica skroluje. 
+
+Slično kao u slučaju apsolutnog pozicioniranja, elementi sa fiksnim pozicioniranjem se izbacuju iz normalnog toka, tj. ne ostaju "prazne" površine tamo gde bi se element našao pri statičkom pozicioniranju.
+
+Naredni kod pozicionira drugi `div` element `30px` od gornje ivice pogleda veb pregledača i `0` od desne ivice veb pregledača. Na narednoj slici su predstavljene situacije prilikom skrolovanja visoke veb prezentacije. U prvoj situaciji je prikazan početak veb prezentacije na kojoj su svi elementi vidljivi (slika A). Međutim, prilikom skrolovanja stranice, elementi koji nisu fiksno pozicionirani izlaze iz pogleda veb pregledača, dok fiksno pozicionirani element ostaje na svojoj poziciji (slika B).
+
+```html
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Primer 21</title>
+    <meta charset="UTF-8">
+
+    <style>
+        body {
+            height: 3000px;
+        }
+
+        #omotac {
+            position: relative;
+            margin-top: 100px;
+            height: 400px;
+            width: 400px;
+            background-color: rgba(218, 165, 32, 0.5);
+        }
+    
+        #prvi {
+            height: 100px;
+            width: 300px;
+            background-color: rgb(231, 43, 103);
+        }
+
+        #drugi {
+            height: 100px;
+            width: 300px;
+            background-color: rgb(24, 243, 232);
+            position: fixed;
+            top: 30px;
+            right: 0;
+        }
+
+        #treci {
+            height: 100px;
+            width: 300px;
+            background-color: rgb(180, 55, 252);
+        }
+    </style>
+</head>
+
+<body>
+    <div id="omotac">
+        <div id="prvi"></div>
+        <div id="drugi"></div>
+        <div id="treci"></div>
+    </div>
+</body>
+
+</html>
+```
+
+<div style="max-width: 98%;">
+<img style="max-width: 100%;" src="./Slike/fixed1.png" alt="">
+</div>
+
+(A) Primer fiksnog pozicioniranja. Veb stranica je tek učitana. Svi elementi su vidljivi.
+
+<div style="max-width: 98%;">
+<img style="max-width: 100%;" src="./Slike/fixed2.png" alt="">
+</div>
+
+(B) Primer fiksnog pozicioniranja. Veb stranica je skrolovana. Jedino je drugi `div` element na svojoj poziciji, dok je većina ostalih elemenata, koji nisu fiksno pozicionirani, izašla iz pogleda veb pregledača.
+
+<a style="border: 2px solid gray; display: inline-block; padding: 15px; background-color: rgb(114, 211, 250); color: black;"
+   href="./Primeri/21/index.html"
+   target="_blank">Pogledaj primer uživo</a>
+
+### 2.7.5 Z-pozicioniranje elemenata
+
+Prilikom pozicioniranja elemenata, može se desiti da se neki od njih preklope. Postavlja se pitanje na koji način će ti elementi biti prikazani, tj. koji element će biti ispred kog elementa. 
+
+U skladu sa koordinatnim sistemom, elementu može biti dodeljena pozitivna ili negativna vrednost za *z-dubinu* (engl. *z-depth*). Element koji ima veću vrednost z-dubine biće pozicioniran ispred elemenata sa manjom vrednošću za z-dubinu. Ukoliko se dva elementa sa jednakim vrednostima za z-dubinu preklope, onda onaj element koji je poslednji pozicioniran biti ispred ostalih elemenata sa kojima se preklapa.
+
+Podrazumevano svi elementi imaju z-dubinu jednaku 0. U primeru sa relativnim pozicioniranjem, drugi i treći `div` elementi se preklapaju, pri čemu se drugi `div` element nalazi ispred trećeg. Međutim, validno je postaviti pitanje zašto je drugi `div` element poslednji pozicioniran, a ne treći kad se on u HTML kodu nalazi nakon drugog elementa. Da bismo razumeli ovo ponašanje, moramo da razumemo kako veb pregledač formira veb prezentaciju.
+
+Bez ulaženja u detalje, veb pregledač prvo dohvata HTML kod i na osnovu njega vrši pozicioniranje elemenata. Tek kada su ti elementi raspoređeni, onda se vrši stilizovanje dokumenta na osnovu CSS koda. U primeru sa relativnim pozicioniranjem, veb pregledač nije pronašao nikakav kod za pozicioniranje prvog i trećeg `div` elementa, te nije menjao njihove pozicije. Međutim, pronašao je kod za pozicioniranje drugog `div` elementa, pa je onda izvršio njegovo pozicioniranje ponovo. Samim tim, dolazimo do zaključka da je drugi `div` element poslednji pozicioniran, te on ima najveću prednost prilikom prikazivanja.
+
+Svojstvo `z-index` određuje kako se elementi slažu jedan preko drugog, tj. određuje vrednost z-dubine. Naredni kod predstavlja modifikaciju primera sa relativnim pozicioniranjem u kojem je z-dubina drugog `div` elementa postavljena na vrednost `-5`, što predstavlja manju vrednost od podrazumevane vrednosti za treći `div` element (a to je `0`). Sa ovom izmenom, drugi `div` element će biti prikazan iza trećeg `div` elementa, bez obzira što je poslednji pozicioniran, kao što je prikazano na narednoj slici.
+
+```html
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Primer 22</title>
+    <meta charset="UTF-8">
+
+    <style>
+        #prvi {
+            height: 100px;
+            width: 300px;
+            background-color: rgb(231, 43, 103);
+        }
+
+        #drugi {
+            height: 100px;
+            width: 300px;
+            background-color: rgb(24, 243, 232);
+            position: relative;
+            top: 30px;
+            left: 80px;
+            z-index: -5;
+        }
+
+        #treci {
+            height: 100px;
+            width: 300px;
+            background-color: rgb(180, 55, 252);
+        }
+    </style>
+</head>
+
+<body>
+    <div id="prvi"></div>
+    <div id="drugi"></div>
+    <div id="treci"></div>
+</body>
+
+</html>
+```
+
+<div style="max-width: 98%;">
+<img style="max-width: 100%;" src="./Slike/z-index.png" alt="Primer korišćenja svojstva z-index.">
+</div>
+
+<a style="border: 2px solid gray; display: inline-block; padding: 15px; background-color: rgb(114, 211, 250); color: black;"
+   href="./Primeri/22/index.html"
+   target="_blank">Pogledaj primer uživo</a>
+
+### 2.7.6 Svojstva `display` i `visibility`
+
+Do sada smo videli na koje sve načine je moguće raspoređivati elemente na veb prezentaciji zajedno sa svim bočnim efektima koje se javljaju. Sada ćemo opisati još dva svojstva koja, iako se ne koriste direktno za pozicioniranje elemenata već za način njihovog prikazivanja, mogu na neki način uticati na raspored elemenata na stranici.
+
+Pomoću svojstva `display` određujemo na koji način će element biti prikazan. Štaviše, možemo upravljati time da li će element uopšte biti prikazan na stranici! Svaki HTML element ima podrazumevanu vrednost za ovo svojstvo u zavisnosti od tipa elementa. Za većinu elemenata podrazumevana vrednost je definisana HTML5 standarom. Pogledajmo još neke vrednosti ovog svojstva i njihova značenja:
+
+- Vrednost `initial` postavlja prikazivanje elementa na podrazumevano.
+
+- Vrednost `block` definiše da se element prikazuje kao blokovski element. Element će dobiti sve karakteristike za prikazivanje blokovskih elemenata, bez obzira na njegovu originalnu kategoriju.
+
+- Vrednost `inline` definiše da se element prikazuje kao linijski element. Element će dobiti sve karakteristike za prikazivanje linijskih elemenata, bez obzira na njegovu originalnu kategoriju.
+
+- Vrednost `inline-block` definiše da se element prikazuje kao linijski element, sa time da je moguće menjati dimenzije sadržaja pomoću svojstva `width` i `height`[^2].
+
+- Vrednost `none` jeste da se dati element i njegov sadržaj u potpunosti uklanjaju iz prikaza.
+
+[^2]: Prisetimo se da linijskim elementima nije moguće promeniti dimenzije sadržaja korišćenjem svojstava `width` i `height`.
+
+Važno je napomenuti da promena svojstva `display` ne povlači promenu kategorije elementa. Tako, na primer, linijski element koji ima postavljeno `display` svojstvo na vrednost `block` i dalje ne sme da sadrži blokovske elemente u svom sadržaju!
+
+Naredni HTML kod ilustruje korišćenje svojstva `display` za "pozicioniranje" elemenata tako da budu prikazano kao na pratećoj slici. Crveni i žuti `div` elementi su automatski raspoređeni jedan pored drugog, iako su oba elementa predstavnici blokovskih elemenata, zbog činjenice da je njihov prikaz promenjen na `inline-block`.
+
+```html
+<html>
+
+<head>
+    <title>Primer 23</title>
+    <meta charset="UTF-8">
+
+    <style type="text/css">
+        #omotac {
+            border: 1px solid black;
+            margin-left: auto;
+            margin-right: auto;
+            width: 400px;
+            position: relative;
+        }
+
+        #zeleni {
+            width: 400px;
+            height: 50px;
+            background-color: rgb(83, 255, 103);
+        }
+
+        #crveni {
+            width: 100px;
+            height: 200px;
+            background-color: rgb(255, 53, 57);
+            display: inline-block;
+        }
+
+        #zuti {
+            width: 300px;
+            height: 200px;
+            background-color: rgb(255, 255, 65);
+            display: inline-block;
+        }
+
+        #plavi {
+            width: 400px;
+            height: 50px;
+            background-color: rgb(39, 230, 233);
+        }
+    </style>
+
+</head>
+
+<body>
+    <div id="omotac">
+        <div id="zeleni"></div>
+        <div id="crveni"></div><div id="zuti"></div>
+        <div id="plavi"></div>
+    </div>
+</body>
+
+</html>
+```
+
+<div style="max-width: 98%;">
+<img style="max-width: 100%;" src="./Slike/inline-block.png" alt="Korišćenje svojstva display za promene tipa prikaza elemenata.">
+</div>
+
+<a style="border: 2px solid gray; display: inline-block; padding: 15px; background-color: rgb(114, 211, 250); color: black;"
+   href="./Primeri/23/index.html"
+   target="_blank">Pogledaj primer uživo</a>
+
+Obratimo pažnju na jedan skriveni "hack" koji smo uradili u prethodnom kodu. Prikažimo ponovo HTML sadržaj tela dokumenta:
+
+```html
+<div id="omotac">
+    <div id="zeleni"></div>
+    <div id="crveni"></div><div id="zuti"></div>
+    <div id="plavi"></div>
+</div>
+```
+
+Ovaj deo koda je namerno formatiran na ovaj način. Ovo se pre svega odnosi na narednu liniju koda:
+
+```html
+<div id="crveni"></div><div id="zuti"></div>
+```
+
+Zašto nismo prelomili ova dva `div` elementa u zasebni red? Na narednoj slici je dat prikaz modifikacije prethodnog koda sa narednom izmenom u sadržaju tela HTML dokumenta:
+
+```html
+<div id="omotac">
+    <div id="zeleni"></div>
+    <div id="crveni"></div>
+    <div id="zuti"></div>
+    <div id="plavi"></div>
+</div>
+```
+
+<div style="max-width: 98%;">
+<img style="max-width: 100%;" src="./Slike/inline-block-with-a-problem.png" alt="Skriveni problem sa inline-block elementima.">
+</div>
+
+Zašto je ova promena dovela do neispravnog prikaza? Jedina stvar koju smo uradili jeste razvojili crveni i žuti `div` element u zasebne linije u HTML kodu. Prethodno smo rekli da beline u HTML kodu ne utiču na prikaz elemenata. Zašto je onda žuti `div` element "prešao" u novu liniju u prikazu veb pregledača?
+
+Da bismo razumeli ovu posledicu, moramo da razumemo šta je sve uticalo na prikaz ovih elemenata:
+
+- Omotač zauzima `400px` širine.
+- Zbir širina crvenog i žutog `div` elementa je tačno `400px`.
+- Elementi sa `inline-block` prikazom se ređaju jedni pored drugih (poput linijskih elemenata) sve dok u istoj liniji ima mesta za sve njih. **Ukoliko za neki element sa `inline-block` prikazom nema mesta u liniji, on će preći u novi red**.
+
+Ako uzmemo u obzir ove činjenice, jedino što može da dovede do toga da žuti `div` element pređe u novi red jeste rečenica koja je podebljana u tekstu - za žuti `div` element nije bilo mesta, te je on morao da pređe u novi red! Međutim, zbog čega nije bilo mesta kada je zbir širina crvenog i žutog `div` elementa jednak širini omotača? Odgovor je u tome da, zbog novog formata HTML koda, postoji jedan karakter razmaka između crvenog i žutog elementa. S obzirom da je širina karaktera razmaka uvek strogo pozitivna vrednost, zbir širina crvenog i žutog `div` elementa, kao i širine karaktera razmaka, premašuje širinu omotača, zbog čega za žuti `div` element nema više mesta u istoj liniji i on prelazi u novi red u prikazu.
+
+Ostalo je još samo da razjasnimo odakle se pojavio karakter razmaka koji je napravio ovaj problem. U novom formatu HTML koda stoji
+
+```html
+<div id="omotac">
+    <div id="zeleni"></div>
+    <div id="crveni"></div>
+    <div id="zuti"></div>
+    <div id="plavi"></div>
+</div>
+```
+
+Između fragmenata koda `<div id="crveni"></div>` i `<div id="zuti"></div>` postoji jedan karakter za novi red i potencijalno 4 karaktera razmaka (ili jedan karakter tabulatora). Veb pregledač, prilikom parsiranja ovog koda, pronalazi nabrojane beline i u prikazu ih zamenjuje jednim karakterom razmaka, kao što to i inače radi. Zbog toga smo u inicijalnoj verziji koda sprečili ovo tako što nismo ostavili nijedan karakter beline između datih fragmenata koda:
+
+```html
+<div id="omotac">
+    <div id="zeleni"></div>
+    <div id="crveni"></div><div id="zuti"></div>
+    <div id="plavi"></div>
+</div>
+```
+
+Postoji još jedan način kako je ovo moguće rešiti ako želimo da crveni i žuti `div` elementi budu u zasebnim linijama. S obzirom da je dovoljno sprečiti veb pregledač da naiđe na beline između ovih fragmenata koda, možemo postaviti HTML komentar, koji će biti odbačen u celosti prilikom parsiranja HTML koda, kao u narednom delu koda:
+
+```html
+<div id="omotac">
+    <div id="zeleni"></div>
+    <div id="crveni"></div><!--
+ --><div id="zuti"></div>
+    <div id="plavi"></div>
+</div>
+```
+
+Iako je ova situacija nešto što se ređe pronalazi u praksi, primer predstavlja dobru ilustraciju činjenice da je neophodno da u potpunosti razumemo funkcionisanje HTML5 i CSS3 jezika pre nego što se upustimo u iole naprednije dizajniranje veb prezentacija.
+
+Preostala je još jedna vrednost svojstva `display` koju je potrebno objasniti, a to je vrednost `none`. Pomenuli smo da se postavljanjem ovog svojstva na ovu vrednost, HTML element uklanja iz prikaza veb pregledača, zajedno sa svojim sadržajem. Takođe, svi ostali elementi se raspoređuju kao da se taj element nikada nije ni nalazio u veb prezentaciji.
+
+Blisko ponašanje se može postići postavljanjem svojstva `visibility`, čija je podrazumevana vrednost `visible`, na vrednost `hidden`. Element će i u ovom slučaju biti sakriven iz prikaza. Međutim, razlika u odnosu na postavljanje svojstva `display` na vrednost `none` je u tome što će element i dalje zauzimati isti prostor kao i ranije, samo što će biti sakriven iz prikaza.
+
+Naredni kod i prateća slika ilustruju razliku između ovih svojstava. U prvom omotaču, crvenom `div` elementu je postavljeno svojstvo `display` na vrednost `none`, te se on u potpunosti uklanja iz prikaza. Žuti i narandžasti `div` elementi se pozicioniraju kao da crveni element nije ni postojao. U drugom omotaču, plavom `div` elementu je postavljeno svojstvo `visibility` na vrednost `hidden`, te se on jednostavno sakriva iz prikaza. Zeleni i ljubičasti `div` elementi zadržavaju svoje pozicije, kao da plavi element nije ni bio sakriven.
+
+```html
+<html>
+
+<head>
+    <title>Primer 24</title>
+    <meta charset="UTF-8">
+
+    <style type="text/css">
+        #omotac1, #omotac2 {
+            border: 1px solid black;
+            width: 400px;
+        }
+
+        #omotac2 {
+            position: relative;
+            top: 50px;
+        }
+
+        #zuti {
+            width: 400px;
+            height: 50px;
+            background-color: rgb(252, 249, 111);
+        }
+
+        #crveni {
+            width: 400px;
+            height: 50px;
+            background-color: rgb(255, 117, 83);
+            display: none;
+        }
+
+        #narandzasti {
+            width: 400px;
+            height: 50px;
+            background-color: rgb(255, 186, 83);
+        }
+
+        #zeleni {
+            width: 400px;
+            height: 50px;
+            background-color: rgb(81, 224, 140);
+        }
+
+        #plavi {
+            width: 400px;
+            height: 50px;
+            background-color: rgb(83, 109, 255);
+            visibility: hidden;
+        }
+
+        #ljubicasti {
+            width: 400px;
+            height: 50px;
+            background-color: rgb(192, 83, 255);
+        }
+    </style>
+
+</head>
+
+<body>
+    <div id="omotac1">
+        <div id="zuti"></div>
+        <div id="crveni"></div>
+        <div id="narandzasti"></div>
+    </div>
+    <div id="omotac2">
+        <div id="zeleni"></div>
+        <div id="plavi"></div>
+        <div id="ljubicasti"></div>
+    </div>
+</body>
+
+</html>
+```
+
+<div style="max-width: 98%;">
+<img style="max-width: 100%;" src="./Slike/display_visibility.png" alt="Razlika u prikazivanju između elementa koji ima podešeno svojstvo display na vrednost none i elementa koji ima podešeno svojstvo visibility na vrednost hidden.">
+</div>
+
+<a style="border: 2px solid gray; display: inline-block; padding: 15px; background-color: rgb(114, 211, 250); color: black;"
+   href="./Primeri/24/index.html"
+   target="_blank">Pogledaj primer uživo</a>
+
+### Više informacija
+
+Za više informacijama o temama koje su obrađene u ovoj sekciji, možete posetiti naredne korisne veb prezentacije:
+
+- Uopšteno o pozicioniranju elemenata:
+[https://www.w3schools.com/css/css_positioning.asp](https://www.w3schools.com/css/css_positioning.asp)
+
+- O svojstvima `display` i `visibility` i njihovim razlikama: 
+[https://www.w3schools.com/cssref/pr_class_display.asp](https://www.w3schools.com/cssref/pr_class_display.asp)
+[https://www.w3schools.com/cssref/pr_class_visibility.asp](https://www.w3schools.com/cssref/pr_class_visibility.asp)
+[https://www.w3schools.com/css/css_display_visibility.asp](https://www.w3schools.com/css/css_display_visibility.asp).
+
+## 2.8 Slike
+
+Veličina slike se može podesiti atributima `width` i `height`, čije su vrednosti celi brojevi koji predstavljaju veličine u pikselima. Naravno, dimenzija elementa `img` se može podesiti i u jeziku CSS, zadavanjem svojstava `width` i `height`, čije veličine mogu biti bilo koja od dužina.
+
+S obzirom da veličinu slike možemo navesti pomoću atributa elementa `img`, ali i pomoću CSS svojstava, prirodno se postavlja pitanje - šta je bolje za korišćenje? Jedan praktičan savet jeste da se koriste obe načina - sada ćemo opisati zašto. 
+
+Prilikom dohvatanja HTML dokumenta, svaki savremeni veb pregledač izgrađuje DOM stablo prilikom parsiranja dokumenta i već započinje proces prikazivanja veb stranice dok se dohvataju drugi resursi, kao što su spoljni kaskadni stilovi, slike i dr. Ukoliko veb pregledač nema informaciju o veličini slike, on će zauzeti minimalan prostor za njeno prikazivanje. U trenutku kada slika pristigne preko mreže, ukoliko je ona velikih dimenzija, nakon što je veb pregledač prikaže, ona će sada zauzeti veću površinu i ostali elementi na stranici će biti ispremeštani kako bi slika zauzela potrebnu veličinu. Ukoliko ima mnogo slika na veb stranici koje se ovako ponašaju, korisniku će ovo premeštanje okolnih elemenata izgledati haotično. Sa druge strane, ukoliko je veb pregledač već iz HTML koda dobio informaciju o veličini slike (korišćenjem atributa `width` i `height` elementa `img`), on će moći da "rezerviše" potreban prostor za sliku dok ona ne bude preuzeta i prikazana. Time se postiže mnogo lepši utisak u korisničkom iskustvu.
+
+Međutim, kao što smo rekli, atributima `width` i `height` elementa `img` se dodeljuju celi brojevi koji uvek predstavljaju piksele na ekranu. Nekada nam je neophodno da koristimo druge mere za postavljanje dimenzije slika. Takođe, uključivanjem nekog spoljnog kaskadnog lista može se desiti da se uključi pravilo koje postavlja veličinu svih slika na neku dimenziju koja nama ne odgovara, a koja će "pregaziti" vrednosti iz HTML koda. Zbog toga se takođe preporučuje korišćenje CSS svojstava `width` i `height` za dodeljivanje dimenzija slike.
+
+Naredni kodovi iz datoteka `index.html` i `img_override.css`, redom, i prateća slika ilustruju ovo ponašanje.
+
+```html
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Primer 25</title>
+    <meta charset="UTF-8">
+
+    <link rel="stylesheet" type="text/css" href="img_override.css">
+</head>
+
+<body>
+    <h1>Podešavanje veličine sličica</h1>
+
+    <p>
+        Slika ispod ima vrednost atributa width postavljenu na 128 piksela, 
+        ali je ta vrednost "pregažena" od strane spoljnih kaskadnih listova, 
+        koji postavljaju CSS svojstvo width svih slika na 100%.
+    </p>
+    <img src="october31.jpeg" alt="Noc Vestica - 31. oktobar" 
+         width="128" height="128">
+
+    <p>
+        Slika ispod koristi atribut style, 
+        u kojem je CSS svojstvo width postavljeno na 128 piksela. 
+        S obzirom da ovakva upotreba ima najveći prioritet, 
+        vrednost CSS svojstva width od 100% iz spoljnih kaskadnih listova je "pregažena".
+    </p>
+    <img src="october31.jpeg" alt="Noc Vestica - 31. oktobar" 
+         width="128" height="128"
+         style="width:128px; height:128px;">
+</body>
+
+</html>
+```
+
+<div style="max-width: 98%;">
+<img style="max-width: 100%;" src="./Slike/img_override.png" alt="Primer kada su spoljni kaskadni listovi narušili veličinu slike koja je postavljena u HTML kodu.">
+</div>
+
+<a style="border: 2px solid gray; display: inline-block; padding: 15px; background-color: rgb(114, 211, 250); color: black;"
+   href="./Primeri/25/index.html"
+   target="_blank">Pogledaj primer uživo</a>
+
+-----
 
 [Knjiga](../../README.md)
 
