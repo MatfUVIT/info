@@ -37,7 +37,7 @@
 
 - Мрежа равноправних рачунара (peer-to-peer, P2P): BitTorrent
 
-![Клијент-сервер и мрежа равноправних рачуара](assets/images/klijent-server-peer-to-peer.png "Клијент-сервер и мрежа равноправних рачуара"){: style="float:right; padding:16px"}
+![Клијент-сервер и мрежа равноправних рачуара](assets/images/klijent-server-peer-to-peer.png "Клијент-сервер и мрежа равноправних рачуара"){: style="float:center; padding:16px"}
 
 ## Компоненте рачунарских мрежа
 
@@ -61,17 +61,17 @@
 Обично је то мрежна картица (мрежни адаптер или ЛАН картица – network interface controller, NIC), која се уграђује у рачунар и
 омогућава уређају физички приступ мрежи.
 
-![мрежни адаптер](assets/images/network-card.png){: height=200 style="float:center; padding:16px"}
+![мрежни адаптер](assets/images/network-card.png){: height="200px" style="float:right; padding:16px"}
 
 Карактеристике:
 
 - Излаз из мрежне картице је најчешће RS45 прикључак на који се прикључује тзв. UTP кабл.
 
-![UTP aадаптер](assets/images/UTP-cable-plugin.png){: height=200 style="float:center; padding:16px"}
+![UTP aадаптер](assets/images/UTP-cable-plugin.png){: height="150px" style="float:right; padding:16px"}
 
-- Скоро сви десктоп рачунари имају уграђену NIC картицу, док преносни имају уграђжену картицу за бежично повезивање (WNIC)
+- Скоро сви десктоп рачунари имају уграђену NIC картицу, док преносни имају уграђену картицу за бежично повезивање (WNIC)
 
-![WNIC aадаптер](assets/images/WNIC-card.png){: height=200 style="float:center; padding:16px"}
+![WNIC aадаптер](assets/images/WNIC-card.png){: height="200px" style="float:right; padding:16px"}
 
 - Сваку мрежну картицу карактерише јединствена физичка (MAC) адреса којом се уредај јединствено идентификује приликом
 комуникације
