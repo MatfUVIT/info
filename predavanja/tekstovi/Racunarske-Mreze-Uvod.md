@@ -25,7 +25,7 @@
 
 - Дељење хардверских ресурса: штампача, скенера итд.
 
-![Пример рачунарске мреже](assets/images/network-example02.jpg "Пример рачунарске мреже"){: style="float:center; padding:16px"}
+![Пример рачунарске мреже](assets/images/network-example-02.jpg "Пример рачунарске мреже"){: style="float:center; padding:16px"}
 
 Најчешћи начини извршавања послова у рачунарским мрежама су:
 
@@ -67,11 +67,11 @@
 
 - Излаз из мрежне картице је најчешће RS45 прикључак на који се прикључује тзв. UTP кабл.
 
-![UTP прикључак](assets/images/utp-cable-plugin.png "UTP прикључак"){: height="150px" style="float:right; padding:16px"}
+![UTP прикључак](assets/images/utp-cable-plugin-02.png "UTP прикључак"){: height="150px" style="float:right; padding:16px"}
 
 - Скоро сви десктоп рачунари имају уграђену NIC картицу, док преносни имају уграђену картицу за бежично повезивање (WNIC)
 
-![WNIC aадаптер](assets/images/wnic-card.png "WNIC aадаптер"){: height="200px" style="float:right; padding:16px"}
+![WNIC адаптер](assets/images/wnic-card-02.png "WNIC адаптер"){: height="200px" style="float:right; padding:16px"}
 
 - Сваку мрежну картицу карактерише јединствена физичка (MAC) адреса којом се уредај јединствено идентификује приликом
 комуникације
@@ -82,13 +82,13 @@
 
 Модем се обично закупљује од добављача интернета и прикључује на парице фиксне телефоније, коаксијалне каблове кабловске телевизије или бежичне мреже мобилних оператера.
 
-![ADSL модем са бежичним рутером](assets/images/adsl-modem.png "ADSL модем са бежичним рутером"){: height="200px" style="float:right; padding:16px"} ![Кабловски модем](assets/images/cable-modem.png "Кабловски модем")){: height="200px" style="float:right; padding:16px"}
+![ADSL модем са бежичним рутером](assets/images/adsl-modem-02.png "ADSL модем са бежичним рутером"){: height="150px" style="float:right; padding:16px"} ![Кабловски модем](assets/images/cable-modem.png "Кабловски модем")){: height="200px" style="float:right; padding:16px"}
 
 Хаб, мост, свич и рутер – мрежни хардвер који служи за прослеђивање
 комуникације између рачунара у мрежи режа и повезивању мреже
 са Интернетом.
 
-![Хаб](assets/images/hub.png "Хаб"){: height="850px" style="float:left; padding:16px"} ![Свич](assets/images/switch.png "Свич"){: height="80px" style="float:center; padding:16px"} ![Рутер](assets/images/router.png "Рутер"){: height="80px" style="float:right; padding:16px"}
+![Хаб](assets/images/hub.png "Хаб"){: height="80px" style="float:left; padding:16px"} ![Свич](assets/images/switch.png "Свич"){: height="80px" style="float:center; padding:16px"} ![Рутер](assets/images/router.png "Рутер"){: height="80px" style="float:right; padding:16px"}
 
 Један уређај може обављати више задатака: нпр. уређај за
 успостављање бежичне комуникације има и улогу приступне тачке (омогућава даљу везу са Интернетом),
@@ -130,7 +130,7 @@
 
 ![Схематски приказ укрштене парице](assets/images/utp-schema.png "Схематски приказ укрштене парице"){: height="50px" style="float:center; padding:16px"}
 
-![Изглед укрштене парице](assets/images/utp-look.png "Изглед укрштене парице"){: height="200px" style="float:center; padding:16px"}
+![Изглед укрштене парице](assets/images/utp-look.png "Изглед укрштене парице"){: height="200px" style="float:left; padding:16px"} ![Изглед UTP конектора](assets/images/utp-connector.png "Изглед UTP конектора"){: height="200px" style="float:center; padding:16px"}
 
 1. Коаксијални каблови - обично се користе за телевизијске кабловске
 системе, а користе се и у LAN мрежама, итд.
@@ -142,9 +142,9 @@
     - Коаксијални каблови омогућују брзину преноса до 200 Mbps (чак и до
 500 Mbps), уз мању осетљивост на електромагнетне сметње
 
-![Схематски приказ коаксијалног кабла](assets/images/coaxial-schema.png "Схематски приказ коаксијалног кабла"){: height="50px" style="float:center; padding:16px"} 
+![Схематски приказ коаксијалног кабла](assets/images/coaxial-schema.png "Схематски приказ коаксијалног кабла"){: height="50px" style="float:center; padding:16px"}
 
-![Изглед коаксијалног кабла и конектора](assets/images/coaxial-look.png "Изглед коаксијалног кабла и конектора"){: height="200px" style="float:center; padding:16px"}
+![Изглед коаксијалног кабла](assets/images/coaxial-look.png "Изглед коаксијалног кабла"){: height="200px" style="float:left; padding:16px"} ![Изглед коаксијалног конектора](assets/images/coaxial-connector.png "Изглед коаксијалног конектора"){: height="200px" style="float:right; padding:16px"}
 
 1. Оптички каблови - праве се од великог броја (стотина, хиљада) веома
 танких стаклених влакана умотаних у заштитни слој
@@ -171,7 +171,7 @@
 
 - Подаци се преносе модулирањем амплитуде, фреквенције или фазе таласа
 
-![Модулирање амплитуде и фрекфенције](assets/animations/AM-FM.gif "Модулирање амплитуде и фрекфенције"){:height="200px" style="float:left; padding:16px"} ![Модулирање фазе](assets/animations/PM.gif "Модулирање фазе"){:height="200px" style="float:right; padding:16px"}
+![Модулирање амплитуде и фрекфенције](assets/animations/AM-FM.gif "Модулирање амплитуде и фрекфенције"){:height="200px" style="float:left; padding:16px"} ![Модулирање фазе](assets/animations/PM.gif "Модулирање фазе"){:height="400px" style="float:right; padding:16px"}
 
 Најчешће се користе следеће бежичне технологије:
 
