@@ -88,7 +88,7 @@
 комуникације између рачунара у мрежи режа и повезивању мреже
 са Интернетом.
 
-![Хаб](assets/images/hub.png "Хаб"){: height="80px" style="text-align:left; padding:16px"} ![Свич](assets/images/switch.png "Свич"){: height="80px" style="text-align:center; padding:16px"} ![Рутер](assets/images/router.png "Рутер"){: height="80px" style="text-align:right; padding:16px"}
+![Хаб](assets/images/hub.png "Хаб"){: height="80px" style="float:left; padding:16px"} ![Свич](assets/images/switch.png "Свич"){: height="80px" style="float:center; padding:16px"} ![Рутер](assets/images/router.png "Рутер"){: height="80px" style="float:right; padding:16px"}
 
 Један уређај може обављати више задатака: нпр. уређај за
 успостављање бежичне комуникације има и улогу приступне тачке (омогућава даљу везу са Интернетом),
@@ -171,7 +171,7 @@
 
 - Подаци се преносе модулирањем амплитуде, фреквенције или фазе таласа
 
-![Модулирање амплитуде и фрекфенције](assets/animations/AM-FM.gif "Модулирање амплитуде и фрекфенције"){:height="200px" style="float:left; padding:16px"} ![Модулирање фазе](assets/animations/PM.gif "Модулирање фазе"){:height="400px" style="float:right; padding:16px"}
+![Модулирање амплитуде и фрекфенције](assets/animations/AM-FM.gif "Модулирање амплитуде и фрекфенције"){:height="300px" style="float:left; padding:16px"} ![Модулирање фазе](assets/animations/PM.gif "Модулирање фазе"){:height="300px" style="float:right; padding:16px"}
 
 Најчешће се користе следеће бежичне технологије:
 
