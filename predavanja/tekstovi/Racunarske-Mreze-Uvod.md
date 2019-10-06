@@ -88,7 +88,7 @@
 комуникације између рачунара у мрежи режа и повезивању мреже
 са Интернетом.
 
-![Хаб, свич и рутер](assets/images/hub-switch-router.png "Хаб, свич и рутер"){: style="float:center; padding:16px"}
+![Хаб](assets/images/hub.png "Хаб"){: height="150px" style="float:left; padding:16px"} ![Свич](assets/images/switch.png "Свич"){: height="150px" style="float:center; padding:16px"} ![Рутер](assets/images/router.png "Рутер"){: height="150px" style="float:right; padding:16px"}
 
 Један уређај може обављати више задатака: нпр. уређај за
 успостављање бежичне комуникације има и улогу приступне тачке (омогућава даљу везу са Интернетом),
@@ -140,7 +140,7 @@
     - Коаксијални каблови омогућују брзину преноса до 200 Mbps (чак и до
 500 Mbps), уз мању осетљивост на електромагнетне сметње
 
-![Схематски приказ коаксијалног кабла](assets/images/coaxial-schema.png "Схематски приказ коаксијалног кабла"){: height="200px" style="float:left; padding:16px"} ![Изглед коаксијалног кабла и конектора](assets/images/coaxial-link.png "Изглед коаксијалног кабла и конектора"){: height="200px" style="float:right; padding:16px"}
+![Схематски приказ коаксијалног кабла](assets/images/coaxial-schema.png "Схематски приказ коаксијалног кабла"){: height="200px" style="float:left; padding:16px"} ![Изглед коаксијалног кабла и конектора](assets/images/coaxial-look.png "Изглед коаксијалног кабла и конектора"){: height="200px" style="float:right; padding:16px"}
 
 1. Оптички каблови - праве се од великог броја (стотина, хиљада) веома
 танких стаклених влакана умотаних у заштитни слој
