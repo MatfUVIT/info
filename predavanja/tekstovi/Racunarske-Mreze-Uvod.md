@@ -142,7 +142,7 @@
     - Коаксијални каблови омогућују брзину преноса до 200 Mbps (чак и до
 500 Mbps), уз мању осетљивост на електромагнетне сметње
 
-![Схематски приказ коаксијалног кабла](assets/images/coaxial-schema.png "Схематски приказ коаксијалног кабла"){: height="50px" style="float:center; padding:16px"} ![Изглед коаксијалног кабла](assets/images/coaxial-look.png "Изглед коаксијалног кабла"){: height="150px" style="float:left; padding:16px"} ![Изглед коаксијалног конектора](assets/images/coaxial-connector.png "Изглед коаксијалног конектора"){: height="150px" style="float:right; padding:16px"}
+![Схематски приказ коаксијалног кабла](assets/images/coaxial-schema.png "Схематски приказ коаксијалног кабла"){: height="50px" style="float:left; padding:16px"} ![Изглед коаксијалног кабла](assets/images/coaxial-look.png "Изглед коаксијалног кабла"){: height="150px" style="float:center; padding:16px"} ![Изглед коаксијалног конектора](assets/images/coaxial-connector.png "Изглед коаксијалног конектора"){: height="150px" style="float:right; padding:16px"}
 
 1. Оптички каблови - праве се од великог броја (стотина, хиљада) веома
 танких стаклених влакана умотаних у заштитни слој
@@ -169,7 +169,7 @@
 
 - Подаци се преносе модулирањем амплитуде, фреквенције или фазе таласа
 
-![Модулирање амплитуде и фрекфенције](assets/animations/AM-FM.gif "Модулирање амплитуде и фрекфенције"){:height="300px" style="float:left; padding:16px"} ![Модулирање фазе](assets/animations/PM.gif "Модулирање фазе"){:height="300px" style="float:right; padding:16px"}
+![Модулирање амплитуде и фрекфенције](assets/animations/AM-FM.gif "Модулирање амплитуде и фрекфенције"){:height="150px" style="float:left; padding:16px"} ![Модулирање фазе](assets/animations/PM.gif "Модулирање фазе"){:height="200px" style="float:right; padding:16px"}
 
 Најчешће се користе следеће бежичне технологије:
 
