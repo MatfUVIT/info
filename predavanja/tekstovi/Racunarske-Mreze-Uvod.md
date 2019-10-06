@@ -130,7 +130,7 @@
 
 ![Схематски приказ укрштене парице](assets/images/utp-schema.png "Схематски приказ укрштене парице"){: height="50px" style="float:center; padding:16px"}
 
-![Изглед укрштене парице](assets/images/utp-look.png "Изглед укрштене парице"){: height="200px" style="float:left; padding:16px"} ![Изглед UTP конектора](assets/images/utp-connector.png "Изглед UTP конектора"){: height="200px" style="float:center; padding:16px"}
+![Изглед укрштене парице](assets/images/utp-look.png "Изглед укрштене парице"){: height="150px" style="float:left; padding:16px"} ![Изглед UTP конектора](assets/images/utp-connector.png "Изглед UTP конектора"){: height="150px" style="float:center; padding:16px"}
 
 1. Коаксијални каблови - обично се користе за телевизијске кабловске
 системе, а користе се и у LAN мрежама, итд.
@@ -142,9 +142,7 @@
     - Коаксијални каблови омогућују брзину преноса до 200 Mbps (чак и до
 500 Mbps), уз мању осетљивост на електромагнетне сметње
 
-![Схематски приказ коаксијалног кабла](assets/images/coaxial-schema.png "Схематски приказ коаксијалног кабла"){: height="50px" style="float:center; padding:16px"}
-
-![Изглед коаксијалног кабла](assets/images/coaxial-look.png "Изглед коаксијалног кабла"){: height="200px" style="float:left; padding:16px"} ![Изглед коаксијалног конектора](assets/images/coaxial-connector.png "Изглед коаксијалног конектора"){: height="200px" style="float:right; padding:16px"}
+![Схематски приказ коаксијалног кабла](assets/images/coaxial-schema.png "Схематски приказ коаксијалног кабла"){: height="50px" style="float:center; padding:16px"} ![Изглед коаксијалног кабла](assets/images/coaxial-look.png "Изглед коаксијалног кабла"){: height="150px" style="float:left; padding:16px"} ![Изглед коаксијалног конектора](assets/images/coaxial-connector.png "Изглед коаксијалног конектора"){: height="150px" style="float:right; padding:16px"}
 
 1. Оптички каблови - праве се од великог броја (стотина, хиљада) веома
 танких стаклених влакана умотаних у заштитни слој
