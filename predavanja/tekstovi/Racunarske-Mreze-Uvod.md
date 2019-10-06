@@ -82,13 +82,13 @@
 
 Модем се обично закупљује од добављача интернета и прикључује на парице фиксне телефоније, коаксијалне каблове кабловске телевизије или бежичне мреже мобилних оператера.
 
-![ADSL модем са бежичним рутером](assets/images/adsl-modem-02.png "ADSL модем са бежичним рутером"){: height="150px" style="float:right; padding:16px"} ![Кабловски модем](assets/images/cable-modem.png "Кабловски модем"){: height="200px" style="float:right; padding:16px"}
+![ADSL модем са бежичним рутером](assets/images/adsl-modem-02.png "ADSL модем са бежичним рутером"){: height="150px" style="float:left; padding:16px"} ![Кабловски модем](assets/images/cable-modem.png "Кабловски модем"){: height="200px" style="float:right; padding:16px"}
 
 Хаб, мост, свич и рутер – мрежни хардвер који служи за прослеђивање
 комуникације између рачунара у мрежи режа и повезивању мреже
 са Интернетом.
 
-![Хаб](assets/images/hub.png "Хаб"){: height="80px" style="float:left; padding:16px"} ![Свич](assets/images/switch.png "Свич"){: height="80px" style="float:center; padding:16px"} ![Рутер](assets/images/router.png "Рутер"){: height="80px" style="float:right; padding:16px"}
+![Хаб](assets/images/hub.png "Хаб"){: height="80px" style="text-align:left; padding:16px"} ![Свич](assets/images/switch.png "Свич"){: height="80px" style="text-align:center; padding:16px"} ![Рутер](assets/images/router.png "Рутер"){: height="80px" style="text-align:right; padding:16px"}
 
 Један уређај може обављати више задатака: нпр. уређај за
 успостављање бежичне комуникације има и улогу приступне тачке (омогућава даљу везу са Интернетом),
