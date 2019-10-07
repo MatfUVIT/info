@@ -6,7 +6,7 @@
 
 1. [Уводне напомене о курсу](tekstovi/Uvodne-Napomene-o-Kursu.md){:target="_blank"}
 
-    1. [Садржај курса](tekstovi/Uvodne-Napomene-o-Kursu#садржај-курса){:target="_blank"}
+    1. [Садржај предавања](tekstovi/Uvodne-Napomene-o-Kursu#садржај-предавања){:target="_blank"}
 
     1. [Изабрана литература](tekstovi/Uvodne-Napomene-o-Kursu#изабрана-литература){:target="_blank"}
 
