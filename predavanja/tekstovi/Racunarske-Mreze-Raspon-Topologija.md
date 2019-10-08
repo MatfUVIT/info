@@ -122,19 +122,19 @@
   - У том случају сваки уредај комуницира у тачно одређеном
 временском тренутку, при чему се уређаји наизменично смењују.
 
-![Дељење времена](assets/images/time-division-multiplexing.png "Дељење времена"){: height="250px" style="float:center; padding:16px"}
+![Дељење времена](assets/images/time-division-multiplexing.png "Дељење времена"){: width="400px" style="float:center; padding:16px"}
 
 - Дељење фреквенције (frequency division multiplexing - FDM) - други
 начин статичке алокације канала
   - Сваки уредај комуницира у оквиру одређеног фреквенцијског опсега.
 
-![Дељење фреквенције](assets/images/frequency-division-multiplexing.png "Дељење фреквенције"){: height="250px" style="float:center; padding:16px"}
+![Дељење фреквенције](assets/images/frequency-division-multiplexing.png "Дељење фреквенције"){: width="400px" style="float:center; padding:16px"}
 
 - Дељење таласне дужине (wavelength division multiplexing - WDM)
   - Специјални назив за дељење фреквенције у случају када се радио о
 оптичкој комуникацији, па се дели опсег таласних дужина.
 
-![Дељење таласне дужине](assets/images/wavelength-division-multiplexing.png "Дељење таласне дужине"){: height="250px" style="float:center; padding:16px"}
+![Дељење таласне дужине](assets/images/wavelength-division-multiplexing.png "Дељење таласне дужине"){: width="400px" style="float:center; padding:16px"}
 
 - Дељење кодирањем (code division multiple access - CDMA)
   - Ово је један од новијих начина статичког дељења канала, у оквиру ког се
