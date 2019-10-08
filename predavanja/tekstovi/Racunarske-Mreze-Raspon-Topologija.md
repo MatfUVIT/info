@@ -11,7 +11,7 @@
 - **Хијерархијско умрежавање**: мреже великог распона повезују
 мање мреже
 
-![Хијерархијско умрежавање](assets/images/hiararchial-networking.png "Хијерархијско умрежавање"){: height="250px" style="float:center; padding:16px"}
+![Хијерархијско умрежавање](assets/images/hiararchial-networking.png "Хијерархијско умрежавање"){: width="500px"  style="float:center; padding:16px"}
 
 Различите технологије се користе за различите распоне мрежа
 
@@ -70,7 +70,7 @@
 
 2. логичка топологија - одређена током података
 
-![Физичка и логичка топологија](assets/images/physical-logical-topology.png "Физичка и логичка топологија"){: height="250px" style="float:center; padding:16px"}
+![Физичка и логичка топологија](assets/images/physical-logical-topology.png "Физичка и логичка топологија"){: width="500px" style="float:center; padding:16px"}
 
 Ради једноставности разматрања, даље неће бити прављена разлика
 измеду физичке и логичке топологије.
@@ -104,7 +104,7 @@
 Исти физички медијум се може користити за симултану комуникацију
 више чворова без медусобног ометања.
 
-[Пример мреже са заједничким комуникационим каналом](assets/images/csmа-cd.gif "Пример мреже са заједничким комуникационим каналом"){: style="float:center; padding:16px"}
+[Пример мреже са заједничким комуникационим каналом](assets/images/csmа-cd.gif "Пример мреже са заједничким комуникационим каналом"){: width="500px" style="float:center; padding:16px"}
 
 Да би се обезбедила  симултана комуникација, неопходно је дефинисати правило тј.
 **протокол приступа заједничком каналу** за уређаје који су повезани на њега.
@@ -122,19 +122,19 @@
   - У том случају сваки уредај комуницира у тачно одређеном
 временском тренутку, при чему се уређаји наизменично смењују.
 
-![Дељење времена](assets/images/time-division-multiplexing.png "Дељење времена"){: width="400px" style="float:center; padding:16px"}
+![Дељење времена](assets/images/time-division-multiplexing.png "Дељење времена"){: width="500px"  style="float:center; padding:16px"}
 
 - Дељење фреквенције (frequency division multiplexing - FDM) - други
 начин статичке алокације канала
   - Сваки уредај комуницира у оквиру одређеног фреквенцијског опсега.
 
-![Дељење фреквенције](assets/images/frequency-division-multiplexing.png "Дељење фреквенције"){: width="400px" style="float:center; padding:16px"}
+![Дељење фреквенције](assets/images/frequency-division-multiplexing.png "Дељење фреквенције"){: width="500px"  style="float:center; padding:16px"}
 
 - Дељење таласне дужине (wavelength division multiplexing - WDM)
   - Специјални назив за дељење фреквенције у случају када се радио о
 оптичкој комуникацији, па се дели опсег таласних дужина.
 
-![Дељење таласне дужине](assets/images/wavelength-division-multiplexing.png "Дељење таласне дужине"){: width="400px" style="float:center; padding:16px"}
+![Дељење таласне дужине](assets/images/wavelength-division-multiplexing.png "Дељење таласне дужине"){: width="500px" style="float:center; padding:16px"}
 
 - Дељење кодирањем (code division multiple access - CDMA)
   - Ово је један од новијих начина статичког дељења канала, у оквиру ког се
@@ -151,7 +151,7 @@
 податак, уређај прекида своје слање, чека одређено време и покушава
 поново.
 
-![CSMA/CD](assets/images/csmа-cd.gif "CSMA/CD"){: style="float:center; padding:16px"}
+![CSMA/CD](assets/images/csmа-cd.gif "CSMA/CD"){: width="500px" style="float:center; padding:16px"}
 
 Разликују се четири главна типа топологије мреже:
 
@@ -206,12 +206,12 @@
 путањама, тако да је избор погодне путање обично веома
 значајан за ефикасност комуникације.
 
-![Пример мреже са директним везама чвор-чвор](assets/images/peer-to-peer-network-example.png "[Пример мреже са директним везама чвор-чвор"){: width="400px" style="float:center; padding:16px"}
+![Пример мреже са директним везама чвор-чвор](assets/images/peer-to-peer-network-example.png "[Пример мреже са директним везама чвор-чвор"){: width="500px" style="float:center; padding:16px"}
 
 - Комутирање (switching) - одређживање путање пре или током саме
 комуникације
 
-![Пример комутирања при комуникацији чвор-чвор](assets/images/network-routing-example.png "[Пример комутирања при комуникацији чвор-чвор"){: width="400px" style="float:center; padding:16px"}
+![Пример комутирања при комуникацији чвор-чвор](assets/images/network-routing-example.png "[Пример комутирања при комуникацији чвор-чвор"){: width="500px" style="float:center; padding:16px"}
 
 У зависности од начина одређивања путање и начина слања
 информације разликују се следећи типови комуникације:
