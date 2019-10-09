@@ -36,7 +36,7 @@
 
     1. [Топологија рачунарских мрежа](tekstovi/Racunarske-Mreze-Raspon-Topologija.md#топологија-рачунарских-мрежа){:target="_blank"}
 
-        - [Заједнички комуникациони канал](tekstovi/Racunarske-Mreze-Raspon-Topologija.md#Заједнички-комуникациони-канал){:target="_blank"}
+        - [Заједнички комуникациони канал](tekstovi/Racunarske-Mreze-Raspon-Topologija.md#заједнички-комуникациони-канал){:target="_blank"}
 
         - [Директне чвор-чвор везе](tekstovi/Racunarske-Mreze-Raspon-Topologija.md#директне-чвор-чвор-везе){:target="_blank"}
 
