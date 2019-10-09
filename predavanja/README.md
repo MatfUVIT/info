@@ -34,13 +34,13 @@
 
         - Wide area network
 
-    1. [Топологија рачунарских мрежа](tekstovi/Racunarske-Mreze-Raspon-Topologija.md#топологија-рачунарских-мрежа)
+    1. [Топологија рачунарских мрежа](tekstovi/Racunarske-Mreze-Raspon-Topologija.md#топологија-рачунарских-мрежа){:target="_blank"}
 
-        - [Заједнички комуникациони канал](tekstovi/Racunarske-Mreze-Raspon-Topologija.md#Заједнички-комуникациони-канал)
+        - [Заједнички комуникациони канал](tekstovi/Racunarske-Mreze-Raspon-Topologija.md#Заједнички-комуникациони-канал){:target="_blank"}
 
-        - [Директне чвор-чвор везе](tekstovi/Racunarske-Mreze-Raspon-Topologija.md#директне-чвор-чвор-везе)
+        - [Директне чвор-чвор везе](tekstovi/Racunarske-Mreze-Raspon-Topologija.md#директне-чвор-чвор-везе){:target="_blank"}
 
-        - [Топологија великих мрежа](tekstovi/Racunarske-Mreze-Raspon-Topologija.md#топологија-великих-мрежа)
+        - [Топологија великих мрежа](tekstovi/Racunarske-Mreze-Raspon-Topologija.md#топологија-великих-мрежа){:target="_blank"}
 
 1. [Интернет, услуге и протоколи](/prezentacije/UVIT01-02-Uvod u Internet.pdf){:target="_blank"}
 

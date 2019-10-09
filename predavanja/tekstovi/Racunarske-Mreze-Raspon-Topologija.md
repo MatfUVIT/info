@@ -70,7 +70,7 @@
 
 2. логичка топологија - одређена током података
 
-![Физичка и логичка топологија](assets/images/physical-logical-topology.png "Физичка и логичка топологија"){: width="500px" style="float:center; padding:16px"}
+![Физичка и логичка топологија](assets/images/physical-logical-topology.png "Физичка и логичка топологија"){: style="float:right; padding:16px"}
 
 Ради једноставности разматрања, даље неће бити прављена разлика
 измеду физичке и логичке топологије.
