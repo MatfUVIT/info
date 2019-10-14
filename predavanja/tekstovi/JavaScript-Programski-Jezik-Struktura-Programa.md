@@ -1332,7 +1332,9 @@ console.log( `Vrednost indikatora je ${godisnjeDoba}` );
 
 #### Циклус while
 
-**Пример.** Коришћење наредбе `while` за рачунање 2 <sup> 10</sup>
+Наредба циклуса са предусловом `while` има исту структуру и начин извршавања као у програмском језику Це.
+
+**Пример.** Коришћење наредбе `while` за рачунање 2 степеновано на 10:
 
 ```js
 let res = 1;
@@ -1341,31 +1343,67 @@ while (brojac < 10) {
     res = res * 2;
     brojac = brojac + 1;
 }
-console.log(res);:
+console.log(res);
 ```
 
-<script src="https://gist.github.com/vladofilipovic/e2de7b756dbf81e3c56797b2d5b86880.js"></script>
+**Пример.** Коришћење наредбе `while` за рачунање 2 степеновано на 10, коришћењем наредби сажетог ажурирања:
 
-**Пример.** Циклуси и сажето ажурирање:
-<script src="https://gist.github.com/vladofilipovic/5026b3648df928050f821022bd017227.js"></script>
+```js
+let res = 1;
+let brojac = 0;
+while (brojac < 10) {
+    res *= 2;
+    brojac++;
+}
+console.log(res);
+```
 
 #### Циклус do while
 
-**Пример.** Наредба  `do`-`while`:
-<script src="https://gist.github.com/vladofilipovic/653c0ad937424672cb298c88334775e7.js"></script>
+Наредба циклуса са постусловом  `do`-`while` има исту структуру и начин извршавања као што је то случај у програмском језику Це.
+
+**Пример.** Скрипта која, коришћењем наредбе `do`-`while`, генерише случајан број све док генерисани број није негативан:
+
+```js
+let pokusaja = 0;
+do {
+    var slucajan = Math.random() - 0.1;
+    pokusaja = pokusaja + 1;
+} while (slucajan >= 0);
+console.log(`Извучен је негативан случајан број ${slucajan} из покушаја бр. ${pokusaja}`);
+```
 
 #### Циклус for
 
-**Пример.** Наредба  `for`:
-<script src="https://gist.github.com/vladofilipovic/431715c98284ddf6120be93d2b59daf2.js"></script>
+Наредба бројачког циклуса `for` има исту структуру и начин извршавања као што је то случај у програмском језику Це. Поред бројачког `for` циклуса, језик ЈаваСкрипт садржи и колекцијек циклусе `for`-`in` (итерира кроз индексе којима се приступа елементима колекције) и `for`-`of` (итерира кроз саме елементе колекције).
 
-**Пример.** Наредба  `for`:
-<script src="https://gist.github.com/vladofilipovic/63bf2ef2eff912fe15ae4b08c35caec3.js"></script>
+**Пример.** Скрипта која, коришћењем наредбе `for`, рачуна 2 степеновано на 10:
+
+```js
+let res = 1;
+for (let brojac = 0; brojac < 10; brojac = brojac + 1)
+    res = res * 2;
+console.log(res);
+```
+
+**Пример.** Скрипта која, коришћењем наредбе `for` понавља извлачење псеудослучајних бројева док извучени број не буде између 0 и 0.1, а потом прикаѕује извучени број, као ито из ког је покушаја тај број извучен:
+
+```js
+let slucajan = Math.random();
+console.log(slucajan);
+for(let pokusaja = 1; slucajan >= 0.1; pokusaja++){
+    slucajan = Math.random();
+    console.log(slucajan);
+}
+console.log(`Извучен је случајан број ${slucajan} мањи од 0.1 из покушаја бр. ${pokusaja}`);
+```
 
 **Пример.** Наредба  `for` - циклус у циклусу:
 <script src="https://gist.github.com/vladofilipovic/84f9e866af82b61c731515d463fe0b1b.js"></script>
 
 #### Искакање из циклуса и прескакње итерације
+
+Исто као у програмском језику Це, искакање из циклуса се постиже нареднбом `break`. Исто као у програмском језику Це, прескакње итерације се постиже наредбом`continue`. И наредба `break` и наредба `continue` могу бити обележене.
 
 ##### Искакање из циклуса
 
