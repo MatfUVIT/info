@@ -6,28 +6,112 @@
     <meta charset="UTF-8">
 
     <style>
-        h2:target {
-            background-color: gainsboro;
-            width: 300px;
+        p:first-child {
+            font-weight: bold;
+            color: gold;
+        }
+
+        li:last-child {
+            font-weight: bold;
+            color: pink;
+        }
+
+        table {
+            border-collapse: collapse;
+            border: 1px solid black;
+        }
+
+        tr:nth-child(even) td:nth-child(2n) {
+            background-color: cadetblue;
+        }
+
+        tr:nth-child(odd) td:nth-child(2n+1) {
+            background-color: cadetblue;
+        }
+
+        tr:nth-child(1) th {
+            background-color: blanchedalmond;
+            font-weight: bold;
+            text-align: center;
+            height: 50px;
+            width: 100px;
         }
     </style>
 </head>
 
 <body>
-    <h1>Stilizovanje aktivnih unutrašnjih veza</h1>
+    <h1>Stilizovanje korišćenjem strukturalnih pseudoklasa</h1>
 
-    <a href="#HTML">HTML</a>
-    <a href="#CSS">CSS</a>
-    <a href="#Bootstrap">Bootstrap</a>
+    <a href="#p">Paragrafi</a>
+    <a href="#l">Liste</a>
+    <a href="#t">Tabela</a>
 
-    <h2 id="HTML">HTML</h2>
-    <p>Ovo je tekst o HTML jeziku.</p>
-    
-    <h2 id="CSS">CSS</h2>
-    <p>Ovo je tekst o CSS jeziku.</p>
+    <h2 id="p">Paragrafi</h2>
 
-    <h2 id="Bootstrap">Bootstrap</h2>
-    <p>Ovo je tekst o Bootstrap biblioteci.</p>
+    <!-- 
+        Ovde smo morali da stavimo element div,
+        da bi prvi paragraf bio ujedno i prvi potomak.
+        Bez njega, taj paragraf bi bio potomak elementa body,
+        ali ne bi bio njegov prvi potomak,
+        pa ga zato selektor p:first-child ne bi obuhvatio.
+    -->
+    <div>
+        <p>Ovo je tekst o HTML jeziku.</p>
+        <p>Ovo je tekst o CSS jeziku.</p>
+        <p>Ovo je tekst o Bootstrap biblioteci.</p>
+    </div>
+
+    <h2 id="l">Liste</h2>
+
+    <ul>
+        <li>Prva stavka</li>
+        <li>Druga stavka</li>
+        <li>...</li>
+        <li>Poslednja stavka</li>
+    </ul>
+
+    <ol>
+        <li>Prva stavka</li>
+        <li>Druga stavka</li>
+        <li>...</li>
+        <li>Poslednja stavka</li>
+    </ol>
+
+    <h2 id="t">Tabela</h2>
+
+    <table>
+        <tr>
+            <th>Zaglavlje 1</th>
+            <th>Zaglavlje 2</th>
+            <th>Zaglavlje 3</th>
+        </tr>
+        <tr>
+            <td>A11</td>
+            <td>A12</td>
+            <td>A13</td>
+        </tr>
+        <tr>
+            <td>A21</td>
+            <td>A22</td>
+            <td>A23</td>
+        </tr>
+        <tr>
+            <td>A31</td>
+            <td>A32</td>
+            <td>A33</td>
+        </tr>
+        <tr>
+            <td>A41</td>
+            <td>A42</td>
+            <td>A43</td>
+        </tr>
+        <tr>
+            <td>A51</td>
+            <td>A52</td>
+            <td>A53</td>
+        </tr>
+    </table>
+
 </body>
 
 </html>

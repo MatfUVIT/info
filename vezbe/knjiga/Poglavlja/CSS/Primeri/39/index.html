@@ -6,66 +6,28 @@
     <meta charset="UTF-8">
 
     <style>
-        a {
-            display: inline-block;
-            width: 100px;
-            height: 50px;
-            text-align: center;
-            font-size: 25px;
-            line-height: 50px;
-            font-family: sans-serif;
-            text-decoration: none;
-            color: lavenderblush;
-        }
-
-        a:link {
-            background-color: slategray;
-        }
-
-        a:visited {
-            background-color: seagreen;
-        }
-
-        a:hover {
-            background-color: slateblue;
-        }
-
-        a:active {
-            background-color: salmon;
+        h2:target {
+            background-color: gainsboro;
+            width: 300px;
         }
     </style>
 </head>
 
 <body>
-    <h1>Stilizovanje različitih stanja veza</h1>
+    <h1>Stilizovanje aktivnih unutrašnjih veza</h1>
 
-    <figure>
-        <a href="https://matfuvit.github.io/UVIT/vezbe/knjiga2">VEZA</a>
-        <figcaption>
-            Veza je u stanju kada putanja nije posećena.
-        </figcaption>
-    </figure>
+    <a href="#HTML">HTML</a>
+    <a href="#CSS">CSS</a>
+    <a href="#Bootstrap">Bootstrap</a>
 
-    <figure>
-        <a href="https://matfuvit.github.io/UVIT/vezbe/knjiga">VEZA</a>
-        <figcaption>
-            Veza je u stanju kada putanja jeste posećena.
-        </figcaption>
-    </figure>
+    <h2 id="HTML">HTML</h2>
+    <p>Ovo je tekst o HTML jeziku.</p>
+    
+    <h2 id="CSS">CSS</h2>
+    <p>Ovo je tekst o CSS jeziku.</p>
 
-    <figure>
-        <a href="https://matfuvit.github.io/UVIT/vezbe/knjiga">VEZA</a>
-        <figcaption>
-            Veza je u stanju kada se kursorom miša prelazi preko nje.
-        </figcaption>
-    </figure>
-
-    <figure>
-        <a href="https://matfuvit.github.io/UVIT/vezbe/knjiga">VEZA</a>
-        <figcaption>
-            Veza je u stanju kada je nad njom aktivan kliktaj miša.
-        </figcaption>
-    </figure>
+    <h2 id="Bootstrap">Bootstrap</h2>
+    <p>Ovo je tekst o Bootstrap biblioteci.</p>
 </body>
 
 </html>
