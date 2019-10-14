@@ -6,68 +6,81 @@
     <meta charset="UTF-8">
 
     <style>
-        table,
-        p {
-            font-size: 20px;
+        ul, ol {
+            display: inline-block;
+            width: 300px;
         }
 
-        table#t1,
-        table#t1 tr,
-        table#t1 tr td {
-            border: 2px solid black;
-        }
-
-        table#t2 {
-            border: 5px solid slateblue;
-            border-collapse: collapse;
-        }
-
-        table#t2 tr#naslovni-red {
-            border-bottom: 5px solid steelblue;
-        }
-
-        table#t2 tr.ostali-redovi td {
-            border: 5px dashed darksalmon;
+        ul.ivica-oko-stavki li {
+            border: 1px solid black;
         }
     </style>
 </head>
 
 <body>
-    <h1>Stilizovanje ivice tabela</h1>
+    <h1>Stilizovanje listi</h1>
 
-    <p>Stilizovanje sa razdvojenim ivicama</p>
+    <div>
+        <ol style="list-style-type: decimal;">
+            <li>Prva stavka</li>
+            <li>Druga stavka</li>
+            <li>Treća stavka</li>
+        </ol>
+        <ol style="list-style-type: upper-alpha;">
+            <li>Prva stavka</li>
+            <li>Druga stavka</li>
+            <li>Treća stavka</li>
+        </ol>
+        <ol style="list-style-type: lower-greek;">
+            <li>Prva stavka</li>
+            <li>Druga stavka</li>
+            <li>Treća stavka</li>
+        </ol>
+    </div>
 
-    <table id="t1">
-        <tr>
-            <td>Proizvod</td>
-            <td>Cena</td>
-        </tr>
-        <tr>
-            <td>Kafa</td>
-            <td>150</td>
-        </tr>
-        <tr>
-            <td>Plazma</td>
-            <td>100</td>
-        </tr>
-    </table>
+    <div>
+        <ul style="list-style-type: disc;">
+            <li>Prva stavka</li>
+            <li>Druga stavka</li>
+            <li>Treća stavka</li>
+        </ul>
+        <ul style="list-style-type: circle;">
+            <li>Prva stavka</li>
+            <li>Druga stavka</li>
+            <li>Treća stavka</li>
+        </ul>
+        <ul style="list-style-type: square;">
+            <li>Prva stavka</li>
+            <li>Druga stavka</li>
+            <li>Treća stavka</li>
+        </ul>
+    </div>
 
-    <p>Stilizovanje sa spojenim ivicama</p>
-
-    <table id="t2">
-        <tr id="naslovni-red">
-            <td>Proizvod</td>
-            <td>Cena</td>
-        </tr>
-        <tr class="ostali-redovi">
-            <td>Kafa</td>
-            <td>150</td>
-        </tr>
-        <tr class="ostali-redovi">
-            <td>Plazma</td>
-            <td>100</td>
-        </tr>
-    </table>
+    <div>
+        <ul style="list-style-image: url('./arrow.png'); list-style-type: circle;">
+            <li>Prva stavka</li>
+            <li>Druga stavka</li>
+            <li>Treća stavka</li>
+        </ul>
+        <ul style="list-style-position: outside;" class="ivica-oko-stavki">
+            <li>
+                Ova stavka namerno sadrži relativno dugačak tekst koji ima za cilj
+                da ilustruje svojstvo list-style-position kada se njegova vrednost
+                postavi na outside, što je podrazumevano.
+            </li>
+            <li>Druga stavka</li>
+            <li>Treća stavka</li>
+        </ul>
+        <ul style="list-style-position: inside;" class="ivica-oko-stavki">
+            <li>
+                Ova stavka namerno sadrži relativno dugačak tekst koji ima za cilj
+                da ilustruje svojstvo list-style-position kada se njegova vrednost
+                postavi na inside.
+            </li>
+            <li>Druga stavka</li>
+            <li>Treća stavka</li>
+        </ul>
+    </div>
 </body>
 
 </html>

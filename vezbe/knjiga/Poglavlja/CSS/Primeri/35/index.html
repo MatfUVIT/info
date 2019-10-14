@@ -6,58 +6,77 @@
     <meta charset="UTF-8">
 
     <style>
-        table,
-        table td {
-            border: 2px solid black;
-        }
-
-        table {
-            border-spacing: 20px;
-        }
-
-        table td {
-            width: 30px;
-            height: 30px;
+        table, 
+        tr {
+            border-collapse: collapse;
+            border: 2px solid slategray;
         }
 
         table#t1 {
-            empty-cells: show;
+            caption-side: top;
         }
 
         table#t2 {
-            empty-cells: hide;
+            caption-side: bottom;
         }
     </style>
 </head>
 
 <body>
-    <h1>Razmak između ćelija. <br> Prazne ćelije u tabelama</h1>
+    <h1>Podešavanje anotacije tabela</h1>
 
-    <p>Sa prikazivanjem praznih ćelija</p>
+    <p>Anotacija iznad tabele (caption-side: top)</p>
 
     <table id="t1">
+        <caption>Tabela 1. Kursevi na MATF</caption>
         <tr>
-            <td>1</td>
-            <td></td>
-            <td>3</td>
-            <td></td>
-            <td>5</td>
-            <td></td>
+            <td>Naziv kursa</td>
+            <td>Smer</td>
+            <td>Godina</td>
+        </tr>
+        <tr>
+            <td>Uvod u Veb i Internet Tehnologije</td>
+            <td>Informatika, Računarstvo i informatika</td>
+            <td>2, 4</td>
+        </tr>
+        <tr>
+            <td>Programiranje za Veb</td>
+            <td>Informatika, Računarstvo i informatika</td>
+            <td>4, 5</td>
+        </tr>
+        <tr>
+            <td>Veb Programiranje</td>
+            <td>Profesor matematike i računarstva</td>
+            <td>4</td>
         </tr>
     </table>
 
-    <p>Bez prikazivanja praznih ćelija</p>
+    <p>Anotacija iznad tabele (caption-side: bottom)</p>
 
     <table id="t2">
+        <caption>Tabela 2. Kursevi na MATF</caption>
         <tr>
-            <td></td>
-            <td>8</td>
-            <td></td>
-            <td>10</td>
-            <td></td>
-            <td>12</td>
+            <td>Naziv kursa</td>
+            <td>Smer</td>
+            <td>Godina</td>
+        </tr>
+        <tr>
+            <td>Uvod u Veb i Internet Tehnologije</td>
+            <td>Informatika, Računarstvo i informatika</td>
+            <td>2, 4</td>
+        </tr>
+        <tr>
+            <td>Programiranje za Veb</td>
+            <td>Informatika, Računarstvo i informatika</td>
+            <td>4, 5</td>
+        </tr>
+        <tr>
+            <td>Veb Programiranje</td>
+            <td>Profesor matematike i računarstva</td>
+            <td>4</td>
         </tr>
     </table>
+
 </body>
 
 </html>

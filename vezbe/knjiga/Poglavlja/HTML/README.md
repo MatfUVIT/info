@@ -521,6 +521,272 @@ Dajmo i dve napomene koje se tiču korišćenja ovih elemenata:
 
 - U primeru je anotacija prikazana ispod sadržaja. Ukoliko želimo da prikažemo anotaciju iznad sadržaja, dovoljno je da obrnemo redosled elemenata `figcaption` i `img` u HTML kodu. Drugim rečima, dovoljno je prvo kodirati anotaciju, a zatim sadržaj.
 
+## 1.7 Liste
+
+Pored tabela, nabrajanja podataka, pojmova, kategorija i drugih stavki su takođe veoma česta u veb prezentacijama. Sva ova nabrajanja se mogu obeležiti listama u jeziku HTML. U zavisnosti od tipa nabrajanja razlikujemo tri tipa listi:
+
+1. Nenumerisane liste
+
+2. Numerisane liste
+
+3. Opisne liste
+
+### 1.7.1 Nenumerisane liste
+
+*Nenumerisane* ili *neuređene liste* (engl. *unordered list*) služe za nabrajanje stavki liste kojima redosled nije važan. Ove liste se obeležavaju elementom `ul`. Svaka stavka liste treba da se nađe između otvarajuće i zatvarajuće etikete ovog elementa, a jednu stavku obeležavamo elementom `li` u čijem sadržaju se nalazi sam tekst stavke koja se nabraja.
+
+Naredni primer i prateća slika ilustruju upotrebu nenumerisanih listi. Kao što vidimo, podrazumevani prikaz liste je takav da su stavke uvučene u odnosu na tekst, kao i da ispred svake stavke stoji popunjen krug.
+
+```html
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Primer 13</title>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+    <h1>Welcome to our French restaurant!</h1>
+
+    <p>Menu du Brunch:</p>
+    <ul>
+        <li>French toast</li>
+        <li>Oeufs Benedicts</li>
+        <li>Oeufs Brouillés</li>
+        <li>French Crêpes</li>
+    </ul>
+
+    <p>Menu du Déjeuner:</p>
+    <ul>
+        <li>Soupe du jour</li>
+        <li>Salade d'arugula et prosciutto</li>
+        <li>Tartare de boeuf</li>
+        <li>Salmon wellington</li>
+    </ul>
+
+    <p>Menu du Diner:</p>
+    <ul>
+        <li>Salade du bistro</li>
+        <li>Camembert rôti, miel et herbes</li>
+        <li>Canard à l'orange</li>
+        <li>Filet mignon sauce bordelaise</li>
+    </ul>
+</body>
+
+</html>
+```
+
+<div style="max-width: 98%;">
+<img style="max-width: 100%;" src="./Slike/ul.png" alt="">
+</div>
+
+<a style="border: 2px solid gray; display: inline-block; padding: 15px; background-color: rgb(114, 211, 250); color: black;"
+   href="./Primeri/13/index.html"
+   target="_blank">Pogledaj primer uživo</a>
+
+### 1.7.2 Numerisane liste
+
+*Numerisane* ili *uređene liste* (engl. *ordered list*) služe za nabrajanje stavki liste u kojima je poredak elemenata važan. Ove liste obeležavamo elementom `ol`. Za obeležavanje stavki takođe koristimo element `li`, kao i kod nenumerisanih listi.
+
+Naredni primer i prateća slika ilustruju upotrebu numerisanih listi. Kao što vidimo, podrazumevani prikaz liste je takav da su stavke uvučene u odnosu na tekst, kao i da ispred svake stavke stoji dekadni redni broj te stavke.
+
+```html
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Primer 14</title>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+    <h1>Plan za današnje časove iz UVIT-a</h1>
+
+    <p>HTML:</p>
+    <ol>
+        <li>Tabele</li>
+        <li>Liste</li>
+        <li>Veze</li>
+    </ol>
+
+    <p>CSS:</p>
+    <ol>
+        <li>Stilizovanje tabela</li>
+        <li>Stilizovanje listi</li>
+        <li>Pseudoklase</li>
+        <li>Stilizovanje elemenata pomoću pseudoklasa</li>
+    </ol>
+</body>
+
+</html>
+```
+
+<div style="max-width: 98%;">
+<img style="max-width: 100%;" src="./Slike/ol.png" alt="">
+</div>
+
+<a style="border: 2px solid gray; display: inline-block; padding: 15px; background-color: rgb(114, 211, 250); color: black;"
+   href="./Primeri/14/index.html"
+   target="_blank">Pogledaj primer uživo</a>
+
+Podrazumevano, nabrajanje stavki počinje brojem 1. Međutim, ovo ponašanje je pomuće izmeniti tako što se nad elementom `ol` primeni atribut `start` čija je vrednost pozicija od koje se započinje nabrajanje. Naredni primer i prateća sliku ilustruju korišćenje ovog atributa.
+
+```html
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Primer 15</title>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+    <h1>Plan za današnje časove iz UVIT-a</h1>
+
+    <p>HTML:</p>
+    <ol>
+        <li>Tabele</li>
+        <li>Liste</li>
+        <li>Veze</li>
+    </ol>
+
+    <p>CSS:</p>
+    <ol start="4">
+        <li>Stilizovanje tabela</li>
+        <li>Stilizovanje listi</li>
+        <li>Pseudoklase</li>
+        <li>Stilizovanje elemenata pomoću pseudoklasa</li>
+    </ol>
+</body>
+
+</html>
+```
+
+<div style="max-width: 98%;">
+<img style="max-width: 100%;" src="./Slike/ol_start.png" alt="">
+</div>
+
+<a style="border: 2px solid gray; display: inline-block; padding: 15px; background-color: rgb(114, 211, 250); color: black;"
+   href="./Primeri/15/index.html"
+   target="_blank">Pogledaj primer uživo</a>
+
+### 1.7.3 Opisne liste
+
+*Opisne liste* (engl. *description list*) služe za nabrajanje pojmova i njihovih definicija, opisa i sl. Sama lista se obeležava elementom `dl`, dok je svaka stavka predstavljena dvama elementima: `dt` obeležava sam pojam koji se opisuje (engl. *data term*), a `dd` obeležava opis tog pojma (engl. *data description*).
+
+Naredni primer i prateća slika ilustruju korišćenje opisne liste.
+
+```html
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Primer 16</title>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+    <h1>My favourite things</h1>
+
+    <dl>
+        <dt>What is my favorite drink?</dt>
+        <dd>Coffee</dd>
+        <dt>What is my favorite food?</dt>
+        <dd>Sushi</dd>
+        <dt>What is my favourite anime?</dt>
+        <dd>Fruits Basket</dd>
+    </dl>
+</body>
+
+</html>
+```
+
+<div style="max-width: 98%;">
+<img style="max-width: 100%;" src="./Slike/dl.png" alt="">
+</div>
+
+<a style="border: 2px solid gray; display: inline-block; padding: 15px; background-color: rgb(114, 211, 250); color: black;"
+   href="./Primeri/16/index.html"
+   target="_blank">Pogledaj primer uživo</a>
+
+### 1.7.4 Ugnežđene liste
+
+Liste se mogu ugnežđavati čime se ostvaruje višestrukost u nabrajanju. Moguće je ugnežđavati bilo koju listu (unutrašnja lista) u bilo koju drugu listu (spoljašnja lista) jednostavnim umetanjem celog sadržaja unutrašnje liste u okviru sadržaja jedne stavke `li` spoljašnje liste.
+
+Naredni primer i prateća slika ilustruju ugnežđavanje opisnih listi u numerisanu listu.
+
+```html
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Primer 17</title>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+    <h1>Horoskopski znaci u godišnjim dobima</h1>
+
+    <ol>
+        <li>
+            Proleće
+            <dl>
+                <dt>Ovan</dt>
+                <dd>21. mart - 19. april</dd>
+                <dt>Bik</dt>
+                <dd>20. april - 20. maj</dd>
+                <dt>Blizanci</dt>
+                <dd>21. maj - 20. jun</dd>
+            </dl>
+        </li>
+        <li>
+            Leto
+            <dl>
+                <dt>Rak</dt>
+                <dd>21. jun - 22. jul</dd>
+                <dt>Lav</dt>
+                <dd>23. jul - 22. avgust</dd>
+                <dt>Devica</dt>
+                <dd>23. avgust - 22. septembar</dd>
+            </dl>
+        </li>
+        <li>
+            Jesen
+            <dl>
+                <dt>Vaga</dt>
+                <dd>23. septembar - 22. oktobar</dd>
+                <dt>Škorpija</dt>
+                <dd>23. oktobar - 21. novembar</dd>
+                <dt>Strelac</dt>
+                <dd>22. novembar - 21. decembar</dd>
+            </dl>
+        </li>
+        <li>
+            Zima
+            <dl>
+                <dt>Jarac</dt>
+                <dd>22. decembar - 19. januar</dd>
+                <dt>Vodolija</dt>
+                <dd>20. januar - 18. februar</dd>
+                <dt>Ribe</dt>
+                <dd>19. februar - 20. mart</dd>
+            </dl>
+        </li>
+    </ol>
+</body>
+
+</html>
+```
+
+<div style="max-width: 98%;">
+<img style="max-width: 100%;" src="./Slike/ugnezdjene_liste.png" alt="">
+</div>
+
+<a style="border: 2px solid gray; display: inline-block; padding: 15px; background-color: rgb(114, 211, 250); color: black;"
+   href="./Primeri/17/index.html"
+   target="_blank">Pogledaj primer uživo</a>
+
 -----
 
 [Knjiga](../../README.md)

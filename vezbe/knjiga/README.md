@@ -37,6 +37,16 @@ Autori:
 
    1. [Figure i anotiranje elemenata](./Poglavlja/HTML/README.md#161-figure-i-anotiranje-elemenata){:target="_blank"}
 
+7. [Liste](./Poglavlja/HTML/README.md#17-liste){:target="_blank"}
+
+   1. [Nenumerisane liste](./Poglavlja/HTML/README.md#171-nenumerisane-liste){:target="_blank"}
+
+   2. [Numerisane liste](./Poglavlja/HTML/README.md#172-numerisane-liste){:target="_blank"}
+
+   3. [Opisne liste](./Poglavlja/HTML/README.md#173-opisne-liste){:target="_blank"}
+
+   4. [Ugnežđene liste](./Poglavlja/HTML/README.md#174-ugnežđene-liste){:target="_blank"}
+
 ### [Poglavlje 2. Stilizovanje Veb dokumenata kroz CSS](./Poglavlja/CSS/README.md){:target="_blank"}
 
 1. [Osnovni elementi jezika CSS](./Poglavlja/CSS/README.md#21-osnovni-elementi-jezika-css){:target="_blank"}
@@ -61,7 +71,7 @@ Autori:
 
 6. [Koordinatni sistemi veb pregledača](./Poglavlja/CSS/README.md#26-koordinatni-sistemi-veb-pregledača){:target="_blank"}
 
-7. [Pozicioniranje elemenata](./Poglavlja/CSS/README.md#27-model-kutije){:target="_blank"}
+7. [Pozicioniranje elemenata](./Poglavlja/CSS/README.md#27-pozicioniranje-elemenata){:target="_blank"}
 
    1. [Statičko pozicioniranje](./Poglavlja/CSS/README.md#271-statičko-pozicioniranje){:target="_blank"}
 
@@ -76,6 +86,16 @@ Autori:
    6. [Svojstva `display` i `visibility`](./Poglavlja/CSS/README.md#276-svojstva-display-i-visibility){:target="_blank"}
 
 8. [Slike](./Poglavlja/CSS/README.md#28-slike){:target="_blank"}
+
+9. [Pozadina elemenata](./Poglavlja/CSS/README.md#29-pozadina-elemenata){:target="_blank"}
+
+   1. [Slike kao pozadine](./Poglavlja/CSS/README.md#291-slike-kao-pozadine){:target="_blank"}
+
+   2. [Gradijentna pozadina](./Poglavlja/CSS/README.md#292-gradijentna-pozadina){:target="_blank"}
+
+10. [Stilizovanje listi](./Poglavlja/CSS/README.md#210-stilizovanje-listi){:target="_blank"}
+
+11. [Stilizovanje tabela](./Poglavlja/CSS/README.md#211-stilizovanje-tabela){:target="_blank"}
 
 -----
 

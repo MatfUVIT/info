@@ -6,112 +6,97 @@
     <meta charset="UTF-8">
 
     <style>
-        p:first-child {
-            font-weight: bold;
-            color: gold;
+        h1 {
+            font-family: sans-serif;
+            font-weight: normal;
         }
 
-        li:last-child {
-            font-weight: bold;
-            color: pink;
+        h1::first-letter {
+            font-size: 60px;
+            font-family: serif;
+            font-style: italic;
+            font-weight: bolder;
+            color: palevioletred;
         }
 
-        table {
-            border-collapse: collapse;
-            border: 1px solid black;
+        p {
+            width: 500px;
         }
 
-        tr:nth-child(even) td:nth-child(2n) {
-            background-color: cadetblue;
+        p::first-line {
+            text-decoration: underline;
+            font-style: italic;
         }
 
-        tr:nth-child(odd) td:nth-child(2n+1) {
-            background-color: cadetblue;
-        }
-
-        tr:nth-child(1) th {
-            background-color: blanchedalmond;
-            font-weight: bold;
+        div.teorema {
             text-align: center;
-            height: 50px;
-            width: 100px;
+            width: 30%;
+            font-size: 18px;
+        }
+
+        div.teorema::before,
+        div.teorema::after {
+            content: "";
+            display: inline-block;
+            width: 100%;
+            height: 10px;
+            background-color: aquamarine;
+        }
+
+        div.dokaz {
+            width: 30%;
+            font-size: 14px;
+        }
+
+        div.dokaz::before {
+            content: "Dokaz:";
+            font-style: italic;
+            font-weight: bold;
+        }
+
+        div.dokaz::after {
+            content: url('kraj-dokaza.jpg');
         }
     </style>
 </head>
 
 <body>
-    <h1>Stilizovanje korišćenjem strukturalnih pseudoklasa</h1>
+    <h1>Pseudoelementi ::first-letter i ::first-line</h1>
 
-    <a href="#p">Paragrafi</a>
-    <a href="#l">Liste</a>
-    <a href="#t">Tabela</a>
+    <p>
+        Korišćenjem pseudoelementa ::first-letter, omogućili smo na nivou
+        ovog dokumenta da se prvi karakter svih naslova prikazuje posebno,
+        što je vidljivo iz naslova iznad i ispod. Dodatno, korišćenjem
+        pseudoelementa ::first-line, omogućili smo na nivou ovog dokumenta
+        da se prva linija svih paragrafa prikazuje iskošeno i podvučeno,
+        što je vidljivo u primeru ovog paragrafa.
+    </p>
 
-    <h2 id="p">Paragrafi</h2>
+    <h1>Pseudoelementi ::before i ::after</h1>
 
-    <!-- 
-        Ovde smo morali da stavimo element div,
-        da bi prvi paragraf bio ujedno i prvi potomak.
-        Bez njega, taj paragraf bi bio potomak elementa body,
-        ali ne bi bio njegov prvi potomak,
-        pa ga zato selektor p:first-child ne bi obuhvatio.
-    -->
-    <div>
-        <p>Ovo je tekst o HTML jeziku.</p>
-        <p>Ovo je tekst o CSS jeziku.</p>
-        <p>Ovo je tekst o Bootstrap biblioteci.</p>
+    <div class="teorema">
+        Svaki Ojlerov graf je balansiran. Svaki povezan graf i balansiran graf je Ojlerov.
     </div>
 
-    <h2 id="l">Liste</h2>
-
-    <ul>
-        <li>Prva stavka</li>
-        <li>Druga stavka</li>
-        <li>...</li>
-        <li>Poslednja stavka</li>
-    </ul>
-
-    <ol>
-        <li>Prva stavka</li>
-        <li>Druga stavka</li>
-        <li>...</li>
-        <li>Poslednja stavka</li>
-    </ol>
-
-    <h2 id="t">Tabela</h2>
-
-    <table>
-        <tr>
-            <th>Zaglavlje 1</th>
-            <th>Zaglavlje 2</th>
-            <th>Zaglavlje 3</th>
-        </tr>
-        <tr>
-            <td>A11</td>
-            <td>A12</td>
-            <td>A13</td>
-        </tr>
-        <tr>
-            <td>A21</td>
-            <td>A22</td>
-            <td>A23</td>
-        </tr>
-        <tr>
-            <td>A31</td>
-            <td>A32</td>
-            <td>A33</td>
-        </tr>
-        <tr>
-            <td>A41</td>
-            <td>A42</td>
-            <td>A43</td>
-        </tr>
-        <tr>
-            <td>A51</td>
-            <td>A52</td>
-            <td>A53</td>
-        </tr>
-    </table>
-
+    <div class="dokaz">
+        Neka nam je dat povezan balansiran graf. Da bismo pokazali da graf sadrži Ojlerov ciklus, postavićemo mrava na
+        bilo koji od čvorova tog grafa. Zašto baš mrav? Poznato je da mravi nikada ne idu istim putem dva puta pa smo
+        sigurni da će naš mrav proći svaku granu tačno jednom.
+        <br><br>
+        Puštamo mrava da slučajno odabira grane kojima će se kretati. Ako je veoma pametan, obići će svaku granu jednom
+        i vratiće se u početni čvor. Medutim, velike su šanse da nije veoma pametan i da će se u nekom čvoru zaglaviti,
+        odnosno, neće imati granu koju već nije obišao.
+        <br><br>
+        Da li mrav može da se zaglavi u bilo kom čvoru? Ispostavlja se da može da se zaglavi samo u početnom čvoru (jer
+        je graf balansiran). U trenutku kada se zaglavio on je napravio ciklus. Samo, taj ciklus nije Ojlerov jer još
+        uvek nije obišao sve grane. Ideja je da odabere drugačiji početni čvor iz kog će krenuti obilazak. Koji čvor će
+        izabrati? Treba da izabere čvor iz ciklusa koji ima izlaznih grana koje još uvek nije obišao.
+        <br><br>
+        Sada, mrav pokušava ispočetka iz novog čvora. Prvo obilazi ciklus koji je već pronašao u prethodnom pokušaju, a
+        zatim nastavlja obilazak preko neposećenih grana. Na taj način, ciklus se uvećava dok se ne dode do Ojlerovog.
+        Ukoliko se ponovo zaglavi, ponovo bira novi početni čvor, obilazi pronadeni ciklus (koji i dalje nije Ojlerov) i
+        tako sve dok ne uspe da obide sve grane.
+    </div>
 </body>
 
 </html>
