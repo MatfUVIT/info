@@ -22,7 +22,7 @@
 
         - [Мрежни софтвер](tekstovi/Racunarske-Mreze-Uvod.md#мрежни-софтвер){:target="_blank"}
 
-    1. Распон рачунарских мрежа
+    1. [Распон рачунарских мрежа](tekstovi/Racunarske-Mreze-Raspon-Topologija.md#распон-рачунарских-мрежа){:target="_blank"}
 
         - Personal area network
 
@@ -34,17 +34,13 @@
 
         - Wide area network
 
-    1. Топологија рачунарских мрежа
+    1. [Топологија рачунарских мрежа](tekstovi/Racunarske-Mreze-Raspon-Topologija.md#топологија-рачунарских-мрежа){:target="_blank"}
 
-        - Заједнички комуникациони канал
+        - [Заједнички комуникациони канал](tekstovi/Racunarske-Mreze-Raspon-Topologija.md#заједнички-комуникациони-канал){:target="_blank"}
 
-        - Директне чвор-чвор везе
+        - [Директне чвор-чвор везе](tekstovi/Racunarske-Mreze-Raspon-Topologija.md#директне-чвор-чвор-везе){:target="_blank"}
 
-    1. Слојеви код рачунарских мрежа
-
-        - OSI модел
-
-        - TCP/IP модел
+        - [Топологија великих мрежа](tekstovi/Racunarske-Mreze-Raspon-Topologija.md#топологија-великих-мрежа){:target="_blank"}
 
 1. [Интернет, услуге и протоколи](/prezentacije/UVIT01-02-Uvod u Internet.pdf){:target="_blank"}
 

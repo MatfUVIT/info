@@ -145,7 +145,33 @@ JаваСкрипт програми се записују коришћењем 
 Ниска може садржавати и тзв. ескејп-секвенцу која се интерпретира приликом приказа ниске - нпр. ескејп-секвенца `\n` представља знак за крај линије. Исто као и у програмском језику C, скејп-секвенце починњу обрнутим слешом, тј. знаком `\`. Ове секвенце су корисне нпр. када наводник треба да се нађе у оквиру ниске коју ограничавају наводници, када апостроф треба да се нађе у оквиру ниске коју ограничавају апострофи и сл.
 
 **Пример.** Записи ниски:
-<script src="https://gist.github.com/vladofilipovic/2503e9d2952e44c53a985f5aaffcec56.js"></script>
+
+```js
+/* запис ниске */
+" Trla baba lan, da joj prođe dan "
+
+/* алтернативни запис ниске */
+' Trla baba lan, da joj prođe dan '
+
+/* коришћћење знака \ омогућава да се ниска пружа кроз више редова */
+"Trla baba lan, \
+da joj prođe dan "
+
+/* коришћћење знака \ омогућава да се ниска пружа кроз више редова */
+"Trla \
+baba lan, \
+da joj prođe \
+dan "
+
+/* ниска која садржи знак за крај линије */
+" Trla baba lan,\n da joj prođe dan "
+
+/* ниска која садржи секвенцу знакова "\n" */
+" Trla baba lan,\"\\n\" da joj prođe dan "
+
+/* ниска која садржи секвенцу знакова "\n" */
+' Trla baba lan,"\\n" da joj prođe dan '
+```
 
 Новији начин записа ниски, назван [шаблон за ниску](#шаблони-за-ниске){:target="_blank"}, где се као ограничење користи обрнути апостороф (тј. знак `\``),  је описан касније, у поглављу о изразима.
 
@@ -202,10 +228,62 @@ JаваСкрипт програми се записују коришћењем 
 Декларисање и дефинисање промењиве су два различита поступка. Декларација промењиве је поступак стварања промењиве, тада се дефинише име промењиве и обезбедјује простор за њено складиштење, док је дефинисање промењиве поступак када се промењивој додељује нека вредност која се смешта у простор за складиштење.
 
 **Пример.** Рад са променљивима:
-<script src="https://gist.github.com/vladofilipovic/9fec667cf7b180511a5b48ae0e1cbfb0.js"></script>
+
+```js
+// definicija promenljive
+let prom = 5 * 5;
+
+// prikaz vrednosti izraza koji sadrži promenljivu
+let broj = 10;
+console.log(broj * broj);
+
+// promenljiva ne mora imati svo vreme istu vrednost
+let raspolozenje = "Srećan \t :)";
+console.log(raspolozenje);
+raspolozenje = "Tužan \t :(";
+console.log(raspolozenje);
+
+// promenljiva se može uvećati i/ili umanjiti
+let dug = 200;
+dug -= 72;
+console.log(dug);
+
+// jednom naredbm se mogu definisati dve promenljive
+let prva = 1, druga = 2;
+console.log(prva + druga);
+```
 
 **Пример.** Независност при промени вредности променљивих:
-<script src="https://gist.github.com/vladofilipovic/4cbdcd82e7b40e678cfae7860d838afd.js"></script>
+
+```js
+// deklaracija i postavljanje vrednosti
+let osoba1 = "Драгослав"
+let osoba2 = "Драгослав"
+// u ovom trenutku promenljive osoba1 i osoba2 imaju istu vrednost
+console.log(osoba1}
+console.log(osoba2}
+
+// promena vrednosti promenljive osoba1 ne utice na osoba2
+osoba1 = "Павле"
+console.log(osoba1}
+console.log(osoba2}
+
+// promena vrednosti promenljive osoba2 ne utice na osoba1
+osoba2 = "Никола"
+console.log(osoba1}
+console.log(osoba2}
+
+// postavljenje vrednosti
+osoba1 = "Драгослав"
+osoba2 = osoba1
+console.log(osoba1}
+console.log(osoba2}
+
+// promena vrednosti promenljive osoba1 ne utice na osoba2
+osoba1 = "Павле"
+console.log(osoba1}
+console.log(osoba2}
+```
 
 #### Опсег дефинисаности и контексти
 
@@ -313,15 +391,107 @@ JаваСкрипт програми се записују коришћењем 
 | `toString()`      | враће ниска-репрезентацију обихваћене вредности    |
 | `valueOf()`       | враће вредност као примитиву                       |
 
-**Пример.** Операције над бројевима:
-<script src="https://gist.github.com/vladofilipovic/e99c66c6dda94f9233b5755b3ae6c750.js"></script>
+**Пример.** Извршавање операција над бројевима приликом евалуације аритметичких израза:
+
+```js
+// operatori i operandi
+console.log(100 + 4 * 11);
+
+// zagrade utiču na prioritet
+console.log((100 + 4) * 11);
+
+// operatori istog prioriteta se izvršavaju sdesna ulevo
+console.log(1 - 2 + 1);
+
+// operator za računanje ostatka pri deljenju
+console.log(314 % 100);
+
+// specijalna vrednost +beskonačno
+console.log(Infinity);
+
+// dobijanje specijalne vrednosti +beskonačno
+console.log(47 / 0);
+
+// specijalna vrednost -beskonačno
+console.log(-Infinity);
+
+// dobijanje specijalne vrednosti -beskonačno
+console.log((47 - 50) / (500 - 500));
+
+// specijalna vrednost NaN
+console.log(NaN);
+
+// dobijanje specijalne vrednosti NaN
+console.log((47 / 47 - 1) / (500 - 500));
+
+// dobijanje specijalne vrednosti NaN
+console.log((47 / 0) - (500 / 0));
+
+// dobijanje specijalne vrednosti NaN
+console.log((47 / 0) / (500 / 0));
+```
 
 #### Логички изрази
 
 Логички изрази приликом евалуације враћају вредности логичког типа (`true` или `false`).
 
 **Пример.** Рад са логичким изразима:
-<script src="https://gist.github.com/vladofilipovic/e9be15b3154bccb7b5a1498f07afc232.js"></script>
+
+```js
+// zapis vrednosti true
+console.log(true);
+
+// zapis vrednosti false
+console.log(false);
+
+// poređenje brojeva
+console.log(33 > 5.5);
+
+// poređenje brojeva
+console.log(33 < 5.5);
+
+// poređenje niski
+console.log("Ananas" > 'Banana');
+
+// poređenje niski
+console.log('33' < '5.5');
+
+// poređenje niski
+console.log('auto' < 'automobil');
+
+// poređenje niski
+console.log('auto' < 'Automobil');
+
+// poređenje specijalnih brojeva
+console.log(-Infinity < -100e40);
+
+// poređenje specijalnih brojeva
+console.log(-Infinity == -Infinity);
+
+// poređenje specijalnih brojeva
+console.log(NaN == NaN);
+
+// operator i
+console.log(true && false);
+
+// operator i
+console.log(true && true);
+
+// operator ili
+console.log(false || false);
+
+// operator ili
+console.log(false || true);
+
+// prioritet operacija
+console.log(1 + 1 == 2 && 10 * 10 > 50)
+
+// operator uslovnog izraza
+console.log(true ? "prvi" : "drugi");
+
+// operator uslovnog izraza
+console.log(false ? 1 : "drugi");
+```
 
 #### Ниска-изрази
 
@@ -366,7 +536,26 @@ JаваСкрипт програми се записују коришћењем 
 Код шаблона за ниске, белине (знаци за крај линије, размаци, табови и сл.) не треба да се представљају промоћу ескејп-знакова, већ се могу директно унети у шаблон. Начин формирања ниски преко шаблона је елегантнији од "класичног" спајања ниски оператором `+` и продукује читљивији програмски код.
 
 **Пример.** Рад са оператором спајања и са шаблонима за ниске:
-<script src="https://gist.github.com/vladofilipovic/cae2937af170ff4e2a3bf2e4d89c83fe.js"></script>
+
+```js
+// spajanje niski
+console.log('Tri plus sest je ' + (3 + 6) + '.');
+// "Tri plus sest je 9."
+
+// sabloni za niske
+console.log(`Tri plus sest je ${3 + 6}.`);
+// "Tri plus sest je 9."
+
+// spajanje niski
+console.log("Draga mama,\n" +
+"Nadam se da si dobro.\n" +
+"\tPozdrav, tvoj sin")
+
+// sabloni za niske
+console.log(`Draga mama,
+Nadam se da si dobro.
+    Pozdrav, tvoj sin`);
+```
 
 Ако се појави потреба да се у оквиру шаблона за ниску појави обрнути апостоф, то се може постићи помоћу одговарајуће ескејп-секвенце, тј. знака ``\```.
 
@@ -392,7 +581,7 @@ JаваСкрипт програми се записују коришћењем 
 
 У наредној табели су приказани оператори и њихова асоцијативност. Редослед оператора у табели је дат по њиховом приоритету - од најважнијег ка мање важним:
 
-<table border="1px">
+<table style="border:1px">
 <tbody>
 <tr>
 <th>Приоритет</th>
@@ -696,7 +885,24 @@ JаваСкрипт програми се записују коришћењем 
 </table>
 
 **Пример.** Коришћење унарних и бинарних оператора:
-<script src="https://gist.github.com/vladofilipovic/29ed64ecbbabcf1730fa5710ff5e64cb.js"></script>
+
+```js
+// operator typeof primenjen na broj
+console.log(typeof 4.5);
+// Prikazaće: number
+
+// operator typeof primenjen na broj
+console.log(typeof 4);
+// Prikazaće: number
+
+// operator typeof primenjen na nisku
+console.log(typeof " x ");
+// Prikazaće: string
+
+// operator promene znaka
+console.log(-(10 - 2));
+// Prikazaće: -8
+```
 
 ### Конверзија типова и евалуација израза
 
@@ -776,7 +982,7 @@ JаваСкрипт програми се записују коришћењем 
 1. Ако није ништа од претходно наведеног, тада се враћа `False`
 
 У следећој табели су уписани сви случајеви између свих могућих типова за поређење оператором `==`:
-<table border="1px">
+<table style="border:1px">
 <thead>
 <tr>
 <th scope="row">&nbsp;</th>
@@ -853,21 +1059,78 @@ JаваСкрипт програми се записују коришћењем 
 </table>
 
 **Пример.** Евалуација израза уз имлицитну конверзију типова:
-<script src="https://gist.github.com/vladofilipovic/f3c52c66c729dc00b4357a85fcd6c8a0.js"></script>
+
+```js
+/* automatska konveryija tipova pri izvršenju aritmetičkih operacija */
+console.log(8 * null);
+// prikazaće 0
+
+console.log("5" - 1);
+// prikazaće 4
+
+console.log("5" + 1);
+// prikazaće 51
+
+console.log("pet" * 2);
+// prikazaće NaN
+
+/* automatska konverzija tipova pri izvršenju operacija poređenja */
+console.log(false == 0);
+// prikazaće true
+
+/* poređenje jednakosti za vrednosti null i/ili undefined se realizuje na pomalo specifičan način  */
+console.log(null == undefined);
+// prikazaće true
+
+console.log(null == 0);
+// prikazaće false
+
+/* logički operatori se "skraćeno" izvršavaju */
+console.log(undefined || "Karlo");
+// prikazaće Karlo
+
+console.log("Karlo" || "Korisnik");
+// prikazaće Karlo
+```
 
 ### [Примери за типове вредности  и изразе](https://github.com/MatfUVIT/UVIT/tree/master/predavanja/primeri-js/p01-js-vrednosti-tipovi-operatori){:target="_blank"}
 
 ### Наредбе и секвенце наредби
 
-Претходно описани изрази већ сами по себи представљају наредбе програмског језика ЈаваСкрипт. Наравно, програм написан на овакав наин би имао мало смисла.
+Сви претходно описани изрази већ сами по себи представљају наредбе програмског језика ЈаваСкрипт. Наравно, програми написани на овакав начин би имали мало смисла.
+
+Извршавање ЈаваСкрипт програма тј. скрипте почиње тако што се изврши прва нардба у скрипти, затим друга, и тако редом... Секвенијално извршавање наредби се можеизменити коришћењем наредбигранања и цикулуса, као што је то случај и у програмском језику Це.
 
 **Пример.** Секвенца наредби са мало смисла:
-<script src="https://gist.github.com/vladofilipovic/d5c9153e65dcfacfeea5a63a927232ad.js"></script>
+
+```js
+// primer naredbe
+6*7;
+
+// jos jedan primer naredbe
+7*6
+
+// primer beskorisnog programa
+1;
+! false;
+
+// jos jedan primer beskorisnog programa
+1
+! false
+```
 
 Следећи пример указује на смисленији програм.
 
 **Пример.** Смислена секвенца наредби:
-<script src="https://gist.github.com/vladofilipovic/4f0ecd4395c6bab9499cff73e765bca5.js"></script>
+
+```js
+// sekvencijalno izvršavanje
+let br = Number("23");
+br = br - 10
+console.log (br + " je kvadratni koren broja " + br * br);
+```
+
+За разлику од програмског језика Це, где се наредба обавезно морала завршити са знаком тачка-зарез (енг. semicolumn тј. `;`), ЈаваСкрипт наредба се може завшити  или знаком тачка-зарез или знаком за крај реда. Другим речима, код језика ЈаваСкрипт у новом реду почиње нова наредба, осим ако се текући ред на завршава обратном косом цртом (енг. backslash тј. `\`) или ако се не ради о шаблону за ниске који се простире кроз више редова.
 
 #### Наредбе доделе вредности
 
@@ -888,6 +1151,8 @@ JаваСкрипт програми се записују коришћењем 
 Оператор сажетог ажурирања може бити префиксни или постфиксни. Ако је оператор сажетог ажурирања префиксан, онда се приликом евалуације израза у којој учествује опвај оператор, ажурирање изврши на почетку, а ако је оператор постфиксан, ажурирање ће се извршити на крају евалуирања израза.
 
 #### Позиви предефинисаних функција
+
+Као што је случај и у другим "мејнстрим" програмским језицима, и код ЈаваСкрипта изрази у нарадбама могу садржати позиве функција. Неке од често коришћених функција су предефинисане, тј. садржане су у оквиру ЈаваСкрипт језика и одмах су на располагању програмеру.  
 
 У склопу самог ЈаваСкрипта постоје уграђени објекти са својим својствима и методама, намењени да олакшају програмирање. Дакле, програмер може одмах користити те објкете, њихове особине особине и методе - тј. предефинисане објекте и предефинисане функције. ЈаваСкрипт сасдржи следеће предефинисане објекте:
 
@@ -944,10 +1209,28 @@ JаваСкрипт програми се записују коришћењем 
 | `tan(x)`          | Returns the tangent of an angle `x`                                                  |
 
 **Пример.** Позиви математичких функција:
-<script src="https://gist.github.com/vladofilipovic/4c458e2adeb128fd5c437254a1519d7c.js"></script>
 
-**Пример.** Секвенца генерисања псеудо-случајних бројева:
-<script src="https://gist.github.com/vladofilipovic/3766d6e8d4b18ea6c7ef1901b4e16e11.js"></script>
+```js
+// pozivaju se funkcije Math.max i console.log
+console.log(Math.max(2, 4));
+console.log(Math.max(2, 4, 7, 6));
+let miki = -5;
+console.log(Math.min(2, 4, 7, 6, miki, Math.PI));
+```
+
+**Пример.** Секвенца наредби којом се генеришу и приказују псеудо-случајни бројеви:
+
+```js
+// pozivaju se funkcije Math.random i console.log
+let x = 6 * Math.random()-3
+console.log(x);
+x = 6 * Math.random()-3
+console.log(x);
+x = 6 * Math.random()-3
+console.log(x);
+x = 6 * Math.random()-3
+console.log(x);```
+```
 
 ##### Објекат `Console`
 
@@ -955,8 +1238,20 @@ Oвај објекат обезбеђује приступ било конзол
 
 Објекту `Console` се може приступити из ма ког глобалног објекта - код прегледача је изложена као `Window.console`  и на њу се може једностано реферисати са `console`.
 
-**Пример.** Позив функције за приказ на конзолу:
-<script src="https://gist.github.com/vladofilipovic/4e183bd2b858ac5c6d0171a8c00407d8.js"></script>
+**Пример.** Позиви функцијa за приказ на конзолу:
+
+```js
+let x = 20;
+
+// poziva se funkcija console.log
+console.log("vrednost poromenljive x je", x);
+
+// poziva se funkcija console.log, uz spajanje niski
+console.log("vrednost poromenljive x je " + x);
+
+// poziva se funkcija console.log, uz sablon za nisku
+console.log(`vrednost poromenljive x je ${x}`);
+```
 
 ### Гранања
 
@@ -964,19 +1259,72 @@ Oвај објекат обезбеђује приступ било конзол
 
 #### Наредба if
 
-**Пример.** Наредба `if`:
-<script src="https://gist.github.com/vladofilipovic/76d3387a5bbce192fa71e3a0a7f48d26.js"></script>
+Наредба `if` има исту структуру и начин извршавања као у програмском језику Це.
 
-**Пример.** Наредба `if`-`else`:
-<script src="https://gist.github.com/vladofilipovic/330e49ee301b349ef2ad74cd5e1ad0b1.js"></script>
+**Пример.** Коришћење просте наредбе условног гранања `if`:
 
-**Пример.** Угњеждена наредба `if`-`else`:
-<script src="https://gist.github.com/vladofilipovic/bcf0528d97685d1c55fd75e2bd336707.js"></script>
+```js
+// uslovno izvršavanje
+let br = 10 * Math.random()  - 5
+console.log ( `Pseudo-slucajni broj ima vrednost ${br}` )
+if (br > 0 )
+    console.log (`Pseudo-slucajni broj je pozitivan`);
+```
+
+**Пример.** Коришћење наредбе условног гранања `if`са`else` граном:
+
+```js
+// uslovno izvršavanje
+let br = 10 * Math.random()  - 5;
+console.log ( `Pseudo-slucajni broj ima vrednost ${br}` );
+if (br > 0 )
+    console.log (`Pseudo-slucajni broj je pozitivan`);
+else
+    console.log (`Pseudo-slucajni broj je negativan`);
+```
+
+**Пример.** Коришћење угњеждена наредбе `if`-`else`:
+
+```js
+// ugnјeždena if naredba
+let br = 10 * Math.random() - 5;
+console.log(`Псеудо-случајни број има вредност ${br}`);
+if (br <= 0)
+    console.log(`Број је негативан`);
+else if (br == 0)
+    console.log(`Број је тачно 0`);
+else if (br < 2)
+    console.log(`Број је позитиван, мањи од 2`);
+else
+    console.log(`Број је већи или једнак од 2`);
+```
 
 #### Наредба switch
 
-**Пример.** Наредба `switch`-`case`:
-<script src="https://gist.github.com/vladofilipovic/9d72bd2ec560597498baf59e725f3694.js"></script>
+Наредба вишеструког гранања `switch` има исту структуру и начин извршавања као што је то случај у програмском језику Це.
+
+**Пример.** Коришћење наредбе `switch`-`case`:
+
+```js
+// visestruko grananje koriscenjem naredbe switch
+let godisnjeDoba = Math.floor( (Math.random() * 40) % 5 );
+switch (godisnjeDoba) {
+    case 0:
+        console.log("Ponesite kišobran.");
+        break;
+    case 1:
+        console.log("Ponesite naočari za sunce.");
+    case 2:
+        console.log(`Ponesite rukavice.`);
+    case 3:
+        console.log("Obucite patike za šetnju.");
+        break;
+    default:
+        console.log("Ovo je neko nemoguće doba...");
+        break; 
+}
+console.log( `Vrednost indikatora je ${godisnjeDoba}` );
+```
 
 ### Циклуси
 
@@ -984,29 +1332,78 @@ Oвај објекат обезбеђује приступ било конзол
 
 #### Циклус while
 
-**Пример.** Наредба `while`:
-<script src="https://gist.github.com/vladofilipovic/e2de7b756dbf81e3c56797b2d5b86880.js"></script>
+Наредба циклуса са предусловом `while` има исту структуру и начин извршавања као у програмском језику Це.
 
-**Пример.** Циклуси и сажето ажурирање:
-<script src="https://gist.github.com/vladofilipovic/5026b3648df928050f821022bd017227.js"></script>
+**Пример.** Коришћење наредбе `while` за рачунање 2 степеновано на 10:
+
+```js
+let res = 1;
+let brojac = 0;
+while (brojac < 10) {
+    res = res * 2;
+    brojac = brojac + 1;
+}
+console.log(res);
+```
+
+**Пример.** Коришћење наредбе `while` за рачунање 2 степеновано на 10, коришћењем наредби сажетог ажурирања:
+
+```js
+let res = 1;
+let brojac = 0;
+while (brojac < 10) {
+    res *= 2;
+    brojac++;
+}
+console.log(res);
+```
 
 #### Циклус do while
 
-**Пример.** Наредба  `do`-`while`:
-<script src="https://gist.github.com/vladofilipovic/653c0ad937424672cb298c88334775e7.js"></script>
+Наредба циклуса са постусловом  `do`-`while` има исту структуру и начин извршавања као што је то случај у програмском језику Це.
+
+**Пример.** Скрипта која, коришћењем наредбе `do`-`while`, генерише случајан број све док генерисани број није негативан:
+
+```js
+let pokusaja = 0;
+do {
+    var slucajan = Math.random() - 0.1;
+    pokusaja = pokusaja + 1;
+} while (slucajan >= 0);
+console.log(`Извучен је негативан случајан број ${slucajan} из покушаја бр. ${pokusaja}`);
+```
 
 #### Циклус for
 
-**Пример.** Наредба  `for`:
-<script src="https://gist.github.com/vladofilipovic/431715c98284ddf6120be93d2b59daf2.js"></script>
+Наредба бројачког циклуса `for` има исту структуру и начин извршавања као што је то случај у програмском језику Це. Поред бројачког `for` циклуса, језик ЈаваСкрипт садржи и колекцијек циклусе `for`-`in` (итерира кроз индексе којима се приступа елементима колекције) и `for`-`of` (итерира кроз саме елементе колекције).
 
-**Пример.** Наредба  `for`:
-<script src="https://gist.github.com/vladofilipovic/63bf2ef2eff912fe15ae4b08c35caec3.js"></script>
+**Пример.** Скрипта која, коришћењем наредбе `for`, рачуна 2 степеновано на 10:
+
+```js
+let res = 1;
+for (let brojac = 0; brojac < 10; brojac = brojac + 1)
+    res = res * 2;
+console.log(res);
+```
+
+**Пример.** Скрипта која, коришћењем наредбе `for` понавља извлачење псеудослучајних бројева док извучени број не буде између 0 и 0.1, а потом прикаѕује извучени број, као ито из ког је покушаја тај број извучен:
+
+```js
+let slucajan = Math.random();
+console.log(slucajan);
+for(let pokusaja = 1; slucajan >= 0.1; pokusaja++){
+    slucajan = Math.random();
+    console.log(slucajan);
+}
+console.log(`Извучен је случајан број ${slucajan} мањи од 0.1 из покушаја бр. ${pokusaja}`);
+```
 
 **Пример.** Наредба  `for` - циклус у циклусу:
 <script src="https://gist.github.com/vladofilipovic/84f9e866af82b61c731515d463fe0b1b.js"></script>
 
 #### Искакање из циклуса и прескакње итерације
+
+Исто као у програмском језику Це, искакање из циклуса се постиже нареднбом `break`. Исто као у програмском језику Це, прескакње итерације се постиже наредбом`continue`. И наредба `break` и наредба `continue` могу бити обележене.
 
 ##### Искакање из циклуса
 
