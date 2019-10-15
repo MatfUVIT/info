@@ -1078,7 +1078,8 @@ console.log("pet" * 2);
 console.log(false == 0);
 // prikazaće true
 
-/* poređenje jednakosti za vrednosti null i/ili undefined se realizuje na pomalo specifičan način  */
+/* poređenje jednakosti za vrednosti null i/ili undefined se
+   realizuje na pomalo specifičan način  */
 console.log(null == undefined);
 // prikazaće true
 
@@ -1370,7 +1371,8 @@ do {
     var slucajan = Math.random() - 0.1;
     pokusaja = pokusaja + 1;
 } while (slucajan >= 0);
-console.log(`Извучен је негативан случајан број ${slucajan} из покушаја бр. ${pokusaja}`);
+console.log(`Извучен је негативан случајан број ${slucajan} из \
+    покушаја бр. ${pokusaja}`);
 ```
 
 #### Циклус for
@@ -1391,11 +1393,12 @@ console.log(res);
 ```js
 let slucajan = Math.random();
 console.log(slucajan);
-for(let pokusaja = 1; slucajan >= 0.1; pokusaja++){
+for(var pokusaja = 1; slucajan >= 0.1; pokusaja++){
     slucajan = Math.random();
     console.log(slucajan);
 }
-console.log(`Извучен је случајан број ${slucajan} мањи од 0.1 из покушаја бр. ${pokusaja}`);
+console.log(`Извучен је случајан број ${slucajan} мањи од 0.1 из \
+    покушаја бр. ${pokusaja}`);
 ```
 
 **Пример.** Скрипта која, коришћењем наредбе `for` (циклус у циклусу) 20 пута понавља серију извлачења псеудослучајних бројева док извучени број не буде између 0 и 0.1, приказује извучени псеудослучајн број, број елементата у серији, као и просечну дужину серије:
@@ -1408,7 +1411,8 @@ for (let i = 0; i < n; i++) {
     for (var pokusaja = 1; slucajan >= 0.1; pokusaja++) {
         slucajan = Math.random();
     }
-    console.log(`Извучен је случајан број ${slucajan} мањи од 0.1 из покушаја бр. ${pokusaja}`);
+    console.log(`Извучен је случајан број ${slucajan} мањи од 0.1 из \
+        покушаја бр. ${pokusaja}`);
     prosecnoPokusaja += pokusaja
 }
 console.log(`Просечан број покушаја је ${prosecnoPokusaja/n}`);
