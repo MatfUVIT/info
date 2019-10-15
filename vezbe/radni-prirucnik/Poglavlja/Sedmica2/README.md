@@ -33,14 +33,6 @@
    3. Fiksnog pozicioniranja
 <img style="max-width: 100%;" src="./Slike/zadatak2.png" alt="">
 
-3. Napisati HTML i CSS kod koji odgovara stranici na narednoj slici. Pomoću validatora osigurati se da je kod napisan u skladu sa HTML5 i CSS3 standardom. Slike koje se koriste u zadatku moguće je pronaći na narednim lokacijama: [slika 1](./Resursi/galerija1.jpg), [slika 2](./Resursi/galerija2.jpg), [slika 3](./Resursi/galerija1.jpg) i [slika 4](./Resursi/galerija4.jpg). Širinu slika postaviti na `300px`, a visinu na `200px`. Sve slike anotirati. Za sve anotacije omogućiti veb pregledaču da odabere beskukičavu familiju fontova. Zadatak uraditi korišćenjem:
-   1. Relativnog pozicioniranja
-   2. Apsolutnog pozicioniranja
-   3. Fiksnog pozicioniranja
-<img style="max-width: 100%;" src="./Slike/zadatak3.png" alt="">
-
-4. Napisati HTML i CSS kod koji odgovara stranici na narednoj slici. Pomoću validatora osigurati se da je kod napisan u skladu sa HTML5 i CSS3 standardom. Sliku koja se koristi u zadatku moguće je pronaći na [ovoj lokaciji](./Resursi/jesen.jpg). Širinu slike postaviti na `500px`, a visinu na `375px` i anotirati je. Za anotaciju slike omogućiti veb pregledaču da odabere kukičavu familiju fontova. Obuhvatajućem elementu anotirane slike postaviti crvenu ivicu širine `1px` i stila pune linije. Obuhvatajući element horizontalno poravnati u odnosu na telo veb pregledača.
-<img style="max-width: 100%;" src="./Slike/zadatak4.png" alt="">
 
 -----
 
