@@ -216,6 +216,8 @@
 
         1. [Циклуси](tekstovi/JavaScript-Programski-Jezik-Struktura-Programa.md#циклуси){:target="_blank"}
 
+            1. [Опсези важења променљивих у циклусима](tekstovi/JavaScript-Programski-Jezik-Struktura-Programa.mdопсези-важења-променљивих-у-циклусима){:target="_blank"}
+
             1. [Циклус `while`](tekstovi/JavaScript-Programski-Jezik-Struktura-Programa.md#циклус-while){:target="_blank"}
 
             1. [Циклус `do` - `while`](tekstovi/JavaScript-Programski-Jezik-Struktura-Programa.md#циклус-do-while){:target="_blank"}
@@ -223,8 +225,6 @@
             1. [Циклус `for`](tekstovi/JavaScript-Programski-Jezik-Struktura-Programa.md#циклус-for){:target="_blank"}
 
             1. [Искакање из циклуса и прескакње итерације](tekstovi/JavaScript-Programski-Jezik-Struktura-Programa.md#искакање-из-циклуса-и-прескакње-итерације){:target="_blank"}
-
-            1. [Циклуси и опсези важења](tekstovi/JavaScript-Programski-Jezik-Struktura-Programa.md#циклуси-и-опсези-важења){:target="_blank"}
 
         - [Примери (типови и вредности)](https://github.com/MatfUVIT/UVIT/tree/master/predavanja/primeri-js/p01-vrednosti-tipovi-operatori){:target="_blank"}
 
