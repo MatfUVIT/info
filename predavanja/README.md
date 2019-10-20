@@ -232,9 +232,9 @@
 
     1. [Функције и затворења](tekstovi/JavaScript-Programski-Jezik-Funkcije-Zatvorenja.md#функције-и-затворења){:target="_blank"}
 
-        1. [Дефиниција и позив фуункције](tekstovi/JavaScript-Programski-Jezik-Funkcije-Zatvorenja.md#дефиниција-и-позив-фуункције){:target="_blank"}
-
         1. [Декларација и позив функције](tekstovi/JavaScript-Programski-Jezik-Funkcije-Zatvorenja.md#декларација-и-позив-функције){:target="_blank"}
+
+        1. [Функцијски израз и позив фуункције](tekstovi/JavaScript-Programski-Jezik-Funkcije-Zatvorenja.md#функцијски-израз-и позив-фуункције){:target="_blank"}
 
         1. [Параметри и аргументи функција](tekstovi/JavaScript-Programski-Jezik-Funkcije-Zatvorenja.md#параметри-и-аргументи-функција){:target="_blank"}
 
