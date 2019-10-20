@@ -240,9 +240,9 @@
 
         1. [Опциони параметри функција](tekstovi/JavaScript-Programski-Jezik-Funkcije-Zatvorenja.md#опциони-параметри-функција){:target="_blank"}
 
-        1. [Дизање функције](tekstovi/JavaScript-Programski-Jezik-Funkcije-Zatvorenja.md#дизање-функције){:target="_blank"}
-
         1. [Опсези важења за променљиве и функције](tekstovi/JavaScript-Programski-Jezik-Funkcije-Zatvorenja.md#опсези-важења-за-променљиве-и-функције){:target="_blank"}
+
+        1. [Дизање променљивих и функција](tekstovi/JavaScript-Programski-Jezik-Funkcije-Zatvorenja.md#дизање-променљивих-и-функција){:target="_blank"}
 
         1. [Затворења за функције](tekstovi/JavaScript-Programski-Jezik-Funkcije-Zatvorenja.md#затворења-за-функције){:target="_blank"}
 
