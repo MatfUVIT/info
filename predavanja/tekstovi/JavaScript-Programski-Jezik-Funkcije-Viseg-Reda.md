@@ -53,3 +53,13 @@
 <script src="https://gist.github.com/vladofilipovic/2cd99e290786f216de5ca4d58fb69dfd.js"></script>
 
 ### Функцијски изрази који се одмах позивају
+
+### Литература
+
+1. Haverbeke M.: [Eloquent JavaScript](https://eloquentjavascript.net/){:target="_blank"}
+
+1. [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript){:target="_blank"} - Mozzila Developer Network (MDN)
+
+1. Живановић, Д.: [Веб програмирање - ЈаваСкрипт догађаји](https://www.webprogramiranje.org/dogadjaji-u-javascript-u/){:target="_blank"}
+
+1. Copes F.: [Complete JavaScript Handbook](https://medium.freecodecamp.org/the-complete-javascript-handbook-f26b2c71719c){:target="_blank"}
