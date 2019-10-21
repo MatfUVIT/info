@@ -234,6 +234,58 @@ for(let i=1; i<71; i++)
     console.log(i + " = "+ pronadjiResenje(i));
 ```
 
+### Ламбда изрази и функције
+
+У новије време јако је популаран начин дефинисања функција помоћу ламбда израза. Ту се, уместо резервисане речи `function` користи секвенца знакова једнако и веће (тзв. "дебела стрелица" - `=>`, коју не треба мешати са реалционим оператором веће или једнако `>=`). Дебела стрелица `=>` се пише после листе параметара,
+ а пре тела функције. Идеја је да се на тај начин изрази значење "улаз са датим параметрима производи излаз на начин описан телом функције".
+
+Ако функција тј. ламбда иѕраз садржи тачно један параметар, онда нема потребе да се тај један параметар обухвата заградама. Ако тело функције садржи тачно једну `return` наредбу, онда нема потребе да се користе витичасте заграде за означавањење тела функције, нити да се користи резервисана реч `return` - довољно је само написати израз који враће та функција.  
+
+**Пример.** Дефинисање функције функцијским изразом и помоћу ламбда израза:
+
+```js
+let kvadrat = function (x) { return x * x }
+console.log(kvadrat(12))
+
+let kvadrat2 = (x) => { return x * x }
+console.log(kvadrat2(12))
+
+let kvadrat3 = x => { return x * x }
+console.log(kvadrat3(12))
+
+let kvadrat4 = x => x * x
+console.log(kvadrat4(12))
+```
+
+Ако ламбда израз нема параметара, тада се морају навести отворена и затворена заграда. Ако тело функције садржи једну наредбу, витичасте заграде нису обавезне.
+
+**Пример.** Дефинисање функције која нема параметара помоћу ламбда израза:
+
+```js
+const zvoni = () => { console.log("Ding-dong!"); };
+zvoni();
+
+const zvoni2 = () => console.log("Ding-dong!");
+zvoni2();
+```
+
+**Пример.** Декларација и позив функције за степеновање дефинисане помоћу ламбда-израза:
+
+```js
+let stepen = (osnova = 5, izlozilac = 2) => {
+    let ret = 1;
+    for (let i = 0; i < izlozilac; i++)
+        ret *= osnova;
+    return ret;
+};
+
+console.log(stepen(3, 4));
+console.log(stepen(4));
+console.log(stepen());
+```
+
+Дефинисање функције помоћу ламбда израза је уведено у ЈаваСкрипт 2015. године, како би се омогућило да се лакше и брже записују мали функцијски изрази.
+
 ### Затворења за функције
 
 **Пример.** Функција којим се омотава дата вредност:
@@ -252,36 +304,6 @@ let omotacZa2 = omotajVrednost(2);
 console.log(omotacZa1());
 console.log(omotacZa2());
 
-```
-
-### Ламбда изрази и функције
-
-**Пример.** Дефинисање функције функцијским изразом на "класичан" начин и помоћу ламбда израза:
-
-```js
-let square = function(x){return x*x}
-console.log(square(12))
-
-let square2 = (x)=> {return x*x}
-console.log(square2(12))
-
-let square3 = (x)=> x*x
-console.log(square3(12))
-```
-
-**Пример.** Декларација и позив функције за степеновање дефинисане помоћу ламбда-израза:
-
-```js
-let stepen = (osnova = 5, izlozilac = 2) => {
-    let ret = 1;
-    for (let i = 0; i < izlozilac; i++)
-        ret *= osnova;
-    return ret;
-};
-
-console.log(stepen(3, 4));
-console.log(stepen(4));
-console.log(stepen());
 ```
 
 **Пример.** Генерисање функција за квадрирање, дизање на куб и дизање на десети степен, коришћењем затворења, помоћу ламбда-израза:
@@ -374,12 +396,18 @@ test();
 се боље види ако експлицитно се прикаже како изгледа ЈаваСКрипт код када се изврши дизање променљивих и функција:
 
 ```js
+// prvo se diže cela funkcija
 function test(){
   console.log("iz deklarisane funkcije");
-}                                        // prvo se diže cela funkcija
-var test;                                // zatim se diže deklaracija promenjive
+}  
+ // zatim se diže deklaracija promenjive
+// promenljiva je "pregazila" deklarisanu funkciju
+var test;
+// dodela funkcijskog izraza promenljivoj
+// je ostala na istom mestu u kodu
 var test = function (){
   console.log("iz function expression");
-}                                        // ostalo na istom mestu u kodu
-test();                                  // ostalo na istom mestu u kodu
+}
+// poziv funkcije je osto na istom mestu
+test();
 ```
