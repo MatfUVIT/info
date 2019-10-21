@@ -248,6 +248,8 @@
 
         1. [Дизање променљивих и функција](tekstovi/JavaScript-Programski-Jezik-Funkcije-Zatvorenja.md#дизање-променљивих-и-функција){:target="_blank"}
 
+        1. [Функције и бочни ефекти](tekstovi/JavaScript-Programski-Jezik-Funkcije-Zatvorenja.md#функције-и-бочни-ефекти){:target="_blank"}
+
         - [Примери](https://github.com/MatfUVIT/UVIT/tree/master/predavanja/primeri-js/p03-funkcije-zatvorenja){:target="_blank"}
 
     1. [Објекти и низови](tekstovi/JavaScript-Programski-Jezik-Objekti-Nizovi.md#објекти-и-низови){:target="_blank"}
