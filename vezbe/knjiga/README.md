@@ -47,6 +47,10 @@ Autori:
 
    4. [Ugnežđene liste](./Poglavlja/HTML/README.md#174-ugnežđene-liste){:target="_blank"}
 
+8. [Tabele](./Poglavlja/HTML/README.md#18-tabele){:target="_blank"}
+
+9. [Veze](./Poglavlja/HTML/README.md#19-veze){:target="_blank"}
+
 ### [Poglavlje 2. Stilizovanje Veb dokumenata kroz CSS](./Poglavlja/CSS/README.md){:target="_blank"}
 
 1. [Osnovni elementi jezika CSS](./Poglavlja/CSS/README.md#21-osnovni-elementi-jezika-css){:target="_blank"}
@@ -96,6 +100,14 @@ Autori:
 10. [Stilizovanje listi](./Poglavlja/CSS/README.md#210-stilizovanje-listi){:target="_blank"}
 
 11. [Stilizovanje tabela](./Poglavlja/CSS/README.md#211-stilizovanje-tabela){:target="_blank"}
+
+12. [Stilizovanje stanja i posebnih delova elemenata](./Poglavlja/CSS/README.md#212-stilizovanje-stanja-i-posebnih-delova-elemenata){:target="_blank"}
+
+   1. [Pseudoklase](./Poglavlja/CSS/README.md#2121-pseudoklase){:target="_blank"}
+
+   2. [Pseudoelementi](./Poglavlja/CSS/README.md#2122-pseudoelementi){:target="_blank"}
+
+### [Poglavlje 3. Biblioteka Bootstrap](./Poglavlja/Bootstrap/README.md){:target="_blank"}
 
 -----
 

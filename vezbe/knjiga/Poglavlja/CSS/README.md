@@ -2573,6 +2573,779 @@ Naredni primer i prateća slika ilustruju opisana svojstva.
    href="./Primeri/33/index.html"
    target="_blank">Pogledaj primer uživo</a>
 
+## 2.11 Stilizovanje tabela
+
+U prethodnom poglavlju smo diskutovali o načinima za korišćenje tabela u HTML jeziku. U ovoj sekciji ćemo govoriti o različitim načinima na koje je moguće stilizovati tabele pomoću CSS jezika, jednom kada je njihova struktura definisana u HTML jeziku.
+
+Jedan od važnih stilskih elemenata jeste postavljanje ivice tabele. Kao i u modelu kutije, za postavljanje ovog stila možemo koristiti CSS svojstvo `border` i njemu slične. Napomenimo da je moguće postaviti ivicu na nivou cele tabele stilizovanjem elementa `table`, ali i na nivou pojedinačnih redova, odnosno, ćelija, stilizovanjem elemenata `tr` i `td`, redom.
+
+Međutim, da bi postavljanje ivice bilo vidljivo za redove, potrebno je na nivou tabele postaviti još jedno CSS svojstvo, a to je `border-collapse`. Kao što smo videli, podrazumevano ponašanje tabele jeste da se svaka ćelija prikazuje zasebno, što je vidljivo u prvoj tabeli u narednom primeru. Ovo ponašanje se ostvaruje zbog toga što je svojstvo `border-collapse` podrazumevano postavljeno na vrednost `separate`. Međutim, postavljanjem ovog svojstva na vrednost `collapse`, tabela se transformiše tako da se ivice svih susednih ćelija "stapaju" u jednu. Ovim se omogućava da u svakom redu ivica bude jedinstvena, zbog čega se ivica prikazuje, što je vidljivo u drugoj tabeli u narednom primeru.
+
+```html
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Primer 34</title>
+    <meta charset="UTF-8">
+
+    <style>
+        table,
+        p {
+            font-size: 20px;
+        }
+
+        table#t1,
+        table#t1 tr,
+        table#t1 tr td {
+            border: 2px solid black;
+        }
+
+        table#t2 {
+            border: 5px solid slateblue;
+            border-collapse: collapse;
+        }
+
+        table#t2 tr#naslovni-red {
+            border-bottom: 5px solid steelblue;
+        }
+
+        table#t2 tr.ostali-redovi td {
+            border: 5px dashed darksalmon;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Stilizovanje ivice tabela</h1>
+
+    <p>Stilizovanje sa razdvojenim ivicama</p>
+
+    <table id="t1">
+        <tr>
+            <td>Proizvod</td>
+            <td>Cena</td>
+        </tr>
+        <tr>
+            <td>Kafa</td>
+            <td>150</td>
+        </tr>
+        <tr>
+            <td>Plazma</td>
+            <td>100</td>
+        </tr>
+    </table>
+
+    <p>Stilizovanje sa spojenim ivicama</p>
+
+    <table id="t2">
+        <tr id="naslovni-red">
+            <td>Proizvod</td>
+            <td>Cena</td>
+        </tr>
+        <tr class="ostali-redovi">
+            <td>Kafa</td>
+            <td>150</td>
+        </tr>
+        <tr class="ostali-redovi">
+            <td>Plazma</td>
+            <td>100</td>
+        </tr>
+    </table>
+</body>
+
+</html>
+```
+
+<div style="max-width: 98%;">
+<img style="max-width: 100%;" src="./Slike/tabela1.png" alt="">
+</div>
+
+<a style="border: 2px solid gray; display: inline-block; padding: 15px; background-color: rgb(114, 211, 250); color: black;"
+   href="./Primeri/34/index.html"
+   target="_blank">Pogledaj primer uživo</a>
+
+Pozicija anotacije tabele se podešava CSS svojstvom `caption-side`. Ukoliko je njegova vrednost postavljena na `top`, onda će se anotacija prikazati iznad tabele, a ukoliko je njegova vrednost `bottom`, onda će se anotacija prikazivati ispod tabele. Podrazumevano se anotacija prikazuje iznad tabele. Naredni HTML kod i prateća slika ilustruju upotrebu ovog svojstva.
+
+```html
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Primer 35</title>
+    <meta charset="UTF-8">
+
+    <style>
+        table, 
+        tr {
+            border-collapse: collapse;
+            border: 2px solid slategray;
+        }
+
+        table#t1 {
+            caption-side: top;
+        }
+
+        table#t2 {
+            caption-side: bottom;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Podešavanje anotacije tabela</h1>
+
+    <p>Anotacija iznad tabele (caption-side: top)</p>
+
+    <table id="t1">
+        <caption>Tabela 1. Kursevi na MATF</caption>
+        <tr>
+            <td>Naziv kursa</td>
+            <td>Smer</td>
+            <td>Godina</td>
+        </tr>
+        <tr>
+            <td>Uvod u Veb i Internet Tehnologije</td>
+            <td>Informatika, Računarstvo i informatika</td>
+            <td>2, 4</td>
+        </tr>
+        <tr>
+            <td>Programiranje za Veb</td>
+            <td>Informatika, Računarstvo i informatika</td>
+            <td>4, 5</td>
+        </tr>
+        <tr>
+            <td>Veb Programiranje</td>
+            <td>Profesor matematike i računarstva</td>
+            <td>4</td>
+        </tr>
+    </table>
+
+    <p>Anotacija iznad tabele (caption-side: bottom)</p>
+
+    <table id="t2">
+        <caption>Tabela 2. Kursevi na MATF</caption>
+        <tr>
+            <td>Naziv kursa</td>
+            <td>Smer</td>
+            <td>Godina</td>
+        </tr>
+        <tr>
+            <td>Uvod u Veb i Internet Tehnologije</td>
+            <td>Informatika, Računarstvo i informatika</td>
+            <td>2, 4</td>
+        </tr>
+        <tr>
+            <td>Programiranje za Veb</td>
+            <td>Informatika, Računarstvo i informatika</td>
+            <td>4, 5</td>
+        </tr>
+        <tr>
+            <td>Veb Programiranje</td>
+            <td>Profesor matematike i računarstva</td>
+            <td>4</td>
+        </tr>
+    </table>
+
+</body>
+
+</html>
+```
+
+<div style="max-width: 98%;">
+<img style="max-width: 100%;" src="./Slike/tabela2.png" alt="">
+</div>
+
+<a style="border: 2px solid gray; display: inline-block; padding: 15px; background-color: rgb(114, 211, 250); color: black;"
+   href="./Primeri/35/index.html"
+   target="_blank">Pogledaj primer uživo</a>
+
+Podrazumevano, svaka ćelija zauzima onoliku površinu koliko sadržaj ćelije zauzima. Slično, svaki red zauzima onoliku površinu koliko sve ćelije zauzimaju. Kao i za ostale elemente, i elementima ćelija tabele je moguće menjati elemente modela kutije. Stoga, moguće je koristiti svojstva `width` i `height` za podešavanje širine i visine ćelije, redom. Međutim, s obzirom na specifičnu organizaciju elemenata u tabeli važe određena dodatna pravila. Naime, ukoliko različite ćelije u istom redu imaju različitu visinu, onda će visina tog reda biti jednaka najvećoj od svih visina ćelija. Slično važi i za kolone - ukoliko različite ćelije u istoj koloni imaju različitu širinu, onda će širina te kolone biti jednaka najvećoj od svih širina ćelija.
+
+U narednom primeru i pratećoj slici ilustrovano je opisano ponašanje. Inicijalno je svim redovima dodeljena visina od `50px` i svim ćelijama je podešena širina od `150px`. Međutim, s obzirom da za ćeliju sa identifikatorom `velika-celija` važi da je njena širina jednaka `300px` i njena visina jednaka `100px`, onda se red i kolona u kojem se ta ćelija nalazi prilagođavanju visini, odnosno širini te ćelije, redom. Naravno, i sve ostale ćelije u tom redu i toj koloni moraju da se prilagode većoj dimenziji.
+
+```html
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Primer 36</title>
+    <meta charset="UTF-8">
+
+    <style>
+        tr {
+            height: 50px;
+        }
+
+        td {
+            width: 150px;
+        }
+
+        #velika-celija {
+            height: 100px;
+            width: 300px;
+        }
+
+        table,
+        td {
+            border: 1px solid black;
+        }
+
+        table {
+            border-collapse: collapse;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Podešavanje veličine ćelija/redova tabele.</h1>
+
+    <table>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td id="velika-celija"></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
+</body>
+
+</html>
+```
+
+<div style="max-width: 98%;">
+<img style="max-width: 100%;" src="./Slike/tabela3.png" alt="">
+</div>
+
+<a style="border: 2px solid gray; display: inline-block; padding: 15px; background-color: rgb(114, 211, 250); color: black;"
+   href="./Primeri/36/index.html"
+   target="_blank">Pogledaj primer uživo</a>
+
+Svaka tabela ima podrazumevano definisan razmak između ćelija, bilo da li su ivice ćelija spojene (u ovom slučaju je razmak jednak nuli) ili razdvojene. Ukoliko želimo da definišemo razmak između ćelija, možemo nad elementom `table` podesiti CSS svojstvo `border-spacing` čija je vrednost neka od dužina. Takođe, ukoliko tabela sadrži ćelije koje nemaju sadržaj, možemo izbeći njihovo prikazivanje podešavanjem CSS svojstva `empty−cells`. Njegove vrednosti su `hide` za sakrivanje praznih ćelija ili `show` za njihovo prikazivanje. Naredni primer i prateća slika ilustruju upotrebu ova dva svojstva.
+
+```html
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Primer 37</title>
+    <meta charset="UTF-8">
+
+    <style>
+        td {
+            height: 50px;
+            width: 50px;
+            text-align: center;
+        }
+
+        table,
+        td {
+            border: 1px solid black;
+        }
+
+        table {
+            empty-cells: hide;
+            border-spacing: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>
+        Razmak između ćelija. <br>
+        Prikaz praznih ćelija.
+    </h1>
+
+    <table>
+        <tr>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td></td>
+            <td>6</td>
+        </tr>
+        <tr>
+            <td>7</td>
+            <td>8</td>
+            <td>9</td>
+        </tr>
+    </table>
+</body>
+
+</html>
+```
+
+<div style="max-width: 98%;">
+<img style="max-width: 100%;" src="./Slike/tabela4.png" alt="">
+</div>
+
+<a style="border: 2px solid gray; display: inline-block; padding: 15px; background-color: rgb(114, 211, 250); color: black;"
+   href="./Primeri/37/index.html"
+   target="_blank">Pogledaj primer uživo</a>
+
+## 2.12 Stilizovanje stanja i posebnih delova elemenata
+
+Do sada smo za sve HTML elemente razmatrali samo njihovo inicijalno i podrazumevano stanje u kojem se nalaze prilikom njihovog kreiranja. Na primer, kada definišemo naredno pravilo u CSS-u
+
+```css
+div {
+    width: 300px;
+    height: 100px;
+    background-color: salmon;
+}
+```
+
+prilikom konstruisanja svakom `div` elementa, dodeljujemo mu odgovarajuće stilove koji su definisani datim svojstvima. Ova svojstva se primenjuju na podrazumevano stanje u kojem se element nalazi nakon konstrukcije. Međutim, ono što nismo do sada pomenuli jeste da pored podrazumevanog stanja, HTML elementi imaju i druga stanja, kao što su: stanje kada se kursorom miša pređe preko elementa, stanje elementa kada dobije fokus, stanje elementa `a` kada je veza na koju taj element vodi ranije posećena, i dr.
+
+Slično tome, elementi imaju i posebne delove na koje je moguće uticati kao što su: sadržaj ispred ili nakon sadržaja, prvi karakter u sadržaju, i dr. U ovoj sekciji diskutujemo o ovim posebnim stanjima i delovima elemenata.
+
+### 2.12.1 Pseudoklase
+
+Pseudoklase predstavljaju mehanizam pomoću kojih je moguće upravljati stilovima stanja u kojem se HTML element nalazi. Svako stanje ima odgovarajući naziv koji se poklapa sa nazivom pseudoklase koja se koristi u CSS kodu. Sintaksa korišćenja pseudoklasa je sledeća:
+
+```css
+selektor:pseudoklasa {
+    svojstvo-1: vrednost-1;
+    /* ... */
+    svojstvo-N: vrednost-N;
+}
+```
+
+Ovom sintaksom se svojstva `svojstvo-1`, ..., `svojstvo-N` sa vrednostima `vrednost-1`, ..., `vrednost-N` primenjuju na sve elemente obuhvaćene selektorom `selektor` i koji se nalaze u stanju `:pseudoklasa`.
+
+Prikažimo sada neke pseudoklase koje su nam na raspolaganju u CSS jeziku. Tradicionalno se pseudoklase demonstriraju nad elementom `a` i njegovim stanjima `link`, `visited`, `hover` i `active`, tako da će takav slučaj biti i u ovoj knjizi:
+
+- Pseudoklasa `:link` se koristi za stilizovanje stanja u kojoj se veza nalazi kada putanja do koje ona vodi nije posećena. 
+- Pseudoklasa `:visited` se koristi za stilizovanje stanja u kojoj se veza nalazi kada putanja jeste posećena. 
+- Pseudoklasa `:hover` se koristi za stilizovanje stanja u kojoj se veza nalazi kada se kursorom miša pređe preko veze.
+- Pseudoklasa `:active` se koristi za stilizovanje stanja u kojoj se veza nalazi sve dok je kliktaj miša "aktivan" nad vezom.
+
+Ono što treba posebno napomenuti jeste da ove pseudoklase moraju biti navedene u ispravnom redosledu da bi odgovarajući stilovi bili prikazani. Konkretno, pravilo definisano pseudoklasom `:hover` mora da se nađe nakon pravila definisanih pseudoklasama `:link` i `:visited`. Takođe, pravilo definisano pseudoklasom `:active` mora da se nađe nakon pravila definisanog pseudoklasom `:hover`.
+
+Naredni primer ilustruje definisanje različitih stilova za svaki od opisanih stanja u kojima se element `a` može naći. Na pratećoj slici su prikazana data stanja u kojima se svaka od veza nalazi.
+
+```html
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Primer 38</title>
+    <meta charset="UTF-8">
+
+    <style>
+        a {
+            display: inline-block;
+            width: 100px;
+            height: 50px;
+            text-align: center;
+            font-size: 25px;
+            line-height: 50px;
+            font-family: sans-serif;
+            text-decoration: none;
+            color: lavenderblush;
+        }
+
+        a:link {
+            background-color: slategray;
+        }
+
+        a:visited {
+            background-color: seagreen;
+        }
+
+        a:hover {
+            background-color: slateblue;
+        }
+
+        a:active {
+            background-color: salmon;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Stilizovanje različitih stanja veza</h1>
+
+    <figure>
+        <a href="https://matfuvit.github.io/UVIT/vezbe/knjiga2">VEZA</a>
+        <figcaption>
+            Veza je u stanju kada putanja nije posećena.
+        </figcaption>
+    </figure>
+
+    <figure>
+        <a href="https://matfuvit.github.io/UVIT/vezbe/knjiga">VEZA</a>
+        <figcaption>
+            Veza je u stanju kada putanja jeste posećena.
+        </figcaption>
+    </figure>
+
+    <figure>
+        <a href="https://matfuvit.github.io/UVIT/vezbe/knjiga">VEZA</a>
+        <figcaption>
+            Veza je u stanju kada se kursorom miša prelazi preko nje.
+        </figcaption>
+    </figure>
+
+    <figure>
+        <a href="https://matfuvit.github.io/UVIT/vezbe/knjiga">VEZA</a>
+        <figcaption>
+            Veza je u stanju kada je nad njom aktivan kliktaj miša.
+        </figcaption>
+    </figure>
+</body>
+
+</html>
+```
+
+<div style="max-width: 98%;">
+<img style="max-width: 100%;" src="./Slike/veze-pseudoklase.png" alt="">
+</div>
+
+<a style="border: 2px solid gray; display: inline-block; padding: 15px; background-color: rgb(114, 211, 250); color: black;"
+   href="./Primeri/38/index.html"
+   target="_blank">Pogledaj primer uživo</a>
+
+Opisane pseudoklase spadaju u kategoriju *dinamičkih pseudoklasa* (engl. *dynamic pseudo-class*). Pseudoklase iz ove kategorije klasifikuju elemente na osnovu karakteristika koje se ne mogu zaključiti iz strukture DOM stabla. Na primer, nije moguće zaključiti da li je neka putanja u vezi posećena ili ne samo na osnovu informacija koje su nam date HTML kodom za tu vezu. Zbog toga je na veb pregledaču da odredi kada se element nalazi u nekim od ovih stanja. Napomenimo još i da, iako se pseudoklase `:link` i `:visited` mogu primeniti samo nad elementima `a`, `area` i `link`, druge opisane pseudoklase `:hover` i `:active` se mogu primeniti i nad drugim elementima, kao što su `p`, `div` i dr.
+
+U prethodnom poglavlju smo diskutovali o unutrašnjim vezama i njihovoj strukturi. Prisetimo se da unutrašnja veza podrazumeva postavljanje atributa `id` nad određenim elementom ka kojem želimo da ostvarimo vezu. Pseudoklasa `:target` se može iskoristiti za stilizovanje elemenata ka kojima postoji aktivna unutrašnja veza u dokumentu. 
+
+Naredni primer ilustruje korišćenje ove pseudoklase u dokumentu koji ima tri podnaslova ka kojima su omogućene unutrašnje veze klikom na veze ispod naslova dokumenta. Primetimo da je na pratećoj slici istaknut deo putanje, koja se nalazi u adresnoj liniji veb pregledača, koji ukazuje da je korisnik kliknuo na vezu koja vodi ka drugom podnaslovu, te zbog toga taj podnaslov ima poseban stil u odnosu na druge podnaslove.
+
+```html
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Primer 39</title>
+    <meta charset="UTF-8">
+
+    <style>
+        h2:target {
+            background-color: gainsboro;
+            width: 300px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Stilizovanje aktivnih unutrašnjih veza</h1>
+
+    <a href="#HTML">HTML</a>
+    <a href="#CSS">CSS</a>
+    <a href="#Bootstrap">Bootstrap</a>
+
+    <h2 id="HTML">HTML</h2>
+    <p>Ovo je tekst o HTML jeziku.</p>
+    
+    <h2 id="CSS">CSS</h2>
+    <p>Ovo je tekst o CSS jeziku.</p>
+
+    <h2 id="Bootstrap">Bootstrap</h2>
+    <p>Ovo je tekst o Bootstrap biblioteci.</p>
+</body>
+
+</html>
+```
+
+<div style="max-width: 98%;">
+<img style="max-width: 100%;" src="./Slike/target.png" alt="">
+</div>
+
+<a style="border: 2px solid gray; display: inline-block; padding: 15px; background-color: rgb(114, 211, 250); color: black;"
+   href="./Primeri/39/index.html"
+   target="_blank">Pogledaj primer uživo</a>
+
+*Strukturalne pseudoklase* (engl. *structural pseudo-classes*) predstavljaju one pseudoklase koje mogu da obuhvate elemente na osnovu informacija iz strukture DOM stabla koju jednostavniji selektori ne mogu. U nastavku navodimo primere strukturalnih pseudoklasa i dajemo njihove opise:
+
+- Pseudoklasa `:first-child` obuhvata tačno prvog potomka od svih koji su obuhvaćeni datim selektorom u roditeljskom elementu. Na primer, `p:first-child` obuhvata svaki paragraf koji je prvi potomak u roditeljskom elementu.
+- Pseudoklasa `:last-child` obuhvata tačno poslednjeg potomka od svih koji su obuhvaćeni datim selektorom u roditeljskom elementu. Na primer, `li:last-child` obuhvata svaku poslednju stavku u roditeljskom elementu.
+- Pseudoklasa `:nth-child(an+b)` obuhvata svaki element u roditeljskom elementu koji ima tačno $a\cdot n + b - 1$ rođaka ispred njega u DOM stablu, za svako $n \in N_0$. Alternativno, umesto izraza `an+b` možemo koristiti vrednosti `even` ili `odd`, koji selektuju svaki element na parnoj, odnosno, neparnoj poziciji, redom. Zbog svoje složenije notacije, dajemo naredne primere radi ilustracije ove pseudoklase:
+   - Selektor `a:nth-child(even)` obuhvata svaku vezu na parnoj poziciji
+   - Selektor `a:nth-child(odd)` obuhvata svaku vezu na neparnoj poziciji
+   - Selektor `tr:nth-child(10n+5)` obuhvata 15-ti, 25-ti, 35-ti, ... red u tabeli
+   - Selektor `tr:nth-child(10n)` obuhvata 10-ti, 20-ti, 30-ti, ... red u tabeli
+   - Selektor `tr:nth-child(5)` obuhvata 5. red u tabeli
+
+Napomenimo da indeksiranje u opisanim pseudoklasama počinje od 1. Naredni primer i prateća slika ilustruju opisane strukturalne pseudoklase.
+
+```html
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Primer 40</title>
+    <meta charset="UTF-8">
+
+    <style>
+        p:first-child {
+            font-weight: bold;
+            color: gold;
+        }
+
+        li:last-child {
+            font-weight: bold;
+            color: pink;
+        }
+
+        table {
+            border-collapse: collapse;
+            border: 1px solid black;
+        }
+
+        tr:nth-child(even) td:nth-child(2n) {
+            background-color: cadetblue;
+        }
+
+        tr:nth-child(odd) td:nth-child(2n+1) {
+            background-color: cadetblue;
+        }
+
+        tr:nth-child(1) th {
+            background-color: blanchedalmond;
+            font-weight: bold;
+            text-align: center;
+            height: 50px;
+            width: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Stilizovanje korišćenjem strukturalnih pseudoklasa</h1>
+
+    <a href="#p">Paragrafi</a>
+    <a href="#l">Liste</a>
+    <a href="#t">Tabela</a>
+
+    <h2 id="p">Paragrafi</h2>
+
+    <!-- 
+        Ovde smo morali da stavimo element div,
+        da bi prvi paragraf bio ujedno i prvi potomak.
+        Bez njega, taj paragraf bi bio potomak elementa body,
+        ali ne bi bio njegov prvi potomak,
+        pa ga zato selektor p:first-child ne bi obuhvatio.
+    -->
+    <div>
+        <p>Ovo je tekst o HTML jeziku.</p>
+        <p>Ovo je tekst o CSS jeziku.</p>
+        <p>Ovo je tekst o Bootstrap biblioteci.</p>
+    </div>
+
+    <h2 id="l">Liste</h2>
+
+    <ul>
+        <li>Prva stavka</li>
+        <li>Druga stavka</li>
+        <li>...</li>
+        <li>Poslednja stavka</li>
+    </ul>
+
+    <ol>
+        <li>Prva stavka</li>
+        <li>Druga stavka</li>
+        <li>...</li>
+        <li>Poslednja stavka</li>
+    </ol>
+
+    <h2 id="t">Tabela</h2>
+
+    <table>
+        <tr>
+            <th>Zaglavlje 1</th>
+            <th>Zaglavlje 2</th>
+            <th>Zaglavlje 3</th>
+        </tr>
+        <tr>
+            <td>A11</td>
+            <td>A12</td>
+            <td>A13</td>
+        </tr>
+        <tr>
+            <td>A21</td>
+            <td>A22</td>
+            <td>A23</td>
+        </tr>
+        <tr>
+            <td>A31</td>
+            <td>A32</td>
+            <td>A33</td>
+        </tr>
+        <tr>
+            <td>A41</td>
+            <td>A42</td>
+            <td>A43</td>
+        </tr>
+        <tr>
+            <td>A51</td>
+            <td>A52</td>
+            <td>A53</td>
+        </tr>
+    </table>
+
+</body>
+
+</html>
+```
+
+<div style="max-width: 98%;">
+<img style="max-width: 100%;" src="./Slike/strukturalne-pseudoklase.png" alt="">
+</div>
+
+<a style="border: 2px solid gray; display: inline-block; padding: 15px; background-color: rgb(114, 211, 250); color: black;"
+   href="./Primeri/40/index.html"
+   target="_blank">Pogledaj primer uživo</a>
+
+### 2.12.2 Pseudoelementi
+
+Pseudoelementi se koriste za stilizovanje posebnih delova HTML elemenata koji predstavljaju apstrakcije dobijene na osnovu informacija iz strukture DOM stabla, ali koji nemaju odgovarajuću reprezentaciju u HTML jeziku. Na primer, HTML jezikom ne možemo pristupiti prvom karakteru teksta koji čini sadržaj nekog HTML elementa. 
+
+Sintaksa pseudoelemenata je slična pseudoklasama, sa razlikom da se koriste dve dvotačke umesto jedne:
+
+```css
+selektor::pseudoelement {
+    svojstvo-1: vrednost-1;
+    /* ... */
+    svojstvo-N: vrednost-N;
+}
+```
+
+U nastavku navodimo primere pseudoelemenata i dajemo njihove opise:
+
+- Pseudoelement `::first-line` opisuje sadržaj koji se nalazi u prvoj liniji elementa. Na primer, selektorom `p::first-line` primeniće se stil na sadržaj u prvoj liniji svih paragrafa.
+- Pseudoelement `::first-letter` opisuje sadržaj koji se nalazi kao prvi karakter sadržaja elementa. Na primer, selektorom `h1::first-letter` primeniće se stil na prvi karakter svih naslova.
+- Pseudoelementi `::before` i `::after` mogu se koristiti za umetanje generisanog sadržaja ispred, odnosno, nakon samog sadržaja elementa, redom. Za umetanje sadržaja ispred ili nakon sadržaja elementa koristi se svojstvo `content`, koji može imati neku od narednih vrednosti:
+   - Niska, koja označava tekstualni sadržaj.
+   - Poziv CSS funkcije `url` koja će umetnuti sadržaj do kojeg vodi putanja. Na primer, prosleđivanjem putanje koja vodi na sliku, ta slika će biti umetnuta ispred ili nakon elementa.
+
+Naredni primer i prateća slika ilustruju korišćenje opisanih pseudoelemenata.
+
+```html
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Primer 41</title>
+    <meta charset="UTF-8">
+
+    <style>
+        h1 {
+            font-family: sans-serif;
+            font-weight: normal;
+        }
+
+        h1::first-letter {
+            font-size: 60px;
+            font-family: serif;
+            font-style: italic;
+            font-weight: bolder;
+            color: palevioletred;
+        }
+
+        p {
+            width: 500px;
+        }
+
+        p::first-line {
+            text-decoration: underline;
+            font-style: italic;
+        }
+
+        div.teorema {
+            text-align: center;
+            width: 30%;
+            font-size: 18px;
+        }
+
+        div.teorema::before,
+        div.teorema::after {
+            content: "";
+            display: inline-block;
+            width: 100%;
+            height: 10px;
+            background-color: aquamarine;
+        }
+
+        div.dokaz {
+            width: 30%;
+            font-size: 14px;
+        }
+
+        div.dokaz::before {
+            content: "Dokaz:";
+            font-style: italic;
+            font-weight: bold;
+        }
+
+        div.dokaz::after {
+            content: url('kraj-dokaza.jpg');
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Pseudoelementi ::first-letter i ::first-line</h1>
+
+    <p>
+        Korišćenjem pseudoelementa ::first-letter, omogućili smo na nivou
+        ovog dokumenta da se prvi karakter svih naslova prikazuje posebno,
+        što je vidljivo iz naslova iznad i ispod. Dodatno, korišćenjem
+        pseudoelementa ::first-line, omogućili smo na nivou ovog dokumenta
+        da se prva linija svih paragrafa prikazuje iskošeno i podvučeno,
+        što je vidljivo u primeru ovog paragrafa.
+    </p>
+
+    <h1>Pseudoelementi ::before i ::after</h1>
+
+    <div class="teorema">
+        Svaki Ojlerov graf je balansiran. Svaki povezan graf i balansiran graf je Ojlerov.
+    </div>
+
+    <div class="dokaz">
+        Neka nam je dat povezan balansiran graf. Da bismo pokazali da graf sadrži Ojlerov ciklus, postavićemo mrava na
+        bilo koji od čvorova tog grafa. Zašto baš mrav? Poznato je da mravi nikada ne idu istim putem dva puta pa smo
+        sigurni da će naš mrav proći svaku granu tačno jednom.
+        <br><br>
+        Puštamo mrava da slučajno odabira grane kojima će se kretati. Ako je veoma pametan, obići će svaku granu jednom
+        i vratiće se u početni čvor. Medutim, velike su šanse da nije veoma pametan i da će se u nekom čvoru zaglaviti,
+        odnosno, neće imati granu koju već nije obišao.
+        <br><br>
+        Da li mrav može da se zaglavi u bilo kom čvoru? Ispostavlja se da može da se zaglavi samo u početnom čvoru (jer
+        je graf balansiran). U trenutku kada se zaglavio on je napravio ciklus. Samo, taj ciklus nije Ojlerov jer još
+        uvek nije obišao sve grane. Ideja je da odabere drugačiji početni čvor iz kog će krenuti obilazak. Koji čvor će
+        izabrati? Treba da izabere čvor iz ciklusa koji ima izlaznih grana koje još uvek nije obišao.
+        <br><br>
+        Sada, mrav pokušava ispočetka iz novog čvora. Prvo obilazi ciklus koji je već pronašao u prethodnom pokušaju, a
+        zatim nastavlja obilazak preko neposećenih grana. Na taj način, ciklus se uvećava dok se ne dode do Ojlerovog.
+        Ukoliko se ponovo zaglavi, ponovo bira novi početni čvor, obilazi pronadeni ciklus (koji i dalje nije Ojlerov) i
+        tako sve dok ne uspe da obide sve grane.
+    </div>
+</body>
+
+</html>
+```
+
+<div style="max-width: 98%;">
+<img style="max-width: 100%;" src="./Slike/pseudoelementi.png" alt="">
+</div>
+
+<a style="border: 2px solid gray; display: inline-block; padding: 15px; background-color: rgb(114, 211, 250); color: black;"
+   href="./Primeri/41/index.html"
+   target="_blank">Pogledaj primer uživo</a>
+
 -----
 
 [Knjiga](../../README.md)

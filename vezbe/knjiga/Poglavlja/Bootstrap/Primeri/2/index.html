@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Primer 2 </title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style type="text/css">
+            * {
+                box-sizing: border-box;
+            }
+   
+           #header{
+                height: 50px;
+                max-width: 100%;
+                min-width: 100%;
+                background-color: #ff9966;
+            }
+        
+            #nav{
+                display: inline-block;
+                vertical-align: top;
+                height: 400px;
+                background-color: #00cc99;
+            }
+
+            #col1{
+                display: inline-block;
+                vertical-align: top;
+                height: 400px;
+                background-color: #ffff66;
+            }
+            
+            #col2{
+                display: inline-block;
+                vertical-align: top;
+                height: 400px;
+                background-color: #aa55dd;
+            }
+            
+            #col3{
+                display: inline-block;
+                vertical-align: top;
+                height: 400px;
+                background-color: #55aadd;
+            }
+            
+            @media only screen and (max-width: 599px) {  
+                #nav, #col1, #col2, #col3 {
+                    width: 100%;
+                }
+            }
+
+            @media only screen and (min-width: 600px) {  
+                #nav {
+                    width: 10%;
+                }
+                #col1, #col2, #col3 {
+                    width: 30%;
+                } 
+            }
+            
+            #footer{
+                height: 50px;
+                background-color: #993366;
+                width: 100%;
+            }
+        </style>
+    </head>
+    
+    <body>
+        <div id="header"> </div>
+        <div id="nav"> </div><div id="col1"> </div><div id="col2"> </div><div id="col3"> </div>
+        <div id="footer"> </div>
+    </body>
+</html>
