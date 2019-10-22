@@ -8,48 +8,732 @@
 ### Функције као аргументи функција
 
 **Пример.** Приказ свих елемената низа (без издвајања у посебну функцију):
-<script src="https://gist.github.com/vladofilipovic/7cf39660d932119bf29d19d1d834b858.js"></script>
+
+```js
+let niz = [1, 2, 3];
+
+// prvi način
+for (let i = 0; i < niz.length; i++) {
+    let tekuci = niz[i];
+    console.log(tekuci);
+}
+
+console.log("---");
+
+// drugi način, kolekcijski ciklus
+for (let i in niz) {
+    let tekuci = niz[i];
+    console.log(tekuci);
+}
+```
 
 **Пример.** Приказ свих елемената низа (у посебној функцији је релиазован приказ):
-<script src="https://gist.github.com/vladofilipovic/3dcb8b84fe047daf1e5962807aee6810.js"></script>
+
+```js
+let nizBrojeva = [1, 2, 3];
+
+function prikaziSvaki(niz) {
+    for (let i = 0; i < niz.length; i++)
+        console.log(niz[i]);
+}
+
+prikaziSvaki(nizBrojeva);
+```
 
 **Пример.** Приказ свих елемената низа (у посебној функцији је реализован пролазак кроз низ, а аргумент те функције је функција која описује шта тррба урадити са елементом низа):
-<script src="https://gist.github.com/vladofilipovic/fc4f486ed114a84287427e4831e8efdd.js"></script>
+
+```js
+let nizBrojeva = [1, 2, 3, 4];
+
+function zaSvaki(niz, akcija) {
+    for (let i = 0; i < niz.length; i++)
+        akcija(niz[i]);
+}
+
+prikazNaKonzolu = function(x){
+    console.log(x);
+};
+zaSvaki(nizBrojeva, prikazNaKonzolu);
+
+
+prikazNaKonzolu2 = (x) => console.log(x)
+zaSvaki(nizBrojeva, prikazNaKonzolu2);
+```
+
+```js
+var nizBrojeva = [1, 2, 3, "mika", "zika"];
+
+function zaSvaki(niz, akcija) {
+    for (let i = 0; i < niz.length; i++)
+        akcija(niz[i]);
+}
+
+zaSvaki(nizBrojeva, function(x) {
+    console.log(x)
+});
+
+zaSvaki(nizBrojeva, (x)=>console.log(x));
+
+// resenje koje se oslanja na postojeci metod kod nizova
+nizBrojeva.forEach( (x) => console.log(x) )
+```
 
 **Пример.** Сума свих елемената низа:
-<script src="https://gist.github.com/vladofilipovic/4bb33cdc9b03c3e2dd6eb6f860b8af25.js"></script>
+
+```js
+let nizBrojeva = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+function zaSvaki(niz, akcija) {
+    for (let i = 0; i < niz.length; i++)
+        akcija(niz[i]);
+}
+
+// funkcijska vrednost povecaj pristupa globalnoj promenljivoj sum
+var povecaj =  function(broj) {
+    sum += broj;
+};
+
+// racuna sumu niza brojeva pomoću funkcije zaSvaki
+let sum = 0;
+zaSvaki(nizBrojeva, povecaj);
+console.log(sum);
+
+// racuna sumu niza brojeva pomoću funkcije zaSvaki i lambda izraza
+sum = 0;
+zaSvaki(nizBrojeva, (broj)=>sum+=broj);
+console.log(sum);
+```
+
+```js
+var nizBrojeva = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+function zaSvaki(niz, akcija) {
+    for (var i = 0; i < niz.length; i++)
+        akcija(niz[i]);
+}
+
+// racuna sumu niza brojeva pomoću funkcije zaSvaki
+let sum = 0;
+zaSvaki(nizBrojeva, function (broj) {
+    sum += broj;
+});
+console.log(sum);
+
+// racuna sumu niza brojeva pomoću lambda izraza
+sum = 0;
+zaSvaki(nizBrojeva, x => sum += x);
+console.log(sum);
+
+// racuna sumu niza brojeva pomoću metoda forEach
+sum = 0;
+nizBrojeva.forEach(x => sum += x);
+console.log(sum);
+```
 
 **Пример.** Функције које декоришу друге функције:
-<script src="https://gist.github.com/vladofilipovic/3f04ae223e8fd0145c02d337cee4815f.js"></script>
+
+```js
+function bucna(f) {
+    return function(arg) {
+        console.log("poziv sa argumentom ", arg);
+        var val = f(arg);
+        console.log("pozvana sa argumentom ", arg, " - rezultat ", val);
+        return val;
+    };
+}
+
+bucna(Boolean)(0);
+bucna(Boolean)(2);
+bucna(Math.sin)(Math.PI/2);
+bucna(Math.cos)(Math.PI/2);
+```
 
 ### Функције као генератори функција
 
 **Пример.** Функције помоћу које се, позивима, креирају функције нижег реда (за поређење):
-<script src="https://gist.github.com/vladofilipovic/7a0bef73f464c2a70a0aa7a6a91363f2.js"></script>
+
+```js
+function veciOd(n) {
+    return function(m) {
+        return m > n; };
+}
+var veciOd10 = veciOd(10);
+
+// Prikazuje true
+console.log(veciOd10(11));
+
+// Prikazuje false
+console.log(veciOd10(9.5));
+```
 
 **Пример.** Функција помоћу које се генеришу друге функције (за множење датим бројем):
-<script src="https://gist.github.com/vladofilipovic/29294455586c75ae0867e838c3f66be2.js"></script>
+
+```js
+// primer zatvorenja
+function umnozilac(faktor) {
+    return function(broj) { return broj * faktor; };
+}
+
+var dupliraj = umnozilac(2);
+console.log(dupliraj(4.5));
+console.log(dupliraj(5.5));
+var utrostruci = umnozilac(3);
+console.log(utrostruci(4.5));
+console.log(utrostruci(5.5));
+var pomnoziSa2_25 = umnozilac(2.25);
+console.log(pomnoziSa2_25(4.5));
+console.log(pomnoziSa2_25(5.5));
+```
 
 **Пример.** Функција помоћу које се генеришу друге функције (за степеновање):
-<script src="https://gist.github.com/vladofilipovic/ff0e1a08a40d56a29fbcb5a5f281a092.js"></script>
+
+```js
+function naStepen(izlozilac) {
+    return function(osnova) {
+        var ret = 1;
+        for (var i = 0; i < izlozilac; i++)
+            ret *= osnova;
+        return ret;
+    };
+}
+
+var kvadriraj = naStepen(2);
+console.log(kvadriraj(4.5));
+var naKub = naStepen(3);
+console.log(naKub(4));
+var naDeseti = naStepen(10);
+console.log(naDeseti(2));
+```
 
 ### Повезивање функција при позиву
 
 **Пример.** Генерисање, декорисање и повезивање при позиву функција:
-<script src="https://gist.github.com/vladofilipovic/3acc705dc28383e63c6026b5f54d778f.js"></script>
+
+```js
+function bucna2(f) {
+    return function() {
+        console.log("poziv sa argumentima ", arguments);
+        return f.apply(null, arguments);
+    };
+}
+
+console.log(bucna2(Boolean)(0));
+console.log(bucna2(Math.max)(Math.PI / 2, 2, 3));
+```
 
 ### Mапирање и редукција помоћу функција вишег реда
 
 **Пример.** Филтрирање података у колекцији:
-<script src="https://gist.github.com/vladofilipovic/21cd059b68c822ace3250885a0f7acc2.js"></script>
+
+```js
+function filter(array, test) {
+    let rez = [];
+    for (let i = 0; i < array.length; i++) {
+        if (test(array[i]))
+            rez.push(array[i]);
+    }
+    return rez;
+}
+
+var opis = `[{"name":"Emma de Milliano","sex":"f",
+"born":1876,"died":1956,
+"father":"Petrus de Milliano","
+mother":"Sophia van Damme"},
+{"name": "Maria de Rycke", "sex": "f", 
+"born": 1683, "died": 1724, 
+"father": "Frederik de Rycke", "
+mother": "Laurentia van Vlaenderen"},
+{"name": "Jan van Brussel", "sex": "m", 
+"born": 1714, "died": 1748, 
+"father": "Jacobus van Brussel", 
+"mother": "Joanna van Rooten"},
+{"name": "Philibert Haverbeke", "sex": "m", 
+"born": 1907, "died": 1997, 
+"father": "Emile Haverbeke", 
+"mother": "Emma de Milliano"}, 
+{"name": "Jan Frans van Brussel", "sex": "m", 
+"born": 1761, "died": 1833, 
+"father": "Jacobus Bernardus van Brussel", 
+"mother":null}, 
+{"name": "Pauwels van Haverbeke", "sex": "m", 
+"born": 1535, "died": 1582, 
+"father": "N. van Haverbeke", 
+"mother":null}, 
+{"name": "Clara Aernoudts", "sex": "f", 
+"born": 1918, "died": 2012, 
+"father": "Henry Aernoudts", 
+"mother": "Sidonie Coene"}, 
+{"name": "Emile Haverbeke", "sex": "m", 
+"born": 1877, "died": 1968, 
+"father": "Carolus Haverbeke", 
+"mother": "Maria Sturm"}, 
+{"name": "Lieven de Causmaecker", "sex": "m", 
+"born": 1696, "died": 1724, 
+"father": "Carel de Causmaecker", 
+"mother": "Joanna Claes"}, 
+{"name": "Pieter Haverbeke", "sex": "m", 
+"born": 1602, "died": 1642, 
+"father": "Lieven van Haverbeke", 
+"mother":null}, 
+{"name": "Livina Haverbeke", "sex": "f", 
+"born": 1692, "died": 1743, 
+"father": "Daniel Haverbeke", 
+"mother": "Joanna de Pape"}, 
+{"name": "Pieter Bernard Haverbeke", "sex": "m",
+ "born": 1695, "died": 1762, 
+ "father": "Willem Haverbeke", 
+ "mother": "Petronella Wauters"}, 
+{"name": "Lieven van Haverbeke", "sex": "m", 
+"born": 1570, "died": 1636, 
+"father": "Pauwels van Haverbeke", 
+"mother": "Lievijne Jans"}, 
+{"name": "Joanna de Causmaecker", "sex": "f", 
+"born": 1762, "died": 1807, 
+"father": "Bernardus de Causmaecker", 
+"mother":null}, 
+{"name": "Willem Haverbeke", "sex": "m", 
+"born": 1668, "died": 1731, 
+"father": "Lieven Haverbeke", "mother": "Elisabeth Hercke"}, 
+{"name": "Pieter Antone Haverbeke", "sex": "m", 
+"born": 1753, "died": 1798, 
+"father": "Jan Francies Haverbeke", 
+"mother": "Petronella de Decker"}, 
+{"name": "Maria van Brussel", "sex": "f", 
+"born": 1801, "died": 1834, 
+"father": "Jan Frans van Brussel", 
+"mother": "Joanna de Causmaecker"}, 
+{"name": "Angela Haverbeke", "sex": "f", 
+"born": 1728, "died": 1734, 
+"father": "Pieter Bernard Haverbeke", 
+"mother": "Livina de Vrieze"}, 
+{"name": "Elisabeth Haverbeke", "sex": "f", 
+"born": 1711, "died": 1754, 
+"father": "Jan Haverbeke", 
+"mother": "Maria de Rycke"}, 
+{"name": "Lievijne Jans", "sex": "f", 
+"born": 1542, "died": 1582, 
+"father":null, "mother":null}, 
+{"name": "Bernardus de Causmaecker", "sex": "m", 
+"born": 1721, "died": 1789, 
+"father": "Lieven de Causmaecker", 
+"mother": "Livina Haverbeke"}, 
+{"name": "Jacoba Lammens", "sex": "f", 
+"born": 1699, "died": 1740, 
+"father": "Lieven Lammens", 
+"mother": "Livina de Vrieze"}, 
+{"name": "Pieter de Decker", "sex": "m", 
+"born": 1705, "died": 1780, 
+"father": "Joos de Decker", 
+"mother": "Petronella van de Steene"}, 
+{"name": "Joanna de Pape", "sex": "f", 
+"born": 1654, "died": 1723, 
+"father": "Vincent de Pape", 
+"mother": "Petronella Wauters"}, 
+{"name": "Daniel Haverbeke", "sex": "m", 
+"born": 1652, "died": 1723, 
+"father": "Lieven Haverbeke", 
+"mother": "Elisabeth Hercke"}, 
+{\"name\": \"Lieven Haverbeke\", \"sex\": \"m\", 
+\"born\": 1631, \"died\": 1676, 
+\"father\": \"Pieter Haverbeke\", 
+\"mother\": \"Anna van Hecke\"},
+{"name":"Carolus Haverbeke","sex":"m",
+"born":1832,"died":1905,
+"father":"Carel Haverbeke",
+"mother":"Maria van Brussel"}]`;
+
+let family = JSON.parse(opis);
+
+// prikaz ljudi rodjenih izmedju 1900 i 1925
+console.log(`---`);
+console.log(filter(family, function (person) {
+    return person.born > 1900 && person.born < 1925;
+}));
+
+// prikaz ljudi rodjenih izmedju 1900 i 1925
+console.log(`---`);
+console.log(filter(family, 
+    (person) => person.born > 1900 && person.born < 1925));
+
+// prikaz rodjenih izmedju 1900 i 1925
+console.log(`---`);
+console.log(family.filter(
+    (x) => x.born > 1900 && x.born < 1925));
+
+// prikaz muskaraca rodjenih izmedju 1900 i 1925
+console.log(`---`);
+console.log(filter(family, function (person) {
+    return person.sex == 'm' 
+            && (person.born > 1900 && person.born < 1925);
+}));
+
+// prikaz muskaraca rodjenih izmedju 1900 i 1925
+console.log(`---`);
+console.log(family.filter(
+    person => person.sex == 'm' 
+            && person.born > 1900 && person.born < 1925));
+```
 
 **Пример.** Филтрирање и трансформација података у колекцији:
-<script src="https://gist.github.com/vladofilipovic/64f9cde33f1f2d19e33ca37a54e4af57.js"></script>
+
+```js
+function filter(array, test) {
+    let passed = [];
+    for (let i = 0; i < array.length; i++) {
+        if (test(array[i]))
+            passed.push(array[i]);
+    }
+    return passed;
+}
+
+function map(array, transform) {
+    let mapped = [];
+    for (var i = 0; i < array.length; i++)
+        mapped.push(transform(array[i]));
+    return mapped;
+}
+
+var opis = `[{"name":"Emma de Milliano","sex":"f",
+"born":1876,"died":1956,
+"father":"Petrus de Milliano","
+mother":"Sophia van Damme"},
+{"name": "Maria de Rycke", "sex": "f", 
+"born": 1683, "died": 1724, 
+"father": "Frederik de Rycke", "
+mother": "Laurentia van Vlaenderen"},
+{"name": "Jan van Brussel", "sex": "m", 
+"born": 1714, "died": 1748, 
+"father": "Jacobus van Brussel", 
+"mother": "Joanna van Rooten"},
+{"name": "Philibert Haverbeke", "sex": "m", 
+"born": 1907, "died": 1997, 
+"father": "Emile Haverbeke", 
+"mother": "Emma de Milliano"}, 
+{"name": "Jan Frans van Brussel", "sex": "m", 
+"born": 1761, "died": 1833, 
+"father": "Jacobus Bernardus van Brussel", 
+"mother":null}, 
+{"name": "Pauwels van Haverbeke", "sex": "m", 
+"born": 1535, "died": 1582, 
+"father": "N. van Haverbeke", 
+"mother":null}, 
+{"name": "Clara Aernoudts", "sex": "f", 
+"born": 1918, "died": 2012, 
+"father": "Henry Aernoudts", 
+"mother": "Sidonie Coene"}, 
+{"name": "Emile Haverbeke", "sex": "m", 
+"born": 1877, "died": 1968, 
+"father": "Carolus Haverbeke", 
+"mother": "Maria Sturm"}, 
+{"name": "Lieven de Causmaecker", "sex": "m", 
+"born": 1696, "died": 1724, 
+"father": "Carel de Causmaecker", 
+"mother": "Joanna Claes"}, 
+{"name": "Pieter Haverbeke", "sex": "m", 
+"born": 1602, "died": 1642, 
+"father": "Lieven van Haverbeke", 
+"mother":null}, 
+{"name": "Livina Haverbeke", "sex": "f", 
+"born": 1692, "died": 1743, 
+"father": "Daniel Haverbeke", 
+"mother": "Joanna de Pape"}, 
+{"name": "Pieter Bernard Haverbeke", "sex": "m",
+ "born": 1695, "died": 1762, 
+ "father": "Willem Haverbeke", 
+ "mother": "Petronella Wauters"}, 
+{"name": "Lieven van Haverbeke", "sex": "m", 
+"born": 1570, "died": 1636, 
+"father": "Pauwels van Haverbeke", 
+"mother": "Lievijne Jans"}, 
+{"name": "Joanna de Causmaecker", "sex": "f", 
+"born": 1762, "died": 1807, 
+"father": "Bernardus de Causmaecker", 
+"mother":null}, 
+{"name": "Willem Haverbeke", "sex": "m", 
+"born": 1668, "died": 1731, 
+"father": "Lieven Haverbeke", "mother": "Elisabeth Hercke"}, 
+{"name": "Pieter Antone Haverbeke", "sex": "m", 
+"born": 1753, "died": 1798, 
+"father": "Jan Francies Haverbeke", 
+"mother": "Petronella de Decker"}, 
+{"name": "Maria van Brussel", "sex": "f", 
+"born": 1801, "died": 1834, 
+"father": "Jan Frans van Brussel", 
+"mother": "Joanna de Causmaecker"}, 
+{"name": "Angela Haverbeke", "sex": "f", 
+"born": 1728, "died": 1734, 
+"father": "Pieter Bernard Haverbeke", 
+"mother": "Livina de Vrieze"}, 
+{"name": "Elisabeth Haverbeke", "sex": "f", 
+"born": 1711, "died": 1754, 
+"father": "Jan Haverbeke", 
+"mother": "Maria de Rycke"}, 
+{"name": "Lievijne Jans", "sex": "f", 
+"born": 1542, "died": 1582, 
+"father":null, "mother":null}, 
+{"name": "Bernardus de Causmaecker", "sex": "m", 
+"born": 1721, "died": 1789, 
+"father": "Lieven de Causmaecker", 
+"mother": "Livina Haverbeke"}, 
+{"name": "Jacoba Lammens", "sex": "f", 
+"born": 1699, "died": 1740, 
+"father": "Lieven Lammens", 
+"mother": "Livina de Vrieze"}, 
+{"name": "Pieter de Decker", "sex": "m", 
+"born": 1705, "died": 1780, 
+"father": "Joos de Decker", 
+"mother": "Petronella van de Steene"}, 
+{"name": "Joanna de Pape", "sex": "f", 
+"born": 1654, "died": 1723, 
+"father": "Vincent de Pape", 
+"mother": "Petronella Wauters"}, 
+{"name": "Daniel Haverbeke", "sex": "m", 
+"born": 1652, "died": 1723, 
+"father": "Lieven Haverbeke", 
+"mother": "Elisabeth Hercke"}, 
+{\"name\": \"Lieven Haverbeke\", \"sex\": \"m\", 
+\"born\": 1631, \"died\": 1676, 
+\"father\": \"Pieter Haverbeke\", 
+\"mother\": \"Anna van Hecke\"},
+{"name":"Carolus Haverbeke","sex":"m",
+"born":1832,"died":1905,
+"father":"Carel Haverbeke",
+"mother":"Maria van Brussel"}]`;
+
+let family = JSON.parse(opis);
+
+// filtriranje tako da se zadrže samo stariji od 90
+console.log('---');
+let starijiOd90 = filter(family, function (person) {
+    return person.died - person.born > 90;
+});
+console.log(starijiOd90);
+
+// transformisanje starijih od 90 pomoću map
+console.log('---');
+console.log(map(starijiOd90, function (person) {
+    return person.name + " " + (person.died - person.born);
+}));
+
+// filtriranje tako da se zadrže samo stariji od 70
+console.log('---');
+let starijiOd70 = filter(family, 
+         (person) => (person.died - person.born > 70));
+console.log(starijiOd70);
+
+// transformisanje starijih od 60 pomoću map
+console.log('---');
+console.log(map(starijiOd70, 
+    (person) => ( person.name + " " + 
+                 (person.died - person.born))));
+
+// filtriranje i transformisanje pomoću metoda niza
+console.log('---');
+console.log(family.filter(x => x.died - x.born > 70)
+                  .map(x=>x.name + " " + (x.died-x.born)));
+```
 
 **Пример.** Филтрирање и сумирање података:
-<script src="https://gist.github.com/vladofilipovic/5674b3e99f95f87aaf6e1b6d74d7ae06.js"></script>
+
+```js
+function reduce(array, combine, start) {
+    let current = start;
+    for (let i = 0; i < array.length; i++)
+        current = combine(current, array[i]);
+    return current;
+}
+
+let niz = [2, 4, 3, 1, -5, 12, 7];
+
+// prikaz svih clanova niza
+console.log('--- Clanovi niza ---');
+console.log(niz);
+
+// odredjivanje sume svih clanova niza
+console.log('--- Suma ---');
+console.log(reduce(niz, function (a, b) {
+    return a + b;
+}, 0));
+
+
+// odredjivanje sume svih clanova niza
+console.log('--- Suma ---');
+console.log(reduce(niz, (a, b) => a + b, 0));
+
+// odredjivanje sume svih clanova niza pomocu metoda niza
+console.log('--- Suma ---');
+console.log(niz.reduce((a, b) => a + b, 0));
+
+// odredjivanje sume svih pozitivnih clanova niza
+console.log('--- Suma pozitivnih ---');
+console.log(niz.filter((a) => a >= 0).reduce((a, b) => a + b, 0));
+
+// odredjivanje sume svih clanova niza
+console.log('--- Proizvod ---');
+console.log(reduce(niz, (a, b) => a * b, 1));
+
+// odredjivanje minimuma svih clanova niza
+console.log('--- Minimum ---');
+console.log(reduce(niz, function (a, b) {
+    if (a < b)
+        return a;
+    return b;
+}, Infinity));
+
+// odredjivanje minimuma svih clanova niza
+console.log('--- Minimum ---');
+console.log(reduce(niz, (a, b) => (a < b) ? a : b, Infinity));
+
+// odredjivanje maksimuma svih clanova niza
+console.log('--- Maksimum ---');
+console.log(reduce(niz, function (a, b) {
+    if (a > b)
+        return a;
+    return b;
+}, -Infinity));
+
+// odredjivanje maksimuma svih clanova niza
+console.log('--- Maksimum ---');
+console.log(reduce(niz, (a, b) => (a > b) ? a : b, -Infinity));
+```
 
 **Пример.** Филтрирање, трансформација и сумирање података:
-<script src="https://gist.github.com/vladofilipovic/2cd99e290786f216de5ca4d58fb69dfd.js"></script>
+
+```js
+
+let opis = 
+`[{"name":"Emma de Milliano","sex":"f",
+"born":1876,"died":1956,
+"father":"Petrus de Milliano","
+mother":"Sophia van Damme"},
+{"name": "Maria de Rycke", "sex": "f", 
+"born": 1683, "died": 1724, 
+"father": "Frederik de Rycke", "
+mother": "Laurentia van Vlaenderen"},
+{"name": "Jan van Brussel", "sex": "m", 
+"born": 1714, "died": 1748, 
+"father": "Jacobus van Brussel", 
+"mother": "Joanna van Rooten"},
+{"name": "Philibert Haverbeke", "sex": "m", 
+"born": 1907, "died": 1997, 
+"father": "Emile Haverbeke", 
+"mother": "Emma de Milliano"}, 
+{"name": "Jan Frans van Brussel", "sex": "m", 
+"born": 1761, "died": 1833, 
+"father": "Jacobus Bernardus van Brussel", 
+"mother":null}, 
+{"name": "Pauwels van Haverbeke", "sex": "m", 
+"born": 1535, "died": 1582, 
+"father": "N. van Haverbeke", 
+"mother":null}, 
+{"name": "Clara Aernoudts", "sex": "f", 
+"born": 1918, "died": 2012, 
+"father": "Henry Aernoudts", 
+"mother": "Sidonie Coene"}, 
+{"name": "Emile Haverbeke", "sex": "m", 
+"born": 1877, "died": 1968, 
+"father": "Carolus Haverbeke", 
+"mother": "Maria Sturm"}, 
+{"name": "Lieven de Causmaecker", "sex": "m", 
+"born": 1696, "died": 1724, 
+"father": "Carel de Causmaecker", 
+"mother": "Joanna Claes"}, 
+{"name": "Pieter Haverbeke", "sex": "m", 
+"born": 1602, "died": 1642, 
+"father": "Lieven van Haverbeke", 
+"mother":null}, 
+{"name": "Livina Haverbeke", "sex": "f", 
+"born": 1692, "died": 1743, 
+"father": "Daniel Haverbeke", 
+"mother": "Joanna de Pape"}, 
+{"name": "Pieter Bernard Haverbeke", "sex": "m",
+ "born": 1695, "died": 1762, 
+ "father": "Willem Haverbeke", 
+ "mother": "Petronella Wauters"}, 
+{"name": "Lieven van Haverbeke", "sex": "m", 
+"born": 1570, "died": 1636, 
+"father": "Pauwels van Haverbeke", 
+"mother": "Lievijne Jans"}, 
+{"name": "Joanna de Causmaecker", "sex": "f", 
+"born": 1762, "died": 1807, 
+"father": "Bernardus de Causmaecker", 
+"mother":null}, 
+{"name": "Willem Haverbeke", "sex": "m", 
+"born": 1668, "died": 1731, 
+"father": "Lieven Haverbeke", "mother": "Elisabeth Hercke"}, 
+{"name": "Pieter Antone Haverbeke", "sex": "m", 
+"born": 1753, "died": 1798, 
+"father": "Jan Francies Haverbeke", 
+"mother": "Petronella de Decker"}, 
+{"name": "Maria van Brussel", "sex": "f", 
+"born": 1801, "died": 1834, 
+"father": "Jan Frans van Brussel", 
+"mother": "Joanna de Causmaecker"}, 
+{"name": "Angela Haverbeke", "sex": "f", 
+"born": 1728, "died": 1734, 
+"father": "Pieter Bernard Haverbeke", 
+"mother": "Livina de Vrieze"}, 
+{"name": "Elisabeth Haverbeke", "sex": "f", 
+"born": 1711, "died": 1754, 
+"father": "Jan Haverbeke", 
+"mother": "Maria de Rycke"}, 
+{"name": "Lievijne Jans", "sex": "f", 
+"born": 1542, "died": 1582, 
+"father":null, "mother":null}, 
+{"name": "Bernardus de Causmaecker", "sex": "m", 
+"born": 1721, "died": 1789, 
+"father": "Lieven de Causmaecker", 
+"mother": "Livina Haverbeke"}, 
+{"name": "Jacoba Lammens", "sex": "f", 
+"born": 1699, "died": 1740, 
+"father": "Lieven Lammens", 
+"mother": "Livina de Vrieze"}, 
+{"name": "Pieter de Decker", "sex": "m", 
+"born": 1705, "died": 1780, 
+"father": "Joos de Decker", 
+"mother": "Petronella van de Steene"}, 
+{"name": "Joanna de Pape", "sex": "f", 
+"born": 1654, "died": 1723, 
+"father": "Vincent de Pape", 
+"mother": "Petronella Wauters"}, 
+{"name": "Daniel Haverbeke", "sex": "m", 
+"born": 1652, "died": 1723, 
+"father": "Lieven Haverbeke", 
+"mother": "Elisabeth Hercke"}, 
+{\"name\": \"Lieven Haverbeke\", \"sex\": \"m\", 
+\"born\": 1631, \"died\": 1676, 
+\"father\": \"Pieter Haverbeke\", 
+\"mother\": \"Anna van Hecke\"},
+{"name":"Carolus Haverbeke","sex":"m",
+"born":1832,"died":1905,
+"father":"Carel Haverbeke",
+"mother":"Maria van Brussel"}]`;
+
+let pretci = JSON.parse(opis);
+
+function prosek(niz) {
+    function plus(a, b) { return a + b; }
+    return niz.reduce(plus) / niz.length;
+}
+
+function uzrast(p) { return p.died - p.born; }
+
+function jeMusko(p) { return p.sex == "m"; }
+
+function jeZensko(p) { return p.sex == "f"; }
+
+console.log(prosek(pretci.filter(jeMusko).map(uzrast)));
+console.log(prosek(pretci.filter(jeZensko).map(uzrast)));
+```
 
 ### Функцијски изрази који се одмах позивају
+
+### Литература
+
+1. Haverbeke M.: [Eloquent JavaScript](https://eloquentjavascript.net/){:target="_blank"}
+
+1. [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript){:target="_blank"} - Mozzila Developer Network (MDN)
+
+1. Живановић, Д.: [Веб програмирање - ЈаваСкрипт догађаји](https://www.webprogramiranje.org/dogadjaji-u-javascript-u/){:target="_blank"}
+
+1. Copes F.: [Complete JavaScript Handbook](https://medium.freecodecamp.org/the-complete-javascript-handbook-f26b2c71719c){:target="_blank"}

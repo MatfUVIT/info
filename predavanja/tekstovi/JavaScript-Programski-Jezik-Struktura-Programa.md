@@ -104,7 +104,7 @@ JаваСкрипт програми се записују коришћењем 
 
 - `undefined`
 
-**Напомена.** За разлику од програмског језика C, где је била допуштена измена садржаја ниске, у језику ЈаваСкрипт ниске су немутирајуће.
+**Напомена.** За разлику од програмског језика Це, где је била допуштена измена садржаја ниске, у језику ЈаваСкрипт ниске су немутирајуће.
 
 Вредности примитивног типа се у литератури често значавају појмом "примитивне вредности".
 
@@ -1583,3 +1583,13 @@ for (let i = 0; i < brjSerija; i++) {
 }
 console.log(`Укупан број покушаја је ${ukupnoPokusaja}`);
 ```
+
+### Литература
+
+1. Haverbeke M.: [Eloquent JavaScript](https://eloquentjavascript.net/){:target="_blank"}
+
+1. [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript){:target="_blank"} - Mozzila Developer Network (MDN)
+
+1. Живановић, Д.: [Веб програмирање - ЈаваСкрипт догађаји](https://www.webprogramiranje.org/dogadjaji-u-javascript-u/){:target="_blank"}
+
+1. Copes F.: [Complete JavaScript Handbook](https://medium.freecodecamp.org/the-complete-javascript-handbook-f26b2c71719c){:target="_blank"}

@@ -242,11 +242,13 @@
 
         1. [Опсези важења за променљиве и функције](tekstovi/JavaScript-Programski-Jezik-Funkcije-Zatvorenja.md#опсези-важења-за-променљиве-и-функције){:target="_blank"}
 
-        1. [Дизање променљивих и функција](tekstovi/JavaScript-Programski-Jezik-Funkcije-Zatvorenja.md#дизање-променљивих-и-функција){:target="_blank"}
-
         1. [Затворења за функције](tekstovi/JavaScript-Programski-Jezik-Funkcije-Zatvorenja.md#затворења-за-функције){:target="_blank"}
 
         1. [Ламбда изрази и функције](tekstovi/JavaScript-Programski-Jezik-Funkcije-Zatvorenja.md#ламбда-изрази-и-функције){:target="_blank"}
+
+        1. [Дизање променљивих и функција](tekstovi/JavaScript-Programski-Jezik-Funkcije-Zatvorenja.md#дизање-променљивих-и-функција){:target="_blank"}
+
+        1. [Функције и бочни ефекти](tekstovi/JavaScript-Programski-Jezik-Funkcije-Zatvorenja.md#функције-и-бочни-ефекти){:target="_blank"}
 
         - [Примери](https://github.com/MatfUVIT/UVIT/tree/master/predavanja/primeri-js/p03-funkcije-zatvorenja){:target="_blank"}
 
