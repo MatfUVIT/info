@@ -9,7 +9,7 @@ http.createServer(function (zahtev, odgovor) {
 
     let tekuceVreme = new Date();
     console.log("---" + tekuceVreme + "---");
-    console.log('url:      ' + zahtev.url);
+    console.log('url:     ' + zahtev.url);
     let putanja = url.parse(zahtev.url).pathname;
     console.log('putanja: ' + putanja);
     let upit = url.parse(zahtev.url).query;    

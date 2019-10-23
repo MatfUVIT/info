@@ -1,17 +1,18 @@
 let http = require('http')
 let url = require('url');
 
-http.createServer(onRequest).listen(8888);
-console.log('Server has started');
+const port = 7000;
+http.createServer(osluskivacZahteva).listen(port);
+console.log(`Pokrenuti veb server osluskuje na portu ${port}...`);
 
-function onRequest(request, response){
-  let pathName = url.parse(request.url).pathname;
-  console.log(pathName);
-  prikazStrane(response);
+function osluskivacZahteva(zahtev, odgovor){
+  let putanja = url.parse(zahtev.url).pathname;
+  console.log(putanja);
+  prikazStrane(odgovor);
 }
 
-function prikazStrane(response){
-  response.writeHead(200);
-  response.write('Veb server koristi node.js i dogadjaje');
-  response.end();
+function prikazStrane(odgovor){
+  odgovor.writeHead(200);
+  odgovor.write('Veb server koristi node.js i dogadjaje');
+  odgovor.end();
 }
