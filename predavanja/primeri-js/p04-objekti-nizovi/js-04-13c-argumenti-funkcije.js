@@ -1,4 +1,4 @@
-function sumaBrojeva() {
+let sumaBrojeva = function () {
     let ret = 0.0;
     for (let i in arguments) {
         let elem = Number(arguments[i]);

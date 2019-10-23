@@ -7,10 +7,12 @@
 
 ### Функције као аргументи функција
 
-**Пример.** Приказ свих елемената низа (без издвајања у посебну функцију):
+**Пример.** Реализовати приказ свих елемената низа.
+
+Први, директни путеви за решавање постављеног задатка:
 
 ```js
-let niz = [1, 2, 3];
+let niz = [1, 2, 3, "mika", "zika"];
 
 // prvi način
 for (let i = 0; i < niz.length; i++) {
@@ -20,17 +22,25 @@ for (let i = 0; i < niz.length; i++) {
 
 console.log("---");
 
-// drugi način, kolekcijski ciklus
+// drugi način, kolekcijski ciklus for-in
 for (let i in niz) {
     let tekuci = niz[i];
     console.log(tekuci);
 }
+console.log("---");
+
+// treci način, kolekcijski ciklus for-of
+for (let tekuci of niz) {
+    console.log(tekuci);
+}
 ```
 
-**Пример.** Приказ свих елемената низа (у посебној функцији је релиазован приказ):
+Уочава се да су у сва три начина за приказ из претходног примера, и пролазак кроз низ и приказ елемента (тј. функција коју треба применити над сваким елементом) директно инкорпорирани у саму скрипту - нема посебних функција за то. 
+
+Стога, било би добро да се, приликом приказа свих елемената низа у посебној функцији релизује пролазак кроз низ, као у коду који следи:
 
 ```js
-let nizBrojeva = [1, 2, 3];
+let nizBrojeva = [1, 2, 3, "mika", "zika";
 
 function prikaziSvaki(niz) {
     for (let i = 0; i < niz.length; i++)
@@ -40,112 +50,52 @@ function prikaziSvaki(niz) {
 prikaziSvaki(nizBrojeva);
 ```
 
-**Пример.** Приказ свих елемената низа (у посебној функцији је реализован пролазак кроз низ, а аргумент те функције је функција која описује шта тррба урадити са елементом низа):
+Ту је пролазак кроз низ (у овом случају реализован колекијским `for-of` циклусом) издвојен у посебну функцију. Међутим, активност која се извршава над сваким чланом  низа (у овој ситуацији се ради о приказу на конзолу) је инкорпорирана у оквиру те новонаправљене функције.  
+
+Пожељно је да се приказ свих елемената низа релизује тако да у посебној функцији буде реализован пролазак кроз низ и да аргумент те функције буде функција која описује шта тррба урадити са елементом низа, као у коду који следи:
 
 ```js
-let nizBrojeva = [1, 2, 3, 4];
+let nizBrojeva = [1, 2, 3, 4, "mika", "zika"];
 
 function zaSvaki(niz, akcija) {
-    for (let i = 0; i < niz.length; i++)
-        akcija(niz[i]);
+    for (let x of niz)
+        akcija(x);
 }
 
-prikazNaKonzolu = function(x){
+prikazNaKonzolu = function (x) {
     console.log(x);
 };
 zaSvaki(nizBrojeva, prikazNaKonzolu);
-
+console.log("---");
 
 prikazNaKonzolu2 = (x) => console.log(x)
 zaSvaki(nizBrojeva, prikazNaKonzolu2);
-```
+console.log("---");
 
-```js
-var nizBrojeva = [1, 2, 3, "mika", "zika"];
-
-function zaSvaki(niz, akcija) {
-    for (let i = 0; i < niz.length; i++)
-        akcija(niz[i]);
-}
-
-zaSvaki(nizBrojeva, function(x) {
+zaSvaki(nizBrojeva, function (x) {
     console.log(x)
 });
+console.log("---");
 
-zaSvaki(nizBrojeva, (x)=>console.log(x));
+zaSvaki(nizBrojeva, (x) => console.log(x));
+```
 
-// resenje koje se oslanja na postojeci metod kod nizova
+У овом случају  funkcija `zaSvaki` као други аргумент има функцију која ће се извршити над сваким од елеманта низа. Као што се види из претходног примера, та функција може бити задата функцијским изразом или ламбде изразом, при чему тај израз може бити претходно додељен променљивој, или се директно начи у позиву функције. &#9608;
+
+С обзиром да се често јавља потреба да се нака акција изврши над свим члановима низа, то низови већ садрже метод `forEach` чијим се позивом обезбеђује управо таква функионалност.
+
+**Пример.** Приказ свих елемената низа коришћењем метода `forEach` код низова:
+
+```js
+let nizBrojeva = [1, 2, 3, 4, "mika", "zika"];
 nizBrojeva.forEach( (x) => console.log(x) )
 ```
 
-**Пример.** Сума свих елемената низа:
+**Пример.** Одредити суму бројева од `1` до `100`.
 
 ```js
-let nizBrojeva = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-
-function zaSvaki(niz, akcija) {
-    for (let i = 0; i < niz.length; i++)
-        akcija(niz[i]);
-}
-
-// funkcijska vrednost povecaj pristupa globalnoj promenljivoj sum
-var povecaj =  function(broj) {
-    sum += broj;
-};
-
-// racuna sumu niza brojeva pomoću funkcije zaSvaki
-let sum = 0;
-zaSvaki(nizBrojeva, povecaj);
-console.log(sum);
-
-// racuna sumu niza brojeva pomoću funkcije zaSvaki i lambda izraza
-sum = 0;
-zaSvaki(nizBrojeva, (broj)=>sum+=broj);
-console.log(sum);
-```
-
-```js
-var nizBrojeva = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-
-function zaSvaki(niz, akcija) {
-    for (var i = 0; i < niz.length; i++)
-        akcija(niz[i]);
-}
-
-// racuna sumu niza brojeva pomoću funkcije zaSvaki
-let sum = 0;
-zaSvaki(nizBrojeva, function (broj) {
-    sum += broj;
-});
-console.log(sum);
-
-// racuna sumu niza brojeva pomoću lambda izraza
-sum = 0;
-zaSvaki(nizBrojeva, x => sum += x);
-console.log(sum);
-
-// racuna sumu niza brojeva pomoću metoda forEach
-sum = 0;
-nizBrojeva.forEach(x => sum += x);
-console.log(sum);
-```
-
-**Пример.** Функције које декоришу друге функције:
-
-```js
-function bucna(f) {
-    return function(arg) {
-        console.log("poziv sa argumentom ", arg);
-        var val = f(arg);
-        console.log("pozvana sa argumentom ", arg, " - rezultat ", val);
-        return val;
-    };
-}
-
-bucna(Boolean)(0);
-bucna(Boolean)(2);
-bucna(Math.sin)(Math.PI/2);
-bucna(Math.cos)(Math.PI/2);
+let nizBrojeva = [1, 2, 3, 4, "mika", "zika"];
+nizBrojeva.forEach( (x) => console.log(x) )
 ```
 
 ### Функције као генератори функција
@@ -206,6 +156,25 @@ console.log(naDeseti(2));
 ```
 
 ### Повезивање функција при позиву
+
+**Пример.** Илустрација функције која декорише позив неке друге функције:
+
+```js
+function bucna(f) {
+    return function(arg) {
+        console.log("poziv sa argumentom ", arg);
+        var val = f(arg);
+        console.log("pozvana sa argumentom ", arg, " - rezultat ", val);
+        return val;
+    };
+}
+
+bucna(Boolean)(0);
+bucna(Boolean)(2);
+bucna(Math.sin)(Math.PI/2);
+bucna(Math.cos)(Math.PI/2);
+```
+
 
 **Пример.** Генерисање, декорисање и повезивање при позиву функција:
 
