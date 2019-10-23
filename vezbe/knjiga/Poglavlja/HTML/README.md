@@ -787,6 +787,353 @@ Naredni primer i prateća slika ilustruju ugnežđavanje opisnih listi u numeris
    href="./Primeri/17/index.html"
    target="_blank">Pogledaj primer uživo</a>
 
+## 1.8 Tabele
+
+Dvodimenzionalni podaci se najjednostavnije prikazuju u vidu tabela. HTML jezik ima podršku za rad sa tabelama, međutim, postoji jedna važna razlika između klasičnog shvatanja tabela i načina kako su tabele koncipirane u HTML jeziku. Tradicionalno, tabele posmatramo kao matrice podataka, odnosno, svaki podatak je organizovan u vrste i kolone. Za razliku od ovog pristupa u HTML jeziku tabele posmatramo kao sekvence redova podataka, što će se prirodno preslikati u odgovarajuće elemente. Drugim rečima, ne postoji HTML element koji predstavlja jednu kolonu u pravom smislu te reči, ali videćemo da je moguće upravljati prikazom podatka kroz više kolona.
+
+Konkretizujmo diskusiju iz prethodnog paragrafa uvođenjem novih HTML elemenata za rad sa tabelama. Osnovni element od kojeg polazimo jeste `table`. Njegov sadržaj čini, kao što smo rekli, sekvenca redova, pri čemu se svaki red zapisuje elementom `tr` (engl. *table row*). Svaki red sadrži proizvoljan broj ćelija koji predstavljaju jedan podatak u tabeli. Svaka ćelija je predstavljena elementom `td` (engl. *table data*).
+
+Naredni primer ilustruje najjednostavniju upotrebu opisanih elemenata. Kao što vidimo na pratećoj slici, tabele ne podrazumevaju nikakvu vizualnu reprezentaciju osim dvodimenzionalnog raspoređivanja elemenata. Za bilo kakva stilizovanja kao što su postavljanje ivica tabele, bojenje pozadine ćelija i sl. koristi se jezik CSS.
+
+```html
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Primer 18</title>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+    <table>
+        <tr>
+            <td>C</td>
+            <td>Askorbinska kiselina</td>
+            <td>Voda</td>
+        </tr>
+        <tr>
+            <td>D</td>
+            <td>Kalciferol</td>
+            <td>Masti</td>
+        </tr>
+    </table>
+</body>
+
+</html>
+```
+
+<div style="max-width: 98%;">
+<img style="max-width: 100%;" src="./Slike/table.png" alt="">
+</div>
+
+<a style="border: 2px solid gray; display: inline-block; padding: 15px; background-color: rgb(114, 211, 250); color: black;"
+   href="./Primeri/18/index.html"
+   target="_blank">Pogledaj primer uživo</a>
+
+Tabele često imaju zaglavlje koje opisuje šta svaki od elemenata te tabele predstavlja. HTML jezik podržava korišćenje zaglavlja pomoću elemenata `th` (engl. *table header*) koji se koriste umesto elemenata `td`, na isti način. Naredni kod i prateća slika ilustruju korišćenje zaglavlja nad prethodnim primerom tabele. Ono što možemo primetiti jeste da veb pregledači u ćelijama zaglavlja obično prikazuju tekst sa podebljanjem i horizontalnim poravnanjem.
+
+```html
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Primer 19</title>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+    <table>
+        <tr>
+            <th>Vitamin</th>
+            <th>Pun naziv</th>
+            <th>Rastvorljivost</th>
+        </tr>
+        <tr>
+            <td>C</td>
+            <td>Askorbinska kiselina</td>
+            <td>Voda</td>
+        </tr>
+        <tr>
+            <td>D</td>
+            <td>Kalciferol</td>
+            <td>Masti</td>
+        </tr>
+    </table>
+</body>
+
+</html>
+```
+
+<div style="max-width: 98%;">
+<img style="max-width: 100%;" src="./Slike/table_zaglavlje.png" alt="">
+</div>
+
+<a style="border: 2px solid gray; display: inline-block; padding: 15px; background-color: rgb(114, 211, 250); color: black;"
+   href="./Primeri/19/index.html"
+   target="_blank">Pogledaj primer uživo</a>
+
+Poput slika i tabele često bivaju anotirane. Za anotiranje tabele koristi se element `caption` koji, ukoliko se koristi, mora biti prvo dete elementa `table` u DOM stablu da bi dokument bio u skladu sa standardom. Za podešavanje pozicije anotacije se koristi odgovarajuće svojstvo u jeziku CSS. Naredni primer i prateća sliku ilustruju anotiranje tabela.
+
+```html
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Primer 20</title>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+    <table>
+        <caption>Tabela 1: Informacije o nekim vitaminima</caption>
+        <tr>
+            <th>Vitamin</th>
+            <th>Pun naziv</th>
+            <th>Rastvorljivost</th>
+        </tr>
+        <tr>
+            <td>C</td>
+            <td>Askorbinska kiselina</td>
+            <td>Voda</td>
+        </tr>
+        <tr>
+            <td>D</td>
+            <td>Kalciferol</td>
+            <td>Masti</td>
+        </tr>
+    </table>
+</body>
+
+</html>
+```
+
+<div style="max-width: 98%;">
+<img style="max-width: 100%;" src="./Slike/table_caption.png" alt="">
+</div>
+
+<a style="border: 2px solid gray; display: inline-block; padding: 15px; background-color: rgb(114, 211, 250); color: black;"
+   href="./Primeri/20/index.html"
+   target="_blank">Pogledaj primer uživo</a>
+
+Kao što smo najavili, možemo organizovati podatke tako da, umesto da zauzimaju tačno jednu ćeliju, oni se prostiru kroz više redova ili kolona. Ukoliko želimo da neka ćelija zauzme površinu većeg broja redova, onda je toj ćeliji potrebno dodeliti atribut `rowspan` čija je vrednost broj redova kroz koji se ćelija prostire. Sličan pristup važi i za prostiranje kroz kolone, sa razlikom da se koristi atribut `colspan`. Međutim, ovo nije jedina stvar koju je potrebno uraditi. Da bi tabela bila validna, potrebno je iz njene HTML strukture izbaciti sve ćelije čija je pozicija "zauzeta" onim ćelijama koje se prostiru kroz više redova ili kolona.
+
+Naredni primer ilustruje tabelu dimenzija 5x6, pri čemu se neke ćelije prostiru preko nekih drugih. Konkretno, ćelija 8 se prostire kroz tri reda, ćelija 10 se prostire kroz dve kolone, ćelija 15 se prostire kroz dve kolone i ćelija 17 se prostire kroz dva reda. Takođe, navedene su sve ćelije preko kojih se one prostiru. Primetimo da su u kodu zakomentarisane one ćelije preko kojih se navedene ćelije prostiru. Naravno, mogli smo ih jednostavno ukloniti iz koda, ali su namerno ostavljene da bi se lakše usvojio koncept prostiranja ćelija.
+
+Takođe, tabela je stilizovana radi preglednijeg prostiranja ćelija. Svi stilovi su izdvojeni u zasebnu datoteku `index.css` tako da ne odvlače pažnju od HTML koda.
+
+```html
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Primer 21</title>
+    <meta charset="UTF-8">
+
+    <link rel="stylesheet" type="text/css" href="index.css">
+</head>
+
+<body>
+    <table>
+        <tr>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+            <td>4</td>
+            <td>5</td>
+            <td>6</td>
+        </tr>
+        <tr>
+            <td>7</td>
+            <td rowspan="3">8, 14, 20</td>
+            <td>9</td>
+            <td colspan="2">10, 11</td>
+            <!-- <td>11</td> -->
+            <td>12</td>
+        </tr>
+        <tr>
+            <td>13</td>
+            <!-- <td>14</td> -->
+            <td colspan="2">15, 16</td>
+            <!-- <td>16</td> -->
+            <td rowspan="2">17, 23</td>
+            <td>18</td>
+        </tr>
+        <tr>
+            <td>19</td>
+            <!-- <td>20</td> -->
+            <td>21</td>
+            <td>22</td>
+            <!-- <td>23</td> -->
+            <td>24</td>
+        </tr>
+        <tr>
+            <td>25</td>
+            <td>26</td>
+            <td>27</td>
+            <td>28</td>
+            <td>29</td>
+            <td>30</td>
+        </tr>
+    </table>
+</body>
+
+</html>
+```
+
+<div style="max-width: 98%;">
+<img style="max-width: 100%;" src="./Slike/table_spanning.png" alt="">
+</div>
+
+<a style="border: 2px solid gray; display: inline-block; padding: 15px; background-color: rgb(114, 211, 250); color: black;"
+   href="./Primeri/21/index.html"
+   target="_blank">Pogledaj primer uživo</a>
+
+## 1.9 Veze
+
+Veze su linijski elementi koji služe za povezivanje resursa na vebu, mahom veb strana ili njihovih fragmenata. Ukoliko želimo da dodamo vezu ka nekom resursu u veb prezentaciji, potrebno je na mestu gde veza treba da se pojavi da umetnemo element `a` (engl. *anchor*).
+
+U zavisnosti od vrednosti narednih atributa primenjih nad elementom `a` veza se definiše na različite načine:
+
+- Vrednost obaveznog atributa `href` predstavlja putanju do resursa koji će biti uvezan sa tekućim dokumentom. 
+
+- Vrednost atributa `target` određuje na koji način će veza ka resursu biti otvorena u veb pregledaču. Neke od vrednosti koje ovaj atribut može uzeti su:
+
+   - Navođenjem vrednosti `_blank` se sugeriše veb pregledaču da uvezeni veb resurs prikaže u novoj kartici.
+
+   - Navođenjem vrednosti `_self` se sugeriše veb pregledaču da uvezeni veb resurs prikaže u tekućoj kartici u kojoj je dokument prikazan. Ovo ponašanje je podrazumevano.
+
+- Vrednost atributa `hreflang` označava jezik koji je korišćen u uvezenom resursu.
+
+- Vrednost atributa `type` označava MIME tip uvezenog resursa.
+
+Postoje dva tipa veza:
+
+- Spoljašnje veze 
+
+- Unutrašnje veze
+
+U spoljašnje veze spadaju one veze koje vode do veb resursa van tekućeg dokumenta. Većina veza na internetu je ovog tipa, na primer, veza koja vodi sa naše veb prezentacije ka video snimku na YouTube servisu je primer spoljašnje veze. Takođe, veze između veb dokumenata bilo u okviru istog ili različitih veb servera predstavljaju spoljašnje veze. 
+
+Spoljašnje veze se kreiraju korišćenjem elementa `a` sa atributom `href` postavljenim na putanju koja vodi do veb resursa. Putanja može biti:
+
+- Apsolutna - navodi se URL veb resursa ili eventualno apsolutna putanja na sistemu datoteka ako se resurs nalazi na tekućem veb serveru.
+
+- Relativna - navodi se relativna putanja veb resursa, podrazumevano, u odnosu na direktorijum u kojem se nalazi tekući veb dokument. Međutim, ovo ponašanje je moguće prevazići postavljanjem elementa `base` u okviru sadržaja zaglavlja dokumenta (tj. u okviru sadržaja elementa `head`) čiji je atribut `href` postavljen na vrednost putanje u odnosu na koju su sve ostale putanje u tekućem veb dokumentu relativne.
+
+Unutrašnje veze koriste se za povezivanje delova istog veb dokumenta. Na primer, česta je praksa kreirati element na dnu veb dokumenta koji uvezuje vrh stranice kako bismo poštedeli korisnika skrolovanja nazad.
+
+Unutrašnje veze se kreiraju dodeljivanjem identifikatora elementu ka kojem želimo da postoji unutrašnja veza. Zatim, na odgovarajućem mestu, korišćenjem elementa `a` sa atributom `href` čija je vrednost prethodno postavljeni identifikator elementa.
+
+Naredni kodovi ilustruju korišćenje različitih tipova veza i njihove varijante korišćenjem opisanih elemenata i njihovih atributa. S obzirom da ovaj primer obuhvata nekoliko dokumenata specifično organizovanih po direktorijumima, prvo dajemo opis strukture datoteka iz primera u sistemu datoteka, a zatim prikazujemo kodove i dajemo shemu veb resursa koji su uvezani na pratećoj slici. 
+
+Struktura datoteka, koje učestvuju u primeru, na sistemu datoteka je:
+
+```
+.
+..
+stranice/
+    druga.html
+index.html
+index.css
+```
+
+Sadržaj datoteke `index.html` je:
+
+```html
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Primer 22</title>
+    <meta charset="UTF-8">
+
+    <link rel="stylesheet" type="text/css" href="index.css">
+</head>
+
+<body id="naslov">
+    <h1>Veze u HTML jeziku</h1>
+
+    <div>
+        <a href="./stranice/druga.html"
+           type="text/html">
+            Ovo je spoljašnja veza ka drugom dokumentu u okviru istog veb servera. Ova veza je realizovana relativnom
+            putanjom u odnosu na tekući direktorijum.
+        </a>
+    </div>
+
+    <div>
+        <a href="https://www.youtube.com/watch?v=mU6anWqZJcc" 
+           target="_blank"
+           hreflang="en">
+            Ovo je spoljašnja veza ka veb resursu u okviru drugog veb servera u odnosu na ovaj dokument. Ova veza je realizovana apsolutnom
+            putanjom u vidu URL pitanje. Dodatno, ova veza bi trebalo da se otvori u novoj kartici.
+        </a>
+    </div>
+
+    <div id="pomeri-na-dno">
+        <a href="#naslov">
+            Ako klikneš na mene, bićeš vraćen na vrh dokumenta. Ova veza predstavlja primer unutrašnje veze.
+        </a>
+    </div>
+</body>
+
+</html>
+```
+
+Sadržaj datoteke `druga.html` je:
+
+```html
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Primer 22</title>
+    <meta charset="UTF-8">
+
+    <!-- Sve relativne putanje su u odnosu na roditeljski direktorijum -->
+    <base href="../">
+
+    <link rel="stylesheet" type="text/css" href="index.css">
+</head>
+
+<body>
+    <h1>Veze u HTML jeziku - druga strana</h1>
+
+    <div>
+        <a href="index.html">
+            Ovo je spoljašnja veza ka početnoj stranici. Ova veza je realizovana relativnom putanjom u odnosu na
+            direktorijum koji je postavljen u zaglavlju dokumenta pomoću elementa "base".
+        </a>
+    </div>
+</body>
+
+</html>
+```
+
+Sadržaj datoteke `index.css` dajemo radi kompletnosti primera i bez namene u udubljavanju u njen sadržaj. Napomenimo da je uloga ove datoteke u proširivanju visine veb pregledača da bi veza, koja je pomerena na dno veb stranice bila bolje ilustrovana. Dodatno, datoteka predefiniše stil nekih elemenata kako bi bili ilustrativniji u prikazu uživo.
+
+```css
+body {
+    position: relative;
+    height: 2000px;
+}
+
+#pomeri-na-dno {
+    position: absolute;
+    bottom: 10px;
+}
+
+div {
+    border: 1px solid salmon;
+    padding: 20px;
+    margin: 10px 0;
+}
+```
+
+<a style="border: 2px solid gray; display: inline-block; padding: 15px; background-color: rgb(114, 211, 250); color: black;"
+   href="./Primeri/22/index.html"
+   target="_blank">Pogledaj primer uživo</a>
+
 -----
 
 [Knjiga](../../README.md)
