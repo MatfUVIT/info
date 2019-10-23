@@ -2,18 +2,20 @@ let http = require('http');
 let url = require('url');
 let fs = require('fs');
 
-http.createServer(function (request, response) {
-    pathName = url.parse(request.url).pathname;
+const port = 7000;
+http.createServer(function (zahtev, odgovro) {
+    pathName = url.parse(zahtev.url).pathname;
     fs.readFile(__dirname + pathName, function (err, data) {
         if (err) {
-            response.writeHead(404, { 'Content-type': 'text/plan' });
-            response.write(`Page Was Not Found 
+            odgovro.writeHead(404, { 'Content-type': 'text/plan' });
+            odgovro.write(`Page Was Not Found 
             ${JSON.stringify(err)}`);
-            response.end();
+            odgovro.end();
         } else {
-            response.writeHead(200);
-            response.write(data);
-            response.end();
+            odgovro.writeHead(200);
+            odgovro.write(data);
+            odgovro.end();
         }
     });
-}).listen(7000);
+} ).listen(port);
+console.log(`Veb server osluskuje zahteve na portu ${port}...\n`);
