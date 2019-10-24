@@ -3,8 +3,9 @@ let url = require('url');
 
 let prikaz = require('./prikaz-strane');
 
-http.createServer(onRequest).listen(8888);
-console.log('Server has started');
+const port = 7000;
+http.createServer(onRequest).listen(port);
+console.log(`Veb server osluskuje zahteve na portu ${port}...\n`);
 
 function onRequest(request, response) {
   let pathName = url.parse(request.url).pathname;

@@ -8,10 +8,11 @@ function prikazStrane(response, pathName, queryData) {
     if (izbor == "pozdrav") {
       response.writeHead(200);
       response.write(
-        `<html>
+      `<html>
       <body>
       Dobro dosli, ${queryData.ime}<br>
-      Vasa email adresa je: ${queryData.email} 
+      Vasa email adresa je: ${queryData.email} <br>
+      Vreme: ${new Date()}
       </body>
       </html>`);
       response.end();
