@@ -11,11 +11,21 @@ http.createServer(function (zahtev, odgovor) {
             odgovor.write(`Page Was Not Found 
             ${JSON.stringify(err)}`);
             odgovor.end();
+            let tekuceVreme = new Date();
+            console.log("---" + tekuceVreme + "---");
+            console.log("--- GRESKA ---")
+            console.log('url:     ' + zahtev.url);
+            console.log('putanja: ' + putanja);
         } else {
             odgovor.writeHead(200);
             odgovor.write(data);
             odgovor.end();
+            let tekuceVreme = new Date();
+            console.log("---" + tekuceVreme + "---");
+            console.log("--- OK ---")
+            console.log('url:     ' + zahtev.url);
+            console.log('putanja: ' + putanja);
         }
     });
-} ).listen(port);
+}).listen(port);
 console.log(`Veb server osluskuje zahteve na portu ${port}...\n`);

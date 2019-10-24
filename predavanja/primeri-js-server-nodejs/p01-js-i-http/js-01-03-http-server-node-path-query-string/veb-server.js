@@ -4,7 +4,8 @@ let url = require('url');
 const port = 7000;
 http.createServer(function (zahtev, odgovor) {
     odgovor.writeHead(200, { 'Content-type': 'text/plan' });
-    odgovor.write('Napravljeni veb servers koristi node.js');
+    odgovor.write('Napravljeni veb servers koristi node.js \n');
+    odgovor.write(`i upisuje URL, putanju i upit  u konzolu.`);
     odgovor.end();
 
     let tekuceVreme = new Date();

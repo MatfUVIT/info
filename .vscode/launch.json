@@ -8,7 +8,7 @@
             "type": "node",
             "request": "launch",
             "name": "Launch Program",
-            "program": "${workspaceFolder}/predavanja/primeri-js-nodejs/p03-tokovi/js-03-03-tok-broj-citanja.js"
+            "program": "${workspaceFolder}/predavanja/primeri-js-server-nodejs/p01-js-i-http/js-01-07-http-server-node-querystring-params/veb-server.js"
         }
     ]
 }
