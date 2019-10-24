@@ -1,10 +1,11 @@
 let http = require('http')
 
-http.createServer(onRequest).listen(8888);
-console.log('Server has started');
+const port = 7000;
+http.createServer(osluskivacZahteva).listen(port);
+console.log(`Pokrenuti veb server osluskuje na portu ${port}...`);
 
-function onRequest(request, response){
-  response.writeHead(200);
-  response.write('Veb server koristi node.js i dogadjaje');
-  response.end();
+function osluskivacZahteva(zahtev, odgovro){
+  odgovro.writeHead(200);
+  odgovro.write('Veb server koristi node.js i dogadjaje');
+  odgovro.end();
 }

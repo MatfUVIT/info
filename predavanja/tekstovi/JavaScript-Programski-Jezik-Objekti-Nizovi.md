@@ -126,7 +126,7 @@ for (let osobina in obj)
 let tacka1 = {
     xKoordinata: 1.3,
     yKoordinata: 2.8,
-    pojaviSe: ()=> console.log('ja sam tacka 1') 
+    pojaviSe: ()=> console.log('ja sam tacka 1')
 };
 
 // prikaz osobina objekta
@@ -179,6 +179,8 @@ for (let deo in tacka1)
 
 ### Низови
 
+С обзиром да је јаваСкрипт слабо типизирани језик то (за раѕлику од језика Јава и Це), ни низови нису+ису јако типизирани па се у низ могу смештати вредности различитих типова.
+
 **Пример.** Дефиниција низа и приступ појединачним елементима низа:
 
 ```js
@@ -191,27 +193,22 @@ console.log(nizBrojeva[17 - 1]);
 console.log(nizBrojeva[- 1]);
 ```
 
-**Пример.** Приступ особинама низа:
+**Пример.** Илуструје различите начине проласка кроз елементе низа:
 
 ```js
-let nizBrojeva = [2, 3, 5, 7, 11];
+let niz = [1, 3, "Mika", "pera", false];
 
-// osobini se moze pristupiti pomoću
-// operatora-tačke
-console.log(nizBrojeva.length);
+console.log("---");
+for (let i = 0; i < niz.length; i++)
+   console.log(niz[i]);
 
-// osobini se moze pristupiti pomoću
-// uglastih zagrada i niske koja predstavlja
-// naziv osobine 
-console.log(nizBrojeva["length"]);
+console.log("---");
+for (let i in niz)
+   console.log(niz[i]);
 
-console.log(nizBrojeva["le" + 'ng' + "th"]);
-
-// pokusaj pristupa osobini koja ne postoji
-console.log(nizBrojeva.lenght);
-
-// pokusaj pristupa osobini koja ne postoji
-console.log(nizBrojeva.duzina);
+console.log("---");
+for (let x of niz)
+   console.log(x);
 ```
 
 #### Методи над низовима
@@ -292,6 +289,29 @@ console.log(ukloni([" a ", " b ", " c ", " d ", " e "], 2));
 ```
 
 #### Низови и објекти
+
+**Пример.** Илуструје како низови, који су такође објекти, имају своје особинe:
+
+```js
+let nizBrojeva = [2, 3, 5, 7, 11];
+
+// osobini se moze pristupiti pomoću 
+// operatora-tačke
+console.log(nizBrojeva.length);
+
+// osobini se moze pristupiti pomoću 
+// uglastih zagrada i niske koja predstavlja 
+// naziv osobine 
+console.log(nizBrojeva["length"]);
+
+console.log(nizBrojeva["le" + 'ng' + "th"]);
+
+// pokusaj pristupa osobini koja ne postoji
+console.log(nizBrojeva.lenght);
+
+// pokusaj pristupa osobini koja ne postoji
+console.log(nizBrojeva.duzina);
+```
 
 **Пример.** Одређивање типа током извршавања (обухвата функције, низове и објекте):
 
@@ -447,6 +467,48 @@ let dnevnik = [
 
 ```
 
+#### Низ аргумената при позиву функције
+
+**Пример.** Илуструје како се из тела функције може приступити аргументима позива, без обзира да ли тих аргумената има више или мање од параметара:
+
+```js
+function brojacArgumenata () {
+    console.log("---");
+    let s = "";
+    for(let i in arguments)
+        s += arguments[i];
+    console.log(s);
+    console.log ("Prilikom poziva su prosleđena " , arguments.length , " argumenta."); 
+}
+
+brojacArgumenata ("Ako kaniš " , "pobijediti" , " ne smiješ ", "izgubiti");
+// >>> "Prilikom poziva su prosleđena 4 argumenta."
+
+brojacArgumenata ("Ako kaniš pobijediti" , " ne smiješ izgubiti");
+// >>> "Prilikom poziva su prosleđena 2 argumenta."
+
+brojacArgumenata ("Ako kaniš pobijediti ne smiješ izgubiti");
+// >>> "Prilikom poziva su prosleđena 1 argumenta."
+```
+
+**Пример.**  Функција за рачунање суме бројева који се прослеђују приликом позива:
+
+```js
+let sumaBrojeva = function () {
+    let ret = 0.0;
+    for (let i in arguments) {
+        let elem = Number(arguments[i]);
+        if (!isNaN(elem))
+            ret += elem;
+    }
+    return ret;
+}
+
+console.log(sumaBrojeva(1, 2, 3));
+console.log(sumaBrojeva(1, 2, 3, [1,2]));
+console.log(sumaBrojeva(1, 2, 3, [1]));
+console.log(sumaBrojeva("Miki", "1", 2, "100.5", 3));
+```
 
 ### Ниске
 
@@ -495,7 +557,6 @@ console.log(niska[1]);
 **Пример.** Опис и примена метода `toUpperCase` који се односи на ниске:
 
 ```js
-
 console.log("Marković".toUpperCase);
 console.log("Marković".toUpperCase());
 ```

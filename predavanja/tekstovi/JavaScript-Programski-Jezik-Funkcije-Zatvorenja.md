@@ -142,6 +142,40 @@ console.log(stepen(4));
 console.log(stepen());
 ```
 
+**Пример.** Илуструје шта се дешава кад аје у позиву функције више аргимената, као и када је мање аргумената, те како се понашање разликује у зависности од тога да ли су у дефинициј функције дати подразумевани параметри:
+
+```js
+function bezArgumenata() {
+}
+
+// Ovo je OK
+bezArgumenata(1, 2, 3);
+
+function triArgumenta(a, b, c) {
+    console.log("---\n" + a)
+    console.log(b)
+    console.log(c)
+
+}
+
+// I ovo je OK
+triArgumenta(1, 2, "tri");
+triArgumenta(1, 2);
+triArgumenta(1);
+triArgumenta();
+
+function triArgumentaPodrazumenvano(a = 'a', b = 'b', c = null) {
+    console.log("---\n" + a)
+    console.log(b)
+    console.log(c)
+}
+
+triArgumentaPodrazumenvano(1, 2, "tri");
+triArgumentaPodrazumenvano(1, 2);
+triArgumentaPodrazumenvano(1);
+triArgumentaPodrazumenvano();
+```
+
 На крају, треба истаћи да приликом сваког позива функције, постоји могућност да се приступи аргументима позива (било да их је више, мање или тачно колико треба) коришћењем [`arguments`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/arguments){:target="_blank"}, о чему ће бити речи у каснијим поглављима.
 
 ### Опсези важења за променљиве и функције

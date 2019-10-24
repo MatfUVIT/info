@@ -1271,7 +1271,7 @@ console.log(x);
 x = 6 * Math.random()-3
 console.log(x);
 x = 6 * Math.random()-3
-console.log(x);```
+console.log(x);
 ```
 
 ##### Објекат `Console`

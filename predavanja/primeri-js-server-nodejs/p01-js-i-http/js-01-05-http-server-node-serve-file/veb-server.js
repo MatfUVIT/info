@@ -1,20 +1,31 @@
 let http = require('http');
 let url = require('url');
-let querystring = require('querystring');
 let fs = require('fs');
 
-http.createServer(function (request, response) {
-    pathName = url.parse(request.url).pathname;
-    fs.readFile(__dirname + pathName, function (err, data) {
+const port = 7000;
+http.createServer(function (zahtev, odgovor) {
+    putanja = url.parse(zahtev.url).pathname;
+    fs.readFile(__dirname + putanja, function (err, data) {
         if (err) {
-            response.writeHead(404, { 'Content-type': 'text/plan' });
-            response.write(`Page Was Not Found 
+            odgovor.writeHead(404, { 'Content-type': 'text/plan' });
+            odgovor.write(`Page Was Not Found 
             ${JSON.stringify(err)}`);
-            response.end();
+            odgovor.end();
+            let tekuceVreme = new Date();
+            console.log("---" + tekuceVreme + "---");
+            console.log("--- GRESKA ---")
+            console.log('url:     ' + zahtev.url);
+            console.log('putanja: ' + putanja);
         } else {
-            response.writeHead(200);
-            response.write(data);
-            response.end();
+            odgovor.writeHead(200);
+            odgovor.write(data);
+            odgovor.end();
+            let tekuceVreme = new Date();
+            console.log("---" + tekuceVreme + "---");
+            console.log("--- OK ---")
+            console.log('url:     ' + zahtev.url);
+            console.log('putanja: ' + putanja);
         }
     });
-}).listen(7000);
+}).listen(port);
+console.log(`Veb server osluskuje zahteve na portu ${port}...\n`);

@@ -1,7 +1,7 @@
 
 
 function slucajnaTackaNaKrugu( poluprecnik ) {
-var ugao = Math.random() * 2 * Math.PI ;
+let ugao = Math.random() * 2 * Math.PI ;
 return { 
     x : poluprecnik * Math.cos ( ugao ) ,
     y : poluprecnik * Math.sin ( ugao ) };

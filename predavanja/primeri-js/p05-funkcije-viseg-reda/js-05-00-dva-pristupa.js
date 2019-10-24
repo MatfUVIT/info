@@ -16,7 +16,7 @@ function suma(niz) {
 console.log(suma(opseg(1, 10)));
 
 // prikazuje 55
-var total = 0, count = 1;
+let total = 0, count = 1;
 while (count <= 10) {
     total += count;
     count += 1;
