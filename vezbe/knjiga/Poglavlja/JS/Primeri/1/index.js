@@ -3,6 +3,11 @@
 // Definisanje promenljivih (vrednosti su literali odgovarajuceg tipa):
 var x = 1;       // tip 'number'
 let y = 'Niska'; // tip 'string' (mogu se koristiti jednostruki ili dvostruki navodnici)
+// Kljucnom reci const definisemo promenljivu cija se vrednost ne moze menjati.
+const z = true;  // tip 'boolean'
+
+// Naredna linija proizvodi gresku
+// z = false;
 
 // JavaScript okruzenje (engl. engine) nam omogucava specijalan objekat console
 // pomocu kojeg mozemo pristupiti konzoli (slicno standardnom izlazu u jeziku C).
@@ -23,12 +28,5 @@ console.log(x, y, z, 2, 'Druga niska', false);
 // upravo zato sto je definisam u okviru tog objekta.
 // Naredna linija proizvodi gresku koja se ispisuje u konzoli veb pregledaca (otkomentarisati je i uveriti se!)
 // log('Pokusavam da ispisem tekst u konzolu "funkcijom" log');
-
-// Kljucnom reci const definisemo promenljivu cija se vrednost ne moze menjati.
-const z = true;
-console.log(z);
-// Naredna linija proizvodi gresku
-// z = false;
-console.log(z);
 
 })();
