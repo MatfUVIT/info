@@ -11,6 +11,11 @@
                 const output = document.getElementById('output' + indeks);
                 output.innerHTML += args.join(' ') + '<br>';
                 output.style.fontFamily = 'Consolas, monospace';
+                output.style.border = '5px solid lightgray';
+                output.style.marginTop = '10px';
+                output.style.padding = '10px';
+                output.style.fontSize = '11pt';
+                output.style.backgroundColor = 'ghostwhite';
             }
         };
     }
