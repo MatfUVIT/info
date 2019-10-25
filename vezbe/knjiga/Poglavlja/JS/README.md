@@ -1010,6 +1010,322 @@ console.log('Da li su nizovi jednaki?', da_li_su_jednaki(niz1, niz2));
 })();
 </script>
 
+## 3.6 Rad sa objektima
+
+U ovoj sekciji ćemo demonstrirati osnovni rad sa objektima kroz nekoliko zadataka. Pre toga, uvedimo formalno koncept objekata u programskom jeziku JavaScript.
+
+*Objekat* (engl. *object*) predstavlja strukturu podataka u kojoj su podaci predstavljeni uređenim parom (ključ, vrednost). Podaci od kojih se objekat sastoji se u terminologiji jezika JavaScript nazivaju *svojstvima* (engl. *property*). Ključ svojstva predstavlja njegovo ime, dok vrednost svojstva predstavlja sam podatak koji objekat sadrži. Vrednost svojstva može biti bilo koja vrednost jezika JavaScript. Specijalno, ukoliko je vrednost svojstva tipa `'function'`, onda se to svojstvo naziva i *metod* (engl. *method*).
+
+Već smo videli i intenzivno koristili jedan primer objekta, a to je globalni objekat `console` i njegov metod `log`. Većina svojstava ovog objekta su metodi, ali to ne mora biti slučaj sa drugim objektima. Literali objekata se u programskom jeziku JavaScript zapisuju između vitičastih zagrada `{` i `}`, pri čemu se svako svojstvo zapisuje u formatu `ključ: vrednost` i odvojeno je karakterom zapete od ostalih svojstava. U nastavku teksta, kada govorimo o svojstvima, onda mislimo na vrednosti koje nisu funkcije, osim ukoliko ne naznačimo drugačije.
+
+> Zadatak 24: Kreirati objekat `automobil` koji ima svojstva i metode iz naredne tabele. Iskoristiti dati objekat za određivanje tipa svih objekata. Ispisati u konzoli dati objekat.<br>
+
+| svojstva | metodi |
+| --- | --- |
+| ime = Fiat | pokreni() |
+| model = 500 | vozi() |
+| težina = 850.0 | zakoči() |
+| boja = bela | ugasi() |
+
+```js
+const automobil = {
+    ime: 'Fiat',
+    model: 500,
+    težina: 850.0,
+    boja: 'bela',
+    pokreni: function() {
+        console.log('Automobil je uključen');
+    },
+    vozi: function() {
+        console.log('Automobil je u pokretu');
+    },
+    zakoči: function() {
+        console.log('Automobil je stao');
+    },
+    ugasi: function() {
+        console.log('Automobil je ugašen');
+    }
+};
+console.log(typeof automobil);
+console.log(automobil);
+```
+
+<div id="output27"></div>
+<script>pregazi_console(27);</script>
+<script>
+(function(){
+    const automobil = {
+        ime: 'Fiat',
+        model: 500,
+        težina: 850.0,
+        boja: 'bela',
+        pokreni: function() {
+            console.log('Automobil je uključen');
+        },
+        vozi: function() {
+            console.log('Automobil je u pokretu');
+        },
+        zakoči: function() {
+            console.log('Automobil je stao');
+        },
+        ugasi: function() {
+            console.log('Automobil je ugašen');
+        }
+    };
+    console.log(typeof automobil);
+    console.log(automobil);
+})();
+</script>
+
+> Zadatak 25: Neka je dat objekat automobila iz zadatka 24. Simulirati vožnju automobila kroz ulicu u kojoj ima dva semafora pri čemu je svaki put automobil morao da stane na crveno svetlo.
+
+```js
+const automobil = {
+    ime: 'Fiat',
+    model: 500,
+    težina: 850.0,
+    boja: 'bela',
+    pokreni: function() {
+        console.log('Automobil je uključen');
+    },
+    vozi: function() {
+        console.log('Automobil je u pokretu');
+    },
+    zakoči: function() {
+        console.log('Automobil je stao');
+    },
+    ugasi: function() {
+        console.log('Automobil je ugašen');
+    }
+};
+console.log('Početak ulice');
+automobil.pokreni();
+automobil.vozi();
+console.log('Prvi semafor');
+automobil.zakoči();
+automobil.vozi();
+console.log('Drugi semafor');
+automobil.zakoči();
+automobil.vozi();
+console.log('Kraj ulice');
+automobil.zakoči();
+automobil.ugasi();
+```
+
+<div id="output28"></div>
+<script>pregazi_console(28);</script>
+<script>
+(function(){
+    const automobil = {
+        ime: 'Fiat',
+        model: 500,
+        težina: 850.0,
+        boja: 'bela',
+        pokreni: function() {
+            console.log('Automobil je uključen');
+        },
+        vozi: function() {
+            console.log('Automobil je u pokretu');
+        },
+        zakoči: function() {
+            console.log('Automobil je stao');
+        },
+        ugasi: function() {
+            console.log('Automobil je ugašen');
+        }
+    };
+    console.log('Početak ulice');
+    automobil.pokreni();
+    automobil.vozi();
+    console.log('Prvi semafor');
+    automobil.zakoči();
+    automobil.vozi();
+    console.log('Drugi semafor');
+    automobil.zakoči();
+    automobil.vozi();
+    console.log('Kraj ulice');
+    automobil.zakoči();
+    automobil.ugasi();
+})();
+</script>
+
+Nekada nam je potrebno da u telu metoda referišemo na objekat koji je "vlasnik" tog metoda. U tu svrhu, u jeziku JavaScript nam je dostupna ključna reč `this` u okviru tela metoda koja predstavlja upravo referencu na objekat koji je vlasnik tog metoda. Kroz ovu ključnu reč možemo dohvatiti ostala svojstva i metode koji su definisani nad tim objektom. Voditi računa da se ova ključna reč koristi isključivo u telu metoda objekta!
+
+> Zadatak 26: Neka je dat objekat automobila iz zadatka 24. Dopuniti implementaciju objekta tako da uključuje i metod `ispisi_informacije` koji u konzoli ispisuje informacije o imenu, modelu, težini (u kilogramima) i boji automobila.
+
+
+```js
+const automobil = {
+    ime: 'Fiat',
+    model: 500,
+    težina: 850.0,
+    boja: 'bela',
+    pokreni: function() {
+        console.log('Automobil je uključen');
+    },
+    vozi: function() {
+        console.log('Automobil je u pokretu');
+    },
+    zakoči: function() {
+        console.log('Automobil je stao');
+    },
+    ugasi: function() {
+        console.log('Automobil je ugašen');
+    },
+    ispisi_informacije: function() {
+        console.log('Ime: ' + this.ime + 
+                    ', model: ' + this.model + 
+                    ', težina: ' + this.težina + 'kg' + 
+                    ', boja: ' + this.boja);
+    }
+};
+
+automobil.ispisi_informacije();
+```
+
+<div id="output29"></div>
+<script>pregazi_console(29);</script>
+<script>
+(function(){
+    const automobil = {
+        ime: 'Fiat',
+        model: 500,
+        težina: 850.0,
+        boja: 'bela',
+        pokreni: function() {
+            console.log('Automobil je uključen');
+        },
+        vozi: function() {
+            console.log('Automobil je u pokretu');
+        },
+        zakoči: function() {
+            console.log('Automobil je stao');
+        },
+        ugasi: function() {
+            console.log('Automobil je ugašen');
+        },
+        ispisi_informacije: function() {
+            console.log('Ime: ' + this.ime + 
+                        ', model: ' + this.model + 
+                        ', težina: ' + this.težina + 'kg' + 
+                        ', boja: ' + this.boja);
+        }
+    };
+
+    automobil.ispisi_informacije();
+})();
+</script>
+
+Do sada smo videli da se svojstvima objekta (ovde govorimo o svojstvima u širem smislu) pristupa korišćenjem tzv. *tačka-notacije* (engl. *dot notation*). Ona podrazumeva da navedemo objekat, iza kojeg sledi karakter tačke `.`, a zatim da navedemo ime svojstva. Postoji još jedan način za dohvatanje svojstava, a to je pomoću uglastih zagrada. Tako, na primer, korišćenjem `objekat.naziv_svojstva` i `objekat['naziv_svojstva']` možemo dohvatiti svojstvo objekta koje se naziva `naziv_svojstva`. Ovde je neophodno primetiti da se između uglastih zagrada navodi naziv svojstva kao niska. Zasto? 
+
+Razlika je u tome što JavaScript jezik izraz između zagrada smatra kao vrednost koja se izračunava da bi se dobilo ime svojstva. Tako na primer, ako iskoristimo izraz `objekat.naziv_svojstva`, time kažemo JavaScript okruženju da potraži svojstvo u objektu koje se naziva "naziv_svojstva". Sa druge strane, ako iskoristimo izraz `objekat[naziv_svojstva]` (primetiti da nema navodnika!), JavaScript okruženje će `naziv_svojstva` smatrati kao izraz čija će vrednost biti izračunata i koja će potom biti implicitno konvertovana u nisku, da bi se potražilo svojstvo sa tim imenom.
+
+Semantika pretrage svojstava korišćenjem uglastih zagrada nam može poslužiti u nekim situacijama u kojima tačka-notaciju ne možemo koristiti. Na primer, JavaScript dopušta da nazivi svojstava objekata budu kompleksnije prirode, na primer:
+
+```js
+const osoba = { 'ime i prezime': 'Pera Perić' };
+```
+
+Očigledno, tekst pod niskom `'ime i prezime'` ne predstavlja validan JavaScript identifikator, ali cela niska se može koristiti kao ključ ovog svojstva. U ovakvim slučajevima, pristupanje svojstvima pomoću tačka-notacije proizvodi sintaksnu grešku:
+
+```js
+// Naredna linija proizvodi grešku: Uncaught SyntaxError: Unexpected string
+console.log(osoba.'ime i prezime');
+```
+
+Umesto toga, možemo koristiti notaciju uglastih zagrada:
+
+```js
+console.log(osoba['ime i prezime']); // Pera Perić
+```
+
+Druga situacija u kojoj moramo upotrebiti uglaste zagrade jeste ako naziv svojstva dobijamo kao vrednost promenljive, poziva funkcije ili bilo kog drugog izraza. Na primer:
+
+```js
+const x = 'ime i prezime';
+console.log(osoba[x]); // Pera Perić
+```
+
+> Zadatak 27: Neka je dat objekat automobila iz zadatka 24. Proveriti da li objekat sadrži svojstva ili metode naziva '`ime'`, `'prezime'` i `'pokreni'`. Zatim ispisati vrednosti i tipove svih svojstava objekta u konzoli.
+
+```js
+const automobil = {
+    ime: 'Fiat',
+    model: 500,
+    težina: 850.0,
+    boja: 'bela',
+    pokreni: function() {
+        console.log('Automobil je uključen');
+    },
+    vozi: function() {
+        console.log('Automobil je u pokretu');
+    },
+    zakoči: function() {
+        console.log('Automobil je stao');
+    },
+    ugasi: function() {
+        console.log('Automobil je ugašen');
+    }
+};
+
+console.log('Provera postojanja svojstava i metoda');
+
+console.log('ime' in automobil);
+console.log('prezime' in automobil);
+console.log('pokreni' in automobil);
+
+console.log('\nIspisivanje svih svojstava');
+
+// Ne mešati for-in petlju za rad sa objektima
+// i for-of petlju za rad sa nizovima !!!!!
+for (const ključ in automobil) {
+    if (typeof automobil[ključ] !== 'function') {
+        console.log(automobil[ključ]);
+    }
+}
+```
+
+<div id="output30"></div>
+<script>pregazi_console(30);</script>
+<script>
+(function(){
+    const automobil = {
+        ime: 'Fiat',
+        model: 500,
+        težina: 850.0,
+        boja: 'bela',
+        pokreni: function() {
+            console.log('Automobil je uključen');
+        },
+        vozi: function() {
+            console.log('Automobil je u pokretu');
+        },
+        zakoči: function() {
+            console.log('Automobil je stao');
+        },
+        ugasi: function() {
+            console.log('Automobil je ugašen');
+        }
+    };
+
+    console.log('Provera postojanja svojstava i metoda');
+
+    console.log('ime' in automobil);
+    console.log('prezime' in automobil);
+    console.log('pokreni' in automobil);
+
+    console.log('\nIspisivanje svih svojstava');
+
+    // Ne mešati for-in petlju za rad sa objektima
+    // i for-of petlju za rad sa nizovima !!!!!
+    for (const ključ in automobil) {
+        if (typeof automobil[ključ] !== 'function') {
+            console.log(automobil[ključ]);
+        }
+    }
+})();
+</script>
+
 -----
 
 [Knjiga](../../README.md)
@@ -1023,10 +1339,13 @@ console.log('Da li su nizovi jednaki?', da_li_su_jednaki(niz1, niz2));
 -->
 
 <!--
-Prikaz konzole za primer X:
-<div id="outputX"></div>
-<script>pregazi_console(X);</script>
-<script src="./Primeri/X/index.js"></script>
+<div id="output"></div>
+<script>pregazi_console();</script>
+<script>
+(function(){
+    
+})();
+</script>
 -->
 
 <!-- 
