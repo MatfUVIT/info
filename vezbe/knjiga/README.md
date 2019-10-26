@@ -51,6 +51,8 @@ Autori:
 
 9. [Veze](./Poglavlja/HTML/README.md#19-veze){:target="_blank"}
 
+10. [Formulari](./Poglavlja/HTML/README.md#110-formulari){:target="_blank"}
+
 ### [Poglavlje 2. Stilizovanje Veb dokumenata kroz CSS](./Poglavlja/CSS/README.md){:target="_blank"}
 
 1. [Osnovni elementi jezika CSS](./Poglavlja/CSS/README.md#21-osnovni-elementi-jezika-css){:target="_blank"}
@@ -108,6 +110,26 @@ Autori:
    2. [Pseudoelementi](./Poglavlja/CSS/README.md#2122-pseudoelementi){:target="_blank"}
 
 ### [Poglavlje 3. Biblioteka Bootstrap](./Poglavlja/Bootstrap/README.md){:target="_blank"}
+
+1. [Prilagodljiv dizajn veb prezentacija](./Poglavlja/Bootstrap/README.md#31-prilagodljiv-dizajn-veb-prezentacija){:target="_blank"}
+
+   1. [Prikazivanje slika](./Poglavlja/Bootstrap/README.md#311-prikazivanje-slika){:target="_blank"}
+
+   2. [Pozicioniranje](./Poglavlja/Bootstrap/README.md#312-pozicioniranje){:target="_blank"}
+
+2. [Instaliranje biblioteke Bootstrap](./Poglavlja/Bootstrap/README.md#32-instaliranje-biblioteke-bootstrap){:target="_blank"}
+
+3. [Osnovne komponente za pozicioniranje elemenata](./Poglavlja/Bootstrap/README.md#33-osnovne-komponente-za-pozicioniranje-elemenata){:target="_blank"}
+
+   1. [Margine](./Poglavlja/Bootstrap/README.md#331-margine){:target="_blank"}
+
+4. [Stilizovanje sadržaja veb prezentacije](./Poglavlja/Bootstrap/README.md#34-stilizovanje-sadržaja-veb-prezentacije){:target="_blank"}
+
+5. [Stilizovanje formulara](./Poglavlja/Bootstrap/README.md#35-stilizovanje-formulara){:target="_blank"} 
+
+   1. [Stilizovanje dugmića](./Poglavlja/Bootstrap/README.md#351-stilizovanje-dugmića){:target="_blank"}
+
+   2. [Stilizovanje elemenata forme](./Poglavlja/Bootstrap/README.md#352-stilizovanje-elemenata-forme){:target="_blank"}
 
 -----
 

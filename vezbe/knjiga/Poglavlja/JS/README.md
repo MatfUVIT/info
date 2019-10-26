@@ -8,8 +8,16 @@
     function pregazi_console(indeks) {
         console = {
             log: function(...args) {
+                // Postavljamo novi element za konzolu
                 const output = document.getElementById('output' + indeks);
+                // Zamenjujemo nove redove <br> elementom
+                args = args.map(val => val.toString().replace(new RegExp('\n', 'g'), '<br>'));
+                // Zamenjujemo tabove sa 4 razmaka
+                args = args.map(val => val.toString().replace(new RegExp('\t', 'g'), '&nbsp;&nbsp;&nbsp;&nbsp;'));
+                // Spajamo sve argumente u jednu nisku sa razmakom kao delimiterom
+                // i to dodajemo kao HTML sadrzaj elementu
                 output.innerHTML += args.join(' ') + '<br>';
+                // Postavljamo stil za konzolu
                 output.style.fontFamily = 'Consolas, monospace';
                 output.style.border = '5px solid lightgray';
                 output.style.marginTop = '10px';
@@ -431,6 +439,32 @@ console.log('Provera da li je vrednost NaN:', Number.isNaN(neuspesna_konverzija_
     console.log('Da li dve NaN vrednosti mogu biti jednake?', neuspesna_konverzija_1 == neuspesna_konverzija_2);
     console.log('Provera da li je vrednost NaN:', Number.isNaN(neuspesna_konverzija_1));
 })();
+</script>
+
+Postoji još jedan tip zapisivanja niski u jeziku JavaScript; u pitanju su *šablon-literali* (engl. *template literal*). Šablon-literali se navode između "iskošenih navodnika" (karakter \`). Šablon-literali imaju neka zanimljiva svojstva. Na primer, u njima se mogu zapisati višelinijski tekstovi, ali i ugnežđavati izrazi, te mogu biti veoma korisni. Naredni primer ilustruje ove opisane osobine:
+
+```js
+// Naredne 3 linije koda se efektivno mogu posmatrati kao jedna linija koda,
+// pri čemu će dati tekst u konzoli biti zaista ispisan u više linija.
+console.log(`Korišćenjem šablon-literala
+                tekst se može prelamati u više linija
+što nije moguće uraditi korišćenjem jednostrukih ili dvostrukih navodnika`);
+
+console.log(`Vrednost izraza 2 + 2 je ${2 + 2}`); // 'Vrednost izraza 2 + 2 je 4'
+```
+
+<div id="output9b"></div>
+<script>pregazi_console('9b');</script>
+<script>
+(function(){
+    // Naredne 3 linije koda se efektivno mogu posmatrati kao jedna linija koda,
+    // pri čemu će dati tekst u konzoli biti zaista ispisan u više linija.
+    console.log(`Korišćenjem šablon-literala
+                    tekst se može prelamati u više linija
+    što nije moguće uraditi korišćenjem jednostrukih ili dvostrukih navodnika`);
+
+    console.log(`Vrednost izraza 2 + 2 je ${2 + 2}`); // 'Vrednost izraza 2 + 2 je 4'
+    })();
 </script>
 
 ## 3.4 Rad sa funkcijama, nedostajućim vrednostima i kontrolama toka izbora

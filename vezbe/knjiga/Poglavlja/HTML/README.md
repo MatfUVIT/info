@@ -1134,6 +1134,284 @@ div {
    href="./Primeri/22/index.html"
    target="_blank">Pogledaj primer uživo</a>
 
+## 1.10 Formulari
+
+Da bismo sakupili informacije od korisnika, na raspolaganju nam je veliki izbor HTML elemenata pomoću kojih možemo da omogućimo korisniku da unese podatke ili da odabere neke od predefinisanih podataka. Ovi elementi se nazivaju *elementi formulara*, i obuhvaćeni su u elementu koji predstavlja jedan formular - element `form`. Više o tome kako se podaci iz formulara šalju ka serveru biće reči kada budemo pričali o načinu obraživanja podataka na serveru.
+
+Najjednostavniji način za unos podataka jeste putem elementa `input`. Njegov prikaz zavisi od vrednosti njegovog atributa `type`:
+- Za jednolinijski tekstualni unos koristi se vrednost `text`. Tekst koji se unosi može biti proizvoljan.
+	
+- Za unos lozinke koristi se vrednost `password`. Veb pregledač će najćešće prikazati karaktere zvezdice ili tačkice umesto stvarnog teksta koji se unosi.
+	
+- Za definisanje proizvoljnog dugmeta koji treba da izvrši neku akciju koristi se vrednost `button`.
+
+- Za definisanje dugmeta koji će poslati podatke iz formulara ka serveru koristi se vrednost `submit`. Ovaj element ima smisla definisati samo u okviru elementa `form`. 
+	
+- Za definisanje dugmeta koji briše sve unete podatke iz formulara koristi se vrednost `reset`.
+
+- Za odabir tačno jednog od više ponuženih izbora koristi se vrednost `radio`. Ovaj element ima smisla definisati samo u okviru elementa `form`. Da bi se znalo za koju opciju se vezuje koji izbor, ovim elementima je potrebno dodeliti atribut `name`. Na primer:
+        
+    ```html
+    <input type="radio" name="gender" value="male" checked> Male
+    <input type="radio" name="gender" value="female"> Female
+    <input type="radio" name="gender" value="other"> Other
+    ```
+
+    Primetimo da svaki element ima i atribut `value` kojim se definiše izbor za opciju koja se nalazi kao vrednost atributa `name`. Ovaj element predstavlja samo jedno dugme za izbor, ali ne i prateći tekst, te je potrebno dodati opis naknadno, kao u gornjem primeru. Takođe, prvo po redu radio dugme ima atribut `checked` kojom se obeležava koje će dugme inicijalno biti obeleženo. Važno je napomenuti da ovaj atribut nema vrednost, već samo njegovih navođenjem specifikujemo da element ima to svojstvo.
+	
+- Za odabir proizvoljnog broja od više ponuđenih izbora koristi se vrednost `checkbox`. Ovaj tip elementa funkcioniše na sličan način kao i prethodni tip. Razlika je u tome što ne moramo da ih vežemo za specifičnu opciju, već svaki izbor može da predstavlja svoju opciju. Na primer:
+	
+    ```html
+    <input type="checkbox" name="vehicle1" value="Bike"> I have a bike
+    <input type="checkbox" name="vehicle2" value="Car"> I have a car 
+    ```
+
+HTML5 standard definiše još više tipova za element `input`. Istražiti definisane tipove na [ovoj adresi](https://www.w3schools.com/html/html\_form\_input\_types.asp) u sekciji "HTML5 Input Types" i obratiti pažnju na kompatibilnost veb pregledača za svaki od njih.
+
+Element `input` ima i određeni broj atributa specifičnih za njega:
+
+- Kao što smo videli, atributom `name` definišemo naziv opcije.
+	
+- Atribut `value` određuje vrednost za to polje.
+	
+- Atribut `readonly` određuje da vrednost ne bi trebalo da se menja. On se samo navodi, poput atributa `checked`.
+	
+- Atribut `disabled` određuje da polje ne prima unos. Njegova vrednost neće biti poslata kao deo podataka iz formulara ka serveru. On se takođe samo navodi, poput prethodnog atributa.
+	
+- Atribut `size` definiše veličinu polja (u karakterima).
+
+- Atribut `maxlength` definiše najveći broj karaktera koji element može da primi. 
+
+- Atribut `placeholder` definiše tekst koji će pisati u polju dok korisnik ne unese neku vrednost.
+
+HTML5 standard definiše još više atributa za element `input`. Istražiti definisane atribute na [ovoj adresi](https://www.w3schools.com/html/html\_form\_attributes.asp) u sekciji "HTML5 Attributes" i obratiti pažnju na kompatibilnost veb pregledača za svaki od njih. Naredni primer ilustruje primenu prethodno opisanih atributa i vrednosti:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Primer 23 </title>
+</head>
+<body>
+    <form>
+        Korisničko ime*:  <input id="korisnicko_ime" type="text" name="korisnicko_ime" maxlength="20" required>
+        <br>
+        Šifra*:  <input id="sifra1" name="sifra1" type="password" placeholder="Sifra..." required>
+        <br>
+        Ponovi šifru*:  <input id="sifra2" name="sifra2" type="password" required>
+        <br>
+
+        Pol:
+        <input type="radio" name="pol" value="musko" checked> Muško
+        <input type="radio" name="pol" value="zensko"> Žensko
+        <input type="radio" name="pol" value="-"> Odbijam da se izjasnim
+        <br>
+        <br>
+        <input type="checkbox" name="vesti" value="vesti"> Želim da primam vesti
+        <br>
+        <br>
+        <input type="submit" value="Registruj se!">
+        <input type="reset" value="Poništi unos!">
+    </form>
+</body>
+</html>
+```
+
+<div style="max-width: 98%;">
+<img style="max-width: 100%;" src="./Slike/form_input.png" alt="">
+</div>
+
+<a style="border: 2px solid gray; display: inline-block; padding: 15px; background-color: rgb(114, 211, 250); color: black;"
+   href="./Primeri/23/index.html"
+   target="_blank">Pogledaj primer uživo</a>
+
+
+Pored elementa `input`, HTML jezik definiše i druge elemente za unos podataka.
+
+Element `select` predstavlja *padajuću listu* (engl. *dropdown list*) sa izborima. Atributom `name` definišemo naziv te opcije, a svaki od izbora je predstavljen elementom `option`, čiji atribut `value` definiše jedan izbor. Elementi `option` se nalaze kao sadržaj elementa `select`. Sadržaj elementa `option` predstavlja tekst koji se prikazuje prilikom izbora opcije. Na primer:
+
+```html
+<select name="cars">
+    <option value="volvo">Volvo</option>
+    <option value="saab">Saab</option>
+    <option value="fiat">Fiat</option>
+    <option value="audi">Audi</option>
+</select>
+```
+
+Podrazumevano je prvi element `option` označen kao odabrani, ali to se može redefinisati dodeljivanjem atributa `selected` izboru koji želimo da bude podrazumevano označen: 
+
+```html
+<option value="fiat" selected>Fiat</option>
+```
+
+Ako nad elementom `select` postavimo atribut `multiple`, onda je moguće odabrati više opcija pomoću tastera `CTRL` ili `CMD`:
+
+```html
+<select name="cars" multiple>
+    <option value="volvo">Volvo</option>
+    <option value="saab">Saab</option>
+    <option value="fiat">Fiat</option>
+    <option value="audi">Audi</option>
+</select>
+```
+
+Ako želimo da izvršimo grupisanje opcija, to možemo uraditi pomoću elementa `optgroup`, kao u narednom primeru:
+
+```html
+<select>
+    <optgroup label="Swedish Cars">
+        <option value="volvo">Volvo</option>
+        <option value="saab">Saab</option>
+    </optgroup>
+    <optgroup label="German Cars">
+        <option value="mercedes">Mercedes</option>
+        <option value="audi">Audi</option>
+    </optgroup>
+</select>
+```
+
+Postoji i još jedan način za izlistavanje opcija. Moguće je da za `input` elemente definišemo predefinisane vrednosti koje mogu biti odabrane korišćenjem elementa `datalist`. Korišćenjem ovog elementa u kombinaciji sa `input` elementom (koji u tom slučaju mora da ima atribut `list` čija je vrednost identifikator elementa `datalist`), to `input` polje će dobiti opciju automatskog dopunjavanja. Ovaj element nije dostupan u Safari pregledačima.
+
+```html
+<input list="browsers">
+<datalist id="browsers">
+    <option value="Internet Explorer">
+    <option value="Firefox">
+    <option value="Chrome">
+    <option value="Opera">
+    <option value="Safari">
+</datalist>
+```
+
+Element `textarea` definiše višelinijski unos teksta. Atributima `rows` i `cols` se definiše vidljivi broj vrsta, odnosno, kolona, redom:
+
+```html
+<textarea name="message" rows="10" cols="30">
+    The cat was playing in the garden.
+</textarea>
+```
+
+Dodatno, veličinu ovog elementa možemo definisati i korišćenjem CSS svojstava `width` i `height`:
+
+
+```html
+<textarea name="message" style="width:200px; height:600px">
+    The cat was playing in the garden.
+</textarea>
+```
+
+Naredni primer ilustruje primenu ovih elemenata:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Primer 24 </title>
+</head>
+<body>
+    <form>
+        Omiljeni auto:
+        <select>
+            <optgroup label="Švedska">
+                <option value="volvo">Volvo</option>
+                <option value="saab">Saab</option>
+            </optgroup>
+            <optgroup label="Nemačka">
+                <option value="mercedes">Mercedes</option>
+                <option value="audi">Audi</option>
+                <option value="bmw">BMW</option>
+                <option value="opel">Opel</option>
+                <option value="volkswagen">Volkswagen</option>
+                <option value="porsche">Porsche</option>
+            </optgroup>
+            <optgroup label="Francuska">
+                <option value="peugeot">Peugeot</option>
+                <option value="renault">Renault</option>
+                <option value="citroen">Citroen</option>
+            </optgroup>
+            <optgroup label="Japan">
+                <option value="honda">Honda</option>
+                <option value="nissan">Nissan</option>
+                <option value="toyota">Toyota</option>
+                <option value="suzuki">Suzuki</option>
+                <option value="mazda">Mazda</option>
+            </optgroup>
+        </select>
+        <br><br>
+        Omiljeni pretraživač:
+        <input list="pretrazivaci">
+        <datalist id="pretrazivaci">
+            <option value="Internet Explorer">
+            <option value="Firefox">
+            <option value="Chrome">
+            <option value="Opera">
+            <option value="Safari">
+            <option value="Brave">
+        </datalist>
+        <br><br>
+        <textarea name="message" rows="7" cols="40" placeholder="Napomena...">
+        </textarea>
+        <br>
+        <br>
+        <input type="submit" value="Pošalji odgovor!">
+        <input type="reset" value="Poništi unos!">
+    </form>
+</body>
+</html>
+```
+
+<div style="max-width: 98%;">
+<img style="max-width: 100%;" src="./Slike/form_select_datalist_area.png" alt="">
+</div>
+
+<a style="border: 2px solid gray; display: inline-block; padding: 15px; background-color: rgb(114, 211, 250); color: black;"
+   href="./Primeri/24/index.html"
+   target="_blank">Pogledaj primer uživo</a>
+
+
+
+Za grupisanje više elemenata formulara koji su međusobno povezani u jednu celinu, možemo koristiti element `fieldset`. Ovaj element će nacrtati pravougaonik oko elemenata koje obuhvata. Da bismo anotirali ovakvu jednu celinu, možemo koristiti element `legend`, čiji je tekstualni sadržaj naslov celine koja je definisana `fieldset` elementom. 
+
+Još jedan način za semantičko obeležavanje elemenata formulara jeste upotreba elementa `label`. Ovim elementom se definiše oznaka za elemente `button`, `input`, `meter`, `output`, `progress`, `select`, ili `textarea`. Ovaj element se ne renderuje za korisnika kao drugi vizualni elementi, ali omogućava da kada korisnici kliknu na tekstualni sadržaj ovog elementa, odgovarajuća kontrola na koju se odnosi element `label` postaje aktivna. Da bismo povezali element `label` sa nekim elementom formulara, koristimo njegov atribut `for`, čija je vrednost identifikator elementa za kojeg ga vezujemo.
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Primer 23 </title>
+</head>
+<body>
+    <form>
+        <fieldset>
+            <legend> Prijavljivanje </legend>
+    
+            <label for="username"> Korisničko ime*: </label>
+            <input id="username" type="text" name="korisnicko_ime" required>
+    
+            <label for="password"> Šifra*: </label>
+            <input id="password" name="sifra" type="password"  required>
+        </fieldset>
+        <input type="submit" value="Prijavi se!">
+    </form>
+</body>
+</html>
+```
+
+<div style="max-width: 98%;">
+<img style="max-width: 100%;" src="./Slike/form_fieldset.png" alt="">
+</div>
+
+<a style="border: 2px solid gray; display: inline-block; padding: 15px; background-color: rgb(114, 211, 250); color: black;"
+   href="./Primeri/25/index.html"
+   target="_blank">Pogledaj primer uživo</a>
+
 -----
 
 [Knjiga](../../README.md)
