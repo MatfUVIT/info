@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Primer 24 </title>
+</head>
+<body>
+    <form>
+        Omiljeni auto:
+        <select>
+            <optgroup label="Švedska">
+                <option value="volvo">Volvo</option>
+                <option value="saab">Saab</option>
+            </optgroup>
+            <optgroup label="Nemačka">
+                <option value="mercedes">Mercedes</option>
+                <option value="audi">Audi</option>
+                <option value="bmw">BMW</option>
+                <option value="opel">Opel</option>
+                <option value="volkswagen">Volkswagen</option>
+                <option value="porsche">Porsche</option>
+            </optgroup>
+            <optgroup label="Francuska">
+                <option value="peugeot">Peugeot</option>
+                <option value="renault">Renault</option>
+                <option value="citroen">Citroen</option>
+            </optgroup>
+            <optgroup label="Japan">
+                <option value="honda">Honda</option>
+                <option value="nissan">Nissan</option>
+                <option value="toyota">Toyota</option>
+                <option value="suzuki">Suzuki</option>
+                <option value="mazda">Mazda</option>
+            </optgroup>
+        </select>
+        <br><br>
+        Omiljeni pretraživač:
+        <input list="pretrazivaci">
+        <datalist id="pretrazivaci">
+            <option value="Internet Explorer">
+            <option value="Firefox">
+            <option value="Chrome">
+            <option value="Opera">
+            <option value="Safari">
+            <option value="Brave">
+        </datalist>
+        <br><br>
+        <textarea name="message" rows="7" cols="40" placeholder="Napomena...">
+        </textarea>
+        <br>
+        <br>
+        <input type="submit" value="Pošalji odgovor!">
+        <input type="reset" value="Poništi unos!">
+    </form>
+</body>
+</html>
