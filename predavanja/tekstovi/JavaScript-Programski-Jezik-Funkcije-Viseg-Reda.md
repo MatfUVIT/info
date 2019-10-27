@@ -91,12 +91,16 @@ let nizBrojeva = [1, 2, 3, 4, "mika", "zika"];
 nizBrojeva.forEach( (x) => console.log(x) )
 ```
 
+&#9608;
+
 **Пример.** Одредити суму бројева од `1` до `100`.
 
 ```js
 let nizBrojeva = [1, 2, 3, 4, "mika", "zika"];
 nizBrojeva.forEach( (x) => console.log(x) )
 ```
+
+&#9608;
 
 ### Функције као генератори функција
 
@@ -116,6 +120,8 @@ console.log(veciOd10(11));
 console.log(veciOd10(9.5));
 ```
 
+&#9608;
+
 **Пример.** Функција помоћу које се генеришу друге функције (за множење датим бројем):
 
 ```js
@@ -134,6 +140,8 @@ var pomnoziSa2_25 = umnozilac(2.25);
 console.log(pomnoziSa2_25(4.5));
 console.log(pomnoziSa2_25(5.5));
 ```
+
+&#9608;
 
 **Пример.** Функција помоћу које се генеришу друге функције (за степеновање):
 
@@ -155,6 +163,8 @@ var naDeseti = naStepen(10);
 console.log(naDeseti(2));
 ```
 
+&#9608;
+
 ### Повезивање функција при позиву
 
 **Пример.** Илустрација функције која декорише позив неке друге функције:
@@ -175,6 +185,7 @@ bucna(Math.sin)(Math.PI/2);
 bucna(Math.cos)(Math.PI/2);
 ```
 
+&#9608;
 
 **Пример.** Генерисање, декорисање и повезивање при позиву функција:
 
@@ -189,6 +200,8 @@ function bucna2(f) {
 console.log(bucna2(Boolean)(0));
 console.log(bucna2(Math.max)(Math.PI / 2, 2, 3));
 ```
+
+&#9608;
 
 ### Mапирање и редукција помоћу функција вишег реда
 
@@ -342,6 +355,8 @@ console.log(family.filter(
     person => person.sex == 'm' 
             && person.born > 1900 && person.born < 1925));
 ```
+
+&#9608;
 
 **Пример.** Филтрирање и трансформација података у колекцији:
 
@@ -502,6 +517,8 @@ console.log(family.filter(x => x.died - x.born > 70)
                   .map(x=>x.name + " " + (x.died-x.born)));
 ```
 
+&#9608;
+
 **Пример.** Филтрирање и сумирање података:
 
 ```js
@@ -565,6 +582,8 @@ console.log(reduce(niz, function (a, b) {
 console.log('--- Maksimum ---');
 console.log(reduce(niz, (a, b) => (a > b) ? a : b, -Infinity));
 ```
+
+&#9608;
 
 **Пример.** Филтрирање, трансформација и сумирање података:
 
@@ -694,6 +713,8 @@ function jeZensko(p) { return p.sex == "f"; }
 console.log(prosek(pretci.filter(jeMusko).map(uzrast)));
 console.log(prosek(pretci.filter(jeZensko).map(uzrast)));
 ```
+
+&#9608;
 
 ### Функцијски изрази који се одмах позивају
 
