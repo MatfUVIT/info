@@ -34,10 +34,11 @@ object2.value = 17;
 // Prikazuje 17
 console.log(object1.value);
 
-
 // Prikazuje 10
 console.log(object3.value);
 ```
+
+&#9608;
 
 #### Особине објеката
 
@@ -67,6 +68,8 @@ console.log(undefined.length);
 console.log(undefined.duzina);
 ```
 
+&#9608;
+
 **Пример.** Oсобинe објекaта имају динамичку природу:
 
 ```js
@@ -90,6 +93,8 @@ console.log(objekat["levo"]);
 console.log("levo" in objekat);
 console.log("desno" in objekat);
 ```
+
+&#9608;
 
 **Пример.** Пролазак кроз особинe објекaта:
 
@@ -115,6 +120,8 @@ obj = {
 for (let osobina in obj)
    console.log(`${osobina} - ${obj[osobina]}`);
 ```
+
+&#9608;
 
 #### Методи код објеката
 
@@ -164,6 +171,8 @@ delete tacka1.pojaviSe;
 tacka1.pojaviSe();
 ```
 
+&#9608;
+
 **Пример.** Пролазак кроз особинe и методе објекaта:
 
 ```js
@@ -176,6 +185,8 @@ let tacka1 = {
 for (let deo in tacka1)
    console.log(`${deo} - ${tacka1[deo]}`);
 ```
+
+&#9608;
 
 ### Низови
 
@@ -192,6 +203,8 @@ console.log(nizBrojeva[1 - 1]);
 console.log(nizBrojeva[17 - 1]);
 console.log(nizBrojeva[- 1]);
 ```
+
+&#9608;
 
 **Пример.** Илуструје различите начине проласка кроз елементе низа:
 
@@ -210,6 +223,8 @@ console.log("---");
 for (let x of niz)
    console.log(x);
 ```
+
+&#9608;
 
 #### Методи над низовима
 
@@ -236,6 +251,8 @@ poruka.pop()
 
 console.log(poruka);
 ```
+
+&#9608;
 
 **Пример.** Примена метода  `push`, `shift`, `unshift` који се односе на низове:
 
@@ -265,6 +282,8 @@ while (podsetnik.length != 0) {
 }
 ```
 
+&#9608;
+
 **Пример.** Примена метода  `indexOf`, `lastIndexOf`, `slice`, `concat` који се односе на низове:
 
 ```js
@@ -287,6 +306,8 @@ function ukloni(niz, indeks) {
 // prikazuje [" a " , " b " , " d " , " e "]
 console.log(ukloni([" a ", " b ", " c ", " d ", " e "], 2));
 ```
+
+&#9608;
 
 #### Низови и објекти
 
@@ -312,6 +333,8 @@ console.log(nizBrojeva.lenght);
 // pokusaj pristupa osobini koja ne postoji
 console.log(nizBrojeva.duzina);
 ```
+
+&#9608;
 
 **Пример.** Одређивање типа током извршавања (обухвата функције, низове и објекте):
 
@@ -371,6 +394,8 @@ x = null
 console.log(`${x} - ${typeof (x)}`)
 ```
 
+&#9608;
+
 **Пример.** Објекти који садрже низове и приступ појединим елементима у оквиру њих:
 
 ```js
@@ -411,6 +436,8 @@ for (let i in dnevnik) {
   console.log(dnevnik[i].aktivnosti);
 }
 ```
+
+&#9608;
 
 **Пример.** Низ који садржи објекте (који у себи садржи низове), кроз који се пролази коришћењем бројачког `for` циклуса и колекцијских циклуса `for-in` и `for-of`:
 
@@ -457,7 +484,9 @@ let dnevnik = [
     console.log(dan.preobrazajVeverica);
     console.log(dan.aktivnosti);
   }
-  ```
+```
+
+&#9608;
 
 Коришћењем методе `Array.from` може се од објекта кроји пима структуру која подсећа на низ, тј. од објекта кроз који се може итерирати, направити низ.
 
@@ -466,6 +495,8 @@ let dnevnik = [
 ```js
 
 ```
+
+&#9608;
 
 #### Низ аргумената при позиву функције
 
@@ -491,6 +522,8 @@ brojacArgumenata ("Ako kaniš pobijediti ne smiješ izgubiti");
 // >>> "Prilikom poziva su prosleđena 1 argumenta."
 ```
 
+&#9608;
+
 **Пример.**  Функција за рачунање суме бројева који се прослеђују приликом позива:
 
 ```js
@@ -510,6 +543,8 @@ console.log(sumaBrojeva(1, 2, 3, [1]));
 console.log(sumaBrojeva("Miki", "1", 2, "100.5", 3));
 ```
 
+&#9608;
+
 ### Ниске
 
 **Пример.** Ниска поседује тачно одређен скуп особина, које се не може проширивати:
@@ -525,6 +560,8 @@ niska1.novaOsobina = "vrednost";
 // prikazuje undefined
 console.log ( niska1.novaOsobina ) ;
 ```
+
+&#9608;
 
 #### Методе над нискама
 
@@ -554,6 +591,8 @@ console.log(niska.charAt(0));
 console.log(niska[1]);
 ```
 
+&#9608;
+
 **Пример.** Опис и примена метода `toUpperCase` који се односи на ниске:
 
 ```js
@@ -561,9 +600,13 @@ console.log("Marković".toUpperCase);
 console.log("Marković".toUpperCase());
 ```
 
+&#9608;
+
 ### JSON
 
-**Пример.** Конверзија објекта у JSON ниску :
+**Пример.** Конверзија објекта у JSON ниску и конверзија JSON ниске у објекат.
+
+Прво ћемо на основу објекта направити ниску:
 
 ```js
 let person = {
@@ -577,7 +620,7 @@ let niska = JSON.stringify(person);
 console.log(niska);
 ```
 
-**Пример.** Конверзија JSON ниске у објекат:
+Потом следи лонверзија JSON ниске у објекат:
 
 ```js
 let opis = '{"name":"Miki Maus","born":1980, "father":"Volt Dizni"}';
@@ -587,7 +630,11 @@ let person = JSON.parse(opis);
 console.log(person);
 ```
 
-**Пример.** Конверзија низа објеката у JSON ниску:
+&#9608;
+
+**Пример.** Конверзија низа објеката у JSON ниску и обратно.
+
+Код који следи покаѕује како се добија ниска на основу ниѕа објеката:
 
 ```js
 let family = [
@@ -605,7 +652,7 @@ let niska = JSON.stringify(family);
 console.log(niska);
 ```
 
-**Пример.** Конверзија JSON ниске у низ објеката:
+Скипт за конверзију JSON ниске у низ објеката:
 
 ```js
 let opis = '[{"name":"Emma de Milliano","sex":"f","born":1876,"died":1956,'+
@@ -619,6 +666,8 @@ for (var i = 0; i < family.length; i++)
     console.log(family[i].name + " " + family[i].sex +
          " " + family[i].born + " " + family[i].died);
 ```
+
+&#9608;
 
 ### Литература
 
