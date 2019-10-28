@@ -127,7 +127,45 @@ for (let osobina in obj)
 
 Методи се могу посматрати као особине који реферишу на вредности-функције.
 
-**Пример.** Методи код објекaта имају динамичку природу:
+Методи код објекaта имају динамичку природу.
+
+**Пример.** Рад са особинама и методима објекта који представља зеца:
+
+```js
+let rabbit = {};
+rabbit.name = "Душко Дугоушко";
+rabbit.speak = function(tekst) {
+    console.log("Зека каже: '" + tekst + "'");
+};
+
+console.log(rabbit.name);
+
+rabbit.speak("Који ти је враг, шефе?");
+
+let x = rabbit.name;
+rabbit.name = rabbit.speak;
+rabbit.speak = x;
+rabbit.name("Проба! 1,2,3...");
+```
+
+&#9608;
+
+**Пример.** Илуструје, на примеру зеца, како један метод може да се придружи већем броју обеката:
+
+```js
+let izgovara = function (tekst) {
+    console.log(`${this.tip} зец каже '${tekst}'`);
+}
+let beliZec = { tip: "бели", govor: izgovara };
+let debeliZec = { tip: "дебели", govor: izgovara };
+
+beliZec.govor("Касним, касним, краљица ће бити љута!");
+debeliZec.govor("Ал'сам гладан.");
+```
+
+у овом случају, једна функција `izgovara` је подешена да буде метод објекта на који реферише проеменљива `beliZec` и објекта на који реферише проеменљива `debeliZec`. &#9608;
+
+**Пример.** Рад са особинама и методима објекта који представља тачку у дводименѕионалном простору:
 
 ```js
 let tacka1 = {
@@ -674,7 +712,5 @@ for (var i = 0; i < family.length; i++)
 1. Haverbeke M.: [Eloquent JavaScript](https://eloquentjavascript.net/){:target="_blank"}
 
 1. [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript){:target="_blank"} - Mozzila Developer Network (MDN)
-
-1. Живановић, Д.: [Веб програмирање - ЈаваСкрипт догађаји](https://www.webprogramiranje.org/dogadjaji-u-javascript-u/){:target="_blank"}
 
 1. Copes F.: [Complete JavaScript Handbook](https://medium.freecodecamp.org/the-complete-javascript-handbook-f26b2c71719c){:target="_blank"}

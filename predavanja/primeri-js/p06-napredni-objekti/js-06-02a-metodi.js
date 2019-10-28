@@ -1,15 +1,14 @@
-var rabbit = {};
-rabbit.name = "Bugs Bunny";
-rabbit.speak = function(line) {
-    console.log("The rabbit says '" + line + "'");
+let rabbit = {};
+rabbit.name = "Душко Дугоушко";
+rabbit.speak = function(tekst) {
+    console.log("Зека каже: '" + tekst + "'");
 };
 
 console.log(rabbit.name);
 
-rabbit.speak("I'm alive.");
-// → The rabbit says 'I'm alive.'
+rabbit.speak("Који ти је враг, шефе?");
 
 let x = rabbit.name;
 rabbit.name = rabbit.speak;
 rabbit.speak = x;
-rabbit.name("This is the test.");
+rabbit.name("Проба! 1,2,3...");
