@@ -37,6 +37,58 @@ console.log(prazanObjekat.toString);
 
 ![Објекат и прототип](assets/images/оbject-prototype.jpg)
 
+**Пример.** Илуструје приступ прототипу датог објекта:
+
+```js
+console.log(Object.getPrototypeOf({}) == Object.prototype);
+// >>> true
+
+console.log(Object.getPrototypeOf(Object.prototype));
+// >>> null
+```
+
+Из горњег кода се уочава да не постоји прототип за прототип објекта. &#9608;
+
+Јасно је да су низови једна "специјализована" врста објеката, па стога и низови имају прототипове. Фуницје у ЈаваСкрипту су грађани првог реда, па и за њих постоје прототипови.  
+
+**Пример.** Илуструје прототипове за низове и функције:
+
+```js
+console.log(Object.getPrototypeOf(isNaN) ==
+    Function.prototype);
+// >>> true
+
+console.log(Object.getPrototypeOf([]) ==
+    Array.prototype);
+// >>> true
+```
+
+&#9608;
+
+**Пример.** Илуструје креирање објеката зечева на основу протипоа:
+
+```js
+let prototipZeca = {
+    govori: function(tekst) {
+        console.log("Овај зец " + this.tip + " каже '" +
+            tekst + "'");
+    }
+};
+
+let zecUbica = Object.create(prototipZeca);
+zecUbica.tip = "убица";
+
+zecUbica.govori("Готов си!");
+// >>> Овај зец убица каже 'Готов си!
+
+let zecDebeljuca = Object.create(prototipZeca);
+zecDebeljuca.tip = "дебељуца";
+zecDebeljuca.govori("Баш сам гладан!");
+// >>> Овај зец дебељуца каже 'Баш сам гладан!'
+```
+
+Јасно је да би у овом случају било боље да се особина `tip` не креира за сваки објекат посебно, већ да се креира у оквиру прототипа. Постављање особине на жељену вредност би се, наравно, реализовало одвојено за сваки од објеката. &#9608;
+
 ### Оператор `this`
 
 ### Математички оператори

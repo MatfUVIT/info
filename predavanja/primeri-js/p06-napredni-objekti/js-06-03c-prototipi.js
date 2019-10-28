@@ -1,7 +1,7 @@
 console.log(Object.getPrototypeOf(isNaN) ==
-            Function.prototype);
-// → true
+    Function.prototype);
+// >>> true
 
 console.log(Object.getPrototypeOf([]) ==
-            Array.prototype);
-// → true
+    Array.prototype);
+// >>> true
