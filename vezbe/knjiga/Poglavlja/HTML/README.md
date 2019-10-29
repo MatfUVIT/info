@@ -1191,25 +1191,31 @@ HTML5 standard definiše još više atributa za element `input`. Istražiti defi
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, 
+    initial-scale=1.0">
     <title> Primer 23 </title>
 </head>
 <body>
     <form>
-        Korisničko ime*:  <input id="korisnicko_ime" type="text" name="korisnicko_ime" maxlength="20" required>
+        Korisničko ime*:  <input id="korisnicko_ime" type="text" 
+        name="korisnicko_ime" maxlength="20" required>
         <br>
-        Šifra*:  <input id="sifra1" name="sifra1" type="password" placeholder="Sifra..." required>
+        Šifra*:  <input id="sifra1" name="sifra1" type="password" 
+        placeholder="Sifra..." required>
         <br>
-        Ponovi šifru*:  <input id="sifra2" name="sifra2" type="password" required>
+        Ponovi šifru*:  <input id="sifra2" name="sifra2" 
+        type="password" required>
         <br>
 
         Pol:
         <input type="radio" name="pol" value="musko" checked> Muško
         <input type="radio" name="pol" value="zensko"> Žensko
-        <input type="radio" name="pol" value="-"> Odbijam da se izjasnim
+        <input type="radio" name="pol" value="-"> Odbijam da se 
+        izjasnim
         <br>
         <br>
-        <input type="checkbox" name="vesti" value="vesti"> Želim da primam vesti
+        <input type="checkbox" name="vesti" value="vesti"> Želim da 
+        primam vesti
         <br>
         <br>
         <input type="submit" value="Registruj se!">
@@ -1354,7 +1360,8 @@ Naredni primer ilustruje primenu ovih elemenata:
             <option value="Brave">
         </datalist>
         <br><br>
-        <textarea name="message" rows="7" cols="40" placeholder="Napomena...">
+        <textarea name="message" rows="7" cols="40" 
+        placeholder="Napomena...">
         </textarea>
         <br>
         <br>
@@ -1384,7 +1391,8 @@ Još jedan način za semantičko obeležavanje elemenata formulara jeste upotreb
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, 
+    initial-scale=1.0">
     <title> Primer 23 </title>
 </head>
 <body>
@@ -1393,10 +1401,12 @@ Još jedan način za semantičko obeležavanje elemenata formulara jeste upotreb
             <legend> Prijavljivanje </legend>
     
             <label for="username"> Korisničko ime*: </label>
-            <input id="username" type="text" name="korisnicko_ime" required>
+            <input id="username" type="text" name="korisnicko_ime" 
+            required>
     
             <label for="password"> Šifra*: </label>
-            <input id="password" name="sifra" type="password"  required>
+            <input id="password" name="sifra" type="password"  
+            required>
         </fieldset>
         <input type="submit" value="Prijavi se!">
     </form>
