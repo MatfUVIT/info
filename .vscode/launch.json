@@ -8,7 +8,7 @@
             "type": "node",
             "request": "launch",
             "name": "Launch Program",
-            "program": "${workspaceFolder}/predavanja/primeri-js-server-nodejs/p01-js-i-http/js-01-07-http-server-node-querystring-params/veb-server.js"
+            "program": "${workspaceFolder}/predavanja/primeri-js/p06-napredni-objekti/js-06-03е-prototipi.js"
         }
     ]
 }

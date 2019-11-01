@@ -1,13 +1,18 @@
 let prototipZeca = {
-    govori: function(tekst) {
+    tip: "непознат",
+
+    govori: function (tekst) {
         console.log("Овај зец " + this.tip + " каже '" +
             tekst + "'");
     }
 };
 
+let zec = Object.create(prototipZeca);
+zec.govori("Ко сам ја?");
+// >>> Овај зец непознат каже 'Ко сам ја?'
+
 let zecUbica = Object.create(prototipZeca);
 zecUbica.tip = "убица";
-
 zecUbica.govori("Готов си!");
 // >>> Овај зец убица каже 'Готов си!
 

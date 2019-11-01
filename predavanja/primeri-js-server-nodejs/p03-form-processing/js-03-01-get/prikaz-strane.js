@@ -12,7 +12,6 @@ function prikazStrane(response, pathName, queryData) {
       <body>
       Dobro dosli, ${queryData.ime}<br>
       Vasa email adresa je: ${queryData.email} <br>
-      Vreme: ${new Date()}
       </body>
       </html>`);
       response.end();

@@ -1,24 +1,33 @@
-/*
-Constructors (in fact, all functions) automatically get a property named prototype, 
-which by default holds a plain, empty object that derives from Object.prototype. 
-
-Every instance created with this constructor will have this object as its prototype. 
-
-So to add a speak method to rabbits created with the Rabbit constructor, we can simply do this:
-*/
-
-function Rabbit(type) {
-    this.type = type;
+function Zec(tip = "непознат") {
+    this.tip = tip;
 }
 
-var killerRabbit = new Rabbit("killer");
-var blackRabbit = new Rabbit("black");
 
-Rabbit.prototype.speak = function(line) {
-    console.log("The " + this.type + " rabbit says '" +
-        line + "'");
+Zec.prototype.govori = function (tekst) {
+    console.log("Овај зец " + this.tip + " каже '" +
+        tekst + "'");
 };
 
-blackRabbit.speak("Doom...");
+let zec = new Zec();
+zec.govori("Ко сам ја?");
+// >>> Овај зец непознат каже 'Ко сам ја?'
 
-killerRabbit.speak("Make my day!");
+let zecUbica = new Zec("убица");
+zecUbica.govori("Готов си!");
+// >>> Овај зец убица каже 'Готов си!
+
+Zec.prototype.predstaviSe = function () {
+    console.log("Зец: " + this.tip + ".");
+}
+
+let zecDebeljuca = new Zec("дебељуца");
+zecDebeljuca.predstaviSe();
+// >>> Зец: дебељуца
+zecDebeljuca.govori("Баш сам гладан!");
+// >>> Овај зец дебељуца каже 'Баш сам гладан!'
+
+zec.predstaviSe = () => { console.log("------") };
+zecUbica.predstaviSe();
+// >>> Зец: убица
+zec.predstaviSe();
+// >>> ------

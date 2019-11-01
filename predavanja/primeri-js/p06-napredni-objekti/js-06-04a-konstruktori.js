@@ -1,24 +1,20 @@
-/*
-Calling a function with the new keyword in front of it causes it to be treated as a constructor. 
+function Zec(tip = "непознат") {
+    this.tip = tip;
 
-The constructor will have its this variable bound to a fresh object, and unless it explicitly returns 
-another object value, this new object will be returned from the call.
-
-An object created with new is said to be an instance of its constructor.
-
-It is a convention to capitalize the names of constructors so that they are easily distinguished 
-from other functions.
-
-Here is a simple constructor for rabbits. 
-*/
-
-function Rabbit(type) {
-    this.type = type;
+    this.govori = function (tekst) {
+        console.log("Овај зец " + this.tip + " каже '" +
+            tekst + "'");
+    }
 }
 
-var killerRabbit = new Rabbit("killer");
-var blackRabbit = new Rabbit("black");
+let zec = new Zec();
+zec.govori("Ко сам ја?");
+// >>> Овај зец непознат каже 'Ко сам ја?'
 
-console.log(blackRabbit.type);
-// → black
+let zecUbica = new Zec("убица");
+zecUbica.govori("Готов си!");
+// >>> Овај зец убица каже 'Готов си!
 
+let zecDebeljuca = new Zec("дебељуца");
+zecDebeljuca.govori("Баш сам гладан!");
+// >>> Овај зец дебељуца каже 'Баш сам гладан!'

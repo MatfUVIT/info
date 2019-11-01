@@ -14,24 +14,24 @@ of objects, while letting the nonexceptional objects simply take a standard valu
 from their prototype.
 */
 
-function Rabbit(type) {
-    this.type = type;
+function Zec(tip) {
+    this.tip = tip;
 }
 
-var killerRabbit = new Rabbit("killer");
-var blackRabbit = new Rabbit("black");
+let zecUbica = new Zec("ubica");
+let crniZec = new Zec("crni");
 
-Rabbit.prototype.teeth = "small";
+Zec.prototype.zubi = "mali";
 
-console.log(killerRabbit.teeth);
-// → small
+console.log(zecUbica.zubi);
+// >>> mali
 
-killerRabbit.teeth = "long, sharp, and bloody";
-console.log(killerRabbit.teeth);
-// → long, sharp, and bloody
+zecUbica.zubi = "dugi, ostri i krvavi";
+console.log(zecUbica.zubi);
+// >>> dugi, ostri i krvavi
 
-console.log(blackRabbit.teeth);
-// → small
+console.log(crniZec.zubi);
+// >>> mali
 
-console.log(Rabbit.prototype.teeth);
-// → small
+console.log(Zec.prototype.zubi);
+// >>> mali
