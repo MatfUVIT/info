@@ -8,10 +8,6 @@
 
 ## 2.1 Teme
 
-- Poglavlje 1. Struktuiranje Veb dokumenata kroz HTML
-
-   - Sekcija 6. Slike
-
 - Poglavlje 2. Stilizovanje Veb dokumenata kroz CSS
 
    - Sekcija 5. Model kutije
@@ -19,8 +15,6 @@
    - Sekcija 6. Koordinatni sistemi veb pregledača
 
    - Sekcija 7. Pozicioniranje elemenata
-
-   - Sekcija 8. Slike
 
 ## 2.2 Domaći zadaci
 

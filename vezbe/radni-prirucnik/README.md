@@ -19,6 +19,10 @@ Autori:
 
 ### [Sedmica 3](./Poglavlja/Sedmica3/README.md)
 
+### [Sedmica 4](./Poglavlja/Sedmica4/README.md)
+
+### [Sedmica 5](./Poglavlja/Sedmica5/README.md)
+
 -----
 
 [Vežbe](../README.md)

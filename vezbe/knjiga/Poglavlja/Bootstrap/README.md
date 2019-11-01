@@ -244,10 +244,15 @@ Vrednosti za širinu ili visinu ne moraju isključivo biti ograničene samo odoz
 <html>
 		<head> 
 		<title> Primer 3 </title>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<link rel="stylesheet" type="text/css" media="screen and (max-width: 499px)" href="small_devices.css"> 	
-		<style type="text/css">
+        
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, 
+        initial-scale=1">
+        
+        <link rel="stylesheet" type="text/css" media="screen and 
+        (max-width: 499px)" href="small_devices.css"> 	
+        
+        <style type="text/css">
 			div{
 				width: 100px;
 				height: 100px;
@@ -255,7 +260,8 @@ Vrednosti za širinu ili visinu ne moraju isključivo biti ograničene samo odoz
 				box-sizing: border-box;
 			}
 
-			@media screen and (min-width: 500px) and (max-width:999px){
+			@media screen and (min-width: 500px) and 
+            (max-width:999px){
 				div{
 					background-color: green; 
 				}
@@ -338,7 +344,8 @@ U narednom primeru možemo videti jedan način organizovanja stranice pomoću bo
     <head>       
         <title> Primer 4 </title>
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="viewport" content="width=device-width, 
+        initial-scale=1.0">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
         <style>
             #header{
@@ -377,16 +384,23 @@ U narednom primeru možemo videti jedan način organizovanja stranice pomoću bo
     <body>
         <div class="container-fluid">
             <div class="row">
-               <div id="header" class="col-12 col-sm-12 col-md-12 col-lg-12"></div>
+               <div id="header" class="col-12 col-sm-12 col-md-12 
+               col-lg-12">
+               </div>
             </div>
             <div class="row">
-                <div id="nav" class="col-sm-3 col-md-3 col-lg-3"> </div>
-                <div id="col1" class="col-sm-3 col-md-3 col-lg-3"> </div>
-                <div id="col2" class="col-sm-3"> </div>
-                <div id="col3" class="col-sm-3"> </div>
+                <div id="nav" class="col-sm-3 col-md-3 col-lg-3"> 
+                </div>
+                <div id="col1" class="col-sm-3 col-md-3 col-lg-3"> 
+                </div>
+                <div id="col2" class="col-sm-3">
+                </div>
+                <div id="col3" class="col-sm-3"> 
+                </div>
             </div>
             <div class="row">
-                <div id="footer" class="col-12"> </div>
+                <div id="footer" class="col-12">
+                </div>
             </div>
         </div>
     </body>
@@ -420,7 +434,8 @@ Postoje i posebne klase za kontrolu razmaka između elemenata, odnosno za kontro
   <head>
     <title> Primer 5 </title>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, 
+    initial-scale=1">
     <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <style type="text/css">     
       header{
@@ -450,13 +465,15 @@ Postoje i posebne klase za kontrolu razmaka između elemenata, odnosno za kontro
         	<h1 class="h1 text-center"> Naslov 1 </h1>
         </header>
         
-        <header class="col-sm-6 col-md-6 col-lg-6 offset-sm-2 offset-md-2 offset-lg-2"> 
+        <header class="col-sm-6 col-md-6 col-lg-6 offset-sm-2 
+        offset-md-2 offset-lg-2"> 
           <h1 class="h1 text-center"> Naslov 2 </h1>
         </header>
       </div>
       
       <div class="row" >
-        <main class="col-sm-10 col-md-10 col-lg-10 offset-sm-1 offset-md-1 offset-lg-1" > 
+        <main class="col-sm-10 col-md-10 col-lg-10 offset-sm-1 
+        offset-md-1 offset-lg-1" > 
           Glavni sadržaj 
         </main>
       </div>
@@ -496,7 +513,7 @@ Bootstrap definiše nova svojstva za elemente `h1` do `h6` i sadrži klase sa is
 
 Podržan je prikaz jednolinijskih i višelinijskih kodova. Više na tu temu pogledajte [ovde](https://getbootstrap.com/docs/4.3/content/code).
 
-Slike prilagodljivog dizajna se lako mogu podesiti pomoću klasa bootstrap biblioteke. Pored prilagodljivog dizajna, definisane su još neke klase za stilizovanje okvira slika, njihovo horizontalno poravnanje, itd. Više o tome na (ovoj adresi)[https://getbootstrap.com/docs/4.3/content/images/] Dodatna stilizovanja za `<figure>` možete naći [ovde](https://getbootstrap.com/docs/4.3/content/figures/). 
+Slike prilagodljivog dizajna se lako mogu podesiti pomoću klasa bootstrap biblioteke. Pored prilagodljivog dizajna, definisane su još neke klase za stilizovanje okvira slika, njihovo horizontalno poravnanje, itd. Više o tome na [ovoj adresi](https://getbootstrap.com/docs/4.3/content/images/) Dodatna stilizovanja za `<figure>` možete naći [ovde](https://getbootstrap.com/docs/4.3/content/figures/). 
 
 Bootstrap sadrži i bogatu podršku za [stilizovanje tabela](https://getbootstrap.com/docs/4.3/content/tables/). Tu su posebna podešavanja za ćelije zaglavlja, svetla i tamna tema, naizmenično obojeni redovi, kontrola okvira i prilagodljiv dizajn tabele. 
 
@@ -537,7 +554,8 @@ Naredni primer ilustruje primenu bootstrap klasa na formular iz primera 23:
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, 
+    initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <title> Primer 6 </title>
 </head>
@@ -548,17 +566,20 @@ Naredni primer ilustruje primenu bootstrap klasa na formular iz primera 23:
 
             <div class="form-group">
                 <label for="username">Korisničko ime*:</label>
-                <input id="username" class="form-control" type="text" name="korisnicko_ime" maxlength="20" required>
+                <input id="username" class="form-control" type="text" 
+                name="korisnicko_ime" maxlength="20" required>
             </div>
             
             <div class="form-group">
                 <label for="sifra1">Šifra*:</label>
-                <input id="sifra1" class="form-control" name="sifra1" type="password" placeholder="Sifra..." required>
+                <input id="sifra1" class="form-control" name="sifra1" 
+                type="password" placeholder="Sifra..." required>
             </div>
 
             <div class="form-group">
                 <label for="sifra2">Ponovi šifru*:</label>
-                <input id="sifra2" class="form-control" name="sifra2" type="password" required>
+                <input id="sifra2" class="form-control" name="sifra2" 
+                type="password" required>
             </div>
         </fieldset> 
 
@@ -567,28 +588,43 @@ Naredni primer ilustruje primenu bootstrap klasa na formular iz primera 23:
             Pol:
         
             <div class="form-check form-check-inline">
-                <input type="radio" id="pol_m" class="form-check-input" name="pol" value="musko" checked> 
-                <label for="pol_m" class="form-check-label"> Muško </label>
+                <input type="radio" id="pol_m" 
+                class="form-check-input" name="pol" value="musko" 
+                checked> 
+                <label for="pol_m" class="form-check-label"> 
+                    Muško 
+                </label>
             </div>
             <div class="form-check form-check-inline">
-                <input type="radio" id="pol_z" class="form-check-input" name="pol" value="zensko"> 
-                <label for="pol_z" class="form-check-label"> Žensko </label>
+                <input type="radio" id="pol_z" 
+                class="form-check-input" name="pol" value="zensko"> 
+                <label for="pol_z" class="form-check-label"> 
+                    Žensko 
+                </label>
             </div>
             <div class="form-check form-check-inline">
-                <input type="radio" id="pol_n" class="form-check-input" name="pol" value="-"> 
-                <label for="pol_n" class="form-check-label"> Odbijam da se izjasnim </label>
+                <input type="radio" id="pol_n" 
+                class="form-check-input" name="pol" value="-"> 
+                <label for="pol_n" class="form-check-label"> 
+                    Odbijam da se izjasnim 
+                </label>
             </div>
         </div>
 
         <div class="form-check form-check-inline">
-            <input type="checkbox" id="vesti" class="form-check-input"  name="vesti" value="vesti"> 
-            <label for="vesti" class="form-check-label"> Želim da primam vesti</label>
+            <input type="checkbox" id="vesti" 
+            class="form-check-input"  name="vesti" value="vesti"> 
+            <label for="vesti" class="form-check-label"> 
+                Želim da primam vesti
+            </label>
         </div>
 
         
         <div class="form-group text-center">
-            <input type="submit" value="Registruj se!" class="btn btn-outline-success btn-lg">
-            <input type="reset" value="Poništi unos!" class="btn btn-danger btn-sm">
+            <input type="submit" value="Registruj se!" class="btn 
+            btn-outline-success btn-lg">
+            <input type="reset" value="Poništi unos!" class="btn 
+            btn-danger btn-sm">
         </div>
     </form>
 </body>

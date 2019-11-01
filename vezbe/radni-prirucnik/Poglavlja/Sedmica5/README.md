@@ -4,7 +4,7 @@
 
 -----
 
-# 4. Sedmica 5
+# 5. Sedmica 5
 
 ## 5.1 Teme
 
