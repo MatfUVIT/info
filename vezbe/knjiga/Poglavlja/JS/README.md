@@ -29,11 +29,11 @@
     }
 </script>
 
-# 3. Programski jezik JavaScript
+# 4. Programski jezik JavaScript
 
 *JavaScript* predstavlja trenutno najpopularniji jezik za programiranje klijentskih aplikacija na vebu, ali njegova upotreba postaje sve popularnija i u savremenim razvojnim okruženjima za kreiranje serverskih aplikacija na vebu. S obzirom da on predstavlja osnovni alat za izgradnju dinamičkih veb stranica i serverskih aplikacija u ovoj knjizi, u ovom poglavlju ćemo se upoznati sa osnovnim elementima ovog programskog jezika. Pretpostavka je da je čitalac upoznat sa programskim jezikom C ili nekim drugim višim programskim jezikom.
 
-## 3.1 Izvršavanje JavaScript koda
+## 4.1 Izvršavanje JavaScript koda
 
 Pre nego što započnemo diskusiju o sintaksi i semantici programskog jezika JavaScript, potrebno je da razumemo kako je moguće da izvršimo izvorni kod koji budemo napisali. Postoji mnogo načina, a jedan od njih je putem veb pregledača. 
 
@@ -93,7 +93,7 @@ Svi primeri u ovom poglavlju su organizovani tako da sadrže datoteku `index.htm
 
 U oba slučaja će veb pregledač, čim naiđe na element `script`, proslediti JavaScript kod JavaScript interpreteru koji taj kod odmah izvršava. Ovo je važna napomena koju uvek treba imati na umu. Ako postoji JavaScript kod koji menja neki deo veb stranice, onda je potrebno da je taj deo stranice definisan u HTML kodu pre tog JavaScript koda. U suprotnom, može doći do pojave grešaka.
 
-## 3.2 Osnovni elementi jezika
+## 4.2 Osnovni elementi jezika
 
 Ova sekcija je posvećena prikazivanju osnovnih elemenata jezika JavaScript, kao što su tipovi podataka, literali, definisanju promenljivih, ispisivanju vrednosti u konzoli i poređenju vrednosti po jednakosti.
 
@@ -200,7 +200,7 @@ Prikaz konzole za primer 3:
 <script>pregazi_console(3);</script>
 <script src="./Primeri/3/index.js"></script>
 
-## 3.3 Rad sa brojevima i niskama
+## 4.3 Rad sa brojevima i niskama
 
 U ovoj sekciji ćemo demonstrirati osnovni rad sa brojevima i niskama kroz nekoliko zadataka. Podsetimo se da svi brojevi imaju tip `'number'` dok niske imaju tip `'string'`.
 
@@ -467,7 +467,7 @@ console.log(`Vrednost izraza 2 + 2 je ${2 + 2}`); // 'Vrednost izraza 2 + 2 je 4
     })();
 </script>
 
-## 3.4 Rad sa funkcijama, nedostajućim vrednostima i kontrolama toka izbora
+## 4.4 Rad sa funkcijama, nedostajućim vrednostima i kontrolama toka izbora
 
 U ovoj sekciji ćemo demonstrirati osnovni rad sa funkcijama, nedostajućim vrednostima i kontrolama toka izbora kroz nekoliko zadataka.
 
@@ -618,7 +618,7 @@ pozovi_funkciju_sa_argumentom(nesto_sto_nije_funkcija, 'arg');
     })();
 </script>
 
-## 3.5 Rad sa nizovima i ponavljajucim kontrolama toka
+## 4.5 Rad sa nizovima i ponavljajućim kontrolama toka
 
 U ovoj sekciji ćemo demonstrirati osnovni rad sa nizovima kao sekvencijalnom strukturom podataka i ponavljajućim kontrolama toka kroz nekoliko zadataka.
 
@@ -1044,7 +1044,7 @@ console.log('Da li su nizovi jednaki?', da_li_su_jednaki(niz1, niz2));
 })();
 </script>
 
-## 3.6 Rad sa objektima
+## 4.6 Rad sa objektima
 
 U ovoj sekciji ćemo demonstrirati osnovni rad sa objektima kroz nekoliko zadataka. Pre toga, uvedimo formalno koncept objekata u programskom jeziku JavaScript.
 

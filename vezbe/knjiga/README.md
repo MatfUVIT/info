@@ -131,6 +131,34 @@ Autori:
 
    2. [Stilizovanje elemenata forme](./Poglavlja/Bootstrap/README.md#352-stilizovanje-elemenata-forme){:target="_blank"}
 
+## Deo 2 - Programiranje veb aplikacija
+
+### [Poglavlje 4. Programski jezik JavaScript](./Poglavlja/JS/README.md){:target="_blank"}
+
+1. [Izvršavanje JavaScript koda](./Poglavlja/JS/README.md#41-izvršavanje-javascript-koda){:target="_blank"}
+
+2. [Osnovni elementi jezika](./Poglavlja/JS/README.md#42-osnovni-elementi-jezika){:target="_blank"}
+
+3. [Rad sa brojevima i niskama](./Poglavlja/JS/README.md#43-rad-sa-brojevima-i-niskama){:target="_blank"}
+
+4. [Rad sa funkcijama, nedostajućim vrednostima i kontrolama toka izbora](./Poglavlja/JS/README.md#44-rad-sa-funkcijama-nedostajućim-vrednostima-i-kontrolama-toka-izbora){:target="_blank"}
+
+5. [Rad sa nizovima i ponavljajućim kontrolama toka](./Poglavlja/JS/README.md#45-rad-sa-nizovima-i-ponavljajućim-kontrolama-toka){:target="_blank"}
+
+6. [Rad sa objektima](./Poglavlja/JS/README.md#46-rad-sa-objektima){:target="_blank"}
+
+## Deo 3 - Programiranje klijentskih veb aplikacija
+
+### Poglavlje 5. JavaScript i DOM
+
+### Poglavlje 6. Biblioteka jQuery
+
+## Deo 4 - Programiranje serverskih veb aplikacija
+
+### Poglavlje 7. Node.js i Express.js
+
+### Poglavlje 8. MongoDB baza podataka i Mongoose.js ORM
+
 -----
 
 [Vežbe](../README.md)
