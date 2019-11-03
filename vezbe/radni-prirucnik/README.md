@@ -23,6 +23,10 @@ Autori:
 
 ### [Sedmica 5](./Poglavlja/Sedmica5/README.md)
 
+## Deo 2 - Programiranje veb aplikacija
+
+### [Sedmica 6](./Poglavlja/Sedmica6/README.md)
+
 -----
 
 [Vežbe](../README.md)
