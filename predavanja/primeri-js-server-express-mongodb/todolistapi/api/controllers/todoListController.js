@@ -1,8 +1,7 @@
 'use strict';
 
-console.log("uspesno ucitao todoListController")
 
-let mongoose = require('mongoose'),
+var mongoose = require('mongoose'),
   Task = mongoose.model('Tasks');
 
 exports.list_all_tasks = function(req, res) {
@@ -12,6 +11,8 @@ exports.list_all_tasks = function(req, res) {
     res.json(task);
   });
 };
+
+
 
 
 exports.create_a_task = function(req, res) {
@@ -41,7 +42,9 @@ exports.update_a_task = function(req, res) {
   });
 };
 
+
 exports.delete_a_task = function(req, res) {
+
 
   Task.remove({
     _id: req.params.taskId

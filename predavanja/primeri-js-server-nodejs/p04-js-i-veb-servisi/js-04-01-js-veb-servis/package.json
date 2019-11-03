@@ -1,0 +1,11 @@
+{
+  "name": "js-04-01-js-veb-servis",
+  "version": "1.0.0",
+  "description": "",
+  "main": "veb-servis.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
