@@ -249,14 +249,14 @@ console.log('Generisani broj iz celobrojnog intervala [50, 150) je:', generisani
 })();
 </script>
 
-> Zadatak 3: Date su tri reči zapisane kao niske: `'Ovo'`, `'je'` i `'recenica'`.
-&nbsp;&nbsp;&nbsp;a. Spojiti date reči u jednu rečenicu (nisku) sa razmacima između reči i ispisati je u konzoli.
-&nbsp;&nbsp;&nbsp;b. Ispisati u konzoli broj karaktera u rečenici.
-&nbsp;&nbsp;&nbsp;c. Pronaći poziciju podniske `'recenica'` u rečenici. Pronaći poziciju podniske `'nepostojeca niska'`. Ispisati ove pozicije u konzoli.
-&nbsp;&nbsp;&nbsp;d. Ispisati podnisku rečenice koja se nalazi na poziciji `7` do kraja niske.
-&nbsp;&nbsp;&nbsp;e. Ispisati u konzoli novu rečenicu koja se dobija tako što se podniska `'recenica'` zamenjuje podniskom `'nesto duza recenica'`.
-&nbsp;&nbsp;&nbsp;f. Ispisati u konzoli niske koje se dobijaju kada se sva slova u rečenici pretvore u velika, odnosno, mala slova.
-&nbsp;&nbsp;&nbsp;g. Ispisati u konzoli rečenicu koja se dobija tako što se početnoj rečenici dodaju karakteri belina na početak i kraj. Ispisati u konzoli rečenicu koja se dobija tako što se kreiranoj rečenici ukidaju beline sa početka i kraja.
+> Zadatak 3: Date su tri reči zapisane kao niske: `'Ovo'`, `'je'` i `'recenica'`.<br>
+&nbsp;&nbsp;&nbsp;a. Spojiti date reči u jednu rečenicu (nisku) sa razmacima između reči i ispisati je u konzoli.<br>
+&nbsp;&nbsp;&nbsp;b. Ispisati u konzoli broj karaktera u rečenici.<br>
+&nbsp;&nbsp;&nbsp;c. Pronaći poziciju podniske `'recenica'` u rečenici. Pronaći poziciju podniske `'nepostojeca niska'`. Ispisati ove pozicije u konzoli.<br>
+&nbsp;&nbsp;&nbsp;d. Ispisati podnisku rečenice koja se nalazi na poziciji `7` do kraja niske.<br>
+&nbsp;&nbsp;&nbsp;e. Ispisati u konzoli novu rečenicu koja se dobija tako što se podniska `'recenica'` zamenjuje podniskom `'nesto duza recenica'`.<br>
+&nbsp;&nbsp;&nbsp;f. Ispisati u konzoli niske koje se dobijaju kada se sva slova u rečenici pretvore u velika, odnosno, mala slova.<br>
+&nbsp;&nbsp;&nbsp;g. Ispisati u konzoli rečenicu koja se dobija tako što se početnoj rečenici dodaju karakteri belina na početak i kraj. Ispisati u konzoli rečenicu koja se dobija tako što se kreiranoj rečenici ukidaju beline sa početka i kraja.<br>
 &nbsp;&nbsp;&nbsp;h. Ispisati u konzoli prvi i poslednji karakter rečenice.
 
 ```js
