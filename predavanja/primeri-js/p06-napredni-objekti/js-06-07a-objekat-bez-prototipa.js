@@ -1,29 +1,26 @@
-/*
-We saw the Object.create function, which allows us to create an object with a specific prototype. 
+let mapa = Object.create(null);
 
-You are allowed to pass null as the prototype to create a fresh object with no prototype. 
+const smesti = function (kljuc, vrednost) {
+  mapa[kljuc] = vrednost;
+}
 
-For objects like map, where the properties could be anything, this is exactly what we want:
-*/
+smesti("olovka", 0.069);
+smesti("sveska", -0.081);
 
-var map = Object.create(null);
-map["pizza"] = 0.069;
-map["touched tree"] = -0.081;
+Object.prototype.nesto = "bez veze!";
 
-console.log("toString" in map);
-// → false
+console.log("nesto" in mapa);
+//>>> false
 
-console.log("pizza" in map);
-// → true
+console.log("toString" in mapa);
+//>>> false
 
-/*
- We no longer need the hasOwnProperty kludge because all the properties the object has are its own 
- properties. 
- 
- Now we can safely use for/in loops, no matter what people have been doing to Object.prototype.
-*/
+console.log("sveska" in mapa);
+//>>> true
 
-for (var name in map)
-  console.log(name);
-// → pizza
-// → touched tree
+for (let kljuc in mapa)
+  console.log(kljuc);
+//>>> olovka
+//>>> sveska
+
+delete Object.prototype.nesto;

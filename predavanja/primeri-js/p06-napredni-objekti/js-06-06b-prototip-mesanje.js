@@ -1,27 +1,24 @@
-var map = {};
-function storePhi(event, phi) {
-  map[event] = phi;
+let mapa = {};
+
+const smesti = function(kljuc, vrednost) {
+  mapa[kljuc] = vrednost;
 }
 
-storePhi("pizza", 0.069);
-storePhi("touched tree", -0.081);
+smesti("olovka", 0.069);
+smesti("sveska", -0.081);
 
-/*
-We can iterate over all phi values in the object using a for/in loop and test whether a 
-name is in there using the regular in operator. 
+Object.prototype.nesto = "bez veze!";
 
-But unfortunately, the object’s prototype gets in the way.
-*/
-Object.prototype.nonsense = "hi";
-for (var name in map)
-  console.log(name);
-// → pizza
-// → touched tree
-// → nonsense
-console.log("nonsense" in map);
-// → true
-console.log("toString" in map);
-// → true
+for (let kljuc in mapa)
+  console.log(kljuc);
+//>>> olovka
+//>>> sveska
+//>>> nesto
 
-// Delete the problematic property again
-delete Object.prototype.nonsense;
+console.log("nesto" in mapa);
+//>>> true
+
+console.log("toString" in mapa);
+//>>> true
+
+delete Object.prototype.nesto;

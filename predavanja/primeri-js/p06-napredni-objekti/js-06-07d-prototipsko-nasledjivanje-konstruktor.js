@@ -5,13 +5,13 @@ function Zec(tip = "непознат", boja = "непознатa") {
 }
 
 Zec.prototype.predstaviSe = function () {
-    console.log("Зец: " + this.tip + " боја: " + this.boja + "."+ "'\n");
-}
+    console.log("Зец: " + this.tip + " боја: " + this.boja + "." + "'\n");
+};
 
 Zec.prototype.govori = function (tekst) {
     console.log("Овај зец " + this.tip + " боје " + this.boja
-        + " каже '" + tekst + "'"+ "'\n");
-}
+        + " каже '" + tekst + "'" + "\n");
+};
 
 let zec = new Zec();
 zec.predstaviSe();
@@ -27,18 +27,19 @@ function ZecIzFikcije(tip, boja, ime,
     this.kreator = { "ime": imeKreatora, "prezime": prezimeKreatora };
     this.delo = delo;
     this.uzrecica = uzrecica;
-
-    this.predstaviSe = function () {
-        console.log("Зец: " + this.tip + ", боја: " + this.boja + ", име: " + this.ime + "\n"
-            + "креатор: " + this.kreator.ime + " " + this.kreator.prezime + "\n"
-            + "дело: " + this.delo + "\n"
-            + "узречица: '" + this.uzrecica + "'\n");
-    }
 }
 
 ZecIzFikcije.prototype = Object.create(Zec.prototype);
 
-ZecIzFikcije.prototype.skoci = function(){
+ZecIzFikcije.prototype.predstaviSe = function () {
+    console.log("Зец: " + this.tip + ", боја: " + this.boja + ", име: "
+        + this.ime + "\n"
+        + "креатор: " + this.kreator.ime + " " + this.kreator.prezime + "\n"
+        + "дело: " + this.delo + "\n"
+        + "узречица: '" + this.uzrecica + "'\n");
+};
+
+ZecIzFikcije.prototype.skoci = function () {
     console.log("Скок, скок, скок \n");
 };
 
@@ -62,4 +63,4 @@ plaviZec.predstaviSe();
 // >>> дело: Плави зец
 // >>> узречица: 'Плави, зец, чудни зец, једини на свету.'
 plaviZec.govori(plaviZec.uzrecica);
-// >>> Овај зец веома паметан боје плава каже 'Плави, зец, чудни зец, једини на свету.''
+// >>> Овај зец веома паметан боје плава каже 'Плави, зец, чудни зец, једини на свету.'

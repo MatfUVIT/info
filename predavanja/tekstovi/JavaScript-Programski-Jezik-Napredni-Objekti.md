@@ -319,33 +319,194 @@ tackaE.prikazi();
 
 &#9608;
 
+#### Прототипови за предефинисане типове
+
+**Пример.** Илуструје, како се може мењати прототип предефинисаних класа и како се приликом итерирања кроз особине објекта коришћњењм `for`-`in` циклуса, излиставају и особине које су дефинисане у прототипу:
+
+```js
+let mapa = {};
+
+const smesti = function(kljuc, vrednost) {
+  mapa[kljuc] = vrednost;
+}
+
+smesti("olovka", 0.069);
+smesti("sveska", -0.081);
+
+Object.prototype.nesto = "bez veze!";
+
+for (let kljuc in mapa)
+  console.log(kljuc);
+//>>> olovka
+//>>> sveska
+//>>> nesto
+
+console.log("nesto" in mapa);
+//>>> true
+
+console.log("toString" in mapa);
+//>>> true
+
+delete Object.prototype.nesto;
+```
+
+Из претходног примера се јасно види, да се прототиповима може манипулисати на исти начин као што се манипулише са "нормалним" објектима, као то да сваки објекат може приступати исвим елементима који су дефинисани у оквиру његовог прототипа. &#9608;
+
+Јасно је да постоји потреба за механизмом којим се може утврдити да ли нека особина припада објекту преко кога се реферише, или је дефинисана у одговарајућем прототипу. Стога је у оквиру типа `Object` дефинисана метода `hasOwnProperty`, која проверава да ли објекат садржи дату особину, али без консуловања прототипова.
+
+**Пример.** Илуструје, како се приликом итерирања кроз особине објекта коришћњењм `for`-`in` циклуса, излиставају само оне особине које су дефинисане у објекту:
+
+```js
+let mapa = {};
+
+const smesti = function (kljuc, vrednost) {
+  mapa[kljuc] = vrednost;
+}
+
+Object.prototype.nesto = "bez veze!";
+
+smesti("olovka", 0.069);
+smesti("sveska", -0.081);
+
+console.log("nesto" in mapa);
+//>>> true
+console.log(mapa.hasOwnProperty("nesto"));
+//>>> false
+
+console.log("toString" in mapa);
+//>>> true
+console.log(mapa.hasOwnProperty("toString"));
+//>>> false
+
+for (let kljuc in mapa)
+  if (mapa.hasOwnProperty(kljuc))
+    console.log(kljuc);
+//>>> olovka
+//>>> sveska
+
+delete Object.prototype.nesto;
+```
+
+&#9608;
+
+Као што се у претходним примерима маогло видети, предефинисана функција `Object.create` омогућује креирање објеката са датим прототипом (прослеђеним као аргуменат функције). Могуће је, приликом креирања објекта на овај начин, проследити и вредност  `null` за прототип и на тај начин креирати нови објеакт без прототипа.
+
+**Пример.** Илуструје како се објекат који нема прототип може користити за чување парова кључ-вредност:
+
+```js
+let mapa = Object.create(null);
+
+const smesti = function (kljuc, vrednost) {
+  mapa[kljuc] = vrednost;
+}
+
+smesti("olovka", 0.069);
+smesti("sveska", -0.081);
+
+Object.prototype.nesto = "bez veze!";
+
+console.log("nesto" in mapa);
+//>>> false
+
+console.log("toString" in mapa);
+//>>> false
+
+console.log("sveska" in mapa);
+//>>> true
+
+for (let kljuc in mapa)
+  console.log(kljuc);
+//>>> olovka
+//>>> sveska
+
+delete Object.prototype.nesto;
+```
+
+ У горњем коду нема више потребе да се користи метод `hasOwnProperty`, јер су све оособине особине баш тог објекта, па се може користити `for`-`in` циклус, без обзира на то шта се у међувремену радило са `Object.prototype`.  &#9608;
+
 #### Прототипско наслеђивање
 
 **Пример.** Илуструје прототписко наслеђивање, на примеру објеката који представљају зечеве:
 
 ```js
+let zecPrototip = {
+    tip: "непознат",
+
+    boja: "непознатa",
+
+    predstaviSe: function () {
+        console.log("Зец: " + this.tip + " боја: " + this.boja + "." + "'\n");
+    },
+
+    govori: function (tekst) {
+        console.log("Овај зец " + this.tip + " боје " + this.boja
+            + " каже '" + tekst + "'" + "\n");
+    }
+};
+
+let zec = Object.create(zecPrototip);
+zec.predstaviSe();
+// >>> Зец: непознат боја: непознатa.
+zec.govori("Ко сам ја?");
+// >>> Овај зец непознат боје непознатa каже 'Ко сам ја?'
+
+let zecIzFikcijePrototip = Object.create(zecPrototip);
+
+zecIzFikcijePrototip.tip = "непознат";
+zecIzFikcijePrototip.boja = "непозната";
+
+zecIzFikcijePrototip.predstaviSe = function () {
+    console.log("Зец: " + this.tip + ", боја: " + this.boja + ", име: " + this.ime + "\n"
+        + "креатор: " + this.kreator.ime + " " + this.kreator.prezime + "\n"
+        + "дело: " + this.delo + "\n"
+        + "узречица: '" + this.uzrecica + "'\n");
+}
+
+let duskoDugousko = Object.create(zecIzFikcijePrototip);
+duskoDugousko.tip = "паметан";
+duskoDugousko.boja = "сива";
+duskoDugousko.ime = "Душко Дугоушко";
+duskoDugousko.kreator = { "ime": "Tex", "prezime": "Avery" };
+duskoDugousko.delo = "A Wild Hare";
+duskoDugousko.uzrecica = "Шефе, који ти је враг?";
+duskoDugousko.predstaviSe();
+// >>> Зец: паметан, боја: сива, име: Душко Дугоушко
+// >>> креатор: Tex Avery
+// >>> дело: A Wild Hare
+// >>> узречица: 'Шефе, који ти је враг?'
+let plaviZec = Object.create(zecIzFikcijePrototip);
+plaviZec.tip = "веома паметан";
+plaviZec.boja = "плава";
+plaviZec.ime =  "Плави ѕец";
+plaviZec.kreator = { "ime": "Душко", "prezime": "Радовић" };
+plaviZec.delo = "Плави зец";
+plaviZec.uzrecica = "Плави, зец, чудни зец, једини на свету.";
+plaviZec.predstaviSe();
+// >>> Зец: веома паметан, боја: плава, име: Плави ѕец
+// >>> креатор: Душко Радовић
+// >>> дело: Плави зец
+// >>> узречица: 'Плави, зец, чудни зец, једини на свету.'
 ```
 
 &#9608;
 
-**Пример.** Илуструје прототписко наслеђивање са контрукторима, на примеру објеката који представљају зечеве:
+**Пример.** Илуструје прототписко наслеђивање са конструкторима, на примеру објеката који представљају зечеве:
 
 ```js
 function Zec(tip = "непознат", boja = "непознатa") {
 
     this.tip = tip;
     this.boja = boja;
-
-    this.predstaviSe = function () {
-        console.log("Зец: " + this.tip + " боја: " + this.boja + "."+ "'\n");
-    }
-
-    this.govori = function (tekst) {
-        console.log("Овај зец " + this.tip + " боје " + this.boja
-            + " каже '" + tekst + "'"+ "'\n");
-    }
-
 }
+
+Zec.prototype.predstaviSe = function () {
+    console.log("Зец: " + this.tip + " боја: " + this.boja + "." + "'\n");
+};
+
+Zec.prototype.govori = function (tekst) {
+    console.log("Овај зец " + this.tip + " боје " + this.boja
+        + " каже '" + tekst + "'" + "\n");
+};
 
 let zec = new Zec();
 zec.predstaviSe();
@@ -361,12 +522,144 @@ function ZecIzFikcije(tip, boja, ime,
     this.kreator = { "ime": imeKreatora, "prezime": prezimeKreatora };
     this.delo = delo;
     this.uzrecica = uzrecica;
+}
 
-    this.predstaviSe = function () {
-        console.log("Зец: " + this.tip + ", боја: " + this.boja + ", име: " + this.ime + "\n"
+ZecIzFikcije.prototype = Object.create(Zec.prototype);
+
+ZecIzFikcije.prototype.predstaviSe = function () {
+    console.log("Зец: " + this.tip + ", боја: " + this.boja + ", име: "
+        + this.ime + "\n"
+        + "креатор: " + this.kreator.ime + " " + this.kreator.prezime + "\n"
+        + "дело: " + this.delo + "\n"
+        + "узречица: '" + this.uzrecica + "'\n");
+};
+
+ZecIzFikcije.prototype.skoci = function () {
+    console.log("Скок, скок, скок \n");
+};
+
+let duskoDugousko = new ZecIzFikcije("паметан", "сива", "Душко Дугоушко",
+    "Tex", "Avery", "A Wild Hare", "Шефе, који ти је враг?");
+duskoDugousko.predstaviSe();
+// >>> Зец: паметан, боја: сива, име: Душко Дугоушко
+// >>> креатор: Tex Avery
+// >>> дело: A Wild Hare
+// >>> узречица: 'Шефе, који ти је враг?'
+duskoDugousko.govori(duskoDugousko.uzrecica);
+// >>> Овај зец паметан боје сива каже 'Шефе, који ти је враг?''
+duskoDugousko.skoci();
+// >>> Скок, скок, скок
+
+let plaviZec = new ZecIzFikcije("веома паметан", "плава", "Плави ѕец",
+    "Душко", "Радовић", "Плави зец", "Плави, зец, чудни зец, једини на свету.");
+plaviZec.predstaviSe();
+// >>> Зец: веома паметан, боја: плава, име: Плави ѕец
+// >>> креатор: Душко Радовић
+// >>> дело: Плави зец
+// >>> узречица: 'Плави, зец, чудни зец, једини на свету.'
+plaviZec.govori(plaviZec.uzrecica);
+// >>> Овај зец веома паметан боје плава каже 'Плави, зец, чудни зец, једини на свету.'
+```
+
+&#9608;
+
+#### Прототипско наслеђивање за предефинисане типове
+
+**Пример.** Илуструје да је прототписко наслеђивање примењено у предефинисаним типивима, чиме је потсигнуто да стандардна уграђена функција `toString` има другачије понашање када се примени на објекат, у односу на њено понашање када се примени на низ:
+
+```js
+console.log(Array.prototype.toString ==
+    Object.prototype.toString);
+//>>> false
+
+console.log([1, 2].toString());
+//>>> 1,2
+
+console.log(Object.prototype.toString.call([1, 2]));
+//>>> [object Array]
+```
+
+&#9608;
+
+### Класе
+
+У великој мери се може сматрати да класе у ЈаваСкрипту представљају само додатну синтаксну олакшицу на претходно описано наслеђивање преко прототипа. На тај начин, програмери који су навикли да раде су језицима који подржавју класно наслеђивање имају лакши прелаз, односно мањи нагиб на кривој учења - ЈаваСКрипт код је наизглед сличнији коду сам који су они радили у другим програмским језицима.  
+
+**Пример.** Илуструје рад са класама, на примеру објеката који представљају зечеве:
+
+```js
+class Zec {
+
+    constructor(tip = "непознат", boja = "непознатa") {
+
+        this.tip = tip;
+        this.boja = boja;
+    }
+
+    govori(tekst) {
+        console.log("Овај зец " + this.tip + " боје " + this.boja
+            + " каже '" + tekst + "'" + "\n");
+    }
+
+    predstaviSe() {
+        console.log("Зец: " + this.tip + " боја: " + this.boja + "." + "'\n");
+    }
+}
+
+let zec = new Zec();
+zec.predstaviSe();
+zec.govori("Ko сам ја?");
+
+let duskoDugousko = new Zec("паметан", "сив");
+duskoDugousko.predstaviSe();
+duskoDugousko.govori("Који ти је враг, шефе?");
+```
+
+&#9608;
+
+**Пример.** Илуструје наслеђивање класа, на примеру објеката који представљају зечеве:
+
+```js
+class Zec {
+    constructor(tip = "непознат", boja = "непознатa") {
+        this.tip = tip;
+        this.boja = boja;
+    }
+
+    govori(tekst) {
+        console.log("Овај зец " + this.tip + " боје " + this.boja
+            + " каже '" + tekst + "'" + "\n");
+    }
+
+    predstaviSe() {
+        console.log("Зец: " + this.tip + " боја: " + this.boja + "." + "'\n");
+    }
+}
+
+let zec = new Zec();
+zec.predstaviSe();
+zec.govori("Ko сам ја?");
+class ZecIzFikcije extends Zec {
+    constructor(tip, boja, ime,
+        imeKreatora, prezimeKreatora, delo,
+        uzrecica) {
+        super(tip, boja);
+        this.ime = ime;
+        this.kreator = { "ime": imeKreatora, "prezime": prezimeKreatora };
+        this.delo = delo;
+        this.uzrecica = uzrecica;
+    }
+
+    predstaviSe() {
+        console.log("Зец: " + this.tip + ", боја: " + this.boja + ", име: "
+            + this.ime + "\n"
             + "креатор: " + this.kreator.ime + " " + this.kreator.prezime + "\n"
             + "дело: " + this.delo + "\n"
             + "узречица: '" + this.uzrecica + "'\n");
+    }
+
+    skoci() {
+        console.log("Скок, скок, скок \n");
     }
 }
 
@@ -377,6 +670,11 @@ duskoDugousko.predstaviSe();
 // >>> креатор: Tex Avery
 // >>> дело: A Wild Hare
 // >>> узречица: 'Шефе, који ти је враг?'
+duskoDugousko.govori(duskoDugousko.uzrecica);
+// >>> Овај зец паметан боје сива каже 'Шефе, који ти је враг?'
+duskoDugousko.skoci();
+// >>> Скок, скок, скок
+
 let plaviZec = new ZecIzFikcije("веома паметан", "плава", "Плави ѕец",
     "Душко", "Радовић", "Плави зец", "Плави, зец, чудни зец, једини на свету.");
 plaviZec.predstaviSe();
@@ -384,13 +682,39 @@ plaviZec.predstaviSe();
 // >>> креатор: Душко Радовић
 // >>> дело: Плави зец
 // >>> узречица: 'Плави, зец, чудни зец, једини на свету.'
+plaviZec.govori(plaviZec.uzrecica);
+// >>> Овај зец веома паметан боје плава каже 'Плави, зец, чудни зец, једини на свету.'
 ```
 
 &#9608;
 
-### Математички оператори
+### методи за постављање и читање особина
 
-### Класе
+ У језику ЈаваСкрипт се могу подесити елемнети, тако да, када се на објекат реферише из спољашњости, изгледа као да се ради са "нормланим" особинама, а да истовремено буду примењени методи објект који су придружени датој особини.
+
+**Пример.** Илуструје рад са методама за постављање и читање особина:
+
+```js
+const gomila = {
+  elementi: ["ljuska jajeta", "kora pomorandze", "crv", "stara novina"],
+  
+  get visina() {
+    return this.elementi.length;
+  },
+  
+  set visina(vrednost) {
+    console.log(`Pokusaj da visina gomile bude ${vrednost} je ignorisan.`);
+  }
+};
+
+console.log(gomila.visina);
+//>>> 4
+
+gomila.visina = 100;
+//>>> Pokusaj da visina gomile bude 100 je ignorisan.
+```
+
+&#9608;
 
 ### Литература
 
@@ -398,6 +722,6 @@ plaviZec.predstaviSe();
 
 1. [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript){:target="_blank"} - Mozzila Developer Network (MDN)
 
-1. Живановић, Д.: [Веб програмирање - ЈаваСкрипт догађаји](https://www.webprogramiranje.org/dogadjaji-u-javascript-u/){:target="_blank"}
+1. Живановић, Д.: [Веб програмирање - ЈаваСкрипт](https://www.webprogramiranje.org/dogadjaji-u-javascript-u/){:target="_blank"}
 
 1. Copes F.: [Complete JavaScript Handbook](https://medium.freecodecamp.org/the-complete-javascript-handbook-f26b2c71719c){:target="_blank"}

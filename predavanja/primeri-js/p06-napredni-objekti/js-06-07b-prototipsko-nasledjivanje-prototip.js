@@ -9,7 +9,7 @@ let zecPrototip = {
 
     govori: function (tekst) {
         console.log("Овај зец " + this.tip + " боје " + this.boja
-            + " каже '" + tekst + "'" + "'\n");
+            + " каже '" + tekst + "'" + "\n");
     }
 };
 
@@ -19,26 +19,19 @@ zec.predstaviSe();
 zec.govori("Ко сам ја?");
 // >>> Овај зец непознат боје непознатa каже 'Ко сам ја?'
 
+let zecIzFikcijePrototip = Object.create(zecPrototip);
 
-function ZecIzFikcije(tip, boja, ime,
-    imeKreatora, prezimeKreatora, delo,
-    uzrecica) {
-    this.ime = ime;
-    this.kreator = { "ime": imeKreatora, "prezime": prezimeKreatora };
-    this.delo = delo;
-    this.uzrecica = uzrecica;
-}
+zecIzFikcijePrototip.tip = "непознат";
+zecIzFikcijePrototip.boja = "непозната";
 
-ZecIzFikcije.prototype = Object.create(zecPrototip);
-
-ZecIzFikcije.prototype.predstaviSe = function () {
+zecIzFikcijePrototip.predstaviSe = function () {
     console.log("Зец: " + this.tip + ", боја: " + this.boja + ", име: " + this.ime + "\n"
         + "креатор: " + this.kreator.ime + " " + this.kreator.prezime + "\n"
         + "дело: " + this.delo + "\n"
         + "узречица: '" + this.uzrecica + "'\n");
 }
 
-let duskoDugousko = Object.create(ZecIzFikcije.prototype);
+let duskoDugousko = Object.create(zecIzFikcijePrototip);
 duskoDugousko.tip = "паметан";
 duskoDugousko.boja = "сива";
 duskoDugousko.ime = "Душко Дугоушко";
@@ -50,7 +43,7 @@ duskoDugousko.predstaviSe();
 // >>> креатор: Tex Avery
 // >>> дело: A Wild Hare
 // >>> узречица: 'Шефе, који ти је враг?'
-let plaviZec = Object.create(ZecIzFikcije.prototype);
+let plaviZec = Object.create(zecIzFikcijePrototip);
 plaviZec.tip = "веома паметан";
 plaviZec.boja = "плава";
 plaviZec.ime =  "Плави ѕец";

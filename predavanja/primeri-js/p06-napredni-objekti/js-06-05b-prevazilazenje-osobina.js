@@ -1,8 +1,3 @@
-/*
-Overriding properties is also used to give the standard function and array prototypes 
-a different toString method than the basic object prototype.
-*/
-
 console.log(Array.prototype.toString ==
     Object.prototype.toString);
 // → false

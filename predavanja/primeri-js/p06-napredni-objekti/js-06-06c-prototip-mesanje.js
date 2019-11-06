@@ -1,38 +1,28 @@
-var map = {};
-function storePhi(event, phi) {
-  map[event] = phi;
+let mapa = {};
+
+const smesti = function (kljuc, vrednost) {
+  mapa[kljuc] = vrednost;
 }
 
-storePhi("pizza", 0.069);
-storePhi("touched tree", -0.081);
+Object.prototype.nesto = "bez veze!";
 
+smesti("olovka", 0.069);
+smesti("sveska", -0.081);
 
-for (var name in map)
-  console.log(name);
-// → pizza
-// → touched tree
+console.log("nesto" in mapa);
+//>>> true
+console.log(mapa.hasOwnProperty("nesto"));
+//>>> false
 
-/*
-We still have the problem with the regular in operator claiming that the Object.prototype 
-properties exist in our object. 
+console.log("toString" in mapa);
+//>>> true
+console.log(mapa.hasOwnProperty("toString"));
+//>>> false
 
-For that, we can use the object’s hasOwnProperty method.
+for (let kljuc in mapa)
+  if (mapa.hasOwnProperty(kljuc))
+    console.log(kljuc);
+//>>> olovka
+//>>> sveska
 
-This method tells us whether the object itself has the property, without looking at its prototypes. 
-
-This is often a more useful piece of information than what the in operator gives us.
-*/
-
-console.log(map.hasOwnProperty("toString"));
-// → false
-
-/*
-When you are worried that someone (some other code you loaded into your program) might have messed
-with the base object prototype, you should write your for/in loops like this:
-*/
-for (var name in map)
-  if (map.hasOwnProperty(name)) {
-    // ... this is an own property
-    console.log(name);
-  }
-
+delete Object.prototype.nesto;
