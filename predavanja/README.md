@@ -278,6 +278,22 @@
 
     1. [Напредни објекти](tekstovi/JavaScript-Programski-Jezik-Napredni-Objekti.md#напредни-објекти){:target="_blank"}
 
+        1. [Прототип](tekstovi/JavaScript-Programski-Jezik-Napredni-Objekti.md#прототип){:target="_blank"}
+
+            1. [Креирање објекта и прототипови](tekstovi/JavaScript-Programski-Jezik-Napredni-Objekti.md#креирање-објекта-и-прототипови){:target="_blank"}
+
+            1. [Конструктори и прототипови](tekstovi/JavaScript-Programski-Jezik-Napredni-Objekti.md#конструктори-и-прототипови){:target="_blank"}
+
+            1. [Прототипови за предефинисане типове](tekstovi/JavaScript-Programski-Jezik-Napredni-Objekti.md#прототипови-за-предефинисане-типове){:target="_blank"}
+
+            1. [Прототипско наслеђивање](tekstovi/JavaScript-Programski-Jezik-Napredni-Objekti.md#прототипско-наслеђивање){:target="_blank"}
+
+            1. [Прототипско наслеђивање за предефинисане типове](tekstovi/JavaScript-Programski-Jezik-Napredni-Objekti.md#прототипско-наслеђивање-за-предефинисане-типове){:target="_blank"}
+
+        1. [Класе](tekstovi/JavaScript-Programski-Jezik-Napredni-Objekti.md#класе){:target="_blank"}
+
+        1. [Mетоди за постављање и читање особина](tekstovi/JavaScript-Programski-Jezik-Napredni-Objekti.md#методи-за-постављање-и-читање-особина){:target="_blank"}
+
         - [Примери](https://github.com/MatfUVIT/UVIT/tree/master/predavanja/primeri-js/p06-napredni-objekti){:target="_blank"}
 
     1. [Асинхрони ЈаваСкрипт](tekstovi/JavaScript-Programski-Jezik-Dogajdaji-Asinhrono-Programiranje.md#асинхрони-јаваскрипт){:target="_blank"}
