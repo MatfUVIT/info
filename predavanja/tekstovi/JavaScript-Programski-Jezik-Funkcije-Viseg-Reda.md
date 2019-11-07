@@ -522,8 +522,6 @@ console.log(prosek(pretci.filter(jeZensko).map(uzrast)));
 
 &#9608;
 
-### Функцијски изрази који се одмах позивају
-
 ### Литература
 
 1. Haverbeke M.: [Eloquent JavaScript](https://eloquentjavascript.net/){:target="_blank"}

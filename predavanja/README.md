@@ -262,9 +262,21 @@
 
         1. [Објекти](tekstovi/JavaScript-Programski-Jezik-Objekti-Nizovi.md#објекти){:target="_blank"}
 
+            1. [Особине објеката](tekstovi/JavaScript-Programski-Jezik-Objekti-Nizovi.md#oсобине-објеката){:target="_blank"}
+
+            1. [Методи код објеката](tekstovi/JavaScript-Programski-Jezik-Objekti-Nizovi.md#методи-код-објеката){:target="_blank"}
+
         1. [Низови](tekstovi/JavaScript-Programski-Jezik-Objekti-Nizovi.md#низови){:target="_blank"}
 
+            1. [Методи над низовима](tekstovi/JavaScript-Programski-Jezik-Objekti-Nizovi.md#методи-над-низовима){:target="_blank"}
+
+            1. [Низови и објекти](tekstovi/JavaScript-Programski-Jezik-Objekti-Nizovi.md#низови-и-објекти){:target="_blank"}
+
+            1. [Низ аргумената при позиву функције](tekstovi/JavaScript-Programski-Jezik-Objekti-Nizovi.md#низ-аргумената-при-позиву-функције){:target="_blank"}
+
         1. [Ниске](tekstovi/JavaScript-Programski-Jezik-Objekti-Nizovi.md#ниске){:target="_blank"}
+
+            1. [Методи над нискама](tekstovi/JavaScript-Programski-Jezik-Objekti-Nizovi.md#методи-над-нискама){:target="_blank"}
 
         1. [JSON](tekstovi/JavaScript-Programski-Jezik-Objekti-Nizovi.md#json){:target="_blank"}
 
@@ -272,13 +284,17 @@
 
     1. [Функције вишег реда](tekstovi/JavaScript-Programski-Jezik-Funkcije-Viseg-Reda.md#функције-вишег-реда){:target="_blank"}
 
+        1. [Функције као аргументи функција](tekstovi/JavaScript-Programski-Jezik-Funkcije-Viseg-Reda.md#функције-као-аргументи-функција){:target="_blank"}
+
+        1. [Функције као генератори функција](tekstovi/JavaScript-Programski-Jezik-Funkcije-Viseg-Reda.md#функције-као-генератори-функција){:target="_blank"}
+
+        1. [Повезивање функција при позиву](tekstovi/JavaScript-Programski-Jezik-Funkcije-Viseg-Reda.md#повезивање-функција-при-позиву){:target="_blank"}
+
         1. [Функције вишег реда и рад са колекцијама](tekstovi/JavaScript-Programski-Jezik-Funkcije-Viseg-Reda.md#функције-вишег-реда-и-рад-са-колекцијама){:target="_blank"}
 
         1. [Мапирање и редукција помоћу функција вишег реда](Jtekstovi/avaScript-Programski-Jezik.md#мапирање-и-редукција-помоћу-функција-вишег-реда){:target="_blank"}
 
         1. [Повезивање функција](tekstovi/JavaScript-Programski-Jezik-Funkcije-Viseg-Reda.md#повезивање-функција){:target="_blank"}
-
-        1. [Функцијски изрази који се одмах позивају](tekstovi/JavaScript-Programski-Jezik-Funkcije-Viseg-Reda.md#функцијски-изрази-који-се-одмах-позивају){:target="_blank"}
 
         - [Примери](https://github.com/MatfUVIT/UVIT/tree/master/predavanja/primeri-js/p05-funkcije-viseg-reda){:target="_blank"}
 
