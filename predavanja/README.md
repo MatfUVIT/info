@@ -238,15 +238,21 @@
 
         1. [Параметри и аргументи функција](tekstovi/JavaScript-Programski-Jezik-Funkcije-Zatvorenja.md#параметри-и-аргументи-функција){:target="_blank"}
 
-        1. [Опциони параметри функција](tekstovi/JavaScript-Programski-Jezik-Funkcije-Zatvorenja.md#опциони-параметри-функција){:target="_blank"}
+            1. [Опциони параметри функција](tekstovi/JavaScript-Programski-Jezik-Funkcije-Zatvorenja.md#опциони-параметри-функција){:target="_blank"}
 
         1. [Опсези важења за променљиве и функције](tekstovi/JavaScript-Programski-Jezik-Funkcije-Zatvorenja.md#опсези-важења-за-променљиве-и-функције){:target="_blank"}
 
-        1. [Затворења за функције](tekstovi/JavaScript-Programski-Jezik-Funkcije-Zatvorenja.md#затворења-за-функције){:target="_blank"}
+            1. [Стек позива за функције](tekstovi/JavaScript-Programski-Jezik-Funkcije-Zatvorenja.md#стек-позива-за-функције){:target="_blank"}
 
         1. [Ламбда изрази и функције](tekstovi/JavaScript-Programski-Jezik-Funkcije-Zatvorenja.md#ламбда-изрази-и-функције){:target="_blank"}
 
+        1. [Затворења за функције](tekstovi/JavaScript-Programski-Jezik-Funkcije-Zatvorenja.md#затворења-за-функције){:target="_blank"}
+
         1. [Дизање променљивих и функција](tekstovi/JavaScript-Programski-Jezik-Funkcije-Zatvorenja.md#дизање-променљивих-и-функција){:target="_blank"}
+
+            1. [Дизање променљивих](tekstovi/JavaScript-Programski-Jezik-Funkcije-Zatvorenja.md#дизање-променљивих){:target="_blank"}
+
+            1. [Дизање функција](tekstovi/JavaScript-Programski-Jezik-Funkcije-Zatvorenja.md#дизање-функција){:target="_blank"}
 
         1. [Функције и бочни ефекти](tekstovi/JavaScript-Programski-Jezik-Funkcije-Zatvorenja.md#функције-и-бочни-ефекти){:target="_blank"}
 
