@@ -204,9 +204,15 @@ function testirajOpsegDefinisanosti() {
   test = "lokalna vrednost";
   console.log(test);
 }
-console.log(test);              // >>> globalna vrednost
-testirajOpsegDefinisanosti();   // >>> lokalna vrednost
-console.log(test);              // >>> lokalna vrednost
+console.log(test);
+testirajOpsegDefinisanosti();
+console.log(test);
+```
+
+```bash
+globalna vrednost
+lokalna vrednost
+lokalna vrednost
 ```
 
 &#9608;
@@ -371,9 +377,9 @@ function uvecajBrojac() {
 
 const izbroj = uvecajBrojac();
 
-console.log(izbroj());   // >>> 0
-console.log(izbroj());   // >>> 1
-console.log(izbroj());   // >>> 2
+console.log(izbroj());
+console.log(izbroj());
+console.log(izbroj());
 
 let uvecaj = () => {
     let brojac = 0;
@@ -382,9 +388,18 @@ let uvecaj = () => {
 
 const izbroj2 = uvecaj();
 
-console.log(izbroj2());   // >>> 0
-console.log(izbroj2());   // >>> 1
-console.log(izbroj2());   // >>> 2
+console.log(izbroj2());
+console.log(izbroj2());
+console.log(izbroj2());
+```
+
+```bash
+0
+1
+2
+0
+1
+2
 ```
 
 &#9608;
@@ -400,7 +415,11 @@ const pozdrav = (ime) =>
 
 let pozdravSaImenom = pozdrav(mojeIme);
 mojeIme = 'Marko';
-pozdravSaImenom(); // >>> Zdravo, Dragoljub!
+pozdravSaImenom();
+```
+
+```bash
+Zdravo, Dragoljub!
 ```
 
 У горњем примеру, ламбда израз `pozdrav` у тренутку дефинисања “памти” референцу на (за њу) глобалну промењиву `mojeIme` (која у том тренутку има вредност `“Dragoljub”`). Иако променљива `mojeIme` мења вредност која сада садржи ниску `“Marko”`, затворење и даље користи вредност `“Dragoljub”`.  &#9608;

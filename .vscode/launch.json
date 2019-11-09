@@ -8,7 +8,7 @@
             "type": "node",
             "request": "launch",
             "name": "Launch Program",
-            "program": "${workspaceFolder}/predavanja/primeri-js/p06-napredni-objekti/js-06-03е-prototipi.js"
+            "program": "${workspaceFolder}/predavanja/primeri-js/p01-vrednosti-tipovi-operatori/js-01-00-simboli.js"
         }
     ]
 }

@@ -13,10 +13,13 @@
 let prazanObjekat = {};
 
 console.log(prazanObjekat.toString());
-// >>> [object Object]
 
 console.log(prazanObjekat.toString);
-// >>> function toString(){…}
+```
+
+```bash
+[object Object]
+function toString(){…}
 ```
 
 Уочава се да објекат на који реферише `prazanObjekat`, а који је направљен као празан, ипак садржи метод `toString`. &#9608;
@@ -41,10 +44,13 @@ console.log(prazanObjekat.toString);
 
 ```js
 console.log(Object.getPrototypeOf({}) == Object.prototype);
-// >>> true
 
 console.log(Object.getPrototypeOf(Object.prototype));
-// >>> null
+```
+
+```bash
+true
+null
 ```
 
 Из горњег кода се уочава да не постоји прототип за прототип објекта. &#9608;
@@ -56,11 +62,14 @@ console.log(Object.getPrototypeOf(Object.prototype));
 ```js
 console.log(Object.getPrototypeOf(isNaN) ==
     Function.prototype);
-// >>> true
 
 console.log(Object.getPrototypeOf([]) ==
     Array.prototype);
-// >>> true
+```
+
+```bash
+true
+true
 ```
 
 &#9608;
@@ -81,17 +90,20 @@ let prototipZeca = {
 
 let zec = Object.create(prototipZeca);
 zec.govori("Ко сам ја?");
-// >>> Овај зец непознат каже 'Ко сам ја?'
 
 let zecUbica = Object.create(prototipZeca);
 zecUbica.tip = "убица";
 zecUbica.govori("Готов си!");
-// >>> Овај зец убица каже 'Готов си!
 
 let zecDebeljuca = Object.create(prototipZeca);
 zecDebeljuca.tip = "дебељуца";
 zecDebeljuca.govori("Баш сам гладан!");
-// >>> Овај зец дебељуца каже 'Баш сам гладан!'
+```
+
+```bash
+Овај зец непознат каже 'Ко сам ја?'
+Овај зец убица каже 'Готов си!
+Овај зец дебељуца каже 'Баш сам гладан!'
 ```
 
 Уочавамо да се објекат креира на основу прототипа позивом (статичког) метода `Object.create`.  Како код првог направљеног објекта није постављена особина `tip`, то ће њена вредност бити преузета из прототипа и биће `непознат`. Постављање особине на жељену вредност се потом реализовало одвојено за сваки од објеката. &#9608;
@@ -159,15 +171,18 @@ function Zec(tip = "непознат") {
 
 let zec = new Zec();
 zec.govori("Ко сам ја?");
-// >>> Овај зец непознат каже 'Ко сам ја?'
 
 let zecUbica = new Zec("убица");
 zecUbica.govori("Готов си!");
-// >>> Овај зец убица каже 'Готов си!
 
 let zecDebeljuca = new Zec("дебељуца");
 zecDebeljuca.govori("Баш сам гладан!");
-// >>> Овај зец дебељуца каже 'Баш сам гладан!'
+```
+
+```bash
+Овај зец непознат каже 'Ко сам ја?'
+Овај зец убица каже 'Готов си!
+Овај зец дебељуца каже 'Баш сам гладан!'
 ```
 
 &#9608;
@@ -189,17 +204,20 @@ let crniZec = new Zec("crni");
 Zec.prototype.zubi = "mali";
 
 console.log(zecUbica.zubi);
-// >>> mali
 
 zecUbica.zubi = "dugi, ostri i krvavi";
 console.log(zecUbica.zubi);
-// >>> dugi, ostri i krvavi
 
 console.log(crniZec.zubi);
-// >>> mali
 
 console.log(Zec.prototype.zubi);
-// >>> mali
+```
+
+```bash
+mali
+dugi, ostri i krvavi
+mali
+mali
 ```
 
 &#9608;
@@ -221,11 +239,9 @@ Zec.prototype.govori = function (tekst) {
 
 let zec = new Zec();
 zec.govori("Ко сам ја?");
-// >>> Овај зец непознат каже 'Ко сам ја?'
 
 let zecUbica = new Zec("убица");
 zecUbica.govori("Готов си!");
-// >>> Овај зец убица каже 'Готов си!
 
 Zec.prototype.predstaviSe = function () {
     console.log("Зец: " + this.tip + ".");
@@ -233,15 +249,20 @@ Zec.prototype.predstaviSe = function () {
 
 let zecDebeljuca = new Zec("дебељуца");
 zecDebeljuca.predstaviSe();
-// >>> Зец: дебељуца
 zecDebeljuca.govori("Баш сам гладан!");
-// >>> Овај зец дебељуца каже 'Баш сам гладан!'
 
 zec.predstaviSe = () => { console.log("------") };
 zecUbica.predstaviSe();
-// >>> Зец: убица
 zec.predstaviSe();
-// >>> ------
+```
+
+```bash
+Овај зец непознат каже 'Ко сам ја?'
+Овај зец убица каже 'Готов си!
+Зец: дебељуца
+Овај зец дебељуца каже 'Баш сам гладан!'
+Зец: убица
+------
 ```
 
 &#9608;
@@ -337,17 +358,20 @@ Object.prototype.nesto = "bez veze!";
 
 for (let kljuc in mapa)
   console.log(kljuc);
-//>>> olovka
-//>>> sveska
-//>>> nesto
 
 console.log("nesto" in mapa);
-//>>> true
 
 console.log("toString" in mapa);
-//>>> true
 
 delete Object.prototype.nesto;
+```
+
+```bash
+olovka
+sveska
+nesto
+true
+true
 ```
 
 Из претходног примера се јасно види, да се прототиповима може манипулисати на исти начин као што се манипулише са "нормалним" објектима, као то да сваки објекат може приступати исвим елементима који су дефинисани у оквиру његовог прототипа. &#9608;
@@ -369,22 +393,25 @@ smesti("olovka", 0.069);
 smesti("sveska", -0.081);
 
 console.log("nesto" in mapa);
-//>>> true
 console.log(mapa.hasOwnProperty("nesto"));
-//>>> false
 
 console.log("toString" in mapa);
-//>>> true
 console.log(mapa.hasOwnProperty("toString"));
-//>>> false
 
 for (let kljuc in mapa)
   if (mapa.hasOwnProperty(kljuc))
     console.log(kljuc);
-//>>> olovka
-//>>> sveska
 
 delete Object.prototype.nesto;
+```
+
+```bash
+true
+false
+true
+false
+olovka
+sveska
 ```
 
 &#9608;
@@ -406,20 +433,23 @@ smesti("sveska", -0.081);
 Object.prototype.nesto = "bez veze!";
 
 console.log("nesto" in mapa);
-//>>> false
 
 console.log("toString" in mapa);
-//>>> false
 
 console.log("sveska" in mapa);
-//>>> true
 
 for (let kljuc in mapa)
   console.log(kljuc);
-//>>> olovka
-//>>> sveska
 
 delete Object.prototype.nesto;
+```
+
+```bash
+false
+false
+true
+olovka
+sveska
 ```
 
  У горњем коду нема више потребе да се користи метод `hasOwnProperty`, јер су све оособине особине баш тог објекта, па се може користити `for`-`in` циклус, без обзира на то шта се у међувремену радило са `Object.prototype`.  &#9608;
@@ -446,9 +476,7 @@ let zecPrototip = {
 
 let zec = Object.create(zecPrototip);
 zec.predstaviSe();
-// >>> Зец: непознат боја: непознатa.
 zec.govori("Ко сам ја?");
-// >>> Овај зец непознат боје непознатa каже 'Ко сам ја?'
 
 let zecIzFikcijePrototip = Object.create(zecPrototip);
 
@@ -470,10 +498,6 @@ duskoDugousko.kreator = { "ime": "Tex", "prezime": "Avery" };
 duskoDugousko.delo = "A Wild Hare";
 duskoDugousko.uzrecica = "Шефе, који ти је враг?";
 duskoDugousko.predstaviSe();
-// >>> Зец: паметан, боја: сива, име: Душко Дугоушко
-// >>> креатор: Tex Avery
-// >>> дело: A Wild Hare
-// >>> узречица: 'Шефе, који ти је враг?'
 let plaviZec = Object.create(zecIzFikcijePrototip);
 plaviZec.tip = "веома паметан";
 plaviZec.boja = "плава";
@@ -482,10 +506,19 @@ plaviZec.kreator = { "ime": "Душко", "prezime": "Радовић" };
 plaviZec.delo = "Плави зец";
 plaviZec.uzrecica = "Плави, зец, чудни зец, једини на свету.";
 plaviZec.predstaviSe();
-// >>> Зец: веома паметан, боја: плава, име: Плави ѕец
-// >>> креатор: Душко Радовић
-// >>> дело: Плави зец
-// >>> узречица: 'Плави, зец, чудни зец, једини на свету.'
+```
+
+```bash
+Зец: непознат боја: непознатa.
+Овај зец непознат боје непознатa каже 'Ко сам ја?'
+Зец: паметан, боја: сива, име: Душко Дугоушко
+креатор: Tex Avery
+дело: A Wild Hare
+узречица: 'Шефе, који ти је враг?'
+Зец: веома паметан, боја: плава, име: Плави ѕец
+креатор: Душко Радовић
+дело: Плави зец
+узречица: 'Плави, зец, чудни зец, једини на свету.'
 ```
 
 &#9608;
@@ -510,9 +543,7 @@ Zec.prototype.govori = function (tekst) {
 
 let zec = new Zec();
 zec.predstaviSe();
-// >>> Зец: непознат боја: непознатa.
 zec.govori("Ко сам ја?");
-// >>> Овај зец непознат боје непознатa каже 'Ко сам ја?'
 
 function ZecIzFikcije(tip, boja, ime,
     imeKreatora, prezimeKreatora, delo,
@@ -541,24 +572,29 @@ ZecIzFikcije.prototype.skoci = function () {
 let duskoDugousko = new ZecIzFikcije("паметан", "сива", "Душко Дугоушко",
     "Tex", "Avery", "A Wild Hare", "Шефе, који ти је враг?");
 duskoDugousko.predstaviSe();
-// >>> Зец: паметан, боја: сива, име: Душко Дугоушко
-// >>> креатор: Tex Avery
-// >>> дело: A Wild Hare
-// >>> узречица: 'Шефе, који ти је враг?'
 duskoDugousko.govori(duskoDugousko.uzrecica);
-// >>> Овај зец паметан боје сива каже 'Шефе, који ти је враг?''
 duskoDugousko.skoci();
-// >>> Скок, скок, скок
 
 let plaviZec = new ZecIzFikcije("веома паметан", "плава", "Плави ѕец",
     "Душко", "Радовић", "Плави зец", "Плави, зец, чудни зец, једини на свету.");
 plaviZec.predstaviSe();
-// >>> Зец: веома паметан, боја: плава, име: Плави ѕец
-// >>> креатор: Душко Радовић
-// >>> дело: Плави зец
-// >>> узречица: 'Плави, зец, чудни зец, једини на свету.'
 plaviZec.govori(plaviZec.uzrecica);
-// >>> Овај зец веома паметан боје плава каже 'Плави, зец, чудни зец, једини на свету.'
+```
+
+```bash
+Зец: непознат боја: непознатa.
+Овај зец непознат боје непознатa каже 'Ко сам ја?'
+Зец: паметан, боја: сива, име: Душко Дугоушко
+креатор: Tex Avery
+дело: A Wild Hare
+узречица: 'Шефе, који ти је враг?'
+Овај зец паметан боје сива каже 'Шефе, који ти је враг?''
+Скок, скок, скок
+Зец: веома паметан, боја: плава, име: Плави ѕец
+креатор: Душко Радовић
+дело: Плави зец
+узречица: 'Плави, зец, чудни зец, једини на свету.'
+Овај зец веома паметан боје плава каже 'Плави, зец, чудни зец, једини на свету.'
 ```
 
 &#9608;
@@ -570,13 +606,16 @@ plaviZec.govori(plaviZec.uzrecica);
 ```js
 console.log(Array.prototype.toString ==
     Object.prototype.toString);
-//>>> false
 
 console.log([1, 2].toString());
-//>>> 1,2
 
 console.log(Object.prototype.toString.call([1, 2]));
-//>>> [object Array]
+```
+
+```bash
+false
+1,2
+[object Array]
 ```
 
 &#9608;
@@ -666,24 +705,27 @@ class ZecIzFikcije extends Zec {
 let duskoDugousko = new ZecIzFikcije("паметан", "сива", "Душко Дугоушко",
     "Tex", "Avery", "A Wild Hare", "Шефе, који ти је враг?");
 duskoDugousko.predstaviSe();
-// >>> Зец: паметан, боја: сива, име: Душко Дугоушко
-// >>> креатор: Tex Avery
-// >>> дело: A Wild Hare
-// >>> узречица: 'Шефе, који ти је враг?'
 duskoDugousko.govori(duskoDugousko.uzrecica);
-// >>> Овај зец паметан боје сива каже 'Шефе, који ти је враг?'
 duskoDugousko.skoci();
-// >>> Скок, скок, скок
 
 let plaviZec = new ZecIzFikcije("веома паметан", "плава", "Плави ѕец",
     "Душко", "Радовић", "Плави зец", "Плави, зец, чудни зец, једини на свету.");
 plaviZec.predstaviSe();
-// >>> Зец: веома паметан, боја: плава, име: Плави ѕец
-// >>> креатор: Душко Радовић
-// >>> дело: Плави зец
-// >>> узречица: 'Плави, зец, чудни зец, једини на свету.'
 plaviZec.govori(plaviZec.uzrecica);
-// >>> Овај зец веома паметан боје плава каже 'Плави, зец, чудни зец, једини на свету.'
+```
+
+```bash
+Зец: паметан, боја: сива, име: Душко Дугоушко
+креатор: Tex Avery
+дело: A Wild Hare
+узречица: 'Шефе, који ти је враг?'
+Овај зец паметан боје сива каже 'Шефе, који ти је враг?'
+Скок, скок, скок
+Зец: веома паметан, боја: плава, име: Плави ѕец
+креатор: Душко Радовић
+дело: Плави зец
+узречица: 'Плави, зец, чудни зец, једини на свету.'
+Овај зец веома паметан боје плава каже 'Плави, зец, чудни зец, једини на свету.'
 ```
 
 &#9608;
@@ -708,10 +750,13 @@ const gomila = {
 };
 
 console.log(gomila.visina);
-//>>> 4
 
 gomila.visina = 100;
-//>>> Pokusaj da visina gomile bude 100 je ignorisan.
+```
+
+```bash
+4
+Pokusaj da visina gomile bude 100 je ignorisan.
 ```
 
 &#9608;

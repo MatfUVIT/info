@@ -320,11 +320,19 @@
 
     1. [Асинхрони ЈаваСкрипт](tekstovi/JavaScript-Programski-Jezik-Dogajdaji-Asinhrono-Programiranje.md#асинхрони-јаваскрипт){:target="_blank"}
 
-        1. Повратни позиви
+        1. [Типични модели извршавања програма](tekstovi/JavaScript-Programski-Jezik-Dogajdaji-Asinhrono-Programiranje.md#типични-модели-извршавања-програма){:target="_blank"}
+  
+            1. [Синхрони модел програмирањa](tekstovi/JavaScript-Programski-Jezik-Dogajdaji-Asinhrono-Programiranje.md#синхрони-модел-програмирања){:target="_blank"}
 
-        1. Обећања
+            1. [Вишенитни модел програмирањаа](tekstovi/JavaScript-Programski-Jezik-Dogajdaji-Asinhrono-Programiranje.md#вишенитни-модел-програмирања){:target="_blank"}
 
-        1. Коришћење `async` и `await`
+            1. [Асинхрони модел програмирања](tekstovi/JavaScript-Programski-Jezik-Dogajdaji-Asinhrono-Programiranje.md#асинхрони-модел-програмирања){:target="_blank"}
+
+        1. [Асинхроно програмирање у ЈаваСкрипту](tekstovi/JavaScript-Programski-Jezik-Dogajdaji-Asinhrono-Programiranje.md#асинхроно-програмирање-у-јаваскрипту){:target="_blank"}
+
+            1. [ЈаваСкрипт окружење и асинхроно програмирање](tekstovi/JavaScript-Programski-Jezik-Dogajdaji-Asinhrono-Programiranje.md#јаваскрипт окружење-и-асинхроно-програмирање){:target="_blank"}
+
+            1. [Повратни позиви после кашњења](tekstovi/JavaScript-Programski-Jezik-Dogajdaji-Asinhrono-Programiranje.md#повратни-позиви-после-кашњења){:targ
 
         - [Примери](https://github.com/MatfUVIT/UVIT/tree/master/predavanja/primeri-js/p07-asinhroni-js){:target="_blank"}
 

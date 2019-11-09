@@ -551,13 +551,16 @@ function brojacArgumenata () {
 }
 
 brojacArgumenata ("Ako kaniš " , "pobijediti" , " ne smiješ ", "izgubiti");
-// >>> "Prilikom poziva su prosleđena 4 argumenta."
 
 brojacArgumenata ("Ako kaniš pobijediti" , " ne smiješ izgubiti");
-// >>> "Prilikom poziva su prosleđena 2 argumenta."
 
 brojacArgumenata ("Ako kaniš pobijediti ne smiješ izgubiti");
-// >>> "Prilikom poziva su prosleđena 1 argumenta."
+```
+
+```bash
+Prilikom poziva su prosleđena 4 argumenta.
+Prilikom poziva su prosleđena 2 argumenta.
+Prilikom poziva su prosleđena 1 argumenta.
 ```
 
 &#9608;
