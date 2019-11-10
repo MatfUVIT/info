@@ -149,7 +149,23 @@ Autori:
 
 ## Deo 3 - Programiranje klijentskih veb aplikacija
 
-### Poglavlje 5. JavaScript i DOM
+### Poglavlje 5. JavaScript i DOM(./Poglavlja/JSDOM/README.md){:target="_blank"}
+
+1. [Osnovni koncepti DOM stabla](./Poglavlja/JSDOM/README.md#51-osnovni-koncepti-dom-stabla){:target="_blank"}
+
+2. [Pretraga elemenata](./Poglavlja/JSDOM/README.md#52-pretraga-elemenata){:target="_blank"}
+
+3. [Upravljanje elementima](./Poglavlja/JSDOM/README.md#53-upravljanje-elementima){:target="_blank"}
+
+    1. [Izmena sadržaja](./Poglavlja/JSDOM/README.md#531-izmena-sadržaja){:target="_blank"}
+
+    1. [Izmena vrednosti atributa](./Poglavlja/JSDOM/README.md#532-izmena-vrednosti-atributa){:target="_blank"}
+
+    1. [Izmena stila](./Poglavlja/JSDOM/README.md#533-izmena-stila){:target="_blank"}
+
+4. [Dinamičko dodavanje i brisanje elemenata](./Poglavlja/JSDOM/README.md#54-dinamičko-dodavanje-i-brisanje-elemenata){:target="_blank"}
+
+5. [Pridruživanje osluškivača događaja elementima](./Poglavlja/JSDOM/README.md#55-pridruživanje-osluškivača-događaja-elementima){:target="_blank"}
 
 ### Poglavlje 6. Biblioteka jQuery
 
