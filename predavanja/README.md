@@ -318,29 +318,29 @@
 
         - [Примери](https://github.com/MatfUVIT/UVIT/tree/master/predavanja/primeri-js/p06-napredni-objekti){:target="_blank"}
 
-    1. [Асинхрони ЈаваСкрипт](tekstovi/JavaScript-Programski-Jezik-Dogajdaji-Asinhrono-Programiranje.md#асинхрони-јаваскрипт){:target="_blank"}
+    1. [Асинхрони ЈаваСкрипт](tekstovi/JavaScript-Programski-Jezik-Asinhrono-Programiranje.md#асинхрони-јаваскрипт){:target="_blank"}
 
-        1. [Типични модели извршавања програма](tekstovi/JavaScript-Programski-Jezik-Dogajdaji-Asinhrono-Programiranje.md#типични-модели-извршавања-програма){:target="_blank"}
+        1. [Типични модели извршавања програма](tekstovi/JavaScript-Programski-Jezik-Asinhrono-Programiranje.md#типични-модели-извршавања-програма){:target="_blank"}
   
-            1. [Синхрони модел програмирањa](tekstovi/JavaScript-Programski-Jezik-Dogajdaji-Asinhrono-Programiranje.md#синхрони-модел-програмирања){:target="_blank"}
+            1. [Синхрони модел програмирањa](tekstovi/JavaScript-Programski-Jezik-Asinhrono-Programiranje.md#синхрони-модел-програмирања){:target="_blank"}
 
-            1. [Вишенитни модел програмирањаа](tekstovi/JavaScript-Programski-Jezik-Dogajdaji-Asinhrono-Programiranje.md#вишенитни-модел-програмирања){:target="_blank"}
+            1. [Вишенитни модел програмирањаа](tekstovi/JavaScript-Programski-Jezik-Asinhrono-Programiranje.md#вишенитни-модел-програмирања){:target="_blank"}
 
-            1. [Асинхрони модел програмирања](tekstovi/JavaScript-Programski-Jezik-Dogajdaji-Asinhrono-Programiranje.md#асинхрони-модел-програмирања){:target="_blank"}
+            1. [Асинхрони модел програмирања](tekstovi/JavaScript-Programski-Jezik-Asinhrono-Programiranje.md#асинхрони-модел-програмирања){:target="_blank"}
 
-        1. [Асинхроно програмирање у ЈаваСкрипту](tekstovi/JavaScript-Programski-Jezik-Dogajdaji-Asinhrono-Programiranje.md#асинхроно-програмирање-у-јаваскрипту){:target="_blank"}
+        1. [Асинхроно програмирање у ЈаваСкрипту](tekstovi/JavaScript-Programski-Jezik-Asinhrono-Programiranje.md#асинхроно-програмирање-у-јаваскрипту){:target="_blank"}
 
-            1. [ЈаваСкрипт окружење и асинхроно програмирање](tekstovi/JavaScript-Programski-Jezik-Dogajdaji-Asinhrono-Programiranje.md#јаваскрипт окружење-и-асинхроно-програмирање){:target="_blank"}
+            1. [ЈаваСкрипт окружење и асинхроно програмирање](tekstovi/JavaScript-Programski-Jezik-Asinhrono-Programiranje.md#јаваскрипт окружење-и-асинхроно-програмирање){:target="_blank"}
 
-            1. [Асинхроно програмирање и повратни позиви](tekstovi/JavaScript-Programski-Jezik-Dogajdaji-Asinhrono-Programiranje.md#асинхроно-програмирање-и-повратни-позиви){:target="_blank"}
+            1. [Асинхроно програмирање и повратни позиви](tekstovi/JavaScript-Programski-Jezik-Asinhrono-Programiranje.md#асинхроно-програмирање-и-повратни-позиви){:target="_blank"}
 
-            1. [Асинхроно програмирање и обећања](tekstovi/JavaScript-Programski-Jezik-Dogajdaji-Asinhrono-Programiranje.md#асинхроно-програмирање-и-повратни-обећања){:target="_blank"}
+            1. [Асинхроно програмирање и обећања](tekstovi/JavaScript-Programski-Jezik-Asinhrono-Programiranje.md#асинхроно-програмирање-и-повратни-обећања){:target="_blank"}
 
-            1. [Асинхроно програмирање и наредбе async и await](tekstovi/JavaScript-Programski-Jezik-Dogajdaji-Asinhrono-Programiranje.md#асинхроно-програмирање-и-наредбе-async-и-await){:target="_blank"}
+            1. [Асинхроно програмирање и наредбе async и await](tekstovi/JavaScript-Programski-Jezik-Asinhrono-Programiranje.md#асинхроно-програмирање-и-наредбе-async-и-await){:target="_blank"}
 
         - [Примери](https://github.com/MatfUVIT/UVIT/tree/master/predavanja/primeri-js/p07-asinhroni-js){:target="_blank"}
 
-    1. [Изузетци](tekstovi/JavaScript-Programski-Jezik-Izuzetci.md#изузетци){:target="_blank"}
+    1. [Изузетци](tekstovi/JavaScript-Programski-Jezik-Izuzetci.md#руковање-грешкама){:target="_blank"}
 
         - [Примери](https://github.com/MatfUVIT/UVIT/tree/master/predavanja/primeri-js/p08-rukovanje-greskama){:target="_blank"}
 

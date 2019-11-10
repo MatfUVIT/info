@@ -1,8 +1,7 @@
 function gdeLiJeProblem() {
   "use strict";
-  for (brojac = 0; brojac < 10; brojac++)
-    console.log("Sreća, sreća, radost!");
+  for (brojac = 0; brojac < 5; brojac++)
+    console.log("Срећа, срећа, радост!");
 }
 
 gdeLiJeProblem();
-// → ReferenceError: brojac is not defined
