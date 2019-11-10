@@ -1,5 +1,4 @@
-# TeX datoteke za latehovanje
-
+# Ignorisanje svih TeX datoteka koje se generisu pri latehovanju
 *.aux
 *.bbl
 *.blg
@@ -7,18 +6,15 @@
 *.log
 *.tps
 
-# Direktorijumi za IDE
-
+# Ignorisanje svih direktorijuma koji kreiraju razni IDE
 .vscode/
 
-# Ostale datoteke 
+# Ignorisanje svih node_modules direktorijuma za Node.js projekte
+node_modules/
 
+# Ignorisanje ostalih datoteka
 /predavanja/html-kostur.html
 /predavanja/пример001.js
 /predavanja/пример002.js
 /_layouts/default.html
 .DS_Store
-
-# Node.js direktorijumi
-
-node_modules/
