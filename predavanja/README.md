@@ -332,7 +332,11 @@
 
             1. [ЈаваСкрипт окружење и асинхроно програмирање](tekstovi/JavaScript-Programski-Jezik-Dogajdaji-Asinhrono-Programiranje.md#јаваскрипт окружење-и-асинхроно-програмирање){:target="_blank"}
 
-            1. [Повратни позиви после кашњења](tekstovi/JavaScript-Programski-Jezik-Dogajdaji-Asinhrono-Programiranje.md#повратни-позиви-после-кашњења){:targ
+            1. [Асинхроно програмирање и повратни позиви](tekstovi/JavaScript-Programski-Jezik-Dogajdaji-Asinhrono-Programiranje.md#асинхроно-програмирање-и-повратни-позиви){:target="_blank"}
+
+            1. [Асинхроно програмирање и обећања](tekstovi/JavaScript-Programski-Jezik-Dogajdaji-Asinhrono-Programiranje.md#асинхроно-програмирање-и-повратни-обећања){:target="_blank"}
+
+            1. [Асинхроно програмирање и наредбе async и await](tekstovi/JavaScript-Programski-Jezik-Dogajdaji-Asinhrono-Programiranje.md#асинхроно-програмирање-и-наредбе-async-и-await){:target="_blank"}
 
         - [Примери](https://github.com/MatfUVIT/UVIT/tree/master/predavanja/primeri-js/p07-asinhroni-js){:target="_blank"}
 

@@ -2,7 +2,7 @@ function dodajNisku(prethodna, tekuca) {
     return new Promise((razresi, odbij) => {
         setTimeout(
             () => {
-                razresi(prethodna + ' ' + tekuca)
+                razresi(prethodna + ' ' + tekuca);
             },
             Math.floor(Math.random() * 50) + 1
         )
@@ -12,13 +12,14 @@ function dodajNisku(prethodna, tekuca) {
 function dodajSveRedom() {
     dodajNisku('', 'A')
         .then(result => {
-            return dodajNisku(result, 'B')
+            return dodajNisku(result, 'Б')
         })
         .then(result => {
-            return dodajNisku(result, 'C')
+            return dodajNisku(result, 'В')
         })
         .then(result => {
             console.log(result)
-        })
+        });
 }
-dodajSveRedom()
+
+dodajSveRedom();

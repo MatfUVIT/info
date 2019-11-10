@@ -2,22 +2,22 @@ function prikaziNisku(niska) {
     return new Promise((razresi, odbij) => {
         setTimeout(
             () => {
-                console.log(niska)
-                razresi()
+                console.log(niska);
+                razresi();
             },
             Math.floor(Math.random() * 50) + 1
-        )
-    })
+        );
+    });
 }
 
-function prikaziSveRedom() {
-    prikaziNisku("A")
+function prikaziTriRedom() {
+    prikaziNisku("А")
         .then(() => {
-            return prikaziNisku("B")
+            return prikaziNisku("Б")
         })
-        .then(() => prikaziNisku("C"))
-        .then(() => prikaziNisku("D"))
-        .then(() => prikaziNisku("E"))
+        .then(() => prikaziNisku("В"));
+    prikaziNisku("Г");
+    prikaziNisku("Д");
 }
 
-prikaziSveRedom()
+prikaziTriRedom();

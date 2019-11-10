@@ -6,23 +6,23 @@ function prikaziNisku(niska, povratniPoziv){
           povratniPoziv()
       }, 
       Math.floor(Math.random() * 50) + 1
-    )
+    );
   }
 
   function prikaziSveRedom(){
     prikaziNisku("A", 
     ()=>{
-      prikaziNisku("B", 
+      prikaziNisku("Б", 
       ()=>{
-        prikaziNisku("C", 
+        prikaziNisku("В", 
         ()=>{
-          prikaziNisku("D", 
+          prikaziNisku("Г", 
           ()=>{
-            prikaziNisku("E")
-          })
-        })
-      })
-    })
+            prikaziNisku("Д");
+          });
+        });
+      });
+    });
   }
 
-  prikaziSveRedom()
+  prikaziSveRedom();

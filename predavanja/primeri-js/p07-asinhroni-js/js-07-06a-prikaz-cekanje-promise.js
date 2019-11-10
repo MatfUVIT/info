@@ -10,12 +10,12 @@ function prikaziNisku(niska) {
     });
 }
 
-async function prikaziDvaRedom() {
-    await prikaziNisku("А");
-    await prikaziNisku("Б");
-    prikaziNisku("В");
-    prikaziNisku("Г");
-    prikaziNisku("Д");
+function prikaziSveRedom() {
+    prikaziNisku("А")
+        .then(() => prikaziNisku("Б"))
+        .then(() => prikaziNisku("В"))
+        .then(() => prikaziNisku("Г"))
+        .then(() => prikaziNisku("Д"));
 }
 
-prikaziDvaRedom();
+prikaziSveRedom();
