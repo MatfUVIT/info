@@ -742,6 +742,8 @@ if (kvadrat != null) {
 
 Na adresi [https://developer.mozilla.org/en-US/docs/Web/Events](https://developer.mozilla.org/en-US/docs/Web/Events){:target="_blank"} moguće je pronaći spisak svih događaja, grupisanih po kategorijama koji predstavljaju izvore okidanja tih događaja, zajedno sa njihovim opisima.
 
+Napomenimo još i da, prilikom definisanja osluškivača, ukoliko je potrebno da dohvatimo objekat nad kojim se postavlja osluškivač, moguće je koristiti ključnu reč `this`, sa istom semantikom kao kod definisanja metoda objekta.
+
 #### Alternativni metodi pridruživanja osluškivača događajima
 
 Pridruživanje osluškivača događajima je moguće izvršiti i na drugi način. U pitanju je korišćenje odgovarajućih svojstava čvorova DOM stabla koji odgovaraju HTML elementima. Na primer, čvor koji odgovara elementima `input` čiji je atribut `type="input"` (dakle, dugmići) sadrži atribut `onclick` čija je vrednost funkcija koja implementira osluškivač događaja naziva `'click'`, odnosno, kliktaj mišem na dugme. U prethodnom primeru, umesto linije:
