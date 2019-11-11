@@ -364,6 +364,10 @@ for (const i in paragrafi) {
 }
 ```
 
+<a style="border: 2px solid gray; display: inline-block; padding: 15px; background-color: rgb(114, 211, 250); color: black;"
+   href="./Primeri/4/index.html"
+   target="_blank">Pogledaj primer uživo</a>
+
 Na adresi [https://www.w3schools.com/jsref/dom_obj_style.asp](https://www.w3schools.com/jsref/dom_obj_style.asp){:target="_blank"} moguće je pronaći spisak svojstava svojstva `style` čije se vrednosti mogu dinamički menjati, zajedno sa njihovim opisima.
 
 ## 5.4 Dinamičko dodavanje i brisanje elemenata
@@ -471,6 +475,10 @@ if (bodies.length > 0) {
 }
 ```
 
+<a style="border: 2px solid gray; display: inline-block; padding: 15px; background-color: rgb(114, 211, 250); color: black;"
+   href="./Primeri/5/index.html"
+   target="_blank">Pogledaj primer uživo</a>
+
 Napomenimo da u funkciji `napravi_html_strukturu_2` nismo morali sve elemente prvo da kreiramo. Na primer, mogli smo prvo da kreiramo objekat elementa `div`, pa da ga povežemo sa roditeljskim objektom `body`. Nakon toga smo mogli da kreiramo objekat elementa `h1`, pa da ga povežemo sa roditeljskim objektom `div`, itd.
 
 #### Brisanje elemenata
@@ -550,6 +558,10 @@ if (liste.length > 0) {
 }
 ```
 
+<a style="border: 2px solid gray; display: inline-block; padding: 15px; background-color: rgb(114, 211, 250); color: black;"
+   href="./Primeri/6/index.html"
+   target="_blank">Pogledaj primer uživo</a>
+
 #### Zamena postojećeg elementa drugim elementom
 
 Nekada je potrebno da izvršimo zamenu elemenata. Na primer, ukoliko bi trebalo da sve naslove na stranici zamenimo podnaslovima, prvo bismo morali da postavimo novokreirane čvorove koji predstavljaju podnaslove na odgovarajuće pozicije (na primer, korišćenjem metoda `insertAdjacentElement` [(dokumentacija)](https://developer.mozilla.org/en-US/docs/Web/API/Element/insertAdjacentElement) umesto metoda `appendChild`), a zatim da obrišemo sve čvorove koji predstavljaju naslove.
@@ -610,6 +622,10 @@ for (const elem of elementi_galerije) {
     }
 }
 ```
+
+<a style="border: 2px solid gray; display: inline-block; padding: 15px; background-color: rgb(114, 211, 250); color: black;"
+   href="./Primeri/7/index.html"
+   target="_blank">Pogledaj primer uživo</a>
 
 ## 5.5 Pridruživanje osluškivača događaja elementima
 
@@ -740,7 +756,13 @@ if (kvadrat != null) {
 }
 ```
 
+<a style="border: 2px solid gray; display: inline-block; padding: 15px; background-color: rgb(114, 211, 250); color: black;"
+   href="./Primeri/8/index.html"
+   target="_blank">Pogledaj primer uživo</a>
+
 Na adresi [https://developer.mozilla.org/en-US/docs/Web/Events](https://developer.mozilla.org/en-US/docs/Web/Events){:target="_blank"} moguće je pronaći spisak svih događaja, grupisanih po kategorijama koji predstavljaju izvore okidanja tih događaja, zajedno sa njihovim opisima.
+
+Napomenimo još i da, prilikom definisanja osluškivača, ukoliko je potrebno da dohvatimo objekat nad kojim se postavlja osluškivač, moguće je koristiti ključnu reč `this`, sa istom semantikom kao kod definisanja metoda objekta.
 
 #### Alternativni metodi pridruživanja osluškivača događajima
 

@@ -149,7 +149,7 @@ Autori:
 
 ## Deo 3 - Programiranje klijentskih veb aplikacija
 
-### Poglavlje 5. JavaScript i DOM(./Poglavlja/JSDOM/README.md){:target="_blank"}
+### [Poglavlje 5. JavaScript i DOM](./Poglavlja/JSDOM/README.md){:target="_blank"}
 
 1. [Osnovni koncepti DOM stabla](./Poglavlja/JSDOM/README.md#51-osnovni-koncepti-dom-stabla){:target="_blank"}
 
