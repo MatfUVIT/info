@@ -18,10 +18,14 @@ const liste = document.getElementsByTagName('ul');
 if (liste.length > 0) {
     const lista = liste[0];
     const stavke = lista.children;
+    const brojStavki = stavke.length;
 
-    for (const stavka of stavke) {
-        if (stavka_treba_biti_obrisana(stavka)) {
-            lista.removeChild(stavka);
+    // Moramo da brišemo od kraja niza do početka,
+    // zato što poziv removeChild menja sam niz lista.children,
+    // tako da for-in i for-of petlje ne bi funkcionisale ispravno.
+    for (let i = brojStavki - 1; i >= 0; --i) {
+        if (stavka_treba_biti_obrisana(stavke[i])) {
+            lista.removeChild(stavke[i]);
         }
     }
 } else {
