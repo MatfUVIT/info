@@ -4,9 +4,9 @@
 
 -----
 
-# 6. Sedmica 6
+# 7. Sedmica 7
 
-## 6.1 Teme
+## 7.1 Teme
 
 - Poglavlje 5. JavaScript i DOM
 
@@ -20,7 +20,7 @@
 
    - Sekcija 5. Pridruživanje osluškivača događaja elementima
 
-## 6.2 Domaći zadaci
+## 7.2 Domaći zadaci
 
 1. Neka je data datoteka `index.html` sa narednim sadržajem koja predstavlja osnovu klijentske veb aplikacije:
 
