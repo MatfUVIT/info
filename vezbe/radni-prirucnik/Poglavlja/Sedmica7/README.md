@@ -148,6 +148,66 @@ Neka je data datoteka `index.html` sa narednim sadržajem koja predstavlja osnov
 </html>
 ```
 
+Stilovi su dati u datoteci `index.css`:
+
+```css
+body {
+    font-family: sans-serif;
+}
+
+h1 {
+    text-transform: uppercase;
+    text-align: center;
+    color: rebeccapurple;
+}
+
+#nova-stavka {
+    border: 3px solid teal;
+    border-radius: 5px;
+    width: 80%;
+    height: 200px;
+    margin: auto;
+    padding: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    align-content: space-between;
+}
+
+label {
+    width: 20%;
+}
+
+input[type="text"],
+input[type="date"] {
+    width: 75%;
+    padding: 10px;
+    height: 20px;
+}
+
+input[type="button"] {
+    display: block;
+    width: 100%;
+    height: 40px;
+    background-color: mediumslateblue;
+    border-style: none;
+    border-radius: 5px;
+    font-weight: 300;
+    color: white;
+    font-size: .9em;
+}
+
+.stavka {
+    width: 80%;
+    margin: auto;
+    margin-top: 10px;
+    border: 3px solid hotpink;
+    border-radius: 5px;
+    word-wrap: break-word;
+}
+```
+
 Zadatak je da implementiramo klijentsku veb aplikaciju koja ispunjava naredni opis. Korisnik treba da unese datum u polje "Odaberite datum" i tekst u polje "Unesite podsetnik". Klikom na dugme "Unesi novi podsetnik" na stranici se prikazuje nova stavka "To-do" liste. Prikaz aplikacije je dat na narednoj slici.
 
 ![Implementacija "To-do" liste](./Slike/todo.png)
