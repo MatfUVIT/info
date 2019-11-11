@@ -103,7 +103,44 @@ TypeError: Cannot set property 'ime' of undefined
 
 &#9608;
 
+### Дебагирање
+
+### Реаговање на грешке
+
+Say you have a function promptInteger that asks the user for a whole 
+number and returns it.
+
+What should it return if the user inputs orange?
+
+One option is to make it return a special value. 
+
+Common choices for such values are null and undefined.
+
+This policy, however, have its downsides. 
+
+First, what if the function can already return every possible kind of value? 
+
+For such a function, it is hard to find a special value that can be distinguished 
+from a valid result.
+
+The second issue with returning special values is that it can lead to some very 
+cluttered code.
+ 
+If a piece of code calls promptNumber 10 times, it has to check 10 times whether 
+null was returned. 
+
+And if its response to finding null is to simply return null itself, 
+the caller will in turn have to check for it, and so on.
+
 ### Изузетци
+
+Изуззетци су механизам који омогућује да програмски код који се извршава избаци изузетак - вредност која указује да је дошло до проблема.
+
+Избацивање изузетка донекле подсећа на "појачани" повратак из функције. Ниме, на тај начин не само што текућа функција завршава рад, већ се искаче из ланца њених позиваоца, тј. иде се наниже кроз стек позива све до оног позива који је иницирао то извршавање и који "зна" како да обради изузетак. Претходно описани процес се незива одмотавање стека позива
+
+Дакле, изузетак се спушта наниже и бива избачен кроз сев контексте позива на стеку.
+
+Ако би се избачени изузетак спустио до полазног позива, извршавање би се прекинуло, што програмеру није од велике помоћи. Моћ изузетака лежи у чињеници да се изузетку приликом спуштања кроз стек позива могу поставти елементи који га хватају (обично и обрађују) и на тај начин прекидају његово спуштање наниже. После хватања и обраде изузетка програм ће наставити рад од наредбе иза места где је дати изузетак ухваћен.
 
 ### Литература
 
