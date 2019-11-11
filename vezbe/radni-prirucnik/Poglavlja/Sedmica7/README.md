@@ -22,7 +22,9 @@
 
 ## 7.2 Domaći zadaci
 
-1. Neka je data datoteka `index.html` sa narednim sadržajem koja predstavlja osnovu klijentske veb aplikacije:
+#### Zadatak 1
+
+Neka je data datoteka `index.html` sa narednim sadržajem koja predstavlja osnovu klijentske veb aplikacije:
 
 ```html
 <!DOCTYPE html>
@@ -109,7 +111,9 @@ g) Napisati funkciju `prikaži_podatke()` koja redom:
 
 h) Obraditi sve greške u implementaciji.
 
-2. Neka je data datoteka `index.html` sa narednim sadržajem koja predstavlja osnovu klijentske veb aplikacije:
+#### Zadatak 2
+
+Neka je data datoteka `index.html` sa narednim sadržajem koja predstavlja osnovu klijentske veb aplikacije:
 
 ```html
 <!DOCTYPE html>
