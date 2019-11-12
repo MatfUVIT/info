@@ -50,7 +50,7 @@ Možemo da zamislimo strukturu HTML dokumenta kao ugnežđene kutije. Struktura 
 <img style="max-width: 100%;" src="./Slike/primer_stranice_za_dom.png" alt="">
 </div>
 
-Struktura kojom veb pregledač opisuje model HTML stranice prati ovaj grafički prikaz. Za svaku kutiju postoji objekat, sa kojim programeri mogu da interaguju da bi dohvatili njegova svojstva ili izvršavali neke metode. Ovakva reprezentacija se naziva *model objekata dokumenta* (engl. *document object model*, skr. *DOM*). Preciznije, struktura podataka kojom se opisuje DOM je *m*-narno *stablo* (engl. *tree*). Elementi su predstavljeni čvorima stabla i oni određuju njegovu strukturu. Ugnežđeni elementi predstavljaju *naslednike* (engl. *child*) čvora koji je njihov *roditelj* (engl. *parent*). Neki čvorovi imaju *listove* (engl. *leaf*) za naslednike, što mogu biti tekstualni elementi, komentari i dr. Na primer, drvolika struktura prethodnog HTML dokumenta se može prikazati kao na narednoj slici[^1]. Plavom bojom su označeni čvorovi koji predstavljaju HTML elemente; zelenom bojom su označeni čvorovi koji predstavljaju tekstualni sadržaj; žutom bojom su označeni čvorovi koji predstavljaju tekstualni sadržaj sačinjen samo od belina.
+Struktura kojom veb pregledač opisuje model HTML stranice prati ovaj grafički prikaz. Za svaku kutiju postoji objekat, sa kojim programeri mogu da interaguju da bi dohvatili njegova svojstva ili izvršavali neke metode. Ovakva reprezentacija se naziva *model objekata dokumenta* (engl. *document object model*, skr. *DOM*). Preciznije, struktura podataka kojom se opisuje DOM je *m*-narno *stablo* (engl. *tree*). Elementi su predstavljeni čvorima stabla i oni određuju njegovu strukturu. Ugnežđeni elementi predstavljaju *naslednike* (engl. *child*) čvora koji je njihov *roditelj* (engl. *parent*). Neki čvorovi imaju *listove* (engl. *leaf*) za naslednike, što mogu biti tekstualni elementi, komentari i dr. Na primer, drvolika struktura prethodnog HTML dokumenta se može prikazati kao na narednoj slici<sup>[^1]</sup>. Plavom bojom su označeni čvorovi koji predstavljaju HTML elemente; zelenom bojom su označeni čvorovi koji predstavljaju tekstualni sadržaj; žutom bojom su označeni čvorovi koji predstavljaju tekstualni sadržaj sačinjen samo od belina.
 
 [^1]: Alat koji je korišćen za vizualizaciju ovog DOM stabla se može pronaći na adresi [http://bioub.github.io/dom-visualizer/](http://bioub.github.io/dom-visualizer/){:target="_blank"}
 
@@ -374,7 +374,7 @@ Na adresi [https://www.w3schools.com/jsref/dom_obj_style.asp](https://www.w3scho
 
 U ovoj sekciji ćemo opisati i demonstrirati metode definisane nad čvorovima DOM stabla koji se koriste za dinamičko kreiranje, dodavanje i brisanje elemenata koji se nalaze (ili koji treba da se nalaze) u DOM stablu.
 
-Već smo diskutovali o svojstvima `innerHTML` i `outerHTML` koji se mogu koristiti za dodavanje elemenata (tako što se postavi njihova vrednost na nisku koja sadrži HTML kod) ili brisanje elemenata (tako što se postavi njihova vrednost na, recimo, praznu nisku). Međutim, ovo može predstavljati bezbednosni rizik jer niska koja se postavlja može sadržati kod koji ne treba biti umetnut. Dodatno, ovaj proces može biti sporiji u odnosu na ostale metode, koje ćemo izložiti o ovoj sekciji[^2].
+Već smo diskutovali o svojstvima `innerHTML` i `outerHTML` koji se mogu koristiti za dodavanje elemenata (tako što se postavi njihova vrednost na nisku koja sadrži HTML kod) ili brisanje elemenata (tako što se postavi njihova vrednost na, recimo, praznu nisku). Međutim, ovo može predstavljati bezbednosni rizik jer niska koja se postavlja može sadržati kod koji ne treba biti umetnut. Dodatno, ovaj proces može biti sporiji u odnosu na ostale metode, koje ćemo izložiti o ovoj sekciji<sup>[^2]</sup>.
 
 [^2]: Videti [testove brzine](http://jsben.ch/6uEsf){:target="_blank"}
 
@@ -510,11 +510,11 @@ Datoteka `index.html`:
 <body>
     <ul>
         <li class="obrisi_mene">Stavka liste 0</li>
-        <li>Stavka liste 1</li>
-        <li class="obrisi_mene">Stavka liste 2</li>
+        <li class="obrisi_mene">Stavka liste 1</li>
+        <li>Stavka liste 2</li>
         <li>Stavka liste 3</li>
-        <li class="obrisi_mene">Stavka liste 4</li>
-        <li>Stavka liste 5</li>
+        <li>Stavka liste 4</li>
+        <li class="obrisi_mene">Stavka liste 5</li>
         <li class="obrisi_mene">Stavka liste 6</li>
     </ul>
 
@@ -547,10 +547,14 @@ const liste = document.getElementsByTagName('ul');
 if (liste.length > 0) {
     const lista = liste[0];
     const stavke = lista.children;
+    const brojStavki = stavke.length;
 
-    for (const stavka of stavke) {
-        if (stavka_treba_biti_obrisana(stavka)) {
-            lista.removeChild(stavka);
+    // Moramo da brišemo od kraja niza do početka,
+    // zato što poziv removeChild menja sam niz lista.children,
+    // tako da for-in i for-of petlje ne bi funkcionisale ispravno.
+    for (let i = brojStavki - 1; i >= 0; --i) {
+        if (stavka_treba_biti_obrisana(stavke[i])) {
+            lista.removeChild(stavke[i]);
         }
     }
 } else {
@@ -568,7 +572,7 @@ Nekada je potrebno da izvršimo zamenu elemenata. Na primer, ukoliko bi trebalo 
 
 Međutim, time je potrebno da kodiramo dve operacije koje implementiraju delove iste logike. Ukoliko dođe do problema u bilo kojem delu, trebalo bi da efekat bude kao da nismo učinili nikakvu izmenu, što obradu grešaka čini znatno komplikovanijom.
 
-Na sreću, dostupan je metod `replace_child` koji radi upravo ono što je nama potrebno. Ovaj metod ima dva argumenta: prvi argument je objekat koji će se nalaziti u DOM stablu nakon zamene, a drugi argument je objekat koji će biti obrisan iz DOM stabla nakon zamene. Slično kao i `append_child` i `remove_child`, i ovaj metod se poziva nad roditeljskim čvorom, što znači da drugi argument mora biti objekat koji predstavlja dete roditeljskog čvora. U slučaju da dođe do greške, metod će prijaviti da je došlo do greške i nikakva izmena neće biti izvršena.
+Na sreću, dostupan je metod `replaceChild` koji radi upravo ono što je nama potrebno. Ovaj metod ima dva argumenta: prvi argument je objekat koji će se nalaziti u DOM stablu nakon zamene, a drugi argument je objekat koji će biti obrisan iz DOM stabla nakon zamene. Slično kao i `appendChild` i `removeChild`, i ovaj metod se poziva nad roditeljskim čvorom, što znači da drugi argument mora biti objekat koji predstavlja dete roditeljskog čvora. U slučaju da dođe do greške, metod će prijaviti da je došlo do greške i nikakva izmena neće biti izvršena.
 
 Naredni primer ilustruje korišćenje ovog metoda zamenom svih `span` elemenata `img` elementima.
 
@@ -766,7 +770,7 @@ Napomenimo još i da, prilikom definisanja osluškivača, ukoliko je potrebno da
 
 #### Alternativni metodi pridruživanja osluškivača događajima
 
-Pridruživanje osluškivača događajima je moguće izvršiti i na drugi način. U pitanju je korišćenje odgovarajućih svojstava čvorova DOM stabla koji odgovaraju HTML elementima. Na primer, čvor koji odgovara elementima `input` čiji je atribut `type="input"` (dakle, dugmići) sadrži atribut `onclick` čija je vrednost funkcija koja implementira osluškivač događaja naziva `'click'`, odnosno, kliktaj mišem na dugme. U prethodnom primeru, umesto linije:
+Pridruživanje osluškivača događajima je moguće izvršiti i na drugi način. U pitanju je korišćenje odgovarajućih svojstava čvorova DOM stabla koji odgovaraju HTML elementima. Na primer, čvor koji odgovara elementima `input` čiji je atribut `type="button"` (dakle, dugmići) sadrži atribut `onclick` čija je vrednost funkcija koja implementira osluškivač događaja naziva `'click'`, odnosno, kliktaj mišem na dugme. U prethodnom primeru, umesto linije:
 
 ```js
 uvecaj.addEventListener('event', uvecaj_click);
