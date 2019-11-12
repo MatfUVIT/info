@@ -1,5 +1,10 @@
 "use strict";
-function promptNumber(question) {
+
+function izvor(){
+  return 10 * Math.random() -5;
+}
+
+function obradiIzvor(question) {
   var result = Number(prompt(question, ""));
   if (isNaN(result))
     return null;
