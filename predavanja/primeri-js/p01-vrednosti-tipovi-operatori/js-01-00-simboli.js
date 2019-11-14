@@ -5,8 +5,8 @@ console.log(`мићко`)
 console.log(мићко)
 
 // Unicode знаци могу да 
-// буду имана променљивих
-const \u1F601 = 42;
+// буду имeна променљивих
+const \u1F601 = 42
 console.log(`\u1F601`)
 console.log(\u1F601)
 
