@@ -1,24 +1,34 @@
+console.log("---");
 /* запис ниске */
-" Trla baba lan, da joj prođe dan "
+let x = " Trla baba lan, da joj prođe dan ";
+console.log(x);
 
 /* алтернативни запис ниске */
-' Trla baba lan, da joj prođe dan '
+x = ' Trla baba lan, da joj prođe dan ';
+console.log(x);
 
 /* коришћћење знака \ омогућава да се ниска пружа кроз више редова */
-"Trla baba lan, \
-da joj prođe dan "
+x = " Trla baba lan, \
+da joj prođe dan ";
+console.log(x);
 
 /* коришћћење знака \ омогућава да се ниска пружа кроз више редова */
-"Trla \
+x = " Trla \
 baba lan, \
 da joj prođe \
-dan "
+dan ";
+console.log(x);
 
+console.log("---");
 /* ниска која садржи знак за крај линије */
-" Trla baba lan,\n da joj prođe dan "
+let y = " Trla baba lan,\n da joj prođe dan ";
+console.log(y);
+
+console.log("---");
+/* ниска која садржи секвенцу знакова "\n" */
+let z = " Trla baba lan,\"\\n\" da joj prođe dan ";
+console.log(z);
 
 /* ниска која садржи секвенцу знакова "\n" */
-" Trla baba lan,\"\\n\" da joj prođe dan "
-
-/* ниска која садржи секвенцу знакова "\n" */
-' Trla baba lan,"\\n" da joj prođe dan '
+z =' Trla baba lan,"\\n" da joj prođe dan ';
+console.log(z);
