@@ -426,7 +426,7 @@ console.log(osoba2)
 
 - `async function* //асинхрони функционални израз`, описано у [поглављу](JavaScript-Programski-Jezik-Asinhrono-Programiranje#асинхроно-програмирање-и-наредбе-async-и-await){:target="_blank"}
 
-- `await //паузира/наставља/чека завршетак за асинхрону функцију`, описано у [следећем поглављу](JavaScript-Programski-Jezik-Asinhrono-Programiranje#асинхроно-програмирање-и-наредбе-async-и-await){:target="_blank"}
+- `await //паузира/наставља/чека завршетак за асинхрону функцију`, описано у [поглављу](JavaScript-Programski-Jezik-Asinhrono-Programiranje#асинхроно-програмирање-и-наредбе-async-и-await){:target="_blank"}
 
 - `/pattern/i //регуларни израз`
 
@@ -651,13 +651,11 @@ Nadam se da si dobro.
 У наредној табели су приказани оператори и њихова асоцијативност. Редослед оператора у табели је дат по њиховом приоритету - од најважнијег ка мање важним:
 
 | Приоритет | Ознака  | Назив                                                                       | Асоцијативност          |
-|-----------|---------+-----------------------------------------------------------------------------|-------------------------|
-| 20        | ( … )   | [заграде за груписање](https://developer.mozilla.org//en-US/docs/Web/JavaScript/Reference/Operators/Grouping){:target="_blank"}                                                                      | н/д          |
-|-----------|---------+-----------------------------------------------------------------------------|-------------------------|
-| 19        | .       | [заграде за груписање](https://developer.mozilla.org//en-US/docs/Web/JavaScript/Reference/Operators/Grouping){:target="_blank"}                                                                      | н/д          |
-| 19        | ( … )   | [приступ особини објекта тачка-нотацијом](https://developer.mozilla.org//en-US/docs/Web/JavaScript/Reference/Operators/Property_Accessors#Dot_notation){:target="_blank"}                                                                      | н/д       |
-| 19        | ( … )   | [заграде за груписање](https://developer.mozilla.org//en-US/docs/Web/JavaScript/Reference/Operators/Grouping){:target="_blank"}                                                                      | слева удеснo |
-|-----------|---------+-----------------------------------------------------------------------------|-------------------------|
+|-----------|---------+:----------------------------------------------------------------------------|-------------------------|
+| 20        | ( … )   | [заграде за груписање](https://developer.mozilla.org//en-US/docs/Web/JavaScript/Reference/Operators/Grouping){:target="_blank"} | н/д          |
+| 19        | ( … )   | [приступ особини објекта тачка-нотацијом](https://developer.mozilla.org//en-US/docs/Web/JavaScript/Reference/Operators/Property_Accessors#Dot_notation){:target="_blank"} | слева удеснo        |
+| 19        | ( … )   | [заграде за груписање](https://developer.mozilla.org//en-US/docs/Web/JavaScript/Reference/Operators/Grouping){:target="_blank"}  | н/д          |
+| 19        | .       | [заграде за груписање](https://developer.mozilla.org//en-US/docs/Web/JavaScript/Reference/Operators/Grouping){:target="_blank"}  | н/д          |
 <table style="border:1px">
 <tbody>
 <tr>
