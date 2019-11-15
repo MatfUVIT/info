@@ -1,4 +1,9 @@
 "use strict";
+
+const slucajanBrojIliMiki = function(){
+  
+}
+
 function promptNumber(question) {
   var result = Number(prompt(question, ""));
   if (isNaN(result))

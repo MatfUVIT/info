@@ -107,12 +107,69 @@ TypeError: Cannot set property 'ime' of undefined
 
 ### Реаговање на грешке
 
-Say you have a function promptInteger that asks the user for a whole 
-number and returns it.
+И у језику ЈаваСкрипт се може сигнализирати да је приликом извршавања функције дошло до грешке тако што ће бити враћена "специјална" повратна вредност.  
 
-What should it return if the user inputs orange?
+
+**Пример.** Илуструје како се у језику ЈаваСкрипт може реаговати на грешку.
+
+У овом случају имамо функцију на коју реферише променљива `slucajanBrojIliMiki` - та функција некада враћа позитиван цео број мањи или једнак од `9`, некада негативан цео број већи или једнак `-9`, а некада ниску `Miki Maus`. Нека друга функција рачуна квадратни корен резултат који произведе прва функција.
+
+```js
+"use strict";
+
+let slucajanBrojIliMiki = function () {
+  if (Math.random() < 0.4)
+    return Math.floor(Math.random() * 10);
+  if (Math.random() < 0.8)
+    return Math.floor(-Math.random() * 10);  
+  return "Miki Maus";
+}
+
+function kvadratniKoren(izvorPodataka) {
+  let broj = Number(izvorPodataka());
+  let rezultat = Math.sqrt(broj);
+  return {broj, rezultat};
+}
+
+console.log(kvadratniKoren(slucajanBrojIliMiki));
+```
+
+У овом примеру не предузимају се никакве специјалне мере за детекцију грешке. &#9608;
+
 
 One option is to make it return a special value. 
+
+**Пример.** Илуструје како се у језику ЈаваСкрипт може реаговати на грешку.
+
+```js
+"use strict";
+
+let slucajanBrojIliMiki = function () {
+  if (Math.random() < 0.4)
+    return Math.floor(Math.random() * 10);
+  if (Math.random() < 0.8)
+    return Math.floor(-Math.random() * 10);  
+  return "Miki Maus";
+}
+
+function kvadratniKoren(izvorPodataka) {
+  let broj = Number(izvorPodataka());
+  if( isNaN(broj) ){
+    let rezultat = "nemoguce korenovati nesto sto nije broj";
+    return {broj, rezultat};
+  }
+  if( broj < 0){
+    let rezultat = "nemoguce korenovati negativan broj";
+    return {broj, rezultat};
+  }
+  let rezultat = Math.sqrt(broj);
+  return {broj, rezultat};
+}
+
+console.log(kvadratniKoren(slucajanBrojIliMiki));
+```
+
+&#9608;
 
 Common choices for such values are null and undefined.
 
@@ -129,8 +186,11 @@ cluttered code.
 If a piece of code calls promptNumber 10 times, it has to check 10 times whether 
 null was returned. 
 
+
+
 And if its response to finding null is to simply return null itself, 
 the caller will in turn have to check for it, and so on.
+
 
 ### Изузетци
 

@@ -9,7 +9,7 @@
             "type": "node",
             "request": "launch",
             "name": "Launch Program",
-            "program": "${workspaceFolder}/predavanja/primeri-js/p01-vrednosti-tipovi-operatori/js-01-01b-objekti.js"
+            "program": "${workspaceFolder}/predavanja/primeri-js/p08-rukovanje-greskama/js-08-05b-propagiranje-greske.js"
         }
     ]
 }
