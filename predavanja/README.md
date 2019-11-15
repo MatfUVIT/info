@@ -348,7 +348,7 @@
 
         - [Примери](https://github.com/MatfUVIT/UVIT/tree/master/predavanja/primeri-js/p10-moduli){:target="_blank"}
 
-    1. [Врзије и Стилови кŏдирања у језику ЈаваСкрипт](tekstovi/JavaScript-Programski-Jezik-Verzije-Stilovi-Kodiranja.md#стилови-кŏдирања){:target="_blank"}
+    1. [Вeрзије и стилови кŏдирања у језику ЈаваСкрипт](tekstovi/JavaScript-Programski-Jezik-Verzije-Stilovi-Kodiranja.md#стилови-кŏдирања){:target="_blank"}
 
     - [Примери](https://github.com/MatfUVIT/UVIT/tree/master/predavanja/primeri-js){:target="_blank"}
 

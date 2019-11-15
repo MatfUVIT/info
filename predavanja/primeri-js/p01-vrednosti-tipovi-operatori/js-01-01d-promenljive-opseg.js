@@ -1,8 +1,8 @@
 const osoba1 = "Никола";
-console.log(osoba1)
+console.log(osoba1);
 
-let osoba2 = osoba1 + "!!!!"
-console.log(osoba2)
+let osoba2 = osoba1 + "!!!!";
+console.log(osoba2);
 
 // nemoguce - pokusaj postavljanja 
 // vrednosti za konstantnu promenljivu
@@ -11,8 +11,8 @@ console.log(osoba2)
 // rad sa promenljivom deklarisanom
 // pomocu var
 {
-    var osoba3 = "Петар"
-    console.log(osoba3)
+    var osoba3 = "Петар";
+    console.log(osoba3);
 }
 console.log(osoba3 + " " + osoba2)
 
