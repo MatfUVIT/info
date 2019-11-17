@@ -1,24 +1,29 @@
 "use strict";
 
-function promptDirection(question) {
-  var result = prompt(question, "");
-  if (result.toLowerCase() == "left") 
-     return "L";
-  if (result.toLowerCase() == "right") 
-     return "R";
-  throw new Error("Invalid direction: " + result);
+let slucajanBrojIliMiki = function () {
+  if (Math.random() < 0.4)
+    return Math.floor(Math.random() * 10);
+  if (Math.random() < 0.8)
+    return Math.floor(-Math.random() * 10);
+  return "Miki Maus";
 }
 
-function look() {
-  if (promptDirection("Which way?") == "L")
-    return "a house";
-  else
-    return "two angry bears";
+function kvadratniKoren(izvorPodataka) {
+  let broj = Number(izvorPodataka());
+  if (isNaN(broj))
+    throw new Error("nemoguce korenovati nesto sto nije broj");
+  if (broj < 0)
+    throw new Error("nemoguce korenovati negativan broj");
+  let rezultat = Math.sqrt(broj);
+  return { "broj": broj, "rezultat": rezultat };
 }
 
-try {
-  console.log("You see", look());
-} catch (error) {
-  console.log("Something went wrong: " + error);
-}
-
+for (let i = 0; i < 10; i++)
+  try {
+    console.log(kvadratniKoren(slucajanBrojIliMiki));
+  } catch (error) {
+    console.log("Nesto je jako pogresno: *** " + error + " ***");
+  }
+console.log("---");
+for (let i = 0; i < 10; i++)
+  console.log(kvadratniKoren(slucajanBrojIliMiki));
