@@ -1,41 +1,46 @@
-/*
-Function, withContext, wants to make sure that, during its execution, 
-the top-level variable context holds a specific context value.
-
-After it finishes, it restores this variable to its old value.
-*/
 "use strict";
 
-var context = null;
-console.log(context);
-// → null
+let kontekst = null;
+console.log(kontekst);
 
-function withContext(newContext, body) {
-  var oldContext = context;
-  context = newContext;
-  var result = body();
-  context = oldContext;
-  return result;
+function izvrsiSaKontekstom(noviKontekst, teloFunkcije) {
+  let stariKontekst = kontekst;
+  kontekst = noviKontekst;
+  let rezultat = teloFunkcije();
+  kontekst = stariKontekst;
+  return rezultat;
 }
 
-/*
-What if body raises an exception? 
+console.log("---")
+izvrsiSaKontekstom(25, () => console.log(Math.sqrt(kontekst)));
+console.log(kontekst);
+izvrsiSaKontekstom(-25, () => console.log(Math.sqrt(kontekst)));
+console.log(kontekst);
 
-In that case, the call to withContext will be thrown off the stack by the 
-exception, and context will never be set back to its old value.
-*/
 
+console.log("---")
 try {
-  withContext(5, function() {
-    if (context < 10)
-      throw new Error("Not enough context!");
+  izvrsiSaKontekstom(16, function (x) {
+    if (kontekst < 0)
+      throw new Error("Nemoguce izracunati koren negativnog broja!");
+    console.log(Math.sqrt(kontekst));
   });
 } catch (e) {
-  console.log("Ignoring: " + e);
+  console.log("Ignorise se izuzetak: " + e);
 }
-// → Ignoring: Error: Not enough context!
+console.log(kontekst);
 
-console.log(context);
-// → 5
+console.log("---")
+try {
+  izvrsiSaKontekstom(-16, function () {
+    if (kontekst < 0)
+      throw new Error("Nemoguce izracunati koren negativnog broja!");
+    console.log(Math.sqrt(kontekst));
+  });
+} catch (e) {
+  console.log("Ignorise se izuzetak: " + e);
+}
+console.log(kontekst);
+
 
 

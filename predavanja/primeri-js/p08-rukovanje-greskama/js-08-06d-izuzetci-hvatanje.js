@@ -20,7 +20,7 @@ function voziAuto(usmerenje) {
     throw new Error("Auto ne leti: " + rezultat);
   if (rezultat.toLowerCase() == "dole")
     throw new Error("Auto nije krtica: " + rezultat);
-  throw new Error("Nekorektno smerenje za auto");
+  throw new Error("Nekorektno usmerenje za auto");
 }
 
 function pogled() {
@@ -30,16 +30,12 @@ function pogled() {
     return "Sa ove strane su planine";
 }
 
-let brojPonavljanja = 10;
-
-for (let i = 0; i < brojPonavljanja; i++)
+for (let i = 0; i <10; i++)
   try {
     console.log(` ${i} Gledas iz auta. ${pogled()}`);
   } catch (error) {
     console.log("Nesto je jako pogresno: *** " + error + " ***");
   }
-console.log("---");
-for (let i = 0; i < brojPonavljanja; i++)
-  console.log(` ${i} Gledas iz auta. ${pogled()}`);
+
 
 

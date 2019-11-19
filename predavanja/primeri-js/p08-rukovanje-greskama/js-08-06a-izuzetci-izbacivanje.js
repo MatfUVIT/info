@@ -19,11 +19,4 @@ function kvadratniKoren(izvorPodataka) {
 }
 
 for (let i = 0; i < 10; i++)
-  try {
-    console.log(kvadratniKoren(slucajanBrojIliMiki));
-  } catch (error) {
-    console.log("Nesto je jako pogresno: *** " + error + " ***");
-  }
-console.log("---");
-for (let i = 0; i < 10; i++)
   console.log(kvadratniKoren(slucajanBrojIliMiki));

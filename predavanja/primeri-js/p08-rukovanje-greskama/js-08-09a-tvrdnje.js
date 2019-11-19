@@ -1,8 +1,3 @@
-/*
-Assertions are a tool to do basic sanity checking for programmer errors. 
-
-Consider this helper function, assert:
-*/
 "use strict";
 
 function AssertionFailed(message) {
@@ -16,21 +11,28 @@ function assert(test, message) {
 }
 
 function lastElement(array) {
-  assert(array.length > 0, "empty array in lastElement");
+  assert(array.length > 0, "niz ne sme biti prazan");
   return array[array.length - 1];
 }
 
-/*
-This provides a compact way to enforce expectations, helpfully blowing up 
-the program if the stated condition does not hold. 
+function element(array, index) {
+  assert(array.length > 0, "niz ne sme biti prazan");
+  assert( typeof(index) == Number, "indeks niza mora biti broj" )
+  assert(index >= 0, "indeks niza ne sme biti negativan");
+  assert(index < array.length, "indeks niza mora biti manji od broja clanova");
+  return array[index];
+}
 
-For instance, the lastElement function, which fetches the last element from 
-an array, would return undefined on empty arrays if the assertion was omitted. 
+let niz1 = [];
+let niz2 = ["Paja", "Miki", "Mini", "Silja"];
 
-Fetching the last element from an empty array does not make much sense, so it 
-is almost certainly a programmer error to do so.
+console.log(lastElement(niz2));
+//console.log(lastElement(niz1));
 
-Assertions are a way to make sure mistakes cause failures at the point of the 
-mistake, rather than silently producing nonsense values that may go on to cause 
-trouble in an unrelated part of the system.
-*/
+//console.log(element(niz1, 1));
+//console.log(element(niz1, 0));
+console.log(element(niz2, 2));
+//console.log(element(niz2, "Miki"));
+//console.log(element(niz2, "2"));
+//console.log(element(niz2, -2));
+//console.log(element(niz2, 4));
