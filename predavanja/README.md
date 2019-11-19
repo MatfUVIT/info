@@ -186,6 +186,18 @@
 
         1. [Основни елементи језика ЈаваСкрипт](tekstovi/JavaScript-Programski-Jezik-Struktura-Programa.md#основни-елементи-језика-јаваскрипт){:target="_blank"}
 
+            1. [Unicode знаци](tekstovi/JavaScript-Programski-Jezik-Struktura-Programa.md#unicode-знаци){:target="_blank"}
+
+            1. [Тачка-зарез](tekstovi/JavaScript-Programski-Jezik-Struktura-Programa.md#тачка-зарез){:target="_blank"}
+
+            1. [Белине](tekstovi/JavaScript-Programski-Jezik-Struktura-Programa.md#белине){:target="_blank"}
+
+            1. [Коментари](tekstovi/JavaScript-Programski-Jezik-Struktura-Programa.md#коментари){:target="_blank"}
+
+            1. [Литерали](tekstovi/JavaScript-Programski-Jezik-Struktura-Programa.md#литерали){:target="_blank"}
+
+            1. [Идентификатори](tekstovi/JavaScript-Programski-Jezik-Struktura-Programa.md#идентификатори){:target="_blank"}
+
         1. [Типови и вредности](tekstovi/JavaScript-Programski-Jezik-Struktura-Programa.md#типови-и-вредности){:target="_blank"}
 
             1. [Примитивни типови](tekstovi/JavaScript-Programski-Jezik-Struktura-Programa.md#примитивни-типови){:target="_blank"}
@@ -194,9 +206,29 @@
 
         1. [Променљиве](tekstovi/JavaScript-Programski-Jezik-Struktura-Programa.md#променљиве){:target="_blank"}
 
+            1. [Опсег дефинисаности и контексти](tekstovi/JavaScript-Programski-Jezik-Struktura-Programa.md#опсег-дефинисаности-и-контексти){:target="_blank"}
+
         1. [Изрази](tekstovi/JavaScript-Programski-Jezik-Struktura-Programa.md#изрази){:target="_blank"}
 
+            1. [Примарни изрази](tekstovi/JavaScript-Programski-Jezik-Struktura-Programa.md#примарни-изрази){:target="_blank"}
+
+            1. [Аритметички изрази](tekstovi/JavaScript-Programski-Jezik-Struktura-Programa.md#aритметички-изрази){:target="_blank"}
+
+            1. [Логички изрази](tekstovi/JavaScript-Programski-Jezik-Struktura-Programa.md#логички-изрази){:target="_blank"}
+
+            1. [Ниска-изрази](tekstovi/JavaScript-Programski-Jezik-Struktura-Programa.md#ниска-изрази){:target="_blank"}
+
+            1. [Изрази леве стране](tekstovi/JavaScript-Programski-Jezik-Struktura-Programa.md#изрази-леве-стране){:target="_blank"}
+
+            1. [Приоритет оператора](tekstovi/JavaScript-Programski-Jezik-Struktura-Programa.md#приоритет-оператора){:target="_blank"}
+
         1. [Конверзија типова и евалуација израза](tekstovi/JavaScript-Programski-Jezik-Struktura-Programa.md#конверзија-типова-и-евалуација-израза){:target="_blank"}
+
+            1. [Експлицитна конверзија типа](tekstovi/JavaScript-Programski-Jezik-Struktura-Programa.md#експлицитна-конверзија-типа){:target="_blank"}
+
+            1. [Имплицитна конверзија типа](tekstovi/JavaScript-Programski-Jezik-Struktura-Programa.md#имплицитна-конверзија-типа){:target="_blank"}
+
+            1. [Поређење помоћу оператора ==](tekstovi/JavaScript-Programski-Jezik-Struktura-Programa.md#поређење-помоћу-оператора-==){:target="_blank"}
 
         1. [Наредбе и секвенце наредби](tekstovi/JavaScript-Programski-Jezik-Struktura-Programa.md#наредбе-и-секвенце-наредби){:target="_blank"}
 
@@ -234,7 +266,7 @@
 
         1. [Декларација и позив функције](tekstovi/JavaScript-Programski-Jezik-Funkcije-Zatvorenja.md#декларација-и-позив-функције){:target="_blank"}
 
-        1. [Функцијски израз и позив фуункције](tekstovi/JavaScript-Programski-Jezik-Funkcije-Zatvorenja.md#функцијски-израз-и позив-фуункције){:target="_blank"}
+        1. [Функцијски израз и позив функције](tekstovi/JavaScript-Programski-Jezik-Funkcije-Zatvorenja.md#функцијски-израз-и-позив-функције){:target="_blank"}
 
         1. [Параметри и аргументи функција](tekstovi/JavaScript-Programski-Jezik-Funkcije-Zatvorenja.md#параметри-и-аргументи-функција){:target="_blank"}
 
@@ -290,11 +322,7 @@
 
         1. [Повезивање функција при позиву](tekstovi/JavaScript-Programski-Jezik-Funkcije-Viseg-Reda.md#повезивање-функција-при-позиву){:target="_blank"}
 
-        1. [Функције вишег реда и рад са колекцијама](tekstovi/JavaScript-Programski-Jezik-Funkcije-Viseg-Reda.md#функције-вишег-реда-и-рад-са-колекцијама){:target="_blank"}
-
         1. [Мапирање и редукција помоћу функција вишег реда](Jtekstovi/avaScript-Programski-Jezik.md#мапирање-и-редукција-помоћу-функција-вишег-реда){:target="_blank"}
-
-        1. [Повезивање функција](tekstovi/JavaScript-Programski-Jezik-Funkcije-Viseg-Reda.md#повезивање-функција){:target="_blank"}
 
         - [Примери](https://github.com/MatfUVIT/UVIT/tree/master/predavanja/primeri-js/p05-funkcije-viseg-reda){:target="_blank"}
 
@@ -321,7 +349,7 @@
     1. [Асинхрони ЈаваСкрипт](tekstovi/JavaScript-Programski-Jezik-Asinhrono-Programiranje.md#асинхрони-јаваскрипт){:target="_blank"}
 
         1. [Типични модели извршавања програма](tekstovi/JavaScript-Programski-Jezik-Asinhrono-Programiranje.md#типични-модели-извршавања-програма){:target="_blank"}
-  
+
             1. [Синхрони модел програмирањa](tekstovi/JavaScript-Programski-Jezik-Asinhrono-Programiranje.md#синхрони-модел-програмирања){:target="_blank"}
 
             1. [Вишенитни модел програмирањаа](tekstovi/JavaScript-Programski-Jezik-Asinhrono-Programiranje.md#вишенитни-модел-програмирања){:target="_blank"}
@@ -330,7 +358,7 @@
 
         1. [Асинхроно програмирање у ЈаваСкрипту](tekstovi/JavaScript-Programski-Jezik-Asinhrono-Programiranje.md#асинхроно-програмирање-у-јаваскрипту){:target="_blank"}
 
-            1. [ЈаваСкрипт окружење и асинхроно програмирање](tekstovi/JavaScript-Programski-Jezik-Asinhrono-Programiranje.md#јаваскрипт окружење-и-асинхроно-програмирање){:target="_blank"}
+            1. [ЈаваСкрипт окружење и асинхроно програмирање](tekstovi/JavaScript-Programski-Jezik-Asinhrono-Programiranje.md#јаваскрипт-окружење-и-асинхроно-програмирање){:target="_blank"}
 
             1. [Асинхроно програмирање и повратни позиви](tekstovi/JavaScript-Programski-Jezik-Asinhrono-Programiranje.md#асинхроно-програмирање-и-повратни-позиви){:target="_blank"}
 
@@ -340,7 +368,23 @@
 
         - [Примери](https://github.com/MatfUVIT/UVIT/tree/master/predavanja/primeri-js/p07-asinhroni-js){:target="_blank"}
 
-    1. [Изузетци](tekstovi/JavaScript-Programski-Jezik-Izuzetci.md#руковање-грешкама){:target="_blank"}
+    1. [Руковање грешкама](tekstovi/JavaScript-Programski-Jezik-Izuzetci.md#руковање-грешкама){:target="_blank"}
+
+        1. [Хватање грешака у програмском коду](tekstovi/JavaScript-Programski-Jezik-Izuzetci.md#хватање-грешака-у-програмском-коду){:target="_blank"}
+
+        1. [Реаговање на грешке](tekstovi/JavaScript-Programski-Jezik-Izuzetci.md#реаговање-на-грешке){:target="_blank"}
+
+        1. [Изузетци](tekstovi/JavaScript-Programski-Jezik-Izuzetci.md#изузетци){:target="_blank"}
+
+            1. [Избацивање изузетка](tekstovi/JavaScript-Programski-Jezik-Izuzetci.md#избацивање-изузетка){:target="_blank"}
+
+            1. [Хватање изузетака](tekstovi/JavaScript-Programski-Jezik-Izuzetci.md#хватање-изузетака){:target="_blank"}
+
+            1. [Финално поспремање код изузетака](tekstovi/JavaScript-Programski-Jezik-Izuzetci.md#финално-поспремање-код-изузетака){:target="_blank"}
+
+            1. [Селективно хватање изузетака](tekstovi/JavaScript-Programski-Jezik-Izuzetci.md#селективно-хватање-изузетака){:target="_blank"}
+
+        1. [Тврдње](tekstovi/JavaScript-Programski-Jezik-Izuzetci.md#тврдње){:target="_blank"}
 
         - [Примери](https://github.com/MatfUVIT/UVIT/tree/master/predavanja/primeri-js/p08-rukovanje-greskama){:target="_blank"}
 

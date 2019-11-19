@@ -39,7 +39,7 @@ console.log(`Kвадрат броја ${y} је ${kvadrat(y)}`);
 
 &#9608;
 
-### Функцијски израз и позив фуункције
+### Функцијски израз и позив функције
 
 Један вид рада са функцијама у језику ЈаваСкрипт је да се функција одреди функцијским изразом. У том виду рада са функцијом, функција заиста постаје "грађанин првог реда". Стога ћемо, у примерима који следе, обично користити функцијске изразе.
 
@@ -597,6 +597,6 @@ test();
 
 1. [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript){:target="_blank"} - Mozzila Developer Network (MDN)
 
-1. Живановић, Д.: [Веб програмирање - ЈаваСкрипт догађаји](https://www.webprogramiranje.org/dogadjaji-u-javascript-u/){:target="_blank"}
+1. Живановић, Д.: [Веб програмирање - ЈаваСкрипт](https://www.webprogramiranje.org/dogadjaji-u-javascript-u/){:target="_blank"}
 
 1. Copes F.: [Complete JavaScript Handbook](https://medium.freecodecamp.org/the-complete-javascript-handbook-f26b2c71719c){:target="_blank"}

@@ -5,6 +5,8 @@
 
 ## Руковање грешкама
 
+овде ће бити описани механизми откривања грешака и руковања грешкама, ослањајући се на концепт изузетака.
+
 ### Хватање грешака у програмском коду
 
 Препоручује се да се у скрипти укључи тзв. стрктни мод.
@@ -103,12 +105,9 @@ TypeError: Cannot set property 'ime' of undefined
 
 &#9608;
 
-### Дебагирање
-
 ### Реаговање на грешке
 
 И у језику ЈаваСкрипт се може сигнализирати да је приликом извршавања функције дошло до грешке тако што ће бити враћена "специјална" повратна вредност.  
-
 
 **Пример.** Илуструје како се у језику ЈаваСкрипт може реаговати на грешку.
 
@@ -613,6 +612,6 @@ console.log(element(niz2, 2));
 
 1. [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript){:target="_blank"} - Mozzila Developer Network (MDN)
 
-1. Живановић, Д.: [Веб програмирање - ЈаваСкрипт догађаји](https://www.webprogramiranje.org/dogadjaji-u-javascript-u/){:target="_blank"}
+1. Живановић, Д.: [Веб програмирање - ЈаваСкрипт](https://www.webprogramiranje.org/dogadjaji-u-javascript-u/){:target="_blank"}
 
 1. Copes F.: [Complete JavaScript Handbook](https://medium.freecodecamp.org/the-complete-javascript-handbook-f26b2c71719c){:target="_blank"}

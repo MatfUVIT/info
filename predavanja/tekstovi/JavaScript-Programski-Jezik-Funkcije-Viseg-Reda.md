@@ -532,6 +532,6 @@ console.log(prosek(pretci.filter(jeZensko).map(uzrast)));
 
 1. [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript){:target="_blank"} - Mozzila Developer Network (MDN)
 
-1. Живановић, Д.: [Веб програмирање](https://www.webprogramiranje.org){:target="_blank"}
+1. Живановић, Д.: [Веб програмирање - ЈаваСкрипт](https://www.webprogramiranje.org){:target="_blank"}
 
 1. Copes F.: [Complete JavaScript Handbook](https://medium.freecodecamp.org/the-complete-javascript-handbook-f26b2c71719c){:target="_blank"}
