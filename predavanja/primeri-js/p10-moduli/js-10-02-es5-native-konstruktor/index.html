@@ -1,0 +1,22 @@
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Modularna aplikacija</title>
+</head>
+
+<body>
+    <!-- ucitavanje modula -->
+    <script src="vrednost.js" type="text/javascript"></script>
+    <script src="proracun.js" type="text/javascript"></script>
+    <!-- skripta koja koristi publikovane elemente modula -->
+    <script type="text/javascript">
+        let argument = 10;
+        let  vrednost = new Vrednost();
+        vrednost.setPodatak(argument);
+        let proracun = new Proracun();
+        console.log(proracun.izracunajKvadrat());
+    </script>
+</body>
+
+</html>

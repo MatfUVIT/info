@@ -1,0 +1,22 @@
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Modularna aplikacija</title>
+</head>
+
+<body>
+    <!-- ucitavanje modula -->
+    <script data-main="index.js" src="./require.js"></script>
+
+    <!-- skripta koja koristi publikovane elemente modula -->
+    <script type="text/javascript">
+        // poziv publikovane funkcije
+        requirejs(["index"], function (index) { 
+            index.pokreniAMD(); 
+        });
+
+    </script>
+</body>
+
+</html>

@@ -9,7 +9,7 @@
             "type": "node",
             "request": "launch",
             "name": "Launch Program",
-            "program": "${workspaceFolder}/predavanja/primeri-js/p08-rukovanje-greskama/js-08-09a-tvrdnje.js"
+            "program": "${workspaceFolder}/predavanja/primeri-js/p10-moduli/js-10-04-es5-extern-commonjs/index.js"
         }
     ]
 }

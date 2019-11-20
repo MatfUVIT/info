@@ -390,23 +390,31 @@
 
     1. [Модули](tekstovi/JavaScript-Programski-Jezik-Moduli.md#модули){:target="_blank"}
 
+        1. [Нативни ES5 модули](tekstovi/JavaScript-Programski-Jezik-Moduli.md#нативни-es5-модули){:target="_blank"}
+
+            1. [Модули преко функцијских израза који се одмах извршавају](tekstovi/JavaScript-Programski-Jezik-Moduli.md#модули-преко-функцијских-израза-који-се-одмах-извршавају){:target="_blank"}
+
+            1. [Модули преко конструктора](tekstovi/JavaScript-Programski-Jezik-Moduli.md#модули-преко-конструктора){:target="_blank"}
+
+        1. [ES5 модули преко спољних библиотека](tekstovi/JavaScript-Programski-Jezik-Moduli.md#es5-модули-преко-спољних-библиотека){:target="_blank"}
+
+            1. [Асинхрона дефиниција модула](tekstovi/JavaScript-Programski-Jezik-Moduli.md#асинхрона-дефиниција-модула){:target="_blank"}
+
+            1. [CommonJS модули](tekstovi/JavaScript-Programski-Jezik-Moduli.md#commonjs-модули){:target="_blank"}
+
+        1. [ES6 модули](tekstovi/JavaScript-Programski-Jezik-Moduli.md#es6-модули){:target="_blank"}
+
+        1. [Алати за учитавање и за увезивање модула](tekstovi/JavaScript-Programski-Jezik-Moduli.md#алати-за-учитавање-и-за-увезивање-модула){:target="_blank"}
+
+            1. [Алати за учитавање модула](tekstovi/JavaScript-Programski-Jezik-Moduli.md#алати-за-учитавање-модула){:target="_blank"}
+
+            1. [Алати за увезивање модула](tekstovi/JavaScript-Programski-Jezik-Moduli.md#алати-за-увезивање-модула){:target="_blank"}
+
         - [Примери](https://github.com/MatfUVIT/UVIT/tree/master/predavanja/primeri-js/p10-moduli){:target="_blank"}
 
     1. [Вeрзије и стилови кŏдирања у језику ЈаваСкрипт](tekstovi/JavaScript-Programski-Jezik-Verzije-Stilovi-Kodiranja.md#стилови-кŏдирања){:target="_blank"}
 
     - [Примери](https://github.com/MatfUVIT/UVIT/tree/master/predavanja/primeri-js){:target="_blank"}
-
-1. [ЈаваСкрипт програмирање на клијентској страни](tekstovi/JavaScript-Programiranje-Na-Klijentskoj-Strani.md){:target="_blank"}
-
-    1. Дебагирање клијентског JavaScript кŏда уз помоћ веб прегледача
-
-    1. Објектни модел документа
-
-    1. Догађаји
-
-    1. `јQuery`
-
-    - [Примери](https://github.com/MatfUVIT/UVIT/tree/master/predavanja/primeri-js-klijent){:target="_blank"}
 
 1. [ЈаваСкрипт програмирање коришћењем окружења `node`](tekstovi/JavaScript-Programiranje-Koriscenjem-Okruzenja-Node.md){:target="_blank"}
 
@@ -453,6 +461,18 @@
         1. Метод POST
 
     - [Примери](https://github.com/MatfUVIT/UVIT/tree/master/predavanja/primeri-js-server-nodejs){:target="_blank"}
+
+1. [ЈаваСкрипт програмирање на клијентској страни](tekstovi/JavaScript-Programiranje-Na-Klijentskoj-Strani.md){:target="_blank"}
+
+    1. Дебагирање клијентског JavaScript кŏда уз помоћ веб прегледача
+
+    1. Објектни модел документа
+
+    1. Догађаји
+
+    1. `јQuery`
+
+    - [Примери](https://github.com/MatfUVIT/UVIT/tree/master/predavanja/primeri-js-klijent){:target="_blank"}
 
 1. [ЈаваСкрипт програмирање MongoDB база података](tekstovi/JavaScript-Programiranje-MongoDb-Baza-Podataka.md){:target="_blank"}
 
