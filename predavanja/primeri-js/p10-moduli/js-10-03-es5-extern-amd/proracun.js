@@ -9,6 +9,6 @@ define(['./vrednost'], function (vrednost) {
 
     // publikovanje "javne" funkcije
     return {
-        izracunajKvadratAMD: izracunajKvadrat,
+        izracunajKvadratAMD: izracunajKvadrat
     };
 });

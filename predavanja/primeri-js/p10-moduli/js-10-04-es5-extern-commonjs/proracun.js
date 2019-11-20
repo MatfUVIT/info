@@ -1,4 +1,4 @@
-let vrednost = require("./vrednost");
+const vrednost = require("./vrednost");
 
 function izracunajKvadrat() {
     // pozvan je metod iz vrednost.js
