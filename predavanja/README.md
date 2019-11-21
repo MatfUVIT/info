@@ -424,25 +424,25 @@
 
 1. [ЈаваСкрипт програмирање коришћењем окружења `node`](tekstovi/JavaScript-Programiranje-Koriscenjem-Okruzenja-Node.md){:target="_blank"}
 
-    1. Извршно окружење `node`
+    1. [Окружењe node](tekstovi/JavaScript-Programiranje-Koriscenjem-Okruzenja-Node.md#окружењe-node){:target="_blank"}
 
-        1. Опис окружења
+        1. [Карактеристике окружења node](tekstovi/JavaScript-Programiranje-Koriscenjem-Okruzenja-Node.md#карактеристике-окружења-node){:target="_blank"}
 
-        1. Менаџер пакета `npm`
+        1. [Менаџер пакета npm](tekstovi/JavaScript-Programiranje-Koriscenjem-Okruzenja-Node.md#менаџер-пакета-npm){:target="_blank"}
 
-        1. Извршавање и дебагирање JavaScript кŏда са `node`
+    1. [Догађаји код окружења node](tekstovi/JavaScript-Programiranje-Koriscenjem-Okruzenja-Node.md#догађаји-код-окружења-node){:target="_blank"}
 
-            1. Извршавање из командне линије
+        1. [Програмирање управљано догађајима](tekstovi/JavaScript-Programiranje-Koriscenjem-Okruzenja-Node.md#програмирање-управљано-догађајима){:target="_blank"}
 
-            1. Извршавање и дебагирање коришћењем развојног окружења Visual Studio Code
+        1. [Класа EventEmitter](tekstovi/JavaScript-Programiranje-Koriscenjem-Okruzenja-Node.md#класа-еventеmitter){:target="_blank"}
 
-    1. Догађаји код окружења `node`
+    1. [Рад са датотекама](tekstovi/JavaScript-Programiranje-Koriscenjem-Okruzenja-Node.md#рад-са-датотекама){:target="_blank"}
 
-    1. Рад са датотекама
+        1. [Директан рад са датотекама](tekstovi/JavaScript-Programiranje-Koriscenjem-Okruzenja-Node.md#директан-рад-са-датотекама){:target="_blank"}
 
-    1. Рад са токовима
+        1. [Рад са датотекама преко токова](tekstovi/JavaScript-Programiranje-Koriscenjem-Okruzenja-Node.md#рад-са-датотекама-преко-токова){:target="_blank"}
 
-    1. Догађаји и токови података
+        1. [Догађаји и токови података](tekstovi/JavaScript-Programiranje-Koriscenjem-Okruzenja-Node.md#догађаји-и-токови-података){:target="_blank"}
 
     - [Примери](https://github.com/MatfUVIT/UVIT/tree/master/predavanja/primeri-js-nodejs){:target="_blank"}
 

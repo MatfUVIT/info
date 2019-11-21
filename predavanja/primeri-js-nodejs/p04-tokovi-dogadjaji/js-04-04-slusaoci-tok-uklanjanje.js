@@ -1,14 +1,17 @@
 let fs = require('fs');
 
-let readStream = fs.createReadStream('lorem.txt');
-readStream.setEncoding('utf8');
+let tokZaCitanje = fs.createReadStream('lorem.txt');
+tokZaCitanje.setEncoding('utf8');
 
-let counter = 0;
-let dataCounter =  (prispeliPodaci)=> {
-    counter = counter + 1;
-    if(counter == 3)
-        readStream.removeAllListeners('data');
+let brojCitanja = 0;
+let brojacCitanja = (prispeliPodaci) => {
+    brojCitanja = brojCitanja + 1;
+    if (brojCitanja == 3)
+        tokZaCitanje.removeAllListeners('data');
 };
-readStream.addListener('data', dataCounter);
-readStream.addListener('data', (prispeliPodaci)=>console.log('data chunk length: ' + prispeliPodaci.length));
-readStream.addListener('end', () => console.log(counter));
+tokZaCitanje.addListener('data',
+    brojacCitanja);
+tokZaCitanje.addListener('data',
+    (prispeliPodaci) => console.log('дужина приспелих података: ' + prispeliPodaci.length));
+tokZaCitanje.addListener('end',
+    () => console.log(brojCitanja));

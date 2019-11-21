@@ -10,6 +10,8 @@
 
 node.js је вишеплатформско радно окружење (енгл. runtime) које се базира на Google Chrome V8 машини - ЈаваСкрипт извршном окружењу високих перформанси, написаном у C++ (првобитно за потребе веб прегледача Google Chrome).
 
+#### Карактеристике окружења node
+
 Програмер Рајан Дал је развио node.js развио је 2009. године, на машини В8 као серверско радно окружење.
 
 Велика предност node.js је то што је он у **потпуности ЈаваСкрипт**. Раније је ЈаваСкрипт био коришћен искључиво за развој на клијентској страни или тзв. предњем крају (енгл. frontend) - било као "чисти" ЈаваСкрипт (енгл. Vanila JS) било као JQuery, или нека друга ЈаваСкрипт библиотека. Од појаве окружења node.js, ЈаваСкрипт језик се широко користи и за програмирање на серверској страни, односно на задњем крају (енгл. backend). Пошто се ради о истом језику, ако се изабере овај приступ, разлика у самој синтакси између клијентских и серверских програма је врло мала или чак не постоји.
@@ -134,7 +136,7 @@ node.js је вишеплатформско радно окружење (енг�
 
 Окружење node.js обезбеђује подршку за рад са догађајима кроз модул `events` и кроз класу `EventEmitter`. Код апликација које раде у node.js окружењу, свака асинхрона функција има као последњи параметар функцију повратног позива, која ће бити извршена по окончању ове асинхроне функције.  
 
-## Класа EventEmitter
+#### Класа EventEmitter
 
 Класа `EventEmitter` се налази у модулу `events`.
 
@@ -298,7 +300,11 @@ emitor.emit('dogadjaj');
 
 &#9608;
 
-## Рад са датотекама
+### Рад са датотекама
+
+У овом делу се описује како се пишу програми који раде са датоткама у окружењу node.js.
+
+### Директан рад са датотекама
 
 **Пример.** Илустрије читање садржаја датотеке и њен приказ на конзолу.
 
@@ -352,11 +358,329 @@ Da joj prođe dan!
 
 То је исти садржај текстуалне датотеке `test.txt` који је могао да се види помоћу било ког едитора. &#9608;
 
-## Рад са токовима
+**Пример.** Илустрије упис текста у текстуалну датотеку.
 
-## Догађаји и токови података
+```js
+let fs = require('fs');
 
-## Литература
+fs.writeFile('text3.txt', 'Ovo je neka mala proba', 'utf8',
+    (err) => {
+        if (err) {
+            console.log(err);
+        }
+    });
+```
+
+&#9608;
+
+**Пример.** Илустрије синхроно тј. блокирајуће читање садржаја текстуалне датотеке, као и синхрони упис у датотеку.
+
+```js
+let fs = require('fs');
+
+let mojCitac = fs.readFileSync('test.txt', 'utf8');
+console.log(mojCitac);
+
+let mojPisac = fs.writeFileSync('test2.txt',
+`Ovo je proba!
+
+I treba pokušavati!
+`
+, 'utf8');
+```
+
+&#9608;
+
+### Рад са датотекама преко токова
+
+**Пример.** Илустрије читање садржаја велике текстуалне датотеке, коришћењем токова.
+
+```js
+let fs = require('fs');
+
+console.log('\n');
+
+let tokZaCitanje = fs.createReadStream('lorem.txt');
+tokZaCitanje.setEncoding('utf8');
+tokZaCitanje.on('data',
+    (prispeliPodaci) => console.log(prispeliPodaci));
+```
+
+&#9608;
+
+**Пример.** Илустрије читање само почетног дела садржаја велике текстуалне датотеке, коришћењем токова.
+
+```js
+let fs = require('fs');
+
+console.log('\n');
+
+let tokZaCitanje = fs.createReadStream('lorem.txt');
+tokZaCitanje.setEncoding('utf8');
+tokZaCitanje.once('data',
+    (datacoming) => console.log(datacoming));
+```
+
+&#9608;
+
+**Пример.** Илустрије пребројавање колико је било читања при очитавању садржаја велике текстуалне датотеке, коришћењем токова.
+
+```js
+let fs = require('fs');
+
+console.log('\n');
+
+let tokZaCitanje = fs.createReadStream('lorem.txt');
+tokZaCitanje.setEncoding('utf8');
+let brojac = 0;
+tokZaCitanje.on('data',
+    () => {
+        brojac++;
+        console.log(brojac);
+    });
+tokZaCitanje.on('end',
+    () => console.log("---\n" + brojac));
+```
+
+&#9608;
+
+**Пример.** Илустрије упис у текстуалну датотеку, коришћењем токова.
+
+```js
+let fs = require('fs');
+
+let tokZaUpis = fs.createWriteStream('copyl.txt');
+tokZaUpis.write('Поздрав ѕа слушапоце курса УВИТ!');
+```
+
+&#9608;
+
+**Пример.** Илустрије надовезивање токова.
+
+```js
+let fs = require('fs');
+
+let tokZaCitanje = fs.createReadStream('lorem.txt');
+tokZaCitanje.setEncoding('utf8');
+let brojac = 0;
+tokZaCitanje.on('data',
+    () => brojac++);
+tokZaCitanje.on('end',
+    () => console.log(brojac));
+
+let tokZaUpis = fs.createWriteStream('copy1.txt');
+tokZaCitanje.pipe(tokZaUpis);
+```
+
+По извршењу овог кода, садржај датотеке `copy1.txt` ће бити текст који је прочитан из датотеке `lorem.txt`. &#9608;
+
+**Пример.** Илустрије паузирање тока за читање, као и надовезивање токова.
+
+```js
+let fs = require('fs');
+
+let tokZaCitanje = fs.createReadStream('lorem.txt');
+tokZaCitanje.setEncoding('utf8');
+let brojac = 0;
+tokZaCitanje.once('data',
+    (prispeliPodaci) => {
+        brojac++;
+        if (brojac == 3)
+            tokZaCitanje.pause();
+    });
+tokZaCitanje.on('end',
+    () => console.log(brojac));
+
+let writeStream = fs.createWriteStream('copy2.txt');
+tokZaCitanje.pipe(writeStream);
+```
+
+&#9608;
+
+#### Догађаји и токови података
+
+**Пример.** Илустрије постављање више ослушкивача на један догађај тока за читање.
+
+```js
+let fs = require('fs');
+
+let tokZaCitanje = fs.createReadStream('lorem.txt');
+tokZaCitanje.setEncoding('utf8');
+
+let brojac = 0;
+tokZaCitanje.addListener('data', brojiCitanja);
+tokZaCitanje.addListener('data', prikazujeCitanja);
+
+function brojiCitanja(prispeliPodaci) {
+    brojac = brojac + 1;
+    console.log("Citanje broj: " + brojac);
+}
+
+function prikazujeCitanja(prispeliPodaci) {
+    console.log('Duzina prispelih podataka: ' + prispeliPodaci.length);
+}
+
+tokZaCitanje.addListener('end',
+    function () {
+        console.log("---\nUkupno citanja: " + brojac);
+    });
+```
+
+Резултат извршавања ове скрипте је:
+
+```bash
+Citanje broj: 1
+Duzina prispelih podataka: 65536
+Citanje broj: 2
+Duzina prispelih podataka: 65536
+Citanje broj: 3
+Duzina prispelih podataka: 65536
+Citanje broj: 4
+Duzina prispelih podataka: 65536
+Citanje broj: 5
+Duzina prispelih podataka: 65536
+Citanje broj: 6
+Duzina prispelih podataka: 65536
+Citanje broj: 7
+Duzina prispelih podataka: 65536
+Citanje broj: 8
+Duzina prispelih podataka: 65536
+Citanje broj: 9
+Duzina prispelih podataka: 65536
+Citanje broj: 10
+Duzina prispelih podataka: 65536
+Citanje broj: 11
+Duzina prispelih podataka: 65536
+Citanje broj: 12
+Duzina prispelih podataka: 65536
+Citanje broj: 13
+Duzina prispelih podataka: 65536
+Citanje broj: 14
+Duzina prispelih podataka: 65536
+Citanje broj: 15
+Duzina prispelih podataka: 65536
+Citanje broj: 16
+Duzina prispelih podataka: 65536
+Citanje broj: 17
+Duzina prispelih podataka: 65536
+Citanje broj: 18
+Duzina prispelih podataka: 65536
+Citanje broj: 19
+Duzina prispelih podataka: 65536
+Citanje broj: 20
+Duzina prispelih podataka: 65536
+Citanje broj: 21
+Duzina prispelih podataka: 49786
+---
+Ukupno citanja: 21
+```
+
+Промена редоследа у додавању ослушкивача на догашај `data` би довела до проемене излаза тј. садржаја који се приказује на конзоли. &#9608;
+
+**Пример.** Илустрије постављање више ослушкивача на један догађај тока за читање преко ламбда-израза.
+
+```js
+let fs = require('fs');
+
+let tokZaCitanje = fs.createReadStream('lorem.txt');
+tokZaCitanje.setEncoding('utf8');
+
+let brojac = 0;
+tokZaCitanje.addListener('data',
+    (prispeliPodaci) => brojac = brojac + 1);
+tokZaCitanje.addListener('data',
+    (prispeliPodaci) => console.log('duzina prispelih podataka: ' + prispeliPodaci.length));
+tokZaCitanje.addListener('end',
+    () => console.log(brojac));
+```
+
+&#9608;
+
+**Пример.** Илустрије динамичко уклањање једног ослушкивача током процеса читања података из датотеке преко токова.
+
+```js
+let fs = require('fs');
+
+let tokZaCitanje = fs.createReadStream('lorem.txt');
+tokZaCitanje.setEncoding('utf8');
+
+let brojObracanja = 0;
+let brojacObracanja = (prispeliPodaci) => {
+    brojObracanja = brojObracanja + 1;
+    if (brojObracanja == 3)
+        tokZaCitanje.removeListener('data', brojacObracanja);
+};
+tokZaCitanje.addListener('data',
+    brojacObracanja);
+tokZaCitanje.addListener('data',
+    (prispeliPodaci) => console.log('дужина приспелих података: ' + prispeliPodaci.length));
+tokZaCitanje.addListener('end',
+    () => console.log(brojObracanja));
+```
+
+Излаз је следећег облика:
+
+```bash
+дужина приспелих података: 65536
+дужина приспелих података: 65536
+дужина приспелих података: 65536
+дужина приспелих података: 65536
+дужина приспелих података: 65536
+дужина приспелих података: 65536
+дужина приспелих података: 65536
+дужина приспелих података: 65536
+дужина приспелих података: 65536
+дужина приспелих података: 65536
+дужина приспелих података: 65536
+дужина приспелих података: 65536
+дужина приспелих података: 65536
+дужина приспелих података: 65536
+дужина приспелих података: 65536
+дужина приспелих података: 65536
+дужина приспелих података: 65536
+дужина приспелих података: 65536
+дужина приспелих података: 65536
+дужина приспелих података: 65536
+дужина приспелих података: 49786
+3
+```
+
+На крају је приказан број `3`, јер је у тренутку када је `brojObracanja` достигао ту вредност извршено уклањање ослушкивача који врши увећавање бројача. Други ослушкивач, који извештава о дужини приспелих података је наставио да реагује на сваки испаљени `data` догађај. &#9608;
+
+**Пример.** Илустрије динамичко уклањање свих ослушкивача за догађај `data` током процеса читања података из датотеке преко токова.
+
+```js
+let fs = require('fs');
+
+let tokZaCitanje = fs.createReadStream('lorem.txt');
+tokZaCitanje.setEncoding('utf8');
+
+let brojCitanja = 0;
+let brojacCitanja = (prispeliPodaci) => {
+    brojCitanja = brojCitanja + 1;
+    if (brojCitanja == 3)
+        tokZaCitanje.removeAllListeners('data');
+};
+tokZaCitanje.addListener('data',
+    brojacCitanja);
+tokZaCitanje.addListener('data',
+    (prispeliPodaci) => console.log('дужина приспелих података: ' + prispeliPodaci.length));
+tokZaCitanje.addListener('end',
+    () => console.log(brojCitanja));
+```
+
+Приликом извршавања би се добио излаз је следећег облика:
+
+```bash
+дужина приспелих података: 65536
+дужина приспелих података: 65536
+дужина приспелих података: 65536
+3
+```
+
+У тренутку када је `brojObracanja` достигао вредност `3`,  извршено је уклањање свих ослушкивача који ослушкују `data` догађај. &#9608;
+
+### Литература
 
 1. Haverbeke M.: [Eloquent JavaScript](https://eloquentjavascript.net/){:target="_blank"}
 

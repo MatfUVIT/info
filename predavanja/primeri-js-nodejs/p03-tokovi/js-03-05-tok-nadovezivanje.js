@@ -1,10 +1,12 @@
 let fs = require('fs');
 
-let readStream = fs.createReadStream('lorem.txt');
-readStream.setEncoding('utf8');
+let tokZaCitanje = fs.createReadStream('lorem.txt');
+tokZaCitanje.setEncoding('utf8');
 let brojac = 0;
-readStream.on('data', () => brojac++);
-readStream.on('end', () => console.log(brojac));
+tokZaCitanje.on('data',
+    () => brojac++);
+tokZaCitanje.on('end',
+    () => console.log(brojac));
 
-let writeStream = fs.createWriteStream('copy1.txt');
-readStream.pipe(writeStream);
+let tokZaUpis = fs.createWriteStream('copy1.txt');
+tokZaCitanje.pipe(tokZaUpis);
