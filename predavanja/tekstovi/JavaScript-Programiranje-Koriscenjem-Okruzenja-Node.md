@@ -114,111 +114,243 @@ node.js је вишеплатформско радно окружење (енг�
 
 - vm – омогућава компајлирање ЈаваСкрипт кода на виртуалној машини V8.
 
-zlib компресија и декомпресија фајлова, помоћу модула Gzip.
+- zlib - компресија и декомпресија датотека, помоћу модула Gzip.
 
-У овој листи су истакнути они модули са којима ћемо додатно радити у наставку курса.
+У горњој листи су истакнути (подебљавањем) они модули са којима ћемо додатно радити у наставку курса.
 
 ### Догађаји код окружења node
 
-Node.js is a single-threaded application, but it can support concurrency via the concept of event and callbacks. Every API of Node.js is asynchronous and being single-threaded, they use async function calls to maintain concurrency. Node uses observer pattern. Node thread keeps an event loop and whenever a task gets completed, it fires the corresponding event which signals the event-listener function to execute.
+У претходноје секцији је истакнуто да је node.js апликација која се извршава у једној нити, акоја подржава конкурентну обраду кроз концепт догађаја и повратних позива. Сваки од API-ја у оквиру node.js је асинхорни, а како се извршава у апликацији са једном нити, то се користе `async` функције у циљу обезбеђења конкурентности. Окружњењ node користи обрзазац дизајна посматрач (енгл. observer pattern). Дакле, једна нит nodeапликације се врти у оквиру петље за догађаје све док се задатак не заврши, а потом испаљује одговарајући догађај којим се сигнализира да треба да буде извршена функција која ослушкује тај догађај.
 
 #### Програмирање управљано догађајима
 
-Node.js uses events heavily and it is also one of the reasons why Node.js is pretty fast compared to other similar technologies. As soon as Node starts its server, it simply initiates its variables, declares functions and then simply waits for the event to occur.
+Окружење node.js интензивно користи догађаје и то је један од разлога солидне брзине овог окружења у односу на сличне технологије. Наиме, при покретанњу сервера који користи node.js, одмах чим се иницијализују променљиве и декларишу се функције, програмски код сервера само чека да се догоде догађаји на чије је ослушкивање претплаћен - када се догоди догађај датог типа покреће се функција која рукује са таквим догађајем.
 
-In an event-driven application, there is generally a main loop that listens for events, and then triggers a callback function when one of those events is detected.
+Код апликација управљаних догађајем, у општем случају, постоји једна главна петља у којој се ослушкују догађаји и потом покрећу функције повратних позива када се детектују догађаји одговарајућег типа.
 
 ![Схематски приказ петље за догађаје](assets/images/event-loop.jpg)
 
-Although events look quite similar to callbacks, the difference lies in the fact that callback functions are called when an asynchronous function returns its result, whereas event handling works on the observer pattern. The functions that listen to events act as Observers. Whenever an event gets fired, its listener function starts executing. Node.js has multiple in-built events available through events module and EventEmitter class which are used to bind events and event-listeners as follows −
+Иако догађаји изгледају слично као повратни позиви, разлика је у томе што се повратни позиви дешавају када асинхрона функција врати резултат, а руковаоци догађајима се покрећу у складу са начином рада обрасца дизајна посматрач. Прецизније речено, код догађаје се функције која ослушкују догађаје се понашају као посматрачи: кад догађај буде испаљен, почиње са извршавањем ослушкивач догађаја.
 
-In Node Application, any async function accepts a callback as the last parameter and a callback function accepts an error as the first parameter. Let's revisit the previous example again. Create a text file named input.txt with the following content.
-
-f events.EventEmitter.
+Окружење node.js обезбеђује подршку за рад са догађајима кроз модул `events` и кроз класу `EventEmitter`. Код апликација које раде у node.js окружењу, свака асинхрона функција има као последњи параметар функцију повратног позива, која ће бити извршена по окончању ове асинхроне функције.  
 
 ## Класа EventEmitter
 
-As we have seen in the previous section, EventEmitter class lies in the events module. It is accessible via the following code −
+Класа `EventEmitter` се налази у модулу `events`.
 
-// Import events module
-var events = require('events');
+Ова класа обезбеђује да објекти типа `EventEmitter` садрже особине као што су `on` и `emit`. Особина `on` се користи ради везивања функције за дати догађај, а особина `emit` служи за испаљивање догађаја.
 
-// Create an eventEmitter object
-var eventEmitter = new events.EventEmitter();
-When an EventEmitter instance faces any error, it emits an 'error' event. When a new listener is added, 'newListener' event is fired and when a listener is removed, 'removeListener' event is fired.
+Најважнији методи за овјекте типа `EventEmitter` су:
 
-EventEmitter provides multiple properties like on and emit. on property is used to bind a function with the event and emit is used to fire an event.
+- `addListener(dogadjaj, osluskivac)` - додаје функцију `osluskivac` на крај низа ослушкивача датог догађаја `dogadjaj`. Приликом додавања се не врши провера да ли је тај `osluskivac` раније већ био додат у низ ослушкивача датог догађаја. Функција враћа емитер, тако да може користити у уланчаним позивима.
 
-Methods
-Sr.No.	Method & Description
-1	
-addListener(event, listener)
+- `on(dogadjaj, osluskivac)`- додаје функцију `osluskivac` на крај низа ослушкивача датог догађаја `dogadjaj`. Приликом додавања се не врши провера да ли је тај `osluskivac` раније већ био додат у низ ослушкивача датог догађаја. Функција враћа емитер, тако да може користити у уланчаним позивима.
 
-Adds a listener at the end of the listeners array for the specified event. No checks are made to see if the listener has already been added. Multiple calls passing the same combination of event and listener will result in the listener being added multiple times. Returns emitter, so calls can be chained.
+- `once(dogadjaj, osluskivac)` - једнократно додаје функцију `osluskivac` на крај низа ослушкивача датог догађаја `dogadjaj`. Овај ослушкивач ће се иѕвршити једном по испаљивању догађаја, после чега ће бити уклоњен из низа ослушкивача. Функција враћа емитер, тако да може користити у уланчаним позивима.
 
-2	
-on(event, listener)
+- `removeListener(dogadjaj, osluskivac)` - уклања `osluskivac` из низа ослушкивача за дати догађај `dogadjaj`. Ова функција ће уклонити не више од једне појаве датог ослушкивача из низа, па ако је претходно ослушкивач био додат више пута, онда ова функција неће уклонити све његове појаве. Функција враћа емитер, тако да може користити у уланчаним позивима.
 
-Adds a listener at the end of the listeners array for the specified event. No checks are made to see if the listener has already been added. Multiple calls passing the same combination of event and listener will result in the listener being added multiple times. Returns emitter, so calls can be chained.
+- `removeAllListeners([dogadjaj])` - уклања све ослушкиваче ако је испуштен аргумент који представља догађај. АКо је приликом позива функције прослеђен догађај, онда ће бити уклоњени све ослушкивачи за дати догађај.  Функција враћа емитер, тако да може користити у уланчаним позивима.
 
-3	
-once(event, listener)
+- `setMaxListeners(n)` - подразумевано понашање је да објекат типа `EventEmitters` шаље упозорење ако је број његових ослушкивача постао већи од `10`. Ова функција мења то понашање, тако што на `n` поставња граничну вредност за упозоравање на превише ослушкивача. Ако се коришћењем ове функције максимални број ослушкивача посатви на `0`, упозорење се неће појављивати.
 
-Adds a one time listener to the event. This listener is invoked only the next time the event is fired, after which it is removed. Returns emitter, so calls can be chained.
+- `listeners(dogadjaj)` - враће низ ослушкивача ѕа дати догађај, прослеђен као аргумент функције.
 
-4	
-removeListener(event, listener)
+- `emit(dogadjaj, [arg1], [arg2], [...])` - емитује догађај са датим аргументима, што ће довести до извршавања свих ослушкивача тог догађаја, при чему у том иѕвршавању ће аргументи позива бити прослеђени руковаоцима догађаја. Функција враће `true` ако догађај `dogadjaj` има ослушкиваче, иначе враће `false`.
 
-Removes a listener from the listener array for the specified event. Caution − It changes the array indices in the listener array behind the listener. removeListener will remove, at most, one instance of a listener from the listener array. If any single listener has been added multiple times to the listener array for the specified event, then removeListener must be called multiple times to remove each instance. Returns emitter, so calls can be chained.
+**Пример.** Илустрије емитовање и хватање догађаја.
 
-5	
-removeAllListeners([event])
+```js
+const Dogadjaj = require('events')
 
-Removes all listeners, or those of the specified event. It's not a good idea to remove listeners that were added elsewhere in the code, especially when it's on an emitter that you didn't create (e.g. sockets or file streams). Returns emitter, so calls can be chained.
+class EmiterDogadjaja extends Dogadjaj {}
 
-6	
-setMaxListeners(n)
+const emiter = new EmiterDogadjaja()
 
-By default, EventEmitters will print a warning if more than 10 listeners are added for a particular event. This is a useful default which helps finding memory leaks. Obviously not all Emitters should be limited to 10. This function allows that to be increased. Set to zero for unlimited.
+emiter.on('dogadjaj', () => {
+  console.log('Odgovaram na emitovani dogadjaj!')
+})
 
-7	
-listeners(event)
+emiter.emit('dogadjaj')
+```
 
-Returns an array of listeners for the specified event.
+&#9608;
 
-8	
-emit(event, [arg1], [arg2], [...])
+**Пример.** Илустрије како више ослушкивача ослушкују исти догађај.
+Уочава се да руковалац догађајем може бити функција, а може бити и ламбда-израз.
+У овом примеру се више пута емитује исти догађај, али му се свакипут приликом емитовања прослеђују различити аргументи.
 
-Execute each of the listeners in order with the supplied arguments. Returns true if the event had listeners, false otherwise.
+```js
+const Dogadjaj = require('events');
 
-Class Methods
-Sr.No.	Method & Description
-1	
-listenerCount(emitter, event)
+class EmiterDogadjaja extends Dogadjaj {}
 
-Returns the number of listeners for a given event.
+const emiter = new EmiterDogadjaja();
 
-Events
-Sr.No.	Events & Description
-1	
-newListener
+emiter.on('dogadjaj', function(a, b) {
+  console.log(`--- rukovalac dogadjajem je funkcija ---`);
+  console.log(a, b, this, this === emiter);
+});
 
-event − String: the event name
+emiter.on('dogadjaj', (a, b) =>{
+  console.log(`--- rukovalac dogadjajem je lambda-izraz ---`);
+  console.log(a, b, this, this === emiter);
+});
 
-listener − Function: the event handler function
+emiter.emit('dogadjaj', 'a', 6);
+emiter.emit('dogadjaj', 'mika');
+emiter.emit('dogadjaj');
+```
 
-This event is emitted any time a listener is added. When this event is triggered, the listener may not yet have been added to the array of listeners for the event.
+&#9608;
 
-2	
-removeListener
+**Пример.** Илустрије емитовање и једноструко хватање догађаја.
 
-event − String The event name
+```js
+const KlasaZaEmitovanjeDogadjaja = require('events');
 
-listener − Function The event handler function
+class EmitorDogadjaja extends KlasaZaEmitovanjeDogadjaja {}
 
-This event is emitted any time someone removes a listener. When this event is triggered, the listener may not yet have been removed from the array of listeners for the event.
+const emitor = new EmitorDogadjaja();
+
+let m = 0;
+
+emitor.on('dogadjaj1', () =>{
+  console.log(++m);
+});
+
+emitor.emit('dogadjaj1');
+emitor.emit('dogadjaj1');
+emitor.emit('dogadjaj1');
+
+console.log('---');
+
+let n = 0;
+
+emitor.once('dogadjaj2', () =>{
+  console.log(++n);
+});
+
+emitor.emit('dogadjaj2');
+emitor.emit('dogadjaj2');
+emitor.emit('dogadjaj2');
+emitor.emit('dogadjaj2');
+```
+
+&#9608;
+
+**Пример.** Илустрије руковање грешкама код догађаја.
+
+```js
+const EventEmitter = require('events');
+
+class EmitorDogadjaja extends EventEmitter {}
+
+const emitor = new EmitorDogadjaja();
+
+emitor.on('dogadjaj', () =>{
+  console.log('A');
+});
+
+emitor.on('error', (err) => {
+  console.error(`Paznja! doslo je do greske. Greska: ${err}`);
+});
+
+emitor.emit('dogadjaj');
+emitor.emit('error');
+emitor.emit('dogadjaj');
+emitor.emit('dogadjaj');
+```
+
+&#9608;
+
+И над догађаима се могу правити догађаји - прецизније, два типа догађаја:
+
+- `newListener` - емитује се сваки пут када се дода ослушкивач за неки догађај.
+
+- `removeListener` - емитује се сваки пут када ослушкивач буде уклоњен.
+
+**Пример.** Илустрије рад са догађајем `newListener`.
+
+```js
+const EventEmitter = require('events');
+
+class EmitorDogadjaja extends EventEmitter {}
+
+const emitor = new EmitorDogadjaja();
+
+emitor.once('newListener', (event, listener) => {
+  if (event === 'dogadjaj') {
+    // Ubaci novi dogadjaj na pocetak
+    emitor.on('dogadjaj', () => {
+      console.log('B');
+    });
+  }
+});
+
+emitor.on('dogadjaj', () =>{
+  console.log('A');
+});
+
+emitor.emit('dogadjaj');
+emitor.emit('dogadjaj');
+```
+
+&#9608;
 
 ## Рад са датотекама
+
+**Пример.** Илустрије читање садржаја датотеке и њен приказ на конзолу.
+
+Датотека `test.txt` треба да се нађе у истом директоријуму у ком се налази ова скрита.
+
+```js
+let fs = require('fs')
+
+fs.readFile('test.txt',
+    (err, data) => {
+        if (err) {
+            console.log(err);
+        }
+        console.log(data);
+    });
+```
+
+Приликом извршења скрипте, на конзоли се појавио следећи садржај:
+
+```bash
+<Buffer 54 72 6c 61 0d 0a 20 20 62 61 62 61 20 0d 0a 20 20 20 20 6c 61 6e 0d 0a 0d 0a 44 61 20 6a 6f 6a 20 70 72 6f c4 91 65 20 64 61 6e 21>
+```
+
+У овом случају, подаци који су послати да се прикажу на конзоли су секвеннца бајтова, која представља кодоаве слова. &#9608;
+
+**Пример.** Илустрије читање садржаја текстуалне датотеке и њен приказ на конзолу.
+
+Датотека `test.txt` треба да се нађе у истом директоријуму у ком се налази ова скрита.
+
+```js
+let fs = require('fs')
+
+fs.readFile('test.txt', 'utf-8',
+    (err, data) => {
+        if (err) {
+            console.log(err);
+        }
+        console.log(data);
+    });
+```
+
+Разлика у односу на претходни пример је у томе што је приликом читања датотеке специфициран и кодни распоред. Сада се приликом извршења скрипте, на конзоли се појавио следећи садржај:
+
+```bash
+Trla
+  baba
+    lan
+
+Da joj prođe dan!
+```
+
+То је исти садржај текстуалне датотеке `test.txt` који је могао да се види помоћу било ког едитора. &#9608;
 
 ## Рад са токовима
 

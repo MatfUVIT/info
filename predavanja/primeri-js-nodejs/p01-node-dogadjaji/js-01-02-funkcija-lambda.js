@@ -14,6 +14,6 @@ emiter.on('dogadjaj', (a, b) =>{
   console.log(a, b, this, this === emiter);
 });
 
-emiter.emit('dogadjaj', 'a', 'b');
+emiter.emit('dogadjaj', 'a', 6);
 emiter.emit('dogadjaj', 'mika');
 emiter.emit('dogadjaj');

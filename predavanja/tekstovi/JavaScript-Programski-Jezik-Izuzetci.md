@@ -48,7 +48,7 @@ function gdeLiJeProblem() {
 gdeLiJeProblem();
 ```
 
-Тада ће се пријавити грешка и реѕултат ће бити:
+Тада ће се пријавити грешка и резултат ће бити:
 
 ```bash
   for (brojac = 0; brojac < 5; brojac++)
