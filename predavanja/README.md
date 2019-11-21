@@ -172,6 +172,14 @@
 
     1. [Карактеристике језика ЈаваСкрипт](tekstovi/JavaScript-Programski-Jezik-Karakteristike-Okruzenje.md#карактеристике-језика-јаваскрипт){:target="_blank"}
 
+    1. [Развој језика ЈаваСкрипт](tekstovi/JavaScript-Programski-Jezik-Verzije-Stilovi-Kodiranja.md#историјат-и-верзије-језика-јаваскрипт){:target="_blank"}
+
+       1. [Настанак ЈаваСкрипта](tekstovi/JavaScript-Programski-Jezik-Verzije-Stilovi-Kodiranja.md#настанак-јаваскрипта){:target="_blank"}
+
+       1. [верзије-језика-јаваскрипт](tekstovi/JavaScript-Programski-Jezik-Verzije-Stilovi-Kodiranja.md#настанак-јаваскрипта){:target="_blank"}
+
+    1. [Стилови кŏдирања у језику ЈаваСкрипт](tekstovi/JavaScript-Programski-Jezik-Verzije-Stilovi-Kodiranja.md#стилови-кŏдирања){:target="_blank"}
+
     1. [ЈаваСкрипт окружење за извршавање](tekstovi/JavaScript-Programski-Jezik-Karakteristike-Okruzenje.md#јаваскрипт-окружење-за-извршавање){:target="_blank"}
 
         1. [ЈаваСкрипт машина](tekstovi/JavaScript-Programski-Jezik-Karakteristike-Okruzenje.md#jаваскрипт-машина){:target="_blank"}
@@ -411,8 +419,6 @@
             1. [Алати за увезивање модула](tekstovi/JavaScript-Programski-Jezik-Moduli.md#алати-за-увезивање-модула){:target="_blank"}
 
         - [Примери](https://github.com/MatfUVIT/UVIT/tree/master/predavanja/primeri-js/p10-moduli){:target="_blank"}
-
-    1. [Вeрзије и стилови кŏдирања у језику ЈаваСкрипт](tekstovi/JavaScript-Programski-Jezik-Verzije-Stilovi-Kodiranja.md#стилови-кŏдирања){:target="_blank"}
 
     - [Примери](https://github.com/MatfUVIT/UVIT/tree/master/predavanja/primeri-js){:target="_blank"}
 
