@@ -448,23 +448,23 @@
 
 1. [ЈаваСкрипт серверско програмирање коришћењем окружења `node`](tekstovi/JavaScript-Serversko-Programiranje-Koriscenjem-Okruzenja-Node.md){:target="_blank"}
 
-    1. Мрежне апликације
+    1. [Мрежне апликације](tekstovi/JavaScript-Serversko-Programiranje-Koriscenjem-Okruzenja-Node.md#мрежне-апликације){:target="_blank"}
 
-    1. Веб апликације
+    1. [Веб апликације](tekstovi/JavaScript-Serversko-Programiranje-Koriscenjem-Okruzenja-Node.md#веб-апликације){:target="_blank"}
 
-        1. Процесирање захтева и генерисање одговора
+        1. [Процесирање захтева и генерисање одговора](tekstovi/JavaScript-Serversko-Programiranje-Koriscenjem-Okruzenja-Node.md#процесирање-захтева-и-генерисање-одговора){:target="_blank"}
 
-        1. Одређивање путање и ниска-упита
+        1. [Одређивање путање и ниска-упита](tekstovi/JavaScript-Serversko-Programiranje-Koriscenjem-Okruzenja-Node.md#одређивање-путање-и-ниска-упита){:target="_blank"}
 
-        1. Слање датотека као одговора
+        1. [Слање датотека као одговора](tekstovi/JavaScript-Serversko-Programiranje-Koriscenjem-Okruzenja-Node.md#слање-датотека-као-одговора){:target="_blank"}
 
-        1. Мапа садржаја
+        1. [Мапа садржаја](tekstovi/JavaScript-Serversko-Programiranje-Koriscenjem-Okruzenja-Node.md#мапа-садржаја){:target="_blank"}
 
-    1. Обрада веб форме
+    1. [Обрада веб форме](tekstovi/JavaScript-Serversko-Programiranje-Koriscenjem-Okruzenja-Node.md#обрада-веб-форме){:target="_blank"}
 
-        1. Метод GET
+        1. [Метод GET](tekstovi/JavaScript-Serversko-Programiranje-Koriscenjem-Okruzenja-Node.md#метод-get){:target="_blank"}
 
-        1. Метод POST
+        1. [Метод POST](tekstovi/JavaScript-Serversko-Programiranje-Koriscenjem-Okruzenja-Node.md#метод-post){:target="_blank"}
 
     - [Примери](https://github.com/MatfUVIT/UVIT/tree/master/predavanja/primeri-js-server-nodejs){:target="_blank"}
 
