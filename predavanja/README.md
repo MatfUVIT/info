@@ -6,43 +6,43 @@
 
 1. [Уводне напомене о курсу](tekstovi/Uvodne-Napomene-o-Kursu.md){:target="_blank"}
 
-    1. [Садржај предавања](tekstovi/Uvodne-Napomene-o-Kursu#садржај-предавања){:target="_blank"}
+    1.1. [Садржај предавања](tekstovi/Uvodne-Napomene-o-Kursu#садржај-предавања){:target="_blank"}
 
-    1. [Изабрана литература](tekstovi/Uvodne-Napomene-o-Kursu#изабрана-литература){:target="_blank"}
+    1.2. [Изабрана литература](tekstovi/Uvodne-Napomene-o-Kursu#изабрана-литература){:target="_blank"}
 
-1. [Увод у рачунарске мреже](/prezentacije/UVIT01-01-Uvod u racunarske mreze.pdf){:target="_blank"}  
+2. [Увод у рачунарске мреже](/prezentacije/UVIT01-01-Uvod u racunarske mreze.pdf){:target="_blank"}  
 
-    1. [Улога и начин рада рачунарских мрежа](tekstovi/Racunarske-Mreze-Uvod.md#улога-и-начин-рада-рачунарских-мрежа){:target="_blank"}
+    2.1. [Улога и начин рада рачунарских мрежа](tekstovi/Racunarske-Mreze-Uvod.md#улога-и-начин-рада-рачунарских-мрежа){:target="_blank"}
 
-    1. [Компоненте рачунарских мрежа](tekstovi/Racunarske-Mreze-Uvod.md#компоненте-рачунарских-мрежа){:target="_blank"}
+    2.2. [Компоненте рачунарских мрежа](tekstovi/Racunarske-Mreze-Uvod.md#компоненте-рачунарских-мрежа){:target="_blank"}
 
-        - [Мрежни хардвер](tekstovi/Racunarske-Mreze-Uvod.md#мрежни-хардвер){:target="_blank"}
+        2.2.1. [Мрежни хардвер](tekstovi/Racunarske-Mreze-Uvod.md#мрежни-хардвер){:target="_blank"}
 
-        - [Комуникациони канали](tekstovi/Racunarske-Mreze-Uvod.md#комуникациони-канали){:target="_blank"}
+        2.2.2. [Комуникациони канали](tekstovi/Racunarske-Mreze-Uvod.md#комуникациони-канали){:target="_blank"}
 
-        - [Мрежни софтвер](tekstovi/Racunarske-Mreze-Uvod.md#мрежни-софтвер){:target="_blank"}
+        2.2.3. [Мрежни софтвер](tekstovi/Racunarske-Mreze-Uvod.md#мрежни-софтвер){:target="_blank"}
 
-    1. [Распон рачунарских мрежа](tekstovi/Racunarske-Mreze-Raspon-Topologija.md#распон-рачунарских-мрежа){:target="_blank"}
+    2.3. [Распон рачунарских мрежа](tekstovi/Racunarske-Mreze-Raspon-Topologija.md#распон-рачунарских-мрежа){:target="_blank"}
 
-        - Personal area network
+        2.3.1. Personal area network
 
-        - Local area network
+        2.3.2. Local area network
 
-        - Campus area network
+        2.3.3. Campus area network
 
-        - Metropolitan area network
+        2.3.4. Metropolitan area network
 
-        - Wide area network
+        2.3.5. Wide area network
 
-    1. [Топологија рачунарских мрежа](tekstovi/Racunarske-Mreze-Raspon-Topologija.md#топологија-рачунарских-мрежа){:target="_blank"}
+    2.4. [Топологија рачунарских мрежа](tekstovi/Racunarske-Mreze-Raspon-Topologija.md#топологија-рачунарских-мрежа){:target="_blank"}
 
-        - [Заједнички комуникациони канал](tekstovi/Racunarske-Mreze-Raspon-Topologija.md#заједнички-комуникациони-канал){:target="_blank"}
+        2.4.1. [Заједнички комуникациони канал](tekstovi/Racunarske-Mreze-Raspon-Topologija.md#заједнички-комуникациони-канал){:target="_blank"}
 
-        - [Директне чвор-чвор везе](tekstovi/Racunarske-Mreze-Raspon-Topologija.md#директне-чвор-чвор-везе){:target="_blank"}
+        2.4.2. [Директне чвор-чвор везе](tekstovi/Racunarske-Mreze-Raspon-Topologija.md#директне-чвор-чвор-везе){:target="_blank"}
 
-        - [Топологија великих мрежа](tekstovi/Racunarske-Mreze-Raspon-Topologija.md#топологија-великих-мрежа){:target="_blank"}
+        2.4.3. [Топологија великих мрежа](tekstovi/Racunarske-Mreze-Raspon-Topologija.md#топологија-великих-мрежа){:target="_blank"}
 
-1. [Интернет, услуге и протоколи](/prezentacije/UVIT01-02-Uvod u Internet.pdf){:target="_blank"}
+3. [Интернет, услуге и протоколи](/prezentacije/UVIT01-02-Uvod u Internet.pdf){:target="_blank"}
 
     1. Опис Интернета
 
@@ -128,7 +128,7 @@
 
             - FTP
 
-1. [Језици за обележавање](/prezentacije/UVIT02-01-Jezici za obelezavanje.pdf){:target="_blank"}
+4. [Језици за обележавање](/prezentacije/UVIT02-01-Jezici za obelezavanje.pdf){:target="_blank"}
 
     1. Рад са текстуалним документима
 
@@ -168,113 +168,113 @@
 
     - [Примери](https://github.com/MatfUVIT/UVIT/tree/master/predavanja/primeri-sgml-dtd-xml){:target="_blank"}
 
-1. [Програмски језик ЈаваСкрипт](tekstovi/JavaScript-Programski-Jezik-Karakteristike-Okruzenje.md){:target="_blank"}
+5. [Програмски језик ЈаваСкрипт](tekstovi/JavaScript-Programski-Jezik-Karakteristike-Okruzenje.md){:target="_blank"}
 
-    1. [Карактеристике језика ЈаваСкрипт](tekstovi/JavaScript-Programski-Jezik-Karakteristike-Okruzenje.md#карактеристике-језика-јаваскрипт){:target="_blank"}
+    5.1. [Карактеристике језика ЈаваСкрипт](tekstovi/JavaScript-Programski-Jezik-Karakteristike-Okruzenje.md#карактеристике-језика-јаваскрипт){:target="_blank"}
 
-    1. [Развој језика ЈаваСкрипт](tekstovi/JavaScript-Programski-Jezik-Verzije-Stilovi-Kodiranja.md#историјат-и-верзије-језика-јаваскрипт){:target="_blank"}
+    5.2. [Развој језика ЈаваСкрипт](tekstovi/JavaScript-Programski-Jezik-Verzije-Stilovi-Kodiranja.md#историјат-и-верзије-језика-јаваскрипт){:target="_blank"}
 
-       1. [Настанак ЈаваСкрипта](tekstovi/JavaScript-Programski-Jezik-Verzije-Stilovi-Kodiranja.md#настанак-јаваскрипта){:target="_blank"}
+       5.2.1. [Настанак ЈаваСкрипта](tekstovi/JavaScript-Programski-Jezik-Verzije-Stilovi-Kodiranja.md#настанак-јаваскрипта){:target="_blank"}
 
-       1. [Верзије-језика-јаваскрипт](tekstovi/JavaScript-Programski-Jezik-Verzije-Stilovi-Kodiranja.md#настанак-јаваскрипта){:target="_blank"}
+       5.2.2. [Верзије-језика-јаваскрипт](tekstovi/JavaScript-Programski-Jezik-Verzije-Stilovi-Kodiranja.md#настанак-јаваскрипта){:target="_blank"}
 
-    1. [Извршавање и дебагирање ЈаваСкрипт програма](tekstovi/JavaScript-Programski-Jezik-Verzije-Stilovi-Kodiranja.md#извршавање-и-дебагирање-јаваскрипт-програма){:target="_blank"}
+    5.3. [Извршавање и дебагирање ЈаваСкрипт програма](tekstovi/JavaScript-Programski-Jezik-Verzije-Stilovi-Kodiranja.md#извршавање-и-дебагирање-јаваскрипт-програма){:target="_blank"}
 
-        1. [Извршавње у окружењу node.js](tekstovi/JavaScript-Programski-Jezik-Verzije-Stilovi-Kodiranja.md#извршавње-у-окружењу-node.js){:target="_blank"}
+        5.3.1. [Извршавње у окружењу node.js](tekstovi/JavaScript-Programski-Jezik-Verzije-Stilovi-Kodiranja.md#извршавње-у-окружењу-nodejs){:target="_blank"}
 
-        1. [Дебагирање у окружењу node.js коришћењем VS Code](tekstovi/JavaScript-Programski-Jezik-Verzije-Stilovi-Kodiranja.md#дебагирање-у-окружењу-node.js-коришћењем-vs-code){:target="_blank"}
+        5.3.2. [Дебагирање у окружењу node.js коришћењем VS Code](tekstovi/JavaScript-Programski-Jezik-Verzije-Stilovi-Kodiranja.md#дебагирање-у-окружењу-nodejs-коришћењем-vs-code){:target="_blank"}
 
-        1. [Извршавње у веб прегледачу](tekstovi/JavaScript-Programski-Jezik-Verzije-Stilovi-Kodiranja.md#извршавње-у-веб-прегледачу){:target="_blank"}
+        5.3.3. [Извршавње у веб прегледачу](tekstovi/JavaScript-Programski-Jezik-Verzije-Stilovi-Kodiranja.md#извршавње-у-веб-прегледачу){:target="_blank"}
 
-        1. [Дебагирање у веб прегледачу](tekstovi/JavaScript-Programski-Jezik-Verzije-Stilovi-Kodiranja.md#дебагирање-у-веб-прегледачу){:target="_blank"}
+        5.3.4. [Дебагирање у веб прегледачу](tekstovi/JavaScript-Programski-Jezik-Verzije-Stilovi-Kodiranja.md#дебагирање-у-веб-прегледачу){:target="_blank"}
 
-    1. [Стилови кŏдирања у језику ЈаваСкрипт](tekstovi/JavaScript-Programski-Jezik-Verzije-Stilovi-Kodiranja.md#стилови-кŏдирања){:target="_blank"}
+    5.4. [Стилови кŏдирања у језику ЈаваСкрипт](tekstovi/JavaScript-Programski-Jezik-Verzije-Stilovi-Kodiranja.md#стилови-кŏдирања){:target="_blank"}
 
-    1. [ЈаваСкрипт окружење за извршавање](tekstovi/JavaScript-Programski-Jezik-Karakteristike-Okruzenje.md#јаваскрипт-окружење-за-извршавање){:target="_blank"}
+    5.5. [ЈаваСкрипт окружење за извршавање](tekstovi/JavaScript-Programski-Jezik-Karakteristike-Okruzenje.md#јаваскрипт-окружење-за-извршавање){:target="_blank"}
 
-        1. [ЈаваСкрипт машина](tekstovi/JavaScript-Programski-Jezik-Karakteristike-Okruzenje.md#jаваскрипт-машина){:target="_blank"}
+        5.5.1. [ЈаваСкрипт машина](tekstovi/JavaScript-Programski-Jezik-Karakteristike-Okruzenje.md#jаваскрипт-машина){:target="_blank"}
 
-        1. [Спољашњи API](tekstovi/JavaScript-Programski-Jezik-Karakteristike-Okruzenje.md#спољашњи-API){:target="_blank"}
+        5.5.2. [Спољашњи API](tekstovi/JavaScript-Programski-Jezik-Karakteristike-Okruzenje.md#спољашњи-API){:target="_blank"}
 
-        1. [Ред повратних позива](tekstovi/JavaScript-Programski-Jezik-Karakteristike-Okruzenje.md#ред-повратних-позива){:target="_blank"}
+        5.5.3. [Ред повратних позива](tekstovi/JavaScript-Programski-Jezik-Karakteristike-Okruzenje.md#ред-повратних-позива){:target="_blank"}
 
-        1. [Петља за догађаје](tekstovi/JavaScript-Programski-Jezik-Karakteristike-Okruzenje.md#петља-за-догађаје){:target="_blank"}
+        5.5.4. [Петља за догађаје](tekstovi/JavaScript-Programski-Jezik-Karakteristike-Okruzenje.md#петља-за-догађаје){:target="_blank"}
 
-    1. [Структура ЈаваСкрипт програма](tekstovi/JavaScript-Programski-Jezik-Struktura-Programa.md#структура-јаваскрипт-програма){:target="_blank"}
+    5.6. [Структура ЈаваСкрипт програма](tekstovi/JavaScript-Programski-Jezik-Struktura-Programa.md#структура-јаваскрипт-програма){:target="_blank"}
 
-        1. [Основни елементи језика ЈаваСкрипт](tekstovi/JavaScript-Programski-Jezik-Struktura-Programa.md#основни-елементи-језика-јаваскрипт){:target="_blank"}
+        5.6.1. [Основни елементи језика ЈаваСкрипт](tekstovi/JavaScript-Programski-Jezik-Struktura-Programa.md#основни-елементи-језика-јаваскрипт){:target="_blank"}
 
-            1. [Unicode знаци](tekstovi/JavaScript-Programski-Jezik-Struktura-Programa.md#unicode-знаци){:target="_blank"}
+            - [Unicode знаци](tekstovi/JavaScript-Programski-Jezik-Struktura-Programa.md#unicode-знаци){:target="_blank"}
 
-            1. [Тачка-зарез](tekstovi/JavaScript-Programski-Jezik-Struktura-Programa.md#тачка-зарез){:target="_blank"}
+            - [Тачка-зарез](tekstovi/JavaScript-Programski-Jezik-Struktura-Programa.md#тачка-зарез){:target="_blank"}
 
-            1. [Белине](tekstovi/JavaScript-Programski-Jezik-Struktura-Programa.md#белине){:target="_blank"}
+            - [Белине](tekstovi/JavaScript-Programski-Jezik-Struktura-Programa.md#белине){:target="_blank"}
 
-            1. [Коментари](tekstovi/JavaScript-Programski-Jezik-Struktura-Programa.md#коментари){:target="_blank"}
+            - [Коментари](tekstovi/JavaScript-Programski-Jezik-Struktura-Programa.md#коментари){:target="_blank"}
 
-            1. [Литерали](tekstovi/JavaScript-Programski-Jezik-Struktura-Programa.md#литерали){:target="_blank"}
+            - [Литерали](tekstovi/JavaScript-Programski-Jezik-Struktura-Programa.md#литерали){:target="_blank"}
 
-            1. [Идентификатори](tekstovi/JavaScript-Programski-Jezik-Struktura-Programa.md#идентификатори){:target="_blank"}
+            - [Идентификатори](tekstovi/JavaScript-Programski-Jezik-Struktura-Programa.md#идентификатори){:target="_blank"}
 
-        1. [Типови и вредности](tekstovi/JavaScript-Programski-Jezik-Struktura-Programa.md#типови-и-вредности){:target="_blank"}
+        5.6.2. [Типови и вредности](tekstovi/JavaScript-Programski-Jezik-Struktura-Programa.md#типови-и-вредности){:target="_blank"}
 
-            1. [Примитивни типови](tekstovi/JavaScript-Programski-Jezik-Struktura-Programa.md#примитивни-типови){:target="_blank"}
+            - [Примитивни типови](tekstovi/JavaScript-Programski-Jezik-Struktura-Programa.md#примитивни-типови){:target="_blank"}
 
-            1. [Објектни типови](tekstovi/JavaScript-Programski-Jezik-Struktura-Programa.md#објектни-типови){:target="_blank"}
+            - [Објектни типови](tekstovi/JavaScript-Programski-Jezik-Struktura-Programa.md#објектни-типови){:target="_blank"}
 
-        1. [Променљиве](tekstovi/JavaScript-Programski-Jezik-Struktura-Programa.md#променљиве){:target="_blank"}
+        5.6.3. [Променљиве](tekstovi/JavaScript-Programski-Jezik-Struktura-Programa.md#променљиве){:target="_blank"}
 
-            1. [Опсег дефинисаности и контексти](tekstovi/JavaScript-Programski-Jezik-Struktura-Programa.md#опсег-дефинисаности-и-контексти){:target="_blank"}
+            - [Опсег дефинисаности и контексти](tekstovi/JavaScript-Programski-Jezik-Struktura-Programa.md#опсег-дефинисаности-и-контексти){:target="_blank"}
 
-        1. [Изрази](tekstovi/JavaScript-Programski-Jezik-Struktura-Programa.md#изрази){:target="_blank"}
+        5.6.4. [Изрази](tekstovi/JavaScript-Programski-Jezik-Struktura-Programa.md#изрази){:target="_blank"}
 
-            1. [Примарни изрази](tekstovi/JavaScript-Programski-Jezik-Struktura-Programa.md#примарни-изрази){:target="_blank"}
+            - [Примарни изрази](tekstovi/JavaScript-Programski-Jezik-Struktura-Programa.md#примарни-изрази){:target="_blank"}
 
-            1. [Аритметички изрази](tekstovi/JavaScript-Programski-Jezik-Struktura-Programa.md#aритметички-изрази){:target="_blank"}
+            - [Аритметички изрази](tekstovi/JavaScript-Programski-Jezik-Struktura-Programa.md#aритметички-изрази){:target="_blank"}
 
-            1. [Логички изрази](tekstovi/JavaScript-Programski-Jezik-Struktura-Programa.md#логички-изрази){:target="_blank"}
+            - [Логички изрази](tekstovi/JavaScript-Programski-Jezik-Struktura-Programa.md#логички-изрази){:target="_blank"}
 
-            1. [Ниска-изрази](tekstovi/JavaScript-Programski-Jezik-Struktura-Programa.md#ниска-изрази){:target="_blank"}
+            - [Ниска-изрази](tekstovi/JavaScript-Programski-Jezik-Struktura-Programa.md#ниска-изрази){:target="_blank"}
 
-            1. [Изрази леве стране](tekstovi/JavaScript-Programski-Jezik-Struktura-Programa.md#изрази-леве-стране){:target="_blank"}
+            - [Изрази леве стране](tekstovi/JavaScript-Programski-Jezik-Struktura-Programa.md#изрази-леве-стране){:target="_blank"}
 
-            1. [Приоритет оператора](tekstovi/JavaScript-Programski-Jezik-Struktura-Programa.md#приоритет-оператора){:target="_blank"}
+            - [Приоритет оператора](tekstovi/JavaScript-Programski-Jezik-Struktura-Programa.md#приоритет-оператора){:target="_blank"}
 
-        1. [Конверзија типова и евалуација израза](tekstovi/JavaScript-Programski-Jezik-Struktura-Programa.md#конверзија-типова-и-евалуација-израза){:target="_blank"}
+        5.6.5. [Конверзија типова и евалуација израза](tekstovi/JavaScript-Programski-Jezik-Struktura-Programa.md#конверзија-типова-и-евалуација-израза){:target="_blank"}
 
-            1. [Експлицитна конверзија типа](tekstovi/JavaScript-Programski-Jezik-Struktura-Programa.md#експлицитна-конверзија-типа){:target="_blank"}
+            - [Експлицитна конверзија типа](tekstovi/JavaScript-Programski-Jezik-Struktura-Programa.md#експлицитна-конверзија-типа){:target="_blank"}
 
-            1. [Имплицитна конверзија типа](tekstovi/JavaScript-Programski-Jezik-Struktura-Programa.md#имплицитна-конверзија-типа){:target="_blank"}
+            - [Имплицитна конверзија типа](tekstovi/JavaScript-Programski-Jezik-Struktura-Programa.md#имплицитна-конверзија-типа){:target="_blank"}
 
-            1. [Поређење помоћу оператора ==](tekstovi/JavaScript-Programski-Jezik-Struktura-Programa.md#поређење-помоћу-оператора-==){:target="_blank"}
+            - [Поређење помоћу оператора ==](tekstovi/JavaScript-Programski-Jezik-Struktura-Programa.md#поређење-помоћу-оператора-==){:target="_blank"}
 
-        1. [Наредбе и секвенце наредби](tekstovi/JavaScript-Programski-Jezik-Struktura-Programa.md#наредбе-и-секвенце-наредби){:target="_blank"}
+        5.6.6. [Наредбе и секвенце наредби](tekstovi/JavaScript-Programski-Jezik-Struktura-Programa.md#наредбе-и-секвенце-наредби){:target="_blank"}
 
-            1. [Наредбе доделе вредности](tekstovi/JavaScript-Programski-Jezik-Struktura-Programa.md#наредбе-доделе-вредности){:target="_blank"}
+            - [Наредбе доделе вредности](tekstovi/JavaScript-Programski-Jezik-Struktura-Programa.md#наредбе-доделе-вредности){:target="_blank"}
 
-            1. [Комбиноване наредбе доделе](tekstovi/JavaScript-Programski-Jezik-Struktura-Programa.md#комбиноване-наредбе-доделе){:target="_blank"}
+            - [Комбиноване наредбе доделе](tekstovi/JavaScript-Programski-Jezik-Struktura-Programa.md#комбиноване-наредбе-доделе){:target="_blank"}
 
-            1. [Наредбе сажетог ажурирања](tekstovi/JavaScript-Programski-Jezik-Struktura-Programa.md#наредбе-сажетог-ажурирања){:target="_blank"}
+            - [Наредбе сажетог ажурирања](tekstovi/JavaScript-Programski-Jezik-Struktura-Programa.md#наредбе-сажетог-ажурирања){:target="_blank"}
 
-            1. [Позиви предефинисаних функција](tekstovi/JavaScript-Programski-Jezik-Struktura-Programa.md#позиви-предефинисаних-функција){:target="_blank"}
+            - [Позиви предефинисаних функција](tekstovi/JavaScript-Programski-Jezik-Struktura-Programa.md#позиви-предефинисаних-функција){:target="_blank"}
 
-        1. [Гранања](tekstovi/JavaScript-Programski-Jezik-Struktura-Programa.md#гранања){:target="_blank"}
+        5.6.7. [Гранања](tekstovi/JavaScript-Programski-Jezik-Struktura-Programa.md#гранања){:target="_blank"}
 
-            1. [Наредба `if`](tekstovi/JavaScript-Programski-Jezik-Struktura-Programa.md#наредба-if){:target="_blank"}
+            - [Наредба `if`](tekstovi/JavaScript-Programski-Jezik-Struktura-Programa.md#наредба-if){:target="_blank"}
 
-            1. [Наредба `switch`](tekstovi/JavaScript-Programski-Jezik-Struktura-Programa.md#наредба-switch){:target="_blank"}
+            - [Наредба `switch`](tekstovi/JavaScript-Programski-Jezik-Struktura-Programa.md#наредба-switch){:target="_blank"}
 
-        1. [Циклуси](tekstovi/JavaScript-Programski-Jezik-Struktura-Programa.md#циклуси){:target="_blank"}
+        5.6.8. [Циклуси](tekstovi/JavaScript-Programski-Jezik-Struktura-Programa.md#циклуси){:target="_blank"}
 
-            1. [Опсези важења променљивих у циклусима](tekstovi/JavaScript-Programski-Jezik-Struktura-Programa.mdопсези-важења-променљивих-у-циклусима){:target="_blank"}
+            - [Опсези важења променљивих у циклусима](tekstovi/JavaScript-Programski-Jezik-Struktura-Programa.mdопсези-важења-променљивих-у-циклусима){:target="_blank"}
 
-            1. [Циклус `while`](tekstovi/JavaScript-Programski-Jezik-Struktura-Programa.md#циклус-while){:target="_blank"}
+            - [Циклус `while`](tekstovi/JavaScript-Programski-Jezik-Struktura-Programa.md#циклус-while){:target="_blank"}
 
-            1. [Циклус `do` - `while`](tekstovi/JavaScript-Programski-Jezik-Struktura-Programa.md#циклус-do-while){:target="_blank"}
+            - [Циклус `do` - `while`](tekstovi/JavaScript-Programski-Jezik-Struktura-Programa.md#циклус-do-while){:target="_blank"}
 
-            1. [Циклус `for`](tekstovi/JavaScript-Programski-Jezik-Struktura-Programa.md#циклус-for){:target="_blank"}
+            - [Циклус `for`](tekstovi/JavaScript-Programski-Jezik-Struktura-Programa.md#циклус-for){:target="_blank"}
 
-            1. [Искакање из циклуса и прескакње итерације](tekstovi/JavaScript-Programski-Jezik-Struktura-Programa.md#искакање-из-циклуса-и-прескакње-итерације){:target="_blank"}
+            - [Искакање из циклуса и прескакње итерације](tekstovi/JavaScript-Programski-Jezik-Struktura-Programa.md#искакање-из-циклуса-и-прескакње-итерације){:target="_blank"}
 
         - [Примери (типови и вредности)](https://github.com/MatfUVIT/UVIT/tree/master/predavanja/primeri-js/p01-vrednosti-tipovi-operatori){:target="_blank"}
 
