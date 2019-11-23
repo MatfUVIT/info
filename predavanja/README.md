@@ -176,7 +176,17 @@
 
        1. [Настанак ЈаваСкрипта](tekstovi/JavaScript-Programski-Jezik-Verzije-Stilovi-Kodiranja.md#настанак-јаваскрипта){:target="_blank"}
 
-       1. [верзије-језика-јаваскрипт](tekstovi/JavaScript-Programski-Jezik-Verzije-Stilovi-Kodiranja.md#настанак-јаваскрипта){:target="_blank"}
+       1. [Верзије-језика-јаваскрипт](tekstovi/JavaScript-Programski-Jezik-Verzije-Stilovi-Kodiranja.md#настанак-јаваскрипта){:target="_blank"}
+
+    1. [Извршавање и дебагирање ЈаваСкрипт програма](tekstovi/JavaScript-Programski-Jezik-Verzije-Stilovi-Kodiranja.md#извршавање-и-дебагирање-јаваскрипт-програма){:target="_blank"}
+
+        1. [Извршавње у окружењу node.js](tekstovi/JavaScript-Programski-Jezik-Verzije-Stilovi-Kodiranja.md#извршавње-у-окружењу-node.js){:target="_blank"}
+
+        1. [Дебагирање у окружењу node.js коришћењем VS Code](tekstovi/JavaScript-Programski-Jezik-Verzije-Stilovi-Kodiranja.md#дебагирање-у-окружењу-node.js-коришћењем-vs-code){:target="_blank"}
+
+        1. [Извршавње у веб прегледачу](tekstovi/JavaScript-Programski-Jezik-Verzije-Stilovi-Kodiranja.md#извршавње-у-веб-прегледачу){:target="_blank"}
+
+        1. [Дебагирање у веб прегледачу](tekstovi/JavaScript-Programski-Jezik-Verzije-Stilovi-Kodiranja.md#дебагирање-у-веб-прегледачу){:target="_blank"}
 
     1. [Стилови кŏдирања у језику ЈаваСкрипт](tekstovi/JavaScript-Programski-Jezik-Verzije-Stilovi-Kodiranja.md#стилови-кŏдирања){:target="_blank"}
 
@@ -420,112 +430,114 @@
 
         - [Примери](https://github.com/MatfUVIT/UVIT/tree/master/predavanja/primeri-js/p10-moduli){:target="_blank"}
 
-    - [Примери](https://github.com/MatfUVIT/UVIT/tree/master/predavanja/primeri-js){:target="_blank"}
+    1. [ЈаваСкрипт програмирање коришћењем окружења `node`](tekstovi/JavaScript-Programiranje-Koriscenjem-Okruzenja-Node.md){:target="_blank"}
 
-1. [ЈаваСкрипт програмирање коришћењем окружења `node`](tekstovi/JavaScript-Programiranje-Koriscenjem-Okruzenja-Node.md){:target="_blank"}
+        1. [Окружењe node](tekstovi/JavaScript-Programiranje-Koriscenjem-Okruzenja-Node.md#окружењe-node){:target="_blank"}
 
-    1. [Окружењe node](tekstovi/JavaScript-Programiranje-Koriscenjem-Okruzenja-Node.md#окружењe-node){:target="_blank"}
+            1. [Карактеристике окружења node](tekstovi/JavaScript-Programiranje-Koriscenjem-Okruzenja-Node.md#карактеристике-окружења-node){:target="_blank"}
 
-        1. [Карактеристике окружења node](tekstovi/JavaScript-Programiranje-Koriscenjem-Okruzenja-Node.md#карактеристике-окружења-node){:target="_blank"}
+            1. [Менаџер пакета npm](tekstovi/JavaScript-Programiranje-Koriscenjem-Okruzenja-Node.md#менаџер-пакета-npm){:target="_blank"}
 
-        1. [Менаџер пакета npm](tekstovi/JavaScript-Programiranje-Koriscenjem-Okruzenja-Node.md#менаџер-пакета-npm){:target="_blank"}
+        1. [Догађаји код окружења node](tekstovi/JavaScript-Programiranje-Koriscenjem-Okruzenja-Node.md#догађаји-код-окружења-node){:target="_blank"}
 
-    1. [Догађаји код окружења node](tekstovi/JavaScript-Programiranje-Koriscenjem-Okruzenja-Node.md#догађаји-код-окружења-node){:target="_blank"}
+            1. [Програмирање управљано догађајима](tekstovi/JavaScript-Programiranje-Koriscenjem-Okruzenja-Node.md#програмирање-управљано-догађајима){:target="_blank"}
 
-        1. [Програмирање управљано догађајима](tekstovi/JavaScript-Programiranje-Koriscenjem-Okruzenja-Node.md#програмирање-управљано-догађајима){:target="_blank"}
+            1. [Класа EventEmitter](tekstovi/JavaScript-Programiranje-Koriscenjem-Okruzenja-Node.md#класа-еventеmitter){:target="_blank"}
 
-        1. [Класа EventEmitter](tekstovi/JavaScript-Programiranje-Koriscenjem-Okruzenja-Node.md#класа-еventеmitter){:target="_blank"}
+        1. [Рад са датотекама](tekstovi/JavaScript-Programiranje-Koriscenjem-Okruzenja-Node.md#рад-са-датотекама){:target="_blank"}
 
-    1. [Рад са датотекама](tekstovi/JavaScript-Programiranje-Koriscenjem-Okruzenja-Node.md#рад-са-датотекама){:target="_blank"}
+            1. [Директан рад са датотекама](tekstovi/JavaScript-Programiranje-Koriscenjem-Okruzenja-Node.md#директан-рад-са-датотекама){:target="_blank"}
 
-        1. [Директан рад са датотекама](tekstovi/JavaScript-Programiranje-Koriscenjem-Okruzenja-Node.md#директан-рад-са-датотекама){:target="_blank"}
+            1. [Рад са датотекама преко токова](tekstovi/JavaScript-Programiranje-Koriscenjem-Okruzenja-Node.md#рад-са-датотекама-преко-токова){:target="_blank"}
 
-        1. [Рад са датотекама преко токова](tekstovi/JavaScript-Programiranje-Koriscenjem-Okruzenja-Node.md#рад-са-датотекама-преко-токова){:target="_blank"}
+            1. [Догађаји и токови података](tekstovi/JavaScript-Programiranje-Koriscenjem-Okruzenja-Node.md#догађаји-и-токови-података){:target="_blank"}
 
-        1. [Догађаји и токови података](tekstovi/JavaScript-Programiranje-Koriscenjem-Okruzenja-Node.md#догађаји-и-токови-података){:target="_blank"}
+        - [Примери](https://github.com/MatfUVIT/UVIT/tree/master/predavanja/primeri-js-nodejs){:target="_blank"}
 
-    - [Примери](https://github.com/MatfUVIT/UVIT/tree/master/predavanja/primeri-js-nodejs){:target="_blank"}
+    1. [ЈаваСкрипт серверско програмирање коришћењем окружења `node`](tekstovi/JavaScript-Serversko-Programiranje-Koriscenjem-Okruzenja-Node.md){:target="_blank"}
 
-1. [ЈаваСкрипт серверско програмирање коришћењем окружења `node`](tekstovi/JavaScript-Serversko-Programiranje-Koriscenjem-Okruzenja-Node.md){:target="_blank"}
+        1. [Мрежне апликације](tekstovi/JavaScript-Serversko-Programiranje-Koriscenjem-Okruzenja-Node.md#мрежне-апликације){:target="_blank"}
 
-    1. [Мрежне апликације](tekstovi/JavaScript-Serversko-Programiranje-Koriscenjem-Okruzenja-Node.md#мрежне-апликације){:target="_blank"}
+            1. [TCP апликације](tekstovi/JavaScript-Serversko-Programiranje-Koriscenjem-Okruzenja-Node.md#tcp-апликације){:target="_blank"}
 
-    1. [Веб апликације](tekstovi/JavaScript-Serversko-Programiranje-Koriscenjem-Okruzenja-Node.md#веб-апликације){:target="_blank"}
+            1. [UDP апликације](tekstovi/JavaScript-Serversko-Programiranje-Koriscenjem-Okruzenja-Node.md#udp-апликације){:target="_blank"}
 
-        1. [Процесирање захтева и генерисање одговора](tekstovi/JavaScript-Serversko-Programiranje-Koriscenjem-Okruzenja-Node.md#процесирање-захтева-и-генерисање-одговора){:target="_blank"}
+        1. [Веб апликације](tekstovi/JavaScript-Serversko-Programiranje-Koriscenjem-Okruzenja-Node.md#веб-апликације){:target="_blank"}
 
-        1. [Одређивање путање и ниска-упита](tekstovi/JavaScript-Serversko-Programiranje-Koriscenjem-Okruzenja-Node.md#одређивање-путање-и-ниска-упита){:target="_blank"}
+            1. [Процесирање захтева и генерисање одговора](tekstovi/JavaScript-Serversko-Programiranje-Koriscenjem-Okruzenja-Node.md#процесирање-захтева-и-генерисање-одговора){:target="_blank"}
 
-        1. [Слање датотека као одговора](tekstovi/JavaScript-Serversko-Programiranje-Koriscenjem-Okruzenja-Node.md#слање-датотека-као-одговора){:target="_blank"}
+            1. [Одређивање путање и ниска-упита](tekstovi/JavaScript-Serversko-Programiranje-Koriscenjem-Okruzenja-Node.md#одређивање-путање-и-ниска-упита){:target="_blank"}
 
-        1. [Мапа садржаја](tekstovi/JavaScript-Serversko-Programiranje-Koriscenjem-Okruzenja-Node.md#мапа-садржаја){:target="_blank"}
+            1. [Слање датотека као одговора](tekstovi/JavaScript-Serversko-Programiranje-Koriscenjem-Okruzenja-Node.md#слање-датотека-као-одговора){:target="_blank"}
 
-    1. [Обрада веб форме](tekstovi/JavaScript-Serversko-Programiranje-Koriscenjem-Okruzenja-Node.md#обрада-веб-форме){:target="_blank"}
+            1. [Мапа садржаја](tekstovi/JavaScript-Serversko-Programiranje-Koriscenjem-Okruzenja-Node.md#мапа-садржаја){:target="_blank"}
 
-        1. [Метод GET](tekstovi/JavaScript-Serversko-Programiranje-Koriscenjem-Okruzenja-Node.md#метод-get){:target="_blank"}
+        1. [Обрада веб форме](tekstovi/JavaScript-Serversko-Programiranje-Koriscenjem-Okruzenja-Node.md#обрада-веб-форме){:target="_blank"}
 
-        1. [Метод POST](tekstovi/JavaScript-Serversko-Programiranje-Koriscenjem-Okruzenja-Node.md#метод-post){:target="_blank"}
+            1. [Метод GET](tekstovi/JavaScript-Serversko-Programiranje-Koriscenjem-Okruzenja-Node.md#метод-get){:target="_blank"}
 
-    - [Примери](https://github.com/MatfUVIT/UVIT/tree/master/predavanja/primeri-js-server-nodejs){:target="_blank"}
+            1. [Метод POST](tekstovi/JavaScript-Serversko-Programiranje-Koriscenjem-Okruzenja-Node.md#метод-post){:target="_blank"}
 
-1. [ЈаваСкрипт програмирање на клијентској страни](tekstovi/JavaScript-Programiranje-Na-Klijentskoj-Strani.md){:target="_blank"}
+        - [Примери](https://github.com/MatfUVIT/UVIT/tree/master/predavanja/primeri-js-server-nodejs){:target="_blank"}
 
-    1. Дебагирање клијентског JavaScript кŏда уз помоћ веб прегледача
+    1. [ЈаваСкрипт програмирање на клијентској страни](tekstovi/JavaScript-Programiranje-Na-Klijentskoj-Strani.md){:target="_blank"}
 
-    1. Објектни модел документа
+        1. Дебагирање клијентског JavaScript кŏда уз помоћ веб прегледача
 
-    1. Догађаји
+        1. Објектни модел документа
 
-    1. `јQuery`
+        1. Догађаји
 
-    - [Примери](https://github.com/MatfUVIT/UVIT/tree/master/predavanja/primeri-js-klijent){:target="_blank"}
+        1. `јQuery`
 
-1. [ЈаваСкрипт програмирање MongoDB база података](tekstovi/JavaScript-Programiranje-MongoDb-Baza-Podataka.md){:target="_blank"}
+        - [Примери](https://github.com/MatfUVIT/UVIT/tree/master/predavanja/primeri-js-klijent){:target="_blank"}
 
-    1. NoSQL база података `MongoDB`
+    1. [ЈаваСкрипт програмирање MongoDB база података](tekstovi/JavaScript-Programiranje-MongoDb-Baza-Podataka.md){:target="_blank"}
 
-        1. Карактеристике NoSQL база података
+        1. NoSQL база података `MongoDB`
 
-        1. Опис `MongoDB` система
+            1. Карактеристике NoSQL база података
 
-            1. База
+            1. Опис `MongoDB` система
 
-            1. Колекција
+                1. База
 
-            1. Документ
+                1. Колекција
 
-        1. Коришћење алата за рад са `MongoDB`
+                1. Документ
 
-    1. ЈаваСкрипт библиотека за рад са `MongoDB` базом
+            1. Коришћење алата за рад са `MongoDB`
 
-        1. Креирање базе и колекције
+        1. ЈаваСкрипт библиотека за рад са `MongoDB` базом
 
-        1. Уметање докумената у колкецију
+            1. Креирање базе и колекције
 
-        1. Избор документата
+            1. Уметање докумената у колкецију
 
-        1. Брисање докумената
+            1. Избор документата
 
-        1. Ажуриррање докумената
+            1. Брисање докумената
 
-        1. Спајање докумената
+            1. Ажуриррање докумената
 
-    - [Примери](https://github.com/MatfUVIT/UVIT/tree/master/predavanja/primeri-js-nodejs-mongodb){:target="_blank"}
+            1. Спајање докумената
 
-1. [Напредне серверске ЈаваСкрипт апликације](tekstovi/Napredne-Serverske-JavaScript-Aplikacije.md){:target="_blank"}  
+        - [Примери](https://github.com/MatfUVIT/UVIT/tree/master/predavanja/primeri-js-nodejs-mongodb){:target="_blank"}
 
-    1. Напредне `node` веб апликације
+    1. [Напредне серверске ЈаваСкрипт апликације](tekstovi/Napredne-Serverske-JavaScript-Aplikacije.md){:target="_blank"}  
 
-        1. `AJAX` и `Fetch`
+        1. Напредне `node` веб апликације
 
-        1. Веб апликације које користе базе података
+            1. `AJAX` и `Fetch`
 
-        1. Веб сервиси
+            1. Веб апликације које користе базе података
 
-    1. Напредне `express` веб апликације
+            1. Веб сервиси
 
-    1. Оптимизација рада претраживача (SEO)
+        1. Напредне `express` веб апликације
 
-    - [Примери](https://github.com/MatfUVIT/UVIT/tree/master/predavanja/primeri-js-server-nodejs-mongodb){:target="_blank"}
+        1. Оптимизација рада претраживача (SEO)
+
+        - [Примери](https://github.com/MatfUVIT/UVIT/tree/master/predavanja/primeri-js-server-nodejs-mongodb){:target="_blank"}
 
 [УВИТ](../README.md)
