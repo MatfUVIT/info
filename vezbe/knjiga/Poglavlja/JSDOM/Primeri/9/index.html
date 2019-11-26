@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title> Primer 9 </title>
+    <meta charset="UTF-8">
+
+    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    
+    
+    <style type="text/css">
+        .greska {
+            color: red;
+            font-size: 14px;
+            margin-top: 25px;
+            margin-bottom: 25px;
+        }
+
+        fieldset legend {
+            color: orange;
+        }
+    </style>
+</head>
+
+<body>
+    <form method="" action="" id="formular" class="container" novalidate>
+        <!-- 
+            Element u okviru kojeg će biti upisane informacije o 
+            eventualnim greskama. 
+        -->
+        <div class="greska" id="greska"> </div>
+
+        <fieldset class="form-group">
+            <legend> Lični podaci </legend>
+
+            <div class="form-group">
+                <label for="ime_prezime"> Ime i prezime*: </label>
+                <input id="ime_prezime" type="text" placeholder="Pera Peric" maxlength="30" name="ime_prezime" required
+                    class="form-control">
+            </div>
+
+            <div class="form-group">
+                <label for="datum_rodjenja"> Datum rođenja: </label>
+                <input id="datum_rodjenja" type="date" name="datum_rodjenja" class="form-control">
+            </div>
+
+            <div class="form-group">
+                <label for="email"> Email: </label>
+                <input id="email" name="email" type="email" class="form-control">
+            </div>
+
+            <div class="form-group">
+                <label for="veb_adresa"> Veb adresa: </label>
+                <input id="veb_adresa" name="veb_adresa" autocomplete="off" type="url" class="form-control">
+            </div>
+
+            <div class="form-group">
+                <label for="username"> Korisničko ime*: </label>
+                <input id="username" type="text" name="korisnicko_ime" required class="form-control">
+            </div>
+
+            <div class="form-group">
+                <label for="password"> Šifra*: </label>
+                <input id="password" name="sifra" required type="password" class="form-control">
+            </div>
+
+        </fieldset>
+
+        <fieldset class="form-group">
+            <legend> Obrazovanje </legend>
+
+            <div class="form-group row">
+                <div class="col-md-6">
+                    <label for="fakultet" class="control-label"> Fakultet: </label>
+                    <select name="fakultet" id="fakultet" class="form-control">
+                        <option value=""> ------- </option>
+                        <optgroup label="tehnički fakulteti">
+                            <option value="matf"> MATF </option>
+                            <option value="etf"> ETF </option>
+                            <option value="fon"> FON </option>
+                        </optgroup>
+                        <optgroup label="društvene nauke">
+                            <option value="f"> Filološki fakultet </option>
+                        </optgroup>
+                        <optgroup label="umetnost">
+                            <option value="fdu" selected="selected"> FDU </option>
+                        </optgroup>
+                    </select>
+                </div>
+                
+                <div class="col-md-6">
+                    <label for="univerzitet" class="control-label"> Univerzitet: </label>
+                    <input list="svi_univerziteti" id="univerzitet" name="univerzitet" type="text" class="form-control">
+                    <datalist id="svi_univerziteti">
+                        <option value="UBG"> Univerzitet u Beogradu </option>
+                        <option value="UNS"> Univerzitet u Novom Sadu </option>
+                        <option value="UNI"> Univerzitet u Nišu </option>
+                        <option value="UKG"> Univerzitet u Kragujevcu </option>
+                    </datalist>
+                </div>
+            </div>
+
+            <div class="form-group">
+                Godina studija:
+
+                <div class="form-check form-check-inline">
+                    <input name="godina" id="godina_1" value="1" type="radio" class="form-check-input">
+                    <label for="godina_1" class="form-check-label">1</label>
+                </div>
+
+                <div class="form-check form-check-inline">
+                    <input name="godina" id="godina_2" value="2" type="radio" class="form-check-input">
+                    <label for="godina_2" class="form-check-label">2</label>
+                </div>
+
+                <div class="form-check form-check-inline">
+                    <input name="godina" id="godina_3" value="3" type="radio" class="form-check-input">
+                    <label for="godina_3" class="form-check-label">3</label>
+                </div>
+
+                <div class="form-check form-check-inline">
+                    <input name="godina" id="godina_4" value="4" type="radio" class="form-check-input">
+                    <label for="godina_4" class="form-check-label">4</label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                Lista interesovanja:
+
+                <div class="form-check">
+                    <input name="veb" id="veb" type="checkbox" checked class="form-check-input">
+                    <label for="veb" class="form-check-label">veb programiranje</label>
+                </div>
+
+                <div class="form-check">
+                    <input name="paradigme" id="paradigme" type="checkbox" class="form-check-input">
+                    <label for="paradigme" class="form-check-label">programske paradigme</label>
+                </div>
+
+                <div class="form-check">
+                    <input name="grafika" id="grafika" type="checkbox" class="form-check-input">
+                    <label for="grafika" class="form-check-label">računarska grafika</label>
+                </div>
+
+                <div class="form-check">
+                    <input name="algoritmi" id="algoritmi" type="checkbox" class="form-check-input">
+                    <label for="algoritmi" class="form-check-label">algoritmi</label>
+                </div>
+            </div>
+
+        </fieldset>
+
+        <div class="form-group">
+            <label for="napomena"> Napomena: </label>
+            <br>
+            <textarea cols="80" rows="5" name="napomena" id="napomena" class="form-control" placeholder="Unesite napomenu..."></textarea>
+        </div>
+
+        <div class="form-group text-center">
+            <input value="pošalji podatke" type="submit" class="btn btn-primary">
+            <input value="obriši podatke" type="reset" class="btn btn-danger">
+        </div>
+    </form>
+
+    <script type="text/javascript" src="index.js"></script>
+</body>
+
+</html>
