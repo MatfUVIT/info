@@ -791,6 +791,590 @@ element.onclick = handler_2;
 
 Prilikom okidanja događaja `'click'`, biće pozvan (tj. izvršen) samo osluškivač koji implementira funkcija `handler_2`, dok je osluškivač koji implementira funkcija `handler_1` izgubljen. Postoje načini da se ovo prevaziđe, ali svaki od njih uvodi nove probleme, pri čemu nijedan od njih problema ne daje elegantno rešenje u odnosu na korišćenje pristupa zasnovan na metodima `addEventListener` i `removeEventListener`.
 
+
+## 5.6 Obrada podataka u formularu
+
+U prethodnom poglavlju bilo je reči o HTML elementima kojima predstavljamo različita polja za unos podataka. Sada ćemo videti kako možemo dohvatati podatke iz formulara i testirati njihove vrednosti u odnosu na predefinisane domene. Više reči o tome kako se podaci iz formulara šalju ka serveru biće kada budemo pričali o načinu obrađivanja podataka na serveru.
+
+U nastavku ćemo koristiti formular koji smo ranije napravili i izgleda kao na slici:
+
+<div style="max-width: 98%;">
+<img style="max-width: 100%;" src="./Slike/formular.png" alt="">
+</div>
+
+Odgovarajući kod za formular sa slike:
+
+```html
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title> Primer 9 </title>
+    <meta charset="UTF-8">
+
+    <link rel="stylesheet" type="text/css" 
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    
+    
+    <style type="text/css">
+        .greska {
+            color: red;
+            font-size: 14px;
+            margin-top: 25px;
+            margin-bottom: 25px;
+        }
+
+        fieldset legend {
+            color: orange;
+        }
+    </style>
+</head>
+
+<body>
+    <form method="" action="" id="formular" class="container" 
+        novalidate>
+        <!-- 
+            Element u okviru kojeg će biti upisane informacije o 
+            eventualnim greskama. 
+        -->
+        <div class="greska" id="greska"> </div>
+
+        <fieldset class="form-group">
+            <legend> Lični podaci </legend>
+
+            <div class="form-group">
+                <label for="ime_prezime"> Ime i prezime*: </label>
+                <input id="ime_prezime" type="text" 
+                    placeholder="Pera Peric" maxlength="30" 
+                    name="ime_prezime" required
+                    class="form-control">
+            </div>
+
+            <div class="form-group">
+                <label for="datum_rodjenja"> Datum rođenja: </label>
+                <input id="datum_rodjenja" type="date" 
+                       name="datum_rodjenja" class="form-control">
+            </div>
+
+            <div class="form-group">
+                <label for="email"> Email: </label>
+                <input id="email" name="email" type="email" 
+                       class="form-control">
+            </div>
+
+            <div class="form-group">
+                <label for="veb_adresa"> Veb adresa: </label>
+                <input id="veb_adresa" name="veb_adresa" 
+                    autocomplete="off" type="url" 
+                    class="form-control">
+            </div>
+
+            <div class="form-group">
+                <label for="username"> Korisničko ime*: </label>
+                <input id="username" type="text" 
+                    name="korisnicko_ime" required 
+                    class="form-control">
+            </div>
+
+            <div class="form-group">
+                <label for="password"> Šifra*: </label>
+                <input id="password" name="sifra" required 
+                    type="password" class="form-control">
+            </div>
+
+        </fieldset>
+
+        <fieldset class="form-group">
+            <legend> Obrazovanje </legend>
+
+            <div class="form-group row">
+                <div class="col-md-6">
+                    <label for="fakultet" class="control-label"> 
+                        Fakultet: 
+                    </label>
+
+                    <select name="fakultet" id="fakultet" 
+                            class="form-control">
+                        <option value=""> ------- </option>
+                        <optgroup label="tehnički fakulteti">
+                            <option value="matf"> MATF </option>
+                            <option value="etf"> ETF </option>
+                            <option value="fon"> FON </option>
+                        </optgroup>
+                        <optgroup label="društvene nauke">
+                            <option value="f"> 
+                                Filološki fakultet 
+                            </option>
+                        </optgroup>
+                        <optgroup label="umetnost">
+                            <option value="fdu" selected="selected"> 
+                                FDU 
+                            </option>
+                        </optgroup>
+                    </select>
+                </div>
+                
+                <div class="col-md-6">
+                    <label for="univerzitet" class="control-label"> 
+                        Univerzitet: 
+                    </label>
+                    <input list="svi_univerziteti" id="univerzitet" 
+                        name="univerzitet" type="text" 
+                        class="form-control">
+                    
+                    <datalist id="svi_univerziteti">
+                        <option value="UBG"> 
+                            Univerzitet u Beogradu 
+                        </option>
+                        <option value="UNS"> 
+                            Univerzitet u Novom Sadu
+                        </option>
+                        <option value="UNI"> 
+                            Univerzitet u Nišu 
+                        </option>
+                        <option value="UKG"> 
+                            Univerzitet u Kragujevcu 
+                        </option>
+                    </datalist>
+                </div>
+            </div>
+
+            <div class="form-group">
+                Godina studija:
+
+                <div class="form-check form-check-inline">
+                    <input name="godina" id="godina_1" value="1" 
+                        type="radio" class="form-check-input">
+                    <label for="godina_1" class="form-check-label"> 
+                        1 
+                    </label>
+                </div>
+
+                <div class="form-check form-check-inline">
+                    <input name="godina" id="godina_2" value="2" 
+                        type="radio" class="form-check-input">
+                    <label for="godina_2" class="form-check-label">
+                        2
+                    </label>
+                </div>
+
+                <div class="form-check form-check-inline">
+                    <input name="godina" id="godina_3" value="3" 
+                        type="radio" class="form-check-input">
+                    <label for="godina_3" class="form-check-label">
+                        3
+                    </label>
+                </div>
+
+                <div class="form-check form-check-inline">
+                    <input name="godina" id="godina_4" value="4" 
+                        type="radio" class="form-check-input">
+                    <label for="godina_4" class="form-check-label">
+                        4
+                    </label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                Lista interesovanja:
+
+                <div class="form-check">
+                    <input name="veb" id="veb" type="checkbox" 
+                        checked class="form-check-input">
+                    <label for="veb" class="form-check-label">
+                        veb programiranje
+                    </label>
+                </div>
+
+                <div class="form-check">
+                    <input name="paradigme" id="paradigme" 
+                        type="checkbox" class="form-check-input">
+                    <label for="paradigme" class="form-check-label">
+                        programske paradigme
+                    </label>
+                </div>
+
+                <div class="form-check">
+                    <input name="grafika" id="grafika" 
+                        type="checkbox" class="form-check-input">
+                    <label for="grafika" class="form-check-label">
+                        računarska grafika
+                    </label>
+                </div>
+
+                <div class="form-check">
+                    <input name="algoritmi" id="algoritmi"  
+                        type="checkbox" class="form-check-input">
+                    <label for="algoritmi" class="form-check-label">
+                        algoritmi
+                    </label>
+                </div>
+            </div>
+
+        </fieldset>
+
+        <div class="form-group">
+            <label for="napomena"> Napomena: </label>
+            <br>
+            <textarea cols="80" rows="5" name="napomena" 
+                id="napomena" class="form-control" 
+                placeholder="Unesite napomenu..."></textarea>
+        </div>
+
+        <div class="form-group text-center">
+            <input value="pošalji podatke" type="submit" class="btn 
+                btn-primary">
+            <input value="obriši podatke" type="reset" class="btn 
+                btn-danger">
+        </div>
+    </form>
+
+    <script type="text/javascript" src="index.js"></script>
+</body>
+
+</html>
+```
+
+Pre nego što pređemo obradu formulara, primetimo da element `form` ima postavljen atribut `novalidate`. Ovaj atribut, poput prethodno pomenutih atributa `checked` i `readonly`, ne dobija vrednost već samo navođenje tog atributa elementu označava da element ima to svojstvo. Ukoliko formularu dodamo ovaj atribut onda se neće vršiti automatska provera unetih vrednosti. Podrazumevano ponašanje je provera svakog polja da li zadovoljava uslove koji su postavljeni atributima.
+
+
+Prvo što treba da uradimo jeste da dohvatimo formular. To možemo učiniti preko identifikatora `formular` koji smo mu prethodno zadali korišćenjem metode `querySelector` ili `getElementById`.
+
+```js
+const f = document.querySelector("#formular");
+```
+
+Na nivou formulara je definisan događaj `'submit'` koji se izvršava nakon što korisnik klikne na element `<input type="submit">` koji se nalazi u sadržaju tog formulara. Osluškivač koji se postavlja nad tim događajem predstavlja funkciju za koju važi da, ukoliko je njena povratna vrednost `true`, onda će veb pregledač na adresu naznačenu atributom `action` formulara poslati novi HTTP zahtev sa podacima iz formulara. Metod slanja podataka tim HTTP zahtevom se definiše atributom `method` tog formulara, a njegove vrednosti mogu biti `'GET'` ili `'POST'`, koje odgovaraju istoimenim HTTP metodima. Ukoliko pak osluškivač vrati vrednost `false`, HTTP zahtev neće biti poslat. Upravo ova činjenica se može koristiti u slučaju da dođe do greške prilikom obrade formulara - dovoljno je da korisniku naznačimo da je došlo do greške prilikom obrade i da osluškivač vrati vrednost `false`.
+
+Za početak možemo odrediti promenljivu u koju ćemo smestiti trenutni element koji obrađujemo kao i promenljivu u koju smeštamo element za greške.
+
+```js
+f.addEventListener('submit', function() {
+	// Pomocna promenljiva
+	let polje;
+	
+	// U okviru polja za gresku bice upisivane greske
+	const greska = document.querySelector("#greska");
+	
+	// U nastavku kod ide ovde ...
+});
+```
+
+Krenimo redom po formularu i ispitujmo svako od polja. Ukoliko naiđemo na neku neregularnost, dovoljno je da vratimo vrednost `false` u ovoj funkciji. Ime i prezime korisnika je obavezno polje. Očekuje se da dužina bude manja od $30$, tj. od vrednosti atributa `maxlength`. Kada dohvatimo polje formulara, njegovi atributi su nam dostupni kao svojstva odgovarajućeg objekta. Zato možemo pristupati svojstvima `value` i `maxLength` u narednom fragmentu koda:
+
+```js
+polje = document.querySelector("#ime_prezime");
+const imePrezime = polje.value.trim();
+const maxDuzina = polje.maxLength || 30;
+
+if (imePrezime === "" || imePrezime.length > maxDuzina) {
+    greska.textContent = "Nekorektna vrednost u polju za ime i prezime!";
+	return false;
+}
+```
+
+Datum rođenja korisnika treba da bude oblika `gggg-mm-dd`. Metod `substr`, definisan nad niskama, vraća podnisku date niske i prihvata dva argumenta: prvi je indeks od kojeg podniska počinje, a drugi je broj karaktera, tj. dužina željenje podniske. Podsetimo se, funkcija `Number.parseInt` konvertuje broj koji je zapisan kao niska u numeričku vrednost. Slično, dostupna je funkcija `Number.parseFloat`. Ukoliko konverzija ne uspe, rezultat je `NaN`.
+
+```js
+polje = document.querySelector("#datum_rodjenja");
+const datumRodjenja = polje.value;
+const godina = parseInt(datumRodjenja.substr(0, 4));
+const mesec = parseInt(datumRodjenja.substr(5, 2));
+const dan = parseInt(datumRodjenja.substr(8, 2));
+
+if (isNaN(dan) || isNaN(mesec) || isNaN(godina) 
+    || dan < 1 || dan > 31 
+    || mesec < 1 || mesec > 12 
+    || godina < 0) {
+	greska.textContent="Nekorektna vrednost u polju za datum rodjenja!";
+	return false;
+}
+
+if (datumRodjenja.charAt(4) != "-" || datumRodjenja.charAt(7) != "-") {
+	greska.textContent="Datum rodjenja treba da bude u formatu gggg-mm-dd";
+	return false;
+}
+```
+
+Email adresa korisnika treba da sadrzi karakter `@` i barem jednu tačku nakon tog karaktera. Metod `indexOf` vraća prvo pojavljivanje niske koja je zadata kao argument u niski nad kojom se poziva. Ukoliko niska-argument ne postoji u datoj niski, onda funkcija vraća `-1`. Slično, metod `lastIndexOf` vraća poslednje pojavljivanje niske-argumenta.
+
+```js
+polje = document.querySelector("#email");
+const email = polje.value;
+const manki = email.indexOf("@");
+const poslednjaTackica = email.lastIndexOf(".");
+
+if (manki === -1 || poslednjaTackica === -1 || poslednjaTackica < manki) {
+	greska.textContent="Nekorektna vrednost u polju za email adresu.";
+	return false;
+}
+```
+
+Url adresa korisnika treba da pocinje sa `http://`.
+
+```js
+polje = document.querySelector("#veb_adresa");
+const vebAdresa = polje.value;
+
+if (vebAdresa.substr(0, 7) != "http://") {
+	greska.textContent="Nekorektna vrednost u polju za veb adresu.";
+	return false;
+}
+```
+
+Korisničko ime korisnika je obavezno polje. Treba da se sastoji samo od malih i velikih slova i da bude dužine barem *5* karaktera. Metod `String.fromCharCode` konstruiše nisku koja sadrži karakter čiji je kod zadat brojem koji se prosleđuje kao argument.
+
+```js
+polje = document.querySelector("#username");
+const korisnickoIme = polje.value.trim();
+
+const malaSlova = [];
+const velikaSlova = [];
+for (let i = 0; i < 26; ++i) {
+	malaSlova[i] = String.fromCharCode(97 + i);
+	velikaSlova[i] = String.fromCharCode(65 + i);
+}
+
+if (korisnickoIme.length < 5) {
+	greska.textContent = "Korisnicko ime nije dovoljno dugo.";
+	return false;
+}
+
+for (let i = 0; i < korisnickoIme.length; ++i) {
+	const tekuciKarakter = korisnickoIme.charAt(i);
+	
+	if (malaSlova.indexOf(tekuciKarakter) === -1 
+        && velikaSlova.indexOf(tekuciKarakter) === -1) {
+		greska.textContent = "Nedozvoljeni karakter u polju za korisnicko ime.";
+		return false;
+	}
+}
+```
+
+Šifra korisnika je obavezna i mora da sadrži barem dve cifre.
+
+```js
+polje = document.querySelector("#password");
+const sifra = polje.value.trim();
+
+if (sifra === "") {
+	greska.textContent = "Polje za sifru je obavezno.";
+	return false;
+}
+
+let brojCifara = 0;
+for (let i = 0; i < sifra.length; ++i) 
+{
+	const tekuciKarakter = sifra.charAt(i);
+	
+	if ("0123456789".indexOf(tekuciKarakter) != -1) {
+		++brojCifara;
+	}
+}
+
+if (brojCifara < 2) {
+	greska.textContent = "Polje za sifru mora da sadrzi barem dve cifre.";
+	return false;
+}
+```
+
+Polje za fakultet mora biti odabrano. Da bismo za element `select` dohvatili indeks vrednosti koja je odabrana, možemo nad odgovarajućim objektom dohvatiti svojstvo `selectedIndex`. Ukoliko je ova vrednost jednaka *0*, nijedna opcija nije odabrana.
+
+```js
+polje = document.querySelector("#fakultet");
+
+if (polje.selectedIndex === 0) {
+	greska.textContent = "Odaberite fakultet.";
+	return false;
+}
+```
+
+Godina studija mora biti odabrana. Do sada smo sve elemente formulara dohvatali putem njihovih identifikatora. Umesto ovog pristupa, pokažimo jedan novi CSS selektor koji se češće koristi za elemente formulara, na primer, radio dugmad. Da bismo dohvatili sve `input` elemente koji imaju postavljen odgovarajući atribut, na primer, `name="godina"`, možemo koristiti selektor oblika `element[atribut='vrednost']`, tj. u ovom slučaju `input[name='godina']`. Očigledno pošto ovakvih elemenata može biti više (radio dugmad ne bi imalo smisla koristiti kada bi postojao samo jedan odabir, te ih uvek ima više od jednog), koristićemo metod `querySelectorAll`. Za svako radio dugme možemo ispitati da li je izabrano tako što pristupimo njegovom svojstvu `checked` koje predstavlja Bulovu vrednost.
+
+```js
+let indikatorGodine = false;
+polje = document.querySelectorAll("input[name='godina']");
+
+for (let i = 0; i < polje.length; ++i) {
+	const godina = polje[i];
+	
+	if (godina.checked) {
+		indikatorGodine = true;
+		break;
+	}
+}
+
+if (!indikatorGodine) {
+	greska.textContent = "Godina studija je obavezno polje.";
+	return false;
+}
+```
+
+Polja lista interesovanja i napomena su opciona, tako da smo ovime završili obradu podataka u ovom formularu.
+
+Osim reagovanje na akciju slanja podataka, možemo dodati i reagovanje na događaj kojim se sadržaj polja u formularu vraćaju na podrazumevana, tako što postavimo osluškivač nad događajem `'reset'`. Slično kao i za `'submit'`, povratna vrednost funkcije koja se postavlja za osluškivač određuje da li će sadržaj polja u formularu biti vraćena na podrazumevane vrednosti ili ne. Ukoliko bismo, na primer, želeli da korisnik odabere da li želi zaista da resetuje formular, možemo implementirati osluškivač tako što u njemu iskoristimo funkciju `window.confirm` koja će prikazati prozor sa dugmićima "OK" i "Cancel" i tekstom koji je prosleđen kao argument. Ako korisnik klikne na "OK", funkcija vraća `true`, a inače vraća `false`.
+
+```js
+f.addEventListener('reset', function() {
+	const odgovor = window.confirm("Da li zelite da ponistite unos?");
+	return odgovor;
+});
+```
+
+Celo rešenje je dato narednim kodom:
+
+```js
+const f = document.querySelector("#formular");
+
+f.addEventListener('submit', function() {
+	// Pomocna promenljiva
+	let polje;
+	
+	// U okviru polja za gresku bice upisivane greske
+	const greska = document.querySelector("#greska");
+	
+	// Provera za ime i prezime
+    polje = document.querySelector("#ime_prezime");
+    const imePrezime = polje.value.trim();
+    const maxDuzina = polje.maxLength || 30;
+
+    if (imePrezime === "" || imePrezime.length > maxDuzina) {
+        greska.textContent = "Nekorektna vrednost u polju za ime i prezime!";
+        return false;
+    }
+
+    // Provera za datum
+    polje = document.querySelector("#datum_rodjenja");
+    const datumRodjenja = polje.value;
+    const godina = parseInt(datumRodjenja.substr(0, 4));
+    const mesec = parseInt(datumRodjenja.substr(5, 2));
+    const dan = parseInt(datumRodjenja.substr(8, 2));
+
+    if (isNaN(dan) || isNaN(mesec) || isNaN(godina) 
+        || dan < 1 || dan > 31 
+        || mesec < 1 || mesec > 12 
+        || godina < 0) {
+        greska.textContent="Nekorektna vrednost u polju za datum rodjenja!";
+        return false;
+    }
+
+    if (datumRodjenja.charAt(4) != "-" || datumRodjenja.charAt(7) != "-") {
+        greska.textContent="Datum rodjenja treba da bude u formatu gggg-mm-dd";
+        return false;
+    }
+
+    // Provera za elektronsku adresu
+    polje = document.querySelector("#email");
+    const email = polje.value;
+    const manki = email.indexOf("@");
+    const poslednjaTackica = email.lastIndexOf(".");
+
+    if (manki === -1 || poslednjaTackica === -1 || poslednjaTackica < manki) {
+        greska.textContent="Nekorektna vrednost u polju za email adresu.";
+        return false;
+    }
+
+    // Provera za veb adresu
+    polje = document.querySelector("#veb_adresa");
+    const vebAdresa = polje.value;
+
+    if (vebAdresa.substr(0, 7) != "http://") {
+        greska.textContent="Nekorektna vrednost u polju za veb adresu.";
+        return false;
+    }
+
+    // Provera za korisničko ime
+    polje = document.querySelector("#username");
+    const korisnickoIme = polje.value.trim();
+
+    const malaSlova = [];
+    const velikaSlova = [];
+    for (let i = 0; i < 26; ++i) {
+        malaSlova[i] = String.fromCharCode(97 + i);
+        velikaSlova[i] = String.fromCharCode(65 + i);
+    }
+
+    if (korisnickoIme.length < 5) {
+        greska.textContent = "Korisnicko ime nije dovoljno dugo.";
+        return false;
+    }
+
+    for (let i = 0; i < korisnickoIme.length; ++i) {
+        const tekuciKarakter = korisnickoIme.charAt(i);
+        
+        if (malaSlova.indexOf(tekuciKarakter) === -1 
+            && velikaSlova.indexOf(tekuciKarakter) === -1) {
+            greska.textContent = "Nedozvoljeni karakter u polju za korisnicko ime.";
+            return false;
+        }
+    }
+
+    // Provera za šifru korisnika
+    polje = document.querySelector("#password");
+    const sifra = polje.value.trim();
+
+    if (sifra === "") {
+        greska.textContent = "Polje za sifru je obavezno.";
+        return false;
+    }
+
+    let brojCifara = 0;
+    for (let i = 0; i < sifra.length; ++i) 
+    {
+        const tekuciKarakter = sifra.charAt(i);
+        
+        if ("0123456789".indexOf(tekuciKarakter) != -1) {
+            ++brojCifara;
+        }
+    }
+
+    if (brojCifara < 2) {
+        greska.textContent = "Polje za sifru mora da sadrzi barem dve cifre.";
+        return false;
+    }
+
+    // Provera polja za fakultet
+    polje = document.querySelector("#fakultet");
+
+    if (polje.selectedIndex === 0) {
+        greska.textContent = "Odaberite fakultet.";
+        return false;
+    }
+
+    // Provera za godinu studija
+    let indikatorGodine = false;
+    polje = document.querySelectorAll("input[name='godina']");
+
+    for (let i = 0; i < polje.length; ++i) {
+        const godina = polje[i];
+        
+        if (godina.checked) {
+            indikatorGodine = true;
+            break;
+        }
+    }
+
+    if (!indikatorGodine) {
+        greska.textContent = "Godina studija je obavezno polje.";
+        return false;
+    }
+
+    // Sve provere su prošle uspešno! Pošalji podatke!
+    return true;
+});
+
+f.addEventListener('reset', function() {
+	const odgovor = window.confirm("Da li zelite da ponistite unos?");
+	return odgovor;
+});
+```
+
+Još neki zanimljivi događaji koji se osluškuju nad elementima formulara, a ne nad samim formularom su: 
+- `focus` - određuje akciju koja se primenjuje kada je element u fokusu (npr. mišem smo kliknuli na taj element)
+- `blur` - određuje akciju koja se primenjuje kada element izgubi fokus
+- `change` - određuje akciju koja se primenjuje kada se elementu izmeni vrednost
+- i još mnogo toga, istražite na adresi: [https://developer.mozilla.org/en-US/docs/Web/Events](https://developer.mozilla.org/en-US/docs/Web/Events){:target="_blank"} 
+
 -----
 
 [Knjiga](../../README.md)

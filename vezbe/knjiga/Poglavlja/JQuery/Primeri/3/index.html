@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title> Zadatak 3 </title>
+    <meta charset="utf-8">
+    <style type="text/css">
+        .dugme {
+            background-color: orange;
+            color: white;
+            height: 20px;
+            width: 100px;
+            display: inline-block;
+            text-align: center;
+            text-transform: uppercase;
+            padding: 15px;
+            font-family: sans-serif;
+        }
+
+        .dugme:hover {
+            cursor: pointer;
+        }
+
+        #galerija {
+            border: 1px solid orange;
+            height: 210px;
+            width: 210px;
+            position: relative;
+        }
+
+        /* 
+            Slike u galeriji pozicioniramo tako da se preklapaju, 
+            tj. da budu jedna preko druge 
+        */
+        #galerija div {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+        }
+
+        #dugmad {
+            position: relative;
+            top: 25px;
+        }
+
+        .aktivnoDugme {
+            background-color: forestgreen;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 
+        Slike koje se nalaze u galeriji se navode unutar elementa sa identifikatorom "galerija".
+        Slika proleca je na poziciji 0, a slika zime na poziciji 3.
+    -->
+    <div id="galerija">
+        <div><img src="slike/prolece.jpg" alt="prolece"> </div>
+        <div><img src="slike/leto.jpg" alt="leto"></div>
+        <div><img src="slike/jesen.jpg" alt="jesen"></div>
+        <div><img src="slike/zima.jpg" alt="zima"></div>
+    </div>
+
+    <div id="dugmad">
+        <span id="prethodna" class="dugme"> prethodna </span>
+        <span id="naredna" class="dugme"> naredna </span>
+        <span id="slideshow" class="dugme"> slideshow </span>
+        <span id="stop" class="dugme"> stop </span>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="index.js"></script>
+</body>
+</html>

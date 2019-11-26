@@ -167,7 +167,41 @@ Autori:
 
 5. [Pridruživanje osluškivača događaja elementima](./Poglavlja/JSDOM/README.md#55-pridruživanje-osluškivača-događaja-elementima){:target="_blank"}
 
-### Poglavlje 6. Biblioteka jQuery
+6. [Obrada podataka u formularu](./Poglavlja/JSDOM/README.md#56-obrada-podataka-u-formularu){:target="_blank"}
+
+### [Poglavlje 6. Biblioteka jQuery](./Poglavlja/JQuery/README.md){:target="_blank"}
+
+1. [Asinhrono programiranje](./Poglavlja/JQuery/README.md#61-asinhrono-programiranje){:target="_blank"}
+
+    1. [Po-potrebi-pozivne funkcije](./Poglavlja/JQuery/README.md#611-po-potrebi-pozivne-funkcije){:target="_blank"}
+
+    2. [`XMLHttpRequest` objekat](./Poglavlja/JQuery/README.md#612-xmlhttprequest-objekat){:target="_blank"}
+     
+        1. [Slanje zahteva](./Poglavlja/JQuery/README.md#6121-slanje-zahteva){:target="_blank"}
+
+2. [Instalacija jQuery biblioteke](./Poglavlja/JQuery/README.md#62-instalacija-jquery-biblioteke){:target="_blank"}
+
+3. [Osnovna jQuery sintaksa](./Poglavlja/JQuery/README.md#63-osnovna-jquery-sintaksa){:target="_blank"}
+
+    1. ["Dokument je spreman" događaj](./Poglavlja/JQuery/README.md#631-dokument-je-spreman-događaj){:target="_blank"}
+
+4. [jQuery selektori](./Poglavlja/JQuery/README.md#64-jquery-selektori){:target="_blank"}
+
+5. [jQuery metodi zasnovani na događajima](./Poglavlja/JQuery/README.md#65-jquery-metodi-zasnovani-na-događajima){:target="_blank"}
+
+6. [jQuery efekti i animacije](./Poglavlja/JQuery/README.md#66-jquery-efekti-i-animacije){:target="_blank"}
+
+    1. [Korišćenje funkcionalnosti reda](./Poglavlja/JQuery/README.md#661-korišćenje-funkcionalnosti-reda){:target="_blank"}
+    
+    2. [Implementiranje animacija korišćenjem funkcija povratnog poziva](./Poglavlja/JQuery/README.md#662-implementiranje-animacija-korišćenjem-funkcija-povratnog-poziva){:target="_blank"}
+
+7. [Lančanje metoda](./Poglavlja/JQuery/README.md#67-lančanje-metoda){:target="_blank"}
+
+8. [Upravljanje DOM stablom](./Poglavlja/JQuery/README.md#68-upravljanje-DOM-stablom){:target="_blank"}
+
+9. [Upravljanje stilovima](./Poglavlja/JQuery/README.md#69-upravljanje-stilovima){:target="_blank"}
+
+    1. [Upravljanje modelom kutije](./Poglavlja/JQuery/README.md#691-upravljanje-modelom-kutije){:target="_blank"}
 
 ## Deo 4 - Programiranje serverskih veb aplikacija
 
