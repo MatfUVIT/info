@@ -1,5 +1,5 @@
-let http = require('http');
-let url = require('url');
+const http = require('http');
+const url = require('url');
 
 const port = 7000;
 http.createServer(function (zahtev, odgovor) {
@@ -13,10 +13,10 @@ http.createServer(function (zahtev, odgovor) {
     let putanja = url.parse(zahtev.url).pathname;
     odgovor.write('putanja: ' + putanja + "\n");
     console.log('putanja: ' + putanja);
-    let upit = url.parse(zahtev.url).query;    
+    let upit = url.parse(zahtev.url).query;
     odgovor.write('upit:    ' + upit + "\n");
     console.log('upit:    ' + upit);
     odgovor.end();
-} ).listen(port);
+}).listen(port);
 
 console.log(`Veb server osluskuje zahteve na portu ${port}...\n`);

@@ -492,7 +492,13 @@ http.createServer(
 console.log(`Veb server osluskuje zahteve na portu ${port}...\n`);
 ```
 
-Какав год захтев стигао овом серверу, он ће увек прослеђиати исти одговор. Сада нема потребе да се прави посебни клијент, већ као клијент може да послужи:
+Какав год захтев стигао овом серверу, он ће увек прослеђиати исти одговор. Покретање овог сервера се реализује на исти начин као и код претходних примера:
+
+```bash
+node veb-server.js
+```
+
+С обзиром да се ради о веб серверу, сада нема потребе да се прави посебни клијент, већ као клијент може да послужи:
 
 - веб прегледач, при чему у адресну линију треба унети адресу `http://localhost:7000/`. у том случају, приказује се следећа веб страна:
 
@@ -524,9 +530,327 @@ RawContentLength  : 39
 
 ![Алат Postman](assets/images/screen-shot-postman-1.png)
 
-У свим овим случајевима је добијен исти одговор од сервера, само се начини прикаѕа тог добијеног одговора разликују зато што су коришћене различити типови клијената. &#9608;
+У свим овим случајевима је добијен исти одговор од сервера, само се начини приказа тог добијеног одговора разликују зато што су коришћене различити типови клијената. &#9608;
+
+**Пример.** Jедноставни веб сервер који приликом обраде захтева и генерисања одговора, захтев приказује на серверској конзоли.
+
+Програмски код сервера са налази у датотеци `veb-server.js`:
+
+```js
+const http = require('http');
+
+const port = 7000;
+http.createServer(function (zahtev, odgovor) {
+    odgovor.writeHead(200, { 'Content-type': 'text/plan' });
+    odgovor.write(`Napravljeni veb servers koristi node.js \n`);
+    odgovor.write(`i zahteve upisuje u konzolu servera.`);
+    odgovor.end();
+
+    let tekuceVreme = new Date();
+    console.log("---" + tekuceVreme + "---");
+    console.log(zahtev);
+}).listen(port);
+console.log(`Veb server osluskuje zahteve na portu ${port}...\n`);
+```
+
+И овај веб сервер ослушкује на порту `7000`. По покретању овог сервера и слању захтева према њему, добиће се одговарајући одговор, а на конзоли сервера ће бити приказано време обраде захтева и објекат који представља приспели захтев (у JSON формату) - следи део садржаја који се приказује на конзоли servera:
+
+```bash
+Veb server osluskuje zahteve na portu 7000...
+
+---Wed Nov 27 2019 14:02:35 GMT+0100 (Central European Standard Time)---
+IncomingMessage {
+  _readableState:
+   ReadableState {
+     objectMode: false,
+     highWaterMark: 16384,
+     buffer: BufferList { head: null, tail: null, length: 0 },
+     length: 0,
+     pipes: null,
+     pipesCount: 0,
+     flowing: null,
+     ended: false,
+     endEmitted: false,
+     reading: false,
+     sync: true,
+     needReadable: false,
+     emittedReadable: false,
+     readableListening: false,
+     resumeScheduled: false,
+     paused: true,
+     emitClose: true,
+     autoDestroy: false,
+     destroyed: false,
+     defaultEncoding: 'utf8',
+     awaitDrain: 0,
+     readingMore: true,
+     decoder: null,
+     encoding: null },
+  readable: true,
+  _events:
+   [Object: null prototype] { end: [Function: resetHeadersTimeoutOnReqEnd] },
+  _eventsCount: 1,
+  _maxListeners: undefined,
+  socket:
+   Socket {
+     connecting: false,
+     _hadError: false,
+     _handle:
+      TCP {
+        reading: true,
+        onread: [Function: onStreamRead],
+        onconnection: null,
+        _consumed: true,
+        [Symbol(owner)]: [Circular] },
+     _parent: null,
+     _host: null,
+     _readableState:
+      ReadableState {
+        objectMode: false,
+        highWaterMark: 16384,
+        buffer: BufferList { head: null, tail: null, length: 0 },
+        length: 0,
+        pipes: null,
+        pipesCount: 0,
+        flowing: true,
+        ended: false,
+        endEmitted: false,
+        reading: true,
+        sync: false,
+        needReadable: true,
+        emittedReadable: false,
+        readableListening: false,
+        resumeScheduled: false,
+        paused: false,
+        emitClose: false,
+        autoDestroy: false,
+        destroyed: false,
+        defaultEncoding: 'utf8',
+        awaitDrain: 0,
+        readingMore: false,
+        decoder: null,
+        encoding: null },
+     readable: true,
+     _writableState:
+      WritableState {
+        objectMode: false,
+        highWaterMark: 16384,
+        finalCalled: false,
+        needDrain: false,
+        ending: false,
+        ended: false,
+        finished: false,
+        destroyed: false,
+        decodeStrings: false,
+        defaultEncoding: 'utf8',
+        length: 227,
+        writing: false,
+        corked: 1,
+        sync: true,
+        bufferProcessing: false,
+        onwrite: [Function: bound onwrite],
+        writecb: null,
+        writelen: 0,
+        bufferedRequest: [Object],
+        lastBufferedRequest: [Object],
+        pendingcb: 9,
+        prefinished: false,
+        errorEmitted: false,
+        emitClose: false,
+        autoDestroy: false,
+        bufferedRequestCount: 9,
+        corkedRequestsFree: [Object] },
+     writable: true,
+     allowHalfOpen: true,
+     _sockname: null,
+     _pendingData: null,
+     _pendingEncoding: '',
+     server:
+      Server {
+        _events: [Object],
+        _eventsCount: 2,
+        _maxListeners: undefined,
+        _connections: 2,
+        _handle: [TCP],
+        _usingWorkers: false,
+        _workers: [],
+        _unref: false,
+        allowHalfOpen: true,
+        pauseOnConnect: false,
+        httpAllowHalfOpen: false,
+        timeout: 120000,
+        keepAliveTimeout: 5000,
+        _pendingResponseData: 0,
+        maxHeadersCount: null,
+        headersTimeout: 40000,
+        _connectionKey: '6::::7000',
+        [Symbol(IncomingMessage)]: [Function: IncomingMessage],
+        [Symbol(ServerResponse)]: [Function: ServerResponse],
+        [Symbol(asyncId)]: 2 },
+    ...
+    parser:
+      HTTPParser {
+        '0': [Function: parserOnHeaders],
+        '1': [Function: parserOnHeadersComplete],
+        '2': [Function: parserOnBody],
+        '3': [Function: parserOnMessageComplete],
+        '4': [Function: bound onParserExecute],
+        _headers: [],
+        _url: '',
+        socket: [Circular],
+        incoming: [Circular],
+        outgoing: null,
+        maxHeaderPairs: 2000,
+        _consumed: true,
+        onIncoming: [Function: bound parserOnIncoming],
+        parsingHeadersStart: 0,
+        [Symbol(isReused)]: false },
+     on: [Function: socketOnWrap],
+     _paused: false,
+     _httpMessage:
+      ServerResponse {
+        _events: [Object],
+        _eventsCount: 1,
+        _maxListeners: undefined,
+        outputData: [],
+        outputSize: 0,
+        writable: true,
+        _last: false,
+        chunkedEncoding: true,
+        shouldKeepAlive: true,
+        useChunkedEncodingByDefault: true,
+        sendDate: true,
+        _removedConnection: false,
+        _removedContLen: false,
+        _removedTE: false,
+        _contentLength: null,
+        _hasBody: true,
+        _trailer: '',
+        finished: true,
+        _headerSent: true,
+        socket: [Circular],
+        connection: [Circular],
+        _header:
+         'HTTP/1.1 200 OK\r\nContent-type: text/plan\r\nDate: Wed, 27 Nov 2019 13:02:35 GMT\r\nConnection: keep-alive\r\nTransfer-Encoding: chunked\r\n\r\n',
+        _onPendingData: [Function: bound updateOutgoingData],
+        _sent100: false,
+        _expect_continue: false,
+        statusMessage: 'OK',
+        statusCode: 200,
+        [Symbol(isCorked)]: true,
+        [Symbol(outHeadersKey)]: null },
+     [Symbol(asyncId)]: 6,
+     [Symbol(lastWriteQueueSize)]: 0,
+     [Symbol(timeout)]:
+      Timeout {
+        _idleTimeout: 120000,
+        _idlePrev: [Timeout],
+        _idleNext: [TimersList],
+        _idleStart: 5653,
+        _onTimeout: [Function: bound ],
+        _timerArgs: undefined,
+        _repeat: null,
+        _destroyed: false,
+        [Symbol(refed)]: false,
+        [Symbol(asyncId)]: 7,
+        [Symbol(triggerId)]: 6 },
+     [Symbol(kBytesRead)]: 0,
+     [Symbol(kBytesWritten)]: 0 },
+  ...
+```
+
+&#9608;
 
 #### Одређивање путање и ниска-упита
+
+Приликом описа протокола HTTP описани су URL, путања (енгл. path) и ниска-упит (енгл. querystring) и њихова функција приликом обраде захтева и генерисања одговора. Приликом процесирања на страни веб сервера, од целог URL који је дао косриник, програмера интересује само онај сео који описује где се захтевани ресурс налази у оквиру веб сервера.
+
+Јасно је да програмерима веб сервара треба једноставан и елегантан начин да издвоје ове елементе из захтева.
+
+**Пример.** Jедноставни веб сервер који приликом обраде захтева, на конзоли сервера приказује URL и путању.
+
+Програмски код сервера са налази у датотеци `veb-server.js`:
+
+```js
+let http = require('http');
+let url = require('url');
+
+const port = 7000;
+http.createServer(function (zahtev, odgovor) {
+    odgovor.writeHead(200, { 'Content-type': 'text/plan' });
+    odgovor.write(`Napravljeni veb servers koristi node.js \n`);
+    odgovor.write(`i upisuje URL i putanju u konzolu servera.`);
+    odgovor.end();
+
+    let tekuceVreme = new Date();
+    console.log("---" + tekuceVreme + "---");
+    console.log('url:     ' + zahtev.url);
+    let putanja = url.parse(zahtev.url).pathname;
+    console.log('putanja: ' + putanja);
+} ).listen(port);
+console.log(`Veb server osluskuje zahteve na portu ${port}...\n`);
+```
+
+Ако, по покретању овог сервера, корисник у адресу веб прегледача унесе нпр. `http://localhost:7000/paja=patak?sestric=raja`, добиће се овакве поруке на конзоли:
+
+```bash
+---Wed Nov 27 2019 14:37:00 GMT+0100 (Central European Standard Time)---
+url:     /paja=patak?sestric=raja
+putanja: /paja=patak
+```
+
+Наравно, порука неће бити потпуно иста - разликоваће се  приказано време приступа серверу, тј. време обраде захтева. &#9608;
+
+**Пример.** Jедноставни веб сервер који приликом обраде захтева, на конзоли сервера приказује URL, путању и ниска-упит.
+
+Као и у претходним примерима, програмски код сервера са налази у датотеци `veb-server.js`:
+
+```js
+const http = require('http');
+const url = require('url');
+
+const port = 7000;
+http.createServer(function (zahtev, odgovor) {
+    odgovor.writeHead(200, { 'Content-type': 'text/plan' });
+    odgovor.write('Napravljeni veb servers koristi node.js \n');
+    let tekuceVreme = new Date();
+    odgovor.write('vreme (sa servera): ' + tekuceVreme + "\n");
+    console.log("---" + tekuceVreme + "---");
+    odgovor.write('url:     ' + zahtev.url + "\n");
+    console.log('url:     ' + zahtev.url);
+    let putanja = url.parse(zahtev.url).pathname;
+    odgovor.write('putanja: ' + putanja + "\n");
+    console.log('putanja: ' + putanja);
+    let upit = url.parse(zahtev.url).query;
+    odgovor.write('upit:    ' + upit + "\n");
+    console.log('upit:    ' + upit);
+    odgovor.end();
+}).listen(port);
+
+console.log(`Veb server osluskuje zahteve na portu ${port}...\n`);
+```
+
+Приликом обраде захтева, на конзоли ће бити приказани путања и ниска-упит. Ако се, по покретању сервера, пошаље захтев облика `http://localhost:7000/paja=patak?sestric1=raja`, на конзоли ће се приказати:
+
+```bash
+---Wed Nov 27 2019 14:47:15 GMT+0100 (Central European Standard Time)---
+url:     /paja=patak?sestric1=raja
+putanja: /paja=patak
+upit:    sestric1=raja
+```
+
+Ако би се, по покретању сервера, пoслао захтев облика `http://localhost:7000/paja=patak?sestric1=raja&sestric2=gaja` на конзоли сервера би се приказало:
+
+```bash
+---Wed Nov 27 2019 14:50:57 GMT+0100 (Central European Standard Time)---
+url:     /paja=patak?sestric1=raja&sestric2=gaja
+putanja: /paja=patak
+upit:    sestric1=raja&sestric2=gaja
+```
+
+![Приказ у прегледачу](assets/images/web-browser-exec-02.png "Приказ у прегледачу"){: style="float:center"}
+
+Као што показује горња слика, веб сервер ће, приlиком генерисања одговора, у тај одговор укључити и време обраде приспелог захтева. У одговор ће такође бити укључене и информације које се појављују на конзоли сервера: URL, путања и ниска-упит. &#9608;
 
 #### Слање датотека као одговора
 
