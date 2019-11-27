@@ -500,7 +500,7 @@ duskoDugousko.predstaviSe();
 let plaviZec = Object.create(zecIzFikcijePrototip);
 plaviZec.tip = "веома паметан";
 plaviZec.boja = "плава";
-plaviZec.ime =  "Плави ѕец";
+plaviZec.ime =  "Плави зец";
 plaviZec.kreator = { "ime": "Душко", "prezime": "Радовић" };
 plaviZec.delo = "Плави зец";
 plaviZec.uzrecica = "Плави, зец, чудни зец, једини на свету.";
@@ -514,7 +514,7 @@ plaviZec.predstaviSe();
 креатор: Tex Avery
 дело: A Wild Hare
 узречица: 'Шефе, који ти је враг?'
-Зец: веома паметан, боја: плава, име: Плави ѕец
+Зец: веома паметан, боја: плава, име: Плави зец
 креатор: Душко Радовић
 дело: Плави зец
 узречица: 'Плави, зец, чудни зец, једини на свету.'
@@ -574,7 +574,7 @@ duskoDugousko.predstaviSe();
 duskoDugousko.govori(duskoDugousko.uzrecica);
 duskoDugousko.skoci();
 
-let plaviZec = new ZecIzFikcije("веома паметан", "плава", "Плави ѕец",
+let plaviZec = new ZecIzFikcije("веома паметан", "плава", "Плави зец",
     "Душко", "Радовић", "Плави зец", "Плави, зец, чудни зец, једини на свету.");
 plaviZec.predstaviSe();
 plaviZec.govori(plaviZec.uzrecica);
@@ -589,7 +589,7 @@ plaviZec.govori(plaviZec.uzrecica);
 узречица: 'Шефе, који ти је враг?'
 Овај зец паметан боје сива каже 'Шефе, који ти је враг?''
 Скок, скок, скок
-Зец: веома паметан, боја: плава, име: Плави ѕец
+Зец: веома паметан, боја: плава, име: Плави зец
 креатор: Душко Радовић
 дело: Плави зец
 узречица: 'Плави, зец, чудни зец, једини на свету.'
@@ -707,7 +707,7 @@ duskoDugousko.predstaviSe();
 duskoDugousko.govori(duskoDugousko.uzrecica);
 duskoDugousko.skoci();
 
-let plaviZec = new ZecIzFikcije("веома паметан", "плава", "Плави ѕец",
+let plaviZec = new ZecIzFikcije("веома паметан", "плава", "Плави зец",
     "Душко", "Радовић", "Плави зец", "Плави, зец, чудни зец, једини на свету.");
 plaviZec.predstaviSe();
 plaviZec.govori(plaviZec.uzrecica);
@@ -720,7 +720,7 @@ plaviZec.govori(plaviZec.uzrecica);
 узречица: 'Шефе, који ти је враг?'
 Овај зец паметан боје сива каже 'Шефе, који ти је враг?'
 Скок, скок, скок
-Зец: веома паметан, боја: плава, име: Плави ѕец
+Зец: веома паметан, боја: плава, име: Плави зец
 креатор: Душко Радовић
 дело: Плави зец
 узречица: 'Плави, зец, чудни зец, једини на свету.'
