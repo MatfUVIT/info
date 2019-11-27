@@ -1,12 +1,24 @@
-// primer zatvorenja
-function omotajVrednost(n) {
-    var lokalnaPromenljiva = n;
-    return function() {
-        return lokalnaPromenljiva;
+function uvecajBrojac() {
+    let brojac = 0;
+    return function () {
+        return brojac++;
     };
 }
 
-var omotacZa1 = omotajVrednost(1);
-var omotacZa2 = omotajVrednost(2);
-console.log(omotacZa1());
-console.log(omotacZa2());
+const izbroj = uvecajBrojac();
+
+console.log(izbroj());
+console.log(izbroj());
+console.log(izbroj());
+
+console.log("---");
+let uvecaj = () => {
+    let brojac = 0;
+    return () => brojac++;
+}
+
+const izbroj2 = uvecaj();
+
+console.log(izbroj2());
+console.log(izbroj2());
+console.log(izbroj2());

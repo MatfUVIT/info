@@ -9,7 +9,7 @@
             "type": "node",
             "request": "launch",
             "name": "Launch Program",
-            "program": "${workspaceFolder}/predavanja/primeri-js/primer-00.js"
+            "program": "${workspaceFolder}/predavanja/primeri-js/p03-funkcije-zatvorenja/js-03-07a-zatvorenje.js"
         }
     ]
 }

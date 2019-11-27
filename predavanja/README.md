@@ -254,7 +254,7 @@
 
         1. [Комбиноване наредбе доделе](tekstovi/JavaScript-Programski-Jezik-Struktura-Programa.md#комбиноване-наредбе-доделе){:target="_blank"}
 
-        1. [Наредбе сажетог ажурирања](tekstovi/JavaScript-Programski-Jezik-Struktura-Programa.md#наредбе-сажетог-ажурирања){:target="_blank"}
+        1. [Наредбе инкрементирања и декрементирања](tekstovi/JavaScript-Programski-Jezik-Struktura-Programa.md#наредбе-инкрементирања-и-декрементирања){:target="_blank"}
 
         1. [Позиви предефинисаних функција](tekstovi/JavaScript-Programski-Jezik-Struktura-Programa.md#позиви-предефинисаних-функција){:target="_blank"}
 

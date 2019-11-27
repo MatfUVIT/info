@@ -1,33 +1,34 @@
-/* automatska konveryija tipova pri izvršenju aritmetičkih operacija */
-// prikazaće 0
-console.log(8 * null);
+let x = false;
 
-// prikazaće 4
-console.log("5" - 1);
+let y = 3 + x;
+console.log(y);
 
-// prikazaće 51
-console.log("5" + 1);
+let z = "Miki" + x;
+console.log(z);
 
-// prikazaće NaN
-console.log("pet" * 2);
+console.log("---");
+x = true;
 
-/* automatska konverzija tipova pri izvršenju operacija poređenja*/
-// prikazaće true
-console.log(false == 0);
+y = 3 + x;
+console.log(y);
 
-/* poređenje jednakosti za vrednosti null i/ili undefined se realizuje na pomalo specifičan način  */
-// prikazaće true
-console.log(null == undefined);
+z = "Miki" + x;
+console.log(z);
 
-// prikazaće false
-console.log(null == 0);
+console.log("---");
+x = 0;
 
-/* logički operatori se "skraćeno" izvršavaju */
-// prikazaće Karlo
-console.log(undefined || "Karlo");
+y = x ? "nije nula": "nula";
+console.log(y);
 
-// prikazaće Karlo
-console.log("Karlo" || "Korisnik");
+z = "Miki" + x;
+console.log(z);
 
+console.log("---");
+x = 1;
 
-console.log( 2!= 1 && 4!=3 && 0==4 && 2!=3 )
+y = x ? "nije nula": "nula";
+console.log(y);
+
+z = "Miki" + x;
+console.log(z);
