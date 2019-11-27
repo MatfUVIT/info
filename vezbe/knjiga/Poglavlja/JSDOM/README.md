@@ -1054,7 +1054,7 @@ f.addEventListener('submit', function() {
 	let polje;
 	
 	// U okviru polja za gresku bice upisivane greske
-	const greska = document.querySelector("#greska");
+	const greska = document.querySelector('#greska');
 	
 	// U nastavku kod ide ovde ...
 });
@@ -1063,12 +1063,12 @@ f.addEventListener('submit', function() {
 Krenimo redom po formularu i ispitujmo svako od polja. Ukoliko naiđemo na neku neregularnost, dovoljno je da vratimo vrednost `false` u ovoj funkciji. Ime i prezime korisnika je obavezno polje. Očekuje se da dužina bude manja od $30$, tj. od vrednosti atributa `maxlength`. Kada dohvatimo polje formulara, njegovi atributi su nam dostupni kao svojstva odgovarajućeg objekta. Zato možemo pristupati svojstvima `value` i `maxLength` u narednom fragmentu koda:
 
 ```js
-polje = document.querySelector("#ime_prezime");
+polje = document.querySelector('#ime_prezime');
 const imePrezime = polje.value.trim();
 const maxDuzina = polje.maxLength || 30;
 
-if (imePrezime === "" || imePrezime.length > maxDuzina) {
-    greska.textContent = "Nekorektna vrednost u polju za ime i prezime!";
+if (imePrezime === '' || imePrezime.length > maxDuzina) {
+    greska.textContent = 'Nekorektna vrednost u polju za ime i prezime!';
 	return false;
 }
 ```
@@ -1076,7 +1076,7 @@ if (imePrezime === "" || imePrezime.length > maxDuzina) {
 Datum rođenja korisnika treba da bude oblika `gggg-mm-dd`. Metod `substr`, definisan nad niskama, vraća podnisku date niske i prihvata dva argumenta: prvi je indeks od kojeg podniska počinje, a drugi je broj karaktera, tj. dužina željenje podniske. Podsetimo se, funkcija `Number.parseInt` konvertuje broj koji je zapisan kao niska u numeričku vrednost. Slično, dostupna je funkcija `Number.parseFloat`. Ukoliko konverzija ne uspe, rezultat je `NaN`.
 
 ```js
-polje = document.querySelector("#datum_rodjenja");
+polje = document.querySelector('#datum_rodjenja');
 const datumRodjenja = polje.value;
 const godina = parseInt(datumRodjenja.substr(0, 4));
 const mesec = parseInt(datumRodjenja.substr(5, 2));
@@ -1086,12 +1086,12 @@ if (isNaN(dan) || isNaN(mesec) || isNaN(godina)
     || dan < 1 || dan > 31 
     || mesec < 1 || mesec > 12 
     || godina < 0) {
-	greska.textContent="Nekorektna vrednost u polju za datum rodjenja!";
+	greska.textContent='Nekorektna vrednost u polju za datum rodjenja!';
 	return false;
 }
 
-if (datumRodjenja.charAt(4) != "-" || datumRodjenja.charAt(7) != "-") {
-	greska.textContent="Datum rodjenja treba da bude u formatu gggg-mm-dd";
+if (datumRodjenja.charAt(4) != '-' || datumRodjenja.charAt(7) != '-') {
+	greska.textContent='Datum rodjenja treba da bude u formatu gggg-mm-dd';
 	return false;
 }
 ```
@@ -1099,13 +1099,13 @@ if (datumRodjenja.charAt(4) != "-" || datumRodjenja.charAt(7) != "-") {
 Email adresa korisnika treba da sadrzi karakter `@` i barem jednu tačku nakon tog karaktera. Metod `indexOf` vraća prvo pojavljivanje niske koja je zadata kao argument u niski nad kojom se poziva. Ukoliko niska-argument ne postoji u datoj niski, onda funkcija vraća `-1`. Slično, metod `lastIndexOf` vraća poslednje pojavljivanje niske-argumenta.
 
 ```js
-polje = document.querySelector("#email");
+polje = document.querySelector('#email');
 const email = polje.value;
-const manki = email.indexOf("@");
-const poslednjaTackica = email.lastIndexOf(".");
+const manki = email.indexOf('@');
+const poslednjaTackica = email.lastIndexOf('.');
 
 if (manki === -1 || poslednjaTackica === -1 || poslednjaTackica < manki) {
-	greska.textContent="Nekorektna vrednost u polju za email adresu.";
+	greska.textContent='Nekorektna vrednost u polju za email adresu.';
 	return false;
 }
 ```
@@ -1113,11 +1113,11 @@ if (manki === -1 || poslednjaTackica === -1 || poslednjaTackica < manki) {
 Url adresa korisnika treba da pocinje sa `http://`.
 
 ```js
-polje = document.querySelector("#veb_adresa");
+polje = document.querySelector('#veb_adresa');
 const vebAdresa = polje.value;
 
-if (vebAdresa.substr(0, 7) != "http://") {
-	greska.textContent="Nekorektna vrednost u polju za veb adresu.";
+if (vebAdresa.substr(0, 7) != 'http://') {
+	greska.textContent='Nekorektna vrednost u polju za veb adresu.';
 	return false;
 }
 ```
@@ -1125,7 +1125,7 @@ if (vebAdresa.substr(0, 7) != "http://") {
 Korisničko ime korisnika je obavezno polje. Treba da se sastoji samo od malih i velikih slova i da bude dužine barem *5* karaktera. Metod `String.fromCharCode` konstruiše nisku koja sadrži karakter čiji je kod zadat brojem koji se prosleđuje kao argument.
 
 ```js
-polje = document.querySelector("#username");
+polje = document.querySelector('#username');
 const korisnickoIme = polje.value.trim();
 
 const malaSlova = [];
@@ -1136,7 +1136,7 @@ for (let i = 0; i < 26; ++i) {
 }
 
 if (korisnickoIme.length < 5) {
-	greska.textContent = "Korisnicko ime nije dovoljno dugo.";
+	greska.textContent = 'Korisnicko ime nije dovoljno dugo.';
 	return false;
 }
 
@@ -1145,7 +1145,7 @@ for (let i = 0; i < korisnickoIme.length; ++i) {
 	
 	if (malaSlova.indexOf(tekuciKarakter) === -1 
         && velikaSlova.indexOf(tekuciKarakter) === -1) {
-		greska.textContent = "Nedozvoljeni karakter u polju za korisnicko ime.";
+		greska.textContent = 'Nedozvoljeni karakter u polju za korisnicko ime.';
 		return false;
 	}
 }
@@ -1154,11 +1154,11 @@ for (let i = 0; i < korisnickoIme.length; ++i) {
 Šifra korisnika je obavezna i mora da sadrži barem dve cifre.
 
 ```js
-polje = document.querySelector("#password");
+polje = document.querySelector('#password');
 const sifra = polje.value.trim();
 
-if (sifra === "") {
-	greska.textContent = "Polje za sifru je obavezno.";
+if (sifra === '') {
+	greska.textContent = 'Polje za sifru je obavezno.';
 	return false;
 }
 
@@ -1167,13 +1167,13 @@ for (let i = 0; i < sifra.length; ++i)
 {
 	const tekuciKarakter = sifra.charAt(i);
 	
-	if ("0123456789".indexOf(tekuciKarakter) != -1) {
+	if ('0123456789'.indexOf(tekuciKarakter) != -1) {
 		++brojCifara;
 	}
 }
 
 if (brojCifara < 2) {
-	greska.textContent = "Polje za sifru mora da sadrzi barem dve cifre.";
+	greska.textContent = 'Polje za sifru mora da sadrzi barem dve cifre.';
 	return false;
 }
 ```
@@ -1181,10 +1181,10 @@ if (brojCifara < 2) {
 Polje za fakultet mora biti odabrano. Da bismo za element `select` dohvatili indeks vrednosti koja je odabrana, možemo nad odgovarajućim objektom dohvatiti svojstvo `selectedIndex`. Ukoliko je ova vrednost jednaka *0*, nijedna opcija nije odabrana.
 
 ```js
-polje = document.querySelector("#fakultet");
+polje = document.querySelector('#fakultet');
 
 if (polje.selectedIndex === 0) {
-	greska.textContent = "Odaberite fakultet.";
+	greska.textContent = 'Odaberite fakultet.';
 	return false;
 }
 ```
@@ -1193,7 +1193,7 @@ Godina studija mora biti odabrana. Do sada smo sve elemente formulara dohvatali 
 
 ```js
 let indikatorGodine = false;
-polje = document.querySelectorAll("input[name='godina']");
+polje = document.querySelectorAll('input[name="godina"]');
 
 for (let i = 0; i < polje.length; ++i) {
 	const godina = polje[i];
@@ -1205,7 +1205,7 @@ for (let i = 0; i < polje.length; ++i) {
 }
 
 if (!indikatorGodine) {
-	greska.textContent = "Godina studija je obavezno polje.";
+	greska.textContent = 'Godina studija je obavezno polje.';
 	return false;
 }
 ```
@@ -1216,7 +1216,7 @@ Osim reagovanje na akciju slanja podataka, možemo dodati i reagovanje na događ
 
 ```js
 f.addEventListener('reset', function() {
-	const odgovor = window.confirm("Da li zelite da ponistite unos?");
+	const odgovor = window.confirm('Da li zelite da ponistite unos?');
 	return odgovor;
 });
 ```
@@ -1224,27 +1224,27 @@ f.addEventListener('reset', function() {
 Celo rešenje je dato narednim kodom:
 
 ```js
-const f = document.querySelector("#formular");
+const f = document.querySelector('#formular');
 
 f.addEventListener('submit', function() {
 	// Pomocna promenljiva
 	let polje;
 	
 	// U okviru polja za gresku bice upisivane greske
-	const greska = document.querySelector("#greska");
+	const greska = document.querySelector('#greska');
 	
 	// Provera za ime i prezime
-    polje = document.querySelector("#ime_prezime");
+    polje = document.querySelector('#ime_prezime');
     const imePrezime = polje.value.trim();
     const maxDuzina = polje.maxLength || 30;
 
-    if (imePrezime === "" || imePrezime.length > maxDuzina) {
-        greska.textContent = "Nekorektna vrednost u polju za ime i prezime!";
+    if (imePrezime === '' || imePrezime.length > maxDuzina) {
+        greska.textContent = 'Nekorektna vrednost u polju za ime i prezime!';
         return false;
     }
 
     // Provera za datum
-    polje = document.querySelector("#datum_rodjenja");
+    polje = document.querySelector('#datum_rodjenja');
     const datumRodjenja = polje.value;
     const godina = parseInt(datumRodjenja.substr(0, 4));
     const mesec = parseInt(datumRodjenja.substr(5, 2));
@@ -1254,37 +1254,37 @@ f.addEventListener('submit', function() {
         || dan < 1 || dan > 31 
         || mesec < 1 || mesec > 12 
         || godina < 0) {
-        greska.textContent="Nekorektna vrednost u polju za datum rodjenja!";
+        greska.textContent='Nekorektna vrednost u polju za datum rodjenja!';
         return false;
     }
 
-    if (datumRodjenja.charAt(4) != "-" || datumRodjenja.charAt(7) != "-") {
-        greska.textContent="Datum rodjenja treba da bude u formatu gggg-mm-dd";
+    if (datumRodjenja.charAt(4) != '-' || datumRodjenja.charAt(7) != '-') {
+        greska.textContent='Datum rodjenja treba da bude u formatu gggg-mm-dd';
         return false;
     }
 
     // Provera za elektronsku adresu
-    polje = document.querySelector("#email");
+    polje = document.querySelector('#email');
     const email = polje.value;
-    const manki = email.indexOf("@");
-    const poslednjaTackica = email.lastIndexOf(".");
+    const manki = email.indexOf('@');
+    const poslednjaTackica = email.lastIndexOf('.');
 
     if (manki === -1 || poslednjaTackica === -1 || poslednjaTackica < manki) {
-        greska.textContent="Nekorektna vrednost u polju za email adresu.";
+        greska.textContent='Nekorektna vrednost u polju za email adresu.';
         return false;
     }
 
     // Provera za veb adresu
-    polje = document.querySelector("#veb_adresa");
+    polje = document.querySelector('#veb_adresa');
     const vebAdresa = polje.value;
 
-    if (vebAdresa.substr(0, 7) != "http://") {
-        greska.textContent="Nekorektna vrednost u polju za veb adresu.";
+    if (vebAdresa.substr(0, 7) != 'http://') {
+        greska.textContent='Nekorektna vrednost u polju za veb adresu.';
         return false;
     }
 
     // Provera za korisničko ime
-    polje = document.querySelector("#username");
+    polje = document.querySelector('#username');
     const korisnickoIme = polje.value.trim();
 
     const malaSlova = [];
@@ -1295,7 +1295,7 @@ f.addEventListener('submit', function() {
     }
 
     if (korisnickoIme.length < 5) {
-        greska.textContent = "Korisnicko ime nije dovoljno dugo.";
+        greska.textContent = 'Korisnicko ime nije dovoljno dugo.';
         return false;
     }
 
@@ -1304,17 +1304,17 @@ f.addEventListener('submit', function() {
         
         if (malaSlova.indexOf(tekuciKarakter) === -1 
             && velikaSlova.indexOf(tekuciKarakter) === -1) {
-            greska.textContent = "Nedozvoljeni karakter u polju za korisnicko ime.";
+            greska.textContent = 'Nedozvoljeni karakter u polju za korisnicko ime.';
             return false;
         }
     }
 
     // Provera za šifru korisnika
-    polje = document.querySelector("#password");
+    polje = document.querySelector('#password');
     const sifra = polje.value.trim();
 
-    if (sifra === "") {
-        greska.textContent = "Polje za sifru je obavezno.";
+    if (sifra === '') {
+        greska.textContent = 'Polje za sifru je obavezno.';
         return false;
     }
 
@@ -1323,27 +1323,27 @@ f.addEventListener('submit', function() {
     {
         const tekuciKarakter = sifra.charAt(i);
         
-        if ("0123456789".indexOf(tekuciKarakter) != -1) {
+        if ('0123456789'.indexOf(tekuciKarakter) != -1) {
             ++brojCifara;
         }
     }
 
     if (brojCifara < 2) {
-        greska.textContent = "Polje za sifru mora da sadrzi barem dve cifre.";
+        greska.textContent = 'Polje za sifru mora da sadrzi barem dve cifre.';
         return false;
     }
 
     // Provera polja za fakultet
-    polje = document.querySelector("#fakultet");
+    polje = document.querySelector('#fakultet');
 
     if (polje.selectedIndex === 0) {
-        greska.textContent = "Odaberite fakultet.";
+        greska.textContent = 'Odaberite fakultet.';
         return false;
     }
 
     // Provera za godinu studija
     let indikatorGodine = false;
-    polje = document.querySelectorAll("input[name='godina']");
+    polje = document.querySelectorAll('input[name="godina"]');
 
     for (let i = 0; i < polje.length; ++i) {
         const godina = polje[i];
@@ -1355,7 +1355,7 @@ f.addEventListener('submit', function() {
     }
 
     if (!indikatorGodine) {
-        greska.textContent = "Godina studija je obavezno polje.";
+        greska.textContent = 'Godina studija je obavezno polje.';
         return false;
     }
 
@@ -1364,7 +1364,7 @@ f.addEventListener('submit', function() {
 });
 
 f.addEventListener('reset', function() {
-	const odgovor = window.confirm("Da li zelite da ponistite unos?");
+	const odgovor = window.confirm('Da li zelite da ponistite unos?');
 	return odgovor;
 });
 ```
