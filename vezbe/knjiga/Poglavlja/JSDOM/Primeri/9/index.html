@@ -19,6 +19,10 @@
         fieldset legend {
             color: orange;
         }
+
+        p#upozorenje {
+            display: none;
+        }
     </style>
 </head>
 
@@ -62,6 +66,9 @@
             <div class="form-group">
                 <label for="password"> Šifra*: </label>
                 <input id="password" name="sifra" required type="password" class="form-control">
+                <p id="upozorenje" class="greska">
+                    Šifra mora da sadrži makar 2 cifre!
+                </p>
             </div>
 
         </fieldset>

@@ -173,7 +173,7 @@ Autori:
 
 1. [Asinhrono programiranje](./Poglavlja/JQuery/README.md#61-asinhrono-programiranje){:target="_blank"}
 
-    1. [Po-potrebi-pozivne funkcije](./Poglavlja/JQuery/README.md#611-po-potrebi-pozivne-funkcije){:target="_blank"}
+    1. [Funkcije povratnog poziva](./Poglavlja/JQuery/README.md#611-funkcije-povratnog-poziva){:target="_blank"}
 
     2. [`XMLHttpRequest` objekat](./Poglavlja/JQuery/README.md#612-xmlhttprequest-objekat){:target="_blank"}
      

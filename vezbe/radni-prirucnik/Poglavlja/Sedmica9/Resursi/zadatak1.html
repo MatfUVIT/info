@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title> Zadatak 1 </title>
+    <meta charset="utf-8">
+    <style type="text/css">
+        form {
+            border: 1px solid #eee;
+            width: 50%;
+            margin: 50px auto;
+            position: relative;
+            padding: 10px;
+        }
+
+        sup {
+            color: orange;
+            font-size: 10px;
+        }
+
+        span {
+            font-size: 10px;
+        }
+
+        span.greska {
+            color: red;
+        }
+
+        #vesti {
+            margin: auto;
+            margin-top: 20px;
+            border: 1px dotted orange;
+            width: 80%;
+            padding: 35px;
+        }
+
+        /*
+            Postoji problem sa ovom Bootstrap klasom i slideDown jQuery metodom,
+            koja se ispravlja na ovaj nacin.
+        */
+        .form-check-input {
+            position: static;
+        }
+    </style>
+</head>
+
+<body>
+
+    <form method="GET" action="" class="container">
+
+        <div class="form-group">
+            <label for="username">
+                Korisničko ime <sup> * </sup>:
+            </label>
+            <input type="text" id="username" name="username" class="form-control">
+            <span></span>
+        </div>
+
+        <div class="form-group">
+            <label for="email">
+                e-mail <sup> * </sup>:
+            </label>
+            <input type="text" id="email" name="email" class="form-control">
+            <span></span>
+        </div>
+
+        <div class="form-group">
+            <label for="sifra1">
+                Šifra <sup> * </sup>:
+            </label>
+            <input type="password" id="sifra1" name="sifra1" class="form-control">
+        </div>
+
+        <div class="form-group">
+            <label for="sifra2">
+                Ponovite šifru <sup> * </sup>:
+            </label>
+            <input type="password" id="sifra2" name="sifra2" class="form-control">
+        </div>
+
+        <div class="form-group form-check">
+            <input type="checkbox" id="prijava" name="prijava" value="p" class="form-check-input">
+            <label for="prijava" class="form-check-label">
+                Prijavite se za vesti
+            </label>
+        </div>
+
+        <div id="vesti">
+            <div class="form-group">
+                <label for="oblast">
+                    Oblast:
+                </label>
+                <select name="oblast" id="oblast" class="form-control">
+                    <option value="">Odaberite oblast</option>
+                    <option value="ar">Arhitektura Racunara</option>
+                    <option value="oop">Objektno-orijentisano programiranje</option>
+                    <option value="web">Veb Tehnologije</option>
+                </select>
+            </div>
+
+            <div class="form-gorup">
+                <div class="form-group-check">
+                    <input type="radio" name="vesti" id="vesti_d" value="d" class="form-check-input">
+                    <label for="vesti_d" class="form-check-label">
+                        Dnevne
+                    </label>
+                </div>
+    
+                <div class="form-group-check">
+                    <input type="radio" name="vesti" id="vesti_n" value="n" checked class="form-check-input">
+                    <label for="vesti_n" class="form-check-label">
+                        Nedeljne
+                    </label>
+                </div>
+    
+                <div class="form-group-check">
+                    <input type="radio" name="vesti" id="vesti_m" value="m" class="form-check-input">
+                    <label for="vesti_m" class="form-check-label">
+                        Mesečne
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <p id="izvestaj">
+        </p>
+
+        <input type="submit" value="Posalji podatke" class="btn btn-primary">
+        <input type="reset" value="Reset" class="btn btn-danger">
+
+        <span style="position: absolute; right: 15px;"> polja obeležena sa <sup> * </sup> su obavezna </span>
+    </form>
+</body>
+
+</html>
