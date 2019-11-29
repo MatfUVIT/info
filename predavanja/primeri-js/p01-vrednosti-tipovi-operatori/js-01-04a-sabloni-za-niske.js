@@ -14,4 +14,4 @@ console.log("Draga mama,\n" +
 // sabloni za niske
 console.log(`Draga mama,
 Nadam se da si dobro.
-    Pozdrav, tvoj sin`);
+\tPozdrav, tvoj sin`);
