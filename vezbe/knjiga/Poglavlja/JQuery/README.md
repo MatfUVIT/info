@@ -102,7 +102,10 @@ U ovom trenutku se mogu postaviti zaglavlja HTTP zahteva pomoću `setRequestHead
 
 ```js
 xhr.addEventListener('load', function() {
-	// Proveravamo da li je odgovor servera sa vrednoscu 200 preko polja zahteva status
+    /* 
+        Proveravamo da li je odgovor servera sa vrednoscu 200 preko 
+        polja zahteva status.
+    */
 	if (xhr.status === 200) {
 		console.log(xhr.response);
 	} 
@@ -163,7 +166,7 @@ Biblioteku jQuery čini jedinstvena JavaScript datoteka, i može se umetnuti pom
 
 ```html
 <body>
-	<script type="text/javascript" src="jquery-3.3.1.min.js"></script>
+	<script type="text/javascript" src="jquery-3.4.1.min.js"></script>
 </body>
 ```
 
@@ -171,7 +174,7 @@ Ukoliko ne želimo da preuzmemo i hostujemo jQuery, moguće je umetnuti ga sa ne
 
 ```html
 <body>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 </body>
 ```
 
@@ -179,7 +182,7 @@ ili
 
 ```html
 <body>
-	<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
+	<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
 </body>
 ```
 
@@ -198,10 +201,27 @@ jQuery sintaksa je osmišljena za označavanje HTML elemenata i njihovo obrađiv
 Neki jednostavni primeri upotrebe dati su narednim primerima:
 
 ```js
-	$(this).hide();		// sakriva trenutni element
-	$('p').hide();		// sakriva sve "p" elemente
-	$('.test').hide();	// sakriva sve elemente koji imaju atribut "class" postavljen na vrednost "test"
-	$('#test').hide();	// sakriva sve elemente koji imaju atribut "id" postavljen na vrednost "test"
+    /* 
+        sakriva trenutni element
+    */
+    $(this).hide();
+
+    /* 
+        sakriva sve "p" elemente		
+    */
+    $('p').hide();		
+    
+    /* 
+        sakriva sve elemente koji imaju atribut "class" postavljen 
+        na vrednost "test"
+    */
+    $('.test').hide();	
+    
+    /*
+        sakriva sve elemente koji imaju atribut "id" postavljen na 
+        vrednost "test"
+    */
+    $('#test').hide();	
 ```
 
 ### 6.3.1. "Dokument je spreman" događaj
@@ -282,7 +302,7 @@ else
 	console.log('Polje nije odabrano');
 }
 ```
-<!--
+
 ## 6.5. jQuery metodi zasnovani na događajima
 
 I u jQuery biblioteci su dostupni različiti događaji koje korisnik može da inicira. Neki od čestih DOM događaja su dati narednom tabelom:
@@ -574,28 +594,40 @@ Primeri korišćenja ovih metoda dati su u nastavku:
 // Postavljanje vrednosti
 
 $('#btn1').click(function(){
-	$('#test1').text('Hello world!'); // postavlja text
+    // postavlja text
+	$('#test1').text('Hello world!'); 
 });
+
 $('#btn2').click(function(){
-	$('#test2').html('<b>Hello world!</b>'); // postavlja HTML
+    // postavlja HTML
+	$('#test2').html('<b>Hello world!</b>');
 });
+
 $('#btn3').click(function(){
-	$('#test3').val('Dolly Duck'); // postavlja vrednost polja formulara
+    // postavlja vrednost polja formulara
+	$('#test3').val('Dolly Duck'); 
 });
 
 // Dohvatanje vrednosti
 
 $('#btn1').click(function(){
-	alert('Text: ' + $('#test').text()); // vraća text
+    // vraća text
+	alert('Text: ' + $('#test').text()); 
 });
+
 $('#btn2').click(function(){
-	alert('HTML: ' + $('#test').html()); // vraća HTML
+    // vraća HTML
+	alert('HTML: ' + $('#test').html()); 
 });
+
 $('#btn1').click(function(){
-	alert('Value: ' + $('#test').val()); // vraća vrednost polja forme
+    // vraća vrednost polja 
+	alert('Value: ' + $('#test').val()); forme
 });
+
 $('button').click(function(){
-	alert($('#w3s').attr('href')); // vraća vrednost atributa href
+    // vraća vrednost atributa href
+	alert($('#w3s').attr('href')); 
 });
 ```
 
@@ -615,11 +647,18 @@ Sva četiri metoda mogu uzimati veći broj parametara da bi kreirali nov sadrža
 
 ```js
 function appendText() {
-	var txt1 = '<p>Text.</p>';               // Nov element pomoću HTML-a 
-	var txt2 = $('<p></p>').text('Text.');   // Nov element pomoću jQuery biblioteke
-	var txt3 = document.createElement('p');  // Nov element pomoću DOM-a
-	txt3.innerHTML = 'Text.';
-	$('p').append(txt1, txt2, txt3);         // Nadovezivanje novih elemennata 
+    // Nov element pomoću HTML-a 
+    var txt1 = '<p>Text.</p>'; 
+       
+    // Nov element pomoću jQuery biblioteke
+    var txt2 = $('<p></p>').text('Text.');   
+    
+    // Nov element pomoću DOM-a
+	var txt3 = document.createElement('p');  
+    txt3.innerHTML = 'Text.';
+    
+    // Nadovezivanje novih elemenata 
+	$('p').append(txt1, txt2, txt3);         
 }
 ```
 
@@ -627,11 +666,18 @@ ili
 
 ```js
 function afterText() {
-	var txt1 = '<b>I </b>';                    // Nov element pomoću HTML-a  
-	var txt2 = $('<i></i>').text('love ');     // Nov element pomoću jQuery biblioteke
-	var txt3 = document.createElement('b');    // Nov element pomoću DOM-a
-	txt3.innerHTML = 'jQuery!';
-	$('img').after(txt1, txt2, txt3);          // Dodavanje novih elemenata posle elementa <img>
+    // Nov element pomoću HTML-a  
+    var txt1 = '<b>I </b>';
+    
+    // Nov element pomoću jQuery biblioteke
+    var txt2 = $('<i></i>').text('love ');  
+    
+    // Nov element pomoću DOM-a
+	var txt3 = document.createElement('b');    
+    txt3.innerHTML = 'jQuery!';
+    
+    // Dodavanje novih elemenata posle elementa <img>
+	$('img').after(txt1, txt2, txt3);          
 }
 ```
 
@@ -1042,9 +1088,10 @@ Koristeći biblioteku jQuery, omogućiti naredne funkcionalnosti:
 
 <body>
     <!-- 
-        Slike koje se nalaze u galeriji se navode unutar elementa sa identifikatorom "galerija".
+        Slike koje se nalaze u galeriji se navode unutar elementa sa 
+        identifikatorom "galerija".
         Slika proleca je na poziciji 0, a slika zime na poziciji 3.
-    
+    -->
     <div id="galerija">
         <div><img src="slike/prolece.jpg" alt="prolece"> </div>
         <div><img src="slike/leto.jpg" alt="leto"></div>
@@ -1108,8 +1155,8 @@ $(document).ready(function () {
     $('#slideshow').click(function () {
         /*
             Brisemo stari slideShow ako je postojao.
-			Ovim se sprecava nekorektno ponasanje ako korisnik vise 
-			puta klikne na ovo dugme
+            Ovim se sprecava nekorektno ponasanje ako 
+            korisnik vise puta klikne na ovo dugme.
         */
         window.clearInterval(si);
 
@@ -1166,349 +1213,12 @@ $(document).ready(function () {
 
 <a style="border: 2px solid gray; display: inline-block; padding: 15px; background-color: rgb(114, 211, 250); color: black;"
    href="./Primeri/3/index.html"
-   target="_blank">Pogledaj primer uživo (html)</a>
+   target="_blank">Pogledaj primer uživo (.html)</a>
 <a style="border: 2px solid gray; display: inline-block; padding: 15px; background-color: rgb(114, 211, 250); color: black;"
    href="./Primeri/3/index.js"
-   target="_blank">Pogledaj primer uživo (js)</a>
+   target="_blank">Pogledaj primer uživo (.js)</a>
 
-> Zadatak 4: Korišćenjem HTML i CSS jezika za obeležavanje i stilizovanje, konstruisati formular kao na narednoj slici:
-	
-<figure style="max-width: 98%;">
-	<figcaption> 
-		Pre odabira polja "Prijavite se za vesti":
-	</figcaption>
-	<img style="max-width: 100%;" src="./Slike/provera_formulara1.png" alt="">
-</figure>
 
-<figure style="max-width: 98%;">
-	<figcaption> 
-		Nakon odabira polja "Prijavite se za vesti":
-	</figcaption>
-	<img style="max-width: 100%;" src="./Slike/provera_formulara2.png" alt="">
-</figure>
-	
->Doterati formular korišćenjem Bootstrap biblioteke. Koristeći biblioteku jQuery omogućiti naredne funkcionalnosti u formularu:
-	
--  Kada element za unos korisničkog imena izgubi fokus, proveriti da li je polje prazno. Ukoliko jeste, upisati poruku o grešci u za to pripremljeno polje uz dodavanje klase "greska}. Ukoliko nije, obrisati poruku o grešci iz za to predviđenog polja i ukloniti klasu "greska}.
-
--  Kada element za unos elektronske adrese izgubi fokus, proveriti da li je polje prazno. Ukoliko je polje prazno, proveriti da li posle njega postoji polje sa porukom o grešci i ako ne postoji, kreirati ga. Ukoliko postoji, ne treba ništa preduzimati. Ukoliko polje nije prazno, proveriti da li posle njega postoji polje sa porukom o grešci i ako postoji obrisati ga. Ukoliko ne postoji, nista ne preduzimati.
-
--  Prilikom svakog unosa preko tastature u elementu za unos lozinke, obezbediti da se vrši provera da li uneta lozinka ima više od $5$ karaktera. Ukoliko lozinka nije korektna, proveriti da li posle njega postoji polje sa porukom o grešci i ako ne postoji, kreirati ga. Ukoliko postoji, ne treba ništa preduzimati. Ukoliko je lozinka korektna, proveriti da li posle njega postoji polje sa porukom o grešci i ako postoji obrisati ga. Ukoliko ne postoji, nista ne preduzimati.
-		
--  Prilikom svake promene stanja checkbox dugmeta, proveriti da li je dugme selektovano. Ako jeste, prikazati dodatna polja za odabir vesti efektom slajdera na dole u trajanju od $1$ sekunde. Ukoliko nije, sakriti dodatna polja za odabir vesti efektom slajdera na gore u trajanju od $1$ sekunde.
-		
--  Pri slanju podataka iz formulara:
-	-  Proveriti da li je korisničko ime prazno. Ako jeste, ispisati odgovarajuću poruku u delu za izveštaj, fokusirati element za unos korisničkog imena i prekinuti dalju validaciju.
-	
-	-  Proveriti unos za elektronsku adresu. Polje ne sme da bude prazno i mora da bude zadovoljavajućeg formata. Ako unos nije korektan, ispisati odgovarajuću poruku u delu za izveštaj, fokusirati element za unos elektronske pošte i prekinuti dalju validaciju.
-	
-	-  Proveriti originalnu i ponovljenu šifru. Obe moraju biti unete, minimalna dozvoljena dužina je $6$ i moraju se poklapati. Ako unos nije korektan, ispisati odgovarajuću poruku u delu za izveštaj, fokusirati element za unos originalne lozinke i prekinuti dalju validaciju.
-	
-	-  Proveriti da li se korisnik prijavio na vesti. Ako jeste, proveriti da li je odabrao oblast. Ako jeste, očitati vrednost dinamike isporučivanja i prikazati prozor sa porukom o odabranoj dinamici. Ako nije odabrao oblast, prikazati prozor sa odgovarajućom porukom i prekinuti dalju validaciju.
-
-```html
-<!DOCTYPE html>
-<html>
-
-<head>
-    <title> Zadatak 4 </title>
-    <meta charset="utf-8">
-	<link rel="stylesheet" type="text/css" 
-	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <style type="text/css">
-        form {
-            border: 1px solid #eee;
-            width: 50%;
-            margin: 50px auto;
-            position: relative;
-            padding: 10px;
-        }
-
-        sup {
-            color: orange;
-            font-size: 10px;
-        }
-
-        span {
-            font-size: 10px;
-        }
-
-        span.greska {
-            color: red;
-        }
-
-        #vesti {
-            display: none;
-            margin: auto;
-            margin-top: 20px;
-            border: 1px dotted orange;
-            width: 80%;
-            padding: 35px;
-        }
-
-        /*
-            Postoji problem sa ovom Bootstrap klasom i slideDown 
-			jQuery metodom, koja se ispravlja na ovaj nacin.
-        */
-        .form-check-input {
-            position: static;
-        }
-    </style>
-</head>
-
-<body>
-
-    <form method="" action="" class="container">
-        <div class="form-group">
-            <label for="username">
-                Korisničko ime <sup> * </sup>:
-            </label>
-			<input type="text" id="username" name="username" 
-			class="form-control">
-            <span></span>
-        </div>
-
-        <div class="form-group">
-            <label for="email">
-                e-mail <sup> * </sup>:
-            </label>
-			<input type="text" id="email" name="email" 
-			class="form-control">
-            <span></span>
-        </div>
-
-        <div class="form-group">
-            <label for="sifra1">
-                Šifra <sup> * </sup>:
-            </label>
-			<input type="password" id="sifra1" name="sifra1" 
-			class="form-control">
-        </div>
-
-        <div class="form-group">
-            <label for="sifra2">
-                Ponovite šifru <sup> * </sup>:
-            </label>
-			<input type="password" id="sifra2" name="sifra2" 
-			class="form-control">
-        </div>
-
-        <div class="form-group form-check">
-			<input type="checkbox" id="prijava" name="prijava" 
-			value="p" class="form-check-input">
-            <label for="prijava" class="form-check-label">
-                Prijavite se za vesti
-            </label>
-        </div>
-
-        <div id="vesti">
-            <div class="form-group">
-                <label for="oblast">
-                    Oblast:
-                </label>
-				<select name="oblast" id="oblast" 
-				class="form-control">
-                    <option value="">Odaberite oblast</option>
-                    <option value="ar">Arhitektura Racunara</option>
-                    <option value="oop">
-						Objektno-orijentisano programiranje
-					</option>
-                    <option value="web">Veb Tehnologije</option>
-                </select>
-            </div>
-
-            <div class="form-gorup">
-                <div class="form-group-check">
-					<input type="radio" name="vesti" id="vesti_d" 
-					value="d" class="form-check-input">
-                    <label for="vesti_d" class="form-check-label">
-                        Dnevne
-                    </label>
-                </div>
-    
-                <div class="form-group-check">
-					<input type="radio" name="vesti" id="vesti_n" 
-					value="n" checked class="form-check-input">
-                    <label for="vesti_n" class="form-check-label">
-                        Nedeljne
-                    </label>
-                </div>
-    
-                <div class="form-group-check">
-					<input type="radio" name="vesti" id="vesti_m" 
-					value="m" class="form-check-input">
-                    <label for="vesti_m" class="form-check-label">
-                        Mesečne
-                    </label>
-                </div>
-            </div>
-        </div>
-
-        <p id="izvestaj">
-        </p>
-
-		<input type="submit" value="Posalji podatke" class="btn 
-		btn-primary">
-        <input type="reset" value="Reset" class="btn btn-danger">
-
-		<span style="position: absolute; right: 15px;"> 
-			polja obeležena sa <sup> * </sup> su obavezna 
-		</span>
-    </form>
-
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="index.js"></script>
-
-</body>
-</html>
-```
-
-```js
-$(document).ready(function() {
-
-    // Provera za korisnicko ime
-    $('input[name="username"]').blur(function ()
-    {
-        if ($(this).val() == '')
-        {
-            $(this).next().addClass('greska').text('Ovo polje je obavezno!');
-        }
-        else
-        {
-            $(this).next().removeClass('greska').text('');
-        }
-    });
-
-    // Provera za elektronsku adresu
-    $('input[name="email"]').blur(function()
-    {
-        if ($(this).val() == '')
-        {
-            if (!$(this).next().hasClass('greska'))
-            {
-                $(this).after('<span class="greska"> Ovo polje je obavezno! </span>');
-            }
-        }
-        else
-        {
-            $(this).next('.greska').remove();
-        }
-    });
-
-    // Provera za lozinku
-    $('input[name="sifra1"]').keyup(function()
-    {
-        if ($(this).val().length <= 5) 
-        {
-            if (!$(this).next().hasClass('greska'))
-            {
-                $(this).after('<span class="greska"> kratka šifra! </span>');
-            }
-        }
-        else
-        {
-            $(this).next('.greska').remove();
-        }
-    });
-
-    // Prikazivanje/sakrivanje polja za vesti
-    $('input:checkbox').change(function()
-    {
-        if ($(this).is(':checked'))
-        {
-            $('#vesti').slideDown(1000);
-        }
-        else 
-        {
-            $('#vesti').slideUp(1000);
-        }
-    });
-
-    // Validacija formulara pri slanju podataka
-    $('form').submit(function()
-    {
-        // Proveravamo korisnicko ime
-        let username = $('input[name="username"]').val();
-        if (username === '') 
-        {
-            $('#izvestaj').text('Korisničko ime je obavezno!');
-            $('input[name="username"]').focus();
-            return false;
-        }
-
-        // Proveravamo elektronsku adresu
-        let email = $('input[name="email"]').val();
-        if (email === '') 
-        {
-            $('#izvestaj').text('E-mail adresa je obavezna!');
-            $('input[name="email"]').focus();
-            return false;
-        }
-
-        let manki = email.indexOf('@');
-        let poslednjaTackica = email.lastIndexOf('.');
-        if (manki === -1 || poslednjaTackica === -1 || manki > poslednjaTackica) 
-        {
-            $('#izvestaj').text('Uneta e-mail adresa nije korektna!');
-            return false;
-        }
-
-        // Proveravamo sifre (originalnu i ponovljenu sifru).
-        let sifra_original = $('input[name="sifra1"]').val();
-        let sifra_potvrda = $('input[name="sifra2"]').val();
-
-        if (sifra_original === '' || sifra_original.length <= 5 || sifra_potvrda === '' || sifra_original != sifra_potvrda)
-        {
-            $('#izvestaj').text('Ponovo popunite polja za šifru!');
-            $('input[name="sifra1"]').focus();
-            return false;
-        }
-
-        // Proveravamo da li se korisnik prijavio na vesti 
-        if ($('input:checkbox').is(':checked')) 
-        {
-            let oblast = $('select[name="oblast"]').val();
-            if (oblast === '') 
-            {
-                window.alert('Niste odabrali oblast za vesti!');
-                return false;
-            }
-
-            let vesti = $('input:radio[name="vesti"]:checked').val();
-            let dinamika;
-            switch (vesti)
-            {
-                case 'd':
-                    dinamika = 'dnevnom';
-                    break;
-                case 'n':
-                    dinamika = 'nedeljnom';
-                    break;
-                case 'm':
-                    dinamika = 'mesecnom';
-                    break;
-            }
-            window.alert(`Odabrali ste da primate vesti na ${dinamika} nivou`);
-        }
-
-        // Ako je sve u redu, u polju za izvestaj se na kratko moze videti zahvalnica...
-        $('#izvestaj').text('Hvala što ste se prijavili!');
-
-        return true;
-    });
-
-    $('form').on('reset', function()
-    {
-        $('span').text('');
-        // Sakrivanje polja za vesti ukoliko su bile aktivne
-        if ($('input:checkbox').is(':checked')) 
-        {
-            $('#vesti').slideUp(1000);
-        };
-    });
-
-});
-```
 <!--
 <a style="border: 2px solid gray; display: inline-block; padding: 15px; background-color: rgb(114, 211, 250); color: black;"
    href="./Primeri/4/index.html"

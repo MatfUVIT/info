@@ -493,7 +493,7 @@ Procedura brisanja elemenata iz DOM stabla liči na proceduru umetanja elemenata
 
 Naredni primer ilustruje drugi pristup, pri čemu se za svako dete čvor ispituje da li sadrži klasu kojom se u HTML delu koda označava da je potrebno da bude obrisano[^3].
 
-[^3]: Zašto u JavaScript kodu koristimo metod `indexOf` nad svojstvom `className` umesto da vršimo poređenje `className === 'obrisi_mene'`?
+[^3]: Zašto u JavaScript kodu koristimo metod `indexOf` nad svojstvom `className` umesto da vršimo poređenje `className === 'obrisi_mene`?
 
 Datoteka `index.html`:
 
@@ -652,7 +652,7 @@ Da bismo mogli da pridružimo osluškivač događaju potrebne su nam informacije
 
 3. Koja je akcija koju je potrebno izvršiti okidanjem tog događaja nad tim elementom?
 
-Na primer, neka je potrebno nad HTML elementom koji je predstavljen promenljivom `element`, pri okidanjem događaja `'event'` izvršiti funkciju `element_event`. Pridruživanje osluškivača događaja se u tom slučaju izvršava narednim pozivom metoda `addEventListener`:
+Na primer, neka je potrebno nad HTML elementom koji je predstavljen promenljivom `element`, pri okidanjem događaja `event` izvršiti funkciju `element_event`. Pridruživanje osluškivača događaja se u tom slučaju izvršava narednim pozivom metoda `addEventListener`:
 
 ```js
 element.addEventListener('event', element_event);
@@ -770,7 +770,7 @@ Napomenimo još i da, prilikom definisanja osluškivača, ukoliko je potrebno da
 
 #### Alternativni metodi pridruživanja osluškivača događajima
 
-Pridruživanje osluškivača događajima je moguće izvršiti i na drugi način. U pitanju je korišćenje odgovarajućih svojstava čvorova DOM stabla koji odgovaraju HTML elementima. Na primer, čvor koji odgovara elementima `input` čiji je atribut `type="button"` (dakle, dugmići) sadrži atribut `onclick` čija je vrednost funkcija koja implementira osluškivač događaja naziva `'click'`, odnosno, kliktaj mišem na dugme. U prethodnom primeru, umesto linije:
+Pridruživanje osluškivača događajima je moguće izvršiti i na drugi način. U pitanju je korišćenje odgovarajućih svojstava čvorova DOM stabla koji odgovaraju HTML elementima. Na primer, čvor koji odgovara elementima `input` čiji je atribut `type="button"` (dakle, dugmići) sadrži atribut `onclick` čija je vrednost funkcija koja implementira osluškivač događaja naziva `click`, odnosno, kliktaj mišem na dugme. U prethodnom primeru, umesto linije:
 
 ```js
 uvecaj.addEventListener('event', uvecaj_click);
@@ -789,7 +789,7 @@ element.onclick = handler_1;
 element.onclick = handler_2;
 ```
 
-Prilikom okidanja događaja `'click'`, biće pozvan (tj. izvršen) samo osluškivač koji implementira funkcija `handler_2`, dok je osluškivač koji implementira funkcija `handler_1` izgubljen. Postoje načini da se ovo prevaziđe, ali svaki od njih uvodi nove probleme, pri čemu nijedan od njih problema ne daje elegantno rešenje u odnosu na korišćenje pristupa zasnovan na metodima `addEventListener` i `removeEventListener`.
+Prilikom okidanja događaja `click`, biće pozvan (tj. izvršen) samo osluškivač koji implementira funkcija `handler_2`, dok je osluškivač koji implementira funkcija `handler_1` izgubljen. Postoje načini da se ovo prevaziđe, ali svaki od njih uvodi nove probleme, pri čemu nijedan od njih problema ne daje elegantno rešenje u odnosu na korišćenje pristupa zasnovan na metodima `addEventListener` i `removeEventListener`.
 
 
 ## 5.6 Obrada podataka u formularu
@@ -1037,19 +1037,20 @@ Odgovarajući kod za formular sa slike:
 
 Pre nego što pređemo obradu formulara, primetimo da element `form` ima postavljen atribut `novalidate`. Ovaj atribut, poput prethodno pomenutih atributa `checked` i `readonly`, ne dobija vrednost već samo navođenje tog atributa elementu označava da element ima to svojstvo. Ukoliko formularu dodamo ovaj atribut onda se neće vršiti automatska provera unetih vrednosti. Podrazumevano ponašanje je provera svakog polja da li zadovoljava uslove koji su postavljeni atributima.
 
-
 Prvo što treba da uradimo jeste da dohvatimo formular. To možemo učiniti preko identifikatora `formular` koji smo mu prethodno zadali korišćenjem metode `querySelector` ili `getElementById`.
 
 ```js
 const f = document.querySelector("#formular");
 ```
 
-Na nivou formulara je definisan događaj `'submit'` koji se izvršava nakon što korisnik klikne na element `<input type="submit">` koji se nalazi u sadržaju tog formulara. Osluškivač koji se postavlja nad tim događajem predstavlja funkciju za koju važi da, ukoliko je njena povratna vrednost `true`, onda će veb pregledač na adresu naznačenu atributom `action` formulara poslati novi HTTP zahtev sa podacima iz formulara. Metod slanja podataka tim HTTP zahtevom se definiše atributom `method` tog formulara, a njegove vrednosti mogu biti `'GET'` ili `'POST'`, koje odgovaraju istoimenim HTTP metodima. Ukoliko pak osluškivač vrati vrednost `false`, HTTP zahtev neće biti poslat. Upravo ova činjenica se može koristiti u slučaju da dođe do greške prilikom obrade formulara - dovoljno je da korisniku naznačimo da je došlo do greške prilikom obrade i da osluškivač vrati vrednost `false`.
+Na nivou formulara je definisan događaj `'submit'` koji se izvršava nakon što korisnik klikne na element `<input type="submit">` koji se nalazi u sadržaju tog formulara. Pri završetku osluškivača koji se postavlja nad tim događajem, veb pregledač šalje podatke iz formulara na adresu naznačenu atributom `action` formulara. Metod slanja podataka tim HTTP zahtevom se definiše atributom `method` tog formulara, a njegove vrednosti mogu biti `GET` ili `POST`, koje odgovaraju istoimenim HTTP metodima. Međutim, moramo razumeti kako je potrebno sprečiti veb pregledač da pošalje ovaj zahtev u slučaju da dođe do problema u validaciji podataka u formularu.
+
+Ono o čemu nismo diskutovali kada smo govorili o događajima jeste da funkcija koja predstavlja osluškivač nad nekim događajem može prihvatati i jedan parametar (u kodu ispod `ev`). Ovaj parametar predstavlja objekat koji sadrži razne informacije o samom događaju koji je okinut nad formularom. Ukoliko osluškivač za akciju `submit` pridružujemo korišćenjem metoda `addEventListener()`, u slučaju greške potrebno je da sprečimo podrazumevano ponašanje, što je upravo slanje podataka, a to činimo pozivom metoda `preventDefault()` nad događajem `ev`.
 
 Za početak možemo odrediti promenljivu u koju ćemo smestiti trenutni element koji obrađujemo kao i promenljivu u koju smeštamo element za greške.
 
 ```js
-f.addEventListener('submit', function() {
+f.addEventListener('submit', function(ev) {
 	// Pomocna promenljiva
 	let polje;
 	
@@ -1060,18 +1061,26 @@ f.addEventListener('submit', function() {
 });
 ```
 
-Krenimo redom po formularu i ispitujmo svako od polja. Ukoliko naiđemo na neku neregularnost, dovoljno je da vratimo vrednost `false` u ovoj funkciji. Ime i prezime korisnika je obavezno polje. Očekuje se da dužina bude manja od $30$, tj. od vrednosti atributa `maxlength`. Kada dohvatimo polje formulara, njegovi atributi su nam dostupni kao svojstva odgovarajućeg objekta. Zato možemo pristupati svojstvima `value` i `maxLength` u narednom fragmentu koda:
+Krenimo redom po formularu i ispitujmo svako od polja. Ukoliko naiđemo na neku neregularnost, dovoljno je da vratimo vrednost `false` u ovoj funkciji. Ime i prezime korisnika je obavezno polje. Očekuje se da dužina bude manja od _30_, tj. od vrednosti atributa `maxlength`. Kada dohvatimo polje formulara, njegovi atributi su nam dostupni kao svojstva odgovarajućeg objekta. Zato možemo pristupati svojstvima `value` i `maxLength` u narednom fragmentu koda:
 
 ```js
 polje = document.querySelector('#ime_prezime');
 const imePrezime = polje.value.trim();
 const maxDuzina = polje.maxLength || 30;
-
 if (imePrezime === '' || imePrezime.length > maxDuzina) {
+    // Obrada greške se može sastojati od narednih koraka:
+    // 1. Prijavi korisniku da je došlo do greške (opciono, ali korisno)
     greska.textContent = 'Nekorektna vrednost u polju za ime i prezime!';
-	return false;
+    // 2. Fokusiraj korisniku polje za koje validacija nije prošla (opciono, ali korisno)
+    polje.focus();
+    // 3. Spreči propagiranje događaja 'submit' nadalje (obavezno)
+    ev.preventDefault();
+    // 4. Prekini dalju validaciju (obavezno)
+    return false;
 }
 ```
+
+Pošto se element nalazi na vrhu stranice, a sam formular je malo veći i na manjim uređajima neće biti vidljivi svi elementi u istom trenutku, u slučaju greške možemo staviti element koji sadrži neispravnu vrednost u fokus kako bi korisniku odmah bio prikazan element koji treba da izmeni. U te svrhe koristimo metod `focus` koji pozivamo nad elementom koji želimo da stavimo u fokus odnosno da se pozicioniramo na stranici tako da taj element bude vidljiv.
 
 Datum rođenja korisnika treba da bude oblika `gggg-mm-dd`. Metod `substr`, definisan nad niskama, vraća podnisku date niske i prihvata dva argumenta: prvi je indeks od kojeg podniska počinje, a drugi je broj karaktera, tj. dužina željenje podniske. Podsetimo se, funkcija `Number.parseInt` konvertuje broj koji je zapisan kao niska u numeričku vrednost. Slično, dostupna je funkcija `Number.parseFloat`. Ukoliko konverzija ne uspe, rezultat je `NaN`.
 
@@ -1082,17 +1091,21 @@ const godina = parseInt(datumRodjenja.substr(0, 4));
 const mesec = parseInt(datumRodjenja.substr(5, 2));
 const dan = parseInt(datumRodjenja.substr(8, 2));
 
-if (isNaN(dan) || isNaN(mesec) || isNaN(godina) 
-    || dan < 1 || dan > 31 
-    || mesec < 1 || mesec > 12 
-    || godina < 0) {
-	greska.textContent='Nekorektna vrednost u polju za datum rodjenja!';
-	return false;
+if (isNaN(dan) || isNaN(mesec) || isNaN(godina) || 
+    dan < 1 || dan > 31 || 
+    mesec < 1 || mesec > 12 || 
+    godina < 0) {
+    greska.textContent='Nekorektna vrednost u polju za datum rodjenja!';
+    polje.focus();
+    ev.preventDefault();
+    return false;
 }
 
 if (datumRodjenja.charAt(4) != '-' || datumRodjenja.charAt(7) != '-') {
-	greska.textContent='Datum rodjenja treba da bude u formatu gggg-mm-dd';
-	return false;
+    greska.textContent='Datum rodjenja treba da bude u formatu gggg-mm-dd';
+    polje.focus();
+    ev.preventDefault();
+    return false;
 }
 ```
 
@@ -1105,8 +1118,10 @@ const manki = email.indexOf('@');
 const poslednjaTackica = email.lastIndexOf('.');
 
 if (manki === -1 || poslednjaTackica === -1 || poslednjaTackica < manki) {
-	greska.textContent='Nekorektna vrednost u polju za email adresu.';
-	return false;
+    greska.textContent='Nekorektna vrednost u polju za email adresu.';
+    polje.focus();
+    ev.preventDefault();
+    return false;
 }
 ```
 
@@ -1117,8 +1132,10 @@ polje = document.querySelector('#veb_adresa');
 const vebAdresa = polje.value;
 
 if (vebAdresa.substr(0, 7) != 'http://') {
-	greska.textContent='Nekorektna vrednost u polju za veb adresu.';
-	return false;
+    greska.textContent='Nekorektna vrednost u polju za veb adresu.';
+    polje.focus();
+    ev.preventDefault();
+    return false;
 }
 ```
 
@@ -1128,53 +1145,74 @@ Korisničko ime korisnika je obavezno polje. Treba da se sastoji samo od malih i
 polje = document.querySelector('#username');
 const korisnickoIme = polje.value.trim();
 
+if (korisnickoIme.length < 5) {
+    greska.textContent = 'Korisnicko ime nije dovoljno dugo.';
+    polje.focus();
+    ev.preventDefault();
+    return false;
+}
+
 const malaSlova = [];
 const velikaSlova = [];
 for (let i = 0; i < 26; ++i) {
-	malaSlova[i] = String.fromCharCode(97 + i);
-	velikaSlova[i] = String.fromCharCode(65 + i);
-}
-
-if (korisnickoIme.length < 5) {
-	greska.textContent = 'Korisnicko ime nije dovoljno dugo.';
-	return false;
+    malaSlova[i] = String.fromCharCode(97 + i);
+    velikaSlova[i] = String.fromCharCode(65 + i);
 }
 
 for (let i = 0; i < korisnickoIme.length; ++i) {
-	const tekuciKarakter = korisnickoIme.charAt(i);
-	
-	if (malaSlova.indexOf(tekuciKarakter) === -1 
-        && velikaSlova.indexOf(tekuciKarakter) === -1) {
-		greska.textContent = 'Nedozvoljeni karakter u polju za korisnicko ime.';
-		return false;
-	}
+    const tekuciKarakter = korisnickoIme.charAt(i);
+
+    if (malaSlova.indexOf(tekuciKarakter) === -1 && 
+        velikaSlova.indexOf(tekuciKarakter) === -1) {
+        greska.textContent = 'Nedozvoljeni karakter u polju za korisnicko ime.';
+        polje.focus();
+        ev.preventDefault();
+        return false;
+    }
 }
 ```
 
-Šifra korisnika je obavezna i mora da sadrži barem dve cifre.
+Pre nego što vidimo kod za validaciju šifre, napomenimo da smo definisali funkciju koja izračunara broj cifara u datoj niski. Ova funkcija će nam biti korisna za dalju validaciju.
+
+```js
+/**
+ * Izračunava broj cifara koje se nalaze u datoj niski.
+ * @param {string} vrednost niska
+ * @returns broj cifara u niski `vrednost`
+ */
+function prebrojCifre (vrednost) {
+    let brojCifara = 0;
+    for (let i = 0; i < vrednost.length; ++i) {
+        const tekuciKarakter = vrednost.charAt(i);
+        if ('0123456789'.indexOf(tekuciKarakter) !== -1) {
+            ++brojCifara;
+        }
+    }
+
+    return brojCifara;
+}
+```
+
+Šifra korisnika je obavezna i mora da sadrži barem dve cifre. 
 
 ```js
 polje = document.querySelector('#password');
 const sifra = polje.value.trim();
 
 if (sifra === '') {
-	greska.textContent = 'Polje za sifru je obavezno.';
-	return false;
+    greska.textContent = 'Polje za sifru je obavezno.';
+    polje.focus();
+    ev.preventDefault();
+    return false;
 }
 
-let brojCifara = 0;
-for (let i = 0; i < sifra.length; ++i) 
-{
-	const tekuciKarakter = sifra.charAt(i);
-	
-	if ('0123456789'.indexOf(tekuciKarakter) != -1) {
-		++brojCifara;
-	}
-}
+const brojCifara = prebrojCifre(sifra);
 
 if (brojCifara < 2) {
-	greska.textContent = 'Polje za sifru mora da sadrzi barem dve cifre.';
-	return false;
+    greska.textContent = 'Polje za sifru mora da sadrzi barem dve cifre.';
+    polje.focus();
+    ev.preventDefault();
+    return false;
 }
 ```
 
@@ -1184,8 +1222,10 @@ Polje za fakultet mora biti odabrano. Da bismo za element `select` dohvatili ind
 polje = document.querySelector('#fakultet');
 
 if (polje.selectedIndex === 0) {
-	greska.textContent = 'Odaberite fakultet.';
-	return false;
+    greska.textContent = 'Odaberite fakultet.';
+    polje.focus();
+    ev.preventDefault();
+    return false;
 }
 ```
 
@@ -1196,28 +1236,92 @@ let indikatorGodine = false;
 polje = document.querySelectorAll('input[name="godina"]');
 
 for (let i = 0; i < polje.length; ++i) {
-	const godina = polje[i];
-	
-	if (godina.checked) {
-		indikatorGodine = true;
-		break;
-	}
+    let godina = polje[i];
+
+    if (godina.checked) {
+        indikatorGodine = true;
+        break;
+    }
 }
 
 if (!indikatorGodine) {
-	greska.textContent = 'Godina studija je obavezno polje.';
-	return false;
+    greska.textContent = 'Godina studija je obavezno polje.';
+    polje.focus();
+    ev.preventDefault();
+    return false;
 }
 ```
 
 Polja lista interesovanja i napomena su opciona, tako da smo ovime završili obradu podataka u ovom formularu.
 
-Osim reagovanje na akciju slanja podataka, možemo dodati i reagovanje na događaj kojim se sadržaj polja u formularu vraćaju na podrazumevana, tako što postavimo osluškivač nad događajem `'reset'`. Slično kao i za `'submit'`, povratna vrednost funkcije koja se postavlja za osluškivač određuje da li će sadržaj polja u formularu biti vraćena na podrazumevane vrednosti ili ne. Ukoliko bismo, na primer, želeli da korisnik odabere da li želi zaista da resetuje formular, možemo implementirati osluškivač tako što u njemu iskoristimo funkciju `window.confirm` koja će prikazati prozor sa dugmićima "OK" i "Cancel" i tekstom koji je prosleđen kao argument. Ako korisnik klikne na "OK", funkcija vraća `true`, a inače vraća `false`.
+Osim reagovanje na akciju slanja podataka, možemo dodati i reagovanje na događaj kojim se sadržaj polja u formularu vraćaju na podrazumevana, tako što postavimo osluškivač nad događajem `reset`. Slično kao i za `submit`, povratna vrednost funkcije koja se postavlja za osluškivač određuje da li će sadržaj polja u formularu biti vraćena na podrazumevane vrednosti ili ne. Ukoliko bismo, na primer, želeli da korisnik odabere da li želi zaista da resetuje formular, možemo implementirati osluškivač tako što u njemu iskoristimo funkciju `window.confirm` koja će prikazati prozor sa dugmićima "OK" i "Cancel" i tekstom koji je prosleđen kao argument. Ako korisnik klikne na "OK", funkcija vraća `true`, a inače vraća `false`.
 
 ```js
-f.addEventListener('reset', function() {
-	const odgovor = window.confirm('Da li zelite da ponistite unos?');
-	return odgovor;
+f.addEventListener('reset', function(ev) {
+    const treba_resetovati = window.confirm('Da li zelite da ponistite unos?');
+
+    if (!treba_resetovati) {
+        ev.preventDefault();
+        return false;
+    }
+    return true;
+});
+```
+
+Takođe, moguće je postaviti i osluškivače nad samim elementima formulara. Neki od zanimljivih događaja za koje se mogu postaviti osluškivači su: 
+
+- Događaj `'focus'` se ispaljuje kada je element u fokusu. Element može dobiti fokus ako, na primer, mišem kliknemo na taj element.
+
+- Događaj `'blur'` se ispaljuje kada element izgubi fokus. 
+
+- Događaj `'change'` se ispaljuje kada element izgubi fokus i, pritom, vrednost polja elementa se izmenila.
+
+- Dpgađaj `'input'` se ispaljuje kada se elementu promeni vrednost. Na primer, svakim unosom ili brisanjem karaktera biće ispaljen ovaj događaj.
+
+Naravno, ovo su samo neki od tih događaja. Za detaljniju listu događaja možete posetiti adresu [https://developer.mozilla.org/en-US/docs/Web/Events](https://developer.mozilla.org/en-US/docs/Web/Events){:target="_blank"}.
+
+Opisane događaje ćemo ilustrovati nad elementom formulara u kojem korisnik unosi lozinku:
+
+```js
+const s = document.getElementById('password');
+
+s.addEventListener('focus', function() {
+    const brojCifara = prebrojCifre(this.value.trim());    
+    // Ukoliko šifra ne ispunjava uslove, prikazujemo poruku. 
+    if (brojCifara < 2) {
+       upozorenje.style.display = 'block';
+    }
+});
+
+s.addEventListener('blur', function() {
+    // Kada element izgubi fokus, sakrivamo poruku.
+    upozorenje.style.display = 'none';
+});
+
+s.addEventListener('change', function() {
+    const brojCifara = prebrojCifre(this.value.trim());
+    // Ukoliko šifra ne ispunjava uslove, 
+    // prikazujemo poruku u obaveštajnom prozoru. 
+    // Poruka se prikazuje nakon što element izgubi fokus, 
+    // ukoliko je vrednost polja izmenjena.
+    if (brojCifara < 2) {
+        window.alert('Šifra mora da sadrži bar dve cifre!');
+    }
+});
+
+s.addEventListener('input', function() {
+    const upozorenje = document.getElementById('upozorenje');
+    const sifra = this.value.trim();
+    const brojCifara = prebrojCifre(sifra);
+    
+    // Ukoliko šifra ne ispunjava uslove, prikazujemo poruku.
+    if (brojCifara < 2) {
+        upozorenje.style.display = 'block';
+    }
+    // Ukoliko je uslov ispunjen, sakrivamo poruku.
+    else {
+        upozorenje.style.display = 'none';
+    }
 });
 ```
 
@@ -1225,45 +1329,74 @@ Celo rešenje je dato narednim kodom:
 
 ```js
 const f = document.querySelector('#formular');
+const s = document.getElementById('password');
 
-f.addEventListener('submit', function() {
-	// Pomocna promenljiva
-	let polje;
-	
-	// U okviru polja za gresku bice upisivane greske
-	const greska = document.querySelector('#greska');
-	
-	// Provera za ime i prezime
+/**
+ * Izračunava broj cifara koje se nalaze u datoj niski.
+ * @param {string} vrednost niska
+ * @returns broj cifara u niski `vrednost`
+ */
+function prebrojCifre (vrednost) {
+    let brojCifara = 0;
+    for (let i = 0; i < vrednost.length; ++i) {
+        const tekuciKarakter = vrednost.charAt(i);
+        if ('0123456789'.indexOf(tekuciKarakter) !== -1) {
+            ++brojCifara;
+        }
+    }
+
+    return brojCifara;
+}
+
+f.addEventListener('submit', function(ev) {
+    // Pomoćna promenljiva koju ćemo koristiti za 
+    // dohvatanje jednog po jednog polja iz formulara
+    let polje;
+
+    // U okviru polja za grešku biće upisivane greške
+    const greska = document.querySelector('#greska');
+
+    // Provera za ime i prezime
     polje = document.querySelector('#ime_prezime');
     const imePrezime = polje.value.trim();
     const maxDuzina = polje.maxLength || 30;
-
     if (imePrezime === '' || imePrezime.length > maxDuzina) {
+        // Obrada greške se može sastojati od narednih koraka:
+        // 1. Prijavi korisniku da je došlo do greške (opciono, ali korisno)
         greska.textContent = 'Nekorektna vrednost u polju za ime i prezime!';
+        // 2. Fokusiraj korisniku polje za koje validacija nije prošla (opciono, ali korisno)
+        polje.focus();
+        // 3. Spreči propagiranje događaja 'submit' nadalje (obavezno)
+        ev.preventDefault();
+        // 4. Prekini dalju validaciju (obavezno)
         return false;
     }
 
-    // Provera za datum
+    // Provera za datum rođenja
     polje = document.querySelector('#datum_rodjenja');
     const datumRodjenja = polje.value;
     const godina = parseInt(datumRodjenja.substr(0, 4));
     const mesec = parseInt(datumRodjenja.substr(5, 2));
     const dan = parseInt(datumRodjenja.substr(8, 2));
-
-    if (isNaN(dan) || isNaN(mesec) || isNaN(godina) 
-        || dan < 1 || dan > 31 
-        || mesec < 1 || mesec > 12 
-        || godina < 0) {
+    
+    if (isNaN(dan) || isNaN(mesec) || isNaN(godina) || 
+        dan < 1 || dan > 31 || 
+        mesec < 1 || mesec > 12 || 
+        godina < 0) {
         greska.textContent='Nekorektna vrednost u polju za datum rodjenja!';
+        polje.focus();
+        ev.preventDefault();
         return false;
     }
 
     if (datumRodjenja.charAt(4) != '-' || datumRodjenja.charAt(7) != '-') {
         greska.textContent='Datum rodjenja treba da bude u formatu gggg-mm-dd';
+        polje.focus();
+        ev.preventDefault();
         return false;
     }
 
-    // Provera za elektronsku adresu
+    // Provera za email
     polje = document.querySelector('#email');
     const email = polje.value;
     const manki = email.indexOf('@');
@@ -1271,21 +1404,32 @@ f.addEventListener('submit', function() {
 
     if (manki === -1 || poslednjaTackica === -1 || poslednjaTackica < manki) {
         greska.textContent='Nekorektna vrednost u polju za email adresu.';
+        polje.focus();
+        ev.preventDefault();
         return false;
     }
 
-    // Provera za veb adresu
+    // Provera za url adresu
     polje = document.querySelector('#veb_adresa');
     const vebAdresa = polje.value;
 
     if (vebAdresa.substr(0, 7) != 'http://') {
         greska.textContent='Nekorektna vrednost u polju za veb adresu.';
-        return false;
+        polje.focus();
+        ev.preventDefault();
+		return false;
     }
 
-    // Provera za korisničko ime
+    // Provera za korisnicko ime
     polje = document.querySelector('#username');
     const korisnickoIme = polje.value.trim();
+
+    if (korisnickoIme.length < 5) {
+        greska.textContent = 'Korisnicko ime nije dovoljno dugo.';
+        polje.focus();
+        ev.preventDefault();
+        return false;
+    }
 
     const malaSlova = [];
     const velikaSlova = [];
@@ -1294,50 +1438,45 @@ f.addEventListener('submit', function() {
         velikaSlova[i] = String.fromCharCode(65 + i);
     }
 
-    if (korisnickoIme.length < 5) {
-        greska.textContent = 'Korisnicko ime nije dovoljno dugo.';
-        return false;
-    }
-
     for (let i = 0; i < korisnickoIme.length; ++i) {
         const tekuciKarakter = korisnickoIme.charAt(i);
-        
-        if (malaSlova.indexOf(tekuciKarakter) === -1 
-            && velikaSlova.indexOf(tekuciKarakter) === -1) {
+
+        if (malaSlova.indexOf(tekuciKarakter) === -1 && 
+            velikaSlova.indexOf(tekuciKarakter) === -1) {
             greska.textContent = 'Nedozvoljeni karakter u polju za korisnicko ime.';
+            polje.focus();
+            ev.preventDefault();
             return false;
         }
     }
 
-    // Provera za šifru korisnika
+    // Provera za sifru
     polje = document.querySelector('#password');
     const sifra = polje.value.trim();
 
     if (sifra === '') {
         greska.textContent = 'Polje za sifru je obavezno.';
+        polje.focus();
+        ev.preventDefault();
         return false;
     }
 
-    let brojCifara = 0;
-    for (let i = 0; i < sifra.length; ++i) 
-    {
-        const tekuciKarakter = sifra.charAt(i);
-        
-        if ('0123456789'.indexOf(tekuciKarakter) != -1) {
-            ++brojCifara;
-        }
-    }
+    const brojCifara = prebrojCifre(sifra);
 
     if (brojCifara < 2) {
         greska.textContent = 'Polje za sifru mora da sadrzi barem dve cifre.';
+        polje.focus();
+        ev.preventDefault();
         return false;
     }
 
-    // Provera polja za fakultet
+    // Provera za fakultet
     polje = document.querySelector('#fakultet');
 
     if (polje.selectedIndex === 0) {
         greska.textContent = 'Odaberite fakultet.';
+        polje.focus();
+        ev.preventDefault();
         return false;
     }
 
@@ -1346,8 +1485,8 @@ f.addEventListener('submit', function() {
     polje = document.querySelectorAll('input[name="godina"]');
 
     for (let i = 0; i < polje.length; ++i) {
-        const godina = polje[i];
-        
+        let godina = polje[i];
+
         if (godina.checked) {
             indikatorGodine = true;
             break;
@@ -1356,24 +1495,65 @@ f.addEventListener('submit', function() {
 
     if (!indikatorGodine) {
         greska.textContent = 'Godina studija je obavezno polje.';
+        polje.focus();
+        ev.preventDefault();
         return false;
     }
 
-    // Sve provere su prošle uspešno! Pošalji podatke!
+    // Sve validacije su prošle!
     return true;
 });
 
-f.addEventListener('reset', function() {
-	const odgovor = window.confirm('Da li zelite da ponistite unos?');
-	return odgovor;
+f.addEventListener('reset', function(ev) {
+    const treba_resetovati = window.confirm('Da li zelite da ponistite unos?');
+
+    if (!treba_resetovati) {
+        ev.preventDefault();
+        return false;
+    }
+    return true;
+});
+
+
+s.addEventListener('focus', function() {
+    const brojCifara = prebrojCifre(this.value.trim());    
+    // Ukoliko šifra ne ispunjava uslove, prikazujemo poruku. 
+    if (brojCifara < 2) {
+       upozorenje.style.display = 'block';
+    }
+});
+
+s.addEventListener('blur', function() {
+    // Kada element izgubi fokus, sakrivamo poruku.
+    upozorenje.style.display = 'none';
+});
+
+s.addEventListener('change', function() {
+    const brojCifara = prebrojCifre(this.value.trim());
+    // Ukoliko šifra ne ispunjava uslove, 
+    // prikazujemo poruku u obaveštajnom prozoru. 
+    // Poruka se prikazuje nakon što element izgubi fokus, 
+    // ukoliko je vrednost polja izmenjena.
+    if (brojCifara < 2) {
+        window.alert('Šifra mora da sadrži bar dve cifre!');
+    }
+});
+
+s.addEventListener('input', function() {
+    const upozorenje = document.getElementById('upozorenje');
+    const sifra = this.value.trim();
+    const brojCifara = prebrojCifre(sifra);
+    
+    // Ukoliko šifra ne ispunjava uslove, prikazujemo poruku.
+    if (brojCifara < 2) {
+        upozorenje.style.display = 'block';
+    }
+    // Ukoliko je uslov ispunjen, sakrivamo poruku.
+    else {
+        upozorenje.style.display = 'none';
+    }
 });
 ```
-
-Još neki zanimljivi događaji koji se osluškuju nad elementima formulara, a ne nad samim formularom su: 
-- `focus` - određuje akciju koja se primenjuje kada je element u fokusu (npr. mišem smo kliknuli na taj element)
-- `blur` - određuje akciju koja se primenjuje kada element izgubi fokus
-- `change` - određuje akciju koja se primenjuje kada se elementu izmeni vrednost
-- i još mnogo toga, istražite na adresi: [https://developer.mozilla.org/en-US/docs/Web/Events](https://developer.mozilla.org/en-US/docs/Web/Events){:target="_blank"} 
 
 -----
 

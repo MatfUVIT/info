@@ -16,12 +16,6 @@
 
    - Sekcija 1. Asinhrono programiranje 
 
-   - Sekcija 2. Instalacija jQuery biblioteke
-   
-   - Sekcija 3. Osnovna jQuery sintaksa
-
-   - Sekcija 4. jQuery selektori
-
 ## 8.2 Domaći zadaci
 
 #### Zadatak 1
@@ -40,6 +34,15 @@ Napisati HTML datoteku koja sadrži formular dat na narednoj slici
 </div>
 
 Napisati JavaScript kod koji nakon klika na dugme "Izračunaj površinu" izračunava i ispisuje vrednost površine trougla. U slučaju unosa nekorektnih vrednosti, treba ispisati poruku o grešci u obaveštajnom prozoru veb pregledača. Za računanje površine koristiti Heronov obrazac. Formular doterati korišćenjem Bootstrap biblioteke. 
+
+#### Zadatak 4
+Napisati HTML datoteku koja sadrži dva naslova, praznu tabelu i praznu listu. Napisati JavaScript kod koji šalje asinhroni zahtev na [https://codepen.io/chriscoyier/pen/EAIJj.js](https://codepen.io/chriscoyier/pen/EAIJj.js). U slučaju da je sve prošlo bez greške, prikazati podatke iz odgovora u formatu kao na slici:
+
+<div style="max-width: 98%;">
+<img style="max-width: 100%;" src="./Slike/zadatak4.png" alt="">
+</div>
+
+U slučaju neuspešnog zahteva ispisati odgovarajuću poruku.
 
 -----
 
