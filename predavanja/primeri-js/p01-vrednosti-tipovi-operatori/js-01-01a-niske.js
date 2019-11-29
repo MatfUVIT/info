@@ -8,15 +8,15 @@ x = ' Trla baba lan, da joj prođe dan ';
 console.log(x);
 
 /* коришћћење знака \ омогућава да се ниска пружа кроз више редова */
-x = " Trla baba lan, \
-da joj prođe dan ";
+x = ' Trla baba lan, \
+da joj prođe dan ';
 console.log(x);
 
 /* коришћћење знака \ омогућава да се ниска пружа кроз више редова */
-x = " Trla \
+x = ' Trla \
 baba lan, \
 da joj prođe \
-dan ";
+dan ';
 console.log(x);
 
 console.log("---");
@@ -30,5 +30,5 @@ let z = " Trla baba lan,\"\\n\" da joj prođe dan ";
 console.log(z);
 
 /* ниска која садржи секвенцу знакова "\n" */
-z =' Trla baba lan,"\\n" da joj prođe dan ';
+z = ' Trla baba lan,"\\n" da joj prođe dan ';
 console.log(z);
