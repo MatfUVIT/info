@@ -25,7 +25,7 @@ z = "Miki" + x;
 console.log(z);
 
 console.log("---");
-x = 1;
+x = 11;
 
 y = x ? "nije nula": "nula";
 console.log(y);

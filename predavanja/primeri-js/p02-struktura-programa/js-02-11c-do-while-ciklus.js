@@ -1,5 +1,4 @@
 //'use strict'
-// do while ciklus
 let pokusaja = 0;
 do {
     slucajan = Math.random();

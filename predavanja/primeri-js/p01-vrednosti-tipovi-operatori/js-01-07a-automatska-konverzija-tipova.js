@@ -27,7 +27,11 @@ console.log(null == 0);
 console.log(undefined || "Karlo");
 
 // prikazaće Karlo
-console.log("Karlo" || "Korisnik");
+console.log("Karlo" || "Korisnik\
+          \
+          \
+          \
+          ");
 
-
-console.log( 2!= 1 && 4!=3 && 0==4 && 2!=3 )
+console.log(2 != 1 && 4 != 3
+    && 0 == 4 && 2 != 3);

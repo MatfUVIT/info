@@ -9,7 +9,3 @@ console.log(typeof 4);
 // operator typeof primenjen na nisku
 console.log(typeof " x ");
 // Prikazaće: string
-
-// operator promene znaka
-console.log(-(10 - 2));
-// Prikazaće: -8

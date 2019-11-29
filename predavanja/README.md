@@ -176,7 +176,7 @@
 
        1. [Настанак ЈаваСкрипта](tekstovi/JavaScript-Programski-Jezik-Verzije-Stilovi-Kodiranja.md#настанак-јаваскрипта){:target="_blank"}
 
-       1. [Верзије-језика-јаваскрипт](tekstovi/JavaScript-Programski-Jezik-Verzije-Stilovi-Kodiranja.md#настанак-јаваскрипта){:target="_blank"}
+       1. [Верзије језика ЈаваСкрипт](tekstovi/JavaScript-Programski-Jezik-Verzije-Stilovi-Kodiranja.md#верзије-језика-јаваскрипт){:target="_blank"}
 
     1. [Извршавање и дебагирање ЈаваСкрипт програма](tekstovi/JavaScript-Programski-Jezik-Verzije-Stilovi-Kodiranja.md#извршавање-и-дебагирање-јаваскрипт-програма){:target="_blank"}
 
@@ -188,8 +188,6 @@
 
         1. [Дебагирање у веб прегледачу](tekstovi/JavaScript-Programski-Jezik-Verzije-Stilovi-Kodiranja.md#дебагирање-у-веб-прегледачу){:target="_blank"}
 
-    1. [Стилови кŏдирања у језику ЈаваСкрипт](tekstovi/JavaScript-Programski-Jezik-Verzije-Stilovi-Kodiranja.md#стилови-кŏдирања){:target="_blank"}
-
     1. [ЈаваСкрипт окружење за извршавање](tekstovi/JavaScript-Programski-Jezik-Karakteristike-Okruzenje.md#јаваскрипт-окружење-за-извршавање){:target="_blank"}
 
         1. [ЈаваСкрипт машина](tekstovi/JavaScript-Programski-Jezik-Karakteristike-Okruzenje.md#jаваскрипт-машина){:target="_blank"}
@@ -199,6 +197,8 @@
         1. [Ред повратних позива](tekstovi/JavaScript-Programski-Jezik-Karakteristike-Okruzenje.md#ред-повратних-позива){:target="_blank"}
 
         1. [Петља за догађаје](tekstovi/JavaScript-Programski-Jezik-Karakteristike-Okruzenje.md#петља-за-догађаје){:target="_blank"}
+
+    1. [Стилови кŏдирања у језику ЈаваСкрипт](tekstovi/JavaScript-Programski-Jezik-Verzije-Stilovi-Kodiranja.md#стилови-кŏдирања){:target="_blank"}
 
 6. [Структура ЈаваСкрипт програма](tekstovi/JavaScript-Programski-Jezik-Struktura-Programa.md#структура-јаваскрипт-програма){:target="_blank"}
 
@@ -466,7 +466,7 @@
 
         1. [Процесирање захтева и генерисање одговора](tekstovi/JavaScript-Serversko-Programiranje-Koriscenjem-Okruzenja-Node.md#процесирање-захтева-и-генерисање-одговора){:target="_blank"}
 
-        1. [Одређивање путање и ниска-упита](tekstovi/JavaScript-Serversko-Programiranje-Koriscenjem-Okruzenja-Node.md#одређивање-путање-и-ниска-упита){:target="_blank"}
+        1. [Одређивање путање и упита](tekstovi/JavaScript-Serversko-Programiranje-Koriscenjem-Okruzenja-Node.md#одређивање-путање-и-упита){:target="_blank"}
 
         1. [Слање датотека као одговора](tekstovi/JavaScript-Serversko-Programiranje-Koriscenjem-Okruzenja-Node.md#слање-датотека-као-одговора){:target="_blank"}
 
