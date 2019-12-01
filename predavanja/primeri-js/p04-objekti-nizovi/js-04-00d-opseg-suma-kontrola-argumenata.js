@@ -14,16 +14,16 @@ function opseg(start, end, step) {
     if (step < 0) {
         if (start < end)
             return [];
-        var niz = [];
-        for (var i = start; i >= end; i += step)
+        let niz = [];
+        for (let i = start; i >= end; i += step)
             niz.push(i);
         return niz;
     }
 }
 
 function suma(niz) {
-    var suma = 0;
-    for (var i = 0; i < niz.length; i++)
+    let suma = 0;
+    for (let i = 0; i < niz.length; i++)
         suma += niz[i];
     return suma;
 }
