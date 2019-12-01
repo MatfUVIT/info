@@ -1269,7 +1269,6 @@ console.log("Karlo" || "Korisnik");
 
 Следећа секвенца представља смисленији програм.
 
-
 ```js
 // sekvencijalno izvršavanje
 let br = Number("23");
