@@ -1,5 +1,5 @@
 /* 
-Najnapredniji pristup u razvijanju funkcija (sa zatvorenjem)
+Jos napredniji pristup u razvijanju funkcija (sa zatvorenjem)
 
 Prebrojiti pojave slova B i O
 */

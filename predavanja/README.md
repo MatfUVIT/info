@@ -294,6 +294,8 @@
 
         1. [Стек позива за функције](tekstovi/JavaScript-Programski-Jezik-Funkcije-Zatvorenja.md#стек-позива-за-функције){:target="_blank"}
 
+        1. [Рекурзивне функције](tekstovi/JavaScript-Programski-Jezik-Funkcije-Zatvorenja.md#рекурзивне-функције){:target="_blank"}
+
     1. [Ламбда изрази и функције](tekstovi/JavaScript-Programski-Jezik-Funkcije-Zatvorenja.md#ламбда-изрази-и-функције){:target="_blank"}
 
     1. [Затворења за функције](tekstovi/JavaScript-Programski-Jezik-Funkcije-Zatvorenja.md#затворења-за-функције){:target="_blank"}
