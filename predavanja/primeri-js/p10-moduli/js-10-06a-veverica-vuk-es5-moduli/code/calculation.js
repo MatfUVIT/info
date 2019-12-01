@@ -1,4 +1,4 @@
-var journal = [];
+let journal = [];
 
 function addEntry(events, didITurnIntoASquirrel) {
   journal.push({

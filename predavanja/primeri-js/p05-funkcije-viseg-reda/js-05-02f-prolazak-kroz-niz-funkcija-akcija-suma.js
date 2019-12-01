@@ -5,16 +5,18 @@ function zaSvaki(niz, akcija) {
         akcija(niz[i]);
 }
 
-// funkcijska vrednost povecaj pristupa globalnoj promenljivoj sum
-var povecaj =  function(broj) {
+// funkcijski izraz povecaj pristupa globalnoj promenljivoj sum
+const povecaj =  function(broj) {
     sum += broj;
 };
 
+console.log("---");
 // racuna sumu niza brojeva pomoću funkcije zaSvaki
 let sum = 0;
 zaSvaki(nizBrojeva, povecaj);
 console.log(sum);
 
+console.log("---");
 // racuna sumu niza brojeva pomoću funkcije zaSvaki i lambda izraza
 sum = 0;
 zaSvaki(nizBrojeva, (broj)=>sum+=broj);
