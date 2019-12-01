@@ -1,4 +1,4 @@
-const bacanjaUSeriji = 300;
+const ukupnoBacanjaUEksperimentu = 300;
 
 let i = 0;
 let brojPojaveBroja1 = 0;
@@ -33,6 +33,6 @@ do {
             console.log('OVO NE BI SMELO DA SE DESI !!!');
     }
     i++;
-} while (i < bacanjaUSeriji);
-console.log(`Statistika jednog eksperimenta (${bacanjaUSeriji} bacanja u eksperimentu):`);
+} while (i < ukupnoBacanjaUEksperimentu);
+console.log(`Statistika jednog eksperimenta (${ukupnoBacanjaUEksperimentu} bacanja u eksperimentu):`);
 console.log(brojPojaveBroja1, brojPojaveBroja2, brojPojaveBroja3, brojPojaveBroja4, brojPojaveBroja5, brojPojaveBroja6);

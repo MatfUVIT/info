@@ -1,4 +1,4 @@
-const bacanjaUSeriji = 300;
+const ukupnoBacanjaUEksperimentu = 300;
 
 let i = 0;
 let kockaJePalaNa = undefined;
@@ -8,7 +8,7 @@ let brojPojaveBroja3 = 0;
 let brojPojaveBroja4 = 0;
 let brojPojaveBroja5 = 0;
 let brojPojaveBroja6 = 0;
-while (i < bacanjaUSeriji) {
+while (i < ukupnoBacanjaUEksperimentu) {
     kockaJePalaNa = Math.floor(Math.random() * 6 + 1);
     console.log(kockaJePalaNa);
     switch (kockaJePalaNa) {
@@ -35,5 +35,5 @@ while (i < bacanjaUSeriji) {
     }
     i++;
 }
-console.log(`Statistika jednog eksperimenta (${bacanjaUSeriji} bacanja u eksperimentu):`);
+console.log(`Statistika jednog eksperimenta (${ukupnoBacanjaUEksperimentu} bacanja u eksperimentu):`);
 console.log(brojPojaveBroja1, brojPojaveBroja2, brojPojaveBroja3, brojPojaveBroja4, brojPojaveBroja5, brojPojaveBroja6);

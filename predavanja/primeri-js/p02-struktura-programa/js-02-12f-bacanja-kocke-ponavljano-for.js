@@ -1,14 +1,14 @@
-const brojEksperimenata = 10;
-const bacanjaUSeriji = 300;
+const ukupnoEksperimenata = 10;
+const ukupnoBacanjaUEksperimentu = 300;
 
-for (let eksp = 0; eksp < brojEksperimenata; eksp++) {
+for (let eksp = 0; eksp < ukupnoEksperimenata; eksp++) {
     let brojPojaveBroja1 = 0;
     let brojPojaveBroja2 = 0;
     let brojPojaveBroja3 = 0;
     let brojPojaveBroja4 = 0;
     let brojPojaveBroja5 = 0;
     let brojPojaveBroja6 = 0;
-    for (let i = 0; i < bacanjaUSeriji; i++) {
+    for (let i = 0; i < ukupnoBacanjaUEksperimentu; i++) {
         let kockaJePalaNa = Math.ceil(Math.random() * 6);
         //console.log(kockaJePalaNa);
         switch (kockaJePalaNa) {
@@ -34,6 +34,6 @@ for (let eksp = 0; eksp < brojEksperimenata; eksp++) {
                 console.log('OVO NE BI SMELO DA SE DESI !!!');
         }
     }    
-    console.log(`Statistika eksperimenta broj ${eksp+1}, sa ${bacanjaUSeriji} bacanja u eksperimentu:`);
+    console.log(`Statistika eksperimenta broj ${eksp+1}, sa ${ukupnoBacanjaUEksperimentu} bacanja u eksperimentu:`);
     console.log(brojPojaveBroja1, brojPojaveBroja2, brojPojaveBroja3, brojPojaveBroja4, brojPojaveBroja5, brojPojaveBroja6);
 }

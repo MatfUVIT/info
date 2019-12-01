@@ -1,14 +1,14 @@
-var podsetnik = [];
+let podsetnik = [];
 
-function podsetiMe(zadatak) {
+const podsetiMe = function(zadatak) {
     podsetnik.push(zadatak);
 }
 
-function staJeSledece() {
+const staJeSledece = function() {
     return podsetnik.shift();
 }
 
-function hitnoMePodseti(zadatak) {
+const hitnoMePodseti= function(zadatak) {
     podsetnik.unshift(zadatak);
 }
 

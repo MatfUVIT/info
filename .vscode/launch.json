@@ -9,7 +9,7 @@
             "type": "node",
             "request": "launch",
             "name": "Launch Program",
-            "program": "${workspaceFolder}/predavanja/primeri-js/primer-00.js"
+            "program": "${workspaceFolder}/predavanja/primeri-js/p04-objekti-nizovi/js-04-15-globalne-promenljive.js"
         }
     ]
 }
