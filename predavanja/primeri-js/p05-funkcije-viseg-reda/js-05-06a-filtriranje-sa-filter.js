@@ -1,16 +1,16 @@
 /*
 Funkcija za filterisanje niza
 */
-function filter(array, test) {
+const filter = function (niz, uslov) {
     let rez = [];
-    for (let i = 0; i < array.length; i++) {
-        if (test(array[i]))
-            rez.push(array[i]);
+    for (let i = 0; i < niz.length; i++) {
+        if (uslov(niz[i]))
+            rez.push(niz[i]);
     }
     return rez;
 }
 
-var opis = '[{"name":"Emma de Milliano","sex":"f","born":1876,"died":1956,"father":"Petrus de Milliano","mother":"Sophia van Damme"},'
+let opis = '[{"name":"Emma de Milliano","sex":"f","born":1876,"died":1956,"father":"Petrus de Milliano","mother":"Sophia van Damme"},'
     + '{"name": "Maria de Rycke", "sex": "f", "born": 1683, "died": 1724, "father": "Frederik de Rycke", "mother": "Laurentia van Vlaenderen"},'
     + '{"name": "Jan van Brussel", "sex": "m", "born": 1714, "died": 1748, "father": "Jacobus van Brussel", "mother": "Joanna van Rooten"},'
     + '{"name": "Philibert Haverbeke", "sex": "m", "born": 1907, "died": 1997, "father": "Emile Haverbeke", "mother": "Emma de Milliano"},'
@@ -48,11 +48,11 @@ console.log(filter(family, function (person) {
 
 // prikaz ljudi rodjenih izmedju 1900 i 1925     
 console.log(`---`);
-console.log(filter(family, (person) => person.born > 1900 && person.born < 1925));
+console.log(filter(family, person => person.born > 1900 && person.born < 1925));
 
 // prikaz rodjenih izmedju 1900 i 1925     
 console.log(`---`);
-console.log(family.filter((x) => x.born > 1900 && x.born < 1925));
+console.log(family.filter(x => x.born > 1900 && x.born < 1925));
 
 // prikaz muskaraca rodjenih izmedju 1900 i 1925     
 console.log(`---`);

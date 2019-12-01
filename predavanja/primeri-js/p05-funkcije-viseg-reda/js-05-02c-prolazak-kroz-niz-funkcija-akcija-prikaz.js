@@ -1,7 +1,7 @@
 let nizBrojeva = ["Paja Patak", 1, 2, 3, "Miki Maus"];
 
 // opštiji, način, pomoću  povratnog poziva
-function zaSvaki(niz, akcija) {
+const zaSvaki = function (niz, akcija) {
     for (let i = 0; i < niz.length; i++)
         akcija(niz[i]);
 }

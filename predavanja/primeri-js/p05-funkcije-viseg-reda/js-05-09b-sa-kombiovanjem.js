@@ -1,8 +1,8 @@
 /*
 Racunanje proseka godina muskaraca i proseka godina zena uz pomoc kombinovanja 
 */
-let opis = 
-`[ {"name":"Emma de Milliano","sex":"f","born":1876,"died":1956,"father":"Petrus de Milliano","mother":"Sophia van Damme"},
+let opis =
+    `[ {"name":"Emma de Milliano","sex":"f","born":1876,"died":1956,"father":"Petrus de Milliano","mother":"Sophia van Damme"},
    {"name": "Maria de Rycke", "sex": "f", "born": 1683, "died": 1724, "father": "Frederik de Rycke", "mother": "Laurentia van Vlaenderen"},
    {"name": "Jan van Brussel", "sex": "m", "born": 1714, "died": 1748, "father": "Jacobus van Brussel", "mother": "Joanna van Rooten"},
    {"name": "Philibert Haverbeke", "sex": "m", "born": 1907, "died": 1997, "father": "Emile Haverbeke", "mother": "Emma de Milliano"},
@@ -32,16 +32,24 @@ let opis =
 
 let pretci = JSON.parse(opis);
 
-function prosek(niz) {
-    function plus(a, b) { return a + b; }
+const prosek = function (niz) {
+    function plus(a, b) {
+        return a + b;
+    }
     return niz.reduce(plus) / niz.length;
+};
+
+const uzrast = function (p) {
+    return p.died - p.born;
+};
+
+const jeMusko = function(p){
+    return p.sex == "m";
+};
+
+const jeZensko = function (p) {
+    return p.sex == "f";
 }
-
-function uzrast(p) { return p.died - p.born; }
-
-function jeMusko(p) { return p.sex == "m"; }
-
-function jeZensko(p) { return p.sex == "f"; }
 
 console.log(prosek(pretci.filter(jeMusko).map(uzrast)));
 console.log(prosek(pretci.filter(jeZensko).map(uzrast)));

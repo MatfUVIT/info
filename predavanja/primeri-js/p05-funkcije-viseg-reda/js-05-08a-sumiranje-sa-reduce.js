@@ -1,43 +1,43 @@
 
-function reduce(array, combine, start) {
-    let current = start;
-    for (let i = 0; i < array.length; i++)
-        current = combine(current, array[i]);
-    return current;
+const reduce = function (niz, kombinuj, pocetnaVrednost) {
+    let tekucaVrednost = pocetnaVrednost;
+    for (let i = 0; i < niz.length; i++)
+        tekucaVrednost = kombinuj(tekucaVrednost, niz[i]);
+    return tekucaVrednost;
 }
 
-let niz = [2, 4, 3, 1, -5, 12, 7];
+let brojevi = [2, 4, 3, 1, -5, 12, 7];
 
 // prikaz svih clanova niza
 console.log('--- Clanovi niza ---');
-console.log(niz);
+console.log(brojevi);
 
 // odredjivanje sume svih clanova niza
 console.log('--- Suma ---');
-console.log(reduce(niz, function (a, b) {
+console.log(reduce(brojevi, function (a, b) {
     return a + b;
 }, 0));
 
 
 // odredjivanje sume svih clanova niza
 console.log('--- Suma ---');
-console.log(reduce(niz, (a, b) => a + b, 0));
+console.log(reduce(brojevi, (a, b) => a + b, 0));
 
 // odredjivanje sume svih clanova niza pomocu metoda niza
 console.log('--- Suma ---');
-console.log(niz.reduce((a, b) => a + b, 0));
+console.log(brojevi.reduce((a, b) => a + b, 0));
 
 // odredjivanje sume svih pozitivnih clanova niza
 console.log('--- Suma pozitivnih ---');
-console.log(niz.filter(a => a >= 0).reduce((a, b) => a + b, 0));
+console.log(brojevi.filter(a => a >= 0).reduce((a, b) => a + b, 0));
 
 // odredjivanje proizvoda svih clanova niza
 console.log('--- Proizvod ---');
-console.log(reduce(niz, (a, b) => a * b, 1));
+console.log(reduce(brojevi, (a, b) => a * b, 1));
 
 // odredjivanje minimuma svih clanova niza
 console.log('--- Minimum ---');
-console.log(reduce(niz, function (a, b) {
+console.log(reduce(brojevi, function (a, b) {
     if (a < b)
         return a;
     return b;
@@ -45,11 +45,11 @@ console.log(reduce(niz, function (a, b) {
 
 // odredjivanje minimuma svih clanova niza
 console.log('--- Minimum ---');
-console.log(reduce(niz, (a, b) => (a < b) ? a : b, Infinity));
+console.log(reduce(brojevi, (a, b) => (a < b) ? a : b, Infinity));
 
 // odredjivanje maksimuma svih clanova niza
 console.log('--- Maksimum ---');
-console.log(reduce(niz, function (a, b) {
+console.log(reduce(brojevi, function (a, b) {
     if (a > b)
         return a;
     return b;
@@ -57,5 +57,5 @@ console.log(reduce(niz, function (a, b) {
 
 // odredjivanje maksimuma svih clanova niza
 console.log('--- Maksimum ---');
-console.log(reduce(niz, (a, b) => (a > b) ? a : b, -Infinity));
+console.log(reduce(brojevi, (a, b) => (a > b) ? a : b, -Infinity));
 

@@ -1,7 +1,7 @@
 let nizBrojeva = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
-function zaSvaki(niz, akcija) {
-    for (let i = 0; i < niz.length; i++)
+const zaSvaki = function (niz, akcija) {
+    for (let i in niz)
         akcija(niz[i]);
 }
 

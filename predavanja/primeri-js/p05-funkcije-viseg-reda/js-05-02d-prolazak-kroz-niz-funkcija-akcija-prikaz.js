@@ -1,6 +1,6 @@
 let nekiNiz = [1, 2, 3, 4, "mika", "zika"];
 
-function zaSvaki(niz, akcija) {
+let zaSvaki = function (niz, akcija) {
     for (let x of niz)
         akcija(x);
 }

@@ -1,5 +1,5 @@
-function bucna2(f) {
-    return function() {
+const bucna2 = function (f) {
+    return function () {
         console.log("poziv sa argumentima ", arguments);
         return f.apply(null, arguments);
     };

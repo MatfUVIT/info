@@ -1,21 +1,21 @@
 
-function filter(array, test) {
-    let passed = [];
-    for (let i = 0; i < array.length; i++) {
-        if (test(array[i]))
-            passed.push(array[i]);
+const filter = function (niz, uslov) {
+    let ispuniliUslov = [];
+    for (let i = 0; i < niz.length; i++) {
+        if (uslov(niz[i]))
+            ispuniliUslov.push(niz[i]);
     }
-    return passed;
+    return ispuniliUslov;
 }
 
-function map(array, transform) {
-    let mapped = [];
-    for (var i = 0; i < array.length; i++)
-        mapped.push(transform(array[i]));
-    return mapped;
+const map = function (niz, tarnsformacija) {
+    let mapirano = [];
+    for (var i = 0; i < niz.length; i++)
+        mapirano.push(tarnsformacija(niz[i]));
+    return mapirano;
 }
 
-var opis = `[{"name":"Emma de Milliano","sex":"f","born":1876,"died":1956,"father":"Petrus de Milliano","mother":"Sophia van Damme"},
+let opis = `[{"name":"Emma de Milliano","sex":"f","born":1876,"died":1956,"father":"Petrus de Milliano","mother":"Sophia van Damme"},
     {"name": "Maria de Rycke", "sex": "f", "born": 1683, "died": 1724, "father": "Frederik de Rycke", "mother": "Laurentia van Vlaenderen"},
     {"name": "Jan van Brussel", "sex": "m", "born": 1714, "died": 1748, "father": "Jacobus van Brussel", "mother": "Joanna van Rooten"},
     {"name": "Philibert Haverbeke", "sex": "m", "born": 1907, "died": 1997, "father": "Emile Haverbeke", "mother": "Emma de Milliano"}, 
@@ -61,14 +61,14 @@ console.log(map(starijiOd90, function (person) {
 
 // filtriranje tako da se zadrže samo stariji od 70
 console.log('---');
-let starijiOd70 = filter(family, (person) => (person.died - person.born > 70));
+let starijiOd70 = filter(family, person => person.died - person.born > 70);
 console.log(starijiOd70);
 
 // transformisanje starijih od 60 pomoću map
 console.log('---');
-console.log(map(starijiOd70, (person) => (person.name + " " + (person.died - person.born))));
+console.log(map(starijiOd70, person => person.name + " " + (person.died - person.born)));
 
 // filtriranje i transformisanje pomoću metoda niza
 console.log('---');
-console.log(family.filter(x => x.died - x.born > 70).map(x=>x.name + " " + (x.died-x.born)));
+console.log(family.filter(x => x.died - x.born > 70).map(x => x.name + " " + (x.died - x.born)));
 

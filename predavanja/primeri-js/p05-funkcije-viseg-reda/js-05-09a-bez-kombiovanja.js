@@ -30,11 +30,11 @@ var opis = '[{"name":"Emma de Milliano","sex":"f","born":1876,"died":1956,"fathe
     + "{\"name\": \"Lieven Haverbeke\", \"sex\": \"m\", \"born\": 1631, \"died\": 1676, \"father\": \"Pieter Haverbeke\", \"mother\": \"Anna van Hecke\"},"
     + '{"name":"Carolus Haverbeke","sex":"m","born":1832,"died":1905,"father":"Carel Haverbeke","mother":"Maria van Brussel"}]';
 
-var family = JSON.parse(opis);
+let family = JSON.parse(opis);
 
-var min = family[0];
-for (var i = 1; i < family.length; i++) {
-    var cur = family[i];
+let min = family[0];
+for (let i = 1; i < family.length; i++) {
+    let cur = family[i];
     if (cur.born < min.born)
         min = cur;
 }

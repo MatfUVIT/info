@@ -2,11 +2,11 @@
 Funkcije za sumiranje
 */
 
-function reduce(array, combine, start) {
-    var current = start;
-    for (var i = 0; i < array.length; i++)
-        current = combine(current, array[i]);
-    return current;
+const reduce = function (niz, kombinuj, pocetak) {
+    let tekuci = pocetak;
+    for (let i = 0; i < niz.length; i++)
+        tekuci = kombinuj(tekuci, niz[i]);
+    return tekuci;
 }
 
 var opis = '[{"name":"Emma de Milliano","sex":"f","born":1876,"died":1956,"father":"Petrus de Milliano","mother":"Sophia van Damme"},'
@@ -37,9 +37,11 @@ var opis = '[{"name":"Emma de Milliano","sex":"f","born":1876,"died":1956,"fathe
     + "{\"name\": \"Lieven Haverbeke\", \"sex\": \"m\", \"born\": 1631, \"died\": 1676, \"father\": \"Pieter Haverbeke\", \"mother\": \"Anna van Hecke\"},"
     + '{"name":"Carolus Haverbeke","sex":"m","born":1832,"died":1905,"father":"Carel Haverbeke","mother":"Maria van Brussel"}]';
 
-var family = JSON.parse(opis);
+let family = JSON.parse(opis);
 
-console.log(family.reduce(function(min, cur) {
-    if (cur.born < min.born) return cur;
-    else return min;
+console.log(family.reduce(function (min, cur) {
+    if (cur.born < min.born)
+        return cur;
+    else
+        return min;
 }));
