@@ -474,7 +474,7 @@
 
         1. [Мапа садржаја](tekstovi/JavaScript-Programiranje-Na-Serverskoj-Strani-Pomocu-Node.md#мапа-садржаја){:target="_blank"}
 
-    1. [Обрада веб форме](tekstovi/JavaScript-Programiranje-Na-Serverskoj-Strani-Pomocu-Node.md#обрада-веб-форме){:target="_blank"}
+    1. [Обрада веб формулара](tekstovi/JavaScript-Programiranje-Na-Serverskoj-Strani-Pomocu-Node.md#обрада-веб-формулара){:target="_blank"}
 
         1. [Метод GET](tekstovi/JavaScript-Programiranje-Na-Serverskoj-Strani-Pomocu-Node.md#метод-get){:target="_blank"}
 

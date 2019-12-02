@@ -888,7 +888,140 @@ console.log(`Veb server osluskuje zahteve na portu ${port}...\n`);
 
 Мапа садржаја (енгл. content map) код веб сервера је мапа која пресликава путање тј. руте (енгл. route) приспелих захтева у податке на основу којих ће се реализовати генерисање одговора.
 
-### Обрада веб форме
+Ова конструкција је добила име мапа садржаја зато што се обично реализује као мапа (речник) - садржи парове кључ-вредност смештену у стуктуру која је оптимизована за брз приступ вредности преко кључа (хеш табела). Код мапе садржаја кључеви су путање, а вредности су подаци који говоре како генерисати одговор ако је у захтеву била путања која се поклапа са кључем.
+
+**Пример.** Jедноставни веб сервер који приликом обраде захтева и генерисања одговора консултује мапу садржаја.
+
+Целокупан програмски код сервера са налази у датотеци `veb-server.js`.  У овом примеру променљива `contentMap` реферише на мапу садржаја:
+
+```js
+let http = require('http')
+let url = require('url');
+
+http.createServer(onRequest).listen(8888);
+console.log('Server has started');
+
+function onRequest(request, response) {
+  let pathName = url.parse(request.url).pathname;
+  console.log(pathName);
+  prikazStrane(response, pathName);
+}
+
+let contentMap = {
+  '/': '<h1> Dobrodosli na sajt </h1>',
+  '/kontakt': '<h1> Kontaktne informacije </h1>',
+  '/opis': '<h1> Opis sajta </h1>',
+  '/korisnici': '<h1> Spisak korisnika veb sajta </h1>',
+  '/privatno': '<h1> Privatni podaci </h1>'
+}
+
+function prikazStrane(response, pathName) {
+  if (contentMap[pathName]) {
+    response.writeHead(200, { 'Content-Type': 'text/html' });
+    response.write(contentMap[pathName]);
+    response.end();
+  } else {
+    response.writeHead(404, { 'Content-Type': 'text/html' })
+    response.write('404 Page not found');
+    response.end();
+  }
+}
+
+```
+
+Јасно је да ће одговор зависити од путање захтева  - један ће се одговор слати ако је путања `/`, други акоје путања `/kontakt`, а сасвим трећи за путању `/korisnici`... &#9608;
+
+Да би се олакшао развој и одржавање програмаског кода веб сервиса, обично се примењује модуларна организација, како је и описано у ранијем поглављу. Та модуларна организација се може применити и када веб сервис користи мапу садржаја и тада мапа буде издвојена у посебној даотеци.
+
+**Пример.** Сложенији, модуларно организован, веб сервер који приликом обраде захтева и генерисања одговора консултује мапу садржаја.
+
+у овом случају није програмски код сервера сав у једној датотеци, већ је распоређен у више модула. Модули се учитавају помоћу раније описаног CommonJS механизма.  
+
+Полазна тачка за покретање сервера се налази у датотеци `veb-server.js`:
+
+```js
+let http = require('http');
+let url = require('url');
+
+let prikaz = require('./prikaz-strane');
+
+const port = 7000;
+http.createServer(onRequest).listen(port);
+console.log(`Veb server osluskuje zahteve na portu ${port}...\n`);
+
+function onRequest(request, response) {
+  let pathName = url.parse(request.url).pathname;
+  console.log(pathName);
+  prikaz.prikazStrane(response, pathName);
+}
+```
+
+Уочава се да се користи функција `prikazStrane()`, која енкапсулира генерисање одговора. Ова функција је издвојена у посебни модул тј. датотеку `/prikaz-strane.js`,па је потребно, коришћењем `require`, извршити учитавање тог модула (што ће довести до учитавања свих модула од којих он зависи - транизитивно).  
+
+Датотека `/prikaz-strane.js` садржи следећи ЈаваСкрипт програмски код:
+
+```js
+let s = require('./sadrzaj');
+
+function prikazStrane(response, pathName) {
+    if (s.sadrzaj[pathName]) {
+      response.writeHead(200, { 'Content-Type': 'text/html' });
+      response.write(s.sadrzaj[pathName]);
+      response.end();
+    } else {
+      response.writeHead(404, { 'Content-Type': 'text/html' })
+      response.write('404 Page not found');
+      response.end();
+    }
+  }
+  
+  exports.prikazStrane = prikazStrane;
+```
+
+Приликом извршавања функције, консултује се мапа садржаја дефинисана у модулу `sadrzaj`, па је потребно на почетку извршити увоз тог модула. Датотека `sadrzaj.js` има следећи облик:
+
+```js
+let contentMap = {
+    '/': '<h1> Dobrodosli na sajt </h1>',
+    '/kontakt': '<h1> Kontaktne informacije </h1>',
+    '/opis': '<h1> Opis sajta </h1>',
+    '/korisnici': '<h1> Spisak korisnika veb sajta </h1>',
+    '/privatno': '<h1> Privatni podaci </h1>'
+  }
+
+  exports.sadrzaj = contentMap;
+```
+
+Уочава се да је променљива `contentMap` извезена под називом `sadrzaj`, тако да ће приступ тој променљивој из спољашњости ићи преко `sadrzaj`, а не преко `contentMap`. &#9608;
+
+### Обрада веб формулара
+
+Протокол HTTP допушта да се, поред различитих путања, веб серверу од стране корисника прослеђују и додатни подаци који могу утицати на ток и исход обраде захтева. Елементи HTML страна који омогућавају да се такве додатне информације проследе серверу се обично налазе у оквиру елемента `<form>`. Веб страна која кориснику омогућава да унесе нека податке и проследи их према веб серверу се назива веб формулар (енгл. web form).
+
+**Пример.** Илустрација веб формулара.
+
+Веб формулар из примера који према серверу прослеђује два текстовна податка који представљају име и адресу електронске поште.
+
+```html
+<html>
+
+<body>
+
+  <form action="/pozdrav" method="get">
+        Ime:
+        <input type="text" name="ime">
+        <br> E-mail:
+        <input type="text" name="email">
+        <br>
+        <input type="submit" value="Dobro dosli!">
+    </form>
+
+</body>
+
+</html>
+```
+
+Уочавамо да се оквиру елемента `<form>` налазе елементи `<input>`, који у зависности од њихове функционалнссти могу имати различите вредности атрибута `type`. АКо је вредност овог атрибута `text`, онда се ради о текстуалном пољу, а ако је вредност `submit` онда се ради о дугмету чијим притиском корисник иницира слање унесених података према серверу. &#9608;
 
 #### Метод GET
 
