@@ -854,7 +854,39 @@ upit:    sestric1=raja&sestric2=gaja
 
 #### Слање датотека као одговора
 
+**Пример.** Jедноставни веб сервер који приликом обраде захтева консултује систем датотека на серверу у покушају да нађе захтевани ресурс.
+
+Као и у претходним примерима, програмски код сервера са налази у датотеци `veb-server.js`:
+
+```js
+t http = require('http');
+let url = require('url');
+let fs = require('fs');
+
+const port = 7000;
+http.createServer(function (zahtev, odgovro) {
+    pathName = url.parse(zahtev.url).pathname;
+    fs.readFile(__dirname + pathName, function (err, data) {
+        if (err) {
+            odgovro.writeHead(404, { 'Content-type': 'text/plan' });
+            odgovro.write(`Page Was Not Found 
+            ${JSON.stringify(err)}`);
+            odgovro.end();
+        } else {
+            odgovro.writeHead(200);
+            odgovro.write(data);
+            odgovro.end();
+        }
+    });
+} ).listen(port);
+console.log(`Veb server osluskuje zahteve na portu ${port}...\n`);
+```
+
+Било који ресурс (HTML датотека, слика, PDF документ и сл.) који се налази у директоријуму у ком се `veb-server.js` или  неком његовом поддиректоријуму ће бити приступачан из веб прегледача - само треба навести путању до тог ресурса у адресној линији. &#9608;
+
 #### Мапа садржаја
+
+Мапа садржаја (енгл. content map) код веб сервера је мапа која пресликава путање тј. руте (енгл. route) приспелих захтева у податке на основу којих ће се реализовати генерисање одговора.
 
 ### Обрада веб форме
 
