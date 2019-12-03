@@ -312,7 +312,7 @@ I u jQuery biblioteci su dostupni različiti događaji koje korisnik može da in
 | `click` | `keypress` | `submit` | `load` |
 | `dblclick` | `keydown` | `change` | `resize` |
 | `mouseenter` | `keyup` | `focus` | `scroll` |
-| `mouseleave` | `blur` | `unload`|
+| `mouseleave` | | `blur` | `unload`|
 
 Većina DOM metoda sa kojima smo se upoznali ima svoj jQuery-ekvivalentan metod. Da bismo pridružili metod događaju `click`, dovoljno je proslediti metod odgovarajućoj jQuery metodi kao argument:
 
@@ -519,7 +519,7 @@ $('button').click(function(){
 
 u kojem se prvo pomera `div` element udesno, pa tek onda se uvećava veličina teksta.
 
-jQuery() `stop` metod se koristi za zaustavljanje animacije pre nego što se završi. Metod `stop` radi za sve jQuery metode koji implementiraju neki efekat, pa i za slajdere, prelaze i korisničko animiranje. Sintaksa poziva ovog metoda je
+jQuery metod `stop` se koristi za zaustavljanje animacije pre nego što se završi. Metod `stop` radi za sve jQuery metode koji implementiraju neki efekat, pa i za slajdere, prelaze i korisničko animiranje. Sintaksa poziva ovog metoda je
 
 ```js
 $(selector).stop(stopAll, goToEnd);

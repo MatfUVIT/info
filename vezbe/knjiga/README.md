@@ -205,7 +205,7 @@ Autori:
 
 ## Deo 4 - Programiranje serverskih veb aplikacija
 
-### Poglavlje 7. Node.js i Express.js
+### [Poglavlje 7. Node.js i Express.js](./Poglavlja/NodeJS/README.md){:target="_blank"}
 
 ### Poglavlje 8. MongoDB baza podataka i Mongoose.js ORM
 
