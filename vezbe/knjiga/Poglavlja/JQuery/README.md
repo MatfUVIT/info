@@ -545,7 +545,7 @@ $('button').click(function(){
 });
 ```
 
-Naredni primer ne koristi funkciju povratnog poziva u telu funkcije-argumenta za `click}, pa će se prozorčić prikazati pre nego što je efekat sakrivanja završen, što je nekorektno:
+Naredni primer ne koristi funkciju povratnog poziva u telu funkcije-argumenta za `click`, pa će se prozorčić prikazati pre nego što je efekat sakrivanja završen, što je nekorektno:
 
 ```js
 $('button').click(function(){
@@ -684,7 +684,7 @@ function afterText() {
 Da bismo obrisali stari sadržaj, možemo koristiti:
 
 
--  `remove(content)` - briše selektovani element kao i svu njegovu decu
+-  `remove(selector)` - briše selektovani element kao i svu njegovu decu
 -  `empty()` - briše svu decu selektovanog elementa
 
 
