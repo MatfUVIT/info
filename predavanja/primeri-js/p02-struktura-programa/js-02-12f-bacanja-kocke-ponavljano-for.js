@@ -1,5 +1,5 @@
 const ukupnoEksperimenata = 10;
-const ukupnoBacanjaUEksperimentu = 300;
+const ukupnoBacanjaUEksperimentu = 120;
 
 for (let eksp = 0; eksp < ukupnoEksperimenata; eksp++) {
     let brojPojaveBroja1 = 0;

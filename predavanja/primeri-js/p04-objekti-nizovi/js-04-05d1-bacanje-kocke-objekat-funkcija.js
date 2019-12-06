@@ -1,3 +1,4 @@
+'use strict'
 const ukupnoEksperimenata = 15;
 const ukupnoBacanjaUEksperimentu = 100;
 
@@ -21,27 +22,36 @@ for (let eksp = 0; eksp < ukupnoEksperimenata; eksp++) {
 }
 
 function azurirajStatistiku(ishod, statistika) {
+    let br1 = statistika.broj1;
+    let br2 = statistika.broj2;
+    let br3 = statistika.broj3;
+    let br4 = statistika.broj4;
+    let br5 = statistika.broj5;
+    let br6 = statistika.broj6;
     switch (ishod) {
         case 1:
-            statistika.broj1++;
+            br1++;
             break;
         case 2:
-            statistika.broj2++;
+            br2++;
             break;
         case 3:
-            statistika.broj3++;
+            br3++;
             break;
         case 4:
-            statistika.broj4++;
+            br4++;
             break;
         case 5:
-            statistika.broj5++;
+            br5++;
             break;
         case 6:
-            statistika.broj6++;
+            br6++;
             break;
         default:
             console.log("OVO NE BI SMELO DA SE DESI !!!");
     }
-    return statistika;
+    return {
+        broj1: br1, broj2: br2, broj3: br3,
+        broj4: br4, broj5: br5, broj6: br6
+    };
 }

@@ -1,4 +1,4 @@
-let nizBrojeva = ["Paja Patak", 1, 2, 3, "Miki Maus"];
+let nizSvacega = ["Paja Patak", 1, 2, 3, "Miki Maus"];
 
 // opštiji, način, pomoću  povratnog poziva
 const zaSvaki = function (niz, akcija) {

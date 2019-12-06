@@ -43,7 +43,7 @@ const uzrast = function (p) {
     return p.died - p.born;
 };
 
-const jeMusko = function(p){
+const jeMusko = function (p) {
     return p.sex == "m";
 };
 
@@ -51,5 +51,14 @@ const jeZensko = function (p) {
     return p.sex == "f";
 }
 
-console.log(prosek(pretci.filter(jeMusko).map(uzrast)));
-console.log(prosek(pretci.filter(jeZensko).map(uzrast)));
+console.log(
+    prosek(pretci
+        .filter(jeMusko)
+        .filter(x => x.born >= 1700 && x.born < 1800)
+        .map(uzrast)));
+
+console.log(
+    prosek(pretci
+        .filter(jeZensko)
+        .filter(x => x.born >= 1700 && x.born < 1800)
+        .map(uzrast)));

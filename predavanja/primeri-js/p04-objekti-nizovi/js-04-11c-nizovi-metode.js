@@ -15,5 +15,5 @@ const ukloni = function (niz, indeks) {
         .concat(niz.slice(indeks + 1));
 }
 
-// prikazuje [' a ' , ' b ' , ' d ' , ' e ']
 console.log(ukloni([' a ', ' b ', ' c ', ' d ', ' e '], 2));
+// prikazuje [' a ' , ' b ' , ' d ' , ' e ']

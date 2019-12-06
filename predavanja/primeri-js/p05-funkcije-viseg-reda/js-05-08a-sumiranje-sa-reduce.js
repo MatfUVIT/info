@@ -14,9 +14,10 @@ console.log(brojevi);
 
 // odredjivanje sume svih clanova niza
 console.log('--- Suma ---');
-console.log(reduce(brojevi, function (a, b) {
-    return a + b;
-}, 0));
+console.log(reduce(brojevi,
+    function (a, b) {
+        return a + b;
+    }, 0));
 
 
 // odredjivanje sume svih clanova niza
@@ -29,7 +30,10 @@ console.log(brojevi.reduce((a, b) => a + b, 0));
 
 // odredjivanje sume svih pozitivnih clanova niza
 console.log('--- Suma pozitivnih ---');
-console.log(brojevi.filter(a => a >= 0).reduce((a, b) => a + b, 0));
+console.log(
+    brojevi
+        .filter(a => a >= 0)
+        .reduce((a, b) => a + b, 0));
 
 // odredjivanje proizvoda svih clanova niza
 console.log('--- Proizvod ---');

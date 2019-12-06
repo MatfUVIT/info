@@ -4,7 +4,7 @@ Funkcija koja modifikuje funkciju
 const bucna = function (f) {
     return function (arg) {
         console.log("poziv sa argumentom ", arg);
-        var val = f(arg);
+        let val = f(arg);
         console.log("pozvana sa argumentom ", arg, " - rezultat ", val);
         return val;
     };

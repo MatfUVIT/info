@@ -10,7 +10,7 @@ const filter = function (niz, uslov) {
 
 const map = function (niz, tarnsformacija) {
     let mapirano = [];
-    for (var i = 0; i < niz.length; i++)
+    for (let i = 0; i < niz.length; i++)
         mapirano.push(tarnsformacija(niz[i]));
     return mapirano;
 }
@@ -64,11 +64,14 @@ console.log('---');
 let starijiOd70 = filter(family, person => person.died - person.born > 70);
 console.log(starijiOd70);
 
-// transformisanje starijih od 60 pomoću map
+// transformisanje starijih od 70 pomoću map
 console.log('---');
 console.log(map(starijiOd70, person => person.name + " " + (person.died - person.born)));
 
 // filtriranje i transformisanje pomoću metoda niza
 console.log('---');
-console.log(family.filter(x => x.died - x.born > 70).map(x => x.name + " " + (x.died - x.born)));
+console.log(
+    family
+        .filter(x => x.died - x.born > 70)
+        .map(x => x.name + " " + (x.died - x.born)));
 

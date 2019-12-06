@@ -17,6 +17,7 @@ for (let eksp = 0; eksp < ukupnoEksperimenata; eksp++) {
     console.log(brojPojaveBroja1, brojPojaveBroja2, brojPojaveBroja3, brojPojaveBroja4, brojPojaveBroja5, brojPojaveBroja6);
 }
 
+
 function sracunajStatistikuBocniEfekat(rezultat) {
     switch (rezultat) {
         case 1:

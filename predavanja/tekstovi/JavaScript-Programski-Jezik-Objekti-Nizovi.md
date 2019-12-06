@@ -10,13 +10,13 @@
 **Пример.** Поређење објеката:
 
 ```js
-var object1 = {
+let  object1 = {
     value: 10
 };
 
-var object2 = object1;
+let object2 = object1;
 
-var object3 = {
+let object3 = {
     value: 10
 };
 

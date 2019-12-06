@@ -42,8 +42,8 @@ let family = JSON.parse(opis);
 
 // prikaz ljudi rodjenih izmedju 1900 i 1925     
 console.log(`---`);
-console.log(filter(family, function (person) {
-    return person.born > 1900 && person.born < 1925;
+console.log(filter(family, function (neko) {
+    return neko.born > 1900 && neko.born < 1925;
 }));
 
 // prikaz ljudi rodjenih izmedju 1900 i 1925     
@@ -63,3 +63,17 @@ console.log(filter(family, function (person) {
 // prikaz muskaraca rodjenih izmedju 1900 i 1925     
 console.log(`---`);
 console.log(family.filter(person => person.sex == 'm' && person.born > 1900 && person.born < 1925));
+
+// prikaz muskaraca rodjenih izmedju 1900 i 1925     
+console.log(`---`);
+console.log(family
+    .filter(x => x.born > 1900 && x.born < 1925)
+    .filter(x=> x.sex== 'm'));
+
+// prikaz muskaraca rodjenih izmedju 1900 i 1925     
+console.log(`---`);
+console.log(family
+    .filter(x => x.born > 1900)
+    .filter(z => z.born < 1925)
+    .filter(x=> x.sex== 'm')
+);
