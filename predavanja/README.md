@@ -342,7 +342,7 @@
 
     1. [Повезивање функција при позиву](tekstovi/JavaScript-Programski-Jezik-Funkcije-Viseg-Reda.md#повезивање-функција-при-позиву){:target="_blank"}
 
-    1. [Мапирање и редукција помоћу функција вишег реда](Jtekstovi/JavaScript-Programski-Jezik-Funkcije-Viseg-Reda.md#мапирање-и-редукција-помоћу-функција-вишег-реда){:target="_blank"}
+    1. [Мапирање и редукција помоћу функција вишег реда](tekstovi/JavaScript-Programski-Jezik-Funkcije-Viseg-Reda.md#мапирање-и-редукција-помоћу-функција-вишег-реда){:target="_blank"}
 
     - [Примери](https://github.com/MatfUVIT/UVIT/tree/master/predavanja/primeri-js/p05-funkcije-viseg-reda){:target="_blank"}
 
