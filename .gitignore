@@ -11,6 +11,7 @@
 
 # Ignorisanje svih node_modules direktorijuma za Node.js projekte
 node_modules/
+package-lock.json
 
 # Ignorisanje ostalih datoteka
 /predavanja/html-kostur.html
