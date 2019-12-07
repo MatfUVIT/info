@@ -1,12 +1,12 @@
 let students = [
-    { username: 'mi13050', password: 'veb', name: 'Nikola', major: 'Computer Science' },
+    { username: 'mi10050', password: 'veb', name: 'Marija', major: 'Computer Science' },
     { username: 'mr85050', password: 'vis', name: 'Jovana', major: 'Probability and Statistics' },
     { username: 'mi84050', password: 'profesor', name: 'Milica', major: 'Professor of Mathematics and Computer Science' },
 ];
 
-module.exports.getStudent = function (studentUsername) {
+module.exports.getStudent = function (studentUsername, studentPassword) {
     for (let student of students) {
-        if (student.username === studentUsername) {
+        if (student.username === studentUsername && student.password === studentPassword) {
             return student;
         }
     }
@@ -32,6 +32,7 @@ module.exports.deleteStudent = function (studentUsername) {
         }
     }
 
-    // Removing the i-th student in the array
-    students = students.splice(0, i).concat(students.splice(i+1, students.length - (i+1)));
+    const beforeI = students.splice(0, i);
+    const afterI = students.splice(i+1, students.length - (i+1));
+    students = beforeI.concat(afterI);
 }

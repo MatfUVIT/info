@@ -5,11 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
     <% if (student !== null) { %>
     <title>Dobrodošli <%= student.username %>!</title>
     <% } else { %>
     <title>Nepoznat student ili pogrešna lozinka!</title>
-    <% }; %>
+    <% } %>
+    
     <link rel="stylesheet" type="text/css" href="/css/main.css" />
     <link rel="stylesheet" type="text/css"
         href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
@@ -31,10 +33,10 @@
             // We want to create a row for each information about the student.
             // The informations are the keys in "student" object,
             // which is why we use for-in loop instead of for-of loop.
-            for (let key in student) { 
+            for (const key in student) { 
             %>
             <tr>
-                <% // Each row had two data: the name of the key and the value of the key %>
+                <% // Each row has two data: the name of the key and the value of the key %>
                 <td>
                     <%= key %>
                 <td>

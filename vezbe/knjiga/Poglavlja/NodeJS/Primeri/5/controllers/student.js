@@ -1,7 +1,7 @@
-const studentModel = require('../models/student');
+const models = require('../models/student');
 
 module.exports.displayStudent = function (req, res, next) {
-    const studentObject = studentModel.getStudent(req.body.username);
+    const studentObject = models.getStudent(req.body.username, req.body.password);
 
     return res.render('student.ejs', {
         student: studentObject
@@ -9,13 +9,13 @@ module.exports.displayStudent = function (req, res, next) {
 };
 
 module.exports.updateStudent = function (req, res, next) {
-    studentModel.changeStudentInfo(req.body);
+    models.changeStudentInfo(req.body);
     
     return next();
 };
 
 module.exports.deleteStudent = function (req, res, next) {
-    studentModel.deleteStudent(req.body.username);
+    models.deleteStudent(req.body.username);
     
     return res.redirect('/');
 };

@@ -9,7 +9,7 @@
         <title>Dobrodošli <%= student.username %>!</title>
     <% } else { %>
         <title>Nepoznat student!</title>
-    <% }; %>
+    <% } %>
     <link rel="stylesheet" type="text/css" href="css/main.css" />
     <link rel="stylesheet" type="text/css"
         href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
@@ -27,7 +27,7 @@
 
             <h3>Informacije:</h3>
             <table class="table">
-            <% for (let key in student) { %>
+            <% for (const key in student) { %>
                 <tr>
                     <td><%= key %><td>
                     <td><%= student[key] %><td>
@@ -36,7 +36,7 @@
             </table>
         <% } else { %>
             <h1>Ne postoje informacije za unetog studenta!</h1>
-        <% }; %>
+        <% } %>
     </main>
 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
