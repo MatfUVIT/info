@@ -4,19 +4,19 @@
 const express = require('express');
 
 // Custom modules
-const studentsRoutes = require('../controllers/students');
+const controllers = require('../controllers/student');
 
 // Global data
 const router = express.Router();
 
 // Module implementation
 router.post('/', 
-    studentsRoutes.displayStudent);
+    controllers.displayStudent);
 router.post('/update', 
-    studentsRoutes.updateStudent,
-    studentsRoutes.displayStudent);
+    controllers.updateStudent,
+    controllers.displayStudent);
 router.post('/delete', 
-    studentsRoutes.deleteStudent);
+    controllers.deleteStudent);
 
 // Module exports
 module.exports = router;

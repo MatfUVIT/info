@@ -4,7 +4,7 @@
 const express = require('express');
 
 // Custom modules
-const systemRoutes = require('../controllers/system');
+const controllers = require('../controllers/index');
 
 // Global data
 const router = express.Router();
@@ -12,7 +12,8 @@ const router = express.Router();
 // Module implementation
 
 // Implements GET request on /
-router.get('/', systemRoutes.login);
+router.get('/', 
+    controllers.login);
 
 // Module exports
 module.exports = router;

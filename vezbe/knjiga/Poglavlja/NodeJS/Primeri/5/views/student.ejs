@@ -5,11 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
     <% if (student !== null) { %>
     <title>Dobrodošli <%= student.username %>!</title>
     <% } else { %>
     <title>Nepoznat student ili pogrešna lozinka!</title>
-    <% }; %>
+    <% } %>
+
     <link rel="stylesheet" type="text/css" href="/css/main.css" />
     <link rel="stylesheet" type="text/css"
         href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
@@ -28,7 +30,7 @@
         <h3>Informacije:</h3>
         <table class="table">
             <% 
-            for (let key in student) { 
+            for (const key in student) { 
             %>
                 <tr>
                     <td>
@@ -95,7 +97,7 @@
         </div>
         <% } else { %>
         <h1>Ne postoje informacije za unetog studenta<br>ili ste uneli neispravnu lozinku!</h1>
-        <% }; %>
+        <% } %>
     </main>
 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>

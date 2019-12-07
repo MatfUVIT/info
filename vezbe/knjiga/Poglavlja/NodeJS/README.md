@@ -70,7 +70,7 @@ const server = http.createServer();
 Da bismo pokrenuli serversku aplikaciju, potrebno je da definišemo broj porta na kojem će biti pokrenuta. U našim aplikacijama, koristićemo broj porta 3000. Zatim je potrebno nad objektom servera pozvati metod `listen` kojem prosleđujemo broj porta:
 
 ```js
-// Creating the server and running it on port 300
+// Creating the server and running it on port 3000
 const port = 3000
 server.listen(port);
 ```
@@ -146,6 +146,789 @@ const express = require('express');
 
 const app = express();
 ```
+
+### 7.3.1. Rutiranje i funkcije srednjeg sloja
+
+_Rutiranje_ (engl. _routing_) predstavlja način na koji serverska aplikacija opslužuje klijentski zahtev. Da bismo implementirali operaciju koju server treba da preduzme da bi obradio klijentski zahtev, nad express aplikacijom pozivamo odgovarajuće funkcije. 
+
+Klijentski HTTP zahtev na serveru prolazi kroz niz _funkcija srednjeg sloja_ (engl. _midleware_), pri čemu svaka od njih implementira neku akciju koja se izvršava na serveru. To mogu biti:
+
+- Dohvatanje statičkih dokumenata
+- Generisanje dinamičkih dokumenata
+- Baratanje podacima iz baza podataka
+- Upravljanje sesijom
+- Upravljanje kolačićima
+- ...
+
+Funkcija srednjeg sloja ima informacije o [objektu klijentskog zahteva](https://expressjs.com/en/4x/api.html#req){:target="_blank"} (`req`), [objektu serverskog odgovora](https://expressjs.com/en/4x/api.html#res){:target="_blank"} (`res`) i narednoj funkciji srednjeg sloja koja može biti pozvana po završetku tekuće funkcije srednjeg sloja, tj. naredne funkcije srednjeg sloja u ciklusu zahteva-odgovora (`next`). U opštem slučaju, operacije koje funkcije srednjeg sloja mogu implementirati mogu potpadati pod naredne kategorije:
+
+- Izvršavanje proizvoljnog koda
+- Izmena objekta klijentskog zahteva ili objekta serverskog odgovora
+- Zavr\vsavanje ciklusa zahteva-odgovora
+- Poziv naredne funkcije srednjeg sloja iz steka funkcija
+
+Postoje različiti nivoi na kojima možemo definisati funkcije srednjeg sloja:
+
+- Nivo aplikacije: funkcije srednjeg sloja se definišu u okviru express aplikacije. Na primer, ako treba da obradimo zahtev `GET`, onda ćemo koristiti metod `app.get()`. Slično, za obradu zahteva `POST`, koristimo metod `app.post()`. Ukoliko neka operacija treba da se obradi nad svim zahtevima, onda koristimo metod `app.use()`. Na primer:
+
+```js
+const app = express();
+app.use(function (req, res, next) {
+  // Obrada zahteva ide ovde
+};
+```
+
+Ovi metodi mogu uzimati i dva argumenta, pri čemu je prvi argument putanja zadata niskom. Korišćenjem ove varijante će se funkcija srednjeg sloja izvršiti onda kada se relativna URL putanja poklopi sa datom putanjom. Na primer, naredna funkcija srednjeg sloja će biti izvršena samo ako je zahtev upućen ka URL adresi `http://localhost:3000/studenti`:
+
+```js
+const app = express();
+app.use('/studenti', function (req, res, next) {
+  // Obrada zahteva ide ovde
+};
+```
+
+- Nivo objekta za rutiranje: kreira se objekat za rutiranje i funkcije srednjeg sloja se vezuju za njega. Na primer:
+
+```js
+const router = express.Router();
+router.use(function (req, res, next) {
+  // Obrada zahteva ide ovde
+};
+```
+
+- Nivo obrade gresaka: funkcije srednjeg sloja će biti pozvane ukoliko dođe do grešaka pri izvršavanju serverskih aplikacije. Greške mogu podrazumevati sintaksne greške u kodu, neobrađene izuzetke, i dr. Specijalno za ovaj nivo obrade grešaka važi da funkcije srednjeg sloja prihvataju 4 argumenta, pri čemu je prvi argument objekat greške (`err`), a preostala tri su opisani objekti `req`, `res` i `next`.
+
+```js
+app.use(function (err, req, res, next) {
+  // Obrada gresaka ide ovde
+});
+```
+
+- Nivo ugrađenih funkcija srednjeg sloja: Korišćenje funkcija srednjeg sloja koje su dostupne uz paket express. Primer takve funkcije srednjeg sloja je `express.static` koja se koristi za isporučivanje statičkih dokumenata.
+
+- Nivo _softvera od strane trećih lica_ (engl. _third-party software_): Ove funkcije srednjeg sloja su implementirane od strane raznih drugih proizvođača. Pakete koji ih implementiraju je potrebno prvo instalirati, pa zatim učitati i koristiti. Primer je paket `body-parser` koji implementira funkcije srednjeg sloja `urlencoded` i `json`:
+
+```js
+const {urlencoded, json} = require('body-parser');
+
+app.use(urlencoded({extended: false}));
+app.use(json());
+```
+
+Nastavimo dalje sa implementacijom naše aplikacije. U našem direktorijumu projekta je potrebno da napravimo direktorijum `views/` koji će sadržati `index.html` i `404.html` datoteke koje klijentska aplikacija (veb pregledač) treba da prikaže. Takođe, potrebno je da kreiramo `main.css` i `404.css` datoteke koje će stilizovati prikaz kao na slikama. Njih ćemo smestiti u direktorijum `public/css/`.
+
+Započnimo prvo implementaciju početne stranice. U tu svrhu, kreirajmo direktorijum `routes/` koji će sadržati implementacije objekata za rutiranje. Ovo radimo zbog toga što želimo da implementacije zahteva nad nekim stranicama budu vidljivi samo tim stranicama. U tom direktorijumu napravimo datoteku `index.js` sa narednom definicijom:
+
+```js
+const path = require('path');
+const express = require('express');
+
+const router = express.Router();
+
+router.get('/', function (req, res, next) {
+    res.sendFile(path.join(__dirname, '..', 'views', 'index.html'));
+});
+
+module.exports = router;
+```
+
+Kao što vidimo, implementiraćemo `GET` zahtev nad putanjom `/`. S obzirom da se ove putanje razmatraju u odnosu na objekat za rutiranje, a ne u odnosu na koreni URL serverske aplikacije, potrebno je prilikom korišćenja objekta za rutiranje u express aplikaciji navesti putanju nad kojom će se putanje u objektu za rutiranje razrešiti. Na primer, ako imamo putanju
+
+```
+http://localhost:3000/studenti/info
+```
+
+onda ćemo u express aplikaciji koristiti objekat za rutiranje na sledeći način:
+
+```js
+const studentRoutes = require('./routes/student');
+app.use('/studenti', studentRoutes);
+```
+
+dok smo objekat za rutiranje napravili u datoteci `routes/student.js` na sledeći način:
+
+```js
+const express = require('express');
+
+const router = express.Router();
+router.get('/info', function (req, res, next) {
+  // Obrada zahteva ide ovde
+});
+
+module.exports = router;
+```
+
+Metod `res.sendFile()` će zatvoriti ciklus zahteva-odgovora i poslati statički dokument koji se nalazi na lokaciji koja se prosleđuje kao argument metoda. U tu svrhu koristimo metod `path.join()` da bismo konstruisali putanju do odgovarajuće datoteke.
+
+Implementirani objekat za rutiranje ćemo u `app.js` datoteci koristiti na sledeći način:
+
+```js
+// ...
+const indexRoutes = require('./routes/index');
+// ...
+app.use('/', indexRoutes);
+// ...
+```
+
+Ukoliko korisnik ode na bilo koju drugu adresu, potrebno mu je prikazati datoteku `404.html` i prijaviti status odgovora `404`. U datoteci `app.js` dodajemo funkciju srednjeg sloja koja to implementira:
+
+```js
+app.use(function (req, res, next) {
+    res.status(404).sendFile(path.join(__dirname, 'views', '404.html'));
+});
+```
+
+### 7.3.2. Isporučivanje statičkih resursa
+
+Međutim, ako bismo sad pokrenuli serversku aplikaciju i prikazali bilo početnu stranicu bilo stranicu za grešku, videli bismo da nam nedostaju stilovi. 
+
+Prisetimo se da svaki put kada veb pregledač naiđe na neki resurs u HTML kodu koji zahteva dohvatanje dokumenta, na primer, adresu slike u atributu `src` elementa `img` ili adresa spoljnih kaskadnih listova u atributu `href` elementa `link`, veb pregledač šalje novi HTTP `GET` zahtev ka tim resursima. Međutim, nigde nismo naveli u kodu serverske aplikacije šta se dešava ukoliko veb pregledač pošalje zahtev za ove resurse.
+
+Da bismo rešili ovaj problem, potrebno je da kažemo serverskoj aplikaciji da se ti dokumenti isporučuju _statički_ (engl. _static_), odnosno, da se ti dokumenti isporučuju sa fajl sistema. Ovo se može izvesti pozivanjem ugrađene funkcije srednjeg sloja `express.static()`:
+
+```js
+app.use(express.static(path.join(__dirname, 'public')));
+```
+
+Argument ovog metoda je putanja do direktorijuma u kojem se nalaze datoteke koje se isporučuju statički. Kada veb pregledač zatraži neki od tih resursa, express aplikacija pokuša da ga pronađe u fajl sistemu. Ukoliko uspe, ciklus zahteva-odgovora se završava i datoteka se isporučuje. U suprotnom, express aplikacija će proslediti zahtev narednoj funkciji srednjeg sloja.
+
+Naravno, metod `express.static()` je poželjno upotrebiti pre implementiranja funkcija srednjeg sloja koje opslužuju druge zahteve.
+
+Celokupno rešenje je dato na [ovoj adresi](https://github.com/MatfUVIT/UVIT/tree/master/vezbe/knjiga/Poglavlja/NodeJS/Primeri/1){:target="_blank"}.
+
+Pre nego što pređemo na konstruisanje nešto složenijih serverskih aplikacija, dopunimo našu aplikaciju tako da na početnoj stranici `http://localhost:3000/` bude prikaz kao na narednoj slici:
+
+![](./Slike/2.1.png)
+
+Nakon što se student uloguje svojim korisničkim imenom i lozinkom, biće prosleđen na adresu `http://localhost:3000/student?username=mi10050&password=lozinka`. Stranica treba da izgleda kao na narednoj slici:
+
+![](./Slike/2.2.png)
+
+Primetimo da ovo znači da formular koristi `GET` zahtev za slanje podataka (što je navedeno u atributu `method` formulara) na adresu `http://localhost:3000/student` (što je navedeno u atributu `action` formulara). Podaci koji se šalju su očigledno vidljivi u URL-u, što nije dobra praksa ukoliko su podaci osetljivog tipa, ali za sada se fokusiramo da naučimo razne elemente kreiranja serverskih aplikacija.
+
+Očigledno, da bismo ovo ponašanje implementirali, potrebno je da promenimo datoteku `views/index.html` i da dodamo novu datoteku `views/student.html`, koja će biti poslata klijentu kada pošalje `GET` zahtev na adresu `http://localhost:3000/student`. Napomenimo da smo implementirali i validaciju ovog formulara u datoteci `public/js/index.js` koju smo uključili u datoteku `views/index.html`.
+
+Naravno, potrebno je i da implementiramo obradu ovog zahteva na serveru. Međutim, ovo je jednostavno uraditi s obzirom da je implementacija, za sada, identična implementaciji zahteva za početnu stranicu, tako da ćemo samo prikazati kod u datoteci `routes/student.js`:
+
+```js
+const path = require('path');
+const express = require('express');
+
+const router = express.Router();
+
+router.get('/', function (req, res, next) {
+    res.sendFile(path.join(__dirname, '..', 'views', 'student.html'));
+});
+
+module.exports = router;
+```
+
+Ne zaboravimo da dopunimo datoteku `app.js` da registruje implementiranu funkciju srednjeg sloja za dati objekat za rutiranje:
+
+```js
+// ...
+const studentRoutes = require('./routes/student');
+// ...
+app.use('/student', studentRoutes);
+// ...
+```
+
+Celokupno rešenje je dato na [ovoj adresi](https://github.com/MatfUVIT/UVIT/tree/master/vezbe/knjiga/Poglavlja/NodeJS/Primeri/2){:target="_blank"}.
+
+### 7.3.3. Isporučivanje dinamičkih resursa
+
+Uspeli smo da povežemo dve stranice naše aplikacije - početnu stranicu i stranicu sa informacijama o prijavljenom studentu. Takođe smo uspeli da pošaljemo podatke sa jedne stranice na drugu i to je dobar napredak. Međutim, podaci koji se šalju sa početne stranice nisu nigde vidljivi na stranici sa informacijama, osim u adresnoj liniji veb pregledača. Mi bismo želeli da unapredimo našu aplikaciju tako da podaci budu prikazani na stranici, na primer, u vidu tabele kao na narednoj slici:
+
+![](./Slike/3.1.png)
+
+Sa druge strane, ukoliko korisničko ime ne postoji, potrebno je prikazati poruku kao na narednoj slici:
+
+![](./Slike/3.2.png)
+
+Poslati podaci se nalaze kao deo URL putanje i mi ih možemo dohvatiti kroz objekat klijentskog zahteva `req`, koji se prosleđuje kao prvi parametar funkcije srednjeg sloja, koja implementira obradu zahteva. Naime, ovaj objekat sadrži svojstvo `query` koje predstavlja objekat čiji su ključevi nazivi podataka prosleđenih `GET` zahtevom, a vrednosti tih ključeva su odgovarajuće vrednosti tih podataka. Tako bismo informaciju o korisničkom imenu mogli dohvatiti jednostavnim čitanjem vrednosti `req.query.username`.
+
+Međutim, ovde nailazimo na (privremenu) prepreku. Iako u funkciji srednjeg sloja možemo dohvatiti ove podatke, mi ih ne možemo prikazati na stranici. To se objašnjava time da mi klijentu šaljemo `student.html` datoteku kao takvu, odnosno, u kojoj je sadržaj već oformljen statički. Svaki put kad zahtevamo taj dokument, naša serverska aplikacija ga isporučuje kao datoteku pozivom metoda `res.sendFile()`.
+
+Zbog toga, da bismo rešili ovaj problem, potrebno je da naša aplikacija dinamički generiše HTML dokument koji će poslati veb pregledaču za prikazivanje. Jedan način jeste da ručno generišemo nisku koja će sadržati ovaj HTML kod. Međutim, mnogo pristupačniji način jeste da koristimo _mašine za rad nad šablonima_ (engl. _template engine_). Postoji mnogo vrsta, a mi ćemo koristiti _EJS_.
+
+[Embedded JavaScript templating](https://ejs.co/){:target="_blank"} (skr. _EJS_) predstavlja mašinu za rad nad šablonima koja je dovoljno jednostavna za razumevanje, a dovoljno moćna da generiše najrazličitije HTML dokumente. Mi ćemo samo koristiti elementarne elemente ove biblioteke, a čitaocima se savetuje da se samostalno upuste u dokumentaciju. Prvo je potrebno da instaliramo odgovarajući paket u našem projektu:
+
+```shell
+npm install ejs
+```
+
+Nakon instaliranja paketa, potrebno je da obavestimo _Express_ radni okvir o tome da želimo da koristimo upravo ovu mašinu za rad nad šablonima, kao i da navedemo direktorijum u kojem će se nalaziti šabloni koji će biti korišćeni za generisanje HTML dokumenata. Nakon kreiranja _Express_ aplikacije u `app.js` datoteci, potrebno je navesti naredne dve linije:
+
+```js
+// ...
+const app = express();
+
+app.set('view engine', 'ejs');
+app.set('views', 'views/');
+// ...
+```
+
+EJS koristi identičnu sintaksu kao i svaki drugi HTML dokument. Drugim rečima, moguće je koristiti EJS za generisanje dinamičkog HTML dokumenta tako što u šablonu navedemo samo HTML kod i on će generisati upravo taj HTML kod. Na primer, naredni HTML kod ilustruje početnu stranicu bez korišćenja šablona koji smo koristili u datoteci `views/index.html`:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Studentski sistem</title>
+
+    <link rel="stylesheet" type="text/css" href="/css/main.css" />
+    <link rel="stylesheet" type="text/css"
+        href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+</head>
+
+<body>
+    <header>
+        <nav>
+            <a href="/">Početna</a>
+        </nav>
+    </header>
+    <main>
+        <h1>Studentski sistem</h1>
+
+        <form id="getForm" action="/student" method="GET">
+            <div class="form-group">
+                <label for="username" class="form-label">Korisničko ime</label>
+                <input type="text" id="username" name="username" class="form-control">
+            </div>
+
+            <div class="form-group">
+                <label for="password" class="form-label">Lozinka</label>
+                <input type="password" id="password" name="password" class="form-control">
+            </div>
+
+            <input type="submit" value="Uloguj se na sistem" class="btn btn-primary">
+        </form>
+    </main>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="/js/index.js"></script>
+</body>
+
+</html>
+```
+
+dok je kod koji koristi šablon dat u datoteci `views/index.ejs`:
+
+```js
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Studentski sistem</title>
+
+    <link rel="stylesheet" type="text/css" href="/css/main.css" />
+    <link rel="stylesheet" type="text/css"
+        href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+</head>
+
+<body>
+    <header>
+        <nav>
+            <a href="/">Početna</a>
+        </nav>
+    </header>
+    <main>
+        <h1>Studentski sistem</h1>
+
+        <form id="getForm" action="/student" method="GET">
+            <div class="form-group">
+                <label for="username" class="form-label">Korisničko ime</label>
+                <input type="text" id="username" name="username" class="form-control">
+            </div>
+
+            <div class="form-group">
+                <label for="password" class="form-label">Lozinka</label>
+                <input type="password" id="password" name="password" class="form-control">
+            </div>
+
+            <input type="submit" value="Uloguj se na sistem" class="btn btn-primary">
+        </form>
+    </main>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="/js/index.js"></script>
+</body>
+
+</html>
+```
+
+Da bismo iskoristili ovaj šablon, potrebno je da promenimo definiciju funkcije srednjeg sloja da ne koristi datoteku `views/index.html`, već da iskoristi šablon `views/index.ejs` za generisanje dinamičke HTML datoteke koja će biti prosleđena klijentu. Ovo se radi pozivom metoda `res.render()` kojem prosleđujemo datoteku šablona. U datoteci `routes/index.js` koristimo taj metod na naredni način:
+
+```js
+router.get('/', function (req, res, next) {
+    res.render('index.ejs');
+});
+```
+
+S obzirom da smo prethodno postavili putanju direktorijuma u kome se nalaze šabloni, onda nije potrebno navoditi apsolutnu putanju do šablona, već relativnu u odnosu na taj direktorijum.
+
+Međutim, puna moć EJS mašine za rad nad šablonima dolazi upravo iz nove sintakse koja se ugnežđava u HTML kod da bi se na tom mestu u kodu dinamički generisali fragmenti HTML koda na osnovu nekih izračunavanja, podataka i dr. Na primer, neka je šablonu na raspolaganju objekat `student` koji sadrži svojstvo `username` koje predstavlja korisničko ime prijavljenog studenta. Ako bismo želeli da proverimo da li je ovo svojstvo postavljeno i da ga iskoristimo za postavljanje metanaslova dokumenta, to možemo uraditi na sledeći način:
+
+```js
+<% if (student !== null) { %>
+    <title>Dobrodošli <%= student.username %>!</title>
+<% } else { %>
+    <title>Nepoznat student!</title>
+<% } %>
+```
+
+Ovde vidimo dva šablonska elementa:
+
+1. Sve što se navede između `<%=` i `%>` biće izračunato kao izraz i konvertovano u nisku koja će se prikazati na tom mestu u kodu. Prilikom obrađivanja narednog dela koda od strane EJS mašine za rad nad šablonima
+
+```js
+<title>Dobrodošli <%= student.username %>!</title>
+```
+
+biće pristupljeno vrednosti `student.username`, ta vrednost će se konvertovati u nisku (ukoliko to već nije) i biće ugnežđena na tom mestu u kodu. Na primer, ako je vrednost izraza `student.username` jednaka niski `'mi10050'`, onda će generisani HTML kod izgledati:
+
+```html
+<title>Dobrodošli mi10050!</title>
+```
+
+{:start="2"}
+2. Između _skriptovskih elemenata_ (engl. _scriplet tag_) `<%` i `%>` možemo navoditi (gotovo potpuno) proizvoljnu JavaScript akciju, kao što su kontrole toka, petlje i sl. Na primer, deo šablona:
+
+```js
+<% for (let i = 0; i < 5; ++i) { %>
+    <p>Paragraf teksta</p>
+<% } %>
+```
+
+generisaće naredni HTML kod:
+
+```html
+<p>Paragraf teksta</p>
+<p>Paragraf teksta</p>
+<p>Paragraf teksta</p>
+<p>Paragraf teksta</p>
+<p>Paragraf teksta</p>
+```
+
+Primetimo da smo morali da zatvorimo vitičastu zagradu u trećoj liniji prethodnog dela šablona, takođe korišćenjem skriptovskih elemenata.
+
+Napomenimo i veoma važnu činjenicu da šabloni "žive" samo u okruženju serverske Node.js aplikacije. Nakon što se on šablona generiše HTML kod, tako generisan HTML kod se prosleđuje klijentskoj aplikaciji i ona nema informaciju o izvornom kodu na osnovu kojeg je generisan taj HTML kod.
+
+Dajmo ceo kod šablona koji ćemo koristiti za prikaz informacija o prijavljenom studentu na stranici `http://localhost:3000/student`:
+
+```js
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <% if (student !== null) { %>
+        <title>Dobrodošli <%= student.username %>!</title>
+    <% } else { %>
+        <title>Nepoznat student!</title>
+    <% } %>
+
+    <link rel="stylesheet" type="text/css" href="css/main.css" />
+    <link rel="stylesheet" type="text/css"
+        href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+</head>
+
+<body>
+    <header>
+        <nav>
+            <a href="/">Izloguj se iz sistema</a>
+        </nav>
+    </header>
+    <main>
+        <% if (student !== null) { %>
+            <h1>Studentska stranica za studenta <%= student.username %></h1>
+
+            <h3>Informacije:</h3>
+            <table class="table">
+            <% for (let key in student) { %>
+                <tr>
+                    <td><%= key %><td>
+                    <td><%= student[key] %><td>
+                </tr>
+            <% } %>
+            </table>
+        <% } else { %>
+            <h1>Ne postoje informacije za unetog studenta!</h1>
+        <% } %>
+    </main>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+</body>
+
+</html>
+```
+
+Ono što nam je preostalo da razjasnimo jeste odakle EJS mašina dobija vrednosti koje koristi u šablonima. Konrektno, odakle dolaze informacije o objektu `student` u prethodnom šablonu? Pogledajmo izmenjenu definiciju datoteke `routes/student.js`:
+
+```js
+const express = require('express');
+
+const router = express.Router();
+
+const students = [
+    { username: 'mi10050', name: 'Marija', major: 'Computer Science' },
+    { username: 'mr85050', name: 'Jovana', major: 'Probability and Statistics' },
+    { username: 'mi84050', name: 'Milica', major: 'Professor of Mathematics and Computer Science' },
+];
+
+router.get('/', function (req, res, next) {
+    let studentObject = null;
+    for (let student of students) {
+        if (student.username === req.query.username) {
+            studentObject = student;
+        }
+    }
+
+    res.render('student.ejs', {
+        student: studentObject
+    });
+});
+
+module.exports = router;
+```
+
+Prvo što primećujemo jeste da smo obogatili našu informaciju sa informacijama o nekim studentima kroz niz `students`. Ovaj niz, s obzirom da je definisan na nivou celog paketa koji implementira datoteka `routes/index.js`, postoji tokom životnog veka cele Node.js aplikacije. Ovaj niz možemo koristiti za dohvatanje postojećih ili upisivanje novih informacija, i svaki put kada obrađujemo klijentski zahtev, biće nam na raspolaganju. Naravno, ukoliko se Node.js aplikacija ugasi, sve izmene nad njim će biti izgubljene. Ovaj problem ćemo rešiti skladištenjem podataka u bazi podataka, ali o tome će biti više reči u narednom poglavlju, tako da za sada moramo biti zadovoljni ovim pristupom.
+
+Funkcija srednjeg sloja koja implementira `GET` zahtev nad adresom `http://localhost:3000/student` prvo prolazi kroz niz `students` i pokušava da pronađe studenta čije je korisničko ime prosleđeno kroz taj `GET` zahtev. Ukoliko ne uspe da pronađe, biće korišćena podrazumevana vrednost `null`, što i jeste u skladu sa našim šablonom koji se koristi za generisanje odgovora na ovaj klijentski zahtev.
+
+Na kraju definicije te funkcije primećujemo nešto izmenjeni poziv metoda `res.render()`:
+
+```js
+res.render('student.ejs', {
+    student: studentObject
+});
+```
+
+Kao što vidimo, ovom metodu možemo kao drugi argument proslediti objekat i upravo će informacije iz ovog objekta biti prosleđene EJS mašini. EJS mašina će, prilikom generisanja HTML dokumenata, koristiti ove prosleđene informacije. 
+
+Celokupno rešenje je dato na [ovoj adresi](https://github.com/MatfUVIT/UVIT/tree/master/vezbe/knjiga/Poglavlja/NodeJS/Primeri/3){:target="_blank"}.
+
+### 7.3.4. Arhitektura "Model-Pogled-Kontroler"
+
+U narednoj verziji naše aplikacije želimo da implementiramo mogućnost da studenti, nakon uspešnog prijavljivanja na sistem, mogu da vrše izmenu podataka. Takođe, želimo da omogućimo da podaci budu obrisani. Stranica nakon prijavljivanja na sistem treba da izgleda kao na narednoj slici. 
+
+![](./Slike/4.1.png)
+
+Dodatno, potrebno je izmeniti HTTP metode koji se koriste u formularima na `POST` metod, s obzirom da vršimo slanje lozinki, koje ne bi trebalo biti vidljive u adresnoj liniji veb pregledača. Ovo je jednostavnije uraditi, tako da ćemo se prvo fokusirati na to.
+
+Da bismo koristili `POST` metode umesto `GET` metoda, prvo je neophodno izmeniti EJS šablone tako da svi formulari imaju atribut `action="POST"`. Takođe, odgovarajuće funkcije srednjeg sloja će biti registrovane pomoću `router.post()` metoda, umesto `router.get()`. Međutim, ovo nije dovoljno da bi naša aplikacija radila.
+
+Prisetimo se da, kad smo podatke slali pomoću `GET` metoda, oni su se slali kroz URL zahteva i bili automatski parsirani od strane _Express_ radnog okvira. Tim podacima smo pristupali kroz `req.query` objekat u funkcijama srednjeg sloja. Međutim, kada se podaci šalju pomoću `POST` metoda, ti podaci se šalju kroz telo zahteva. _Express_ aplikacije ne podržavaju automatsko parsiranje tela HTTP zahteva.
+
+Na sreću, dostupan nam je paket `body-parser` koji radi upravo to. Da bismo ga koristili potrebno je za početak da ga instaliramo kao deo naše Node.js aplikacije:
+
+```shell
+npm install body-parser
+```
+
+Nakon toga, u datoteci `app.js`, potrebno je prvo da ga učitamo kao i svaki drugi JavaScript modul:
+
+```js
+// ...
+const bodyParser = require('body-parser');
+// ...
+```
+
+a zatim je potrebno iskoristiti odgovarajuću funkciju srednjeg sloja koja je definisana u tom paketu i to pre svih ostalih obrada zahteva:
+
+```js
+// ...
+app.use(bodyParser.urlencoded({extended: false}));
+// ...
+```
+
+Nakon dodavanja ove funkcije srednjeg sloja, u objektu klijentskog zahteva `req` biće nam dostupno svojstvo `body` koje će sadržati parsirane informacije iz tela HTTP zahteva. Tako ćemo, na primer, podatku čije je ime `username` moći da pristupimo izračunavanjem izraza `req.body.username`.
+
+Ovaj paket definiše razne funkcije srednjeg sloja koji parsiraju razne formate u kojima su zapisala tela HTTP zahteva. Kada se podaci šalju putem formulara, podrazumevani format je `x-www-form-urlencoded`, koji će biti parsiran funkcijom srednjeg sloja `urlencoded`. Više o toj funkciji srednjeg sloja, kao i o ostalim, može se pronaći na [ovoj adresi](https://github.com/expressjs/body-parser#api){:target="_blank"}.
+
+Pređimo sada na važnu diskusiju o razvoju veb aplikacija.
+
+U teoriji razvoja softvera, jedan koncept koji ima veoma važne praktične posledice na sam proces razvoja softvera predstavlja _arhitektura_ (engl. _architecture_) aplikacije koju razvijamo. Arhitektura koda se odnosi na organizaciju koda u logičke celine, odnosno, module[^1]. U netrivijalnim aplikacijama, arhitektura aplikacije je podjednako važna kao i kvalitet koda koji pišemo. Ako nemamo dobru organizaciju koda, imaćemo veliki broj problema kako aplikacija raste. Zbog toga se savesni razvijači softvera opredeljuju za neku od dobro poznatih arhitektura koda već na samom početku razvoja.
+
+[^1]: Ne mešati _module_ kao delove aplikacija i JavaScript _module_.
+
+U razvoju veb aplikacija jedna arhitektura se pokazala kao veoma moćna[^2] zbog svojih kvalitetnih osobina. U pitanju je arhitektura koja je poznata pod nazivom _Model-Pogled-Kontroler_, skr. _MPK_ (engl. _Model-View-Controller_, skr. _MVC_). Sav kod se deli u tri sloja koji učestvuju u nazivu ove arhitekture:
+
+- _Model_ predstavlja deo aplikacije koji upravlja podacima ili izvodi operacije koje su povezane sa nekakvim podacima koje naša aplikacija koristi. Na primer, kod koji se povezuje na bazu podataka da dohvati podatke iz nje predstavlja deo modela.
+
+- _Pogled_ predstavlja deo aplikacije koja implementira sve ono što korisnik vidi. Na primer, kod koji generiše HTML dokument koji će biti poslat korisniku predstavlja deo pogleda.
+
+- _Kontroler_ predstavlja deo aplikacije koja povezuje model i pogled. Ovaj deo implementira poslovnu logiku koja, na osnovu aktivnosti koje korisnik izvrši u pogledu, diktira operacije koje će biti izvršene u modelu. Slično, kontroler pristupa modelu da bi dohvatio podatke koje će biti prikazane u pogledu.
+
+[^2]: Iako je zapravo nastala kao arhitektura za desktop aplikacije sa grafičkim korisničkim okruženjem.
+
+Naredna slika ilustruje interakciju između svake od ovih komponenti:
+
+![](./Slike/mvc.png)
+
+Naredna slika ilustruje tok korisničkog zahteva u MPK arhitekturi:
+
+![](./Slike/mvc-request-response.png)
+
+Neke od osobina MPK arhitekture su:
+
+- Jednostavnost razumevanja i implementacije
+- Jasna podela odgovornosti pri modularnosti koda
+- Povećana skalabilnost (mogućnost brzog razvoja u slučaju dodavanja novih komponenti u aplikaciji)
+- Svaki deo tima zna tačno na kom delu koda radi
+- Jednostavnije testiranje koda u odnosu na tradicionalne pristupe
+- Jednostavnije menjanje koda u slučaju prelaska na druge tehnologije (na primer, prelazak sa MongoDB baze podataka na IBM DB2 bazu podataka)
+- ...
+
+#### Implementacija pogleda
+
+Ako bismo pogledali kakvo je trenutno stanje naše aplikacije, videli bismo da smo kod koji generiše prikaz koji korisnik vidi i sa kojim interaguje, jasno odvojili u EJS šablone koje smo smestili u direktorijum `views/`. Razvijači softvera čiji bi zadatak bio da rade na prikazu informacija bi bilo jasno nad kojim delom naše aplikacije bi oni operisali.
+
+#### Implementacija kontrolera
+
+Što se tiče kontrolera i modela, situacija kreće da se magli. Za sada imamo direktorijum `routes/` u kojem se za svaku logičku URL stranicu kojoj korisnik pristupa (na primer, `http://localhost:3000/` i `http://localhost:3000/student`) nalazi po jedna datoteka koja izvršava naredne operacije:
+
+- Rutiranje zahteva ka ispravnoj funkciji srednjeg sloja
+- Implementira logiku koju je potrebno izvršiti za obradu zahteva
+- Definiše operacije koje je potrebno vršiti nad podacima
+- Upravlja podacima
+- Koristi rezultate operacija nad podacima da bi definisala odgovore sa servera
+
+Sve ove operacije se izvršavaju zajedno i ispretpletano. Umesto toga, bolje bi bilo razdvojiti kod koji upravlja poslovnom logikom i operacije nad podacima u zasebne delove. Drugim rečima, potrebno je da razdvojimo kod na kontrolere i modele.
+
+U tu svrhu, direktorijum `routes/` će sadržati JavaScript module čiji će zadatak biti da definišu objekte za rutiranje koji će pozivati odgovarajuće kontrolere. Ovo je jednostavniji deo implementacije, tako da prikažimo samo kod.
+
+Datoteka `routes/index.js`:
+
+```js
+const express = require('express');
+const controllers = require('../controllers/index');
+
+const router = express.Router();
+
+router.get('/', 
+    controllers.login);
+
+module.exports = router;
+```
+
+Datoteka `routes/student.js`:
+
+```js
+const express = require('express');
+const controllers = require('../controllers/student');
+
+const router = express.Router();
+
+router.post('/', 
+    controllers.displayStudent);
+    
+router.post('/update', 
+    controllers.updateStudent, 
+    controllers.displayStudent);
+
+router.post('/delete', 
+    controllers.deleteStudent);
+
+module.exports = router;
+```
+
+Prilikom čitanja ovog koda, svakome ko radi na razvoju serverske aplikacije je jasno šta će biti izvršeno prilikom obrade svakog od HTTP zahteva koji se upućuje serveru. Neko ko želi da isprati obradu, na primer, `POST` zahteva nad URL-om `http://localhost:3000/student/update`, jedino što treba da uradi jeste da pogleda definicije funkcija srednjeg sloja `updateStudent` i `displayStudent` iz JavaScript modula `controllers/student.js`. Time se i sama pažnja razvijača softvera fokusira na samo ono što je tom razvijaču neophodno, bez potrebe za tumačenjem koda i "pogađanjem" JavaScript modula u kojem se nalazi kod koji izvršava operacije od značaja.
+
+Napomenimo da, kao cilj ove verzije aplikacije, pored implementacije novih zahteva i ažuriranja starih, biće uvođenje kontrolera u arhitekturu koda. Nakon što završimo sa implementacijom zahteva u ovoj verziji aplikacije, tek tada ćemo dalje razdvojiti kod uvođenjem modela. Sada možemo da nastavimo dalje.
+
+Implementacija kontrolera za početnu stranicu je i dalje jednostavna. Sve što kontroler treba da uradi jeste da definiše funkciju srednjeg sloja koja prikazuje početnu stranicu:
+
+Datoteka `controllers/index.js`:
+
+```js
+module.exports.login = function (req, res, next) {
+    res.render('index.ejs');
+};
+```
+
+Kontroler za stranicu sa informacijama o prijavljenom studentu je nešto složeniji, tako da ćemo prvo prikazati njegovu definiciju, pa ćemo diskutovati o njegovim elementima, redom:
+
+```js
+let students = [
+    { username: 'mi10050', password: 'veb', name: 'Marija', major: 'Computer Science' },
+    { username: 'mr85050', password: 'vis', name: 'Jovana', major: 'Probability and Statistics' },
+    { username: 'mi84050', password: 'profesor', name: 'Milica', major: 'Professor of Mathematics and Computer Science' },
+];
+
+module.exports.displayStudent = function (req, res, next) {
+    // Searching for a student in the array
+    for (let studentElement of students) {
+        // If we find the student with the given username,
+        // check if the passwords match.
+        // If they do, render the student.ejs page,
+        // with the student data
+        if (studentElement.username === req.body.username && studentElement.password === req.body.password) {
+            return res.render('student.ejs', {
+                student: studentElement
+            });
+        }
+    }
+
+    // If we get here, that means that we could not find the student,
+    // so render the student page with NULL data
+    return res.render('student.ejs', {
+        student: null
+    });
+};
+
+module.exports.updateStudent = function (req, res, next) {
+    // Find the student by the username,
+    // and update its data
+    for (let studentElement of students) {
+        if (studentElement.username === req.body.username) {
+            studentElement.name = req.body.name;
+            studentElement.major = req.body.major;
+            studentElement.password = req.body.password;
+        }
+    }
+
+    // Call the next middleware
+    next();
+};
+
+module.exports.deleteStudent = function (req, res, next) {
+    // Find the index i of the student we want to delete
+    let i = -1;
+    for (i = 0; i < students.length; ++i) {
+        if (students[i].username === req.body.username) {
+            // We found the index i
+            break;
+        }
+    }
+
+    // Removing the i-th student in the array
+    const beforeI = students.splice(0, i);
+    const afterI = students.splice(i+1, students.length - (i+1));
+    students = beforeI.concat(afterI);
+
+    // Redirect to the index page
+    return res.redirect('/');
+};
+```
+
+Prvo što vidimo jeste da smo podatke izmestili iz modula koji se tiču rutiranja zahteva u modul koji implementira kontrolere. Uz prethodnu napomenu, za sada ćemo se zadovoljiti time, ali, naravno, taj deo aplikacije predstavlja model, te bi trebalo i on da bude izdvojen, ali o tom potom.
+
+Sama definicija kontrolera se sastoji od tri funkcije srednjeg sloja:
+
+- Funkcija `displayStudent` pronalazi studenta iz niza i proverava da li se lozinke poklapaju. Primetimo da se ovoga puta informacije iz HTTP klijentskog zahteva dohvataju iz `req.body` umesto iz `req.query` kao što je to bio slučaj ranije. Razlog za ovu izmenu je taj što smo rekli da se prijavljivanje sada vrši pomoću `POST` HTTP zahteva umesto `GET`, tako da se podaci sada šalju kroz telo zahteva umesto kroz URL zahteva. Ukoliko je student pronađen, biće prikazana stranica generisana EJS šablonom `views/student.ejs` pri čemu će podatak `student` u tom šablonu predstavljati odgovarajućeg studenta. U suprotnom, biće prikazana ista stranica bez informacija o studentu.
+
+- Funkcija `updateStudent` pronalazi studenta čije je korisničko ime prosleđeno kroz telo zahteva i ažurira informacije za tog studenta ostalim podacima iz tela zahteva. Nakon toga, funkcija poziva narednu funkciju srednjeg sloja. Kao što vidimo, ova funkcija ne vrši nikakvo slanje odgovora klijentu, što znači da se očekuje da će prilikom registrovanja ove funkcije, biti registrovana još jedna funkcija srednjeg sloja koja će biti pozvana nakon nje. Ako se vratimo na definiciju JavaScript modula `routes/student.js`, primetićemo da smo ovo upravo i uradili - nakon ažuriranja informacija o studentu, server ponovo prikazuje informacije koristeći funkciju srednjeg sloja `displayStudent`:
+
+```js
+// ...
+router.post('/update', 
+    controllers.updateStudent, 
+    controllers.displayStudent);
+// ...
+```
+
+- Funkcija `deleteStudent` pronalazi indeks studenta koji će biti obrisan, briše objekat studenta koji se nalazi na pronađenom indeksu i vrši _preusmeravanje zahteva_ (engl. _redirection_) na početnu stranicu (čime se postiže efekat kao da se prethodno prijavljeni student odjavio sa sistema).
+
+Celokupno rešenje je dato na [ovoj adresi](https://github.com/MatfUVIT/UVIT/tree/master/vezbe/knjiga/Poglavlja/NodeJS/Primeri/4){:target="_blank"}.
+
+#### Implementacija modela
+
+U prethodnoj verziji aplikacije, uspešno smo razdvojili kod za rutiranje zahteva i kod koji implementira logiku naše aplikacije i radi nad podacima. Taj kod smo smestili u kontrolere i tada smo napomenuli da ovo nije dovoljno dobro moduliran kod da bi se mogao svrstati u MPK arhitekturu. Potrebno je dodatno "razbiti" kod koji se trenutno nalazi u kontrolerima.
+
+U tu svrhu, definišimo operacije koje je potrebno da kontroleri izvršavaju:
+
+- Pristupaju podacima iz HTTP klijentskih zahteva
+- Pozivaju operacije koje se vrše na nivou modela
+- Pripremaju ili šalju HTTP serverske odgovore 
+
+Kontroler koji upravlja početnom stranicom radi upravo to, tako da on ostaje nepromenjen. Kontroleri koji upravljaju stranicama za studente treba izmeniti. Nova implementacija ovih kontrolera je data u nastavku:
+
+Datoteka `controllers/student.js`:
+
+```js
+const models = require('../models/student');
+
+module.exports.displayStudent = function (req, res, next) {
+    const studentObject = models.getStudent(req.body.username, req.body.password);
+
+    return res.render('student.ejs', {
+        student: studentObject
+    });
+};
+
+module.exports.updateStudent = function (req, res, next) {
+    models.changeStudentInfo(req.body);
+    
+    return next();
+};
+
+module.exports.deleteStudent = function (req, res, next) {
+    models.deleteStudent(req.body.username);
+    
+    return res.redirect('/');
+};
+```
+
+Kao što vidimo, nigde u kontrolerima ne postoji kod koji direktno upravlja podacima. Ovim smo obezbedili da kontroleri rade samo onaj posao koji je njihov, a da se sve operacije nad podacima prepuštaju modelu.
+
+S obzirom da početna stranica ne upravlja nikakvim podacima, model je potrebno definisati samo za stranice o studentima. Taj model će sadržati informacije o podacima koji se koriste, kao i operacije koje su definisane nad tim podacima:
+
+Datoteka `models/student.js`:
+
+```js
+let students = [
+    { username: 'mi10050', password: 'veb', name: 'Marija', major: 'Computer Science' },
+    { username: 'mr85050', password: 'vis', name: 'Jovana', major: 'Probability and Statistics' },
+    { username: 'mi84050', password: 'profesor', name: 'Milica', major: 'Professor of Mathematics and Computer Science' },
+];
+
+module.exports.getStudent = function (studentUsername, studentPassword) {
+    for (let student of students) {
+        if (student.username === studentUsername && student.password === studentPassword) {
+            return student;
+        }
+    }
+
+    return null;
+};
+
+module.exports.changeStudentInfo = function (searchStudent) {
+    for (let student of students) {
+        if (student.username === searchStudent.username) {
+            student.name = searchStudent.name;
+            student.major = searchStudent.major;
+            student.password = searchStudent.password;
+        }
+    }
+};
+
+module.exports.deleteStudent = function (studentUsername) {
+    let i = -1;
+    for (i = 0; i < students.length; ++i) {
+        if (students[i].username === studentUsername) {
+            break;
+        }
+    }
+
+    const beforeI = students.splice(0, i);
+    const afterI = students.splice(i+1, students.length - (i+1));
+    students = beforeI.concat(afterI);
+}
+```
+
+Kao što kontroler više ne radi posao modela, tako ni model ne treba da radi posao kontrolera. Sav kod koji se nalazi u modelu je vezan isključivo za rad nad nizom studenata. 
+
+Time smo kompletirali veb aplikaciju napisanu u duhu MPK arhitekture. U narednom poglavlju ćemo ovu aplikaciju dalje proširiti tako da se podaci smeštaju u bazu podataka umesto da se koristi običan niz.
 
 -----
 
