@@ -1326,37 +1326,37 @@ console.log (br + " je kvadratni koren broja " + br * br);
 
 | Особина објекта | Опис                                               |
 |:---------------:|:--------------------------------------------------:|
-| `E`             | Returns Euler’s number (approx. 2.718)             |
-| `LN2`           | Returns the natural logarithm of 2 (approx. 0.693) |
-| `LN10`          | Returns the natural logarithm of 10 (approx. 2.302)|
-| `LOG2E`         | Returns the base-2 logarithm of E (approx. 1.442)  |
-| `LOG10E`        | Returns the base-10 logarithm of E (approx. 0.434) |
-| `PI`            | Returns PI (approx. 3.14)                          |
-| `SQRT1_2`       | Returns the square root of 1/2 (approx. 0.707)     |
-| `SQRT2`         | Returns the square root of 2 (approx. 1.414)       |
+| `E`             | Враће Ојлерову константу (прибл. 2.718)           |
+| `LN2`           | Враће логаритам од 2 за основу е (прибл. 0.693)   |
+| `LN10`          | Враће логаритам од 10 за основу е (прибл. 2.302)|
+| `LOG2E`         | Враће логаритам од е за основу2 (прибл. 1.442)  |
+| `LOG10E`        | Враће логаритам од 10 за основу е (прибл. 0.434) |
+| `PI`            | Враће PI (прибл. 3.14)                          |
+| `SQRT1_2`       | Враће квадратни корен од 1/2 (прибл. 0.707)     |
+| `SQRT2`         | Враће квадратни корен од 2 (прибл. 1.414)       |
 
 Методе `Math` објекта узимају број/бројеве као argument а враћају резултат  математичке функције извршене над тим бројем/бројевима:
 
 | Метода објекта    | Опис                                                                                 |
 |:-----------------:|:------------------------------------------------------------------------------------:|
-| `abs(x)`          | Returns the absolute value of `x`                                                    |
-| `acos(x)`         | Returns the arccosine of `x`, in radians                                             |
-| `asin(x)`         | Returns the arcsine of `x`, in radians                                               |
-| `atan(x)`         | Returns the arctangent of `x` as a numeric value between `-PI/2` and `PI/2` radians  |
-| `atan2(y,x)`      | Returns the arctangent of the quotient of its arguments e.g. `y/x`                   |
-| `ceil(x)`         | Returns `x`, rounded upwards to the nearest integer                                  |
-| `cos(x)`          | Returns the cosine of `x` (`x` is in radians)                                        |
-| `exp(x)`          | Returns the value of `E`<sup>`x`</sup>                                               |
-| `floor(x)`        | Returns `x`, rounded downwards to the nearest integer                                |
-| `log(x)`          | Returns the natural logarithm (base `E`) of `x`                                      |
-| `max(x,y,z,…,n)`  | Returns the number with the highest value                                            |
-| `min(x,y,z,…,n)`  | Returns the number with the lowest value                                             |
-| `pow(x,y)`        | Returns the value of `x` to the power of `y`                                         |
-| `random()`        | Returns a pseudo random number between `0` and `1`                                   |
-| `round(x)`        | Rounds `x` to the nearest integer                                                    |
-| `sin(x)`          | Returns the sine of `x` (`x` is in radians)                                          |
-| `sqrt(x)`         | Returns the square root of `x`                                                       |
-| `tan(x)`          | Returns the tangent of an angle `x`                                                  |
+| `abs(x)`          | Враће апсолутну вредност `x`                                                    |
+| `acos(x)`         | Враће аркус косинус `x`, у радијанима                                             |
+| `asin(x)`         | Враће аркус синус `x`, у радијанима                                               |
+| `atan(x)`         | Враће аркус тангес `x` као број између `-PI/2` и `PI/2` радијана  |
+| `atan2(y,x)`      | Враће аркус тангес  количника аргумената, тј. `y/x`                   |
+| `ceil(x)`         | Враће `x`, заокружено на већи цео број     |
+| `cos(x)`          | Враће косинус `x` (`x` је у радијанима)                                        |
+| `exp(x)`          | Враће вредност експоненцијалне функције, тј. `е`<sup>`x`</sup>     |
+| `floor(x)`        | Враће `x`, заокружено на мањи цео број                                |
+| `log(x)`          | Враће логатирам од `x`  за осонову `е`                                     |
+| `max(x,y,z,…,n)`  | Враће масималну вреднсот аргумената                                            |
+| `min(x,y,z,…,n)`  | Враће минималну вреднсот аргумената    |
+| `pow(x,y)`        | Враће вредност степене функције, тј. `x` <sup>`y`</sup>   |
+| `random()`        | Враће псеудослучајни број између `0` и `1`        |
+| `round(x)`        | Враће`x` заокружено на најближи цео број                                         |
+| `sin(x)`          | Враће синус `x` (`x` је у радијанима)                                          |
+| `sqrt(x)`         | Враће квадратни корен `x`                                                       |
+| `tan(x)`          | Враће тангес `x`  (`x` је у радијанима)   |
 
 **Пример.** Позиви математичких функција:
 
