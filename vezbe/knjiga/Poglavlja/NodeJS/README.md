@@ -147,7 +147,7 @@ const express = require('express');
 const app = express();
 ```
 
-### 7.3.1. Rutiranje i funkcije srednjeg sloja
+### 7.3.1 Rutiranje i funkcije srednjeg sloja
 
 _Rutiranje_ (engl. _routing_) predstavlja način na koji serverska aplikacija opslužuje klijentski zahtev. Da bismo implementirali operaciju koju server treba da preduzme da bi obradio klijentski zahtev, nad express aplikacijom pozivamo odgovarajuće funkcije. 
 
@@ -278,7 +278,7 @@ app.use(function (req, res, next) {
 });
 ```
 
-### 7.3.2. Isporučivanje statičkih resursa
+### 7.3.2 Isporučivanje statičkih resursa
 
 Međutim, ako bismo sad pokrenuli serversku aplikaciju i prikazali bilo početnu stranicu bilo stranicu za grešku, videli bismo da nam nedostaju stilovi. 
 
@@ -335,7 +335,7 @@ app.use('/student', studentRoutes);
 
 Celokupno rešenje je dato na [ovoj adresi](https://github.com/MatfUVIT/UVIT/tree/master/vezbe/knjiga/Poglavlja/NodeJS/Primeri/2){:target="_blank"}.
 
-### 7.3.3. Isporučivanje dinamičkih resursa
+### 7.3.3 Isporučivanje dinamičkih resursa
 
 Uspeli smo da povežemo dve stranice naše aplikacije - početnu stranicu i stranicu sa informacijama o prijavljenom studentu. Takođe smo uspeli da pošaljemo podatke sa jedne stranice na drugu i to je dobar napredak. Međutim, podaci koji se šalju sa početne stranice nisu nigde vidljivi na stranici sa informacijama, osim u adresnoj liniji veb pregledača. Mi bismo želeli da unapredimo našu aplikaciju tako da podaci budu prikazani na stranici, na primer, u vidu tabele kao na narednoj slici:
 
@@ -617,7 +617,7 @@ Kao što vidimo, ovom metodu možemo kao drugi argument proslediti objekat i upr
 
 Celokupno rešenje je dato na [ovoj adresi](https://github.com/MatfUVIT/UVIT/tree/master/vezbe/knjiga/Poglavlja/NodeJS/Primeri/3){:target="_blank"}.
 
-### 7.3.4. Arhitektura "Model-Pogled-Kontroler"
+## 7.4 Arhitektura "Model-Pogled-Kontroler"
 
 U narednoj verziji naše aplikacije želimo da implementiramo mogućnost da studenti, nakon uspešnog prijavljivanja na sistem, mogu da vrše izmenu podataka. Takođe, želimo da omogućimo da podaci budu obrisani. Stranica nakon prijavljivanja na sistem treba da izgleda kao na narednoj slici. 
 
