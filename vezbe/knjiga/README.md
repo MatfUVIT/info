@@ -207,6 +207,26 @@ Autori:
 
 ### [Poglavlje 7. Node.js i Express.js](./Poglavlja/NodeJS/README.md){:target="_blank"}
 
+1. [Moduli](./Poglavlja/NodeJS/README.md#71-moduli){:target="_blank"}
+
+   1. [Paketi](./Poglavlja/NodeJS/README.md#711-paketi){:target="_blank"}
+
+   2. [Node upravljač paketima](./Poglavlja/NodeJS/README.md#712-node-upravljač-paketima){:target="_blank"}
+
+   3. [CommonJS](./Poglavlja/NodeJS/README.md#713-commonjs){:target="_blank"}
+
+2. [Kreiranje HTTP serverskih aplikacija](./Poglavlja/NodeJS/README.md#72-kreiranje-httpP-serverskih-aplikacija){:target="_blank"}
+
+3. [Obrađivanje HTTP zahteva radnim okvirom Express.js](./Poglavlja/NodeJS/README.md#73-obrađivanje-http-zahteva-radnim-okvirom-expressjs){:target="_blank"}
+
+   1. [Rutiranje i funkcije srednjeg sloja](./Poglavlja/NodeJS/README.md#731-rutiranje-i-funkcije-srednjeg-sloja){:target="_blank"}
+
+   2. [Isporučivanje statičkih resursa](./Poglavlja/NodeJS/README.md#732-isporučivanje-statičkih-resursa){:target="_blank"}
+
+   3. [Isporučivanje dinamičkih resursa](./Poglavlja/NodeJS/README.md#733-isporučivanje-dinamičkih-resursa){:target="_blank"}
+
+4. [Arhitektura "Model-Pogled-Kontroler"](./Poglavlja/NodeJS/README.md#74-arhitektura-model-pogled-kontroler){:target="_blank"}
+
 ### Poglavlje 8. MongoDB baza podataka i Mongoose.js ORM
 
 -----
