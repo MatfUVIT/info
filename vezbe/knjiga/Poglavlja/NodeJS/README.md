@@ -164,7 +164,7 @@ Funkcija srednjeg sloja ima informacije o [objektu klijentskog zahteva](https://
 
 - Izvršavanje proizvoljnog koda
 - Izmena objekta klijentskog zahteva ili objekta serverskog odgovora
-- Zavr\vsavanje ciklusa zahteva-odgovora
+- Završavanje ciklusa zahteva-odgovora
 - Poziv naredne funkcije srednjeg sloja iz steka funkcija
 
 Postoje različiti nivoi na kojima možemo definisati funkcije srednjeg sloja:

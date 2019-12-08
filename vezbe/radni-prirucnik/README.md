@@ -33,6 +33,8 @@ Autori:
 
 ### [Sedmica 9](./Poglavlja/Sedmica9/README.md)
 
+### [Sedmica 10](./Poglavlja/Sedmica10/README.md)
+
 -----
 
 [Vežbe](../README.md)
