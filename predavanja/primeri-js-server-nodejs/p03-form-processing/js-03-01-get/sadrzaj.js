@@ -1,7 +1,7 @@
-var contentMap = {
+const mapaSadrzaja = {
     '/': 'dobro-dosli-start.html',
     '/dobro-dosli-start.html': 'dobro-dosli-start.html',
     '/pozdrav': 'pozdrav'
   }
 
-  exports.contentMap = contentMap;
+  exports.contentMap = mapaSadrzaja;

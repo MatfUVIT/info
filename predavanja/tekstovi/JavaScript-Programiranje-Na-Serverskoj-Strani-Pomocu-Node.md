@@ -1034,9 +1034,90 @@ let contentMap = {
 Полазна тачка за покретање сервера се налази у датотеци `veb-server.js`:
 
 ```js
+const http = require('http');
+const url = require('url');
+const querystring = require('querystring');
+
+const prikaz = require('./prikaz-strane');
+
+const port = 7000;
+http.createServer(onRequest).listen(port);
+console.log('Server has started');
+console.log(`Veb server osluskuje zahteve na portu ${port}...\n`);
+
+function onRequest(request, response) {
+    if (request.method == 'GET') {
+        let pathName = url.parse(request.url).pathname;
+        let queryText = url.parse(request.url).query;
+        let queryData = querystring.parse(queryText);
+        let tekuceVreme = new Date();
+        console.log("---" + tekuceVreme + "---");
+        console.log(pathName);
+        console.log(queryText);
+        prikaz.prikazStrane(response, pathName, queryData);
+    }
+}
 ```
 
- &#9608;
+У горњем коду се, ако је захтев са методом GET, из захтева извлаче путања, упит и параметри упита и на основу њих се приказује одговарајућа страна. Функција за приказ стран на основу ових параметара се накзи у посебном модулу, у датотеци `prikaz-strane.js`:
+
+```js
+const fs = require('fs');
+
+const sadrzaj = require('./sadrzaj');
+
+function prikazStrane(response, pathName, queryData) {
+  if (sadrzaj.contentMap[pathName]) {
+    let izbor = sadrzaj.contentMap[pathName];
+    if (izbor == "pozdrav") {
+      response.writeHead(200);
+      response.write(
+      `<html>
+      <body>
+      Dobro dosli, ${queryData.ime}<br>
+      Vasa email adresa je: ${queryData.email} <br>
+      </body>
+      </html>`);
+      response.end();
+    }
+    else {
+      fs.readFile(__dirname + '/' + izbor, function (err, data) {
+        if (err) {
+          response.writeHead(500, { 'Content-type': 'text/plan' });
+          response.write(
+            `Error in processing page ${JSON.stringify(err)}`);
+          response.end();
+        } else {
+          response.writeHead(200);
+          response.write(data);
+          response.end();
+        }
+      });
+
+    }
+  } else {
+    response.writeHead(404, { 'Content-Type': 'text/html' })
+    response.write('404 Page not found');
+    response.end();
+  }
+}
+
+exports.prikazStrane = prikazStrane;
+```
+
+Може се уочити да се приликом одлуке како генеристи одговор консултује мапа садржаја за овај веб сајт. Ова напа садржаја се налази у ЈаваСкрипт датотеци `sadrzaj.js` и има следећи облик:
+
+```js
+const mapaSadrzaja = {
+    '/': 'dobro-dosli-start.html',
+    '/dobro-dosli-start.html': 'dobro-dosli-start.html',
+    '/pozdrav': 'pozdrav'
+  }
+
+  exports.contentMap = mapaSadrzaja;
+```
+
+Дакле, ако је путања `/` или `/dobro-dosli-start.html`, тада ће бити приказана веб страна са веб формуларом. Ако је путаља `/pozdrav`, тада ће се, као одговор на захтев, у веб страни која представља одговор уписати параметри које је корисник проследио. Ако путања није ништа одо овога, онда ће се сматрати да путања описује датотеку из система датотека на серверу, па ће датотека "прозвана" путањом бити враћена као одговор. &#9608;
 
 #### Метод POST
 

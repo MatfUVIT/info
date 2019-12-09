@@ -1,8 +1,8 @@
-let http = require('http');
-let url = require('url');
-let querystring = require('querystring');
+const http = require('http');
+const url = require('url');
+const querystring = require('querystring');
 
-let prikaz = require('./prikaz-strane');
+const prikaz = require('./prikaz-strane');
 
 const port = 7000;
 http.createServer(onRequest).listen(port);
