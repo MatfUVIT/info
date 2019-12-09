@@ -27,11 +27,17 @@ Autori:
 
 ### [Sedmica 6](./Poglavlja/Sedmica6/README.md)
 
+## Deo 3 - Programiranje klijentskih veb aplikacija
+
 ### [Sedmica 7](./Poglavlja/Sedmica7/README.md)
 
 ### [Sedmica 8](./Poglavlja/Sedmica8/README.md)
 
 ### [Sedmica 9](./Poglavlja/Sedmica9/README.md)
+
+## Deo 4 - Programiranje serverskih veb aplikacija
+
+### [Sedmica 10](./Poglavlja/Sedmica10/README.md)
 
 -----
 
