@@ -17,7 +17,7 @@ console.log(prazanObjekat.toString());
 console.log(prazanObjekat.toString);
 ```
 
-```bash
+```console
 [object Object]
 function toString(){…}
 ```
@@ -66,7 +66,7 @@ console.log(Object.getPrototypeOf({}) == Object.prototype);
 console.log(Object.getPrototypeOf(Object.prototype));
 ```
 
-```bash
+```console
 true
 null
 ```
@@ -85,7 +85,7 @@ console.log(Object.getPrototypeOf([]) ==
     Array.prototype);
 ```
 
-```bash
+```console
 true
 true
 ```
@@ -118,7 +118,7 @@ zecDebeljuca.tip = "дебељуца";
 zecDebeljuca.govori("Баш сам гладан!");
 ```
 
-```bash
+```console
 Овај зец непознат каже 'Ко сам ја?'
 Овај зец убица каже 'Готов си!
 Овај зец дебељуца каже 'Баш сам гладан!'
@@ -197,7 +197,7 @@ let zecDebeljuca = new Zec("дебељуца");
 zecDebeljuca.govori("Баш сам гладан!");
 ```
 
-```bash
+```console
 Овај зец непознат каже 'Ко сам ја?'
 Овај зец убица каже 'Готов си!
 Овај зец дебељуца каже 'Баш сам гладан!'
@@ -231,7 +231,7 @@ console.log(crniZec.zubi);
 console.log(Zec.prototype.zubi);
 ```
 
-```bash
+```console
 mali
 dugi, ostri i krvavi
 mali
@@ -274,7 +274,7 @@ zecUbica.predstaviSe();
 zec.predstaviSe();
 ```
 
-```bash
+```console
 Овај зец непознат каже 'Ко сам ја?'
 Овај зец убица каже 'Готов си!
 Зец: дебељуца
@@ -384,7 +384,7 @@ console.log("toString" in mapa);
 delete Object.prototype.nesto;
 ```
 
-```bash
+```console
 olovka
 sveska
 nesto
@@ -423,7 +423,7 @@ for (let kljuc in mapa)
 delete Object.prototype.nesto;
 ```
 
-```bash
+```console
 true
 false
 true
@@ -462,7 +462,7 @@ for (let kljuc in mapa)
 delete Object.prototype.nesto;
 ```
 
-```bash
+```console
 false
 false
 true
@@ -526,7 +526,7 @@ plaviZec.uzrecica = "Плави, зец, чудни зец, једини на с
 plaviZec.predstaviSe();
 ```
 
-```bash
+```console
 Зец: непознат боја: непознатa.
 Овај зец непознат боје непознатa каже 'Ко сам ја?'
 Зец: паметан, боја: сива, име: Душко Дугоушко
@@ -599,7 +599,7 @@ plaviZec.predstaviSe();
 plaviZec.govori(plaviZec.uzrecica);
 ```
 
-```bash
+```console
 Зец: непознат боја: непознатa.
 Овај зец непознат боје непознатa каже 'Ко сам ја?'
 Зец: паметан, боја: сива, име: Душко Дугоушко
@@ -630,7 +630,7 @@ console.log([1, 2].toString());
 console.log(Object.prototype.toString.call([1, 2]));
 ```
 
-```bash
+```console
 false
 1,2
 [object Array]
@@ -732,7 +732,7 @@ plaviZec.predstaviSe();
 plaviZec.govori(plaviZec.uzrecica);
 ```
 
-```bash
+```console
 Зец: паметан, боја: сива, име: Душко Дугоушко
 креатор: Tex Avery
 дело: A Wild Hare
@@ -776,7 +776,7 @@ console.log(gomila.visina);
 gomila.visina = 100;
 ```
 
-```bash
+```console
 4
 Pokusaj da visina gomile bude 100 je ignorisan.
 ```

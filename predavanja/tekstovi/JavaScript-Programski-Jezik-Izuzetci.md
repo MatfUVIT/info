@@ -28,7 +28,7 @@ gdeLiJeProblem();
 
 Дакле, резултат рада горњегг скрипта је:
 
-```bash
+```console
 Срећа, срећа, радост!
 Срећа, срећа, радост!
 Срећа, срећа, радост!
@@ -50,7 +50,7 @@ gdeLiJeProblem();
 
 Тада ће се пријавити грешка и резултат ће бити:
 
-```bash
+```console
   for (brojac = 0; brojac < 5; brojac++)
               ^
 ReferenceError: brojac is not defined
@@ -77,7 +77,7 @@ console.log(ime);
 
 Дакле, резултат рада горњег скрипта је:
 
-```bash
+```console
 Мики Маус
 ```
 
@@ -95,7 +95,7 @@ let mikiMaus = Osoba("Мики Маус");
 
 Грешка ће бити пријављена код наредбе којом се покушава очитати вресност поља у оквиру `this`.
 
-```bash
+```console
   this.ime = ime;
            ^
 

@@ -676,13 +676,13 @@ console.log(izracunajKvadratES6());
 
 Покретањем скрипте уз ддодатне параметре у `node` окружењу, тј. изршењем наредбе:
 
- ```bash
+ ```console
  node --experimental-modules index.mjs
  ```
 
  добија се следећи резултат:
 
-```bash
+```console
 (node:14480) ExperimentalWarning: The ESM module loader is experimental.
 100
 ```

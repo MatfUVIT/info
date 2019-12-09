@@ -212,7 +212,7 @@ testirajOpsegDefinisanosti();
 console.log(test);
 ```
 
-```bash
+```console
 globalna vrednost
 lokalna vrednost
 lokalna vrednost
@@ -340,7 +340,7 @@ for (let i = 80; i <= 100; i++)
 
 Резултат извршења горње скрипте је:
 
-```bash
+```console
 80 = null
 81 = ((((((((((((((((1 + 5)  + 5)  + 5)  + 5)  + 5)  + 5)  + 5)  + 5)  + 5)  + 5)  + 5)  + 5)  + 5)  + 5)  + 5)  + 5)
 82 = ((((((1 * 3)  + 5)  * 3)  * 3)  + 5)  + 5)
@@ -419,7 +419,7 @@ for (let i = 0; i < 3; i++)
 
 Резултат рада горње скрипте је:
 
-```bash
+```console
 ---
 Sto sam srecan!
 Sto sam srecan!
@@ -512,7 +512,7 @@ console.log(izbroj2());
 console.log(izbroj2());
 ```
 
-```bash
+```console
 0
 1
 2
@@ -537,7 +537,7 @@ mojeIme = 'Marko';
 pozdravSaImenom();
 ```
 
-```bash
+```console
 Zdravo, Dragoljub!
 ```
 

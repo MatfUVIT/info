@@ -32,7 +32,7 @@ console.log(`Server slusa na adresi ${adresa}, port ${port} `);
 
 Приликом покретања сервера, на конзоли се довија порука следећег облика:
 
-```bash
+```console
 Server slusa na adresi 127.0.0.1, port 1337
 ```
 
@@ -40,13 +40,13 @@ Server slusa na adresi 127.0.0.1, port 1337
 
 - коришћењем Unix наредбе `netcat` из командне линије:
 
-```bash
+```console
 \$ netcat 127.0.0.1 1337
 ```
 
 Тада би одговор би требао да буде:
 
-```bash
+```console
 > Pozdrav od servera
 ```
 
@@ -80,7 +80,7 @@ klijent.on('close',
 
 Покретањем клијента, током времена када сервер ради, добија се следећи излаз на конзоли:
 
-```bash
+```console
 Povezan sa serverom
 Primljeno: Pozdrav od servera
 
@@ -319,7 +319,7 @@ clients.on('end',
 
 Ако се покрене прво сервер, па потом (у периоду док сервер ради) један па други клијент, на конзоли сервера добиће се следеће поруке:
 
-```bash
+```console
 Server is listening
 Server is listening!
 Buffer size : 0
@@ -379,7 +379,7 @@ Socket closed!
 
 Приликом извршења првог клијента на конзоли ће бити приказано:
 
-```bash
+```console
 Client: connection established with server
 ---------client details -----------------
 Client is listening at port55444
@@ -393,7 +393,7 @@ Data from server:Data ::Bye bye server
 
 Приликом извршења другог клијента на конзоли ће бити приказано:
 
-```bash
+```console
 connected to server!
 Data ::world!
  from client
@@ -494,7 +494,7 @@ console.log(`Veb server osluskuje zahteve na portu ${port}...\n`);
 
 Какав год захтев стигао овом серверу, он ће увек прослеђиати исти одговор. Покретање овог сервера се реализује на исти начин као и код претходних примера:
 
-```bash
+```console
 node veb-server.js
 ```
 
@@ -506,7 +506,7 @@ node veb-server.js
 
 - алат `curl`, при чему у терминал треба унети наредбу `curl http://localhost:7000`. Као резултат се добија:
 
-```bash
+```console
 StatusCode        : 200
 StatusDescription : OK
 Content           : Napravljeni veb servers koristi node.js
@@ -555,7 +555,7 @@ console.log(`Veb server osluskuje zahteve na portu ${port}...\n`);
 
 И овај веб сервер ослушкује на порту `7000`. По покретању овог сервера и слању захтева према њему, добиће се одговарајући одговор, а на конзоли сервера ће бити приказано време обраде захтева и објекат који представља приспели захтев (у JSON формату) - следи део садржаја који се приказује на конзоли servera:
 
-```bash
+```console
 Veb server osluskuje zahteve na portu 7000...
 
 ---Wed Nov 27 2019 14:02:35 GMT+0100 (Central European Standard Time)---
@@ -793,7 +793,7 @@ console.log(`Veb server osluskuje zahteve na portu ${port}...\n`);
 
 Ако, по покретању овог сервера, корисник у адресу веб прегледача унесе нпр. `http://localhost:7000/paja=patak?sestric=raja`, добиће се овакве поруке на конзоли:
 
-```bash
+```console
 ---Wed Nov 27 2019 14:37:00 GMT+0100 (Central European Standard Time)---
 url:     /paja=patak?sestric=raja
 putanja: /paja=patak
@@ -832,7 +832,7 @@ console.log(`Veb server osluskuje zahteve na portu ${port}...\n`);
 
 Приликом обраде захтева, на конзоли ће бити приказани путања и упит. Ако се, по покретању сервера, пошаље захтев облика `http://localhost:7000/paja=patak?sestric1=raja`, на конзоли ће се приказати:
 
-```bash
+```console
 ---Wed Nov 27 2019 14:47:15 GMT+0100 (Central European Standard Time)---
 url:     /paja=patak?sestric1=raja
 putanja: /paja=patak
@@ -841,7 +841,7 @@ upit:    sestric1=raja
 
 Ако би се, по покретању сервера, пoслао захтев облика `http://localhost:7000/paja=patak?sestric1=raja&sestric2=gaja` на конзоли сервера би се приказало:
 
-```bash
+```console
 ---Wed Nov 27 2019 14:50:57 GMT+0100 (Central European Standard Time)---
 url:     /paja=patak?sestric1=raja&sestric2=gaja
 putanja: /paja=patak
@@ -935,7 +935,7 @@ function prikazStrane(response, pathName) {
 
 **Пример.** Сложенији, модуларно организован, веб сервер који приликом обраде захтева и генерисања одговора консултује мапу садржаја.
 
-у овом случају није програмски код сервера сав у једној датотеци, већ је распоређен у више модула. Модули се учитавају помоћу раније описаног CommonJS механизма.  
+у овом случају није програмски код сервера сав у једној датотеци, већ је распоређен у више модула. Модули се учитавају помоћу раније описаног [CommonJS](JavaScript-Programski-Jezik-Moduli.md#commonjs-модули){:target="_blank"} механизма.  
 
 Полазна тачка за покретање сервера се налази у датотеци `veb-server.js`:
 
@@ -1024,6 +1024,19 @@ let contentMap = {
 Уочавамо да се оквиру елемента `<form>` налазе елементи `<input>`, који у зависности од њихове функционалнссти могу имати различите вредности атрибута `type`. АКо је вредност овог атрибута `text`, онда се ради о текстуалном пољу, а ако је вредност `submit` онда се ради о дугмету чијим притиском корисник иницира слање унесених података према серверу. &#9608;
 
 #### Метод GET
+
+**Пример.** Модуларно организован, веб сервер који обрађује захтев са нетодом GET.
+
+Веб страна са формуларом се, налази на серверу, тј, у директодијуму кде се налази серверски код. Њен назив је `dobro-dosli-start.html`, а садржај је исти као у претходном примеру.
+
+Програмски код сервера је распоређен у више модула, који се учитавају помоћу раније описаног [CommonJS](JavaScript-Programski-Jezik-Moduli.md#commonjs-модули){:target="_blank"} механизма.  
+
+Полазна тачка за покретање сервера се налази у датотеци `veb-server.js`:
+
+```js
+```
+
+ &#9608;
 
 #### Метод POST
 

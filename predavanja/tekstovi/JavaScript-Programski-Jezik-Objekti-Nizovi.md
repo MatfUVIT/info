@@ -634,7 +634,7 @@ brojacArgumenata ("Ako kaniš pobijediti" , " ne smiješ izgubiti");
 brojacArgumenata ("Ako kaniš pobijediti ne smiješ izgubiti");
 ```
 
-```bash
+```console
 Prilikom poziva su prosleđena 4 argumenta.
 Prilikom poziva su prosleđena 2 argumenta.
 Prilikom poziva su prosleđena 1 argumenta.
