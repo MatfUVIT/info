@@ -9,7 +9,7 @@
             "type": "node",
             "request": "launch",
             "name": "Launch Program",
-            "program": "${workspaceFolder}/predavanja/primeri-js/p03-funkcije-zatvorenja/js-03-07-zatvorenje-omotavanje-vrednosti-funkcijom.js"
+            "program": "${workspaceFolder}/predavanja/primeri-js-server-nodejs/p04-js-i-veb-servisi/js-04-01-js-veb-servis/veb-servis.js"
         }
     ]
 }
