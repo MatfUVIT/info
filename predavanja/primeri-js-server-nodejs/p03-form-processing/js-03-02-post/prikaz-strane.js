@@ -1,6 +1,6 @@
-let fs = require('fs');
+const fs = require('fs');
 
-let sadrzaj = require('./sadrzaj');
+const sadrzaj = require('./sadrzaj');
 
 function prikazStrane(response, pathName, submittedData) {
   if (sadrzaj.contentMap[pathName]) {

@@ -1,11 +1,13 @@
-let http = require('http');
-let url = require('url');
-let querystring = require('querystring');
+const http = require('http');
+const url = require('url');
+const querystring = require('querystring');
 
-let prikaz = require('./prikaz-strane');
+const prikaz = require('./prikaz-strane');
 
-http.createServer(onRequest).listen(8888);
-console.log('Server has started');
+const PORT = 7000;
+
+http.createServer(onRequest).listen(PORT);
+console.log('Server je pokrenut');
 
 function onRequest(request, response) {
     let pathName = url.parse(request.url).pathname;

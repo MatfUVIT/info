@@ -859,9 +859,9 @@ upit:    sestric1=raja&sestric2=gaja
 Као и у претходним примерима, програмски код сервера са налази у датотеци `veb-server.js`:
 
 ```js
-t http = require('http');
-let url = require('url');
-let fs = require('fs');
+const http = require('http');
+const url = require('url');
+const fs = require('fs');
 
 const port = 7000;
 http.createServer(function (zahtev, odgovro) {
@@ -1059,7 +1059,7 @@ function onRequest(request, response) {
 }
 ```
 
-У горњем коду се, ако је захтев са методом GET, из захтева извлаче путања, упит и параметри упита и на основу њих се приказује одговарајућа страна. Функција за приказ стран на основу ових параметара се накзи у посебном модулу, у датотеци `prikaz-strane.js`:
+У горњем коду се, ако је захтев са методом GET, из захтева извлаче путања, упит и параметри упита и на основу њих се приказује одговарајућа страна. Функција за приказ стране на основу ових параметара се налази у посебном модулу, у датотеци `prikaz-strane.js`:
 
 ```js
 const fs = require('fs');
@@ -1120,6 +1120,154 @@ const mapaSadrzaja = {
 Дакле, ако је путања `/` или `/dobro-dosli-start.html`, тада ће бити приказана веб страна са веб формуларом. Ако је путаља `/pozdrav`, тада ће се, као одговор на захтев, у веб страни која представља одговор уписати параметри које је корисник проследио. Ако путања није ништа одо овога, онда ће се сматрати да путања описује датотеку из система датотека на серверу, па ће датотека "прозвана" путањом бити враћена као одговор. &#9608;
 
 #### Метод POST
+
+**Пример.** Модуларно организован, веб сервер који обрађује и GET и POST захтеве.
+
+Овде ће на серверу (прецизније, у директодијуму кде се налази серверски код) постојати две веб стране са формуларом - једна за омогућавање да корисник пошаље GET захтев, а друга која омогућује слање POST захтева. Веб страна за генерисање GET захтева се налази у датотци  `dobro-dosli-get.html` и она има следећи садржај:
+
+```html
+<html>
+
+<body>
+
+  <form action="/pozdrav" method="get">
+    Ime:
+    <input type="text" name="ime">
+    <br> E-mail:
+    <input type="text" name="email">
+    <br>
+    <input type="submit" value="Dobro dosli!">
+  </form>
+
+</body>
+
+</html>
+```
+
+Веб страна са формуларом преко кога се генерише POST захтев се чува у датотеци `dobro-dosli-post.html`:
+
+```html
+<html>
+
+<body>
+
+  <form action="/pozdrav" method="post">
+    Ime:
+    <input type="text" name="ime">
+    <br> E-mail:
+    <input type="text" name="email">
+    <br>
+    <input type="submit" value="Dobro dosli!">
+  </form>
+
+</body>
+
+</html>
+```
+
+Уочава се да веб формулари из претходне две веб стране по уносу података од стране корисника и његовом притиску на дугме за слање према серверу, "гађају" исту питању `/pozdrav`, с тим што се у првом случају креира захтев са методом GET, а у другом случају са методом POST.
+
+Програмски код сервера је распоређен у више модула динамички учитаваних помоћу [CommonJS](JavaScript-Programski-Jezik-Moduli.md#commonjs-модули){:target="_blank"} механизма.  
+
+Полазна тачка за покретање сервера се налази у датотеци `veb-server.js`:
+
+```js
+const http = require('http');
+const url = require('url');
+const querystring = require('querystring');
+
+const prikaz = require('./prikaz-strane');
+
+const PORT = 7000;
+
+http.createServer(onRequest).listen(PORT);
+console.log('Server je pokrenut');
+
+function onRequest(request, response) {
+    let pathName = url.parse(request.url).pathname;
+    if (request.method == 'GET') {
+        let queryText = url.parse(request.url).query;
+        let queryData = querystring.parse(queryText);
+        console.log("GET:" );
+        console.log(queryData );
+        prikaz.prikazStrane(response, pathName, queryData);
+    }
+    else if (request.method == 'POST') {
+        let body = '';
+        request.on('data', function (data) {
+            body += data;
+        });
+        request.on('end', function () {
+            let postData = querystring.parse(body);
+            console.log("POST:");
+            console.log(postData);
+            prikaz.prikazStrane(response, pathName, postData);
+        });
+    }
+}
+```
+
+У горњем коду се, прво из захтева извуче путања. Потом, ако је захтев са методом GET, из захтева се (преко функција које се односе на упит) извлаче подаци које је проследио корисник и на крају се генерише и прикаже одговарајући одговор. Ако се ради о захтеву који је послат методом POST, тада се (преко функција са повраним позивима које се односе на тело захтева) извчаче подаци које је проследио корисник и на основу њих се генерише и приказује одговарајућа страна.
+
+Функција за приказ стране која се позива има три параметра (без обзира на то да ли је захтев који се обрађује са методом GET или са методом POST): ток у који се уписује одговор, путању и податке које је послао корисник према веб серверу. Ова функција се налази у посебном модулу, у датотеци `prikaz-strane.js`, која има следећи садржај:
+
+```js
+const fs = require('fs');
+
+const sadrzaj = require('./sadrzaj');
+
+function prikazStrane(response, pathName, submittedData) {
+  if (sadrzaj.contentMap[pathName]) {
+    let izbor = sadrzaj.contentMap[pathName];
+    if ( izbor == "pozdrav") {
+      response.writeHead(200);
+      response.write(
+        `<html>
+      <body>
+      Dobro dosli, ${submittedData.ime}<br>
+      Vasa email adresa je: ${submittedData.email} 
+      </body>
+      </html>`);
+      response.end();
+    }
+    else {
+      fs.readFile(__dirname+ '/' + izbor, function (err, data) {
+        if (err) {
+          response.writeHead(500, { 'Content-type': 'text/plan' });
+          response.write(
+            `Error in processing page ${JSON.stringify(err)}`);
+          response.end();
+        } else {
+          response.writeHead(200);
+          response.write(data);
+          response.end();
+        }
+      });
+
+    }
+  } else {
+    response.writeHead(404, { 'Content-Type': 'text/html' })
+    response.write('404 Page not found');
+    response.end();
+  }
+}
+
+exports.prikazStrane = prikazStrane;
+```
+
+Може се уочити да се приликом одлуке како генеристи одговор консултује мапа садржаја, која се налази у ЈаваСкрипт датотеци `sadrzaj.js` и има следећи облик:
+
+```js
+const contentMap = {
+    '/': 'dobro-dosli-get.html',
+    '/dobro-dosli-post': 'dobro-dosli-post.html',
+    '/dobro-dosli-get': 'dobro-dosli-get.html',
+    '/pozdrav': 'pozdrav'
+  }
+  exports.contentMap = contentMap;
+```
+
+Дакле, ако је путања `/` или `/dobro-dosli-get.html`, тада ће бити приказана веб страна са веб формуларом који омогућава генерисање GET захтева. Ако је путања `/dobro-dosli-post`, тада ће бити приказана веб страна са веб формуларом који омогућава генерисање POST захтева. Ако је путаља `/pozdrav`, тада ће се, као одговор на захтев, у веб страни која представља одговор уписати параметри које је корисник проследио. Ако путања није ништа одо овога, онда ће се сматрати да путања описује датотеку из система датотека на серверу, па ће датотека "прозвана" путањом бити враћена као одговор. &#9608;
 
 ### Литература
 
