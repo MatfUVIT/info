@@ -543,6 +543,47 @@ Zdravo, Dragoljub!
 
 У горњем примеру, ламбда израз `pozdrav` у тренутку дефинисања “памти” референцу на (за њу) глобалну промењиву `mojeIme` (која у том тренутку има вредност `“Dragoljub”`). Иако променљива `mojeIme` мења вредност која сада садржи ниску `“Marko”`, затворење и даље користи вредност `“Dragoljub”`.  &#9608;
 
+### Функције као генератори функција
+
+**Пример.** Функције помоћу које се, позивима, креирају функције нижег реда (за поређење):
+
+```js
+function veciOd(n) {
+    return function(m) {
+        return m > n; };
+}
+var veciOd10 = veciOd(10);
+
+// Prikazuje true
+console.log(veciOd10(11));
+
+// Prikazuje false
+console.log(veciOd10(9.5));
+```
+
+&#9608;
+
+**Пример.** Функција помоћу које се генеришу друге функције (за множење датим бројем):
+
+```js
+// primer zatvorenja
+function umnozilac(faktor) {
+    return function(broj) { return broj * faktor; };
+}
+
+var dupliraj = umnozilac(2);
+console.log(dupliraj(4.5));
+console.log(dupliraj(5.5));
+var utrostruci = umnozilac(3);
+console.log(utrostruci(4.5));
+console.log(utrostruci(5.5));
+var pomnoziSa2_25 = umnozilac(2.25);
+console.log(pomnoziSa2_25(4.5));
+console.log(pomnoziSa2_25(5.5));
+```
+
+&#9608;
+
 **Пример.** Генерисање функција за квадрирање, дизање на куб и дизање на десети степен, коришћењем затворења, на класичан начин и помоћу ламбда-израза:
 
 ```js

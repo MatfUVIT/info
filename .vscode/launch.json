@@ -8,7 +8,7 @@
         {
             "type": "node",
             "request": "launch",
-            "name": "Launch Program",
+            "name": "Покрени Програм",
             "program": "${workspaceFolder}/predavanja/primeri-js-server-nodejs/p04-js-i-veb-servisi/js-04-01-js-veb-servis/veb-servis.js"
         }
     ]

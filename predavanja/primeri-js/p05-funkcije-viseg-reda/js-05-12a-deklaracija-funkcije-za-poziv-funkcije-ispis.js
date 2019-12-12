@@ -3,9 +3,9 @@ Funkcija koja modifikuje funkciju
 */
 const bucna = function (f) {
     return function (arg) {
-        console.log("poziv sa argumentom ", arg);
+        console.log(`poziv   '${f.name}' sa argumentom , ${arg}`);
         let val = f(arg);
-        console.log("pozvana sa argumentom ", arg, " - rezultat ", val);
+        console.log(`pozvana '${f.name}' sa argumentom`, arg, " - rezultat ", val);
         return val;
     };
 }

@@ -25,11 +25,11 @@ console.log('---');
 for (let x of nizBrojeva)
     console.log(x);
 
-nizBrojeva[8.5] = 45;
-console.log(nizBrojeva[8.5]);
+ nizBrojeva[8.5] = 45;
+ console.log(nizBrojeva[8.5]);
 
-console.log('---');
-console.log('---');
+ console.log('---');
+ console.log('---');
 for (let i = 0; i < nizBrojeva.length; i++)
     console.log(nizBrojeva[i]);
 

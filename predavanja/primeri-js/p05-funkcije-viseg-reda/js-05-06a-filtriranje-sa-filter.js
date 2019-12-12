@@ -68,12 +68,12 @@ console.log(family.filter(person => person.sex == 'm' && person.born > 1900 && p
 console.log(`---`);
 console.log(family
     .filter(x => x.born > 1900 && x.born < 1925)
-    .filter(x=> x.sex== 'm'));
+    .filter(x => x.sex == 'm'));
 
 // prikaz muskaraca rodjenih izmedju 1900 i 1925     
 console.log(`---`);
 console.log(family
+    .filter(x => x.sex == 'm')
     .filter(x => x.born > 1900)
     .filter(z => z.born < 1925)
-    .filter(x=> x.sex== 'm')
 );

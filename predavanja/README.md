@@ -300,6 +300,8 @@
 
     1. [Затворења за функције](tekstovi/JavaScript-Programski-Jezik-Funkcije-Zatvorenja.md#затворења-за-функције){:target="_blank"}
 
+        1. [Функције као генератори функција](tekstovi/JavaScript-Programski-Jezik-Funkcije-Zatvorenja.md#функције-као-генератори-функција){:target="_blank"}
+
     1. [Дизање променљивих и функција](tekstovi/JavaScript-Programski-Jezik-Funkcije-Zatvorenja.md#дизање-променљивих-и-функција){:target="_blank"}
 
         1. [Дизање променљивих](tekstovi/JavaScript-Programski-Jezik-Funkcije-Zatvorenja.md#дизање-променљивих){:target="_blank"}
@@ -337,8 +339,6 @@
 9. [Функције вишег реда](tekstovi/JavaScript-Programski-Jezik-Funkcije-Viseg-Reda.md#функције-вишег-реда){:target="_blank"}
 
     1. [Функције као аргументи функција](tekstovi/JavaScript-Programski-Jezik-Funkcije-Viseg-Reda.md#функције-као-аргументи-функција){:target="_blank"}
-
-    1. [Функције као генератори функција](tekstovi/JavaScript-Programski-Jezik-Funkcije-Viseg-Reda.md#функције-као-генератори-функција){:target="_blank"}
 
     1. [Повезивање функција при позиву](tekstovi/JavaScript-Programski-Jezik-Funkcije-Viseg-Reda.md#повезивање-функција-при-позиву){:target="_blank"}
 

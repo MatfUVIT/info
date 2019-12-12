@@ -1,9 +1,9 @@
 
 const reduce = function (niz, kombinuj, pocetnaVrednost) {
-    let tekucaVrednost = pocetnaVrednost;
-    for (let i = 0; i < niz.length; i++)
-        tekucaVrednost = kombinuj(tekucaVrednost, niz[i]);
-    return tekucaVrednost;
+    let akumulator = pocetnaVrednost;
+    for (let x of niz)
+        akumulator = kombinuj(akumulator, x);
+    return akumulator;
 }
 
 let brojevi = [2, 4, 3, 1, -5, 12, 7];
@@ -51,15 +51,20 @@ console.log(reduce(brojevi, function (a, b) {
 console.log('--- Minimum ---');
 console.log(reduce(brojevi, (a, b) => (a < b) ? a : b, Infinity));
 
-// odredjivanje maksimuma svih clanova niza
-console.log('--- Maksimum ---');
-console.log(reduce(brojevi, function (a, b) {
-    if (a > b)
-        return a;
-    return b;
-}, -Infinity));
+// odredjivanje minimuma svih clanova niza
+console.log('--- Minimum ---');
+console.log(brojevi.reduce( (a, b) => (a < b) ? a : b, Infinity));
 
-// odredjivanje maksimuma svih clanova niza
-console.log('--- Maksimum ---');
-console.log(reduce(brojevi, (a, b) => (a > b) ? a : b, -Infinity));
+
+// // odredjivanje maksimuma svih clanova niza
+// console.log('--- Maksimum ---');
+// console.log(reduce(brojevi, function (a, b) {
+//     if (a > b)
+//         return a;
+//     return b;
+// }, -Infinity));
+
+// // odredjivanje maksimuma svih clanova niza
+// console.log('--- Maksimum ---');
+// console.log(reduce(brojevi, (a, b) => (a > b) ? a : b, -Infinity));
 

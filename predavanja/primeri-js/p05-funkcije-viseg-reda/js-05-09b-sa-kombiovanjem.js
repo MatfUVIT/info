@@ -54,11 +54,11 @@ const jeZensko = function (p) {
 console.log(
     prosek(pretci
         .filter(jeMusko)
-        .filter(x => x.born >= 1700 && x.born < 1800)
+        .filter(x => x.born >= 1800 && x.born < 1900)
         .map(uzrast)));
 
 console.log(
     prosek(pretci
         .filter(jeZensko)
-        .filter(x => x.born >= 1700 && x.born < 1800)
+        .filter(x => x.born >= 1800 && x.born < 1900)
         .map(uzrast)));

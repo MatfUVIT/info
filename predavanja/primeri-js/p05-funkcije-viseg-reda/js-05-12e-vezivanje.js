@@ -39,9 +39,10 @@ const jesteUSkupu = function (set, person) {
     return set.indexOf(person.name) > -1;
 }
 
-console.log(pretci.filter(function (person) {
-    return jesteUSkupu(skup, person);
-}));
+console.log(pretci.filter(
+    function (person) {
+        return jesteUSkupu(skup, person);
+    }));
 
 
 // Daje isti rezultat
