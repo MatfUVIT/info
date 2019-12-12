@@ -203,6 +203,8 @@ Autori:
 
     1. [Upravljanje modelom kutije](./Poglavlja/JQuery/README.md#691-upravljanje-modelom-kutije){:target="_blank"}
 
+10. [AJAX zahtevi](./Poglavlja/JQuery/README.md#610-ajax-zahtevi){:target="_blank"}
+
 ## Deo 4 - Programiranje serverskih veb aplikacija
 
 ### [Poglavlje 7. Node.js i Express.js](./Poglavlja/NodeJS/README.md){:target="_blank"}

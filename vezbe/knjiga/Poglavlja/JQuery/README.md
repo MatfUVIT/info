@@ -1219,6 +1219,65 @@ $(document).ready(function () {
    target="_blank">Pogledaj primer uživo (.js)</a>
 
 
+## 6.10.  AJAX zahtevi 
+
+Videli smo kako je moguće proslediti asinhroni zahtev ka serveru korišćenjem objekta klase `XMLHttpRequest`. Međutim, uverili smo se da je čak i na jednostavnim primerima rad sa ovim objektom veoma neugodan i kod ne izgleda lepo. Na našu sreću, biblioteka jQuery definiše svoju funkciju za slanje asinhronih poziva: `$.ajax(url [, settings])`. Argumenti ove funkcije su:
+
+- `url` - Niska koja sadrži putanju na koju je potrebno poslati asinhroni zahtev.
+	
+- `settings` - Objekat kojim se vrši konfiguracija asinhronog zahteva. Neke od vrednosti koje možemo podešavati su:
+	
+    -  `method` - Niska koja sadrži HTTP metod zahteva.
+            
+    -  `data` - Objekat koji definiše podatke koji se šalju u zahtevu. Ukoliko je za `method` izabran `GET` zahtev, podaci će biti prosleđeni kao upit u URL-u. Inače, možemo birati u kom formatu ćemo poslati podatke - na primer, ukoliko želimo da podaci budu poslati u JSON formatu, potrebno ih je serijalizovati tako što se proslede funkciji `JSON.stringify()` i potrebno je postaviti vrednost `contentType` na `'application/json'`.
+            
+    -  `contentType` - Niska kojom se definiše MIME tip podataka koji se šalje.
+            
+    -  `success` - Po-potrebi-pozivna funkcija koja će se izvršiti ukoliko zahtev prođe uspešno. Funkcija može primiti tri argumenta:
+        -  `data` - Telo odgovora od servera.
+                
+        -  `textStatus` - Statusna poruka koja je dobijena od servera.
+                
+        -  `jqXHR` - Specijalan jQuery objekat koji predstavlja nadskup `XMLHttpRequest` klase - [Dokumentacija](http://api.jquery.com/jQuery.ajax/\#jqXHR). To znači da možemo da koristimo ista svojstva i metode kao nad običnim `XMLHttpRequest` objektom, kao što smo to radili u prethodnoj sekciji.
+        
+    -  `error` - Po-potrebi-pozivna funkcija koja će se izvršiti ukoliko zahtev prođe neuspešno. Funkcija može primiti tri argumenta:
+        -  `jqXHR` - Specijalan jQuery objekat koji predstavlja natklasu `XMLHttpRequest`. 
+                
+        -  `textStatus` - Statusna poruka koja je dobijena od servera. Može biti neka od: `"timeout"`, `"error"`, `"abort"` ili `"parsererror"`.
+                
+        -  `errorThrown` - Objekat koji predstavlja grešku.
+
+Slanje asinhronog zahteva sada možemo uraditi na sledeći način:
+
+```js
+$.ajax('http://api.icndb.com/jokes/random', {
+    method: 'GET',
+    success: function(data, textStatus, jqXHR)
+    {
+        if (data.hasOwnProperty('value') && data.value.hasOwnProperty('joke'))
+        {
+            $('#vic').text(data.value.joke);
+        }
+    },
+    error: function(jqXHR, textStatus, errorThrown) 
+    {
+        $('#vic').text('Postoji greska sa zahtevom: ' + textStatus).css({'color': 'red'});
+    }
+}); 
+```
+
+
+<a style="border: 2px solid gray; display: inline-block; padding: 15px; background-color: rgb(114, 211, 250); color: black;"
+   href="./Primeri/4/index.html"
+   target="_blank">Pogledaj primer uživo </a>
+
+
+Primetimo da smo nad objektom koji predstavlja telo odgovora od servera pozvali metod `hasOwnProperty` koji do sada nismo videli. Ovaj metod služi da proveri da li objekat nad kojim se poziva sadrži svojstvo koje se zadaje kao argument metoda, pre nego što mu zapravo pristupimo. 
+
+Ono što treba da zapamtimo kod asinhronih zahteva kreiranih na ovaj način jeste da će uvek biti izvršena ili funkcija `success` ili funkcija `error`, nikada obe.
+
+
+
 <!--
 <a style="border: 2px solid gray; display: inline-block; padding: 15px; background-color: rgb(114, 211, 250); color: black;"
    href="./Primeri/4/index.html"
