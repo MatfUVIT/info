@@ -76,7 +76,21 @@ Koristeći biblioteku jQuery omogućiti naredne funkcionalnosti u formularu:
 	
 	-  Proveriti da li se korisnik prijavio na vesti. Ako jeste, proveriti da li je odabrao oblast. Ako jeste, očitati vrednost dinamike isporučivanja i prikazati prozor sa porukom o odabranoj dinamici. Ako nije odabrao oblast, prikazati prozor sa odgovarajućom porukom i prekinuti dalju validaciju.
 
+#### Zadatak 2
 
+Napisati HTML datoteku koja sadrži dva naslova, praznu tabelu i praznu listu. Korišćenjem biblioteke jQuery: 
+
+- Poslati asinhroni zahtev na adresu [https://codepen.io/chriscoyier/pen/EAIJj.js](https://codepen.io/chriscoyier/pen/EAIJj.js). 
+
+- U slučaju uspešnog dohvatanja odgovora sa servera, prikazati dohvaćene podatke iz odgovora u formatu kao na slici:
+
+<div style="max-width: 98%;">
+<img style="max-width: 100%;" src="./Slike/zadatak2.png" alt="">
+</div>
+
+Obezbediti da se podaci prikazuju efektom postepenog pojavljivanja (_fade in_), ali tako da se prvo prikazuju podaci iz tabele, a nakon toga podaci iz liste. 
+
+- U slučaju bilo kakve greške u komunikaciji sa serverom, prikazati poruku korisniku u obaveštajnom prozoru (_alert_).
 
 -----
 

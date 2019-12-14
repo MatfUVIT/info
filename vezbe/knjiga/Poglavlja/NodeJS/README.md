@@ -556,8 +556,8 @@ Dajmo ceo kod šablona koji ćemo koristiti za prikaz informacija o prijavljenom
             <table class="table">
             <% for (let key in student) { %>
                 <tr>
-                    <td><%= key %><td>
-                    <td><%= student[key] %><td>
+                    <td><%= key %></td>
+                    <td><%= student[key] %></td>
                 </tr>
             <% } %>
             </table>
