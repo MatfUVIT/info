@@ -22,6 +22,7 @@
 
 ## 7.2 Domaći zadaci
 
+{:id="72-zadatak-1"}
 #### Zadatak 1
 
 Neka je data datoteka `index.html` sa narednim sadržajem koja predstavlja osnovu klijentske veb aplikacije:
@@ -111,6 +112,7 @@ g) Napisati funkciju `prikaži_podatke()` koja redom:
 
 h) Obraditi sve greške u implementaciji.
 
+{:id="72-zadatak-2"}
 #### Zadatak 2
 
 Neka je data datoteka `index.html` sa narednim sadržajem koja predstavlja osnovu klijentske veb aplikacije:

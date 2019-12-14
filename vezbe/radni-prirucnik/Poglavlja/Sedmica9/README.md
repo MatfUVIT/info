@@ -92,6 +92,14 @@ Obezbediti da se podaci prikazuju efektom postepenog pojavljivanja (_fade in_), 
 
 - U slučaju bilo kakve greške u komunikaciji sa serverom, prikazati poruku korisniku u obaveštajnom prozoru (_alert_).
 
+#### Zadatak 3
+
+Uraditi [zadatak 1 iz 7. sedmice](../Sedmica7/README.md#72-zadatak-1) koriste\'ci biblioteku jQuery. 
+
+#### Zadatak 4
+
+Uraditi [zadatak 2 iz 7. sedmice](../Sedmica7/README.md#72-zadatak-2) koriste\'ci biblioteku jQuery.
+
 -----
 
 [Radni priručnik](../../README.md)
