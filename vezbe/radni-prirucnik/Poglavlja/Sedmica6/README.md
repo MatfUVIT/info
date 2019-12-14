@@ -53,10 +53,10 @@ Napomena: Imati u vidu da funkcija treba da radi korektno, čak i ako se izmene 
 5. Napisati funkciju `nema_nepoznate_vrednosti(student)` koja prihvata jednog studenta i ispituje da li taj student ima sve podatke poznate. Ukoliko student ima neki podatak koji je nedostajuća vrednost (prazno polje u tabeli iznad), funkcija vraća `false`, a inače `true`. Funkcija ne sme da menja parametar `student`.
 
 {:start="6"}
-6. Napisati funkciju `pročisti_podatke(studenti)` koja vraća samo one studente koji imaju sve podatke poznate. Nije dozvoljeno koristiti ponavljajuće kontrole toka (`for`, `while-do`, ...), kontrole toka izbora (`for`, `switch`, ...) niti rekurziju. Funkcija ne sme da menja promenljivu `studenti`. (Pomo\'c: iskoristiti funkcije iz zahteva 4 i 5).
+6. Napisati funkciju `pročisti_podatke(studenti)` koja vraća samo one studente koji imaju sve podatke poznate. Nije dozvoljeno koristiti ponavljajuće kontrole toka (`for`, `while-do`, ...), kontrole toka izbora (`for`, `switch`, ...) niti rekurziju. Funkcija ne sme da menja promenljivu `studenti`. (Pomoć: iskoristiti funkcije iz zahteva 4 i 5).
 
 {:start="7"}
-7. Napisati funkciju `generiši_html(studenti)` koja generiše nisku koja sadr\v zi HTML kod kojim se podaci iz promenljive `studenti` prikazuju u vidu HTML tabele (na primer, kao u tabeli iz 1. zahteva, s tim da nije potrebno stilizovati tabelu CSS-om, ali može se i to uraditi za vežbu). Funkcija ne sme da menja promenljivu `studenti`.
+7. Napisati funkciju `generiši_html(studenti)` koja generiše nisku koja sadrži HTML kod kojim se podaci iz promenljive `studenti` prikazuju u vidu HTML tabele (na primer, kao u tabeli iz 1. zahteva, s tim da nije potrebno stilizovati tabelu CSS-om, ali može se i to uraditi za vežbu). Funkcija ne sme da menja promenljivu `studenti`.
 
 -----
 

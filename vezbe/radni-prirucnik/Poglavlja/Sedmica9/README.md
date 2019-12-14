@@ -94,11 +94,11 @@ Obezbediti da se podaci prikazuju efektom postepenog pojavljivanja (_fade in_), 
 
 #### Zadatak 3
 
-Uraditi [zadatak 1 iz 7. sedmice](../Sedmica7/README.md#72-zadatak-1) koriste\'ci biblioteku jQuery. 
+Uraditi [zadatak 1 iz 7. sedmice](../Sedmica7/README.md#72-zadatak-1) koristeći biblioteku jQuery. 
 
 #### Zadatak 4
 
-Uraditi [zadatak 2 iz 7. sedmice](../Sedmica7/README.md#72-zadatak-2) koriste\'ci biblioteku jQuery.
+Uraditi [zadatak 2 iz 7. sedmice](../Sedmica7/README.md#72-zadatak-2) koristeći biblioteku jQuery.
 
 -----
 
