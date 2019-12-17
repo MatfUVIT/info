@@ -10,37 +10,39 @@ Cilj ovog poglavlja je upoznavanje studenata sa kreiranjem serverskih aplikacija
 
 ## 8.1. MongoDB
 
-MongoDB je NoSQL baza dokumenata. Podaci se čuvaju kao par ključ-vrednost gde je vrednost dokument. Dokument se čuva u JSON ili XML formatu. Bazu čine kolekcije dokumenata. Svaki dokument može biti različit, sa proizvoljenim brojem polja, veličine i sadržaja. 
+_Baza podataka_ (engl. _database_) predstavlja sistem koji se sastoji od struktura podataka i algoritama \v cija je uloga trajno skladi\v stenje podataka. Pod _trajnim skladi\v stenjem_ smatramo \v cinjenicu da, jednom kada se podaci sa\v cuvaju u bazu podataka, oni ostaju zapam\'ceni u njoj, \v cak i kada se aplikacija koja je te podatke upisala u bazu podataka zavr\v si. To zna\v ci da uvek kada \v zelimo da na\v se podatke imamo zabele\v zene nezavisno od \v zivotnog veka aplikacije, neophodno nam je da te podatke \v cuvamo u bazama podataka. Tako\dj e \'cemo koristiti i termin _sistem za upravljanje bazom podataka_, skr. _SUBP_ (engl. _database management system_, skr. _DBMS_) koji predstavlja softver koji se koristi za upravljanje bazama podataka. Ti softveri se koriste za kreiranje novih i izmenu postoje\'cih baza podataka, \v cuvanje podataka i dr.
 
-Sledeći pojmovi su bitni za razumevanje MongoDB:
+MongoDB pripada grupi tzv. _nerelacionih_ (engl. _NoSQL_) SUBP, odnosno, same baze podataka koje se kreiraju su _nerelacione_. Postoji vi\v se vrsta nerelacionih baza podataka, a baze podataka u MongoDB SUBP pripadaju vrsti koja se naziva _baza dokumenata_ (engl. _document database_). To zna\v ci da se svi podaci čuvaju u obliku dokumenata. Format u kojem su zapisani ovi dokumenti je sli\v can formatu JSON objekata. Vrednosti svojstava (nekada ka\v zemo i _polja_ (engl. _field_)) dokumenta mogu biti: niske, brojevi, drugi dokumenti, nizovi, nizovi drugih dokumenata, itd. Naredna slika ilustruje primer dokumenta koje je sa\v cuvan u nekoj bazi podataka u MongoDB SUBP.
 
+![](./Slike/document.svg)
+
+Bazu podataka u MongoDB SUBP čine _kolekcije_ (engl. _collection_) dokumenata. Svaki dokument može biti različit, sa proizvoljenim brojem polja, veličine i sadržaja. 
+
+Sledeći pojmovi su bitni za razumevanje MongoDB SUBP:
 
 -  `_id` - Ovo je polje obavezno za svaki dokument u MongoDB bazi. Predstavlja jedinstvenu vrednost po kojoj razlikujemo dokumente u bazi. Pošto je polje obavezno, ukoliko pokušamo da napravimo novi dokument bez njega, biće automatski dodato.
-	
+    
 -  `Kolekcija` - Predstavlja grupisane dokumente. Kolekcija postoji unutar jedne baze. Kao što smo već napomenuli, kolekcije nemaju definisanu strukturu, svaki dokument može biti različit.
-	
--  `Kursor` - Pokazivač na rezultijući skup našeg upita. Klijenti mogu iterirati kroz ovaj skup kako bi dobili rezultate.
-	
+    
+-  `Kursor` - Pokazivač na rezultujući skup našeg upita. Klijenti mogu iterirati kroz ovaj skup kako bi dobili rezultate.
+    
 -  `Baza podataka` - Skladište za kolekcije. Svaka baza ima svoj skup datoteka.
-	
+    
 -  `Dokument` - Jedan zapis u kolekciji. Sastoji se od naziva polja i vrednosti.
-	
--  `Polje` - Par *(ime, vrednost)* jednog dokumenta. Dokument može imati *0* ili više polja. 
-	
+    
+-  `Polje` - Par *(ime, vrednost)* jednog dokumenta. Dokument može imati 0 ili više polja. 
+    
 -  `JSON` - Notacija za predstavljanje strukturiranih podataka u čitljivom formatu.
-
-
 
 ## 8.2. Instalacija
 
-Kako bi rad sa MongoDB serverom bio moguć potrebno je preuzeti [instalaciju](https://www.mongodb.com/download-center/community?jmp=docs). Odabrati verziju 4.2.2, odgovarajući operativni sistem i paket. Detaljna uputstva za instalaciju možete pogledati [ovde](https://docs.mongodb.com/manual/administration/install-community/).
-
+Kako bi rad sa MongoDB SUBP bio moguć potrebno je preuzeti [instalaciju](https://www.mongodb.com/download-center/community?jmp=docs). Odabrati verziju 4.2.2, odgovarajući operativni sistem i paket. Detaljna uputstva za instalaciju možete pogledati [ovde](https://docs.mongodb.com/manual/administration/install-community/).
 
 ## 8.3 MongoDB shell
 
-Korišćenjem MongoDB shell-a možemo se povezati sa bazom i izvršavati različite upite nad kolekcijama koje sadrži. Potrebno je pokrenuti shell skript koji dolazi uz `mongo` server (<instalacioni_direktorijum>/Server/4.2/bin/mongo). 
+Korišćenjem MongoDB shell programa možemo se povezati sa bazom i izvršavati različite upite nad kolekcijama koje sadrži. Potrebno je pokrenuti shell skript koji dolazi uz `mongo` server (`<instalacioni_direktorijum>/Server/4.2/bin/mongo`).
 
-Na raspolaganju su naredne naredbe:
+U nastavku dajemo odabrane naredbe koje je mogu\'ce izvr\v siti u MongoDB shell programu za upravljanje bazama podataka:
 
 - `show dbs` - Izlistava nazive svih baza na serveru.
 
@@ -67,70 +69,83 @@ Na raspolaganju su naredne naredbe:
 
 ## 8.4. Upiti
 
-Pre nego što se upustimo u ovu oblast potrebno je da pripremimo podatke za obradu. U datoteci [studenti](./Resursi/studenti.json) nalaze se podaci podaci o pojedinačnim studentima. Podaci su zadati u `JSON` formatu i kao takvi se lako mogu uvesti u `MongoDB` bazu naredbom `mongoimport`[^1]:
+Pre nego što se upustimo u ovu oblast potrebno je da pripremimo podatke za obradu. U datoteci [koju mo\v zete preuzeti sa ove veze](./Resursi/studenti.json) nalaze se podaci o pojedinačnim studentima. Podaci su zadati u `JSON` formatu i kao takvi se lako mogu uvesti u `MongoDB` bazu programom `mongoimport`[^1]:
 
-[^1]: mongoimport nalazi se u istom direktorijumu gde i mongo server.
+[^1]: Program `mongoimport` nalazi se u istom direktorijumu gde i `mongo`.
 
-```
+```shell
 mongoimport --db <db_name> --collection <collection_name> --file <path>
 ```
 
 gde se umesto `<db_name>` navodi ime baze u koju se uvoze podaci, zatim naziv kolekcije u koju se podaci uvoze umesto `<collection_name>` i  putanju do datoteke koja sadrži podatke umesto `<path>`.
 
 
-> Zadatak 0. U kolekciju `Student` iz baze `Fakultet` uvesti podatke o studentima iz datoteke [studenti](./Resursi/studenti.json).
+> Zadatak 0. U kolekciju `Student` iz baze `Fakultet` uvesti podatke o studentima iz datoteke [studenti.json](./Resursi/studenti.json).
 
-```mongoimport --db Fakultet --collection Student --file studenti.json```
+```shell
+mongoimport --db Fakultet --collection Student --file studenti.json
+```
 
-Da bismo dohvatili podatke iz baze moramo napisati upit koji specifikuje kakvi podaci su nam potrebni. Upite pišemo kao objekte.
+U nastavku podrazumevamo da smo otvorili MongoDB shell program (`mongo`) i da smo postavili da radimo sa prethodno uvezenom bazom podataka `Fakultet` na slede\'ci na\v cin:
+
+```js
+> use Fakultet
+```
 
 ### 8.4.1. Upiti čitanja
 
-Ako bismo želeli da dohvatimo podatke o svim studentima u kolekciji, koristili bismo prazan upit, odnosno
+Da bismo dohvatili podatke iz baze moramo napisati _upit_ (engl. _query_) koji specifikuje ograni\v cenja koja dokumenti moraju da ispunjavaju da bi bili dohva\'ceni. Upiti u MongoDB SUBP predstavljaju objekte \v cija su svojstva tipovi ograni\v cenja, a vrednosti tih svojstava su vrednosti odgovaraju\'cih ograni\v cenja:
+
+```js
+{ 
+    <ogranicenje1>: <vrednost1>, 
+    <ogranicenje2>: <vrednost2>, 
+    ...
+}
+```
+
+Specijalno, ako bismo želeli da dohvatimo podatke o svim studentima u kolekciji, koristili bismo prazan upit, odnosno
 
 ```js
 {}
 ```
 
-Često nije potrebno da dohvatimo sve podatke, već neke specifične, odnosno, sa određenim vrednostima za neka polja. U tom slučaju, upit je ***objekat*** sa svojstvima koja odgovaraju poljima u dokumentima, i vrednostima koje tražimo. Navodimo makar jedno svojstvo, a može i više:
-
-```js
-{ <ime1> : <vrednost1>, <ime2>: <vrednost2>, ...}
-```
-
 > Zadatak 1. Iz kolekcije `Student` izdvojiti sve studente koji se zovu `Jovana`.
 
 ```js
-db.Student.find({name: "Jovana"})
+> db.Student.find({name: "Jovana"})
 ```
 
-Ukoliko je navedeni više od jednog svojstva, traže se svi dokumenti koji za svako od navedenih naziva polja imaju navedenu vrednost. Ako se bar jedno polje ne poklapa po vrednosti sa zadatom, on neće biti prikazan kao rezultat.
+Ukoliko je navedeno više od jednog svojstva, traže se svi dokumenti koji za svako od navedenih naziva polja imaju navedenu vrednost. Ako se bar jedno polje ne poklapa po vrednosti sa zadatom, on neće biti prikazan kao rezultat.
 
 > Zadatak 2. Iz kolekcije `Student` izdvojiti sve studente koji se zovu `Jovana` i čiji je prosek jednak `8.5`.
 
 
 ```js
-db.Student.find({
-	name: "Jovana", 
-	avg_grade: "8.5"
+> db.Student.find({
+    name: "Jovana", 
+    avg_grade: "8.5"
 })
 ```
 
-Na ovaj način dobijamo poređenje vrednosti po jednakosti. Nekada će nam biti potrebno da pronađemo dokumente sa vrednostima koje su manje ili veće od zadate, ili koje su u nekom intervalu, itd. Definisana su posebna svojstva koja možemo pisati u upitu koja se tiču ovog problema:
+Na ovaj način dobijamo poređenje vrednosti po jednakosti. Nekada će nam biti potrebno da pronađemo dokumente sa vrednostima koje su manje ili veće od zadate, koje su u nekom intervalu, itd. Definisana su posebna svojstva koja možemo pisati u upitu koja predstavljaju ova ograni\v cenja:
 
-
--  `$gt` - traži vrednosti veće od zadate
--  `$gte` - traži vrednosti veće ili jednake zadatoj
--  `$lt` - traži vrednosti majne od zadate
--  `$lte` - traži vrednosti manje ili jednake zadatoj
--  `$ne` - traži vrednosti koje nisu jednake zadatoj
--  `$eq` - traži vrednosti jednake zadatoj
--  `$in` - traži vrednosti jednake nekoj iz zadatog niza vrednosti
--  `$nin` - traži vrednosti nisu jednake nijednoj iz zadatog niza vrednosti.
+-  `$gt` - pronalazi vrednosti veće od zadate
+-  `$gte` - pronalazi vrednosti veće ili jednake zadatoj
+-  `$lt` - pronalazi vrednosti majne od zadate
+-  `$lte` - pronalazi vrednosti manje ili jednake zadatoj
+-  `$ne` - pronalazi vrednosti koje nisu jednake zadatoj
+-  `$eq` - pronalazi vrednosti jednake zadatoj
+-  `$in` - pronalazi vrednosti jednake nekoj iz zadatog niza vrednosti
+-  `$nin` - pronalazi vrednosti nisu jednake nijednoj iz zadatog niza vrednosti.
 
 Sintaksa za ove operatore je sledeća:
 ```js
-{ <ime>: {$<operator>: <vrednost>} }
+{ 
+    <polje>: {
+        $<operator>: <vrednost>
+    } 
+}
 ```
 
 Dakle, za polje čije je ime zadato umesto vrednosti navodimo objekat koji sadrži operator kao svojstvo, a vrednost koja se zadaje predstavlja broj ili niz brojeva sa kojima se poredi vrednost zadatog polja.
@@ -139,116 +154,120 @@ Dakle, za polje čije je ime zadato umesto vrednosti navodimo objekat koji sadr�
 > Zadatak 3. Iz kolekcije `Student` izdvojiti sve studente sa prosekom većim od `8.5`.
 
 ```js
-db.Student.find({
-	avg_grade: {
-		$gt : "8.5"
-	}
+> db.Student.find({
+    avg_grade: {
+        $gt : "8.5"
+    }
 })
 ```
 
 > Zadatak 4. Iz kolekcije `Student` izdvojiti studente sa prosekom između 8.0 i 9.0.
 
 ```js
-db.Student.find({
-	avg_grade: {
-		$gte : "8.0",
-		$lte : "9.0"
-	}
+> db.Student.find({
+    avg_grade: {
+        $gte : "8.0",
+        $lte : "9.0"
+    }
 })
 ```
 
 > Zadatak 5. Iz kolekcije `Student` izdvojiti studente smerova `Informatika` i `Racunarstvo i informatika`.
 
 ```js
-db.Student.find({
-	major: {
-		$in : ['Informatika', 'Racunarstvo i informatika']
-	}
+> db.Student.find({
+    major: {
+        $in : ['Informatika', 'Racunarstvo i informatika']
+    }
 })
 ```
 
 Pored toga, možemo koristiti i svojstva koja imaju ulogu logičkih operatora:
 
-
--  `$and` - vraća sve dokumente koji su ispunili uslove oba upita
--  `$or` - vraća sve dokumente koji su ispunili uslove bar jedan od upita
--  `$not` - vraća sve dokumente koji nisu ispunili uslove upita
--  `$nor` - vraća sve dokumente koji nisu ispunili uslove nijednog upita
-
+-  `$and` - pronalazi sve dokumente koji su ispunili uslove oba upita
+-  `$or` - pronalazi sve dokumente koji su ispunili uslove bar jedan od upita
+-  `$not` - pronalazi sve dokumente koji nisu ispunili uslove upita
+-  `$nor` - pronalazi sve dokumente koji nisu ispunili uslove nijednog upita
 
 Vrednosti ovih svojstava su nizovi objekata koji predstavljaju logičke jedinice i povezuju se odgovarajućim logičkim operatorom. U slučaju operatora konjunkcije, ukoliko se u nizu nalaze jednostavni objekti, koji su ranije opisani, možemo izostaviti operator i samo razdvajati zarezom sve objekte. Međutim, ukoliko imamo uslove koji su nešto kompleksniji, npr. uslovi koji sadrži i neke druge logičke operatore, onda moramo koristiti `$and` eksplicitno. 
 
 Korišćenje logičkih operatora može se predstaviti sledećim objektom:
 
 ```js
-$<operator>: [ 
-		{ <ime1>: <vrednost1> }, 
-		{ <ime2>: <vrednost2> },
-		... 
-	]
+{
+    $<operator>: [ 
+        { <polje1>: <vrednost1> }, 
+        { <polje2>: <vrednost2> },
+        ... 
+    ]
+}
 ```
 
 > Zadatak 6. Iz kolekcije `Student` izdvojiti sve studente čiji je prosek veći od `8.0` sa smera `Informatika`.
 
 ```js
-db.Student.find({
-	$and: [ 
-		{ avg_grade: { $gt: 8.0 } }, 
-		{ major: `Informatika` } 
-	]
+> db.Student.find({
+    $and: [ 
+        { avg_grade: { $gt: 8.0 } }, 
+        { major: `Informatika` } 
+    ]
 })
 ```
 
-Prethodni upit predstavlja konjunkciju, i on se jednostavnije zapisuje navođenjem zapete između uslova poređenja:
+Prethodni upit predstavlja konjunkciju, i on se mo\v ze jednostavnije zapisati navođenjem zapete između uslova poređenja, tj.:
 
 ```js
-{
-	avg_grade: { $gt: 8.0 }, 
-	major: `Informatika`
-}
+> db.Student.find({
+    avg_grade: { $gt: 8.0 },
+    major: `Informatika`
+})
 ```
 
 > Zadatak 7. Iz kolekcije `Student` izdvojiti informacije o studentima čiji je prosek jednak `9.0` ili `10.0` i koji su upisali smer `Profesor` ili `Statistika`.
 
 ```js
-db.Student.find({
-	$and: [
-		$or: [ { avg_grade: 9.0 }, { avg_grade: 10.0 } ],
-		$or: [ { major: 'Profesor' }, { major: 'Statistika' } ]
-	]
+> db.Student.find({
+    $and: [
+        $or: [ { avg_grade: 9.0 }, { avg_grade: 10.0 } ],
+        $or: [ { major: 'Profesor' }, { major: 'Statistika' } ]
+    ]
 })
 ```
 
-U prethodnim upitima vrednosti polja su poređenje niskama onakve kakve su zadate. Nekada je potrebno proveriti da li vrednost polja  počinje ili završava nekim karakterom ili niskom, ili da li sadrži neki karakter ili nisku. 
-- Ukoliko želimo da vrednost nekog polja počinje nekom niskom ili karakterom onda nisku ili karakter pišemo između `/^` i `/`.
-- Ukoliko želimo da vrednost nekog polja završava nekom niskom ili karakterom onda nisku ili karakter pišemo između `/` i `$/`.
-- Ukoliko želimo da vrednost nekog polja sadrži neku nisku ili karakter onda nisku ili karakter pišemo između `/` i `/`.
+U prethodnim upitima vrednosti polja su poređenje niskama onakve kakve su zadate. Nekada je potrebno proveriti da li vrednost polja počinje ili završava nekom niskom, ili da li sadrži neku nisku. 
 
-> Zadatak 8. Izkolekcije `Student` izdvojiti informacije o studentima čije prezime počinje karakterom `P`.
+- Ukoliko želimo da vrednost nekog polja počinje nekom niskom, onda tu nisku navodimo između `/^` i `/`.
+
+- Ukoliko želimo da vrednost nekog polja završava nekom niskom, onda tu nisku navodimo između `/` i `$/`.
+
+- Ukoliko želimo da vrednost nekog polja sadrži neku nisku, onda tu nisku navodimo između `/` i `/`.
+
+> Zadatak 8. Iz kolekcije `Student` izdvojiti informacije o studentima čije prezime počinje karakterom `P`.
 
 ```js
-db.Student.find({ surname: /^P/ })
+> db.Student.find({ 
+    surname: /^P/ 
+})
 ```
-
 
 ### 8.4.2. Upiti za ažuriranje vrednosti polja
 
 Ukoliko bismo želeli da izmenimo neku vrednost upisanu u bazu možemo koristiti neki od sledećih operatora:
 
 - `$currentDate` - Postavlja vrednost polja na trenutni datum. Vrednost ovog svojstva je objekat koji sadrži jedno ili više polja čije se vrednosti menjaju. Za svako polje se kao vrednost može navesti:
-	- bulova vrednost `true` čime se naznačava da se vrednost zadaje u `Date` formatu,
+    - bulova vrednost `true` čime se naznačava da se vrednost zadaje u `Date` formatu,
 
-	- objekat, koji određuje tip (svojstvo `$type`) polja i može biti `timestamp` ili `date`, u notaciji
+    - objekat, koji određuje tip (svojstvo `$type`) polja i može biti `timestamp` ili `date`, u notaciji
 
-		```js
-		{ $type : 'timestamp' }
-		```
+        ```js
+        { $type : 'timestamp' }
+        ```
 
-		ili 
+        ili 
 
-		```js
-		{ $type : 'date' }
-		```
+        ```js
+        { $type : 'date' }
+        ```
 
 - `$inc` - Uvećava trenutnu vrednost jednog ili više polja za zadate vrednosti.
 
@@ -256,11 +275,15 @@ Ukoliko bismo želeli da izmenimo neku vrednost upisanu u bazu možemo koristiti
 
 - `$set` - Postavlja vrednost jednog ili više polja na zadate vrednosti.
 
-
 Sintaksa ovih svojstava je sledeća:
-	
+    
 ```js
-{ $<svojstvo>: { <ime1>: <vrednost1>, ... } }
+{ 
+    $<svojstvo>: { 
+        <polje1>: <vrednost1>, 
+        ... 
+    } 
+}
 ```
 
 gde se redom navode imena polja čije se vrednosti menjaju na prethodno opisan način i nove vrednosti za ta polja.
@@ -272,8 +295,20 @@ Za više informacija o operatorima ažuriranja možete pogledati [ovde](https://
 
 ```js
 > db.Student.updateMany(
-	{ $and: [ {$or: [{major: 'Informatika'}, { major: 'Racunarstvo i informatika'}]}, {avg_grade: {$gt: 9.5}}]}, 
-	{$set: { note: "Izvanredni studenti informatike"}})
+    // Prvo navodimo upit koja dokumenta azuriramo
+    { 
+        $and: [ 
+            { $or: [{major: 'Informatika'}, { major: 'Racunarstvo i informatika'}] }, 
+            { avg_grade: {$gt: 9.5} }
+        ]
+    }, 
+    // A zatim navodimo upit na koji nacin ta dokumenta azuriramo
+    {
+        $set: { 
+            note: "Izvanredni studenti informatike"
+        }
+    }
+)
 
 > db.Student.find()
 ```
@@ -288,7 +323,7 @@ Iako je moguće komunicirati iz Node.js aplikacije ka MongoDB bazi podataka pomo
 
 
 Kada imamo povezane kolekcije, kao što su u ovom primeru `Orders` i `Products` - u `Orders` čuvamo identifikator proizvoda koji je naručen, može nam biti od koristi da iz baze dohvatimo i informacije o proizvodu na osnovu identifikatora. Na rezultat funkcije `find` i `findById` možemo nadovezati poziv funkcije
-	`populate(path [, select][, model][, match][, options])` \footnote[Dokumentacija](https://mongoosejs.com/docs/api.html\#query_Query-populate) koja će umesto identifikatora prosleđen kroz parametar \inlineKod{path} ubaciti objekat sa podacima o proizvodu koji tražimo. U pozadini se vrši pretraga kolekcije koja je zadata kao vrednost svojstva \inlineKod{ref} u shemi. Dakle, sve što treba da prosledimo funkciji jesu nazivi polja koje treba dopuniti razdvojeni blanko karakterom:
+    `populate(path [, select][, model][, match][, options])` \footnote[Dokumentacija](https://mongoosejs.com/docs/api.html\#query_Query-populate) koja će umesto identifikatora prosleđen kroz parametar \inlineKod{path} ubaciti objekat sa podacima o proizvodu koji tražimo. U pozadini se vrši pretraga kolekcije koja je zadata kao vrednost svojstva \inlineKod{ref} u shemi. Dakle, sve što treba da prosledimo funkciji jesu nazivi polja koje treba dopuniti razdvojeni blanko karakterom:
 
 -->
 -----
