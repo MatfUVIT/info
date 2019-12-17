@@ -36,11 +36,55 @@ Sledeći pojmovi su bitni za razumevanje MongoDB:
 Kako bi rad sa MongoDB serverom bio moguć potrebno je preuzeti [instalaciju](https://www.mongodb.com/download-center/community?jmp=docs). Odabrati verziju 4.2.2, odgovarajući operativni sistem i paket. Detaljna uputstva za instalaciju možete pogledati [ovde](https://docs.mongodb.com/manual/administration/install-community/).
 
 
-## 8.3. Upiti
+## 8.3 MongoDB shell
 
-Pretpostavimo da imamo kolekciju `Student` u kojoj se čuvaju dokumenti sa podacima o pojedinačnim studentima. Da bismo dohvatili podatke iz baze moramo napisati upit koji specifikuje kakvi podaci su nam potrebni. Upite pišemo kao objekte.
+Korišćenjem MongoDB shell-a možemo se povezati sa bazom i izvršavati različite upite nad kolekcijama koje sadrži. Potrebno je pokrenuti shell skript koji dolazi uz `mongo` server (<instalacioni_direktorijum>/Server/4.2/bin/mongo). 
 
-### 8.3.1. Upiti čitanja
+Na raspolaganju su naredne naredbe:
+
+- `show dbs` - Izlistava nazive svih baza na serveru.
+
+- `use <db>` - Pristupa bazi sa nazivom koji se zadaje. Svi upiti se vrše nad odabranom bazom sve dok se ova naredba ne ponovi sa nazivom druge baze.
+
+- `show tables` - Izlistava sve kolekcije iz odabrane baze.
+
+- `db.<collection>.find()` - Izlistava sve dokumente iz zadate kolekcije.
+
+- `db.<collection>.find(<upit>)` - Izlistava sve dokumente iz zadate kolekcije koji ispunjavaju uslove zadate upitom.
+
+- `db.<collection>.insert(<dokument>)` - Dodaje jedan nov dokument u zadatu kolekciju. 
+
+- `db.<collection>.insert([<dokument1>, <dokument2>, ...])` - Dodaje više novih dokumenata u zadatu kolekciju.
+
+- `db.<collection>.update(<upit>, <objekat sa izmenama>)` - Menja polja jednog dokumenta koji ispunjava uslove zadatog upita.
+
+- `db.<collection>.updateMany(<upit>, <objekat sa izmenama>)` - Menja polja svih dokumenata koji ispunjavu uslove zadatog upita.
+
+- `db.<collection>.deleteOne(<upit>)` - Briše jedan dokument koji ispunjava uslove zadatog upita.
+
+- `db.<collection>.deleteMany(<upit>)` - Briše sve dokumente koji ispunjavu uslove zadatog upita.
+
+
+## 8.4. Upiti
+
+Pre nego što se upustimo u ovu oblast potrebno je da pripremimo podatke za obradu. U datoteci [studenti](./Resursi/studenti.json) nalaze se podaci podaci o pojedinačnim studentima. Podaci su zadati u `JSON` formatu i kao takvi se lako mogu uvesti u `MongoDB` bazu naredbom `mongoimport`[^1]:
+
+[^1]: mongoimport nalazi se u istom direktorijumu gde i mongo server.
+
+```
+mongoimport --db <db_name> --collection <collection_name> --file <path>
+```
+
+gde se umesto `<db_name>` navodi ime baze u koju se uvoze podaci, zatim naziv kolekcije u koju se podaci uvoze umesto `<collection_name>` i  putanju do datoteke koja sadrži podatke umesto `<path>`.
+
+
+> Zadatak 0. U kolekciju `Student` iz baze `Fakultet` uvesti podatke o studentima iz datoteke [studenti](./Resursi/studenti.json).
+
+```mongoimport --db Fakultet --collection Student --file studenti.json```
+
+Da bismo dohvatili podatke iz baze moramo napisati upit koji specifikuje kakvi podaci su nam potrebni. Upite pišemo kao objekte.
+
+### 8.4.1. Upiti čitanja
 
 Ako bismo želeli da dohvatimo podatke o svim studentima u kolekciji, koristili bismo prazan upit, odnosno
 
@@ -48,25 +92,28 @@ Ako bismo želeli da dohvatimo podatke o svim studentima u kolekciji, koristili 
 {}
 ```
 
-Često nije potrebno da dohvatimo sve podatke, već neke specifične, odnosno, sa određenim vrednostima za neka polja. U tom slučaju, upit je ***objekat*** sa svojstvima, koja odgovaraju poljima u dokumentima, i vrednostima koje tražimo
+Često nije potrebno da dohvatimo sve podatke, već neke specifične, odnosno, sa određenim vrednostima za neka polja. U tom slučaju, upit je ***objekat*** sa svojstvima koja odgovaraju poljima u dokumentima, i vrednostima koje tražimo. Navodimo makar jedno svojstvo, a može i više:
 
 ```js
 { <ime1> : <vrednost1>, <ime2>: <vrednost2>, ...}
 ```
 
-Na primer, ako bismo iz kolekcije student želeli da izvučemo podatke o svim studentima sa imenom "Jovan", koristili bismo upit:
+> Zadatak 1. Iz kolekcije `Student` izdvojiti sve studente koji se zovu `Jovana`.
 
 ```js
-{ime : "Jovan"}
+db.Student.find({name: "Jovana"})
 ```
 
-Ako su nam potrebni još precizniji detalji o studentma, možemo dodati još svojstava u objekat. Na primer, ako bismo želeli sve studente koji se zovu "Jovan", i imaju prosek jednak *8.5*, napisali bismo upit:
+Ukoliko je navedeni više od jednog svojstva, traže se svi dokumenti koji za svako od navedenih naziva polja imaju navedenu vrednost. Ako se bar jedno polje ne poklapa po vrednosti sa zadatom, on neće biti prikazan kao rezultat.
+
+> Zadatak 2. Iz kolekcije `Student` izdvojiti sve studente koji se zovu `Jovana` i čiji je prosek jednak `8.5`.
+
 
 ```js
-{
-	ime : "Jovan", 
-	prosek: "8.5"
-}
+db.Student.find({
+	name: "Jovana", 
+	avg_grade: "8.5"
+})
 ```
 
 Na ovaj način dobijamo poređenje vrednosti po jednakosti. Nekada će nam biti potrebno da pronađemo dokumente sa vrednostima koje su manje ili veće od zadate, ili koje su u nekom intervalu, itd. Definisana su posebna svojstva koja možemo pisati u upitu koja se tiču ovog problema:
@@ -79,38 +126,45 @@ Na ovaj način dobijamo poređenje vrednosti po jednakosti. Nekada će nam biti 
 -  `$ne` - traži vrednosti koje nisu jednake zadatoj
 -  `$eq` - traži vrednosti jednake zadatoj
 -  `$in` - traži vrednosti jednake nekoj iz zadatog niza vrednosti
--  `$nin` - traži vrednosti nisu jednake nijednoj iz zadatog niza vrednosti
+-  `$nin` - traži vrednosti nisu jednake nijednoj iz zadatog niza vrednosti.
 
-
-Ako želimo studente sa prosekom većim od *8.5*, pisali bismo upit
-
+Sintaksa za ove operatore je sledeća:
 ```js
-{
-	prosek : {
-		$gt : "8.5"
-	}
-}
+{ <ime>: {$<operator>: <vrednost>} }
 ```
 
-Studente sa prosekom iz intervala [8.0, 9.0] možemo dohvatiti upitom
+Dakle, za polje čije je ime zadato umesto vrednosti navodimo objekat koji sadrži operator kao svojstvo, a vrednost koja se zadaje predstavlja broj ili niz brojeva sa kojima se poredi vrednost zadatog polja.
+
+
+> Zadatak 3. Iz kolekcije `Student` izdvojiti sve studente sa prosekom većim od `8.5`.
 
 ```js
-{
-	prosek : {
+db.Student.find({
+	avg_grade: {
+		$gt : "8.5"
+	}
+})
+```
+
+> Zadatak 4. Iz kolekcije `Student` izdvojiti studente sa prosekom između 8.0 i 9.0.
+
+```js
+db.Student.find({
+	avg_grade: {
 		$gte : "8.0",
 		$lte : "9.0"
 	}
-}
+})
 ```
 
-Ukoliko želimo da dohvatimo studente I i R smerova, koristili bismo upit
+> Zadatak 5. Iz kolekcije `Student` izdvojiti studente smerova `Informatika` i `Racunarstvo i informatika`.
 
 ```js
-{
-	smer : {
-		$in : ['I', 'R']
+db.Student.find({
+	major: {
+		$in : ['Informatika', 'Racunarstvo i informatika']
 	}
-}
+})
 ```
 
 Pored toga, možemo koristiti i svojstva koja imaju ulogu logičkih operatora:
@@ -122,38 +176,62 @@ Pored toga, možemo koristiti i svojstva koja imaju ulogu logičkih operatora:
 -  `$nor` - vraća sve dokumente koji nisu ispunili uslove nijednog upita
 
 
-Vrednosti ovih svojstava su nizovi koji predstavljaju logičke jedinice koje se povezuju odgovarajućim logičkim operatorom. Na primer, ako želimo da dohvatimo sve studente čiji je prosek veći od *8.0* i čija je godina upisa *2018*, koristili bismo upit
+Vrednosti ovih svojstava su nizovi objekata koji predstavljaju logičke jedinice i povezuju se odgovarajućim logičkim operatorom. U slučaju operatora konjunkcije, ukoliko se u nizu nalaze jednostavni objekti, koji su ranije opisani, možemo izostaviti operator i samo razdvajati zarezom sve objekte. Međutim, ukoliko imamo uslove koji su nešto kompleksniji, npr. uslovi koji sadrži i neke druge logičke operatore, onda moramo koristiti `$and` eksplicitno. 
+
+Korišćenje logičkih operatora može se predstaviti sledećim objektom:
 
 ```js
-{
-	$and: [ 
-		{ prosek: { $gt: 8.0 } }, 
-		{ godinaStudija: 2018 } 
+$<operator>: [ 
+		{ <ime1>: <vrednost1> }, 
+		{ <ime2>: <vrednost2> },
+		... 
 	]
-}
+```
+
+> Zadatak 6. Iz kolekcije `Student` izdvojiti sve studente čiji je prosek veći od `8.0` sa smera `Informatika`.
+
+```js
+db.Student.find({
+	$and: [ 
+		{ avg_grade: { $gt: 8.0 } }, 
+		{ major: `Informatika` } 
+	]
+})
 ```
 
 Prethodni upit predstavlja konjunkciju, i on se jednostavnije zapisuje navođenjem zapete između uslova poređenja:
 
 ```js
 {
-	prosek: { $gt: 8.0 }, 
-	godinaStudija: 2018
+	avg_grade: { $gt: 8.0 }, 
+	major: `Informatika`
 }
 ```
 
-Ukoliko imamo uslove koji su nešto kompleksniji, onda moramo koristiti `$and` eksplicitno. Na primer, ako je potrebno izdvojiti informacije o studentima čiji je prosek jednak *9.0* *ili* *10.0* **i** čija je godina studija *2017* *ili* *2018*, onda možemo napisati upit:
+> Zadatak 7. Iz kolekcije `Student` izdvojiti informacije o studentima čiji je prosek jednak `9.0` ili `10.0` i koji su upisali smer `Profesor` ili `Statistika`.
 
 ```js
-{
+db.Student.find({
 	$and: [
-		$or: [ { prosek: 9.0 }, { prosek: 10.0 } ],
-		$or: [ { godinaStudija: 2017 }, { godinaStudija: 2018 } ]
+		$or: [ { avg_grade: 9.0 }, { avg_grade: 10.0 } ],
+		$or: [ { major: 'Profesor' }, { major: 'Statistika' } ]
 	]
-}
+})
 ```
 
-### 8.3.2. Upiti za ažuriranje vrednosti polja
+U prethodnim upitima vrednosti polja su poređenje niskama onakve kakve su zadate. Nekada je potrebno proveriti da li vrednost polja  počinje ili završava nekim karakterom ili niskom, ili da li sadrži neki karakter ili nisku. 
+- Ukoliko želimo da vrednost nekog polja počinje nekom niskom ili karakterom onda nisku ili karakter pišemo između `/^` i `/`.
+- Ukoliko želimo da vrednost nekog polja završava nekom niskom ili karakterom onda nisku ili karakter pišemo između `/` i `$/`.
+- Ukoliko želimo da vrednost nekog polja sadrži neku nisku ili karakter onda nisku ili karakter pišemo između `/` i `/`.
+
+> Zadatak 8. Izkolekcije `Student` izdvojiti informacije o studentima čije prezime počinje karakterom `P`.
+
+```js
+db.Student.find({ surname: /^P/ })
+```
+
+
+### 8.4.2. Upiti za ažuriranje vrednosti polja
 
 Ukoliko bismo želeli da izmenimo neku vrednost upisanu u bazu možemo koristiti neki od sledećih operatora:
 
@@ -187,41 +265,23 @@ Sintaksa ovih svojstava je sledeća:
 
 gde se redom navode imena polja čije se vrednosti menjaju na prethodno opisan način i nove vrednosti za ta polja.
 
+
 Za više informacija o operatorima ažuriranja možete pogledati [ovde](https://docs.mongodb.com/manual/reference/operator/update-field/).
 
+> Zadatak 8. U kolekciji `Student` izmeniti napomenu u `Izvanredni studenti informatike` svim studentima smera `Informatika` ili `Racunarstvo i informatika` čiji je prosek veći od `9.5`, a zatim izlistati sav sadržaj kolekcije.
 
-## 8.3.3. MongoDB shell
+```js
+> db.Student.updateMany(
+	{ $and: [ {$or: [{major: 'Informatika'}, { major: 'Racunarstvo i informatika'}]}, {avg_grade: {$gt: 9.5}}]}, 
+	{$set: { note: "Izvanredni studenti informatike"}})
 
-Korišćenjem MongoDB shell-a možemo se povezati sa bazom i izvršavati različite upite nad kolekcijama koje sadrži. Potrebno je pokrenuti shell skript koji dolazi uz `mongo` server (<instalacioni_direktorijum>/Server/4.2/bin/mongo). 
-
-Na raspolaganju su naredne naredbe:
-
-- `show dbs` - Izlistava nazive svih baza na serveru.
-
-- `use <db>` - Pristupa bazi sa nazivom koji se zadaje. Svi upiti se vrše nad odabranom bazom sve dok se ova naredba ne ponovi sa nazivom druge baze.
-
-- `show tables` - Izlistava sve kolekcije iz odabrane baze.
-
-- `db.<collection>.find()` - Izlistava sve dokumente iz zadate kolekcije.
-
-- `db.<collection>.find(<upit>)` - Izlistava sve dokumente iz zadate kolekcije koji ispunjavaju uslove zadate upitom.
-
-- `db.<collection>.insert(<dokument>)` - Dodaje jedan nov dokument u zadatu kolekciju. 
-
-- `db.<collection>.insert([<dokument1>, <dokument2>, ...])` - Dodaje više novih dokumenata u zadatu kolekciju.
-
-- `db.<collection>.update(<upit>, <objekat sa izmenama>)` - Menja polja jednog dokumenta koji ispunjava uslove zadatog upita.
-
-- `db.<collection>.updateMany(<upit>, <objekat sa izmenama>)` - Menja polja svih dokumenata koji ispunjavu uslove zadatog upita.
-
-- `db.<collection>.deleteOne(<upit>)` - Briše jedan dokument koji ispunjava uslove zadatog upita.
-
-- `db.<collection>.deleteMany(<upit>)` - Briše sve dokumente koji ispunjavu uslove zadatog upita.
+> db.Student.find()
+```
 
 
 <!--
 
-## 8.4. Razvojno okruženje Mongoose.js
+## 8.5. Razvojno okruženje Mongoose.js
 
 Iako je moguće komunicirati iz Node.js aplikacije ka MongoDB bazi podataka pomoću zvaničnog MongoDB drajvera koji se razvija od strane razvijača MongoDB baze podataka\footnote{Više informacije se može pronaći na zvaničnoj stranici projekta [ovde](https://mongodb.github.io/node-mongodb-native/), mi ćemo u našim aplikacijama koristiti razvojno okruženje Mongoose.js\footnote{Zvanična veb prezentacija projekta se nalazi [ovde](https://mongoosejs.com/), dok je dokumentaciju moguće pronaći [ovde](https://mongoosejs.com/docs/api.html). Razlog za ovu odluku jeste što nam Mongoose.js omogućava da pišemo kod koji se poprilično dobro uklapa u ono što već znamo. Drugim rečima, na ovom času ćemo moći da upotrebimo kod koji smo napisali na prethodnom času bez i jedne konceptualne promene. Pređimo na naredni primer.
 
