@@ -60,6 +60,10 @@ U nastavku dajemo odabrane naredbe koje je moguće izvršiti u MongoDB shell pro
 
 - `db.<collection>.insert([<dokument1>, <dokument2>, ...])` - Dodaje više novih dokumenata u zadatu kolekciju.
 
+- `db.<collection>.insertOne(<dokument>)` - Dodaje jedan nov dokument u zadatu kolekciju. 
+
+- `db.<collection>.insertMany([<dokument1>, <dokument2>, ...])` - Dodaje više novih dokumenata u zadatu kolekciju.
+
 - `db.<collection>.update(<upit>, <objekat sa izmenama>)` - Menja polja jednog dokumenta koji ispunjava uslove zadatog upita.
 
 - `db.<collection>.updateMany(<upit>, <objekat sa izmenama>)` - Menja polja svih dokumenata koji ispunjavu uslove zadatog upita.
@@ -67,6 +71,20 @@ U nastavku dajemo odabrane naredbe koje je moguće izvršiti u MongoDB shell pro
 - `db.<collection>.deleteOne(<upit>)` - Briše jedan dokument koji ispunjava uslove zadatog upita.
 
 - `db.<collection>.deleteMany(<upit>)` - Briše sve dokumente koji ispunjavu uslove zadatog upita.
+
+- `db.<collection>.drop()` - Uništava kolekciju i sve dokumente koji se nalaze u njoj.
+
+- `db.dropDatabase()` - Uništava trenutno aktivnu bazu podataka i sve kolekcije, odnosno, dokumenta koji se nalaze u njoj.
+
+MongoDB shell program ne sadrži operaciju za kreiranje nove baze podataka. Umesto toga, baza se automatski kreira kada se u nju trajno zapiše prvi dokument. Tako, na primer, ukoliko MongoDB SUBP nije imao bazu podataka `myNewDB`, nakon izvršavanja naredne dve naredbe, biće kreirana nova baza podataka `myNewDB` koja će sadržati jednu kolekciju `myNewCollection1` koja će sadržati jedan dokument:
+
+```js
+> use myNewDB
+
+> db.myNewCollection1.insertOne( { x: 1 } )
+```
+
+Takođe, vredno je napomenuti da su opisane naredbe primenljive **samo u MongoDB shell programu**, a ne u drugim radnim okvirima, drajverima i sl. U sekciji u kojoj budemo govorili o Mongoose.js radnom okviru, primetićemo da postoji veliki broj metoda čiji nazivi odgovaraju prethodno opisanim naredbama. Međutim, ne treba ih mešati sa naredbama iznad, već one imaju drugačiju semantiku!
 
 ## 8.4 Upiti
 
