@@ -242,13 +242,17 @@ Prethodni upit predstavlja konjunkciju, i on se može jednostavnije zapisati nav
 })
 ```
 
-> Zadatak 7. Iz kolekcije `Student` izdvojiti informacije o studentima čiji je prosek jednak `9.0` ili `10.0` i koji su upisali smer `Profesor` ili `Statistika`.
+> Zadatak 7. Iz kolekcije `Student` izdvojiti informacije o studentima čiji je prosek jednak `9.0` ili `10.0` i koji su upisali smer `Informatika` ili `Statistika`.
 
 ```js
 > db.Student.find({
     $and: [
-        $or: [ { avg_grade: 9.0 }, { avg_grade: 10.0 } ],
-        $or: [ { major: 'Profesor' }, { major: 'Statistika' } ]
+        { 
+            $or: [ { avg_grade: 9.0 }, { avg_grade: 10.0 } ] 
+        },
+        {
+            $or: [ { major: 'Informatika' }, { major: 'Statistika' } ]
+        }
     ]
 })
 ```
