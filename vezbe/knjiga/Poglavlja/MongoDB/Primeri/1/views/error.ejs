@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Greška na serveru</title>
+
+    <link rel="stylesheet" type="text/css" href="/css/main.css" />
+    <link rel="stylesheet" type="text/css"
+        href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+</head>
+
+<body>
+    <header>
+        <nav>
+            <a href="/">Početna</a>
+        </nav>
+    </header>
+    <main>
+        <h1>Greška na serveru! (greška <%= errorCode %>)</h1>
+        <p><%= errorMessage %></p>
+    </main>
+</body>
+
+</html>
