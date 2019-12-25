@@ -229,7 +229,7 @@ Autori:
 
 4. [Arhitektura "Model-Pogled-Kontroler"](./Poglavlja/NodeJS/README.md#74-arhitektura-model-pogled-kontroler){:target="_blank"}
 
-### Poglavlje 8. MongoDB baza podataka i Mongoose.js ORM
+### [Poglavlje 8. MongoDB baza podataka i Mongoose.js ORM](./Poglavlja/MongoDB/README.md){:target="_blank"}
 
 -----
 

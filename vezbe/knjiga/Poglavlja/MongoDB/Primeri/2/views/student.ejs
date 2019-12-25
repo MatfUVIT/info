@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
+    <% if (student !== null) { %>
+    <title>Dobrodošli <%= student.username %>!</title>
+    <% } else { %>
+    <title>Nepoznat student ili pogrešna lozinka!</title>
+    <% } %>
+
+    <link rel="stylesheet" type="text/css" href="/css/main.css" />
+    <link rel="stylesheet" type="text/css"
+        href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+</head>
+
+<body>
+    <header>
+        <nav>
+            <a href="/">Izloguj se iz sistema</a>
+
+            <form action="/student" method="POST">
+                <input type="text" id="username" name="username"
+                        value="<%= student.username %>" hidden>
+                
+                <input type="password" id="password" name="password" 
+                    value="<%= student.password %>" hidden>
+            
+                <input type="submit" value="|   Profil">
+            </form>
+
+            <form action="/exam" method="POST">
+                <input type="text" id="username" name="username"
+                        value="<%= student.username %>" hidden>
+                
+                <input type="password" id="password" name="password" 
+                    value="<%= student.password %>" hidden>
+            
+                <input type="submit" value="|   Ispiti">
+            </form>
+
+            <form action="/results" method="POST">
+                <input type="text" id="username" name="username"
+                        value="<%= student.username %>" hidden>
+                
+                <input type="password" id="password" name="password" 
+                    value="<%= student.password %>" hidden>
+            
+                <input type="submit" value="|   Rezultati">
+            </form>
+        </nav>
+    </header>
+    <main class="container">
+        <% if (student !== null) { %>
+        <h1>Studentska stranica za studenta <%= student.username %></h1>
+
+        <h3>Informacije:</h3>
+        <table class="table">
+            <tr>
+                <td>username</td>
+                <td><%= student.username %></td>
+            </tr>
+            <tr>
+                <td>password</td>
+                <td><%= student.password.replace(/./g, '*') %></td>
+            </tr>
+        </table>
+
+        <div class="row">
+            <div class="col-md-6">
+                <h3>Izmenite podatke</h3>
+                <form action="/student/update" method="POST">
+                    <div class="form-group">
+                        <label for="username" class="form-label">Korisničko ime</label>
+                        <input type="text" id="username" name="username" class="form-control"
+                            value="<%= student.username %>" readonly>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password" class="form-label">Lozinka</label>
+                        <input type="password" id="password" name="password" class="form-control"
+                            value="<%= student.password %>">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="name" class="form-label">Ime</label>
+                        <input type="text" id="name" name="name" class="form-control" value="<%= student.name %>">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="name" class="form-label">Prezime</label>
+                        <input type="text" id="surname" name="surname" class="form-control" value="<%= student.surname %>">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="major" class="form-label">Smer</label>
+                        <input type="text" id="major" name="major" class="form-control" value="<%= student.major %>">
+                    </div>
+
+                    <input type="submit" value="Izmeni podatke" class="btn btn-primary">
+                </form>
+            </div>
+            <div class="col-md-6">
+                <h3>Obrišite podatke</h3>
+                <form action="/student/delete" method="POST">
+                    <div class="form-group">
+                        <label for="username" class="form-label">Korisničko ime</label>
+                        <input type="text" id="username" name="username" class="form-control"
+                            value="<%= student.username %>" readonly>
+                    </div>
+
+                    <input type="submit" value="Obriši podatke" class="btn btn-primary">
+                </form>
+            </div>
+        </div>
+        <% } else { %>
+        <h1>Ne postoje informacije za unetog studenta<br>ili ste uneli neispravnu lozinku!</h1>
+        <% } %>
+    </main>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="/js/student.js"></script>
+</body>
+
+</html>

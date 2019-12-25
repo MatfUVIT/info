@@ -196,7 +196,7 @@ router.use(function (req, res, next) {
 };
 ```
 
-- Nivo obrade gresaka: funkcije srednjeg sloja će biti pozvane ukoliko dođe do grešaka pri izvršavanju serverskih aplikacije. Greške mogu podrazumevati sintaksne greške u kodu, neobrađene izuzetke, i dr. Specijalno za ovaj nivo obrade grešaka važi da funkcije srednjeg sloja prihvataju 4 argumenta, pri čemu je prvi argument objekat greške (`err`), a preostala tri su opisani objekti `req`, `res` i `next`.
+- Nivo obrade grešaka: funkcije srednjeg sloja će biti pozvane ukoliko dođe do grešaka pri izvršavanju serverskih aplikacije. Greške mogu podrazumevati sintaksne greške u kodu, neobrađene izuzetke, i dr. Specijalno za ovaj nivo obrade grešaka važi da funkcije srednjeg sloja prihvataju 4 argumenta, pri čemu je prvi argument objekat greške (`err`), a preostala tri su opisani objekti `req`, `res` i `next`.
 
 ```js
 app.use(function (err, req, res, next) {
@@ -556,8 +556,8 @@ Dajmo ceo kod šablona koji ćemo koristiti za prikaz informacija o prijavljenom
             <table class="table">
             <% for (let key in student) { %>
                 <tr>
-                    <td><%= key %><td>
-                    <td><%= student[key] %><td>
+                    <td><%= key %></td>
+                    <td><%= student[key] %></td>
                 </tr>
             <% } %>
             </table>
