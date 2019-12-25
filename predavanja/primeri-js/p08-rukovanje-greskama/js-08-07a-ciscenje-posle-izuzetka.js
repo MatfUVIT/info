@@ -19,12 +19,15 @@ console.log(kontekst);
 
 
 console.log("---")
+
+const korenujAkoMozes = function (x) {
+  if (kontekst < 0)
+    throw new Error("Nemoguce izracunati koren negativnog broja!");
+  console.log(Math.sqrt(kontekst));
+};
+
 try {
-  izvrsiSaKontekstom(16, function (x) {
-    if (kontekst < 0)
-      throw new Error("Nemoguce izracunati koren negativnog broja!");
-    console.log(Math.sqrt(kontekst));
-  });
+  izvrsiSaKontekstom(16, korenujAkoMozes);
 } catch (e) {
   console.log("Ignorise se izuzetak: " + e);
 }
@@ -32,11 +35,7 @@ console.log(kontekst);
 
 console.log("---")
 try {
-  izvrsiSaKontekstom(-16, function () {
-    if (kontekst < 0)
-      throw new Error("Nemoguce izracunati koren negativnog broja!");
-    console.log(Math.sqrt(kontekst));
-  });
+  izvrsiSaKontekstom(-16, korenujAkoMozes);
 } catch (e) {
   console.log("Ignorise se izuzetak: " + e);
 }

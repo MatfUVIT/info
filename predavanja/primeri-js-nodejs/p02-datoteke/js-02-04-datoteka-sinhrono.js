@@ -7,5 +7,7 @@ let mojPisac = fs.writeFileSync('test2.txt',
 `Ovo je proba!
 
 I treba pokušavati! 
+
+XXX
 `
 , 'utf8');

@@ -2,7 +2,7 @@ let net = require('net');
 
 let server = net.createServer(
 	(soket) => {
-		soket.write(`Pozdrav od servera\n`);
+		soket.write(`Pozdrav od servera\n Veliki pozdrav!`);
 		soket.pipe(soket);
 	});
 

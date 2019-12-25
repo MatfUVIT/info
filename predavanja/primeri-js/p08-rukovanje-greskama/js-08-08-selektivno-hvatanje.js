@@ -14,12 +14,13 @@ function NeMozePrekoNebaError(message) {
 NeMozePrekoNebaError.prototype = Object.create(Error.prototype);
 NeMozePrekoNebaError.prototype.name = "NeMozePrekoNebaError";
 
-let pravac = function () {
-  if (Math.random() < 0.3)
+const pravac = function () {
+  const slucajan = Math.random();
+  if (slucajan < 0.3)
     return "levo";
-  if (Math.random() < 0.6)
+  if (slucajan < 0.6)
     return "desno";
-  if (Math.random() < 0.8)
+  if (slucajan < 0.8)
     return "gore";
   return "dole";
 }

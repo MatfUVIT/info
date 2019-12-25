@@ -1,10 +1,11 @@
 "use strict";
 
 let slucajanBrojIliMiki = function () {
-  if (Math.random() < 0.4)
-    return Math.floor(Math.random() * 10);
-  if (Math.random() < 0.8)
-    return Math.floor(-Math.random() * 10);
+  const slucajan = Math.random();
+  if (slucajan < 0.4)
+    return Math.floor(slucajan * 10);
+  if (slucajan < 0.8)
+    return Math.floor(-slucajan * 10);
   return "Miki Maus";
 }
 
