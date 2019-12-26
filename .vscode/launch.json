@@ -9,7 +9,7 @@
             "type": "node",
             "request": "launch",
             "name": "Покрени Програм",
-            "program": "${workspaceFolder}/predavanja/primeri-js-server-nodejs/p04-js-i-veb-servisi/js-04-01-js-veb-servis/veb-servis.js"
+            "program": "${workspaceFolder}/predavanja/primeri-js-server-nodejs/p01-js-i-http/js-01-08-http-server-node-post-params/veb-server.js"
         }
     ]
 }

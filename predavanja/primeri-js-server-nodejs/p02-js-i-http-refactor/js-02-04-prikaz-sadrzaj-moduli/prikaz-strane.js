@@ -1,5 +1,5 @@
 
-let s = require('./sadrzaj');
+const s = require('./sadrzaj');
 
 function prikazStrane(response, pathName) {
     if (s.sadrzaj[pathName]) {

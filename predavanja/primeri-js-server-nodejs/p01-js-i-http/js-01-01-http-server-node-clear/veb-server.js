@@ -1,4 +1,4 @@
-let http = require('http');
+const http = require('http');
 
 const port = 7000;
 http.createServer(

@@ -3,18 +3,18 @@ let url = require('url');
 let fs = require('fs');
 
 const port = 7000;
-http.createServer(function (zahtev, odgovro) {
+http.createServer(function (zahtev, odgovor) {
     pathName = url.parse(zahtev.url).pathname;
     fs.readFile(__dirname + pathName, function (err, data) {
         if (err) {
-            odgovro.writeHead(404, { 'Content-type': 'text/plan' });
-            odgovro.write(`Page Was Not Found 
+            odgovor.writeHead(404, { 'Content-type': 'text/plan' });
+            odgovor.write(`Page Was Not Found 
             ${JSON.stringify(err)}`);
-            odgovro.end();
+            odgovor.end();
         } else {
-            odgovro.writeHead(200);
-            odgovro.write(data);
-            odgovro.end();
+            odgovor.writeHead(200);
+            odgovor.write(data);
+            odgovor.end();
         }
     });
 } ).listen(port);

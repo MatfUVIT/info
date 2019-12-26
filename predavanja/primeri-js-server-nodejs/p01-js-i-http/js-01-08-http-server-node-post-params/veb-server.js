@@ -1,5 +1,5 @@
-let http = require('http');
-var querystring = require('querystring');
+const http = require('http');
+const querystring = require('querystring');
 
 function obradiPostZahtev(zahtev, odgovor) {
     let podaci = "";
