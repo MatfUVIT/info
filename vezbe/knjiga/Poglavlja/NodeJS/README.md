@@ -625,7 +625,7 @@ U narednoj verziji naše aplikacije želimo da implementiramo mogućnost da stud
 
 Dodatno, potrebno je izmeniti HTTP metode koji se koriste u formularima na `POST` metod, s obzirom da vršimo slanje lozinki, koje ne bi trebalo biti vidljive u adresnoj liniji veb pregledača. Ovo je jednostavnije uraditi, tako da ćemo se prvo fokusirati na to.
 
-Da bismo koristili `POST` metode umesto `GET` metoda, prvo je neophodno izmeniti EJS šablone tako da svi formulari imaju atribut `action="POST"`. Takođe, odgovarajuće funkcije srednjeg sloja će biti registrovane pomoću `router.post()` metoda, umesto `router.get()`. Međutim, ovo nije dovoljno da bi naša aplikacija radila.
+Da bismo koristili `POST` metode umesto `GET` metoda, prvo je neophodno izmeniti EJS šablone tako da svi formulari imaju atribut `method="POST"`. Takođe, odgovarajuće funkcije srednjeg sloja će biti registrovane pomoću `router.post()` metoda, umesto `router.get()`. Međutim, ovo nije dovoljno da bi naša aplikacija radila.
 
 Prisetimo se da, kad smo podatke slali pomoću `GET` metoda, oni su se slali kroz URL zahteva i bili automatski parsirani od strane _Express_ radnog okvira. Tim podacima smo pristupali kroz `req.query` objekat u funkcijama srednjeg sloja. Međutim, kada se podaci šalju pomoću `POST` metoda, ti podaci se šalju kroz telo zahteva. _Express_ aplikacije ne podržavaju automatsko parsiranje tela HTTP zahteva.
 
