@@ -414,11 +414,11 @@ const studentSchema = mongoose.Schema({
     _id: mongoose.Schema.Types.ObjectId,
     username: {
         type: String,
-        require: true  
+        required: true  
     },
     password: {
         type: String,
-        require: true  
+        required: true  
     },
     name: String,
     surname: String,
@@ -434,7 +434,7 @@ Argument ovog metoda je objekat čija svojstva odgovaraju nazivima polja u dokum
 - tip podataka koji se čuva u tom polju
 - objekat koji definiše tip i još neka podešavanja:
     - `type` - Definiše tip polja.
-    - `require` - Definiše da li je polje obavezno.
+    - `required` - Definiše da li je polje obavezno.
     - `default` - Definiše podrazumevanu vrednost za ovo polje. Ova vrednost se koristi u slučaju da se prilikom upisa u bazu ne navede vrednost za ovo polje.
 
 Polje `_id` predstavlja jedinstveni idetifikator dokumenta i obavezan je za sve. Tip ovog polja je `mongoose.Schema.Types.ObjectId`. 
@@ -625,7 +625,7 @@ const examSchema = mongoose.Schema({
     student: {
         type: mongoose.Schema.Types.ObjectId,
         rel: "Student",
-        require: true
+        required: true
     },
     subject: String,
     date: Date,
