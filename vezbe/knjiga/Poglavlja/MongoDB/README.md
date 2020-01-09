@@ -432,12 +432,12 @@ const studentSchema = mongoose.Schema({
 ```
 Argument ovog metoda je objekat čija svojstva odgovaraju nazivima polja u dokumentima kolekcije `students`, a vrednosti su:
 - tip podataka koji se čuva u tom polju
+    - `String`
+    - `Number`
+    - `Date`
+    - `Boolean`
 - objekat koji definiše tip i još neka podešavanja:
     - `type` - Definiše tip polja.
-        - `String`
-        - `Number`
-        - `Date`
-        - `Boolean`
     - `required` - Definiše da li je polje obavezno.
     - `default` - Definiše podrazumevanu vrednost za ovo polje. Ova vrednost se koristi u slučaju da se prilikom upisa u bazu ne navede vrednost za ovo polje.
 
