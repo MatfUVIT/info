@@ -434,6 +434,10 @@ Argument ovog metoda je objekat čija svojstva odgovaraju nazivima polja u dokum
 - tip podataka koji se čuva u tom polju
 - objekat koji definiše tip i još neka podešavanja:
     - `type` - Definiše tip polja.
+        - `String`
+        - `Number`
+        - `Date`
+        - `Boolean`
     - `required` - Definiše da li je polje obavezno.
     - `default` - Definiše podrazumevanu vrednost za ovo polje. Ova vrednost se koristi u slučaju da se prilikom upisa u bazu ne navede vrednost za ovo polje.
 
