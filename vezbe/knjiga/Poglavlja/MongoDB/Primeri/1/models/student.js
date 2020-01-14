@@ -4,11 +4,11 @@ const studentSchema = mongoose.Schema({
     _id: mongoose.Schema.Types.ObjectId,
     username: {
         type: String,
-        require: true  
+        required: true  
     },
     password: {
         type: String,
-        require: true  
+        required: true  
     },
     name: String,
     surname: String,

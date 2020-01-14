@@ -231,6 +231,24 @@ Autori:
 
 ### [Poglavlje 8. MongoDB baza podataka i Mongoose.js ORM](./Poglavlja/MongoDB/README.md){:target="_blank"}
 
+1. [MongoDB](./Poglavlja/MongoDB/README.md#81-mongodb){:target="_blank"}
+
+2. [Instalacija](./Poglavlja/MongoDB/README.md#82-instalacija){:target="_blank"}
+
+3. [MongoDB shell](./Poglavlja/MongoDB/README.md#83-mongodb-shell){:target="_blank"}
+
+4. [Upiti](./Poglavlja/MongoDB/README.md#84-upiti){:target="_blank"}
+
+    1. [Upiti čitanja](./Poglavlja/MongoDB/README.md#841-upiti-čitanja){:target="_blank"}
+
+    2. [Projekcija u upitima za čitanje vrednosti](./Poglavlja/MongoDB/README.md#842-projekcija-u-upitima-za-čitanje-vrednosti){:target="_blank"}
+
+    3.  [Upiti za ažuriranje vrednosti polja](./Poglavlja/MongoDB/README.md#843-upiti-za-ažuriranje-vrednosti-polja){:target="_blank"}
+
+5.  [Razvojno okruženje Mongoose.js](./Poglavlja/MongoDB/README.md#85-razvojno-okruženje-mongoose.js){:target="_blank"} 
+
+    1. [Dva povezana modela](./Poglavlja/MongoDB/README.md#851-dva-povezana-modela){:target="_blank"}
+
 -----
 
 [Vežbe](../README.md)

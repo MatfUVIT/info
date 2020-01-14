@@ -1,0 +1,4 @@
+{"_id":{"$oid":"5e0e289200bc1b20545a43a3"},"naziv":"Plazma keks 100g","cena":{"$numberDouble":"120"},"broj_artikala":{"$numberInt":"7"}}
+{"_id":{"$oid":"5e0e28d07bf8582054b53cac"},"naziv":"Rafaelo kuglice 250g","cena":{"$numberDouble":"350"},"broj_artikala":{"$numberInt":"5"}}
+{"_id":{"$oid":"5e0e28f37bf8582054b53cad"},"naziv":"Dugotrajno mleko bez laktoze 1l","cena":{"$numberDouble":"126.85"},"broj_artikala":{"$numberInt":"9"}}
+{"_id":{"$oid":"5e0e293b7bf8582054b53cae"},"naziv":"Prolom voda 1l","cena":{"$numberDouble":"40"},"broj_artikala":{"$numberInt":"32"}}

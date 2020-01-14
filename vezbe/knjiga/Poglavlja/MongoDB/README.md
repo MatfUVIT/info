@@ -99,10 +99,10 @@ mongoimport --db <db_name> --collection <collection_name> --file <path>
 gde se umesto `<db_name>` navodi ime baze u koju se uvoze podaci, zatim naziv kolekcije u koju se podaci uvoze umesto `<collection_name>` i  putanju do datoteke koja sadrži podatke umesto `<path>`.
 
 
-> Zadatak 0. U kolekciju `Student` iz baze `Fakultet` uvesti podatke o studentima iz datoteke [studenti.json](./Resursi/studenti.json).
+> Zadatak 0. U kolekciju `students` iz baze `Fakultet` uvesti podatke o studentima iz datoteke [studenti.json](./Resursi/studenti.json).
 
 ```shell
-mongoimport --db Fakultet --collection Student --file studenti.json
+mongoimport --db Fakultet --collection students --file studenti.json
 ```
 
 U nastavku podrazumevamo da smo otvorili MongoDB shell program (`mongo`) i da smo postavili da radimo sa prethodno uvezenom bazom podataka `Fakultet` na sledeći način:
@@ -129,19 +129,19 @@ Specijalno, ako bismo želeli da dohvatimo podatke o svim studentima u kolekciji
 {}
 ```
 
-> Zadatak 1. Iz kolekcije `Student` izdvojiti sve studente koji se zovu `Jovana`.
+> Zadatak 1. Iz kolekcije `students` izdvojiti sve studente koji se zovu `Jovana`.
 
 ```js
-> db.Student.find({name: "Jovana"})
+> db.students.find({name: "Jovana"})
 ```
 
 Ukoliko je navedeno više od jednog svojstva, traže se svi dokumenti koji za svako od navedenih naziva polja imaju navedenu vrednost. Ako se bar jedno polje ne poklapa po vrednosti sa zadatom, on neće biti prikazan kao rezultat.
 
-> Zadatak 2. Iz kolekcije `Student` izdvojiti sve studente koji se zovu `Jovana` i čiji je prosek jednak `8.5`.
+> Zadatak 2. Iz kolekcije `students` izdvojiti sve studente koji se zovu `Jovana` i čiji je prosek jednak `8.5`.
 
 
 ```js
-> db.Student.find({
+> db.students.find({
     name: "Jovana", 
     avg_grade: "8.5"
 })
@@ -170,20 +170,20 @@ Sintaksa za ove operatore je sledeća:
 Dakle, za polje čije je ime zadato umesto vrednosti navodimo objekat koji sadrži operator kao svojstvo, a vrednost koja se zadaje predstavlja broj ili niz brojeva sa kojima se poredi vrednost zadatog polja.
 
 
-> Zadatak 3. Iz kolekcije `Student` izdvojiti sve studente sa prosekom većim od `8.5`.
+> Zadatak 3. Iz kolekcije `students` izdvojiti sve studente sa prosekom većim od `8.5`.
 
 ```js
-> db.Student.find({
+> db.students.find({
     avg_grade: {
         $gt : "8.5"
     }
 })
 ```
 
-> Zadatak 4. Iz kolekcije `Student` izdvojiti studente sa prosekom između 8.0 i 9.0.
+> Zadatak 4. Iz kolekcije `students` izdvojiti studente sa prosekom između 8.0 i 9.0.
 
 ```js
-> db.Student.find({
+> db.students.find({
     avg_grade: {
         $gte : "8.0",
         $lte : "9.0"
@@ -191,10 +191,10 @@ Dakle, za polje čije je ime zadato umesto vrednosti navodimo objekat koji sadr�
 })
 ```
 
-> Zadatak 5. Iz kolekcije `Student` izdvojiti studente smerova `Informatika` i `Racunarstvo i informatika`.
+> Zadatak 5. Iz kolekcije `students` izdvojiti studente smerova `Informatika` i `Racunarstvo i informatika`.
 
 ```js
-> db.Student.find({
+> db.students.find({
     major: {
         $in : ['Informatika', 'Racunarstvo i informatika']
     }
@@ -222,10 +222,10 @@ Korišćenje logičkih operatora može se predstaviti sledećim objektom:
 }
 ```
 
-> Zadatak 6. Iz kolekcije `Student` izdvojiti sve studente čiji je prosek veći od `8.0` sa smera `Informatika`.
+> Zadatak 6. Iz kolekcije `students` izdvojiti sve studente čiji je prosek veći od `8.0` sa smera `Informatika`.
 
 ```js
-> db.Student.find({
+> db.students.find({
     $and: [ 
         { avg_grade: { $gt: 8.0 } }, 
         { major: `Informatika` } 
@@ -236,16 +236,16 @@ Korišćenje logičkih operatora može se predstaviti sledećim objektom:
 Prethodni upit predstavlja konjunkciju, i on se može jednostavnije zapisati navođenjem zapete između uslova poređenja, tj.:
 
 ```js
-> db.Student.find({
+> db.students.find({
     avg_grade: { $gt: 8.0 },
     major: `Informatika`
 })
 ```
 
-> Zadatak 7. Iz kolekcije `Student` izdvojiti informacije o studentima čiji je prosek jednak `9.0` ili `10.0` i koji su upisali smer `Informatika` ili `Statistika`.
+> Zadatak 7. Iz kolekcije `students` izdvojiti informacije o studentima čiji je prosek jednak `9.0` ili `10.0` i koji su upisali smer `Informatika` ili `Statistika`.
 
 ```js
-> db.Student.find({
+> db.students.find({
     $and: [
         { 
             $or: [ { avg_grade: 9.0 }, { avg_grade: 10.0 } ] 
@@ -265,10 +265,10 @@ U prethodnim upitima vrednosti polja su poređenje niskama onakve kakve su zadat
 
 - Ukoliko želimo da vrednost nekog polja sadrži neku nisku, onda tu nisku navodimo između `/` i `/`.
 
-> Zadatak 8. Iz kolekcije `Student` izdvojiti informacije o studentima čije prezime počinje karakterom `P`.
+> Zadatak 8. Iz kolekcije `students` izdvojiti informacije o studentima čije prezime počinje karakterom `P`.
 
 ```js
-> db.Student.find({ 
+> db.students.find({ 
     surname: /^P/ 
 })
 ```
@@ -292,10 +292,10 @@ Polja u projekciji predstavljaju polja koja se nalaze u dokumentu, a vrednosti u
 
 Podrazumevano, ukoliko ne navedemo projekciju, sva polja iz dokumenta će biti dohvaćena. Ukoliko ipak navedemo projekciju, tada će biti dohvaćena samo ona polja koja su eksplicitno navedena da budu uključena (vrednost `1` ili `true` u projekciji), dok će ostala polja biti isključena iz rezultata. Specijalno, polje `_id` će se uvek naći u rezultatu, osim ako eksplicitno ne navedemo `_id: 0` (ili `id_: false`) u objektu projekcije.
 
-> Zadatak 9: Iz kolekcije `Student` izdvojiti informacije o imenu, prezimenu i prosečnoj oceni onih studenata čije prezime počinje karakterom `P`.
+> Zadatak 9: Iz kolekcije `students` izdvojiti informacije o imenu, prezimenu i prosečnoj oceni onih studenata čije prezime počinje karakterom `P`.
 
 ```js
-> db.Student.find(
+> db.students.find(
     // Upit
     { 
         surname: /^P/ 
@@ -350,10 +350,10 @@ gde se redom navode imena polja čije se vrednosti menjaju na prethodno opisan n
 
 Za više informacija o operatorima ažuriranja možete pogledati [ovde](https://docs.mongodb.com/manual/reference/operator/update-field/).
 
-> Zadatak 10. U kolekciji `Student` izmeniti napomenu u `Izvanredni studenti informatike` svim studentima smera `Informatika` ili `Racunarstvo i informatika` čiji je prosek veći od `9.5`, a zatim izlistati sav sadržaj kolekcije.
+> Zadatak 10. U kolekciji `students` izmeniti napomenu u `Izvanredni studenti informatike` svim studentima smera `Informatika` ili `Racunarstvo i informatika` čiji je prosek veći od `9.5`, a zatim izlistati sav sadržaj kolekcije.
 
 ```js
-> db.Student.updateMany(
+> db.students.updateMany(
     // Prvo navodimo upit koja dokumenta azuriramo
     { 
         $and: [ 
@@ -369,7 +369,7 @@ Za više informacija o operatorima ažuriranja možete pogledati [ovde](https://
     }
 )
 
-> db.Student.find()
+> db.students.find()
 ```
 
 
@@ -407,18 +407,18 @@ mongoose.connect("mongodb://127.0.0.1:27017/Fakultet", {
 
 Prvi argument predstavlja putanju do baze na `mongodb` serveru. U našem slučaju, to je lokalni server te je adresa `127.0.0.1`, a port koji koristimo je `27017`. Drugi argument predstavlja objekat koji određuje dodatna podešavanja. Navedena svojstva dodajemo kako bismo izbegli upozorenja o zastarelosti nekih pomoćnih metoda koji su se ranije koristili.
 
-Nastavljamo sa izmenama u modelu `student.js`. Rekli smo da umesto niza želimo da koristimo podatke iz baze. Da bi to bilo moguće, potrebno je da definišemo shemu dokumenata koji su upisani u kolekciji `Student`, a zatim da napravimo odgovarajući model pomoću kog ćemo vršiti komunikaciju sa bazom. U te svrhe koristimo `Schema` metod iz paketa `mongoose` koji je potrebno uključiti i u ovu datoteku.
+Nastavljamo sa izmenama u modelu `student.js`. Rekli smo da umesto niza želimo da koristimo podatke iz baze. Da bi to bilo moguće, potrebno je da definišemo shemu dokumenata koji su upisani u kolekciji `students`, a zatim da napravimo odgovarajući model pomoću kog ćemo vršiti komunikaciju sa bazom. U te svrhe koristimo `Schema` metod iz paketa `mongoose` koji je potrebno uključiti i u ovu datoteku.
 
 ```js
 const studentSchema = mongoose.Schema({
     _id: mongoose.Schema.Types.ObjectId,
     username: {
         type: String,
-        require: true  
+        required: true  
     },
     password: {
         type: String,
-        require: true  
+        required: true  
     },
     name: String,
     surname: String,
@@ -430,11 +430,15 @@ const studentSchema = mongoose.Schema({
     }
 });
 ```
-Argument ovog metoda je objekat čija svojstva odgovaraju nazivima polja u dokumentima kolekcije `Student`, a vrednosti su:
+Argument ovog metoda je objekat čija svojstva odgovaraju nazivima polja u dokumentima kolekcije `students`, a vrednosti su:
 - tip podataka koji se čuva u tom polju
+    - `String`
+    - `Number`
+    - `Date`
+    - `Boolean`
 - objekat koji definiše tip i još neka podešavanja:
     - `type` - Definiše tip polja.
-    - `require` - Definiše da li je polje obavezno.
+    - `required` - Definiše da li je polje obavezno.
     - `default` - Definiše podrazumevanu vrednost za ovo polje. Ova vrednost se koristi u slučaju da se prilikom upisa u bazu ne navede vrednost za ovo polje.
 
 Polje `_id` predstavlja jedinstveni idetifikator dokumenta i obavezan je za sve. Tip ovog polja je `mongoose.Schema.Types.ObjectId`. 
@@ -445,7 +449,7 @@ Ovim smo definisali shemu, a model pravimo korišćenjem metoda `model`:
 const studentModel = mongoose.model('Student', studentSchema);
 ```
 
-Prvi argument predstavlja naziv modela, a drugi shema koju smo upravo napravili. Operacije sa bazom vršićemo upravo nad ovim modelom. Potrebno je još da izvezemo model kako bi ovaj model bio dostupan i drugim modulima:
+Prvi argument predstavlja naziv modela, a drugi shema koju smo upravo napravili. Naziv modela mora da odgovara nazivu kolekcije u bazi na koju smo se povezali. Naziv kolekcije je naziv modela napisan malim slovima u množini (ima slovo `s` na kraju). Operacije sa bazom vršićemo upravo nad ovim modelom. Potrebno je još da izvezemo model kako bi ovaj model bio dostupan i drugim modulima:
 
 ```js
 module.exports.model = studentModel;
@@ -469,7 +473,7 @@ module.exports.getStudent = async function (studentUsername, studentPassword) {
 
 Slično metodu `find`, postoji metod `findById`, koji umesto upita prima vrednost sa kojom ćebiti upoređeno polje `_id`. S obzirom da je to polje jedinstveno za svaki dokument, metod vraća objekat, a ne niz objekata kao prethodna.
 
-Ostaje nam još da minimalno modifikujemo datoteku `controllers/student.js` kako bi sve funkcionisalo. Naime, funkcija koju smo upravo napisali izvršava se asinhrono, slično kao i `find` koje smo koristili. Zbog toga, prilikom poziva ove funkcije, pre nego šro vratimo odgovor sa servera, treba da sačekamo da se podaci uspešno pročitaju. Ovo činimo na isti način kao i malo pre, dodavanjem ključne reči `await` ispred poziva `getStudent`. Zbog toga i funkcija `displayStudent iz `controll/student.js` postaje asinhrona: 
+Ostaje nam još da minimalno modifikujemo datoteku `controllers/student.js` kako bi sve funkcionisalo. Naime, funkcija koju smo upravo napisali izvršava se asinhrono, slično kao i `find` koje smo koristili. Zbog toga, prilikom poziva ove funkcije, pre nego šro vratimo odgovor sa servera, treba da sačekamo da se podaci uspešno pročitaju. Ovo činimo na isti način kao i malo pre, dodavanjem ključne reči `await` ispred poziva `getStudent`. Zbog toga i funkcija `displayStudent` iz `controll/student.js` postaje asinhrona: 
 
 ```js
 module.exports.displayStudent = async function (req, res, next) {
@@ -595,11 +599,11 @@ Celokupno rešenje je dato na [ovoj adresi](https://github.com/MatfUVIT/UVIT/tre
 
 ### 8.5.1. Dva povezana modela
 
-Do sad smo radili samo sa jednom kolekcijom, `Student`. Ukoliko bismo želeli da proširimo aplikaciju tako da u priču uvedemo i informacije o polaganjima ispita, tu se stvari malo komplikuju. Ta svako polaganje ispita potrebne su nam informacije o studentu koji je polagao ispit, o predmetu koji je polagao, datumu polaganja i dobijenoj oceni. Međutim, podatke o studentima već imamo u kolekciji `Student` i ne bi bilo dobro da ih ponavljamo. Razlog je jednostavan - smanjujemo redudantnost. Ako želimo da izmenimo podatak o nekom studentu, to činimo samo na jednom mestu, u kolekciji `Student` umesto da menjamo svuda gde se taj student pojavljuje. 
+Do sad smo radili samo sa jednom kolekcijom, `students`. Ukoliko bismo želeli da proširimo aplikaciju tako da u priču uvedemo i informacije o polaganjima ispita, tu se stvari malo komplikuju. Ta svako polaganje ispita potrebne su nam informacije o studentu koji je polagao ispit, o predmetu koji je polagao, datumu polaganja i dobijenoj oceni. Međutim, podatke o studentima već imamo u kolekciji `students` i ne bi bilo dobro da ih ponavljamo. Razlog je jednostavan - smanjujemo redudantnost. Ako želimo da izmenimo podatak o nekom studentu, to činimo samo na jednom mestu, u kolekciji `students` umesto da menjamo svuda gde se taj student pojavljuje. 
 
-Potrebno je da odredimo jedinstveno polje za svaki dokument u kolekciji `Student` i da samo to koristimo kao referencu na odgovarajućeg studenta u kolekciji `Exam`. Na našu sreću, to polje već postoji, ne samo za dokumente kolekcije `Student` već za sve dokumente. U pitanju je polje `_id`. Dovoljno je da u kolekciji `Exam` pamtimo identifikator studenta kako bismo dobili sve potrebne informacije o studentu koji je polagao određeni ispit.
+Potrebno je da odredimo jedinstveno polje za svaki dokument u kolekciji `students` i da samo to koristimo kao referencu na odgovarajućeg studenta u kolekciji `Exam`. Na našu sreću, to polje već postoji, ne samo za dokumente kolekcije `students` već za sve dokumente. U pitanju je polje `_id`. Dovoljno je da u kolekciji `Exam` pamtimo identifikator studenta kako bismo dobili sve potrebne informacije o studentu koji je polagao određeni ispit.
 
-U aplikaciji želimo da razdvojimo tri dela: stranicu sa informacijama o studentu, stranicu sa informacijama o ispitia i stranicu sa rezultatima:
+U aplikaciji želimo da razdvojimo tri dela: stranicu sa informacijama o studentu, stranicu sa informacijama o ispita i stranicu sa rezultatima:
 
 
 <div style="max-width: 98%;">
@@ -617,7 +621,7 @@ U aplikaciji želimo da razdvojimo tri dela: stranicu sa informacijama o student
 
 Stranica sa informacijama o studentima je već implementirana, pređimo na stranu sa informacijama o ispitima.
 
-Za novu kolekciju pravimo novi model `exam.js` u kom definišemo shemu i funkcije za manipulaciju podacima iz kolekcije `Exam`. Shema sadrži polje student koje pamti jedinstveni identifikator studenta iz kolekcije `Student`. Za to polje treba definisati tip i sa kojim se modelom povezuje. Naziv modela treba da se poklopi sa nazivom koji smo zadali kao prvi argument metodu `mongoose.model()`. Nakon što je definisana shema, pravimo i izvozimo model za kolekciju `Exam`.
+Za novu kolekciju pravimo novi model `exam.js` u kom definišemo shemu i funkcije za manipulaciju podacima iz kolekcije `Exam`. Shema sadrži polje student koje pamti jedinstveni identifikator studenta iz kolekcije `students`. Za to polje treba definisati tip i sa kojim se modelom povezuje. Naziv modela treba da se poklopi sa nazivom koji smo zadali kao prvi argument metodu `mongoose.model()`. Nakon što je definisana shema, pravimo i izvozimo model za kolekciju `Exam`.
 
 ```js
 const examSchema = mongoose.Schema({
@@ -625,7 +629,7 @@ const examSchema = mongoose.Schema({
     student: {
         type: mongoose.Schema.Types.ObjectId,
         rel: "Student",
-        require: true
+        required: true
     },
     subject: String,
     date: Date,
@@ -637,7 +641,7 @@ const examModel = mongoose.model('Exam', examSchema);
 module.exports.model = examModel;
 ```
 
-Pređimo na funkciju koja dohvata podatke o svim ispitima koje je polagao student čije je korisničko ime zadato parametrom funkcije. Pošto nam je zadato samo korisničko ime, a potreban nam je identifikato studenta, potrebno je da prvo izvršimo čitanje iz kolekcije `Student`, a rezultat ćemo iskoristiti da dobijemo sve ispite. U te svrhe, pišemo asinhronu funkciju `getStudentId` u `student.js` koja će pročitati i vratiti odgovarajući podatak.
+Pređimo na funkciju koja dohvata podatke o svim ispitima koje je polagao student čije je korisničko ime zadato parametrom funkcije. Pošto nam je zadato samo korisničko ime, a potreban nam je identifikato studenta, potrebno je da prvo izvršimo čitanje iz kolekcije `students`, a rezultat ćemo iskoristiti da dobijemo sve ispite. U te svrhe, pišemo asinhronu funkciju `getStudentId` u `student.js` koja će pročitati i vratiti odgovarajući podatak.
 
 ```js
 module.exports.getStudentId = async function getStudentId(studentUsername) 
@@ -720,7 +724,7 @@ module.exports.addExam = async function(req, res, next) {
 };
 ```
 
-Sada ćemo implementirati da se klikom na dugme `Izmeni ispite` izmeni datum polaganja ispita na današnji datum za ulogovanog studenta. Podsetimo se operatora `$currentDate` koji se koristi u upitima ažuriranja. Prvo dodajemo funckiju `changeDates` u datoteku `models/exam.js` koja prima korisničko ime ulogovanog korisnika. Slično kao u prethodnoj funkciji, koristićemo `getStudentId` kako bismo dobili odgovarajuću vrednost iz kolekcije `Student`. Zatim, pozivamo metod `updateMany` nad modelom za kolekciju `Exam`. Želimo da ažuriramo datume za sve ispite studenta koji je određen identifikatorom koji je vratila funkcija `getStudentId`. Stoga je prvi argument upit koji zahteva da vrednost polja `student` bude jednaka tom identifikatoru. Drugi argument koristi operator `$currentDate`, a kao vrednost zadajemo objekat koji određuje kojim poljima se postavlja današnji datum kao nova vrednost.
+Sada ćemo implementirati da se klikom na dugme `Izmeni ispite` izmeni datum polaganja ispita na današnji datum za ulogovanog studenta. Podsetimo se operatora `$currentDate` koji se koristi u upitima ažuriranja. Prvo dodajemo funckiju `changeDates` u datoteku `models/exam.js` koja prima korisničko ime ulogovanog korisnika. Slično kao u prethodnoj funkciji, koristićemo `getStudentId` kako bismo dobili odgovarajuću vrednost iz kolekcije `students`. Zatim, pozivamo metod `updateMany` nad modelom za kolekciju `Exam`. Želimo da ažuriramo datume za sve ispite studenta koji je određen identifikatorom koji je vratila funkcija `getStudentId`. Stoga je prvi argument upit koji zahteva da vrednost polja `student` bude jednaka tom identifikatoru. Drugi argument koristi operator `$currentDate`, a kao vrednost zadajemo objekat koji određuje kojim poljima se postavlja današnji datum kao nova vrednost.
 
 ```js
 module.exports.changeDates = async function(studentUsername) 

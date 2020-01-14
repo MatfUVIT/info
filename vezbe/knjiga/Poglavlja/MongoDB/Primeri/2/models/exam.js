@@ -7,7 +7,7 @@ const examSchema = mongoose.Schema({
     student: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Student',
-        require: true
+        required: true
     },
     subject: String,
     date: Date,
