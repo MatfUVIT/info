@@ -1,9 +1,9 @@
-let fs = require('fs')
+let datoteka = require('fs')
 
-fs.readFile('test.txt',
+datoteka.readFile('test.txt',
     (err, data) => {
         if (err) {
-            console.log(err);
+            console.log("Greska:" + err);
         }
         console.log(data);
     });

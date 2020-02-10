@@ -5,7 +5,7 @@ tokZaCitanje.setEncoding('utf8');
 
 let brojac = 0;
 tokZaCitanje.addListener('data',
-    (prispeliPodaci) => brojac = brojac + 1);
+    (prispeliPodaci) => brojac++);
 tokZaCitanje.addListener('data',
     (prispeliPodaci) => console.log('duzina prispelih podataka: ' + prispeliPodaci.length));
 tokZaCitanje.addListener('end',

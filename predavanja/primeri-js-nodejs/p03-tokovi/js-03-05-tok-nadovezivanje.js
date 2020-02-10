@@ -8,5 +8,5 @@ tokZaCitanje.on('data',
 tokZaCitanje.on('end',
     () => console.log(brojac));
 
-let tokZaUpis = fs.createWriteStream('copy1.txt');
+let tokZaUpis = fs.createWriteStream('copy2.txt');
 tokZaCitanje.pipe(tokZaUpis);

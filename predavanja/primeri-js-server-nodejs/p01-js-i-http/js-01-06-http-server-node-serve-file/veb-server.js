@@ -5,6 +5,7 @@ let fs = require('fs');
 const port = 7000;
 http.createServer(function (zahtev, odgovor) {
     pathName = url.parse(zahtev.url).pathname;
+    console.log(pathName);
     fs.readFile(__dirname + pathName, function (err, data) {
         if (err) {
             odgovor.writeHead(404, { 'Content-type': 'text/plan' });

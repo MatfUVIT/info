@@ -4,12 +4,11 @@ let tokZaCitanje = fs.createReadStream('lorem.txt');
 tokZaCitanje.setEncoding('utf8');
 
 let brojac = 0;
-tokZaCitanje.addListener('data', brojiCitanja);
 tokZaCitanje.addListener('data', prikazujeCitanja);
+tokZaCitanje.addListener('data', brojiCitanja);
 
 function brojiCitanja(prispeliPodaci) {
-    brojac = brojac + 1;
-    console.log("Citanje broj: " + brojac);
+    console.log("Citanje broj: " + (++brojac));
 }
 
 function prikazujeCitanja(prispeliPodaci) {
