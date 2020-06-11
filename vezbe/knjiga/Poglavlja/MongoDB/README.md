@@ -449,7 +449,7 @@ Ovim smo definisali shemu, a model pravimo korišćenjem metoda `model`:
 const studentModel = mongoose.model('Student', studentSchema);
 ```
 
-Prvi argument predstavlja naziv modela, a drugi shema koju smo upravo napravili. Naziv modela mora da odgovara nazivu kolekcije u bazi na koju smo se povezali. Naziv kolekcije je naziv modela napisan malim slovima u množini (ima slovo `s` na kraju). Operacije sa bazom vršićemo upravo nad ovim modelom. Potrebno je još da izvezemo model kako bi ovaj model bio dostupan i drugim modulima:
+Prvi argument predstavlja naziv modela, a drugi shema koju smo upravo napravili. Naziv modela mora da odgovara nazivu kolekcije u bazi na koju smo se povezali, po sledećem principu: _Naziv kolekcije je naziv modela napisan malim slovima u množini (ima slovo `s` na kraju)_. Na primer, ako imamo kreiranu shemu `Student` kao u primeru iznad, onda je neophodno da u bazi podataka kolekcija ima naziv `students` (`Student` -> `student` -> `students`). Svako drugo ime biće neispravno, te je ovo važno upamtiti! Operacije sa bazom vršićemo upravo nad ovim modelom. Potrebno je još da izvezemo model kako bi ovaj model bio dostupan i drugim modulima:
 
 ```js
 module.exports.model = studentModel;
@@ -628,7 +628,7 @@ const examSchema = mongoose.Schema({
     _id: mongoose.Schema.Types.ObjectId,
     student: {
         type: mongoose.Schema.Types.ObjectId,
-        rel: "Student",
+        ref: "Student",
         required: true
     },
     subject: String,
