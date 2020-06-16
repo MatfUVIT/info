@@ -25,7 +25,7 @@ const studentModel = mongoose.model('Student', studentSchema);
 module.exports.model = studentModel;
 
 module.exports.getStudent = async function (studentUsername, studentPassword) {
-    let students = await studentModel.find({username: studentUsername}).exec();
+    const students = await studentModel.find({username: studentUsername}).exec();
     if (students.length > 0) {
         return students[0];
     }
@@ -35,8 +35,7 @@ module.exports.getStudent = async function (studentUsername, studentPassword) {
 };
 
 module.exports.changeStudentInfo = async function (searchStudent) {
-
-    let newData = {
+    const newData = {
         'password': searchStudent.password,
         'name': searchStudent.name,
         'surname': searchStudent.surname,
@@ -44,7 +43,7 @@ module.exports.changeStudentInfo = async function (searchStudent) {
     };
 
     await studentModel.updateOne(
-        {username: searchStudent}, 
+        {username: searchStudent.username}, 
         {$set: newData}).exec();
 };
 
