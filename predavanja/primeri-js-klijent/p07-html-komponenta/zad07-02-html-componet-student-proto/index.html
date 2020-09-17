@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="sr">
+
+<head>
+    <title>Nove HTML komponente</title>
+    <meta charset="UTF-8" />
+    <script>
+        let StudentComponentProto = Object.create(HTMLElement.prototype);
+        // and add some template using a lifecycle
+        StudentComponentProto.createdCallback = function() {
+            this.innerHTML = '<h2>Ovo je student!</h2>';
+        };
+        // new element
+        let StudentComponent = document.registerElement('uvit-student', {
+            prototype: StudentComponentProto
+        });
+    </script>
+</head>
+
+<body>
+    <h1>Илустрација нових <code>HTML</code> компоненти</h1>
+    <p>
+        <script>
+            document.body.appendChild(new StudentComponent());
+        </script>
+    </p>
+    <p>
+        Статичан садржај веб стране...
+    </p>
+    <p>
+        <uvit-student></uvit-student>
+    </p>
+
+</body>
+
+</html>
