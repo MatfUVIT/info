@@ -28,7 +28,7 @@
 
 ## Настава
 
-* **[Предавања](/predavanja/README.md)**
+* **[Предавања](/predavanja/README-2020-21.md)**
 
 * **[Вежбе](/vezbe/README.md)**
 
