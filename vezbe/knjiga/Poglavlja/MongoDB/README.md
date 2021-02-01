@@ -439,6 +439,7 @@ const studentSchema = new mongoose.Schema({
     major: String,
     grades: {
         type: [Number],
+        required: true,
         default: []
     },
     note: {
@@ -476,7 +477,7 @@ Kreiranjem objekta `Schema` smo tek opisali kakve dokumente očekujemo da postoj
 ```js
 // models/student.js (nastavak)
 
-const studentModel = mongoose.model('Student', studentSchema);
+const StudentModel = mongoose.model('Student', studentSchema);
 ```
 
 Prvi argument predstavlja naziv modela, a drugi shema koju smo upravo napravili. Svaki model u bazi podataka mora imati jedinstven naziv! Operacije sa bazom vršićemo upravo nad ovim modelom. Potrebno je još da izvezemo model kako bi ovaj model bio dostupan i drugim modulima:
@@ -484,7 +485,7 @@ Prvi argument predstavlja naziv modela, a drugi shema koju smo upravo napravili.
 ```js
 // models/student.js (nastavak)
 
-module.exports.model = studentModel;
+module.exports.model = StudentModel;
 ```
 
 ### 8.5.2. Čitanje dokumenata
@@ -497,7 +498,7 @@ Funkcija `find` uvek vraća **niz** dokumenata (objekata) koji su ispunili uslov
 
 ```js
 module.exports.getStudent = async function (studentUsername, studentPassword) {
-    let students = await studentModel.find({username: studentUsername}).exec();
+    let students = await StudentModel.find({username: studentUsername}).exec();
 
     if (students.length > 0) {
         return students[0];
@@ -514,7 +515,7 @@ Napomenimo da je naredna provera **nekorektna**, zato što bi izvršavanje uvek 
 // models/student.js (nastavak)
 
 module.exports.getStudent = async function (studentUsername, studentPassword) {
-    let students = await studentModel.find({username: studentUsername}).exec();
+    let students = await StudentModel.find({username: studentUsername}).exec();
 
     // Nekorektno!!! `students` je uvek niz (prazan ili neprazan)
     if (students === null) {
@@ -540,7 +541,7 @@ Ako bismo imali identifikator studenta, mogli bismo da napišemo narednu funkcij
 // models/student.js (nastavak)
 
 module.exports.getStudentById = async function (studentId) {
-    let student = await studentModel.findById(studentId).exec();
+    let student = await StudentModel.findById(studentId).exec();
     // Nakon poziva metoda `findById`, vrednost promenljive `student` će biti tačno jedno od:
     // 1. Objekat studenta čiji je identifikator jednak `studentId`
     // 2. null
@@ -575,7 +576,53 @@ module.exports.displayStudent = async function (req, res, next) {
 };
 ```
 
-### 8.5.3. Ažuriranje dokumenata
+### 8.5.3. Kreiranje novih dokumenata
+
+Da bismo u neku kolekciju baze podataka upisali novi dokument, na serveru je potrebno prvo da kreiramo objekat koji predstavlja taj novi dokument, pa zatim da pošaljemo zahtev SUBP da taj objekat sačuva kao dokument. Ova dva koraka predstavljaju proceduru za kreiranje novih dokumenata. 
+
+Pri kreiranju novog dokumenta, neophodno je obratiti pažnju na to koja polja u shemi su definisana kao obavezna (tj. imaju opciju `required` postavljenu na `true`). Za ova polja je neophodno da postavimo vrednosti pre čuvanja, inače će SUBP prijaviti grešku. Postoji jedan izuzetak od ovog pravila, a to je slučaj kada polje koje je obavezno ima postavljenu podrazumevanu vrednost (tj. ima opciju `default` postavljenu na neku vrednost koja se smatra podrazumevanom). Za takva polja nije neophodno navesti vrednost već će biti iskorišćena podrazumevana vrednost. Naravno, ukoliko prilikom konstrukcije dokumenta prosledimo neku drugu vrednost za takvo polje, onda će biti korišćena prosleđena vrednost, a ne podrazumevana vrednost, što je i očekivano ponašanje.
+
+Pogledajmo sada našu shemu studenata. Mi smo jedino smo deklarisali polja `username`, `password` i `grades` kao obavezna, pri čemu polje `grades` ima postavljenu podrazumevanu vrednost. Dakle, korisnik mora da prosledi serveru korisničko ime i lozinku i bez tih polja nije moguće kreirati novi dokument za novog studenta. Međutim, postoji još jedno polje koje je implicitno obavezno za svaki dokument u bazi podataka, a to je identifikator dokumenta. Iako u samoj definiciji sheme nismo naveli da je to polje obavezno, MongoDB ipak zahteva da svaki dokument ima jedinstveni identifikator, tako da je potrebno da specifikujemo i vrednost za polje `_id`. S obzirom da ovo polje mora biti jedinstveno, moramo generisati identifikator koji ne postoji u bazi podataka. Srećom, ovo je moguće uraditi konstruisanjem novog objekta pomoću konstruktorske funkcije `mongoose.Schema.ObjectId`. Primetite da se ovaj tip razlikuje od tipa u shemi! (U shemi smo naveli tip `mongoose.Schema.Types.ObjectId` i **to su dva različita tipa. Ako pogrešimo tipove identifikatora na bilo koja od ova dva mesta, `mongoose` će prijaviti grešku!**)
+
+Kao što smo rekli, prvi korak jeste kreiranje objekta koji predstavlja novog studenta. Ono što nismo rekli do sada jeste da poziv metoda `mongoose.model` koji pravi novi model na osnovu date sheme zapravo kao povratnu vrednost vraća konstruktorsku funkciju koju možemo koristiti za pravljenje objekata koji predstavljaju dokumente. Možemo proslediti ovoj konstruktorskoj funkciji objekat koji se koristi za inicijalizaciju vrednosti polja novog dokumenta ili možemo naknadno dodeliti poljima vrednosti, kao što je prikazano u kodu ispod.
+
+Drugi korak se sastoji od poziva metoda `save()` koji šalje SUBP zahtev da se dokument sačuva u BP. Važno je zapamtiti da se ovaj metod ne poziva nad samim modelom (kao što je to bio slučaj sa metodom `find()`), **već se poziva nad objektom koji predstavlja novi dokument**. Ovaj metod vraća dokument onakav kakav je sačuvan u BP, te ćemo tu povratnu vrednost iskoristiti kao povratnu vrednost naše funkcije `createStudent()`.
+
+```js
+// models/student.js (nastavak)
+
+module.exports.createStudent = async function (studentUsername, studentPassword) {
+    // Kreiranje novog dokumenta: korak 1
+    const newStudent = new StudentModel();
+    newStudent._id = new mongoose.Schema.ObjectId();
+    newStudent.username = studentUsername;
+    newStudent.password = studentPassword;
+
+    // Kreiranje novog dokumenta: korak 2
+    const studentFromDB = await newStudent.save();
+
+    return studentFromDB;
+};
+```
+
+#### Poziv modela za kreiranje dokumenata podataka iz kontrolera
+
+U `controllers/student.js` dodajemo asinhronu funkciju `createStudent` koja prosleđuje informacije o korisničkom imenu i lozinki za novog korisnika.
+
+```js
+// controllers/student.js (nastavak)
+
+module.exports.createStudent = async function (req, res, next) {
+    const username = req.body.username;
+    const password = req.body.password;
+
+    await StudentModel.createStudent(username, password);
+    
+    return next();
+};
+```
+
+### 8.5.4. Ažuriranje dokumenata
 
 Pređimo na ažuriranje podataka. Prvo izmenimo funkciju `changeStudentInfo()` u modelu studenta. Za ažuriranje vrednosti u bazi na raspolaganju imamo metode `updateOne()` ili `updateMany()`. Razlika između ova dva metoda je u tome što `updateOne` ažurira samo jedan dokument, a `updateMany` sve koji su obuhvaćeni datim upitom. Isto kao i metod `find`, i ovi metodi rade asinhrono. 
 
@@ -594,7 +641,7 @@ module.exports.changeStudentInfo = async function (username, password, name, sur
         'major': major
     };
 
-    await studentModel.updateOne(
+    await StudentModel.updateOne(
         // Upit za pronalaženje dokumenata koji će biti izmenjeni
         { username: username }, 
         // Upit za ažuriranje (koji postavlja vrednosti polja na nove vrednosti)
@@ -616,13 +663,13 @@ module.exports.updateStudent = async function (req, res, next) {
     const surname = req.body.surname;
     const major = req.body.major;
 
-    await models.changeStudentInfo(username, password, name, surname, major);
+    await StudentModel.changeStudentInfo(username, password, name, surname, major);
     
     return next();
 };
 ```
 
-### 8.5.4. Brisanje dokumenata
+### 8.5.5. Brisanje dokumenata
 
 Brisanje dokumenata iz baze je prilično jednostavno. Na raspolaganju su metodi `deleteOne()` i `deleteMany()`. Metodi prihvataju jedan parametar, a to je **upit** koji određuje šta treba obrisati iz kolekcije datog modela. Razlika između ovih metoda je ta što prvi metod briše tačno jedan dokument (ako ima više dokumenata koji zadovoljavaju uslov, briše se prvi iz rezultata), a drugi briše sva dokumenta koja ispunjavaju uslove upita. I ovi metodi su asinhroni te će i funkcija `deleteStudent()` morati da radi asinhrono.
 
@@ -630,7 +677,7 @@ Brisanje dokumenata iz baze je prilično jednostavno. Na raspolaganju su metodi 
 // models/student.js (nastavak)
 
 module.exports.deleteStudent = async function (studentUsername) {
-    await studentModel.deleteOne({username: studentUsername});
+    await StudentModel.deleteOne({username: studentUsername});
 };
 ```
 
@@ -642,13 +689,13 @@ Datoteku `controllers/student.js` menjamo na isti način kao malo pre. Funkcija 
 // controllers/student.js (nastavak)
 
 module.exports.deleteStudent = async function (req, res, next) {
-    await models.deleteStudent(req.body.username);
+    await StudentModel.deleteStudent(req.body.username);
     
     return res.redirect('/');
 };
 ```
 
-### 8.5.5. Obrada grešaka
+### 8.5.6. Obrada grešaka u asinhronim funkcijama
 
 Iako smo kompletirali implementaciju funkcionalnosti ovog primera, ono što je neophodno da uradimo jeste da definišemo šta je to što naša aplikacija treba da uradi u slučaju dolaska do greške. Grešaka može biti raznih, na primer: SUBP može da prijavi grešku pri izvršavanju neke operacije nad njime, greška može da postoji u implementaciji koda, i dr. Problem sa asinhronim modelom programiranja jeste što i obrada grešaka mora da se vrši asinhrono.
 
@@ -660,7 +707,7 @@ Međutim, s obzirom da mi koristimo rad sa `async` funkcijama koje izvršavaju o
 module.exports.displayStudent = async function (req, res, next) {
     try {
         // Početak implementacije
-        const studentObject = await models.getStudent(req.body.username, req.body.password);
+        const studentObject = await StudentModel.getStudent(req.body.username, req.body.password);
 
         return res.render('student.ejs', {
             student: studentObject
@@ -679,7 +726,7 @@ Sav kod koji je ranije predstavljao implementaciju ove funkcije je smešten u `t
 
 module.exports.updateStudent = async function (req, res, next) {
     try {
-        await models.changeStudentInfo(req.body);
+        await StudentModel.changeStudentInfo(req.body);
         
         return next();
     } catch (err) {
@@ -689,7 +736,7 @@ module.exports.updateStudent = async function (req, res, next) {
 
 module.exports.deleteStudent = async function (req, res, next) {
     try {
-        await models.deleteStudent(req.body.username);
+        await StudentModel.deleteStudent(req.body.username);
         
         return res.redirect('/');
     } catch (err) {
@@ -719,7 +766,7 @@ app.use(function (error, req, res, next) {
 
 Celokupno rešenje je dato na [ovoj adresi](https://github.com/MatfUVIT/UVIT/tree/master/vezbe/knjiga/Poglavlja/MongoDB/Primeri/1){:target="_blank"}.
 
-### 8.5.6. Dva povezana modela
+### 8.5.7. Dva povezana modela
 
 Do sad smo radili samo sa jednom kolekcijom, `students`. Ukoliko bismo želeli da proširimo aplikaciju tako da u priču uvedemo i informacije o polaganjima ispita, tu se stvari malo komplikuju. Ta svako polaganje ispita potrebne su nam informacije o studentu koji je polagao ispit, o predmetu koji je polagao, datumu polaganja i dobijenoj oceni. Međutim, podatke o studentima već imamo u kolekciji `students` i ne bi bilo dobro da ih ponavljamo. Razlog je jednostavan - smanjujemo redudantnost. Ako želimo da izmenimo podatak o nekom studentu, to činimo samo na jednom mestu, u kolekciji `students` umesto da menjamo svuda gde se taj student pojavljuje. 
 
@@ -772,17 +819,17 @@ Pređimo na funkciju koja dohvata podatke o svim ispitima koje je polagao studen
 // models/student.js (nastavak)
 
 module.exports.getStudentId = async function getStudentId(studentUsername) {
-    let students = await studentModel.find({username: studentUsername}).exec();
+    let students = await StudentModel.find({username: studentUsername}).exec();
     // Ovde nedostaje provera za slučaj da je `students` prazan niz. Uraditi za domaći!
     return students[0]._id;
 };
 ```
 
-Da bismo koristili ovu funkciju, moramo da uvezemo model `student` u `exam.js`:
+Da bismo koristili ovu funkciju, moramo da uvezemo model `models/student.js` u `models/exam.js`:
 
 ```js
 // models/exam.js (nastavak)
-const studentModel = require('./student');
+const StudentModel = require('./student');
 ```
 
 Sada možemo da napišemo funkciju koja dohvata informacije o ispitima. Metodu `find()` dodaćemo drugi argument, tj. projekciju, kojim definišemo polja koja želimo da budu izdvojena, a to su: `subject`, `date` i `grade`. 
@@ -791,7 +838,7 @@ Sada možemo da napišemo funkciju koja dohvata informacije o ispitima. Metodu `
 // models/exam.js (nastavak)
 
 module.exports.getExams = async function(studentUsername) {
-    let studentId = await student.getStudentId(studentUsername);
+    let studentId = await StudentModel.getStudentId(studentUsername);
     let exams = await examModel.find({student: studentId}, {subject:1, date:1, grade:1, _id:0}).exec();
 
     if (exams.length > 0) {
@@ -834,7 +881,7 @@ Dobijeni objekat je novi dokument koji treba sačuvati u bazu, a to činimo pozi
 // models/exam.js (nastavak)
 
 module.exports.addNewExam = async function(examData) {
-    let studentId = student.getStudentId(studentUsername);
+    let studentId = StudentModel.getStudentId(studentUsername);
     let newExam = new examModel({
         _id: new mongoose.Types.ObjectId(),
         student: studentId,
@@ -869,7 +916,7 @@ Sada ćemo implementirati da se klikom na dugme `Izmeni ispite` izmeni datum pol
 // models/exam.js (nastavak)
 
 module.exports.changeDates = async function(studentUsername) {
-    let studentId = await student.getStudentId(studentUsername);
+    let studentId = await StudentModel.getStudentId(studentUsername);
     await examModel.updateMany(
         { student: studentId },
         { $currentDate: { date: true } });
@@ -898,7 +945,7 @@ Na redu je dugme za brisanje ispita. Potrebno je da ulogovan korisnik unese nazi
 // models/exam.js (nastavak)
 
 module.exports.deleteExams = async function(data) {
-    let studentId = await student.getStudentId(data.username);
+    let studentId = await StudentModel.getStudentId(data.username);
     await examModel.deleteMany({student: studentId, subject: data.subject});
 };
 ```
@@ -957,7 +1004,7 @@ app.use('/exam', examRoutes);
 
 Za kraj nam ostaje da se pozabavimo delom sa rezultatima. Potrebno je, kada se klikne na `Rezultati` u navigaciji, da se otvori stranica sa rezultatima svih ispita. Želimo da se prikažu informacije o predmet, indeksu, imenu i prezimenu studenta, datumu polaganja i dobijenoj oceni. Uz to, želimo da spisak bude uređen prema predmetima rastuće, a prema ocenama opadajuće.
 
-#### 8.5.6.1. Obogaćivanje dokumenata podacima iz povezanog modela
+#### 8.5.7.1. Obogaćivanje dokumenata podacima iz povezanog modela
 
 Sve informacije o samim ispitima postoje u kolekciji `Exam`. Međutim, u njoj imamo samo podatke o identifikatoru studenta, ali ne i njegovo ime, prezime ili indeks. S obzirom da smo definisali model za kolekciju ispita tako da sadrži referencu na studenta, lako možemo dopuniti podatke o ispitu odgovarajućim podacima iz kolekcije studenata. U te svrhe koristi se metod `populate()` koji se ulančava sa pozivom metoda `find()`. Argument ovog metoda je niska koja govori koje polje treba da se dopuni podacima - u ovom slučaju to je `student`. Ovim se vrednost polja `student` iz `ObjectId` menja u objekat koji sadrži sve informacije o tom studentu. Dodatno, možemo da odredimo da se izdvoje samo neke informacije ukoliko nam nisu sve potrebne, kao što je ovde slučaj. Nama su potrebni korisničko ime, ime i prezime te možemo dodati još jedan argument u kome navodimo nazive polja koje želimo da zadržimo. Nazivi polja se navode kao jedna niska razdvojeni blanko karakterom.
 
@@ -981,7 +1028,7 @@ module.exports.getResults = async function() {
 };
 ```
 
-#### 8.5.6.2. Uređivanje dokumenata
+#### 8.5.7.2. Uređivanje dokumenata
 
 Što se uređivanja podataka tiče, koristimo metod `sort()` koji se takođe ulančava na poziv metoda `find()`. Ovaj metod prima jedan objekat koji definiše po kojim poljima se podaci uređuju. Svojstva ovog objekta odgovaraju nazivima polja u kolekciji, a vrednosti mogu biti `1` (rastuće uređenje) i `-1` (opadajuće uređenje).
 

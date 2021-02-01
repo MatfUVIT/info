@@ -250,18 +250,20 @@ Autori:
     1. [Definisanje sheme i modela dokumenata](./Poglavlja/MongoDB/README.md#851-definisanje-sheme-i-modela-dokumenata){:target="_blank"}
     
     2. [Čitanje dokumenata](./Poglavlja/MongoDB/README.md#852-čitanje-dokumenata){:target="_blank"}
-    
-    3. [Ažuriranje dokumenata](./Poglavlja/MongoDB/README.md#853-ažuriranje-dokumenata){:target="_blank"}
-    
-    4. [Brisanje dokumenata](./Poglavlja/MongoDB/README.md#854-brisanje-dokumenata){:target="_blank"}
-    
-    5. [Obrada grešaka](./Poglavlja/MongoDB/README.md#855-obrada-grešaka){:target="_blank"}
-    
-    6. [Dva povezana modela](./Poglavlja/MongoDB/README.md#856-dva-povezana-modela){:target="_blank"}
 
-        1. [Obogaćivanje dokumenata podacima iz povezanog modela](./Poglavlja/MongoDB/README.md#8561-obogaćivanje-dokumenata-podacima-iz-povezanog-modela){:target="_blank"}
+    3. [Kreiranje novih dokumenata](./Poglavlja/MongoDB/README.md#853-kreiranje-novih-dokumenata){:target="_blank"}
+    
+    4. [Ažuriranje dokumenata](./Poglavlja/MongoDB/README.md#854-ažuriranje-dokumenata){:target="_blank"}
+    
+    5. [Brisanje dokumenata](./Poglavlja/MongoDB/README.md#855-brisanje-dokumenata){:target="_blank"}
+    
+    6. [Obrada grešaka](./Poglavlja/MongoDB/README.md#856-obrada-grešaka){:target="_blank"}
+    
+    7. [Dva povezana modela](./Poglavlja/MongoDB/README.md#857-dva-povezana-modela){:target="_blank"}
+
+        1. [Obogaćivanje dokumenata podacima iz povezanog modela](./Poglavlja/MongoDB/README.md#8571-obogaćivanje-dokumenata-podacima-iz-povezanog-modela){:target="_blank"}
         
-        2. [Uređivanje dokumenata](./Poglavlja/MongoDB/README.md#8562-uređivanje-dokumenata){:target="_blank"}
+        2. [Uređivanje dokumenata](./Poglavlja/MongoDB/README.md#8572-uređivanje-dokumenata){:target="_blank"}
 
 
 -----
