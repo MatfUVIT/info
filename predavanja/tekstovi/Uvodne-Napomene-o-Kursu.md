@@ -55,4 +55,4 @@
 
 1. NoSQLfor MereMortals, аутор Dan Sullivan, издавач Addison-Wesley, 2015.
 
-Следи детаљнији [списак литературе](../../RESURSI-ZA-UCENJE.md){:target="blank"}.
+Следи детаљнији [списак литературе](../../RESURSI-ZA-UCENJE-2020-21.md){:target="blank"}.
