@@ -197,13 +197,13 @@ Autori:
 
 7. [Lančanje metoda](./Poglavlja/JQuery/README.md#67-lančanje-metoda){:target="_blank"}
 
-8. [Upravljanje DOM stablom](./Poglavlja/JQuery/README.md#68-upravljanje-DOM-stablom){:target="_blank"}
+8. [Upravljanje DOM stablom](./Poglavlja/JQuery/README.md#68-upravljanje-dom-stablom){:target="_blank"}
 
 9. [Upravljanje stilovima](./Poglavlja/JQuery/README.md#69-upravljanje-stilovima){:target="_blank"}
 
     1. [Upravljanje modelom kutije](./Poglavlja/JQuery/README.md#691-upravljanje-modelom-kutije){:target="_blank"}
 
-10. [AJAX zahtevi](./Poglavlja/JQuery/README.md#610-ajax-zahtevi){:target="_blank"}
+10. [AJAX zahtevi](./Poglavlja/JQuery/README.md#610--ajax-zahtevi){:target="_blank"}
 
 ## Deo 4 - Programiranje serverskih veb aplikacija
 
@@ -217,7 +217,7 @@ Autori:
 
    3. [CommonJS](./Poglavlja/NodeJS/README.md#713-commonjs){:target="_blank"}
 
-2. [Kreiranje HTTP serverskih aplikacija](./Poglavlja/NodeJS/README.md#72-kreiranje-httpP-serverskih-aplikacija){:target="_blank"}
+2. [Kreiranje HTTP serverskih aplikacija](./Poglavlja/NodeJS/README.md#72-kreiranje-http-serverskih-aplikacija){:target="_blank"}
 
 3. [Obrađivanje HTTP zahteva radnim okvirom Express.js](./Poglavlja/NodeJS/README.md#73-obrađivanje-http-zahteva-radnim-okvirom-expressjs){:target="_blank"}
 
@@ -245,9 +245,26 @@ Autori:
 
     3.  [Upiti za ažuriranje vrednosti polja](./Poglavlja/MongoDB/README.md#843-upiti-za-ažuriranje-vrednosti-polja){:target="_blank"}
 
-5.  [Razvojno okruženje Mongoose.js](./Poglavlja/MongoDB/README.md#85-razvojno-okruženje-mongoose.js){:target="_blank"} 
+5.  [Razvojno okruženje Mongoose.js](./Poglavlja/MongoDB/README.md#85-razvojno-okruženje-mongoosejs){:target="_blank"} 
 
-    1. [Dva povezana modela](./Poglavlja/MongoDB/README.md#851-dva-povezana-modela){:target="_blank"}
+    1. [Definisanje sheme i modela dokumenata](./Poglavlja/MongoDB/README.md#851-definisanje-sheme-i-modela-dokumenata){:target="_blank"}
+    
+    2. [Čitanje dokumenata](./Poglavlja/MongoDB/README.md#852-čitanje-dokumenata){:target="_blank"}
+
+    3. [Kreiranje novih dokumenata](./Poglavlja/MongoDB/README.md#853-kreiranje-novih-dokumenata){:target="_blank"}
+    
+    4. [Ažuriranje dokumenata](./Poglavlja/MongoDB/README.md#854-ažuriranje-dokumenata){:target="_blank"}
+    
+    5. [Brisanje dokumenata](./Poglavlja/MongoDB/README.md#855-brisanje-dokumenata){:target="_blank"}
+    
+    6. [Obrada grešaka](./Poglavlja/MongoDB/README.md#856-obrada-grešaka){:target="_blank"}
+    
+    7. [Dva povezana modela](./Poglavlja/MongoDB/README.md#857-dva-povezana-modela){:target="_blank"}
+
+        1. [Obogaćivanje dokumenata podacima iz povezanog modela](./Poglavlja/MongoDB/README.md#8571-obogaćivanje-dokumenata-podacima-iz-povezanog-modela){:target="_blank"}
+        
+        2. [Uređivanje dokumenata](./Poglavlja/MongoDB/README.md#8572-uređivanje-dokumenata){:target="_blank"}
+
 
 -----
 
