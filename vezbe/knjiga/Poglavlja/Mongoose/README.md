@@ -140,35 +140,31 @@ module.exports.model = StudentModel;
 ```
 
 <div class="domaci-zadatak">
-<span class="naslov">Domaći zadatak 1</span> 
-<div class="tekst">
-
-Napisati Mongoose shemu `artikalShema` koja sadrži naredne informacije:
-
-- naziv (niska)
-- cena (broj)
-- broj artikala (broj)
-
-Kreirati Mongoose model `Artikal` na osnovu date sheme.
-
-</div>
+    <span class="naslov">Domaći zadatak 1</span> 
+    <div class="tekst">
+        Napisati Mongoose shemu `artikalShema` za kolekciju `artikli` iz MongoDB baze podataka `Prodavnica` koja sadrži naredne informacije:
+        <ul>
+            <li>naziv (niska)</li>
+            <li>cena (broj)</li>
+            <li>broj artikala (broj)</li>
+        </ul>
+        Kreirati Mongoose model `Artikal` na osnovu date sheme.
+    </div>
 </div>
 
 <div class="domaci-zadatak">
-<span class="naslov">Domaći zadatak 2</span> 
-<div class="tekst">
-
-Napisati Mongoose shemu `porudzbinaShema` koja sadrži naredne informacije:
-
-- ime i prezime korisnika (niska)
-- broj artikala (broj)
-- datum naručivanja (datum) - ova vrednost se automatski generiše na serveru u trenutku kreiranja nove porudžbine
-- datum isporuke (datum)
-- identifikator artikla na koji se porudžbina odnosi (tj. identifikator koji referiše na `Artikal`)
-
-Kreirati Mongoose model `Porudzbina` na osnovu date sheme.
-
-</div>
+    <span class="naslov">Domaći zadatak 2</span> 
+    <div class="tekst">
+        Napisati Mongoose shemu `porudzbinaShema` za kolekciju `porudzbine` iz MongoDB baze podataka `Prodavnica` koja sadrži naredne informacije:
+        <ul>
+            <li>ime i prezime korisnika (niska)</li>
+            <li>broj artikala (broj)</li>
+            <li>datum naručivanja (datum)</li>
+            <li>datum isporuke (datum)</li>
+            <li>identifikator artikla na koji se porudžbina odnosi (tj. identifikator koji referiše na model `Artikal`)</li>
+        </ul>
+        Kreirati Mongoose model `Porudzbina` na osnovu date sheme.
+    </div>
 </div>
 
 ## 9.2. Čitanje dokumenata
@@ -779,18 +775,15 @@ Celokupno rešenje je dato na [ovoj adresi](https://github.com/MatfUVIT/UVIT/tre
 
 
 <div class="domaci-zadatak">
-<span class="naslov">Domaći zadatak 3</span> 
-<div class="tekst">
-
-Koristeći implementaciju Node.js i Express.js serverske aplikacije napisane u duhu MVC arhitekture iz [Node.js poglavlja](../NodeJS/README.md), izmeniti implementaciju modela tako da važi:
-
-- Umesto nizova objekata koji se čuvaju na serveru, koriste se napisane sheme iz domaćih zadataka 1 i 2 iznad, kako bi se omogućilo trajno skladištenje podataka u MongoDB bazu podataka sa nazivom `Prodavnica`.
-
-- Sve funkcije modela se implementiraju nad modelima `Artikal` i `Porudzbina` umesto nad nizovima objekata koji se čuvaju na serveru.
-
-- Koristiti `async`-`await` paradigmu asinhronog programiranja za rad sa bazom podataka i modelom MVC aplikacije. Samim tim, biće potrebno izvršiti manje izmene u kontroleru, kao u primerima iznad.
-
-</div>
+    <span class="naslov">Domaći zadatak 3</span> 
+    <div class="tekst">
+        Koristeći implementaciju Node.js i Express.js serverske aplikacije napisane u duhu MVC arhitekture iz domaćeg zadatka 2 u <a href="../NodeJS/README.md">Node.js poglavlju</a>, izmeniti implementaciju modela tako da važi:
+        <ul>
+            <li>Umesto nizova objekata koji se čuvaju na serveru, koriste se napisane sheme iz domaćih zadataka 1 i 2 iznad, kako bi se omogućilo trajno skladištenje podataka u MongoDB bazu podataka sa nazivom `Prodavnica`.</li>
+            <li>Sve funkcije modela se implementiraju nad modelima `Artikal` i `Porudzbina` umesto nad nizovima objekata koji se čuvaju na serveru.</li>
+            <li>Koristiti `async`-`await` paradigmu asinhronog programiranja za rad sa bazom podataka i modelom MVC aplikacije. Samim tim, biće potrebno izvršiti manje izmene u kontroleru, kao u primerima iznad.</li>
+        </ul>
+    </div>
 </div>
 
 -----

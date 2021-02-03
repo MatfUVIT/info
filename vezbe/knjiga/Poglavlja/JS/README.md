@@ -2,7 +2,7 @@
 
 [Knjiga](../../README.md)
 
------
+---
 
 <style>
 .domaci-zadatak {
@@ -51,36 +51,34 @@
 
 # 4. Programski jezik JavaScript
 
-*JavaScript* predstavlja trenutno najpopularniji jezik za programiranje klijentskih aplikacija na vebu, ali njegova upotreba postaje sve popularnija i u savremenim razvojnim okruženjima za kreiranje serverskih aplikacija na vebu. S obzirom da on predstavlja osnovni alat za izgradnju dinamičkih veb stranica i serverskih aplikacija u ovoj knjizi, u ovom poglavlju ćemo se upoznati sa osnovnim elementima ovog programskog jezika. Pretpostavka je da je čitalac upoznat sa programskim jezikom C ili nekim drugim višim programskim jezikom.
+_JavaScript_ predstavlja trenutno najpopularniji jezik za programiranje klijentskih aplikacija na vebu, ali njegova upotreba postaje sve popularnija i u savremenim razvojnim okruženjima za kreiranje serverskih aplikacija na vebu. S obzirom da on predstavlja osnovni alat za izgradnju dinamičkih veb stranica i serverskih aplikacija u ovoj knjizi, u ovom poglavlju ćemo se upoznati sa osnovnim elementima ovog programskog jezika. Pretpostavka je da je čitalac upoznat sa programskim jezikom C ili nekim drugim višim programskim jezikom.
 
 ## 4.1 Izvršavanje JavaScript koda
 
-Pre nego što započnemo diskusiju o sintaksi i semantici programskog jezika JavaScript, potrebno je da razumemo kako je moguće da izvršimo izvorni kod koji budemo napisali. Postoji mnogo načina, a jedan od njih je putem veb pregledača. 
+Pre nego što započnemo diskusiju o sintaksi i semantici programskog jezika JavaScript, potrebno je da razumemo kako je moguće da izvršimo izvorni kod koji budemo napisali. Postoji mnogo načina, a jedan od njih je putem veb pregledača.
 
-Kako je JavaScript prvenstveno namenjen za izrazu dinamičkih veb prezentacija, sasvim je prirodno da savremeni veb pregledači imaju alate za prevođenje izvornog koda napisanog u jeziku JavaScript i izvršavanje prevedenih naredbi. Deo veb pregledača koji se bavi ovim se naziva JavaScript *interpreter* (engl. *interpreter*). JavaScript interpreter tumači naš napisan izvorni kod i izvršava prevedene instrukcije u okviru veb pregledača. Nećemo ulaziti u detalje kako se tačno JavaScript kod prevodi.
+Kako je JavaScript prvenstveno namenjen za izrazu dinamičkih veb prezentacija, sasvim je prirodno da savremeni veb pregledači imaju alate za prevođenje izvornog koda napisanog u jeziku JavaScript i izvršavanje prevedenih naredbi. Deo veb pregledača koji se bavi ovim se naziva JavaScript _interpreter_ (engl. _interpreter_). JavaScript interpreter tumači naš napisan izvorni kod i izvršava prevedene instrukcije u okviru veb pregledača. Nećemo ulaziti u detalje kako se tačno JavaScript kod prevodi.
 
 Da bismo izvršili neki JavaScript kod u veb pregledaču, potrebno je da, kao i do sada, otvorimo .html datoteku koja u svojoj strukturi sadrži JavaScript kod. Međutim, taj kod se ne može javiti bilo gde u HTML kodu, već se mora navesti kao sadržaj elementa `script`, kao u narednom kodu:
 
 ```html
 <!DOCTYPE html>
 <html>
-
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>JavaScript</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <script>
-        // JavaScript kod ide ovde
-        var x = 1;
+      // JavaScript kod ide ovde
+      var x = 1;
     </script>
-</body>
-
+  </body>
 </html>
 ```
 
-Element `script` se ipak može naći bilo gde u sadržaju elemenata `head` ili `body`. Štaviše, možemo imati više `script` elemenata, čiji se kodovi jednostavno nadovezuju jedni na druge. 
+Element `script` se ipak može naći bilo gde u sadržaju elemenata `head` ili `body`. Štaviše, možemo imati više `script` elemenata, čiji se kodovi jednostavno nadovezuju jedni na druge.
 
 Alternativno, možemo JavaScript kod pisati u eksternoj datoteci sa ekstenzijom `js`. Ovakva datoteka se zatim uključuje u HTML kod ponovo pomoću elementa `script`, navođenjem putanje do te datoteke kao vrednost atributa `src`, kao u narednom kodu:
 
@@ -89,16 +87,14 @@ Datoteka `index.html`:
 ```html
 <!DOCTYPE html>
 <html>
-
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>JavaScript</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <script src="index.js"></script>
-</body>
-
+  </body>
 </html>
 ```
 
@@ -117,12 +113,12 @@ U oba slučaja će veb pregledač, čim naiđe na element `script`, proslediti J
 
 Ova sekcija je posvećena prikazivanju osnovnih elemenata jezika JavaScript, kao što su tipovi podataka, literali, definisanju promenljivih, ispisivanju vrednosti u konzoli i poređenju vrednosti po jednakosti.
 
-*JavaScript okruženje za izvršavanje* (engl. *engine*) nam omogućava bezbedno okruženje za izvršavanje koda. Sve definicije promenljivih, funkcija i dr. se izvršavaju u okviru ovog okruženja, odvojenog od operativnog sistema. Tako, na primer, naredni fragment koda kojim definišemo tri promenljive `x`, `y` i `z` čije su vrednosti literali odgovarajućih tipova, ove promenljive definiše u globalnom opsegu JavaScript okruženja za izvršavanje.
+_JavaScript okruženje za izvršavanje_ (engl. _engine_) nam omogućava bezbedno okruženje za izvršavanje koda. Sve definicije promenljivih, funkcija i dr. se izvršavaju u okviru ovog okruženja, odvojenog od operativnog sistema. Tako, na primer, naredni fragment koda kojim definišemo tri promenljive `x`, `y` i `z` čije su vrednosti literali odgovarajućih tipova, ove promenljive definiše u globalnom opsegu JavaScript okruženja za izvršavanje.
 
 ```js
-var x = 1;       // Broj            - tip podataka "number"
+var x = 1; // Broj            - tip podataka "number"
 let y = 'Niska'; // Niska           - tip podataka "string"
-const z = true;  // Bulova vrednost - tip podataka "boolean"
+const z = true; // Bulova vrednost - tip podataka "boolean"
 ```
 
 Ključnim rečima `var` i `let` definišemo promenljive čije vrednosti kasnije možemo promeniti. Postoje suptilne razlike između opsega važenja promenljivih definisanih ovim ključnim rečima u koje nećemo ulaziti. Mi ćemo preferirati uvođenje promenljivih ključnom reči `let` u nastavku kursa, s obzirom da ona više oponaša pravila za opsege važenja promenljivih u programskom jeziku C.
@@ -133,22 +129,22 @@ Ključnom reči `const` definišemo konstante čija se vrednost dalje ne može m
 z = false; // Uncaught TypeError: Assignment to constant variable.
 ```
 
-Kroz JavaScript okruženje za izvršavanje dostupan nam je specijalan objekat čiji je identifikator `console` i pomoću kojeg možemo pristupiti konzoli. Konzola predstavlja koncept sličan standardnom izlazu u programskom jeziku C. U veb pregledačima, konzola je dostupna kroz *alate za razvijače* (engl. *developer tools*). Na primer, u veb pregledaču Firefox je konzolu moguće otvoriti praćenjem narednih koraka:
+Kroz JavaScript okruženje za izvršavanje dostupan nam je specijalan objekat čiji je identifikator `console` i pomoću kojeg možemo pristupiti konzoli. Konzola predstavlja koncept sličan standardnom izlazu u programskom jeziku C. U veb pregledačima, konzola je dostupna kroz _alate za razvijače_ (engl. _developer tools_). Na primer, u veb pregledaču Firefox je konzolu moguće otvoriti praćenjem narednih koraka:
 
-   1. Otvoriti "Menu" (hamburger ikonica u gornjem desnom uglu)
-   2. Odabrati "Web Developer"
-   3. Odabrati "Web Console"
+1.  Otvoriti "Menu" (hamburger ikonica u gornjem desnom uglu)
+2.  Odabrati "Web Developer"
+3.  Odabrati "Web Console"
 
 Slično, u veb pregledaču Chrome je potrebno ispratiti naredne korake:
 
-   1. Otvoriti "Menu" (tri tačkice u gornjem desnom uglu)
-   2. Odabrati "More tools"
-   3. Odabrati "Developer tools"
-   4. Odabrati "Console" tab
+1.  Otvoriti "Menu" (tri tačkice u gornjem desnom uglu)
+2.  Odabrati "More tools"
+3.  Odabrati "Developer tools"
+4.  Odabrati "Console" tab
 
 Svi primeri u ovom poglavlju koriste konzolu za prikazivanje rezultata tako da ju je neophodno otvoriti prilikom otvaranja primera u veb pregledaču.
 
-Ispisivanje na konzolu se radi pozivom *metoda* (engl. *method*) `log` nad `console` objektom, kao u narednom kodu. Možemo ispisati koliko god želimo promenljivih, literala, i dr. razdvojenih karakterom zapete. Jedan poziv ovog metoda ispisuje vrednosti, prosleđene kao argumente metoda, u jednoj liniji.
+Ispisivanje na konzolu se radi pozivom _metoda_ (engl. _method_) `log` nad `console` objektom, kao u narednom kodu. Možemo ispisati koliko god želimo promenljivih, literala, i dr. razdvojenih karakterom zapete. Jedan poziv ovog metoda ispisuje vrednosti, prosleđene kao argumente metoda, u jednoj liniji.
 
 ```js
 console.log(x, y, z, 2, 'Druga niska', false);
@@ -162,6 +158,7 @@ log('Pokusavam da ispisem tekst u konzolu "funkcijom" log');
 ```
 
 Prikaz konzole za primer 1:
+
 <div id="output1"></div>
 <script>pregazi_console(1);</script>
 <script src="./Primeri/1/index.js"></script>
@@ -177,7 +174,7 @@ console.log('Tip od x:', typeof x);
 console.log('Tip od y:', typeof y);
 ```
 
-Štaviše, jedna promenljiva može imati vrednost jednog tipa, a kasnije dobiti vrednosti drugog tipa. Ova osobina jezika JavaScript se naziva *dinamička tipiziranost* (engl. *dynamically typed language*). 
+Štaviše, jedna promenljiva može imati vrednost jednog tipa, a kasnije dobiti vrednosti drugog tipa. Ova osobina jezika JavaScript se naziva _dinamička tipiziranost_ (engl. _dynamically typed language_).
 
 ```js
 y = 2;
@@ -187,6 +184,7 @@ console.log('y =', y, '\nTip od y:', typeof y);
 ```
 
 Prikaz konzole za primer 2:
+
 <div id="output2"></div>
 <script>pregazi_console(2);</script>
 <script src="./Primeri/2/index.js"></script>
@@ -199,23 +197,24 @@ Poređenje dve vrednosti po jednakosti se može vršiti na dva načina. Operator
 console.log('Operator ==');
 
 console.log('0 == false <=>', 0 == false);
-console.log('42 == \'42\' <=>', 42 == '42');
+console.log("42 == '42' <=>", 42 == '42');
 console.log('1 == "jedan" <=>', 1 == 'jedan');
 
-console.log("Operator ===");
+console.log('Operator ===');
 
-console.log("0 === false <=>", 0 === false);
+console.log('0 === false <=>', 0 === false);
 console.log("42 === '42' <=>", 42 === '42');
 console.log("1 === 'jedan' <=>", 1 === 'jedan');
-console.log("0 === 0 <=>", 0 === 0);
-console.log("false === false <=>", false === false);
-console.log("'jedan' === \"jedan\" <=>", 'jedan' === "jedan");
+console.log('0 === 0 <=>', 0 === 0);
+console.log('false === false <=>', false === false);
+console.log('\'jedan\' === "jedan" <=>', 'jedan' === 'jedan');
 
 // Ovaj kod takodje demonstrira kako mozemo ugnezdjavati niske jednu u drugu
 // kao i kako mozemo oznaciti (engl. escape) navodnike unutar niski (koriscenjem \' i \").
 ```
 
 Prikaz konzole za primer 3:
+
 <div id="output3"></div>
 <script>pregazi_console(3);</script>
 <script src="./Primeri/3/index.js"></script>
@@ -249,6 +248,7 @@ console.log('Povrsina pravougaonika je:', povrsina);
 
     const povrsina = duza_stranica * kraca_stranica;
     console.log('Povrsina pravougaonika je:', povrsina);
+
 })();
 </script>
 
@@ -258,7 +258,10 @@ console.log('Povrsina pravougaonika je:', povrsina);
 let generisani_broj = Math.random();
 console.log('Generisani broj iz intervala [0, 1) je:', generisani_broj);
 generisani_broj = Math.floor(Math.random() * 100 + 50);
-console.log('Generisani broj iz celobrojnog intervala [50, 150) je:', generisani_broj);
+console.log(
+  'Generisani broj iz celobrojnog intervala [50, 150) je:',
+  generisani_broj
+);
 ```
 
 <div id="output5"></div>
@@ -270,14 +273,14 @@ console.log('Generisani broj iz celobrojnog intervala [50, 150) je:', generisani
 </script>
 
 > Zadatak 3: Date su tri reči zapisane kao niske: `'Ovo'`, `'je'` i `'recenica'`.<br>
-&nbsp;&nbsp;&nbsp;a. Spojiti date reči u jednu rečenicu (nisku) sa razmacima između reči i ispisati je u konzoli.<br>
-&nbsp;&nbsp;&nbsp;b. Ispisati u konzoli broj karaktera u rečenici.<br>
-&nbsp;&nbsp;&nbsp;c. Pronaći poziciju podniske `'recenica'` u rečenici. Pronaći poziciju podniske `'nepostojeca niska'`. Ispisati ove pozicije u konzoli.<br>
-&nbsp;&nbsp;&nbsp;d. Ispisati podnisku rečenice koja se nalazi na poziciji `7` do kraja niske.<br>
-&nbsp;&nbsp;&nbsp;e. Ispisati u konzoli novu rečenicu koja se dobija tako što se podniska `'recenica'` zamenjuje podniskom `'nesto duza recenica'`.<br>
-&nbsp;&nbsp;&nbsp;f. Ispisati u konzoli niske koje se dobijaju kada se sva slova u rečenici pretvore u velika, odnosno, mala slova.<br>
-&nbsp;&nbsp;&nbsp;g. Ispisati u konzoli rečenicu koja se dobija tako što se početnoj rečenici dodaju karakteri belina na početak i kraj. Ispisati u konzoli rečenicu koja se dobija tako što se kreiranoj rečenici ukidaju beline sa početka i kraja.<br>
-&nbsp;&nbsp;&nbsp;h. Ispisati u konzoli prvi i poslednji karakter rečenice.
+> &nbsp;&nbsp;&nbsp;a. Spojiti date reči u jednu rečenicu (nisku) sa razmacima između reči i ispisati je u konzoli.<br>
+> &nbsp;&nbsp;&nbsp;b. Ispisati u konzoli broj karaktera u rečenici.<br>
+> &nbsp;&nbsp;&nbsp;c. Pronaći poziciju podniske `'recenica'` u rečenici. Pronaći poziciju podniske `'nepostojeca niska'`. Ispisati ove pozicije u konzoli.<br>
+> &nbsp;&nbsp;&nbsp;d. Ispisati podnisku rečenice koja se nalazi na poziciji `7` do kraja niske.<br>
+> &nbsp;&nbsp;&nbsp;e. Ispisati u konzoli novu rečenicu koja se dobija tako što se podniska `'recenica'` zamenjuje podniskom `'nesto duza recenica'`.<br>
+> &nbsp;&nbsp;&nbsp;f. Ispisati u konzoli niske koje se dobijaju kada se sva slova u rečenici pretvore u velika, odnosno, mala slova.<br>
+> &nbsp;&nbsp;&nbsp;g. Ispisati u konzoli rečenicu koja se dobija tako što se početnoj rečenici dodaju karakteri belina na početak i kraj. Ispisati u konzoli rečenicu koja se dobija tako što se kreiranoj rečenici ukidaju beline sa početka i kraja.<br>
+> &nbsp;&nbsp;&nbsp;h. Ispisati u konzoli prvi i poslednji karakter rečenice.
 
 ```js
 const prva_rec = 'Ovo';
@@ -304,7 +307,10 @@ console.log('Podniska recenice od indeksa 7 do kraja niske:', podniska);
 // Pogledati razlike izmedju slice, substr i substring za domaci
 
 // e
-const izmenjena_recenica = cela_recenica.replace('recenica', 'nesto duza recenica');
+const izmenjena_recenica = cela_recenica.replace(
+  'recenica',
+  'nesto duza recenica'
+);
 console.log(izmenjena_recenica);
 
 // f
@@ -314,7 +320,8 @@ const sva_mala_slova = cela_recenica.toLowerCase();
 console.log(sva_mala_slova);
 
 // g
-const recenica_sa_vodecim_belinama = '  \n  \t    \n  \t\t\t   ' + cela_recenica + '   \n\n';
+const recenica_sa_vodecim_belinama =
+  '  \n  \t    \n  \t\t\t   ' + cela_recenica + '   \n\n';
 console.log('Recenica sa vodecim belinama:', recenica_sa_vodecim_belinama);
 const osisana_recenica = recenica_sa_vodecim_belinama.trim();
 console.log('Osisana recenica:', osisana_recenica);
@@ -322,7 +329,13 @@ console.log('Osisana recenica:', osisana_recenica);
 // h
 const prvi_karakter = cela_recenica.charAt(0);
 const poslednji_karakter = cela_recenica.charAt(cela_recenica.length - 1);
-console.log('Prvi karakter je "' + prvi_karakter + '", a poslednji karakter je "' + poslednji_karakter + '"');
+console.log(
+  'Prvi karakter je "' +
+    prvi_karakter +
+    '", a poslednji karakter je "' +
+    poslednji_karakter +
+    '"'
+);
 ```
 
 <div id="output6"></div>
@@ -373,6 +386,7 @@ console.log('Prvi karakter je "' + prvi_karakter + '", a poslednji karakter je "
     const poslednji_karakter = cela_recenica.charAt(cela_recenica.length - 1);
     console.log('Prvi karakter je "' + prvi_karakter + '", a poslednji karakter je "' + poslednji_karakter + '"');
     })();
+
 </script>
 
 > Zadatak 4: Neka je dat broj `42`. Konvertovati ovaj broj u nisku, a zatim u konzoli ispisati vrednosti datog broja i kreirane niske, kao i njihove tipove.
@@ -380,10 +394,16 @@ console.log('Prvi karakter je "' + prvi_karakter + '", a poslednji karakter je "
 ```js
 let celi_broj = 42;
 let celi_broj_kao_niska = celi_broj.toString();
-console.log('Vrednost ' + celi_broj +
-    ' koja je tipa ' + typeof celi_broj +
-    ' zapisana u tipu ' + typeof celi_broj_kao_niska +
-    ' je ' + celi_broj_kao_niska);
+console.log(
+  'Vrednost ' +
+    celi_broj +
+    ' koja je tipa ' +
+    typeof celi_broj +
+    ' zapisana u tipu ' +
+    typeof celi_broj_kao_niska +
+    ' je ' +
+    celi_broj_kao_niska
+);
 ```
 
 <div id="output7"></div>
@@ -404,17 +424,31 @@ console.log('Vrednost ' + celi_broj +
 ```js
 celi_broj_kao_niska = '7';
 celi_broj = Number.parseInt(celi_broj_kao_niska);
-console.log('Vrednost ' + celi_broj_kao_niska +
-    ' koja je tipa ' + typeof celi_broj_kao_niska +
-    ' zapisana u tipu ' + typeof celi_broj +
-    ' je ' + celi_broj);
+console.log(
+  'Vrednost ' +
+    celi_broj_kao_niska +
+    ' koja je tipa ' +
+    typeof celi_broj_kao_niska +
+    ' zapisana u tipu ' +
+    typeof celi_broj +
+    ' je ' +
+    celi_broj
+);
 
 const broj_u_pokretnom_zarezu_kao_niska = '3.14';
-const broj_u_pokretnom_zarezu = Number.parseFloat(broj_u_pokretnom_zarezu_kao_niska);
-console.log('Vrednost ' + broj_u_pokretnom_zarezu_kao_niska +
-    ' koja je tipa ' + typeof broj_u_pokretnom_zarezu_kao_niska +
-    ' zapisana u tipu ' + typeof broj_u_pokretnom_zarezu +
-    ' je ' + broj_u_pokretnom_zarezu);
+const broj_u_pokretnom_zarezu = Number.parseFloat(
+  broj_u_pokretnom_zarezu_kao_niska
+);
+console.log(
+  'Vrednost ' +
+    broj_u_pokretnom_zarezu_kao_niska +
+    ' koja je tipa ' +
+    typeof broj_u_pokretnom_zarezu_kao_niska +
+    ' zapisana u tipu ' +
+    typeof broj_u_pokretnom_zarezu +
+    ' je ' +
+    broj_u_pokretnom_zarezu
+);
 ```
 
 <div id="output8"></div>
@@ -434,18 +468,25 @@ console.log('Vrednost ' + broj_u_pokretnom_zarezu_kao_niska +
         ' koja je tipa ' + typeof broj_u_pokretnom_zarezu_kao_niska +
         ' zapisana u tipu ' + typeof broj_u_pokretnom_zarezu +
         ' je ' + broj_u_pokretnom_zarezu);
+
 })();
 </script>
 
-> Zadatak 6: Neka su date niske `'jedan'` i `'dva'`. Konvertovati ove niske u cele brojeve i ispisati njihove vrednosti u konzoli. Da li su dobijene vrednosti jednake ako se koristi operator poređenja po jednakosti? 
+> Zadatak 6: Neka su date niske `'jedan'` i `'dva'`. Konvertovati ove niske u cele brojeve i ispisati njihove vrednosti u konzoli. Da li su dobijene vrednosti jednake ako se koristi operator poređenja po jednakosti?
 
 ```js
 const neuspesna_konverzija_1 = Number.parseInt('jedan');
 const neuspesna_konverzija_2 = Number.parseInt('dva');
 console.log('Vrednost neuspesne konverzije 1 je ' + neuspesna_konverzija_1);
 console.log('Vrednost neuspesne konverzije 2 je ' + neuspesna_konverzija_2);
-console.log('Da li dve NaN vrednosti mogu biti jednake?', neuspesna_konverzija_1 == neuspesna_konverzija_2);
-console.log('Provera da li je vrednost NaN:', Number.isNaN(neuspesna_konverzija_1));
+console.log(
+  'Da li dve NaN vrednosti mogu biti jednake?',
+  neuspesna_konverzija_1 == neuspesna_konverzija_2
+);
+console.log(
+  'Provera da li je vrednost NaN:',
+  Number.isNaN(neuspesna_konverzija_1)
+);
 ```
 
 <div id="output9"></div>
@@ -461,7 +502,7 @@ console.log('Provera da li je vrednost NaN:', Number.isNaN(neuspesna_konverzija_
 })();
 </script>
 
-Postoji još jedan tip zapisivanja niski u jeziku JavaScript; u pitanju su *šablon-literali* (engl. *template literal*). Šablon-literali se navode između "iskošenih navodnika" (karakter \`). Šablon-literali imaju neka zanimljiva svojstva. Na primer, u njima se mogu zapisati višelinijski tekstovi, ali i ugnežđavati izrazi, te mogu biti veoma korisni. Naredni primer ilustruje ove opisane osobine:
+Postoji još jedan tip zapisivanja niski u jeziku JavaScript; u pitanju su _šablon-literali_ (engl. _template literal_). Šablon-literali se navode između "iskošenih navodnika" (karakter \`). Šablon-literali imaju neka zanimljiva svojstva. Na primer, u njima se mogu zapisati višelinijski tekstovi, ali i ugnežđavati izrazi, te mogu biti veoma korisni. Naredni primer ilustruje ove opisane osobine:
 
 ```js
 // Naredne 3 linije koda se efektivno mogu posmatrati kao jedna linija koda,
@@ -485,6 +526,7 @@ console.log(`Vrednost izraza 2 + 2 je ${2 + 2}`); // 'Vrednost izraza 2 + 2 je 4
 
     console.log(`Vrednost izraza 2 + 2 je ${2 + 2}`); // 'Vrednost izraza 2 + 2 je 4'
     })();
+
 </script>
 
 ## 4.4 Rad sa funkcijama, nedostajućim vrednostima i kontrolama toka izbora
@@ -495,7 +537,7 @@ U ovoj sekciji ćemo demonstrirati osnovni rad sa funkcijama, nedostajućim vred
 
 ```js
 function najveca_vrednost(x, y) {
-    return x > y ? x : y;
+  return x > y ? x : y;
 }
 
 console.log('Tip funkcija je ' + typeof najveca_vrednost);
@@ -516,19 +558,25 @@ console.log('Veca vrednost je ' + maksimum);
 
     const maksimum = najveca_vrednost(-1, 1);
     console.log('Veca vrednost je ' + maksimum);
+
 })();
 </script>
 
-> Zadatak 8: Definisati funkciju bez imena (tzv. *anonimnu funkciju*) i dodeliti je promenljivoj `ispisi_argument`. Funkcija prihvata jedan argument koji ispisuje u konzoli. Pozvati promenljivu `ispisi_argument` kao funkciju i proslediti joj vrednost `7`. Sačuvati povratnu vrednost funkcije u promenljivu. Da li je poziv funkcije uspeo? Ispisati u konzoli povratnu vrednost funkcije kao i njen tip.
+> Zadatak 8: Definisati funkciju bez imena (tzv. _anonimnu funkciju_) i dodeliti je promenljivoj `ispisi_argument`. Funkcija prihvata jedan argument koji ispisuje u konzoli. Pozvati promenljivu `ispisi_argument` kao funkciju i proslediti joj vrednost `7`. Sačuvati povratnu vrednost funkcije u promenljivu. Da li je poziv funkcije uspeo? Ispisati u konzoli povratnu vrednost funkcije kao i njen tip.
 
 ```js
 const ispisi_argument = function (arg) {
-    console.log(arg);
+  console.log(arg);
 }; // Primetimo tacku-zapetu ovde! Ona je obavezna jer je ovo naredba dodeljivanja
 
 const rezultat = ispisi_argument(7);
-console.log('Povratna vrednost funkcije koja nema return naredbu je ' + rezultat);
-console.log('Tip povratne vrednosti funkcije koja nema return naredbu je ' + typeof rezultat);
+console.log(
+  'Povratna vrednost funkcije koja nema return naredbu je ' + rezultat
+);
+console.log(
+  'Tip povratne vrednosti funkcije koja nema return naredbu je ' +
+    typeof rezultat
+);
 ```
 
 <div id="output11"></div>
@@ -542,6 +590,7 @@ console.log('Tip povratne vrednosti funkcije koja nema return naredbu je ' + typ
     const rezultat = ispisi_argument(7);
     console.log('Povratna vrednost funkcije koja nema return naredbu je ' + rezultat);
     console.log('Tip povratne vrednosti funkcije koja nema return naredbu je ' + typeof rezultat);
+
 })();
 </script>
 
@@ -552,17 +601,23 @@ const prazna_promenljiva = undefined;
 const nistavna_promenljiva = null;
 
 if (prazna_promenljiva == nistavna_promenljiva) {
-    console.log('Vrednosti undefined i null SE MOGU implicitno konvertovati jedna u drugu');
-}
-else {
-    console.log('Vrednosti undefined i null SE NE MOGU implicitno konvertovati jedna u drugu');
+  console.log(
+    'Vrednosti undefined i null SE MOGU implicitno konvertovati jedna u drugu'
+  );
+} else {
+  console.log(
+    'Vrednosti undefined i null SE NE MOGU implicitno konvertovati jedna u drugu'
+  );
 }
 
 if (prazna_promenljiva === nistavna_promenljiva) {
-    console.log('Vrednosti undefined i null JESU jednake i po vrednosti i po tipu');
-}
-else {
-    console.log('Vrednosti undefined i null NISU jednake i po vrednosti i po tipu');
+  console.log(
+    'Vrednosti undefined i null JESU jednake i po vrednosti i po tipu'
+  );
+} else {
+  console.log(
+    'Vrednosti undefined i null NISU jednake i po vrednosti i po tipu'
+  );
 }
 ```
 
@@ -586,6 +641,7 @@ else {
     else {
         console.log('Vrednosti undefined i null NISU jednake i po vrednosti i po tipu');
     }
+
 })();
 </script>
 
@@ -593,15 +649,17 @@ else {
 
 ```js
 function pozovi_funkciju_sa_argumentom(funkcija, argument) {
-    if (typeof funkcija === 'function') {
-        const ime_funkcije = funkcija.name;
-        console.log('Pozivam funkciju ' + ime_funkcije + '...');
-        funkcija(argument);
-        console.log('Zavrsio sam poziv funkcije ' + ime_funkcije + '...');
-    }
-    else {
-        console.log('Prvi argument bi trebalo da bude funkcija, a Vi ste prosledili ' + typeof funkcija);
-    }
+  if (typeof funkcija === 'function') {
+    const ime_funkcije = funkcija.name;
+    console.log('Pozivam funkciju ' + ime_funkcije + '...');
+    funkcija(argument);
+    console.log('Zavrsio sam poziv funkcije ' + ime_funkcije + '...');
+  } else {
+    console.log(
+      'Prvi argument bi trebalo da bude funkcija, a Vi ste prosledili ' +
+        typeof funkcija
+    );
+  }
 }
 
 // Pretpostavka je da je dostupna gore implementirana funkcija ispisi_argument
@@ -636,6 +694,7 @@ pozovi_funkciju_sa_argumentom(nesto_sto_nije_funkcija, 'arg');
     const nesto_sto_nije_funkcija = 0;
     pozovi_funkciju_sa_argumentom(nesto_sto_nije_funkcija, 'arg');
     })();
+
 </script>
 
 ## 4.5 Rad sa nizovima i ponavljajućim kontrolama toka
@@ -666,7 +725,7 @@ console.log('Broj elemenata niza niz_brojeva je ' + niz_brojeva.length);
 const niz_brojeva = [0, 1, 2, 3];
 let suma = 0;
 for (let i = 0; i < niz_brojeva.length; ++i) {
-    suma += niz_brojeva[i];
+  suma += niz_brojeva[i];
 }
 console.log('Suma elemenata niza niz_brojeva je ' + suma);
 ```
@@ -691,7 +750,7 @@ console.log('Suma elemenata niza niz_brojeva je ' + suma);
 const niz_brojeva = [0, 1, 2, 3];
 let proizvod = 1;
 for (const element of niz_brojeva) {
-    proizvod *= element;
+  proizvod *= element;
 }
 console.log('Proizvod elemenata niza niz_brojeva je ' + proizvod);
 ```
@@ -715,12 +774,12 @@ console.log('Proizvod elemenata niza niz_brojeva je ' + proizvod);
 const niz_niski = ['uvit', 'os', 'aisp'];
 
 function ispisi_uvecane_niske(niz) {
-    for (let i = 0; i < niz.length; ++i) {
-        console.log(niz[i].toUpperCase());
-    }
+  for (let i = 0; i < niz.length; ++i) {
+    console.log(niz[i].toUpperCase());
+  }
 }
 
-// Napomena: Nizovi se prosledjuju "po referenci" 
+// Napomena: Nizovi se prosledjuju "po referenci"
 // (tj. njihova referenca se kopira po vrednosti).
 // Dakle, u funkciji ispod se pristupa originalnom nizu,
 // a ne njegovoj kopiji.
@@ -740,6 +799,7 @@ ispisi_uvecane_niske(niz_niski);
     }
 
     ispisi_uvecane_niske(niz_niski);
+
 })();
 </script>
 
@@ -749,12 +809,12 @@ ispisi_uvecane_niske(niz_niski);
 const mesani_niz = [17.5, 'oop', false, 1000, -12.457, 'kiaa', true, true];
 
 function negiraj_bulove_vrednosti(niz) {
-    for (let i = 0; i < niz.length; ++i) {
-        if (typeof niz[i] === 'boolean') {
-            // Menjamo element prosledjenog niza
-            niz[i] = !niz[i];
-        }
+  for (let i = 0; i < niz.length; ++i) {
+    if (typeof niz[i] === 'boolean') {
+      // Menjamo element prosledjenog niza
+      niz[i] = !niz[i];
     }
+  }
 }
 
 // Demonstracija da je originalni niz zaista promenjen
@@ -782,6 +842,7 @@ console.log('Mesani niz nakon poziva funkcije: ' + mesani_niz);
     console.log('Mesani niz pre poziva funkcije:   ' + mesani_niz);
     negiraj_bulove_vrednosti(mesani_niz);
     console.log('Mesani niz nakon poziva funkcije: ' + mesani_niz);
+
 })();
 </script>
 
@@ -791,14 +852,14 @@ console.log('Mesani niz nakon poziva funkcije: ' + mesani_niz);
 const mesani_niz = [17.5, 'oop', false, 1000, -12.457, 'kiaa', true, true];
 
 function izdvoji_samo_brojeve(niz) {
-    const novi_niz = [];
-    for (let i = 0; i < niz.length; ++i) {
-        if (typeof niz[i] === 'number') {
-            // Dodavanje jednog elementa na kraj niza
-            novi_niz.push(niz[i]);
-        }
+  const novi_niz = [];
+  for (let i = 0; i < niz.length; ++i) {
+    if (typeof niz[i] === 'number') {
+      // Dodavanje jednog elementa na kraj niza
+      novi_niz.push(niz[i]);
     }
-    return novi_niz;
+  }
+  return novi_niz;
 }
 
 const samo_brojevi = izdvoji_samo_brojeve(mesani_niz);
@@ -824,6 +885,7 @@ console.log('Niz sa brojevima od mesanog niza: ' + samo_brojevi);
 
     const samo_brojevi = izdvoji_samo_brojeve(mesani_niz);
     console.log('Niz sa brojevima od mesanog niza: ' + samo_brojevi);
+
 })();
 </script>
 
@@ -833,10 +895,10 @@ console.log('Niz sa brojevima od mesanog niza: ' + samo_brojevi);
 const niz_brojeva = [0, 1, 2, 3];
 
 function ukloni_poslednjih_n_elemenata(niz, n) {
-    for (let i = 0; i < n; ++i) {
-        // Uklanjanje jednog elementa sa kraja niza (tj. poslednjeg elementa)
-        niz.pop();
-    }
+  for (let i = 0; i < n; ++i) {
+    // Uklanjanje jednog elementa sa kraja niza (tj. poslednjeg elementa)
+    niz.pop();
+  }
 }
 console.log('Niz brojeva pre uklanjanja 2 elementa:   ' + niz_brojeva);
 ukloni_poslednjih_n_elemenata(niz_brojeva, 2);
@@ -858,6 +920,7 @@ console.log('Niz brojeva nakon uklanjanja 2 elementa: ' + niz_brojeva);
     console.log('Niz brojeva pre uklanjanja 2 elementa:   ' + niz_brojeva);
     ukloni_poslednjih_n_elemenata(niz_brojeva, 2);
     console.log('Niz brojeva nakon uklanjanja 2 elementa: ' + niz_brojeva);
+
 })();
 </script>
 
@@ -907,24 +970,30 @@ nukleotide = ['a', 't', 'a', 'g', 'c', 'a', 'g', 't', 'c', 'c', 'a'];
 let sekvenca = 'atagcagtcca';
 
 function napravi_2grame(niz) {
-    const dvagrami = [];
-    for (let i = 0; i < niz.length - 1; ++i) {
-        // Izdvajanje podniza na osnovu datih indeksa a i b.
-        // Podniz koji se dobija je iz intervala indeksa [a, b).
-        const naredni_dvagram = niz.slice(i, i + 2);
+  const dvagrami = [];
+  for (let i = 0; i < niz.length - 1; ++i) {
+    // Izdvajanje podniza na osnovu datih indeksa a i b.
+    // Podniz koji se dobija je iz intervala indeksa [a, b).
+    const naredni_dvagram = niz.slice(i, i + 2);
 
-        // Promenljiva naredni_dvagram je niz
-        // Promenljiva dvagrami je niz
-        // => Ubacujemo niz u niz
-        // => Promenljiva dvagrami je visedimenzionalni niz
-        dvagrami.push(naredni_dvagram);
-    }
-    return dvagrami;
+    // Promenljiva naredni_dvagram je niz
+    // Promenljiva dvagrami je niz
+    // => Ubacujemo niz u niz
+    // => Promenljiva dvagrami je visedimenzionalni niz
+    dvagrami.push(naredni_dvagram);
+  }
+  return dvagrami;
 }
 const dvagrami = napravi_2grame(nukleotide);
-console.log('DNK sekvenca ' + sekvenca + ' ima ukupno ' + dvagrami.length + ' 2-grama i oni su:');
+console.log(
+  'DNK sekvenca ' +
+    sekvenca +
+    ' ima ukupno ' +
+    dvagrami.length +
+    ' 2-grama i oni su:'
+);
 for (let i = 0; i < dvagrami.length; ++i) {
-    console.log((i + 1) + '. 2-gram: ' + dvagrami[i]);
+  console.log(i + 1 + '. 2-gram: ' + dvagrami[i]);
 }
 ```
 
@@ -955,6 +1024,7 @@ for (let i = 0; i < dvagrami.length; ++i) {
     for (let i = 0; i < dvagrami.length; ++i) {
         console.log((i + 1) + '. 2-gram: ' + dvagrami[i]);
     }
+
 })();
 </script>
 
@@ -964,7 +1034,7 @@ for (let i = 0; i < dvagrami.length; ++i) {
 nukleotide = ['a', 't', 'a', 'g', 'c', 'a', 'g', 't', 'c', 'c', 'a'];
 
 // Pronalazak elementa u nizu se vrsi metodom indexOf.
-// Ako navedemo drugi argument metoda indexOf, 
+// Ako navedemo drugi argument metoda indexOf,
 // onda pretraga pocinje od tog indeksa umesto od pocetka niza.
 let pozicija = nukleotide.indexOf('g');
 console.log('1. nukleotid g se nalazi na poziciji ' + pozicija);
@@ -1017,20 +1087,20 @@ const niz1 = ['a', 'b'];
 const niz2 = ['a', 'b'];
 
 function da_li_su_jednaki(niz1, niz2) {
-    const n = niz1.length;
-    const m = niz2.length;
+  const n = niz1.length;
+  const m = niz2.length;
 
-    if (n !== m) {
-        return false;
+  if (n !== m) {
+    return false;
+  }
+
+  for (let i = 0; i < n; ++i) {
+    if (niz1[i] !== niz2[i]) {
+      return false;
     }
+  }
 
-    for (let i = 0; i < n; ++i) {
-        if (niz1[i] !== niz2[i]) {
-            return false;
-        }
-    }
-
-    return true;
+  return true;
 }
 
 console.log('Da li su nizovi jednaki?', da_li_su_jednaki(niz1, niz2));
@@ -1061,6 +1131,7 @@ console.log('Da li su nizovi jednaki?', da_li_su_jednaki(niz1, niz2));
     }
 
     console.log('Da li su nizovi jednaki?', da_li_su_jednaki(niz1, niz2));
+
 })();
 </script>
 
@@ -1068,37 +1139,37 @@ console.log('Da li su nizovi jednaki?', da_li_su_jednaki(niz1, niz2));
 
 U ovoj sekciji ćemo demonstrirati osnovni rad sa objektima kroz nekoliko zadataka. Pre toga, uvedimo formalno koncept objekata u programskom jeziku JavaScript.
 
-*Objekat* (engl. *object*) predstavlja strukturu podataka u kojoj su podaci predstavljeni uređenim parom (ključ, vrednost). Podaci od kojih se objekat sastoji se u terminologiji jezika JavaScript nazivaju *svojstvima* (engl. *property*). Ključ svojstva predstavlja njegovo ime, dok vrednost svojstva predstavlja sam podatak koji objekat sadrži. Vrednost svojstva može biti bilo koja vrednost jezika JavaScript. Specijalno, ukoliko je vrednost svojstva tipa `'function'`, onda se to svojstvo naziva i *metod* (engl. *method*).
+_Objekat_ (engl. _object_) predstavlja strukturu podataka u kojoj su podaci predstavljeni uređenim parom (ključ, vrednost). Podaci od kojih se objekat sastoji se u terminologiji jezika JavaScript nazivaju _svojstvima_ (engl. _property_). Ključ svojstva predstavlja njegovo ime, dok vrednost svojstva predstavlja sam podatak koji objekat sadrži. Vrednost svojstva može biti bilo koja vrednost jezika JavaScript. Specijalno, ukoliko je vrednost svojstva tipa `'function'`, onda se to svojstvo naziva i _metod_ (engl. _method_).
 
 Već smo videli i intenzivno koristili jedan primer objekta, a to je globalni objekat `console` i njegov metod `log`. Većina svojstava ovog objekta su metodi, ali to ne mora biti slučaj sa drugim objektima. Literali objekata se u programskom jeziku JavaScript zapisuju između vitičastih zagrada `{` i `}`, pri čemu se svako svojstvo zapisuje u formatu `ključ: vrednost` i odvojeno je karakterom zapete od ostalih svojstava. U nastavku teksta, kada govorimo o svojstvima, onda mislimo na vrednosti koje nisu funkcije, osim ukoliko ne naznačimo drugačije.
 
 > Zadatak 24: Kreirati objekat `automobil` koji ima svojstva i metode iz naredne tabele. Iskoristiti dati objekat za određivanje tipa svih objekata. Ispisati u konzoli dati objekat.<br>
 
-| svojstva | metodi |
-| --- | --- |
-| ime = Fiat | pokreni() |
-| model = 500 | vozi() |
-| težina = 850.0 | zakoči() |
-| boja = bela | ugasi() |
+| svojstva       | metodi    |
+| -------------- | --------- |
+| ime = Fiat     | pokreni() |
+| model = 500    | vozi()    |
+| težina = 850.0 | zakoči()  |
+| boja = bela    | ugasi()   |
 
 ```js
 const automobil = {
-    ime: 'Fiat',
-    model: 500,
-    težina: 850.0,
-    boja: 'bela',
-    pokreni: function() {
-        console.log('Automobil je uključen');
-    },
-    vozi: function() {
-        console.log('Automobil je u pokretu');
-    },
-    zakoči: function() {
-        console.log('Automobil je stao');
-    },
-    ugasi: function() {
-        console.log('Automobil je ugašen');
-    }
+  ime: 'Fiat',
+  model: 500,
+  težina: 850.0,
+  boja: 'bela',
+  pokreni: function () {
+    console.log('Automobil je uključen');
+  },
+  vozi: function () {
+    console.log('Automobil je u pokretu');
+  },
+  zakoči: function () {
+    console.log('Automobil je stao');
+  },
+  ugasi: function () {
+    console.log('Automobil je ugašen');
+  },
 };
 console.log(typeof automobil);
 console.log(automobil);
@@ -1135,22 +1206,22 @@ console.log(automobil);
 
 ```js
 const automobil = {
-    ime: 'Fiat',
-    model: 500,
-    težina: 850.0,
-    boja: 'bela',
-    pokreni: function() {
-        console.log('Automobil je uključen');
-    },
-    vozi: function() {
-        console.log('Automobil je u pokretu');
-    },
-    zakoči: function() {
-        console.log('Automobil je stao');
-    },
-    ugasi: function() {
-        console.log('Automobil je ugašen');
-    }
+  ime: 'Fiat',
+  model: 500,
+  težina: 850.0,
+  boja: 'bela',
+  pokreni: function () {
+    console.log('Automobil je uključen');
+  },
+  vozi: function () {
+    console.log('Automobil je u pokretu');
+  },
+  zakoči: function () {
+    console.log('Automobil je stao');
+  },
+  ugasi: function () {
+    console.log('Automobil je ugašen');
+  },
 };
 console.log('Početak ulice');
 automobil.pokreni();
@@ -1207,31 +1278,37 @@ Nekada nam je potrebno da u telu metoda referišemo na objekat koji je "vlasnik"
 
 > Zadatak 26: Neka je dat objekat automobila iz zadatka 24. Dopuniti implementaciju objekta tako da uključuje i metod `ispisi_informacije` koji u konzoli ispisuje informacije o imenu, modelu, težini (u kilogramima) i boji automobila.
 
-
 ```js
 const automobil = {
-    ime: 'Fiat',
-    model: 500,
-    težina: 850.0,
-    boja: 'bela',
-    pokreni: function() {
-        console.log('Automobil je uključen');
-    },
-    vozi: function() {
-        console.log('Automobil je u pokretu');
-    },
-    zakoči: function() {
-        console.log('Automobil je stao');
-    },
-    ugasi: function() {
-        console.log('Automobil je ugašen');
-    },
-    ispisi_informacije: function() {
-        console.log('Ime: ' + this.ime + 
-                    ', model: ' + this.model + 
-                    ', težina: ' + this.težina + 'kg' + 
-                    ', boja: ' + this.boja);
-    }
+  ime: 'Fiat',
+  model: 500,
+  težina: 850.0,
+  boja: 'bela',
+  pokreni: function () {
+    console.log('Automobil je uključen');
+  },
+  vozi: function () {
+    console.log('Automobil je u pokretu');
+  },
+  zakoči: function () {
+    console.log('Automobil je stao');
+  },
+  ugasi: function () {
+    console.log('Automobil je ugašen');
+  },
+  ispisi_informacije: function () {
+    console.log(
+      'Ime: ' +
+        this.ime +
+        ', model: ' +
+        this.model +
+        ', težina: ' +
+        this.težina +
+        'kg' +
+        ', boja: ' +
+        this.boja
+    );
+  },
 };
 
 automobil.ispisi_informacije();
@@ -1267,10 +1344,11 @@ automobil.ispisi_informacije();
     };
 
     automobil.ispisi_informacije();
+
 })();
 </script>
 
-Do sada smo videli da se svojstvima objekta (ovde govorimo o svojstvima u širem smislu) pristupa korišćenjem tzv. *tačka-notacije* (engl. *dot notation*). Ona podrazumeva da navedemo objekat, iza kojeg sledi karakter tačke `.`, a zatim da navedemo ime svojstva. Postoji još jedan način za dohvatanje svojstava, a to je pomoću uglastih zagrada. Tako, na primer, korišćenjem `objekat.naziv_svojstva` i `objekat['naziv_svojstva']` možemo dohvatiti svojstvo objekta koje se naziva `naziv_svojstva`. Ovde je neophodno primetiti da se između uglastih zagrada navodi naziv svojstva kao niska. Zasto? 
+Do sada smo videli da se svojstvima objekta (ovde govorimo o svojstvima u širem smislu) pristupa korišćenjem tzv. _tačka-notacije_ (engl. _dot notation_). Ona podrazumeva da navedemo objekat, iza kojeg sledi karakter tačke `.`, a zatim da navedemo ime svojstva. Postoji još jedan način za dohvatanje svojstava, a to je pomoću uglastih zagrada. Tako, na primer, korišćenjem `objekat.naziv_svojstva` i `objekat['naziv_svojstva']` možemo dohvatiti svojstvo objekta koje se naziva `naziv_svojstva`. Ovde je neophodno primetiti da se između uglastih zagrada navodi naziv svojstva kao niska. Zasto?
 
 Razlika je u tome što JavaScript jezik izraz između zagrada smatra kao vrednost koja se izračunava da bi se dobilo ime svojstva. Tako na primer, ako iskoristimo izraz `objekat.naziv_svojstva`, time kažemo JavaScript okruženju da potraži svojstvo u objektu koje se naziva "naziv_svojstva". Sa druge strane, ako iskoristimo izraz `objekat[naziv_svojstva]` (primetiti da nema navodnika!), JavaScript okruženje će `naziv_svojstva` smatrati kao izraz čija će vrednost biti izračunata i koja će potom biti implicitno konvertovana u nisku, da bi se potražilo svojstvo sa tim imenom.
 
@@ -1304,22 +1382,22 @@ console.log(osoba[x]); // Pera Perić
 
 ```js
 const automobil = {
-    ime: 'Fiat',
-    model: 500,
-    težina: 850.0,
-    boja: 'bela',
-    pokreni: function() {
-        console.log('Automobil je uključen');
-    },
-    vozi: function() {
-        console.log('Automobil je u pokretu');
-    },
-    zakoči: function() {
-        console.log('Automobil je stao');
-    },
-    ugasi: function() {
-        console.log('Automobil je ugašen');
-    }
+  ime: 'Fiat',
+  model: 500,
+  težina: 850.0,
+  boja: 'bela',
+  pokreni: function () {
+    console.log('Automobil je uključen');
+  },
+  vozi: function () {
+    console.log('Automobil je u pokretu');
+  },
+  zakoči: function () {
+    console.log('Automobil je stao');
+  },
+  ugasi: function () {
+    console.log('Automobil je ugašen');
+  },
 };
 
 console.log('Provera postojanja svojstava i metoda');
@@ -1333,9 +1411,9 @@ console.log('\nIspisivanje svih svojstava');
 // Ne mešati for-in petlju za rad sa objektima
 // i for-of petlju za rad sa nizovima !!!!!
 for (const ključ in automobil) {
-    if (typeof automobil[ključ] !== 'function') {
-        console.log(automobil[ključ]);
-    }
+  if (typeof automobil[ključ] !== 'function') {
+    console.log(automobil[ključ]);
+  }
 }
 ```
 
@@ -1377,6 +1455,7 @@ for (const ključ in automobil) {
             console.log(automobil[ključ]);
         }
     }
+
 })();
 </script>
 
@@ -1385,7 +1464,7 @@ for (const ključ in automobil) {
     <div class="tekst">
         Kreirati promenljivu `studenti` koja treba da sadrži podatke o studentima iz naredne tabele. Koristiti odgovarajuće tipove podataka za predstavljanje datih vrednosti. Ova promenljiva se koristi u narednim zadacima.
     </div>
-    <table>
+    <table style="max-width: 100%;">
     <thead>
         <tr>
         <th>indeks</th>
@@ -1501,7 +1580,7 @@ for (const ključ in automobil) {
     </div>
 </div>
 
------
+---
 
 [Knjiga](../../README.md)
 
@@ -1518,12 +1597,12 @@ for (const ključ in automobil) {
 <script>pregazi_console();</script>
 <script>
 (function(){
-    
+
 })();
 </script>
 -->
 
-<!-- 
+<!--
 <a style="border: 2px solid gray; display: inline-block; padding: 15px; background-color: rgb(114, 211, 250); color: black;"
    href="./Primeri/X/index.html"
    target="_blank">Pogledaj primer uživo</a>

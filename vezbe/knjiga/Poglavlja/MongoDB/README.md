@@ -397,11 +397,10 @@ Za više informacija o operatorima ažuriranja možete pogledati [ovde](https://
 <div class="tekst">
 
 Koristeći komandnu liniju, u MongoDB bazi podataka `Prodavnica`:
-
-- U kolekciju `artikli` uvesti podatke o artiklima iz datoteke [artikli.json](./Domaci/Resursi/artikli.json). 
-
-- U kolekciju `produzbine` uvesti podatke o porudžbinama iz datoteke [porudzbine.json](./Resursi/porudzbine.json).
-
+<ul>
+    <li>U kolekciju `artikli` uvesti podatke o artiklima iz datoteke <a href="./Domaci/Resursi/artikli.json">artikli.json</a>.</li>
+    <li>U kolekciju `produzbine` uvesti podatke o porudžbinama iz datoteke <a href="./Resursi/porudzbine.json">porudzbine.json</a>.</li>
+</ul>
 </div>
 </div>
 

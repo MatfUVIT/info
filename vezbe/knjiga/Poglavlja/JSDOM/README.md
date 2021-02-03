@@ -804,7 +804,8 @@ Prilikom okidanja događaja `click`, biće pozvan (tj. izvršen) samo osluškiva
     <div class="tekst">
         <p>Neka je data datoteka `index.html` sa narednim sadržajem koja predstavlja osnovu klijentske veb aplikacije:</p>
 
-```html
+<pre>
+<code>
 <!DOCTYPE html>
 <html>
 <head>
@@ -840,9 +841,11 @@ Prilikom okidanja događaja `click`, biće pozvan (tj. izvršen) samo osluškiva
     <div id="odabran_student" class="podaci"></div>
 
     <script src="index.js"></script>
+
 </body>
 </html>
-```
+</code>
+</pre>
 
 <p>Zadatak je da implementiramo klijentsku veb aplikaciju koja ispunjava naredni opis. Klikom na dugme “Prikaži podatke” na stranici se prikazuju informacije o studentima u vidu tabele. Prelaskom miša preko neke od ćelija u prvoj koloni (odnosno, ćelija koje sadrže indekse), želimo da se postavi pozadinska boja te ćelije na sivu. Klikom na neku od ćelija koja sadrži indeks, želimo da se u elementu pored tabele prikažu informacije o odabranom studentu.</p>
 
@@ -966,7 +969,8 @@ Prilikom okidanja događaja `click`, biće pozvan (tj. izvršen) samo osluškiva
     <div class="tekst">
 Neka je data datoteka `index.html` sa narednim sadržajem koja predstavlja osnovu klijentske veb aplikacije:
 
-```html
+<pre>
+<code>
 <!DOCTYPE html>
 <html lang="sr">
 
@@ -997,11 +1001,13 @@ Neka je data datoteka `index.html` sa narednim sadržajem koja predstavlja osnov
 </body>
 
 </html>
-```
+</code>
+</pre>
 
 Stilovi su dati u datoteci `index.css`:
 
-```css
+<pre>
+<code>
 body {
     font-family: sans-serif;
 }
@@ -1057,7 +1063,8 @@ input[type="button"] {
     border-radius: 5px;
     word-wrap: break-word;
 }
-```
+</code>
+</pre>
 
 Zadatak je da implementiramo klijentsku veb aplikaciju koja ispunjava naredni opis. Korisnik treba da unese datum u polje "Odaberite datum" i tekst u polje "Unesite podsetnik". Klikom na dugme "Unesi novi podsetnik" na stranici se prikazuje nova stavka "To-do" liste. Prikaz aplikacije je dat na narednoj slici.
 
@@ -1065,15 +1072,18 @@ Zadatak je da implementiramo klijentsku veb aplikaciju koja ispunjava naredni op
 
 **Implementacioni detalji zadatka**
 
-Sva rešenja čuvati u datoteci `index.js`.
+<p>Sva rešenja čuvati u datoteci `index.js`.</p>
 
-a) Na početku je lista prazna. Kreirati globalnu promenljivu `toDoLista` koja predstavlja prazan niz obaveza. Ova promenljiva se koristi u narednim zahtevima.
+<p>a) Na početku je lista prazna. Kreirati globalnu promenljivu `toDoLista` koja predstavlja prazan niz obaveza. Ova promenljiva se koristi u narednim zahtevima.</p>
 
-b) Napisati funkciju `prikažiListu()` koja redom:
-   - Briše sve elemente iz sadržaja elementa sa identifikatorom `lista`.
-   - Za svaku stavku iz promenljive `toDoLista` kreira dete čvor elementa sa identifikatorom `lista`, pri čemu novokreirani čvor treba da zadovoljava naredni HTML i CSS kod:
+<p>b) Napisati funkciju `prikažiListu()` koja redom:</p>
+<ul>
+    <li>Briše sve elemente iz sadržaja elementa sa identifikatorom `lista`.</li>
+    <li>Za svaku stavku iz promenljive `toDoLista` kreira dete čvor elementa sa identifikatorom `lista`, pri čemu novokreirani čvor treba da zadovoljava naredni HTML i CSS kod:</li>
+</ul>
 
-```html
+<pre>
+<code>
 <div class="stavka">
     <p style="font-style: italic; margin-left: 10px;">
         Podsetnik za datum DATUM_PODSETNIKA:
@@ -1082,21 +1092,24 @@ b) Napisati funkciju `prikažiListu()` koja redom:
         TEKST_PODSETNIKA
     </p>
 </div>
-```
+</code>
+</pre>
 
 `DATUM_PODSETNIKA` i `TEKST_PODSETNIKA` treba da budu zamenjeni datumom i tekstom iz stavke liste (videti sliku iznad). Ne koristiti svojstva `innerHTML` i `outerHTML` za dinamičko dodavanje ili brisanje elemenata.
 
-c) Napisati funkciju `dodajStavkuListe()` koja redom:
-   - Dohvata informaciju o datumu iz elementa sa identifikatorom `datum` i provera da li je korisnik uneo datum (da li je vrednost polja prazna niska).
-   - Dohvata informaciju o tekstu podsetnika iz elementa sa identifikatorom `tekst` i provera da li je korisnik uneo taj tekst (da li je vrednost polja prazna niska).
-   - Ukoliko su svi podaci uneti, kreira novu stavku koja sadrži te dve informacije i pamti je u promenljivu `toDoLista`.
-   - Poziva funkciju `prikažiListu` da bi se osvežio prikaz obaveza na stranici.
+<p>c) Napisati funkciju `dodajStavkuListe()` koja redom:</p>
+<ul>
+    <li>Dohvata informaciju o datumu iz elementa sa identifikatorom `datum` i provera da li je korisnik uneo datum (da li je vrednost polja prazna niska).</li>
+    <li>Dohvata informaciju o tekstu podsetnika iz elementa sa identifikatorom `tekst` i provera da li je korisnik uneo taj tekst (da li je vrednost polja prazna niska).</li>
+    <li>Ukoliko su svi podaci uneti, kreira novu stavku koja sadrži te dve informacije i pamti je u promenljivu `toDoLista`.</li>
+    <li>Poziva funkciju `prikažiListu` da bi se osvežio prikaz obaveza na stranici.</li>
+</ul>
 
 Ne koristiti svojstva `innerHTML` i `outerHTML` za dinamičko dodavanje ili brisanje elemenata.
 
-d) Pridružiti funkciju `dodajStavkuListe` kao osluškivač elementa sa identifikatorom `napravi-todo` na događaju kliktaj miša.
+<p>d) Pridružiti funkciju `dodajStavkuListe` kao osluškivač elementa sa identifikatorom `napravi-todo` na događaju kliktaj miša.</p>
 
-e) Obraditi sve greške u implementaciji.
+<p>e) Obraditi sve greške u implementaciji.</p>
     </div>
 </div>
 
@@ -1926,29 +1939,25 @@ s.addEventListener('input', function () {
 ```
 
 <div class="domaci-zadatak">
-<span class="naslov">Domaći zadatak 3</span> 
-<div class="tekst">
-
-U primeru sa formularom smo rekli da su interesovanja opciona (primetimo da smo zbog toga koristili `checkbox` elemente). Istražiti kako bismo u JavaScript jeziku nametnuli ograničenje da korisnik mora da odabere makar *2* interesovanja i napisati odgovarajući kod kojim se proverava to ograničenje.
-
-</div>
+    <span class="naslov">Domaći zadatak 3</span> 
+    <div class="tekst">
+        U primeru sa formularom smo rekli da su interesovanja opciona (primetimo da smo zbog toga koristili `checkbox` elemente). Istražiti kako bismo u JavaScript jeziku nametnuli ograničenje da korisnik mora da odabere makar 2 interesovanja i napisati odgovarajući kod kojim se proverava to ograničenje.
+    </div>
 </div>
 
 <div class="domaci-zadatak">
-<span class="naslov">Domaći zadatak 4</span> 
-<div class="tekst">
-
-Napisati JavaScript kod koji bi "u hodu" proveravao da li je korisničko ime dužine više od *5* karaktera. Drugim rečima, potrebno je da, nakon što korisnik unese korisničko ime nedozvoljene dužine i pređe na naredno polje, veb pregledač prikaže poruku "Korisničko ime mora biti duže od 5 karaktera!" funkcijom `window.alert()`. 
-
-</div>
+    <span class="naslov">Domaći zadatak 4</span> 
+    <div class="tekst">
+        Napisati JavaScript kod koji bi "u hodu" proveravao da li je korisničko ime dužine više od 5 karaktera. Drugim rečima, potrebno je da, nakon što korisnik unese korisničko ime nedozvoljene dužine i pređe na naredno polje, veb pregledač prikaže poruku "Korisničko ime mora biti duže od 5 karaktera!" funkcijom window.alert().
+    </div>
 </div>
 
 <div class="domaci-zadatak">
-<span class="naslov">Domaći zadatak 5</span> 
-<div class="tekst">
-Napisati HTML datoteku koja sadrži formular dat na narednoj slici. Napisati JavaScript kod koji nakon klika na dugme "Izračunaj površinu" izračunava i ispisuje vrednost površine trougla. U slučaju unosa nekorektnih vrednosti, treba ispisati poruku o grešci u obaveštajnom prozoru veb pregledača. Za računanje površine koristiti Heronov obrazac. Formular doterati korišćenjem Bootstrap biblioteke.
-</div>
-<img style="max-width: 100%;" src="./Domaci/Slike/zadatak5.png" alt="">
+    <span class="naslov">Domaći zadatak 5</span> 
+    <div class="tekst">
+        Napisati HTML datoteku koja sadrži formular dat na narednoj slici. Napisati JavaScript kod koji nakon klika na dugme "Izračunaj površinu" izračunava i ispisuje vrednost površine trougla. U slučaju unosa nekorektnih vrednosti, treba ispisati poruku o grešci u obaveštajnom prozoru veb pregledača. Za računanje površine koristiti Heronov obrazac. Formular doterati korišćenjem Bootstrap biblioteke.
+    </div>
+    <img style="max-width: 100%;" src="./Domaci/Slike/zadatak5.png" alt="">
 </div>
 
 ---
