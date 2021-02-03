@@ -802,52 +802,7 @@ Prilikom okidanja događaja `click`, biće pozvan (tj. izvršen) samo osluškiva
 <div class="domaci-zadatak">
     <span class="naslov">Domaći zadatak 1</span> 
     <div class="tekst">
-        <p>Neka je data datoteka `index.html` sa narednim sadržajem koja predstavlja osnovu klijentske veb aplikacije:</p>
-
-<pre id="dz-1">
-</pre>
-
-<script>
-    document.querySelector("#dz-1").innerText = 
-`<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Podaci o studentima</title>
-
-    <style>
-        table {
-            border: 2px solid black;
-            border-collapse: collapse;
-            margin: 20px 0;
-        }
-
-        td {
-            border: 1px solid black;
-            padding: 10px;
-        }
-
-        .podaci {
-            display: inline-block;
-            width: 40%;
-            height: 500px;
-            vertical-align: top;
-        }
-    </style>
-</head>
-<body>
-    <input type="button" id="prikazi_podatke" value="Prikaži podatke">
-    <br>
-
-    <div id="podaci" class="podaci"></div>
-    <div id="odabran_student" class="podaci"></div>
-
-    <script src="index.js"></script>
-
-</body>
-</html>`;
-</script>
+        <p>Neka je data datoteka <a href="https://github.com/MatfUVIT/UVIT/blob/master/vezbe/knjiga/Poglavlja/JSDOM/Domaci/Resursi/zadatak1/index.html">index.html</a> sa narednim sadržajem koja predstavlja osnovu klijentske veb aplikacije.</p>
 
 <p>Zadatak je da implementiramo klijentsku veb aplikaciju koja ispunjava naredni opis. Klikom na dugme “Prikaži podatke” na stranici se prikazuju informacije o studentima u vidu tabele. Prelaskom miša preko neke od ćelija u prvoj koloni (odnosno, ćelija koje sadrže indekse), želimo da se postavi pozadinska boja te ćelije na sivu. Klikom na neku od ćelija koja sadrži indeks, želimo da se u elementu pored tabele prikažu informacije o odabranom studentu.</p>
 
@@ -969,7 +924,7 @@ Prilikom okidanja događaja `click`, biće pozvan (tj. izvršen) samo osluškiva
 <div class="domaci-zadatak">
     <span class="naslov">Domaći zadatak 2</span> 
     <div class="tekst">
-        Neka je data datoteka <a href="./Domaci/Resursi/zadatak2/index.html">index.html</a> koja predstavlja osnovu klijentske veb aplikacije. Stilovi su dati u datoteci <a href="./Domaci/Resursi/zadatak2/index.css">index.css</a>.Zadatak je da implementiramo klijentsku veb aplikaciju koja ispunjava naredni opis. Korisnik treba da unese datum u polje "Odaberite datum" i tekst u polje "Unesite podsetnik". Klikom na dugme "Unesi novi podsetnik" na stranici se prikazuje nova stavka "To-do" liste. Prikaz aplikacije je dat na narednoj slici.
+        Neka je data datoteka <a href="https://github.com/MatfUVIT/UVIT/blob/master/vezbe/knjiga/Poglavlja/JSDOM/Domaci/Resursi/zadatak2/index.html">index.html</a> koja predstavlja osnovu klijentske veb aplikacije. Stilovi su dati u datoteci <a href="https://github.com/MatfUVIT/UVIT/blob/master/vezbe/knjiga/Poglavlja/JSDOM/Domaci/Resursi/zadatak2/index.css">index.css</a>.Zadatak je da implementiramo klijentsku veb aplikaciju koja ispunjava naredni opis. Korisnik treba da unese datum u polje "Odaberite datum" i tekst u polje "Unesite podsetnik". Klikom na dugme "Unesi novi podsetnik" na stranici se prikazuje nova stavka "To-do" liste. Prikaz aplikacije je dat na narednoj slici.
         <img style="max-width: 100%;" src="./Domaci/Resursi/todo.png" alt="">
         <p><strong>Implementacioni detalji zadatka</strong></p>
 
