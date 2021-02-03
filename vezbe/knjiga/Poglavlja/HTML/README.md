@@ -4,6 +4,28 @@
 
 -----
 
+
+
+<style>
+.domaci-zadatak {
+    border: 5px solid gold;
+    padding: 10px;
+}
+
+.domaci-zadatak .naslov {
+    font-weight: bold;
+    text-align: center;
+    display: block;
+}
+
+.domaci-zadatak .tekst {
+    border-top: 2px dashed black;
+    border-bottom: 2px dashed black;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+</style>
+
 # 1. Struktuiranje Veb dokumenata kroz HTML
 
 *HyperText Markup Language* (skr. *HTML*) predstavlja najosnovniji blok za izgradnju Veba. HTML jezik se koristi za opisivanje logičke strukture stranice, odnosno, na koji način je Veb dokument izgrađen. Na primer, u HTML jeziku možemo zadati koji deo stranice čini naslov ili paragraf, gde se nalazi slika, kako se podaci predstavljaju tabelom i slično.
@@ -447,6 +469,14 @@ Element `blockquote` se obično koristi ukoliko želimo da istaknemo neki citat.
 <a style="border: 2px solid gray; display: inline-block; padding: 15px; background-color: rgb(114, 211, 250); color: black;"
    href="./Primeri/10/index.html"
    target="_blank">Pogledaj primer uživo</a>
+
+<div class="domaci-zadatak">
+    <span class="naslov">Domaći zadatak 1</span> 
+    <p class="tekst">
+        Napisati HTML i CSS kod koji odgovara stranici na narednoj slici. Pomoću validatora osigurati se da je kod napisan u skladu sa HTML5 standardom.
+    </p>
+    <img style="max-width: 100%;" src="./Domaci/Slike/zadatak1.png" alt="">
+</div>
 
 ## 1.6 Slike
 

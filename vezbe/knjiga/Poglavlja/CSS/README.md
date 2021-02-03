@@ -4,6 +4,26 @@
 
 -----
 
+<style>
+.domaci-zadatak {
+    border: 5px solid gold;
+    padding: 10px;
+}
+
+.domaci-zadatak .naslov {
+    font-weight: bold;
+    text-align: center;
+    display: block;
+}
+
+.domaci-zadatak .tekst {
+    border-top: 2px dashed black;
+    border-bottom: 2px dashed black;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+</style>
+
 # 2. Stilizovanje Veb dokumenata kroz CSS
 
 *Cascading Style Sheets* (skr. *CSS*) predstavlja jezik koji služi za stilizovanje HTML elemenata. Za razliku od jezika HTML, koji opisuje logičku strukturu veb dokumenta, jezikom CSS se služimo da bismo opisali na koji način se elementi te logičke strukture prikazuju. Na primer, korišćenjem jezika CSS možemo podesiti poziciju elemenata, boju teksta, okvire, pozadinu i dr.
@@ -616,6 +636,14 @@ Za više informacijama o temama koje su obrađene u ovoj sekciji, možete poseti
 - Više o familijama fontova sa primerima: 
 [https://www.w3.org/Style/Examples/007/fonts.en.html](https://www.w3.org/Style/Examples/007/fonts.en.html).
 
+<div class="domaci-zadatak">
+    <span class="naslov">Domaći zadatak 1</span> 
+    <p class="tekst">
+        Napisati HTML i CSS kod koji odgovara stranici na narednoj slici. Familiju fontova koja se koristi u zadatku moguće je pronaći na <a href="./Domaci/Resursi/zadatak1_font.ttf">ovoj lokaciji</a>. Pomoću validatora osigurati se da je kod napisan u skladu sa HTML5 i CSS3 standardom.
+    </p>
+    <img style="max-width: 100%;" src="./Domaci/Slike/zadatak1.png" alt="">
+</div>
+
 ## 2.5 Model kutije
 
 U prethodnom poglavlju smo diskutovali o tome kako je HTML elemente moguće razmatrati kao pravougaonike koji se slažu jedni ispod drugih, odnosno, jedni do drugih, u zavisnosti od različitih faktora, kao što je, na primer, činjenica da je neki element blokovski ili linijski. Ovaj koncept ćemo sada detaljnije analizirati kroz pojam modela kutije.
@@ -1144,6 +1172,14 @@ Za više informacijama o temama koje su obrađene u ovoj sekciji, možete poseti
 
 - Detaljniji opis svih modela kutija (u HTML i u CSS jezicima):
 [https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/The_box_model](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/The_box_model)
+
+<div class="domaci-zadatak">
+    <span class="naslov">Domaći zadatak 2</span> 
+    <p class="tekst">
+        Napisati HTML i CSS kod koji odgovara stranici na narednoj slici. Familiju fontova koja se koristi u zadatku moguće je pronaći na <a href="./Resursi/zadatak2_font.ttf">ovoj lokaciji</a>. Pomoću validatora osigurati se da je kod napisan u skladu sa HTML5 i CSS3 standardom.
+    </p>
+    <img style="max-width: 100%;" src="./Domaci/Slike/zadatak2.png" alt="">
+</div>
 
 ## 2.6 Koordinatni sistemi veb pregledača
 
@@ -1839,6 +1875,19 @@ Za više informacijama o temama koje su obrađene u ovoj sekciji, možete poseti
 [https://www.w3schools.com/cssref/pr_class_visibility.asp](https://www.w3schools.com/cssref/pr_class_visibility.asp)
 [https://www.w3schools.com/css/css_display_visibility.asp](https://www.w3schools.com/css/css_display_visibility.asp).
 
+<div class="domaci-zadatak">
+    <span class="naslov">Domaći zadatak 3</span> 
+    <div class="tekst">
+        Napisati HTML i CSS kod koji odgovara stranici na narednoj slici. Pomoću validatora osigurati se da je kod napisan u skladu sa HTML5 i CSS3 standardom. Nije dozvoljeno korišćenje svojstva `display`. Nije dozvoljeno menjanje podrazumevanih vrednosti modela kutije za elemente, osim za omotač koji ima crnu ivicu. Omotač horizontalno poravnati u odnosu na telo veb pregledača. Zadatak uraditi korišćenjem:
+        <ol>
+            <li>Relativnog pozicioniranja</li>
+            <li>Apsolutnog pozicioniranja</li>
+            <li>Fiksnog pozicioniranja</li>
+        </ol>
+    </div>
+    <img style="max-width: 100%;" src="./Domaci/Slike/zadatak3.png" alt="">
+</div>
+
 ## 2.8 Slike
 
 Veličina slike se može podesiti atributima `width` i `height`, čije su vrednosti celi brojevi koji predstavljaju veličine u pikselima. Naravno, dimenzija elementa `img` se može podesiti i u jeziku CSS, zadavanjem svojstava `width` i `height`, čije veličine mogu biti bilo koja od dužina.
@@ -1894,6 +1943,27 @@ Naredni kodovi iz datoteka `index.html` i `img_override.css`, redom, i prateća 
 <a style="border: 2px solid gray; display: inline-block; padding: 15px; background-color: rgb(114, 211, 250); color: black;"
    href="./Primeri/25/index.html"
    target="_blank">Pogledaj primer uživo</a>
+
+<div class="domaci-zadatak">
+    <span class="naslov">Domaći zadatak 4</span> 
+    <div class="tekst">
+        Napisati HTML i CSS kod koji odgovara stranici na narednoj slici. Pomoću validatora osigurati se da je kod napisan u skladu sa HTML5 i CSS3 standardom. Slike koje se koriste u zadatku moguće je pronaći na narednim lokacijama: <a href="./Domaci/Resursi/galerija1.jpg">slika 1</a>, <a href="./Domaci/Resursi/galerija2.jpg">slika 2</a>, <a href="./Domaci/Resursi/galerija3.jpg">slika 3</a> i <a href="./Domaci/Resursi/galerija4.jpg">slika 4</a>. Širinu slika postaviti na `300px`, a visinu na `200px`. Sve slike anotirati. Za sve anotacije omogućiti veb pregledaču da odabere beskukičavu familiju fontova. Zadatak uraditi korišćenjem:
+        <ol>
+            <li>Relativnog pozicioniranja</li>
+            <li>Apsolutnog pozicioniranja</li>
+            <li>Fiksnog pozicioniranja</li>
+        </ol>
+    </div>
+    <img style="max-width: 100%;" src="./Domaci/Slike/zadatak4.png" alt="">
+</div>
+
+<div class="domaci-zadatak">
+    <span class="naslov">Domaći zadatak 5</span> 
+    <div class="tekst">
+        Napisati HTML i CSS kod koji odgovara stranici na narednoj slici. Pomoću validatora osigurati se da je kod napisan u skladu sa HTML5 i CSS3 standardom. Sliku koja se koristi u zadatku moguće je pronaći na <a href="./Domaci/Resursi/jesen.jpg">ovoj lokaciji</a>. Širinu slike postaviti na `500px`, a visinu na `375px` i anotirati je. Za anotaciju slike omogućiti veb pregledaču da odabere kukičavu familiju fontova. Obuhvatajućem elementu anotirane slike postaviti crvenu ivicu širine `1px` i stila pune linije. Obuhvatajući element horizontalno poravnati u odnosu na telo veb pregledača.
+    </div>
+    <img style="max-width: 100%;" src="./Domaci/Slike/zadatak5.png" alt="">
+</div>
 
 ## 2.9 Pozadina elemenata
 
@@ -2431,6 +2501,22 @@ Za više informacijama o temama koje su obrađene u ovoj sekciji, možete poseti
 [https://medium.com/@masakudamatsu/the-best-tutorial-on-css-radial-gradient-e44fec35ec2b](https://medium.com/@masakudamatsu/the-best-tutorial-on-css-radial-gradient-e44fec35ec2b)
 [https://www.impressivewebs.com/css3-radial-gradient-syntax/](https://www.impressivewebs.com/css3-radial-gradient-syntax/)
 
+<div class="domaci-zadatak">
+    <span class="naslov">Domaći zadatak 6</span> 
+    <div class="tekst">
+        Napisati HTML i CSS kod koji odgovara stranici na narednoj slici. Pomoću validatora osigurati se da je kod napisan u skladu sa HTML5 i CSS3 standardom. Za pozadinu stranice korišcena je boja skyblue. Stranica se sastoji iz tri dela - naslovnog, glavnog i podnožja. Za naslovni deo korišcen je gradijent od boje orange do boje yellow. Za pozadinu glavnog dela korišcena je <a href="./Domaci/Resursi/ptice.png">ova slika</a>. Za pozadinu podnožja korišcen je gradijent od boje greenyellow do boje skyblue, kao i <a href="./Resursi/trava.png">ova slika</a>.
+    </div>
+    <img style="max-width: 100%;" src="./Domaci/Slike/zadatak6.png" alt="">
+</div>
+
+<div class="domaci-zadatak">
+    <span class="naslov">Domaći zadatak 7</span> 
+    <div class="tekst">
+        Napisati HTML i CSS kod koji odgovara stranici na narednoj slici. Pomoću validatora osigurati se da je kod napisan u skladu sa HTML5 i CSS3 standardom. Za pozadinu su korišćene boje rgb(5, 48, 84) i white zajedno sa slikama <a href="./Domaci/Resursi/pahulje.png">pahulja</a> i <a href="./Resursi/snesko.png">sneška</a>.
+    </div>
+    <img style="max-width: 100%;" src="./Domaci/Slike/zadatak7.png" alt="">
+</div>
+
 ## 2.10 Stilizovanje listi
 
 CSS svojstvima koja se tiču stilizovanja numerisanih i nenumerisanih listi možemo upravljati narednim elementima prikaza listi:
@@ -2572,6 +2658,14 @@ Naredni primer i prateća slika ilustruju opisana svojstva.
 <a style="border: 2px solid gray; display: inline-block; padding: 15px; background-color: rgb(114, 211, 250); color: black;"
    href="./Primeri/33/index.html"
    target="_blank">Pogledaj primer uživo</a>
+
+<div class="domaci-zadatak">
+    <span class="naslov">Domaći zadatak 8</span> 
+    <div class="tekst">
+        Napisati HTML i CSS kod koji odgovara stranici na narednoj slici. Pomoću validatora osigurati se da je kod napisan u skladu sa HTML5 i CSS3 standardom. Boje slova su #f12ff8, #69fd7c i #000000. U trećoj listi korišćena je slika <a href="./Domaci/Resursi/tortica.png">tortice</a>. Link iz poslednje stavke vodi na stranicu čiji je URL https://www.bbcgoodfood.com/recipes/1840634/apple-and-pear-crumble.
+    </div>
+    <img style="max-width: 100%;" src="./Domaci/Slike/zadatak8.png" alt="">
+</div>
 
 ## 2.11 Stilizovanje tabela
 
@@ -3345,6 +3439,14 @@ Naredni primer i prateća slika ilustruju korišćenje opisanih pseudoelemenata.
 <a style="border: 2px solid gray; display: inline-block; padding: 15px; background-color: rgb(114, 211, 250); color: black;"
    href="./Primeri/41/index.html"
    target="_blank">Pogledaj primer uživo</a>
+
+<div class="domaci-zadatak">
+    <span class="naslov">Domaći zadatak 9</span> 
+    <div class="tekst">
+        Napisati HTML i CSS kod koji odgovara stranici na narednoj slici. Pomoću validatora osigurati se da je kod napisan u skladu sa HTML5 i CSS3 standardom. Veličina fonta na nivou cele stranice je 20px, a korišćen je font Calibri (ukoliko nije dostupan, prepustiti pregledaču da odabere neki od fontova iz familije bez kukica). Tabela zauzima polovinu širine stranice i centrirana je. Za boje redova tabele korišćene su  rgb(63, 107, 226) i  rgb(92, 236, 255) sa prozirnošću 40%. Prvo slovo naslova tabele je crvene boje i iskošeno, a veličina je za 30% veća od ostatka teksta. Reči u prvoj koloni su linkovi do stranica: <a href="https://harrypotter.fandom.com/wiki/Hogwarts_Houses">Kuće</a>, <a href="https://harrypotter.fandom.com/wiki/Gryffindor">Grifindor</a>, <a href="https://harrypotter.fandom.com/wiki/Hufflepuff">Haflpaf</a>. Neposećeni linkovi su crvene boje i nisu podvučeni. Posećeni linkovi u zaglavlju tabele su bele boje, a ostali su crvene boje. Pozicioniranjem kursora iznad teksta linka izgled kursora se menja u pomoćni kursor (`help`), a tekst je podvučen. Klikom na link veličina teksta se smanjuje za 10%.
+    </div>
+    <img style="max-width: 100%;" src="./Domaci/Slike/zadatak9.png" alt="">
+</div>
 
 -----
 

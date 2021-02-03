@@ -4,6 +4,26 @@
 
 -----
 
+<style>
+.domaci-zadatak {
+    border: 5px solid gold;
+    padding: 10px;
+}
+
+.domaci-zadatak .naslov {
+    font-weight: bold;
+    text-align: center;
+    display: block;
+}
+
+.domaci-zadatak .tekst {
+    border-top: 2px dashed black;
+    border-bottom: 2px dashed black;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+</style>
+
 # 3. Biblioteka Bootstrap
 
 ## 3.1 Prilagodljiv dizajn veb prezentacija
@@ -311,6 +331,18 @@ Na manjim uređajima element je obojen u crveno zbog pravila iz small_devices.cs
 
 Radi veće preglednosti, možemo izdvojiti podešavanja za različite tipove uređaja u različite `.css` datoteke u kojima ćemo pisati specifična svojstva za elemente u zavisnosti od veličine ili orijentacije i slično. To možemo postići dodavanjem vrednosti atributu `media` u okviru elementa `link`, kao u primeru iznad. Vrednost ovog atributa postavljamo u obliku `tip_medija and (svojstvo_medija: vrednost)`. 
 
+<div class="domaci-zadatak">
+    <span class="naslov">Domaći zadatak 1</span> 
+    <div class="tekst">
+        Napraviti stranicu na kojoj je ispisan tekst "Zdravo svima!", a element koji ga sadrži uređen je na različite načine, u zavisnosti od veličine ekrana i to:
+        <ul>
+            <li>za uređaje do 400px postaviti crvenu boju slova</li>
+            <li>za uređaje do 700px postaviti narandžastu boju slova</li>
+            <li>za uređaje do 1000px promeniti pozadinu elementa na sivu</li>
+            <li>za veće uređaje postaviti veličinu fonta na 30px</li>
+        </ul>
+    </div>
+</div>
 
 ## 3.2 Instaliranje biblioteke Bootstrap
 
@@ -637,7 +669,15 @@ Naredni primer ilustruje primenu bootstrap klasa na formular iz primera 23:
 <a style="border: 2px solid gray; display: inline-block; padding: 15px; background-color: rgb(114, 211, 250); color: black;"
    href="./Primeri/6/index.html"
    target="_blank">Pogledaj primer uživo</a>
-   
+
+<div class="domaci-zadatak">
+    <span class="naslov">Domaći zadatak 2</span> 
+    <div class="tekst">
+        Napisati HTML i CSS kod koji odgovara stranici na narednoj slici. Pomoću validatora osigurati se da je kod napisan u skladu sa HTML5 i CSS3 standardom. Sadržaj padajuće liste "fakultet" treba da odgovara sadržaju sa <a href="./Domaci/Resursi/fakultet.png">ove slike</a>, a polje "univerzitet" može imati vrednosti sa <a href="./Domaci/Resursi/univerzitet.png">ove slike</a>. Stilizovanje formulara uraditi pomoću Bootstrap biblioteke.
+    </div>
+    <img style="max-width: 100%;" src="./Domaci/Slike/zadatak2.png" alt="">
+</div>
+
 -----
 
 [Knjiga](../../README.md)

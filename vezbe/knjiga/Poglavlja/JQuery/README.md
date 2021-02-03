@@ -4,6 +4,26 @@
 
 -----
 
+<style>
+.domaci-zadatak {
+    border: 5px solid gold;
+    padding: 10px;
+}
+
+.domaci-zadatak .naslov {
+    font-weight: bold;
+    text-align: center;
+    display: block;
+}
+
+.domaci-zadatak .tekst {
+    border-top: 2px dashed black;
+    border-bottom: 2px dashed black;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+</style>
+
 # 6. Biblioteka jQuery
 
 jQuery je biblioteka za JavaScript jezik čija je osnovna upotreba olakšavanje razvoja čestih funkcionalnosti u jeziku JavaScript. jQuery objedinjuje često korišćene poslove koji zahtevaju mnogo linija koda u metode koji se pozivaju jednom linijom. Takođe, jQuery pojednostavljuje mnoge komplikovane stvari iz JavaScript-a kao što su AJAX pozivi i DOM manipulacije. jQuery biblioteka sadrži sledeće:
@@ -146,6 +166,14 @@ xhr.send();
 ```
 
 Iako jednostavan, ovaj primer ilustruje važan koncept, a to je kreiranje komunikacije između klijentskih i serverskih aplikacija korišćenjem `XMLHttpRequest` objekta. Na ovu temu ćemo se osvrnuti još jednom, kada se budemo upoznali sa kreiranjem naših serverskih aplikacija.
+
+<div class="domaci-zadatak">
+<span class="naslov">Domaći zadatak 1</span> 
+<div class="tekst">
+Napisati HTML datoteku koja sadrži dva naslova, "Types" i "Toppings", praznu tabelu ispod prvog naslova i praznu listu ispod drugog naslova. Napisati JavaScript kod koji šalje asinhroni zahtev na <a href="https://codepen.io/chriscoyier/pen/EAIJj.js">https://codepen.io/chriscoyier/pen/EAIJj.js</a>. U slučaju da je sve prošlo bez greške, prikazati podatke iz odgovora u formatu kao na narednoj slici. U slučaju neuspešnog zahteva ispisati odgovarajuću poruku.
+</div>
+<img style="max-width: 100%;" src="./Domaci/Slike/zadatak1.png" alt=""> 
+</div>
 
 ## 6.2. Instalacija jQuery biblioteke
 
@@ -1218,6 +1246,53 @@ $(document).ready(function () {
    href="./Primeri/3/index.js"
    target="_blank">Pogledaj primer uživo (.js)</a>
 
+<div class="domaci-zadatak">
+<span class="naslov">Domaći zadatak 2</span> 
+<div class="tekst">
+
+Korišćenjem Bootstrap biblioteku doderati [formular](./Resursi/zadatak1.html) tako da izgleda kao na slici:
+
+<img style="max-width: 100%;" src="./Domaci/Slike/zadatak2_vesti.png" alt="">	
+
+Koristeći biblioteku jQuery omogućiti da se klikom na "Prijavi se za vesti" prikazuje i skriva deo formulara, kao na slici:
+
+<figure style="max-width: 98%;">
+	<figcaption> 
+		Pre odabira polja "Prijavite se za vesti":
+	</figcaption>
+	<img style="max-width: 100%;" src="./Domaci/Slike/zadatak2_bez_vesti.png" alt="">
+</figure>
+
+<figure style="max-width: 98%;">
+	<figcaption> 
+		Nakon odabira polja "Prijavite se za vesti":
+	</figcaption>
+	<img style="max-width: 100%;" src="./Domaci/Slike/zadatak2_vesti.png" alt="">
+</figure>
+
+Na početku polje nije odabrano pa treba podesiti da je na početku ovaj deo formulara skriven odgovarajućim CSS svojstvom.
+
+Koristeći biblioteku jQuery omogućiti naredne funkcionalnosti u formularu:
+	
+-  Kada element za unos korisničkog imena izgubi fokus, proveriti da li je polje prazno. Ukoliko jeste, upisati poruku o grešci u za to pripremljeno polje uz dodavanje klase "greska}. Ukoliko nije, obrisati poruku o grešci iz za to predviđenog polja i ukloniti klasu "greska}.
+
+-  Kada element za unos elektronske adrese izgubi fokus, proveriti da li je polje prazno. Ukoliko je polje prazno, proveriti da li posle njega postoji polje sa porukom o grešci i ako ne postoji, kreirati ga. Ukoliko postoji, ne treba ništa preduzimati. Ukoliko polje nije prazno, proveriti da li posle njega postoji polje sa porukom o grešci i ako postoji obrisati ga. Ukoliko ne postoji, nista ne preduzimati.
+
+-  Prilikom svakog unosa preko tastature u elementu za unos lozinke, obezbediti da se vrši provera da li uneta lozinka ima više od *5* karaktera. Ukoliko lozinka nije korektna, proveriti da li posle njega postoji polje sa porukom o grešci i ako ne postoji, kreirati ga. Ukoliko postoji, ne treba ništa preduzimati. Ukoliko je lozinka korektna, proveriti da li posle njega postoji polje sa porukom o grešci i ako postoji obrisati ga. Ukoliko ne postoji, nista ne preduzimati.
+		
+-  Prilikom svake promene stanja checkbox dugmeta, proveriti da li je dugme selektovano. Ako jeste, prikazati dodatna polja za odabir vesti efektom slajdera na dole u trajanju od *1* sekunde. Ukoliko nije, sakriti dodatna polja za odabir vesti efektom slajdera na gore u trajanju od *1* sekunde.
+		
+-  Pri slanju podataka iz formulara:
+	-  Proveriti da li je korisničko ime prazno. Ako jeste, ispisati odgovarajuću poruku u delu za izveštaj, fokusirati element za unos korisničkog imena i prekinuti dalju validaciju.
+	
+	-  Proveriti unos za elektronsku adresu. Polje ne sme da bude prazno i mora da bude zadovoljavajućeg formata. Ako unos nije korektan, ispisati odgovarajuću poruku u delu za izveštaj, fokusirati element za unos elektronske pošte i prekinuti dalju validaciju.
+	
+	-  Proveriti originalnu i ponovljenu šifru. Obe moraju biti unete, minimalna dozvoljena dužina je *6* i moraju se poklapati. Ako unos nije korektan, ispisati odgovarajuću poruku u delu za izveštaj, fokusirati element za unos originalne lozinke i prekinuti dalju validaciju.
+	
+	-  Proveriti da li se korisnik prijavio na vesti. Ako jeste, proveriti da li je odabrao oblast. Ako jeste, očitati vrednost dinamike isporučivanja i prikazati prozor sa porukom o odabranoj dinamici. Ako nije odabrao oblast, prikazati prozor sa odgovarajućom porukom i prekinuti dalju validaciju.
+
+</div>
+</div>
 
 ## 6.10.  AJAX zahtevi 
 
@@ -1276,8 +1351,6 @@ Primetimo da smo nad objektom koji predstavlja telo odgovora od servera pozvali 
 
 Ono što treba da zapamtimo kod asinhronih zahteva kreiranih na ovaj način jeste da će uvek biti izvršena ili funkcija `success` ili funkcija `error`, nikada obe.
 
-
-
 <!--
 <a style="border: 2px solid gray; display: inline-block; padding: 15px; background-color: rgb(114, 211, 250); color: black;"
    href="./Primeri/4/index.html"
@@ -1287,6 +1360,23 @@ Ono što treba da zapamtimo kod asinhronih zahteva kreiranih na ovaj način jest
    target="_blank">Pogledaj primer uživo (js)</a>
 
 -->
+
+<div class="domaci-zadatak">
+<span class="naslov">Domaći zadatak 3</span> 
+<div class="tekst">
+
+Napisati HTML datoteku koja sadrži dva naslova, "Types" i "Toppings", praznu tabelu ispod prvog naslova i praznu listu ispod drugog naslova. Korišćenjem biblioteke jQuery: 
+
+- Poslati asinhroni zahtev na adresu [https://codepen.io/chriscoyier/pen/EAIJj.js](https://codepen.io/chriscoyier/pen/EAIJj.js). 
+
+- U slučaju uspešnog dohvatanja odgovora sa servera, prikazati dohvaćene podatke iz odgovora u formatu kao na narednoj slici. Obezbediti da se podaci prikazuju efektom postepenog pojavljivanja (_fade in_), ali tako da se prvo prikazuju podaci iz tabele, a nakon toga podaci iz liste. 
+
+- U slučaju bilo kakve greške u komunikaciji sa serverom, prikazati poruku korisniku u obaveštajnom prozoru (_alert_).
+
+</div>
+<img style="max-width: 100%;" src="./Domaci/Slike/zadatak3.png" alt="">
+</div>
+
 ---
 
 [Knjiga](../../README.md)

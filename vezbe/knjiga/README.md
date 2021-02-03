@@ -229,7 +229,7 @@ Autori:
 
 4. [Arhitektura "Model-Pogled-Kontroler"](./Poglavlja/NodeJS/README.md#74-arhitektura-model-pogled-kontroler){:target="_blank"}
 
-### [Poglavlje 8. MongoDB baza podataka i Mongoose.js ORM](./Poglavlja/MongoDB/README.md){:target="_blank"}
+### [Poglavlje 8. MongoDB baza podataka](./Poglavlja/MongoDB/README.md){:target="_blank"}
 
 1. [MongoDB](./Poglavlja/MongoDB/README.md#81-mongodb){:target="_blank"}
 
@@ -245,25 +245,25 @@ Autori:
 
     3.  [Upiti za ažuriranje vrednosti polja](./Poglavlja/MongoDB/README.md#843-upiti-za-ažuriranje-vrednosti-polja){:target="_blank"}
 
-5.  [Razvojno okruženje Mongoose.js](./Poglavlja/MongoDB/README.md#85-razvojno-okruženje-mongoosejs){:target="_blank"} 
+### [Poglavlje 9. Mongoose.js ORM](./Poglavlja/Mongoose/README.md){:target="_blank"}
 
-    1. [Definisanje sheme i modela dokumenata](./Poglavlja/MongoDB/README.md#851-definisanje-sheme-i-modela-dokumenata){:target="_blank"}
+1. [Definisanje sheme i modela dokumenata](./Poglavlja/Mongoose/README.md#91-definisanje-sheme-i-modela-dokumenata){:target="_blank"}
     
-    2. [Čitanje dokumenata](./Poglavlja/MongoDB/README.md#852-čitanje-dokumenata){:target="_blank"}
+2. [Čitanje dokumenata](./Poglavlja/Mongoose/README.md#92-čitanje-dokumenata){:target="_blank"}
 
-    3. [Kreiranje novih dokumenata](./Poglavlja/MongoDB/README.md#853-kreiranje-novih-dokumenata){:target="_blank"}
+3. [Kreiranje novih dokumenata](./Poglavlja/Mongoose/README.md#93-kreiranje-novih-dokumenata){:target="_blank"}
     
-    4. [Ažuriranje dokumenata](./Poglavlja/MongoDB/README.md#854-ažuriranje-dokumenata){:target="_blank"}
+4. [Ažuriranje dokumenata](./Poglavlja/Mongoose/README.md#94-ažuriranje-dokumenata){:target="_blank"}
     
-    5. [Brisanje dokumenata](./Poglavlja/MongoDB/README.md#855-brisanje-dokumenata){:target="_blank"}
+5. [Brisanje dokumenata](./Poglavlja/Mongoose/README.md#95-brisanje-dokumenata){:target="_blank"}
     
-    6. [Obrada grešaka](./Poglavlja/MongoDB/README.md#856-obrada-grešaka){:target="_blank"}
+6. [Obrada grešaka](./Poglavlja/Mongoose/README.md#96-obrada-grešaka){:target="_blank"}
     
-    7. [Dva povezana modela](./Poglavlja/MongoDB/README.md#857-dva-povezana-modela){:target="_blank"}
+7. [Dva povezana modela](./Poglavlja/Mongoose/README.md#97-dva-povezana-modela){:target="_blank"}
 
-        1. [Obogaćivanje dokumenata podacima iz povezanog modela](./Poglavlja/MongoDB/README.md#8571-obogaćivanje-dokumenata-podacima-iz-povezanog-modela){:target="_blank"}
+    1. [Obogaćivanje dokumenata podacima iz povezanog modela](./Poglavlja/Mongoose/README.md#971-obogaćivanje-dokumenata-podacima-iz-povezanog-modela){:target="_blank"}
         
-        2. [Uređivanje dokumenata](./Poglavlja/MongoDB/README.md#8572-uređivanje-dokumenata){:target="_blank"}
+    2. [Uređivanje dokumenata](./Poglavlja/Mongoose/README.md#972-uređivanje-dokumenata){:target="_blank"}
 
 
 -----

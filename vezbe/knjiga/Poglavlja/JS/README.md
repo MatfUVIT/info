@@ -4,6 +4,26 @@
 
 -----
 
+<style>
+.domaci-zadatak {
+    border: 5px solid gold;
+    padding: 10px;
+}
+
+.domaci-zadatak .naslov {
+    font-weight: bold;
+    text-align: center;
+    display: block;
+}
+
+.domaci-zadatak .tekst {
+    border-top: 2px dashed black;
+    border-bottom: 2px dashed black;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+</style>
+
 <script>
     function pregazi_console(indeks) {
         console = {
@@ -1359,6 +1379,127 @@ for (const ključ in automobil) {
     }
 })();
 </script>
+
+<div class="domaci-zadatak">
+    <span class="naslov">Domaći zadatak 1</span> 
+    <div class="tekst">
+        Kreirati promenljivu `studenti` koja treba da sadrži podatke o studentima iz naredne tabele. Koristiti odgovarajuće tipove podataka za predstavljanje datih vrednosti. Ova promenljiva se koristi u narednim zadacima.
+    </div>
+    <table>
+    <thead>
+        <tr>
+        <th>indeks</th>
+        <th>ime</th>
+        <th>prezime</th>
+        <th>datum_rodjenja</th>
+        <th>mesto_rodjenja</th>
+        <th>datum_upisa</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+        <td>20140021</td>
+        <td>Milos</td>
+        <td>Peric</td>
+        <td>20.01.1995.</td>
+        <td>Beograd</td>
+        <td>06.07.2014.</td>
+        </tr>
+        <tr>
+        <td>20140022</td>
+        <td>Marijana</td>
+        <td>Savkovic</td>
+        <td>11.03.1995.</td>
+        <td>Kraljevo</td>
+        <td>05.07.2014.</td>
+        </tr>
+        <tr>
+        <td>20130023</td>
+        <td>Sanja</td>
+        <td>Terzic</td>
+        <td>09.11.1994.</td>
+        <td>Beograd</td>
+        <td>04.07.2013.</td>
+        </tr>
+        <tr>
+        <td>20130024</td>
+        <td>Nikola</td>
+        <td>Vukovic</td>
+        <td>17.09.1994.</td>
+        <td> </td>
+        <td>04.07.2013.</td>
+        </tr>
+        <tr>
+        <td>20140025</td>
+        <td>Marijana</td>
+        <td>Savkovic</td>
+        <td>04.02.1995.</td>
+        <td>Kraljevo</td>
+        <td>06.07.2014.</td>
+        </tr>
+        <tr>
+        <td>20140026</td>
+        <td>Zorica</td>
+        <td>Miladinovic</td>
+        <td>08.10.1995.</td>
+        <td>Vranje</td>
+        <td>06.07.2014.</td>
+        </tr>
+        <tr>
+        <td>20130027</td>
+        <td>Milena</td>
+        <td>Stankovic</td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        </tr>
+    </tbody>
+    </table>
+</div>
+
+<div class="domaci-zadatak">
+    <span class="naslov">Domaći zadatak 2</span> 
+    <div class="tekst">
+        Napisati funkciju <code class="language-plaintext highlighter-rouge">spoji_ime_i_prezime(studenti)</code> koja menja podatke iz promenljive <code class="language-plaintext highlighter-rouge">studenti</code> tako što kolone <code class="language-plaintext highlighter-rouge">ime</code> i <code class="language-plaintext highlighter-rouge">prezime</code> spaja u novu kolonu <code class="language-plaintext highlighter-rouge">ime_prezime</code>, a ujedno i eliminiše kolone <code class="language-plaintext highlighter-rouge">ime</code> i <code class="language-plaintext highlighter-rouge">prezime</code>. <br /> 
+        <br>
+        Napomena: Imati u vidu da funkcija treba da radi korektno, čak i ako se izmene podaci. Na primer, ako podacima u promenljivoj <code class="language-plaintext highlighter-rouge">student</code> “dodamo” kolonu <code class="language-plaintext highlighter-rouge">prosek</code> koja predstavlja prosečnu ocenu tih studenata tokom studija, onda nakon ponovnog poziva funkcije <code class="language-plaintext highlighter-rouge">spoji_ime_i_prezime</code> rezultat mora da sadrži i tu kolonu. Drugim rečima, jedino što treba pretpostaviti je da će podaci u promenljivoj <code class="language-plaintext highlighter-rouge">studenti</code> sigurno imati kolone <code class="language-plaintext highlighter-rouge">ime</code> i <code class="language-plaintext highlighter-rouge">prezime</code>, a za ostale kolone ne praviti nikakve pretpostavke.
+    </div>
+</div>
+
+<div class="domaci-zadatak">
+    <span class="naslov">Domaći zadatak 3</span> 
+    <div class="tekst">
+        Napisati funkciju <code class="language-plaintext highlighter-rouge">filter_indeks(studenti, godina)</code> koja za dati parametar <code class="language-plaintext highlighter-rouge">godina</code> vraća samo one studente koji su upisali fakultet u datoj godini. Funkcija ne sme da menja promenljivu <code class="language-plaintext highlighter-rouge">studenti</code>.
+    </div>
+</div>
+
+<div class="domaci-zadatak">
+    <span class="naslov">Domaći zadatak 4</span> 
+    <div class="tekst">
+        Napisati funkciju <code class="language-plaintext highlighter-rouge">filter_f(studenti, f)</code> koja za datu funkciju <code class="language-plaintext highlighter-rouge">f</code> koja predstavlja predikat vraća samo one studente koji zadovoljavaju taj predikat. Predikat je funkcija koja prihvata jednu vrednost i vraća Bulovu vrednost, tj. <code class="language-plaintext highlighter-rouge">f: tip_vrednosti -&gt; boolean</code>. Funkcija ne sme da menja promenljivu <code class="language-plaintext highlighter-rouge">studenti</code>.
+    </div>
+</div>
+
+<div class="domaci-zadatak">
+    <span class="naslov">Domaći zadatak 5</span> 
+    <div class="tekst">
+        Napisati funkciju <code class="language-plaintext highlighter-rouge">nema_nepoznate_vrednosti(student)</code> koja prihvata jednog studenta i ispituje da li taj student ima sve podatke poznate. Ukoliko student ima neki podatak koji je nedostajuća vrednost (prazno polje u tabeli iznad), funkcija vraća <code class="language-plaintext highlighter-rouge">false</code>, a inače <code class="language-plaintext highlighter-rouge">true</code>. Funkcija ne sme da menja parametar <code class="language-plaintext highlighter-rouge">student</code>.
+    </div>
+</div>
+
+<div class="domaci-zadatak">
+    <span class="naslov">Domaći zadatak 6</span> 
+    <div class="tekst">
+        Napisati funkciju <code class="language-plaintext highlighter-rouge">pročisti_podatke(studenti)</code> koja vraća samo one studente koji imaju sve podatke poznate. Nije dozvoljeno koristiti ponavljajuće kontrole toka (<code class="language-plaintext highlighter-rouge">for</code>, <code class="language-plaintext highlighter-rouge">while-do</code>, …), kontrole toka izbora (<code class="language-plaintext highlighter-rouge">for</code>, <code class="language-plaintext highlighter-rouge">switch</code>, …) niti rekurziju. Funkcija ne sme da menja promenljivu <code class="language-plaintext highlighter-rouge">studenti</code>. (Pomoć: iskoristiti funkcije iz zahteva 4 i 5).
+    </div>
+</div>
+
+<div class="domaci-zadatak">
+    <span class="naslov">Domaći zadatak 7</span> 
+    <div class="tekst">
+        Napisati funkciju <code class="language-plaintext highlighter-rouge">generiši_html(studenti)</code> koja generiše nisku koja sadrži HTML kod kojim se podaci iz promenljive <code class="language-plaintext highlighter-rouge">studenti</code> prikazuju u vidu HTML tabele (na primer, kao u tabeli iz 1. zahteva, s tim da nije potrebno stilizovati tabelu CSS-om, ali može se i to uraditi za vežbu). Funkcija ne sme da menja promenljivu <code class="language-plaintext highlighter-rouge">studenti</code>.
+    </div>
+</div>
 
 -----
 
