@@ -804,9 +804,12 @@ Prilikom okidanja događaja `click`, biće pozvan (tj. izvršen) samo osluškiva
     <div class="tekst">
         <p>Neka je data datoteka `index.html` sa narednim sadržajem koja predstavlja osnovu klijentske veb aplikacije:</p>
 
-<pre>
-<code>
-<!DOCTYPE html>
+<pre id="dz-1">
+</pre>
+
+<script>
+    document.querySelector("#dz-1").innerText = 
+`<!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
@@ -843,9 +846,8 @@ Prilikom okidanja događaja `click`, biće pozvan (tj. izvršen) samo osluškiva
     <script src="index.js"></script>
 
 </body>
-</html>
-</code>
-</pre>
+</html>`;
+</script>
 
 <p>Zadatak je da implementiramo klijentsku veb aplikaciju koja ispunjava naredni opis. Klikom na dugme “Prikaži podatke” na stranici se prikazuju informacije o studentima u vidu tabele. Prelaskom miša preko neke od ćelija u prvoj koloni (odnosno, ćelija koje sadrže indekse), želimo da se postavi pozadinska boja te ćelije na sivu. Klikom na neku od ćelija koja sadrži indeks, želimo da se u elementu pored tabele prikažu informacije o odabranom studentu.</p>
 
@@ -969,9 +971,12 @@ Prilikom okidanja događaja `click`, biće pozvan (tj. izvršen) samo osluškiva
     <div class="tekst">
 Neka je data datoteka `index.html` sa narednim sadržajem koja predstavlja osnovu klijentske veb aplikacije:
 
-<pre>
-<code>
-<!DOCTYPE html>
+<pre id="dz-2-1">
+</pre>
+
+<script>
+    document.querySelector("#dz-2-1").innerText = 
+`<!DOCTYPE html>
 <html lang="sr">
 
 <head>
@@ -1000,15 +1005,17 @@ Neka je data datoteka `index.html` sa narednim sadržajem koja predstavlja osnov
     <script src="index.js"></script>
 </body>
 
-</html>
-</code>
-</pre>
+</html>`;
+</script>
 
 Stilovi su dati u datoteci `index.css`:
 
-<pre>
-<code>
-body {
+<pre id="dz-2-2">
+</pre>
+
+<script>
+    document.querySelector("#dz-2-2").innerText = 
+`body {
     font-family: sans-serif;
 }
 
@@ -1062,9 +1069,8 @@ input[type="button"] {
     border: 3px solid hotpink;
     border-radius: 5px;
     word-wrap: break-word;
-}
-</code>
-</pre>
+}`;
+</script>
 
 Zadatak je da implementiramo klijentsku veb aplikaciju koja ispunjava naredni opis. Korisnik treba da unese datum u polje "Odaberite datum" i tekst u polje "Unesite podsetnik". Klikom na dugme "Unesi novi podsetnik" na stranici se prikazuje nova stavka "To-do" liste. Prikaz aplikacije je dat na narednoj slici.
 
@@ -1082,18 +1088,20 @@ Zadatak je da implementiramo klijentsku veb aplikaciju koja ispunjava naredni op
     <li>Za svaku stavku iz promenljive `toDoLista` kreira dete čvor elementa sa identifikatorom `lista`, pri čemu novokreirani čvor treba da zadovoljava naredni HTML i CSS kod:</li>
 </ul>
 
-<pre>
-<code>
-<div class="stavka">
+<pre id="dz-2-3">
+</pre>
+
+<script>
+    document.querySelector("#dz-2-3").innerText = 
+`<div class="stavka">
     <p style="font-style: italic; margin-left: 10px;">
         Podsetnik za datum DATUM_PODSETNIKA:
     </p>
     <p style="width: 80%; margin: auto; word-wrap: break-word;">
         TEKST_PODSETNIKA
     </p>
-</div>
-</code>
-</pre>
+</div>`;
+</script>
 
 `DATUM_PODSETNIKA` i `TEKST_PODSETNIKA` treba da budu zamenjeni datumom i tekstom iz stavke liste (videti sliku iznad). Ne koristiti svojstva `innerHTML` i `outerHTML` za dinamičko dodavanje ili brisanje elemenata.
 
