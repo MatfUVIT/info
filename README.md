@@ -32,6 +32,8 @@
 
 * **[Вежбе](/vezbe/README.md)**
 
+* **[Часови вежби онлајн](/vezbe/casovi-onlajn/README.md)**
+
 ## Колоквијуми и испити
 
 * **[Колоквијуми](/kolokvijumi/README.md)**
