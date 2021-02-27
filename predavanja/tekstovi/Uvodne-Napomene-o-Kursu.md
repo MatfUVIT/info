@@ -22,9 +22,7 @@
 * ЈаваСкрипт као скрипт језик веб клијента
 
   * DOM
-  
-  * јQuery
-  
+ 
 * Веб сервери
 
 * ЈаваСкрипт као серверски скрипт језик
@@ -50,8 +48,6 @@
 1. [Eloquent JavaScript](https://eloquentjavascript.net/){:target="_blank"}, аутор MarijnHaverbeke, издавач No Starch Press, 2014.
 
 1. Secrets of the JavaScript Ninja, аутори John Resigи Bear Bibeault, издавач Manning, 2012.
-
-1. jQuery Cookbook, аутори Jonathan Sharp, Rob Burns, Rebecca Murphey, и др, издавач O’Reilly, 2010.
 
 1. NoSQLfor MereMortals, аутор Dan Sullivan, издавач Addison-Wesley, 2015.
 
