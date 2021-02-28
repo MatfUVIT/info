@@ -24,7 +24,7 @@
 
     - лозинка: `student`
 
-- Упутство за увожење виртуалне машине у Oracle VM VirtualBox можете пронаћи [на овој вези](/materijali/Додавање постојеће виртуалне машине за курс у Oracle VM VirtualBox.pdf){:target="_blank"}
+- Упутство за увожење виртуалне машине у Oracle VM VirtualBox можете пронаћи [на овој вези](/materijali/Dodavanje postojece virtualne masine za kurs u Oracle VM VirtualBox.pdf){:target="_blank"}
 
 <!--
 - Упутство за инсталирање система за управљање базом података MongoDB за Ubuntu оперативни систем: [овде](/materijali/Инсталација система за управљање базом података MongoDB за Ubuntu оперативни систем.pdf){:target="_blank"}
