@@ -32,6 +32,8 @@
 
 * **[Предавања](/predavanja/README-2020-21.md)**
 
+* **[Часови предавања онлајн](/predavanja/casovi-onlajn/README-2020-21.md)**
+
 * **[Вежбе](/vezbe/README.md)**
 
 * **[Часови вежби онлајн](/vezbe/casovi-onlajn/README.md)**
