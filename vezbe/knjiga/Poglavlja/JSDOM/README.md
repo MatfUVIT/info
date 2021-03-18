@@ -8,6 +8,7 @@
 .domaci-zadatak {
     border: 5px solid gold;
     padding: 10px;
+    margin-bottom: 20px;
 }
 
 .domaci-zadatak .naslov {
@@ -799,10 +800,19 @@ element.onclick = handler_2;
 
 Prilikom okidanja događaja `click`, biće pozvan (tj. izvršen) samo osluškivač koji implementira funkcija `handler_2`, dok je osluškivač koji implementira funkcija `handler_1` izgubljen. Postoje načini da se ovo prevaziđe, ali svaki od njih uvodi nove probleme, pri čemu nijedan od njih problema ne daje elegantno rešenje u odnosu na korišćenje pristupa zasnovan na metodima `addEventListener` i `removeEventListener`.
 
+### Zadaci za vežbu
+
+> Zadatak 1: Potrebno je implementirati klijentsku aplikaciju koja prikazuje preporučene knjige. Neka je dat niz objekata, pri čemu svaki objekat sadrži naredne podatke o knjigama: naziv knjige, autor, isbn, godina izdavanja i URL do slike prednjih korica. U programskom jeziku JavaScript:
+1. Napisati funkciju `kreirajDOMPodstabloZaKnjigu(knjiga)` koja prihvata objekat koji sadrži podatke o jednoj knjizi. Na osnovu ovog objekta je potrebno izgraditi DOM podstablo tako da svaka knjiga bude prikazana kao na narednoj slici. Zabranjeno je korišćenje `innerHTML` i `outerHTML` atributa. Sva stilizovanja uraditi putem `style` atributa.
+![](./Zadaci/zadatak1/postavke.png)
+2. Napisati funkciju `prikažiSveKnjige(nizKnjiga)` koja prikazuje knjige iz prosleđenog niza u `div` elementu čiji je identifikator `preporuceneKnjige`. Ako ovakav element ne postoji, prikazati korisniku poruku u obaveštajnom prozoru. Koristiti funkciju napisanu pod 1.
+
+Rešenje možete pronaći [ovde](https://github.com/MatfUVIT/UVIT/blob/master/vezbe/knjiga/Poglavlja/JSDOM/Zadaci/zadatak1/).
+
 <div class="domaci-zadatak">
     <span class="naslov">Domaći zadatak 1</span> 
     <div class="tekst">
-        <p>Neka je data datoteka <a href="https://github.com/MatfUVIT/UVIT/blob/master/vezbe/knjiga/Poglavlja/JSDOM/Domaci/Resursi/zadatak1/index.html">index.html</a> sa narednim sadržajem koja predstavlja osnovu klijentske veb aplikacije.</p>
+        <p>Neka je data datoteka <a href="https://github.com/MatfUVIT/UVIT/blob/master/vezbe/knjiga/Poglavlja/JSDOM/Domaci/Resursi/zadatak1/index.html">index.html</a> koja predstavlja osnovu klijentske veb aplikacije.</p>
 
 <p>Zadatak je da implementiramo klijentsku veb aplikaciju koja ispunjava naredni opis. Klikom na dugme “Prikaži podatke” na stranici se prikazuju informacije o studentima u vidu tabele. Prelaskom miša preko neke od ćelija u prvoj koloni (odnosno, ćelija koje sadrže indekse), želimo da se postavi pozadinska boja te ćelije na sivu. Klikom na neku od ćelija koja sadrži indeks, želimo da se u elementu pored tabele prikažu informacije o odabranom studentu.</p>
 
@@ -921,59 +931,9 @@ Prilikom okidanja događaja `click`, biće pozvan (tj. izvršen) samo osluškiva
     </div>
 </div>
 
-<div class="domaci-zadatak">
-    <span class="naslov">Domaći zadatak 2</span> 
-    <div class="tekst">
-        Neka je data datoteka <a href="https://github.com/MatfUVIT/UVIT/blob/master/vezbe/knjiga/Poglavlja/JSDOM/Domaci/Resursi/zadatak2/index.html">index.html</a> koja predstavlja osnovu klijentske veb aplikacije. Stilovi su dati u datoteci <a href="https://github.com/MatfUVIT/UVIT/blob/master/vezbe/knjiga/Poglavlja/JSDOM/Domaci/Resursi/zadatak2/index.css">index.css</a>.Zadatak je da implementiramo klijentsku veb aplikaciju koja ispunjava naredni opis. Korisnik treba da unese datum u polje "Odaberite datum" i tekst u polje "Unesite podsetnik". Klikom na dugme "Unesi novi podsetnik" na stranici se prikazuje nova stavka "To-do" liste. Prikaz aplikacije je dat na narednoj slici.
-        <img style="max-width: 100%;" src="./Domaci/Resursi/todo.png" alt="">
-        <p><strong>Implementacioni detalji zadatka</strong></p>
-
-<p>Sva rešenja čuvati u datoteci `index.js`.</p>
-
-<p>a) Na početku je lista prazna. Kreirati globalnu promenljivu `toDoLista` koja predstavlja prazan niz obaveza. Ova promenljiva se koristi u narednim zahtevima.</p>
-
-<p>b) Napisati funkciju `prikažiListu()` koja redom:</p>
-<ul>
-    <li>Briše sve elemente iz sadržaja elementa sa identifikatorom `lista`.</li>
-    <li>Za svaku stavku iz promenljive `toDoLista` kreira dete čvor elementa sa identifikatorom `lista`, pri čemu novokreirani čvor treba da zadovoljava naredni HTML i CSS kod:</li>
-</ul>
-
-<pre id="dz-2-3">
-</pre>
-
-<script>
-    document.querySelector("#dz-2-3").innerText = 
-`<div class="stavka">
-    <p style="font-style: italic; margin-left: 10px;">
-        Podsetnik za datum DATUM_PODSETNIKA:
-    </p>
-    <p style="width: 80%; margin: auto; word-wrap: break-word;">
-        TEKST_PODSETNIKA
-    </p>
-</div>`;
-</script>
-
-`DATUM_PODSETNIKA` i `TEKST_PODSETNIKA` treba da budu zamenjeni datumom i tekstom iz stavke liste (videti sliku iznad). Ne koristiti svojstva `innerHTML` i `outerHTML` za dinamičko dodavanje ili brisanje elemenata.
-
-<p>c) Napisati funkciju `dodajStavkuListe()` koja redom:</p>
-<ul>
-    <li>Dohvata informaciju o datumu iz elementa sa identifikatorom `datum` i provera da li je korisnik uneo datum (da li je vrednost polja prazna niska).</li>
-    <li>Dohvata informaciju o tekstu podsetnika iz elementa sa identifikatorom `tekst` i provera da li je korisnik uneo taj tekst (da li je vrednost polja prazna niska).</li>
-    <li>Ukoliko su svi podaci uneti, kreira novu stavku koja sadrži te dve informacije i pamti je u promenljivu `toDoLista`.</li>
-    <li>Poziva funkciju `prikažiListu` da bi se osvežio prikaz obaveza na stranici.</li>
-</ul>
-
-Ne koristiti svojstva `innerHTML` i `outerHTML` za dinamičko dodavanje ili brisanje elemenata.
-
-<p>d) Pridružiti funkciju `dodajStavkuListe` kao osluškivač elementa sa identifikatorom `napravi-todo` na događaju kliktaj miša.</p>
-
-<p>e) Obraditi sve greške u implementaciji.</p>
-    </div>
-</div>
-
 ## 5.6 Obrada podataka u formularu
 
-U prethodnom poglavlju bilo je reči o HTML elementima kojima predstavljamo različita polja za unos podataka. Sada ćemo videti kako možemo dohvatati podatke iz formulara i testirati njihove vrednosti u odnosu na predefinisane domene. Više reči o tome kako se podaci iz formulara šalju ka serveru biće kada budemo pričali o načinu obrađivanja podataka na serveru.
+U [poglavlju 1](../HTML/README.md) bilo je reči o HTML elementima kojima predstavljamo različita polja za unos podataka. Sada ćemo videti kako možemo dohvatati podatke iz formulara i testirati njihove vrednosti u odnosu na predefinisane domene. Više reči o tome kako se podaci iz formulara šalju ka serveru biće kada budemo pričali o načinu obrađivanja podataka na serveru.
 
 U nastavku ćemo koristiti formular koji smo ranije napravili i izgleda kao na slici:
 
@@ -1797,25 +1757,75 @@ s.addEventListener('input', function () {
 ```
 
 <div class="domaci-zadatak">
-    <span class="naslov">Domaći zadatak 3</span> 
+    <span class="naslov">Domaći zadatak 2</span> 
     <div class="tekst">
         U primeru sa formularom smo rekli da su interesovanja opciona (primetimo da smo zbog toga koristili `checkbox` elemente). Istražiti kako bismo u JavaScript jeziku nametnuli ograničenje da korisnik mora da odabere makar 2 interesovanja i napisati odgovarajući kod kojim se proverava to ograničenje.
     </div>
 </div>
 
 <div class="domaci-zadatak">
-    <span class="naslov">Domaći zadatak 4</span> 
+    <span class="naslov">Domaći zadatak 3</span> 
     <div class="tekst">
         Napisati JavaScript kod koji bi "u hodu" proveravao da li je korisničko ime dužine više od 5 karaktera. Drugim rečima, potrebno je da, nakon što korisnik unese korisničko ime nedozvoljene dužine i pređe na naredno polje, veb pregledač prikaže poruku "Korisničko ime mora biti duže od 5 karaktera!" funkcijom window.alert().
     </div>
 </div>
 
 <div class="domaci-zadatak">
-    <span class="naslov">Domaći zadatak 5</span> 
+    <span class="naslov">Domaći zadatak 4</span> 
     <div class="tekst">
         Napisati HTML datoteku koja sadrži formular dat na narednoj slici. Napisati JavaScript kod koji nakon klika na dugme "Izračunaj površinu" izračunava i ispisuje vrednost površine trougla. U slučaju unosa nekorektnih vrednosti, treba ispisati poruku o grešci u obaveštajnom prozoru veb pregledača. Za računanje površine koristiti Heronov obrazac. Formular doterati korišćenjem Bootstrap biblioteke.
     </div>
     <img style="max-width: 100%;" src="./Domaci/Slike/zadatak5.png" alt="">
+</div>
+
+<div class="domaci-zadatak">
+    <span class="naslov">Domaći zadatak 5</span> 
+    <div class="tekst">
+        Neka je data datoteka <a href="https://github.com/MatfUVIT/UVIT/blob/master/vezbe/knjiga/Poglavlja/JSDOM/Domaci/Resursi/zadatak2/index.html">index.html</a> koja predstavlja osnovu klijentske veb aplikacije. Stilovi su dati u datoteci <a href="https://github.com/MatfUVIT/UVIT/blob/master/vezbe/knjiga/Poglavlja/JSDOM/Domaci/Resursi/zadatak2/index.css">index.css</a>. Zadatak je da implementiramo klijentsku veb aplikaciju koja ispunjava naredni opis. Korisnik treba da unese datum u polje "Odaberite datum" i tekst u polje "Unesite podsetnik". Klikom na dugme "Unesi novi podsetnik" na stranici se prikazuje nova stavka "To-do" liste. Prikaz aplikacije je dat na narednoj slici.
+        <img style="max-width: 100%;" src="./Domaci/Resursi/todo.png" alt="">
+        <p><strong>Implementacioni detalji zadatka</strong></p>
+
+<p>Sva rešenja čuvati u datoteci `index.js`.</p>
+
+<p>a) Na početku je lista prazna. Kreirati globalnu promenljivu `toDoLista` koja predstavlja prazan niz obaveza. Ova promenljiva se koristi u narednim zahtevima.</p>
+
+<p>b) Napisati funkciju `prikažiListu()` koja redom:</p>
+<ul>
+    <li>Briše sve elemente iz sadržaja elementa sa identifikatorom `lista`.</li>
+    <li>Za svaku stavku iz promenljive `toDoLista` kreira dete čvor elementa sa identifikatorom `lista`, pri čemu novokreirani čvor treba da zadovoljava naredni HTML i CSS kod:</li>
+</ul>
+
+<pre id="dz-2-3">
+</pre>
+
+<script>
+    document.querySelector("#dz-2-3").innerText = 
+`<div class="stavka">
+    <p style="font-style: italic; margin-left: 10px;">
+        Podsetnik za datum DATUM_PODSETNIKA:
+    </p>
+    <p style="width: 80%; margin: auto; word-wrap: break-word;">
+        TEKST_PODSETNIKA
+    </p>
+</div>`;
+</script>
+
+`DATUM_PODSETNIKA` i `TEKST_PODSETNIKA` treba da budu zamenjeni datumom i tekstom iz stavke liste (videti sliku iznad). Ne koristiti svojstva `innerHTML` i `outerHTML` za dinamičko dodavanje ili brisanje elemenata.
+
+<p>c) Napisati funkciju `dodajStavkuListe()` koja redom:</p>
+<ul>
+    <li>Dohvata informaciju o datumu iz elementa sa identifikatorom `datum` i provera da li je korisnik uneo datum (da li je vrednost polja prazna niska).</li>
+    <li>Dohvata informaciju o tekstu podsetnika iz elementa sa identifikatorom `tekst` i provera da li je korisnik uneo taj tekst (da li je vrednost polja prazna niska).</li>
+    <li>Ukoliko su svi podaci uneti, kreira novu stavku koja sadrži te dve informacije i pamti je u promenljivu `toDoLista`.</li>
+    <li>Poziva funkciju `prikažiListu` da bi se osvežio prikaz obaveza na stranici.</li>
+</ul>
+
+Ne koristiti svojstva `innerHTML` i `outerHTML` za dinamičko dodavanje ili brisanje elemenata.
+
+<p>d) Pridružiti funkciju `dodajStavkuListe` kao osluškivač elementa sa identifikatorom `napravi-todo` na događaju kliktaj miša.</p>
+
+<p>e) Obraditi sve greške u implementaciji.</p>
+    </div>
 </div>
 
 ---

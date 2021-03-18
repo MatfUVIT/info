@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Domaći zadatak 1</title>
+  </head>
+  <body>
+    <h1>Knjige</h1>
+
+    <p>Preporučujemo da pogledate naredne knjige:</p>
+
+    <div id="preporuceneKnjige"></div>
+
+    <script src="knjige.js"></script>
+    <script>
+      // POČETAK REŠENJA
+
+      // 1)
+
+      function kreirajDOMPodstabloZaKnjigu(knjiga) {
+        const divKnjige = document.createElement('div');
+        divKnjige.style.border = '5px solid black';
+        divKnjige.style.width = '400px';
+        divKnjige.style.height = '250px';
+        divKnjige.style.marginRight = '20px';
+        divKnjige.style.marginBottom = '20px';
+        divKnjige.style.display = 'inline-block';
+        divKnjige.style.position = 'relative';
+
+        const slika = document.createElement('img');
+        slika.src = knjiga.urlSlike;
+        slika.style.height = '100%';
+        divKnjige.appendChild(slika);
+
+        const naslov = document.createElement('h3');
+        naslov.style.position = 'absolute';
+        naslov.style.top = '20px';
+        naslov.style.left = '50%';
+        naslov.style.width = '40%';
+        const naslovTekst = document.createTextNode(knjiga.naslov);
+        naslov.appendChild(naslovTekst);
+        divKnjige.appendChild(naslov);
+
+        const autor = document.createElement('h4');
+        autor.style.position = 'absolute';
+        autor.style.top = '80px';
+        autor.style.left = '50%';
+        autor.style.width = '40%';
+        const autorTekst = document.createTextNode(knjiga.autor);
+        autor.appendChild(autorTekst);
+        divKnjige.appendChild(autor);
+
+        const podaci = document.createElement('ul');
+        podaci.style.position = 'absolute';
+        podaci.style.top = '120px';
+        podaci.style.left = '50%';
+        
+        const isbn = document.createElement('li');
+        const link = document.createElement('a');
+        link.href = `https://isbnsearch.org/isbn/${knjiga.isbn}`;
+        link.target = `_blank`;
+        const isbnTekst = document.createTextNode(knjiga.isbn);
+        link.appendChild(isbnTekst);
+        isbn.appendChild(link);
+        podaci.appendChild(isbn);
+
+        const godina = document.createElement('li');
+        const godinaTekst = document.createTextNode(knjiga.godina);
+        godina.appendChild(godinaTekst);
+        podaci.appendChild(godina);
+
+        divKnjige.appendChild(podaci);
+
+        return divKnjige;
+      }
+
+      // 2) 
+
+      function prikažiSveKnjige(nizKnjiga) {
+        const div = document.querySelector("#preporuceneKnjige");
+        if (div === null) {
+            window.alert("Ne postoji element u kojem se prikazuju preporucene knjige!");
+            return;
+        }
+        for (const knjiga of nizKnjiga) {
+            const podstabloZaKnjigu = kreirajDOMPodstabloZaKnjigu(knjiga);
+            div.appendChild(podstabloZaKnjigu);
+        }
+      }
+
+      // KRAJ REŠENJA
+
+      prikažiSveKnjige(knjige);
+    </script>
+  </body>
+</html>
