@@ -37,145 +37,7 @@ jQuery je biblioteka za JavaScript jezik čija je osnovna upotreba olakšavanje 
 
 Iako postoje mnoge biblioteke za razvoj u jeziku JavaScript, jQuery je jedna od najkorišćenijih, najpopularnijih i najviše se širi. Neke od velikih kompanija koje koriste jQuery su Google, Microsoft, IBM, Netflix, i dr. Jedna od osobina jQuery biblioteke jeste ta da će raditi isto u svim većim pregledačima, pa čak i u Internet Explorer 6.
 
-## 6.1. Asinhrono programiranje 
-
-U *sinhronom* modelu programiranja, stvari se dešavaju sekvencionalno, jedna za drugom. Kada pozovemo funkciju koja izvršava neku akciju, ona se vraća tek kada je akcija završena i tada može da vrati neki rezultat. Ovim se program stopira za ono vreme koliko je bilo potrebno toj akciji da se završi.
-
-*Asinhroni* model programiranja dozvoljava više stvari da se dešavaju u isto vreme. Kada pokrenemo neku akciju, program nastavlja sa radom. Onog trenutka kada akcija završi, program biva informisan o završetku akcije i dobija pristup rezultatu.
-
-Poređenje između sinhronog i asinhronog programiranja se može jednostavno sagledati kroz naredni primer. Neka je potrebno napisati program koji dohvata dva resursa sa interneta, a zatim kombinuje rezultate. U sinhronom modelu, najjednostavniji način jeste da se zahtevi za resursima vrše jedan za drugim (postoje i konkurentni sistemi u sinhronom modelu programiranja o kojima neće biti reči u tekstu). Problem ovog pristupa jeste da se drugi zahtev započinje tek onda kada se prvi završi. Ukupno vreme rada programa je najmanje zbir trajanja dohvatanja odgovora. U asinhronom modelu, moguće je poslati dva zahteva jedan za drugim, a zatim u trenutku kada su obe vrednosti dostupne, vrši se kombinovanje rezultata. Prednost ovog modela je u tome što se preklapa vreme potrebno za dohvatanje dva resursa, čime se značajno ubrzava rad programa.
-
-### 6.1.1. Funkcije povratnog poziva
-
-Jedan pristup asinhronom programiranju jeste da se funkcije koje izvršavaju duge ili spore akcije konstruišu tako da prihvataju dodatni argument koji predstavlja tzv. *funkciju povratnog poziva* (engl. *callback function*). Takve akcije se započnu, a zatim kada se završe, funkcija povratnog poziva se poziva sa rezultatom te akcije. Ako bolje pogledamo, ova semantika u potpunosti oslikava asinhroni model programiranja koji smo opisali u uvodu.
-
-Kao primer ovog modela, možemo razmotriti funkciju `setTimeout`, dostupnu i u veb pregledačima i u Node.js platformi, koja prihvata dva argumenta: funkciju povratnog poziva i broj milisekundi. Ova funkcija postavlja tajmer koji traje prosleđeni broj milisekundi i po isteku tajmera, poziva se prosleđena funkcija povratnog poziva:
-
-```js
-console.log('Start!');
-setTimeout(function() {
-	console.log('Tick');
-}, 1000);
-```
-
-Ako otvorimo konzolu, prvo što ćemo primetiti jeste da se ispiše:
-
-```js
-Start!
-```
-
-Nakon jedne sekunde, ispis se menja u 
-
-```js
-Start!
-Tick
-```
-
-Vidimo da se anonimna funkcija povratnog poziva koju smo prosledili funkciji `setTimeout` izvršila asinhrono, u ovom slučaju, tek nakon što je istekao tajmer koju je postavila funkcija `setTimeout`.
-
-Slično, metod `setInterval` omogućava učestalo izvršavanje zadate funkcije povratnog poziva kao prvi argument u pravilnim vremenskim razmacima čija se perioda zadaje drugim argumentom. Za upravljanje ovim pozivima koristi se povratna vrednost metoda. Pre svega, pozivom metoda `clearInterval`, kojem se prosleđuje povratna vrednost metoda `setInterval`, može se prekinuti dalje ponavljanje poziva. Na primer:
-
-```js
-// Ispiši Tick! svake sekunde
-const si = setInterval(function() {
-	console.log('Tick!');
-}, 1000);
-
-// Nakon 5 sekundi, prekini dalje ispisivanje
-setTimeout(function() {
-	clearInterval(si);
-}, 5500);
-```
-
-Rezultat ispisa:
-
-```js
-Tick!
-Tick!
-Tick!
-Tick!
-Tick!
-```
-
-### 6.1.2. `XMLHttpRequest` objekat
-
-Da bismo poslali asinhroni HTTP zahtev ka nekom resursu (ovakvi zahtevi se još nazivaju i *AJAX* zahtevi, skr. od *Asynchronous JavaScript And XML*), potrebno je kreirati objekat klase `XMLHttpRequest`, otvoriti url ka resursu, i poslati zahtev. Nakon što se transakcija završi, objekat će sadržati korisne informacije poput tela HTTP odgovora i statusnog koda. Ovaj objekat prolazi kroz razna stanja, kao što je "otvorena konekcija", "finalno stanje" i dr. Svako stanje ima svoj kod.
-
-#### 6.1.2.1. Slanje zahteva
-
-Kao što smo rekli, prvo je potrebno kreirati objekat, koji se inicijalizuje u stanje `UNSET` (kod je *0*):
-
-```js
-let xhr = new XMLHttpRequest();
-```
-
-Zatim je potrebno formirati HTTP zahtev pozivom metoda `open`. Njegovi argumenti su: 
-1. HTTP metod koji se koristi, 
-2. URL resursa,
-3. Bulova vrednost koja označava da li se zahtev vrši sinhrono ili asinhrono (podrazumevana vrednost je `true`, što označava asinhronost). Metod ima i dodatne argumente za korisničko ime i lozinku.
-
-```js
-xhr.open('GET', 'http://api.icndb.com/jokes/random');
-```
-
-U ovom trenutku se mogu postaviti zaglavlja HTTP zahteva pomoću `setRequestHeader` metode, na primer, `xhr.setRequestHeader(imePolja, vrednost)`. Zatim je potrebno dodati funkcije povratnog poziva koje će vršiti nekakvu obradu pristiglog odgovora ili, ono što se često radi, obradu pri promeni stanja asinhronog zahteva. Odgovor zahteva je sadržan u svojstvima `response`, `responseText` ili `responseXML` u zavisnosti od tipa odgovora. U slučaju greške, svojstvo `statusText` sadrži statusnu poruku koja odgovara HTTP statusnoj poruci. Na primer:
-
-```js
-xhr.addEventListener('load', function() {
-    /* 
-        Proveravamo da li je odgovor servera sa vrednoscu 200 preko 
-        polja zahteva status.
-    */
-	if (xhr.status === 200) {
-		console.log(xhr.response);
-	} 
-	else {
-		console.error(xhr.statusText);
-	}
-});
-```
-
-Događaj `'load'` se izvršava kada objekat pređe u finalno stanje `DONE` (kod je *4*). Događaj `error` se izvršava kada dođe do greske prilikom zahteva:
-
-```js
-xhr.addEventListener('error', function() {
-	console.error('Problem prilikom slanja zahteva');
-});
-```
-
-Alternativa je moguća postavljanjem osluškivača nad događajem `readystatechange` koji će pozvati funkciju povratnog poziva prilikom svake promene stanja:
-
-```js
-xhr.addEventListener('readystatechange', function() {
-	switch(xhr.readyState) {
-		case XMLHttpRequest.DONE:
-			if (xhr.status === 200) {
-				console.log(xhr.response);
-			}
-			else {
-				console.error(xhr.statusText);
-			}
-	}
-});
-```
-
-Konačno, potrebno je poslati HTTP zahtev, što se vrši metodom `send`. U zavisnosti od tipa zahteva, opcioni argument metode `send` predstavlja telo zahteva.
-
-```js
-xhr.send();
-```
-
-Iako jednostavan, ovaj primer ilustruje važan koncept, a to je kreiranje komunikacije između klijentskih i serverskih aplikacija korišćenjem `XMLHttpRequest` objekta. Na ovu temu ćemo se osvrnuti još jednom, kada se budemo upoznali sa kreiranjem naših serverskih aplikacija.
-
-<div class="domaci-zadatak">
-    <span class="naslov">Domaći zadatak 1</span> 
-    <div class="tekst">
-        Napisati HTML datoteku koja sadrži dva naslova, "Types" i "Toppings", praznu tabelu ispod prvog naslova i praznu listu ispod drugog naslova. Napisati JavaScript kod koji šalje asinhroni zahtev na <a href="https://codepen.io/chriscoyier/pen/EAIJj.js">https://codepen.io/chriscoyier/pen/EAIJj.js</a>. U slučaju da je sve prošlo bez greške, prikazati podatke iz odgovora u formatu kao na narednoj slici. U slučaju neuspešnog zahteva ispisati odgovarajuću poruku.
-    </div>
-    <img style="max-width: 100%;" src="./Domaci/Slike/zadatak1.png" alt=""> 
-</div>
-
-## 6.2. Instalacija jQuery biblioteke
+## 6.1. Instalacija jQuery biblioteke
 
 Postoji više načina kako koristiti jQuery. Moguće je:
 
@@ -216,7 +78,7 @@ ili
 
 Prednost korišćenja ovakvog načina jeste u tome što je većina korisnika verovatno već preuzela jQuery sa Google-a ili Microsoft-a prilikom pretraživanja nekog drugog veb sajta. Kao rezultat toga, jQuery će već biti učitan iz keša, što dovodi do bržeg učitavanja. Takođe, večina CDN-a će se postarati da, kada korisnik zatraži fajl sa njega, taj fajl bude preuzet sa servera koji je najbliži njima, što takođe dovodi do bržeg učitavanja.
 
-## 6.3. Osnovna jQuery sintaksa
+## 6.2. Osnovna jQuery sintaksa
 
 jQuery sintaksa je osmišljena za označavanje HTML elemenata i njihovo obrađivanje. Osnovna sintaksa jQuery-ja jeste: `$(selektor).akcija()`:
 
@@ -252,7 +114,7 @@ Neki jednostavni primeri upotrebe dati su narednim primerima:
     $('#test').hide();	
 ```
 
-### 6.3.1. "Dokument je spreman" događaj
+### 6.2.1. "Dokument je spreman" događaj
 
 S obzirom da veb pregledači prikazuju stranicu tokom parsiranja HTML dokumenta, može se desiti da želimo da pristupimo, na primer, tekstualnoj vrednosti nekog elementa, a da taj element još uvek nije parsiran i dodat u DOM stablo. Zbog toga može doći do neočekivanih grešaka. Ukoliko želimo da se osiguramo da se neki jQuery kod ne izvršava dok dokument ne završi sa učitavanjem (odnosno, dok ne bude "spreman za obradu"), možemo naš jQuery kod smestiti unutar osluškivača događaja `ready` koji se okida nad objektom `document`:
 
@@ -270,7 +132,7 @@ Dobra je praksa sačekati da se dokument učita pre nego što se počne sa radom
 -  Pokušavanje dobijanja veličine slike koja još nije učitana
 -  ...
 
-## 6.4. jQuery selektori
+## 6.3. jQuery selektori
 
 jQuery selektori omogućavaju selektovanje i upravljanje HTML elementima. Selektori traže HTML elemente na osnovu njihovih identifikatora, klasa, atributa, vrednosti atributa i dr. Bazirani su na CSS selektorima, ali postoje još neki. Svi selektori u jQuery-ju počinju sa znakom dolara i zagradama: `$()`.
 
@@ -331,7 +193,7 @@ else
 }
 ```
 
-## 6.5. jQuery metodi zasnovani na događajima
+## 6.4. jQuery metodi zasnovani na događajima
 
 I u jQuery biblioteci su dostupni različiti događaji koje korisnik može da inicira. Neki od čestih DOM događaja su dati narednom tabelom:
 
@@ -434,7 +296,7 @@ $('p').on({
 Da bismo ukloniti neki osluškivac sa elementa, možemo koristiti metod `off(event)`, kojem prosleđujemo naziv događaja koji osluškujemo, na primer, `'click'`.
 
 
-## 6.6. jQuery efekti i animacije
+## 6.5. jQuery efekti i animacije
 
 Za sakrivanje i prikazivanje elementa, mogu se koristiti metodi
 
@@ -521,7 +383,7 @@ $('button').click(function(){
 }); 
 ```
 
-### 6.6.1. Korišćenje funkcionalnosti reda
+### 6.5.1. Korišćenje funkcionalnosti reda
 
 Po pravilu, jQuery dolazi sa funkcionalnošću reda za animiranje. To znači da ukoliko napišemo više `animate()` poziva jedan iza drugog, jQuery napravi "interni" red od ovih poziva. Animacije se potom izvršavaju jedna po jedna. Neki od primera koji ovo ilustruju su:
 
@@ -561,7 +423,7 @@ $('#stop').click(function(){
 });
 ```
 
-### 6.6.2. Implementiranje animacija korišćenjem funkcija povratnog poziva
+### 6.5.2. Implementiranje animacija korišćenjem funkcija povratnog poziva
 
 JavaScript naredbe se izvršavaju linija po liniju. Ipak, sa efektima, naredna linija koda se vrši iako efekat možda još nije završen. Ovo može dovesti do grešaka u radu. Da bi se ovo sprečilo, koriste se funkcije povratnog poziva. Tipična sintaksa je:
 
@@ -582,7 +444,7 @@ $('button').click(function(){
 });
 ```
 
-## 6.7. Lančanje metoda
+## 6.6. Lančanje metoda
 
 Do sada smo sve jQuery naredbe pisali jednu ispod druge. Ipak, postoji tehnika koja se naziva *lančanje* (engl. *chaining*), koja nam omogućava da pokrenemo više jQuery komandi, jednu za drugom, nad istim elementom (ili nad istim elementima). Na ovaj način pregledači ne moraju da traže iste elemente više od jedanput.
 
@@ -602,7 +464,7 @@ $('#p1').css('color', 'red')
 
 što daje isti efekat.
 
-## 6.8. Upravljanje DOM stablom
+## 6.7. Upravljanje DOM stablom
 
 Jedan veoma važan aspekt jQuery biblioteke jeste upravljanje DOM stablom. Metodi koji nam ovo omogućavaju su:
 
@@ -766,7 +628,7 @@ S obzirom da ove metode vraćaju, na primer, niz svih očeva elemenata `p` (ukol
 -  `not()` - vraća sve elemente koji nemaju specifikaciju koja se zadaje kao argument metode.
 
 
-## 6.9. Upravljanje stilovima
+## 6.8. Upravljanje stilovima
 
 jQuery poseduje nekoliko metoda za upravljanje CSS klasama. Neki od njih su:
 
@@ -849,7 +711,7 @@ $('p').css({
 });
 ```
 
-### 6.9.1. Upravljanje modelom kutije
+### 6.8.1. Upravljanje modelom kutije
 
 Postoji nekoliko važnijih metoda za rad sa dimenzijama elementa:
 
@@ -1292,7 +1154,7 @@ Koristeći biblioteku jQuery omogućiti naredne funkcionalnosti u formularu:
 </div>
 </div>
 
-## 6.10.  AJAX zahtevi 
+## 6.9.  AJAX zahtevi 
 
 Videli smo kako je moguće proslediti asinhroni zahtev ka serveru korišćenjem objekta klase `XMLHttpRequest`. Međutim, uverili smo se da je čak i na jednostavnim primerima rad sa ovim objektom veoma neugodan i kod ne izgleda lepo. Na našu sreću, biblioteka jQuery definiše svoju funkciju za slanje asinhronih poziva: `$.ajax(url [, settings])`. Argumenti ove funkcije su:
 
@@ -1358,22 +1220,6 @@ Ono što treba da zapamtimo kod asinhronih zahteva kreiranih na ovaj način jest
    target="_blank">Pogledaj primer uživo (js)</a>
 
 -->
-
-<div class="domaci-zadatak">
-<span class="naslov">Domaći zadatak 3</span> 
-<div class="tekst">
-
-Napisati HTML datoteku koja sadrži dva naslova, "Types" i "Toppings", praznu tabelu ispod prvog naslova i praznu listu ispod drugog naslova. Korišćenjem biblioteke jQuery: 
-
-<ul>
-    <li>Poslati asinhroni zahtev na adresu [https://codepen.io/chriscoyier/pen/EAIJj.js](https://codepen.io/chriscoyier/pen/EAIJj.js). </li>
-    <li>U slučaju uspešnog dohvatanja odgovora sa servera, prikazati dohvaćene podatke iz odgovora u formatu kao na narednoj slici. Obezbediti da se podaci prikazuju efektom postepenog pojavljivanja (fade in), ali tako da se prvo prikazuju podaci iz tabele, a nakon toga podaci iz liste. </li>
-    <li>U slučaju bilo kakve greške u komunikaciji sa serverom, prikazati poruku korisniku u obaveštajnom prozoru (alert).</li>
-</ul>
-
-</div>
-<img style="max-width: 100%;" src="./Domaci/Slike/zadatak3.png" alt="">
-</div>
 
 ---
 

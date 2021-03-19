@@ -8,6 +8,7 @@
 .domaci-zadatak {
     border: 5px solid gold;
     padding: 10px;
+    margin-bottom: 20px;
 }
 
 .domaci-zadatak .naslov {

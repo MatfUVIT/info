@@ -8,6 +8,7 @@
 .domaci-zadatak {
     border: 5px solid gold;
     padding: 10px;
+    margin-bottom: 20px;
 }
 
 .domaci-zadatak .naslov {
@@ -24,7 +25,7 @@
 }
 </style>
 
-# 5. JavaScript i DOM
+# 5. JavaScript i Web API
 
 Sada kada smo savladali osnovne koncepte jezika JavaScript, u stanju smo da primenimo stečena znanja radi kreiranja klijentskih aplikacija. U ovom uvodnom poglavlju u delu 3 - "Programiranje klijentskih veb aplikacija", diskutovaćemo o tome šta klijentske aplikacije predstavljaju iz ugla programera, kako se one implementiraju i koji su to osnovni elementi _interfejsa programiranja aplikacija_ (engl. _application programming interface_, skr. _API_) koji su nam dostupni na raspolaganju za kreiranje klijentskih aplikacija.
 
@@ -36,7 +37,23 @@ _Klijentska aplikacija_ predstavlja veb aplikaciju koja se sastoji od skupa HTML
 
 Mi smo do sada (sa izuzetkom poglavlja 4 - "Programski jezik JavaScript" gde smo demonstrirali elemente programskog jezika JavaScript) kreirali isključivo statičke klijentske aplikacije. Ove aplikacije su bile sačinjene od definicija strukture pomoću HTML datoteka i definicija stilova te strukture pomoću CSS datoteka, uz eventualno prikazivanje resursa poput slika ili veza. U ovom poglavlju ćemo se baviti dinamičkim klijentskim aplikacijama, odnosno, naučićemo kako da pišemo JavaScript kodove koje izvršavaju neke dinamičke aktivnosti na veb prezentaciji, na primer, menjanje stilova HTML elemenata, obrada podataka u formularu i dr.
 
-## 5.1 Osnovni koncepti DOM stabla
+## 5.1 Web API
+
+Da bismo mogli da kreiramo dinamičke klijentske aplikacije, potrebno je da postoje funkcije ili objekti koji nam omogućavaju da implementiramo te, dinamičke funkcionalnosti. U "čistom" JavaScript jeziku koji smo videli do sada, to nije moguće. Umesto toga, moramo da se oslonimo na neke biblioteke koje nam to omogućavaju. Na primer, svi savremeni veb pregledači implementiraju skup biblioteka koja se naziva [Web API](https://developer.mozilla.org/en-US/docs/Web/API). Web API predstavlja obimnu kolekciju raznovrsnih funkcija ili objekata, podeljenih po manjim bibliotekama, koji nam omogućavaju da implementiramo raznovrsne funkcionalnosti u aplikacijama koje kodiramo u programskom jeziku JavaScript. Neke od tih funkcionalnosti su:
+
+- **Komunikacija sa konzolom.** Objekat `object` koji smo koristili do sada zapravo nije ugrađen u sam jezik JavaScript, već je deo biblioteke [Console API](https://developer.mozilla.org/en-US/docs/Web/API/Console_API). To je zapravo i jedini objekat koji se nalazi u ovoj biblioteci.
+
+- **Dinamičko menjanje HTML i CSS stranica.** Do sada smo sve veb stranice kodirali pisanjem HTML i CSS koda koji definišu strukturu tih stranica. Međutim, moguće je kombinacijom JavaScript jezika i biblioteke koja se zove [DOM API](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model) promeniti strukturu napisanih stranica. Na primer, možemo dodavati nove elemente, brisati postojeće, menjati njihov stil itd. U nastavku teksta ćemo koristiti ovaj API da bismo kreirali dinamičke klijentske veb aplikacije.
+
+- **Odlaganje izvršavanja funkcija.** Na primer, možemo reći JavaScript okruženju da izvrši neku funkciju nakon 5 sekundi (dakle, asinhrono). U nastavku teksta ćemo prikazati funkcije [setTimeout](https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/setTimeout) i [setInterval](https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/setInterval) kojima je moguće ovo postići.
+
+- **Kontaktiranje serverskih aplikacija putem HTTP protokola.** Na primer, možemo kontaktirati neku serversku aplikaciju (bilo da je to aplikaciju koju smo mi implementirali ili koju je neko drugi implementirao). Ova komunikacija se može izvršiti sinhrono ili asinhrono. Međutim, u praksi se obavezno koristi asinhroni pristup kako se aplikacija ne bi blokirala. U nastavku teksta ćemo prikazati funkciju [XMLHttpRequest](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest) kojom je moguće ovo postići.
+
+- **Crtanje u pogledu veb pregledača.** Postoje dva dela Web API biblioteke kojima je ovo moguće: [Canvas API](https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API) i [WebGL API](https://developer.mozilla.org/en-US/docs/Web/API/WebGL_API). O ovom API-ju neće biti reči u okviru kursa.
+
+- **Skladištenje podataka u veb pregledaču.** Iako ćemo u nastavku kursa videti zašto se podaci pretežno skladište pomoću serverskih aplikacijama na serverima, nekada je zgodno čuvati i neke podatke na strani klijenta. Za te potrebe postoji [Storage API](https://developer.mozilla.org/en-US/docs/Web/API/Storage_API) koji nudi različite mehanizme za skladištenje podataka u veb pregledačima. O ovom API-ju neće biti reči u okviru kursa.
+
+## 5.2 Dinamičko menjanje HTML i CSS stranica. DOM API. 
 
 O DOM stablu smo govorili još u poglavlju 1 - "Struktuiranje Veb dokumenata kroz HTML". U ovoj sekciji ćemo nešto detaljnije obratiti pažnju na ovu veoma važnu strukturu podataka.
 
@@ -78,7 +95,7 @@ Struktura kojom veb pregledač opisuje model HTML stranice prati ovaj grafički 
 
 Dakle, da bismo mogli da dinamički upravljamo prikazom veb stranice, prvo što je potrebno uraditi jeste pronaći odgovarajuće elemente u DOM stablu, a zatim izvršiti odgovarajuće operacije nad njima. Upravo u ovom redosledu ćemo se upoznati sa radom nad DOM stablom.
 
-## 5.2 Pretraga elemenata
+### 5.2.1 Pretraga elemenata
 
 U okviru JavaScript okruženja za izvršavanje u veb pregledačima postoji JavaScript objekat koji se naziva `document`, koji sadrži informacije o veb stranici i zapravo predstavlja korem DOM stabla. Ako želimo da pristupimo nekom elementu na veb stranici, odnosno, da pristupimo odgovarajućem čvoru DOM stabla koji predstavlja taj element u memoriji, najjednostavniji način jeste da započnemo pretragu od objekta `document`. Nad ovim objektom su definisani brojni metodi za pretragu elemenata koji su opisani u nastavku. Obratiti posebnu pažnju na povratnu vrednost ovih metoda - neki od metoda vraćaju jedan objekat, dok drugi vraćaju niz objekata.
 
@@ -156,7 +173,7 @@ if (sviPasusiPonovo.length > 0) {
    href="./Primeri/1/index.html"
    target="_blank">Pogledaj primer uživo (obavezno otvoriti konzolu)</a>
 
-## 5.3 Upravljanje elementima
+### 5.2.2 Upravljanje elementima
 
 Nakon što smo uspešno dohvatiti jedan element ili više njih, postavlja se pitanje koje sve operacije možemo izvršiti nad njima, odnosno, koje njihove delove možemo menjati dinamički. Grubo rečeno, sve operacije nad elementom se mogu podeliti u tri vrste:
 
@@ -166,7 +183,7 @@ Nakon što smo uspešno dohvatiti jedan element ili više njih, postavlja se pit
 
 3. Izmena stila
 
-### 5.3.1 Izmena sadržaja
+#### Izmena sadržaja
 
 Izmena sadržaja elementa podrazumeva izmenu same strukture koja je inicijalno opisana HTML kodom. Nad objektima koji predstavljaju HTML elemente su definisana dva svojstva:
 
@@ -257,7 +274,7 @@ if (drugiDiv != null) {
    href="./Primeri/2/index.html"
    target="_blank">Pogledaj primer uživo</a>
 
-### 5.3.2 Izmena vrednosti atributa
+#### Izmena vrednosti atributa
 
 Kao što znamo, veliki broj HTML elemenata ima različite atribute koji ih dodatno okarakterišu. Na primer, element `img` ima atribut `src` koji definiše lokaciju slike koja je potrebno da se prikaže, element `a` ima atribut `href` koji definiše lokaciju resursa ka kojem je potrebno kreirati vezu, itd. HTML elementima možemo dinamički menjati vrednosti atributa tako što promenimo vrednost odgovarajućeg svojstva objekta u DOM stablu koji odgovara tom elementu. Naredni primer ilustruje promenu resursa ka kojem vodi veza.
 
@@ -304,7 +321,7 @@ if (veze.length > 0) {
 
 Na adresi [https://www.w3schools.com/jsref/default.asp](https://www.w3schools.com/jsref/default.asp){:target="\_blank"} u sekciji _HTML Element Objects Reference_ moguće je pronaći za svaki HTML element spisak atributa čije se vrednosti mogu dinamički menjati, zajedno sa njihovim opisima.
 
-### 5.3.3 Izmena stila
+#### Izmena stila
 
 Pored menjanja sadržaja i karakteristika HTML elemenata, JavaScript jezikom je moguće menjati i sam stil prikaza elemenata. Stil elemenata se dinamički može promeniti izmenom vrednosti narednih dva svojstava:
 
@@ -383,7 +400,7 @@ for (const i in paragrafi) {
 
 Na adresi [https://www.w3schools.com/jsref/dom_obj_style.asp](https://www.w3schools.com/jsref/dom_obj_style.asp){:target="\_blank"} moguće je pronaći spisak svojstava svojstva `style` čije se vrednosti mogu dinamički menjati, zajedno sa njihovim opisima.
 
-## 5.4 Dinamičko dodavanje i brisanje elemenata
+### 5.2.3 Dinamičko dodavanje i brisanje elemenata
 
 U ovoj sekciji ćemo opisati i demonstrirati metode definisane nad čvorovima DOM stabla koji se koriste za dinamičko kreiranje, dodavanje i brisanje elemenata koji se nalaze (ili koji treba da se nalaze) u DOM stablu.
 
@@ -641,7 +658,7 @@ for (const elem of elementi_galerije) {
    href="./Primeri/7/index.html"
    target="_blank">Pogledaj primer uživo</a>
 
-## 5.5 Pridruživanje osluškivača događaja elementima
+### 5.2.4 Pridruživanje osluškivača događaja elementima
 
 Većina dinamičkih klijentskih veb aplikacija podrazumeva da postoji nekakva _akcija_ koja se izvršava kada se _dogodi_ nekakva aktivnost. Primeri aktivnosti koje bi mogle da se dogode na stranici su:
 
@@ -799,181 +816,9 @@ element.onclick = handler_2;
 
 Prilikom okidanja događaja `click`, biće pozvan (tj. izvršen) samo osluškivač koji implementira funkcija `handler_2`, dok je osluškivač koji implementira funkcija `handler_1` izgubljen. Postoje načini da se ovo prevaziđe, ali svaki od njih uvodi nove probleme, pri čemu nijedan od njih problema ne daje elegantno rešenje u odnosu na korišćenje pristupa zasnovan na metodima `addEventListener` i `removeEventListener`.
 
-<div class="domaci-zadatak">
-    <span class="naslov">Domaći zadatak 1</span> 
-    <div class="tekst">
-        <p>Neka je data datoteka <a href="https://github.com/MatfUVIT/UVIT/blob/master/vezbe/knjiga/Poglavlja/JSDOM/Domaci/Resursi/zadatak1/index.html">index.html</a> sa narednim sadržajem koja predstavlja osnovu klijentske veb aplikacije.</p>
+### 5.2.5 Obrada podataka u formularu
 
-<p>Zadatak je da implementiramo klijentsku veb aplikaciju koja ispunjava naredni opis. Klikom na dugme “Prikaži podatke” na stranici se prikazuju informacije o studentima u vidu tabele. Prelaskom miša preko neke od ćelija u prvoj koloni (odnosno, ćelija koje sadrže indekse), želimo da se postavi pozadinska boja te ćelije na sivu. Klikom na neku od ćelija koja sadrži indeks, želimo da se u elementu pored tabele prikažu informacije o odabranom studentu.</p>
-
-<p><strong><em>Implementacioni detalji zadatka</em></strong></p>
-
-<p>Sva rešenja čuvati u datoteci `index.js`.</p>
-
-<p>a) Kreirati promenljivu `studenti` koja treba da sadrži podatke o studentima iz naredne tabele. Koristiti odgovarajuće tipove podataka za predstavljanje datih vrednosti. Ova promenljiva se koristi u narednim zahtevima.</p>
-
-<table>
-  <thead>
-    <tr>
-      <th>indeks</th>
-      <th>ime</th>
-      <th>prezime</th>
-      <th>datum_rodjenja</th>
-      <th>mesto_rodjenja</th>
-      <th>datum_upisa</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>20140021</td>
-      <td>Milos</td>
-      <td>Peric</td>
-      <td>20.01.1995.</td>
-      <td>Beograd</td>
-      <td>06.07.2014.</td>
-    </tr>
-    <tr>
-      <td>20140022</td>
-      <td>Marijana</td>
-      <td>Savkovic</td>
-      <td>11.03.1995.</td>
-      <td>Kraljevo</td>
-      <td>05.07.2014.</td>
-    </tr>
-    <tr>
-      <td>20130023</td>
-      <td>Sanja</td>
-      <td>Terzic</td>
-      <td>09.11.1994.</td>
-      <td>Beograd</td>
-      <td>04.07.2013.</td>
-    </tr>
-    <tr>
-      <td>20130024</td>
-      <td>Nikola</td>
-      <td>Vukovic</td>
-      <td>17.09.1994.</td>
-      <td> </td>
-      <td>04.07.2013.</td>
-    </tr>
-    <tr>
-      <td>20140025</td>
-      <td>Marijana</td>
-      <td>Savkovic</td>
-      <td>04.02.1995.</td>
-      <td>Kraljevo</td>
-      <td>06.07.2014.</td>
-    </tr>
-    <tr>
-      <td>20140026</td>
-      <td>Zorica</td>
-      <td>Miladinovic</td>
-      <td>08.10.1995.</td>
-      <td>Vranje</td>
-      <td>06.07.2014.</td>
-    </tr>
-    <tr>
-      <td>20130027</td>
-      <td>Milena</td>
-      <td>Stankovic</td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
-    </tr>
-  </tbody>
-</table>
-
-<p>b) Napisati funkciju `kreiraj_red_tabele(student)` koja kreira objekat koji predstavlja red tabele, pri čemu svaka ćelija u redu odgovara vrednostima koje su sadržane u promenljivoj `student`. Ne koristiti svojstva `innerHTML` i `outerHTML` za dinamičko dodavanje elemenata.</p>
-
-<p>c) Napisati funkciju `postavi_hover_stil()` koja nad objektom koji je poziva kao metod postavlja pozadinsku boju na sivu.</p>
-
-<p>d) Napisati funkciju `ukloni_hover_stil()` koja nad objektom koji je poziva kao metod postavlja pozadinsku boju na belu.</p>
-
-<p>e) Napisati funkciju `odaberi_studenta()` koja redom:</p>
-<ul>
-  <li>Briše sadržaj elementa sa identifikatorom `odabran_student`.</li>
-  <li>U element sa identifikatorom `odabran_student` dodaje naslov sa tekstom.</li>
-  <li>Pronalazi studenta iz niza `studenti` na osnovu indeksa koji se nalazi kao sadržaj objekta nad kojim se funkcija poziva kao metod.</li>
-  <li>U element sa identifikatorom `odabran_student`, za svaku vrednost koja se sadrži u pronađenom studentu, dodaje po jedan paragraf čiji je sadržaj kao na narednoj slici.
-</li>
-</ul>
-
-<img style="max-width: 100%;" src="./Domaci/Resursi/odabran_student.png" alt="">
-
-<p>f) Napisati funkciju `postavi_osluškivače_nad_prvom_kolonom()` koja nad prvom tabelom u dokumentu pronalazi prve ćelije u svakom redu tabele, i za svaku od tih ćelija redom:</p>
-<ul>
-  <li>Postavlja osluškivač `postavi_hover_stil` za događaj 'mouseenter'</li>
-  <li>Postavlja osluškivač `ukloni_hover_stil` za događaj 'mouseleave'</li>
-  <li>Postavlja osluškivač `odaberi_studenta` za događaj 'click'</li>
-</ul>
-
-<p>g) Napisati funkciju `prikaži_podatke()` koja redom:</p>
-<ul>
-  <li>Kreira tabelu na osnovu podataka iz promenljive studenti kao na narednoj slici. Dozvoljeno je korišćenje funkcije `kreiraj_red_tabele`. Ne koristiti svojstva `innerHTML` i `outerHTML` za dinamičko dodavanje elemenata.
-  <img style="max-width: 100%;" src="./Domaci/Resursi/prikazani_podaci.png" alt="">
-  </li>
-  <li>Postavlja osluškivače pozivom funkcije postavi_osluškivače_nad_prvom_kolonom.</li>
-</ul>
-
-<p>Takođe, postaviti osluškivač prikaži_podatke za događaj 'click' nad dugmetom čiji je identifikator prikazi_podatke.</p>
-
-<p>h) Obraditi sve greške u implementaciji.</p>
-    </div>
-</div>
-
-<div class="domaci-zadatak">
-    <span class="naslov">Domaći zadatak 2</span> 
-    <div class="tekst">
-        Neka je data datoteka <a href="https://github.com/MatfUVIT/UVIT/blob/master/vezbe/knjiga/Poglavlja/JSDOM/Domaci/Resursi/zadatak2/index.html">index.html</a> koja predstavlja osnovu klijentske veb aplikacije. Stilovi su dati u datoteci <a href="https://github.com/MatfUVIT/UVIT/blob/master/vezbe/knjiga/Poglavlja/JSDOM/Domaci/Resursi/zadatak2/index.css">index.css</a>.Zadatak je da implementiramo klijentsku veb aplikaciju koja ispunjava naredni opis. Korisnik treba da unese datum u polje "Odaberite datum" i tekst u polje "Unesite podsetnik". Klikom na dugme "Unesi novi podsetnik" na stranici se prikazuje nova stavka "To-do" liste. Prikaz aplikacije je dat na narednoj slici.
-        <img style="max-width: 100%;" src="./Domaci/Resursi/todo.png" alt="">
-        <p><strong>Implementacioni detalji zadatka</strong></p>
-
-<p>Sva rešenja čuvati u datoteci `index.js`.</p>
-
-<p>a) Na početku je lista prazna. Kreirati globalnu promenljivu `toDoLista` koja predstavlja prazan niz obaveza. Ova promenljiva se koristi u narednim zahtevima.</p>
-
-<p>b) Napisati funkciju `prikažiListu()` koja redom:</p>
-<ul>
-    <li>Briše sve elemente iz sadržaja elementa sa identifikatorom `lista`.</li>
-    <li>Za svaku stavku iz promenljive `toDoLista` kreira dete čvor elementa sa identifikatorom `lista`, pri čemu novokreirani čvor treba da zadovoljava naredni HTML i CSS kod:</li>
-</ul>
-
-<pre id="dz-2-3">
-</pre>
-
-<script>
-    document.querySelector("#dz-2-3").innerText = 
-`<div class="stavka">
-    <p style="font-style: italic; margin-left: 10px;">
-        Podsetnik za datum DATUM_PODSETNIKA:
-    </p>
-    <p style="width: 80%; margin: auto; word-wrap: break-word;">
-        TEKST_PODSETNIKA
-    </p>
-</div>`;
-</script>
-
-`DATUM_PODSETNIKA` i `TEKST_PODSETNIKA` treba da budu zamenjeni datumom i tekstom iz stavke liste (videti sliku iznad). Ne koristiti svojstva `innerHTML` i `outerHTML` za dinamičko dodavanje ili brisanje elemenata.
-
-<p>c) Napisati funkciju `dodajStavkuListe()` koja redom:</p>
-<ul>
-    <li>Dohvata informaciju o datumu iz elementa sa identifikatorom `datum` i provera da li je korisnik uneo datum (da li je vrednost polja prazna niska).</li>
-    <li>Dohvata informaciju o tekstu podsetnika iz elementa sa identifikatorom `tekst` i provera da li je korisnik uneo taj tekst (da li je vrednost polja prazna niska).</li>
-    <li>Ukoliko su svi podaci uneti, kreira novu stavku koja sadrži te dve informacije i pamti je u promenljivu `toDoLista`.</li>
-    <li>Poziva funkciju `prikažiListu` da bi se osvežio prikaz obaveza na stranici.</li>
-</ul>
-
-Ne koristiti svojstva `innerHTML` i `outerHTML` za dinamičko dodavanje ili brisanje elemenata.
-
-<p>d) Pridružiti funkciju `dodajStavkuListe` kao osluškivač elementa sa identifikatorom `napravi-todo` na događaju kliktaj miša.</p>
-
-<p>e) Obraditi sve greške u implementaciji.</p>
-    </div>
-</div>
-
-## 5.6 Obrada podataka u formularu
-
-U prethodnom poglavlju bilo je reči o HTML elementima kojima predstavljamo različita polja za unos podataka. Sada ćemo videti kako možemo dohvatati podatke iz formulara i testirati njihove vrednosti u odnosu na predefinisane domene. Više reči o tome kako se podaci iz formulara šalju ka serveru biće kada budemo pričali o načinu obrađivanja podataka na serveru.
+U [poglavlju 1](../HTML/README.md) bilo je reči o HTML elementima kojima predstavljamo različita polja za unos podataka. Sada ćemo videti kako možemo dohvatati podatke iz formulara i testirati njihove vrednosti u odnosu na predefinisane domene. Više reči o tome kako se podaci iz formulara šalju ka serveru biće kada budemo pričali o načinu obrađivanja podataka na serveru.
 
 U nastavku ćemo koristiti formular koji smo ranije napravili i izgleda kao na slici:
 
@@ -1796,26 +1641,381 @@ s.addEventListener('input', function () {
 });
 ```
 
+## 5.3 Osnovni elementi asinhronog programiranja. Odlaganje izvršavanja funkcija.
+
+Za većinu kodova koje smo do sada videli kažemo da se izvršavaju *sinhrono*, odnosno, da se sve radnje u njima izvršavaju sekvencijalno, tj. jedna za drugom. Na primer, pogledajmo naredni kod: 
+
+```js
+function f1() { /* ... */ }
+function f2() { /* ... */ }
+function f3() { /* ... */ }
+
+f1();
+f2();
+f3();
+```
+
+Ovaj kod se izvršava sinhrono. To zapravo znači da poziv funkcije `f2` neće biti izvršen sve dok se ne završi izračunavanje funkcije `f1`. Takođe, funkcija `f3` neće biti pozvana sve dok se ne završi izračunavanje funkcije `f2`.
+
+Kada pozovemo funkciju koja izvršava neku akciju, ona se vraća tek kada je akcija završena i tada može da vrati neki rezultat. Ovim se program stopira za ono vreme koliko je bilo potrebno toj akciji da se završi. Ovo može biti potencijalno problematično. Pogledajmo naredni kod:
+
+```js
+/* ... */
+function dohvatiPodatkeSaInterneta() { 
+  pošaljiZahtev(); 
+  const podaci = čekajDokNeStignuPodaci(); 
+  return podaci; 
+}
+function uradiNekuSkupuOperacijuSaPodacima(podaci) { /* ... */ }
+function prikažiGlavniDeoStranice() { /* ... */ }
+
+const podaci = dohvatiPodatkeSaInterneta();
+uradiNekuSkupuOperacijuSaPodacima(podaci);
+prikažiGlavniDeoStranice();
+```
+
+Kao što smo rekli, da bi se funkcija `prikažiGlavniDeoStranice` izvršila, prvo moraju da se u celosti izvrše funkcije `dohvatiPodatkeSaInterneta` i `uradiNekuSkupuOperacijuSaPodacima`, tim redosledom. Ako izračunavanje ovih funkcija traje (relativno) dugo, na primer, 15 sekundi, onda će korisnik prilikom otvaranja veb stranice u pregledaču gledati 15 sekundi u prazan ekran, pre nego što se pozove funkcija `prikažiGlavniDeoStranice` koja prikazuje glavni sadržaj stranice.
+
+U prethodnom primeru koda, rešenje ovog problema je poprilično jednostavno. Sve što je potrebno da uradimo jeste da promenimo redosled poziva funkcija, tako da se one "važnije" funkcije pozovu prve, a one koje su "manje važne" pozovu nakon njih. Dakle:
+
+```js
+prikažiGlavniDeoStranice();
+const podaci = dohvatiPodatkeSaInterneta();
+uradiNekuSkupuOperacijuSaPodacima(podaci);
+```
+
+Međutim, ovo nije uvek moguće. Aplikacije koje se programiraju u praksi se sastoje od desetine hiljada funkcija. Odrediti poredak izvršavanja ovih funkcija po "važnosti" je praktično nemoguće. Umesto toga, potrebno je promeniti implementaciju funkcija tako da koriste tzv. asinhroni model izvršavanja koda.
+
+Osnovna ideja *asinhronog* modela programiranja jeste da, umesto da program čeka na neka izračunavanja (na primer, da čeka da se podaci dohvate sa interneta) dok ima drugog posla, on će izvršavati ostale funkcije koje može odmah da izračuna. Onoga trenutka kada "pristignu" izračunavanja, tek tada će pozvati funkcije koje su čekale na ta izračunavanja.
+
+Pogledajmo sada neke delove Web API biblioteke kojima možemo ostvariti asinhrono izvršavanje koda. U nastavku teksta ćemo videti dva mehanizma: odlaganje izvršavanja funkcija i kontaktiranje serverskih aplikacija putem HTTP protokola.
+
+### 5.3.1 Odlaganje izvršavanja funkcija. Funkcije povratnih poziva.
+
+Jedan pristup asinhronom programiranju jeste da se funkcije koje izvršavaju duge ili spore akcije konstruišu tako da prihvataju dodatni argument koji predstavlja tzv. *funkciju povratnog poziva* (engl. *callback function*). Takve akcije se započnu, a zatim kada se završe, funkcija povratnog poziva se poziva sa rezultatom te akcije. Ako bolje pogledamo, ova semantika u potpunosti oslikava asinhroni model programiranja koji smo opisali u uvodu.
+
+Kao primer ovog modela, možemo razmotriti funkciju `setTimeout`, dostupnu i u veb pregledačima i u Node.js platformi, koja prihvata dva argumenta: funkciju povratnog poziva i broj milisekundi. Ova funkcija postavlja tajmer koji traje prosleđeni broj milisekundi i po isteku tajmera, poziva se prosleđena funkcija povratnog poziva:
+
+```js
+console.log('Start!');
+setTimeout(function() {
+  console.log('Tick');
+}, 2000);
+```
+
+Ako otvorimo konzolu, prvo što ćemo primetiti jeste da se ispiše:
+
+```js
+Start!
+```
+
+Nakon dve sekunde, ispis se menja u 
+
+```js
+Start!
+Tick
+```
+
+Vidimo da se anonimna funkcija povratnog poziva koju smo prosledili funkciji `setTimeout` izvršila asinhrono, u ovom slučaju, tek nakon što je istekao tajmer koju je postavila funkcija `setTimeout`.
+
+Slično, metod `setInterval` omogućava učestalo izvršavanje zadate funkcije povratnog poziva kao prvi argument u pravilnim vremenskim razmacima čija se perioda zadaje drugim argumentom. Za upravljanje ovim pozivima koristi se povratna vrednost metoda. Pre svega, pozivom metoda `clearInterval`, kojem se prosleđuje povratna vrednost metoda `setInterval`, može se prekinuti dalje ponavljanje poziva. Na primer:
+
+```js
+// Ispiši Tick! svake sekunde
+const si = setInterval(function() {
+  console.log('Tick!');
+}, 1000);
+
+// Nakon 5 sekundi, prekini dalje ispisivanje
+setTimeout(function() {
+  clearInterval(si);
+}, 5500);
+```
+
+Rezultat ispisa:
+
+```js
+Tick!
+Tick!
+Tick!
+Tick!
+Tick!
+```
+
+## 5.4 Komunikacija sa serverskim aplikacijama putem HTTP protokola. `XMLHttpRequest` objekti.
+
+Da bismo poslali asinhroni HTTP zahtev ka nekom resursu (ovakvi zahtevi se još nazivaju i *AJAX* zahtevi, skraćeno od *Asynchronous JavaScript And XML*), potrebno je kreirati objekat klase `XMLHttpRequest`, otvoriti url ka resursu, i poslati zahtev. Nakon što se od serverske aplikacije stigne HTTP odgovor, objekat će sadržati korisne informacije poput tela HTTP odgovora i statusnog koda. Ovaj objekat prolazi kroz razna stanja, kao što je "otvorena konekcija", "finalno stanje" i dr. Svako stanje ima svoj kod.
+
+Kao što smo rekli, prvo je potrebno kreirati objekat, koji se inicijalizuje u stanje `UNSET` (kod je *0*):
+
+```js
+let xhr = new XMLHttpRequest();
+```
+
+Zatim je potrebno formirati HTTP zahtev pozivom metoda `open`. Njegovi argumenti su: 
+1. HTTP metod koji se koristi, 
+2. URL resursa,
+3. Bulova vrednost koja označava da li se zahtev vrši sinhrono ili asinhrono (podrazumevana vrednost je `true`, što označava asinhronost, te ga nije potrebno navesti). Metod ima i dodatne argumente za korisničko ime i lozinku.
+
+```js
+xhr.open('GET', 'http://api.icndb.com/jokes/random');
+```
+
+U ovom trenutku se mogu postaviti zaglavlja HTTP zahteva pomoću `setRequestHeader` metode, na primer, `xhr.setRequestHeader(imePolja, vrednost)`. Zatim je potrebno dodati funkcije povratnog poziva koje će vršiti nekakvu obradu pristiglog odgovora ili, ono što se često radi, obradu pri promeni stanja asinhronog zahteva. 
+
+Odgovor zahteva je sadržan u svojstvima `response`, `responseText` ili `responseXML` u zavisnosti od tipa odgovora. U slučaju greške, svojstvo `statusText` sadrži statusnu poruku koja odgovara HTTP statusnoj poruci. Na primer:
+
+```js
+xhr.addEventListener('load', function() {
+  // Proveravamo da li je odgovor servera sa vrednoscu 200 preko polja zahteva status.
+  if (xhr.status === 200) {
+    console.log(xhr.response);
+  } 
+  else {
+    console.error(xhr.statusText);
+  }
+});
+```
+
+Događaj `'load'` se izvršava kada objekat pređe u finalno stanje `DONE` (kod je *4*). Događaj `error` se izvršava kada dođe do greske prilikom zahteva:
+
+```js
+xhr.addEventListener('error', function() {
+  console.error('Problem prilikom slanja zahteva');
+});
+```
+
+Alternativa je moguća postavljanjem osluškivača nad događajem `readystatechange` koji će pozvati funkciju povratnog poziva prilikom svake promene stanja:
+
+```js
+xhr.addEventListener('readystatechange', function() {
+  switch(xhr.readyState) {
+    case XMLHttpRequest.DONE:
+      if (xhr.status === 200) {
+        console.log(xhr.response);
+      }
+      else {
+        console.error(xhr.statusText);
+      }
+  }
+});
+```
+
+Konačno, potrebno je poslati HTTP zahtev, što se vrši metodom `send`. U zavisnosti od tipa zahteva, opcioni argument metode `send` predstavlja telo zahteva.
+
+```js
+xhr.send();
+```
+
+Iako jednostavan, ovaj primer ilustruje važan koncept, a to je kreiranje komunikacije između klijentskih i serverskih aplikacija korišćenjem `XMLHttpRequest` objekta. Na ovu temu ćemo se osvrnuti još jednom, kada se budemo upoznali sa kreiranjem naših serverskih aplikacija.
+
+## 5.3 Zadaci za vežbu
+
+> Zadatak 1: Potrebno je implementirati klijentsku aplikaciju koja prikazuje preporučene knjige. Neka je dat niz objekata, pri čemu svaki objekat sadrži naredne podatke o knjigama: naziv knjige, autor, isbn, godina izdavanja i URL do slike prednjih korica. U programskom jeziku JavaScript:
+1. Napisati funkciju `kreirajDOMPodstabloZaKnjigu(knjiga)` koja prihvata objekat koji sadrži podatke o jednoj knjizi. Na osnovu ovog objekta je potrebno izgraditi DOM podstablo tako da svaka knjiga bude prikazana kao na narednoj slici. Zabranjeno je korišćenje `innerHTML` i `outerHTML` atributa. Sva stilizovanja uraditi putem `style` atributa.
+![](./Zadaci/zadatak1/postavke.png)
+2. Napisati funkciju `prikažiSveKnjige(nizKnjiga)` koja prikazuje knjige iz prosleđenog niza u `div` elementu čiji je identifikator `preporuceneKnjige`. Ako ovakav element ne postoji, prikazati korisniku poruku u obaveštajnom prozoru. Koristiti funkciju napisanu pod 1.
+
+Rešenje zadatka možete pronaći [ovde](https://github.com/MatfUVIT/UVIT/blob/master/vezbe/knjiga/Poglavlja/JSDOM/Zadaci/zadatak1/).
+
+> Zadatak 2: Napisati HTML datoteku koja sadrži dva naslova, "Types" i "Toppings", praznu tabelu ispod prvog naslova i praznu listu ispod drugog naslova. Napisati JavaScript kod koji šalje asinhroni HTTP GET zahtev na <a href="https://codepen.io/chriscoyier/pen/EAIJj.js">https://codepen.io/chriscoyier/pen/EAIJj.js</a>. U slučaju da je sve prošlo bez greške, prikazati podatke iz odgovora u formatu kao na narednoj slici. U slučaju neuspešnog zahteva ispisati odgovarajuću poruku.
+
+![](./Zadaci/zadatak2/postavke.png)
+
+Rešenje zadatka možete pronaći [ovde](https://github.com/MatfUVIT/UVIT/blob/master/vezbe/knjiga/Poglavlja/JSDOM/Zadaci/zadatak2/).
+
 <div class="domaci-zadatak">
-    <span class="naslov">Domaći zadatak 3</span> 
+    <span class="naslov">Domaći zadatak 1</span> 
+    <div class="tekst">
+        <p>Neka je data datoteka <a href="https://github.com/MatfUVIT/UVIT/blob/master/vezbe/knjiga/Poglavlja/JSDOM/Domaci/Resursi/zadatak1/index.html">index.html</a> koja predstavlja osnovu klijentske veb aplikacije.</p>
+
+<p>Zadatak je da implementiramo klijentsku veb aplikaciju koja ispunjava naredni opis. Klikom na dugme “Prikaži podatke” na stranici se prikazuju informacije o studentima u vidu tabele. Prelaskom miša preko neke od ćelija u prvoj koloni (odnosno, ćelija koje sadrže indekse), želimo da se postavi pozadinska boja te ćelije na sivu. Klikom na neku od ćelija koja sadrži indeks, želimo da se u elementu pored tabele prikažu informacije o odabranom studentu.</p>
+
+<p><strong><em>Implementacioni detalji zadatka</em></strong></p>
+
+<p>Sva rešenja čuvati u datoteci `index.js`.</p>
+
+<p>a) Kreirati promenljivu `studenti` koja treba da sadrži podatke o studentima iz naredne tabele. Koristiti odgovarajuće tipove podataka za predstavljanje datih vrednosti. Ova promenljiva se koristi u narednim zahtevima.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>indeks</th>
+      <th>ime</th>
+      <th>prezime</th>
+      <th>datum_rodjenja</th>
+      <th>mesto_rodjenja</th>
+      <th>datum_upisa</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>20140021</td>
+      <td>Milos</td>
+      <td>Peric</td>
+      <td>20.01.1995.</td>
+      <td>Beograd</td>
+      <td>06.07.2014.</td>
+    </tr>
+    <tr>
+      <td>20140022</td>
+      <td>Marijana</td>
+      <td>Savkovic</td>
+      <td>11.03.1995.</td>
+      <td>Kraljevo</td>
+      <td>05.07.2014.</td>
+    </tr>
+    <tr>
+      <td>20130023</td>
+      <td>Sanja</td>
+      <td>Terzic</td>
+      <td>09.11.1994.</td>
+      <td>Beograd</td>
+      <td>04.07.2013.</td>
+    </tr>
+    <tr>
+      <td>20130024</td>
+      <td>Nikola</td>
+      <td>Vukovic</td>
+      <td>17.09.1994.</td>
+      <td> </td>
+      <td>04.07.2013.</td>
+    </tr>
+    <tr>
+      <td>20140025</td>
+      <td>Marijana</td>
+      <td>Savkovic</td>
+      <td>04.02.1995.</td>
+      <td>Kraljevo</td>
+      <td>06.07.2014.</td>
+    </tr>
+    <tr>
+      <td>20140026</td>
+      <td>Zorica</td>
+      <td>Miladinovic</td>
+      <td>08.10.1995.</td>
+      <td>Vranje</td>
+      <td>06.07.2014.</td>
+    </tr>
+    <tr>
+      <td>20130027</td>
+      <td>Milena</td>
+      <td>Stankovic</td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<p>b) Napisati funkciju `kreiraj_red_tabele(student)` koja kreira objekat koji predstavlja red tabele, pri čemu svaka ćelija u redu odgovara vrednostima koje su sadržane u promenljivoj `student`. Ne koristiti svojstva `innerHTML` i `outerHTML` za dinamičko dodavanje elemenata.</p>
+
+<p>c) Napisati funkciju `postavi_hover_stil()` koja nad objektom koji je poziva kao metod postavlja pozadinsku boju na sivu.</p>
+
+<p>d) Napisati funkciju `ukloni_hover_stil()` koja nad objektom koji je poziva kao metod postavlja pozadinsku boju na belu.</p>
+
+<p>e) Napisati funkciju `odaberi_studenta()` koja redom:</p>
+<ul>
+  <li>Briše sadržaj elementa sa identifikatorom `odabran_student`.</li>
+  <li>U element sa identifikatorom `odabran_student` dodaje naslov sa tekstom.</li>
+  <li>Pronalazi studenta iz niza `studenti` na osnovu indeksa koji se nalazi kao sadržaj objekta nad kojim se funkcija poziva kao metod.</li>
+  <li>U element sa identifikatorom `odabran_student`, za svaku vrednost koja se sadrži u pronađenom studentu, dodaje po jedan paragraf čiji je sadržaj kao na narednoj slici.
+</li>
+</ul>
+
+<img style="max-width: 100%;" src="./Domaci/Resursi/odabran_student.png" alt="">
+
+<p>f) Napisati funkciju `postavi_osluškivače_nad_prvom_kolonom()` koja nad prvom tabelom u dokumentu pronalazi prve ćelije u svakom redu tabele, i za svaku od tih ćelija redom:</p>
+<ul>
+  <li>Postavlja osluškivač `postavi_hover_stil` za događaj 'mouseenter'</li>
+  <li>Postavlja osluškivač `ukloni_hover_stil` za događaj 'mouseleave'</li>
+  <li>Postavlja osluškivač `odaberi_studenta` za događaj 'click'</li>
+</ul>
+
+<p>g) Napisati funkciju `prikaži_podatke()` koja redom:</p>
+<ul>
+  <li>Kreira tabelu na osnovu podataka iz promenljive studenti kao na narednoj slici. Dozvoljeno je korišćenje funkcije `kreiraj_red_tabele`. Ne koristiti svojstva `innerHTML` i `outerHTML` za dinamičko dodavanje elemenata.
+  <img style="max-width: 100%;" src="./Domaci/Resursi/prikazani_podaci.png" alt="">
+  </li>
+  <li>Postavlja osluškivače pozivom funkcije postavi_osluškivače_nad_prvom_kolonom.</li>
+</ul>
+
+<p>Takođe, postaviti osluškivač prikaži_podatke za događaj 'click' nad dugmetom čiji je identifikator prikazi_podatke.</p>
+
+<p>h) Obraditi sve greške u implementaciji.</p>
+    </div>
+</div>
+
+<div class="domaci-zadatak">
+    <span class="naslov">Domaći zadatak 2</span> 
     <div class="tekst">
         U primeru sa formularom smo rekli da su interesovanja opciona (primetimo da smo zbog toga koristili `checkbox` elemente). Istražiti kako bismo u JavaScript jeziku nametnuli ograničenje da korisnik mora da odabere makar 2 interesovanja i napisati odgovarajući kod kojim se proverava to ograničenje.
     </div>
 </div>
 
 <div class="domaci-zadatak">
-    <span class="naslov">Domaći zadatak 4</span> 
+    <span class="naslov">Domaći zadatak 3</span> 
     <div class="tekst">
         Napisati JavaScript kod koji bi "u hodu" proveravao da li je korisničko ime dužine više od 5 karaktera. Drugim rečima, potrebno je da, nakon što korisnik unese korisničko ime nedozvoljene dužine i pređe na naredno polje, veb pregledač prikaže poruku "Korisničko ime mora biti duže od 5 karaktera!" funkcijom window.alert().
     </div>
 </div>
 
 <div class="domaci-zadatak">
-    <span class="naslov">Domaći zadatak 5</span> 
+    <span class="naslov">Domaći zadatak 4</span> 
     <div class="tekst">
         Napisati HTML datoteku koja sadrži formular dat na narednoj slici. Napisati JavaScript kod koji nakon klika na dugme "Izračunaj površinu" izračunava i ispisuje vrednost površine trougla. U slučaju unosa nekorektnih vrednosti, treba ispisati poruku o grešci u obaveštajnom prozoru veb pregledača. Za računanje površine koristiti Heronov obrazac. Formular doterati korišćenjem Bootstrap biblioteke.
     </div>
     <img style="max-width: 100%;" src="./Domaci/Slike/zadatak5.png" alt="">
+</div>
+
+<div class="domaci-zadatak">
+    <span class="naslov">Domaći zadatak 5</span> 
+    <div class="tekst">
+        Neka je data datoteka <a href="https://github.com/MatfUVIT/UVIT/blob/master/vezbe/knjiga/Poglavlja/JSDOM/Domaci/Resursi/zadatak2/index.html">index.html</a> koja predstavlja osnovu klijentske veb aplikacije. Stilovi su dati u datoteci <a href="https://github.com/MatfUVIT/UVIT/blob/master/vezbe/knjiga/Poglavlja/JSDOM/Domaci/Resursi/zadatak2/index.css">index.css</a>. Zadatak je da implementiramo klijentsku veb aplikaciju koja ispunjava naredni opis. Korisnik treba da unese datum u polje "Odaberite datum" i tekst u polje "Unesite podsetnik". Klikom na dugme "Unesi novi podsetnik" na stranici se prikazuje nova stavka "To-do" liste. Prikaz aplikacije je dat na narednoj slici.
+        <img style="max-width: 100%;" src="./Domaci/Resursi/todo.png" alt="">
+        <p><strong>Implementacioni detalji zadatka</strong></p>
+
+<p>Sva rešenja čuvati u datoteci `index.js`.</p>
+
+<p>a) Na početku je lista prazna. Kreirati globalnu promenljivu `toDoLista` koja predstavlja prazan niz obaveza. Ova promenljiva se koristi u narednim zahtevima.</p>
+
+<p>b) Napisati funkciju `prikažiListu()` koja redom:</p>
+<ul>
+    <li>Briše sve elemente iz sadržaja elementa sa identifikatorom `lista`.</li>
+    <li>Za svaku stavku iz promenljive `toDoLista` kreira dete čvor elementa sa identifikatorom `lista`, pri čemu novokreirani čvor treba da zadovoljava naredni HTML i CSS kod:</li>
+</ul>
+
+<pre id="dz-2-3">
+</pre>
+
+<script>
+    document.querySelector("#dz-2-3").innerText = 
+`<div class="stavka">
+    <p style="font-style: italic; margin-left: 10px;">
+        Podsetnik za datum DATUM_PODSETNIKA:
+    </p>
+    <p style="width: 80%; margin: auto; word-wrap: break-word;">
+        TEKST_PODSETNIKA
+    </p>
+</div>`;
+</script>
+
+`DATUM_PODSETNIKA` i `TEKST_PODSETNIKA` treba da budu zamenjeni datumom i tekstom iz stavke liste (videti sliku iznad). Ne koristiti svojstva `innerHTML` i `outerHTML` za dinamičko dodavanje ili brisanje elemenata.
+
+<p>c) Napisati funkciju `dodajStavkuListe()` koja redom:</p>
+<ul>
+    <li>Dohvata informaciju o datumu iz elementa sa identifikatorom `datum` i provera da li je korisnik uneo datum (da li je vrednost polja prazna niska).</li>
+    <li>Dohvata informaciju o tekstu podsetnika iz elementa sa identifikatorom `tekst` i provera da li je korisnik uneo taj tekst (da li je vrednost polja prazna niska).</li>
+    <li>Ukoliko su svi podaci uneti, kreira novu stavku koja sadrži te dve informacije i pamti je u promenljivu `toDoLista`.</li>
+    <li>Poziva funkciju `prikažiListu` da bi se osvežio prikaz obaveza na stranici.</li>
+</ul>
+
+Ne koristiti svojstva `innerHTML` i `outerHTML` za dinamičko dodavanje ili brisanje elemenata.
+
+<p>d) Pridružiti funkciju `dodajStavkuListe` kao osluškivač elementa sa identifikatorom `napravi-todo` na događaju kliktaj miša.</p>
+
+<p>e) Obraditi sve greške u implementaciji.</p>
+    </div>
 </div>
 
 ---
