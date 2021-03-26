@@ -524,7 +524,7 @@ Procedura brisanja elemenata iz DOM stabla liči na proceduru umetanja elemenata
 
 Naredni primer ilustruje drugi pristup, pri čemu se za svako dete čvor ispituje da li sadrži klasu kojom se u HTML delu koda označava da je potrebno da bude obrisano[^3].
 
-[^3]: Zašto u JavaScript kodu koristimo metod `indexOf` nad svojstvom `className` umesto da vršimo poređenje `className === 'obrisi_mene`?
+[^3]: Zašto u JavaScript kodu koristimo metod `indexOf` nad svojstvom `className` umesto da vršimo poređenje `className === 'obrisi_mene'`?
 
 Datoteka `index.html`:
 
