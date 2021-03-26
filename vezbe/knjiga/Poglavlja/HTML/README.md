@@ -1196,7 +1196,7 @@ Najjednostavniji način za unos podataka jeste putem elementa `input`. Njegov pr
     <input type="checkbox" name="vehicle2" value="Car"> I have a car 
     ```
 
-HTML5 standard definiše još više tipova za element `input`. Istražiti definisane tipove na [ovoj adresi](https://www.w3schools.com/html/html\_form\_input\_types.asp) u sekciji "HTML5 Input Types" i obratiti pažnju na kompatibilnost veb pregledača za svaki od njih.
+HTML5 standard definiše još više tipova za element `input`. Istražiti definisane tipove na [ovoj adresi](https://www.w3schools.com/html/html_form_input_types.asp) u sekciji "HTML5 Input Types" i obratiti pažnju na kompatibilnost veb pregledača za svaki od njih.
 
 Element `input` ima i određeni broj atributa specifičnih za njega:
 
@@ -1214,7 +1214,7 @@ Element `input` ima i određeni broj atributa specifičnih za njega:
 
 - Atribut `placeholder` definiše tekst koji će pisati u polju dok korisnik ne unese neku vrednost.
 
-HTML5 standard definiše još više atributa za element `input`. Istražiti definisane atribute na [ovoj adresi](https://www.w3schools.com/html/html\_form\_attributes.asp) u sekciji "HTML5 Attributes" i obratiti pažnju na kompatibilnost veb pregledača za svaki od njih. Naredni primer ilustruje primenu prethodno opisanih atributa i vrednosti:
+HTML5 standard definiše još više atributa za element `input`. Istražiti definisane atribute na [ovoj adresi](https://www.w3schools.com/html/html_form_attributes.asp) u sekciji "HTML5 Attributes" i obratiti pažnju na kompatibilnost veb pregledača za svaki od njih. Naredni primer ilustruje primenu prethodno opisanih atributa i vrednosti:
 
 ```html
 <!DOCTYPE html>
