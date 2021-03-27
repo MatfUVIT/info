@@ -149,61 +149,55 @@ Autori:
 
 ## Deo 3 - Programiranje klijentskih veb aplikacija
 
-### [Poglavlje 5. JavaScript i DOM](./Poglavlja/JSDOM/README.md){:target="_blank"}
+### [Poglavlje 5. JavaScript i WebAPI](./Poglavlja/WebAPI/README.md){:target="_blank"}
 
-1. [Osnovni koncepti DOM stabla](./Poglavlja/JSDOM/README.md#51-osnovni-koncepti-dom-stabla){:target="_blank"}
+1. [Web API](./Poglavlja/WebAPI/README.md#51-web-api){:target="_blank"}
 
-2. [Pretraga elemenata](./Poglavlja/JSDOM/README.md#52-pretraga-elemenata){:target="_blank"}
+2. [Dinamičko menjanje HTML i CSS stranica. DOM API.](./Poglavlja/WebAPI/README.md#52-dinamičko-menjanje-html-i-css-stranica-dom-api){:target="_blank"}
 
-3. [Upravljanje elementima](./Poglavlja/JSDOM/README.md#53-upravljanje-elementima){:target="_blank"}
+    1. [Pretraga elemenata](./Poglavlja/WebAPI/README.md#521-pretraga-elemenata){:target="_blank"}
 
-    1. [Izmena sadržaja](./Poglavlja/JSDOM/README.md#531-izmena-sadržaja){:target="_blank"}
+    2. [Upravljanje elementima](./Poglavlja/WebAPI/README.md#522-upravljanje-elementima){:target="_blank"}
 
-    1. [Izmena vrednosti atributa](./Poglavlja/JSDOM/README.md#532-izmena-vrednosti-atributa){:target="_blank"}
+    3. [Dinamičko dodavanje i brisanje elemenata](./Poglavlja/WebAPI/README.md#523-dinamičko-dodavanje-i-brisanje-elemenata){:target="_blank"}
 
-    1. [Izmena stila](./Poglavlja/JSDOM/README.md#533-izmena-stila){:target="_blank"}
+    4. [Pridruživanje osluškivača događaja elementima](./Poglavlja/WebAPI/README.md#524-pridruživanje-osluškivača-događaja-elementima){:target="_blank"}
 
-4. [Dinamičko dodavanje i brisanje elemenata](./Poglavlja/JSDOM/README.md#54-dinamičko-dodavanje-i-brisanje-elemenata){:target="_blank"}
+    5. [Obrada podataka u formularu](./Poglavlja/WebAPI/README.md#525-obrada-podataka-u-formularu){:target="_blank"}
 
-5. [Pridruživanje osluškivača događaja elementima](./Poglavlja/JSDOM/README.md#55-pridruživanje-osluškivača-događaja-elementima){:target="_blank"}
+3. [Osnovni elementi asinhronog programiranja. Odlaganje izvršavanja funkcija.](./Poglavlja/WebAPI/README.md#53-osnovni-elementi-asinhronog-programiranja-odlaganje-izvršavanja-funkcija){:target="_blank"}
 
-6. [Obrada podataka u formularu](./Poglavlja/JSDOM/README.md#56-obrada-podataka-u-formularu){:target="_blank"}
+    1. [Odlaganje izvršavanja funkcija. Funkcije povratnih poziva.](./Poglavlja/WebAPI/README.md#531-odlaganje-izvršavanja-funkcija-funkcije-povratnih-poziva){:target="_blank"}
+
+4. [Komunikacija sa serverskim aplikacijama putem HTTP protokola. `XMLHttpRequest` objekti.](./Poglavlja/WebAPI/README.md#54-komunikacija-sa-serverskim-aplikacijama-putem-http-protokola-xmlhttprequest-objekti){:target="_blank"}
 
 ### [Poglavlje 6. Biblioteka jQuery](./Poglavlja/JQuery/README.md){:target="_blank"}
 
-1. [Asinhrono programiranje](./Poglavlja/JQuery/README.md#61-asinhrono-programiranje){:target="_blank"}
+1. [Instalacija jQuery biblioteke](./Poglavlja/JQuery/README.md#61-instalacija-jquery-biblioteke){:target="_blank"}
 
-    1. [Funkcije povratnog poziva](./Poglavlja/JQuery/README.md#611-funkcije-povratnog-poziva){:target="_blank"}
+2. [Osnovna jQuery sintaksa](./Poglavlja/JQuery/README.md#62-osnovna-jquery-sintaksa){:target="_blank"}
 
-    2. [`XMLHttpRequest` objekat](./Poglavlja/JQuery/README.md#612-xmlhttprequest-objekat){:target="_blank"}
-     
-        1. [Slanje zahteva](./Poglavlja/JQuery/README.md#6121-slanje-zahteva){:target="_blank"}
+    1. ["Dokument je spreman" događaj](./Poglavlja/JQuery/README.md#621-dokument-je-spreman-događaj){:target="_blank"}
 
-2. [Instalacija jQuery biblioteke](./Poglavlja/JQuery/README.md#62-instalacija-jquery-biblioteke){:target="_blank"}
+3. [jQuery selektori](./Poglavlja/JQuery/README.md#63-jquery-selektori){:target="_blank"}
 
-3. [Osnovna jQuery sintaksa](./Poglavlja/JQuery/README.md#63-osnovna-jquery-sintaksa){:target="_blank"}
+4. [jQuery metodi zasnovani na događajima](./Poglavlja/JQuery/README.md#64-jquery-metodi-zasnovani-na-događajima){:target="_blank"}
 
-    1. ["Dokument je spreman" događaj](./Poglavlja/JQuery/README.md#631-dokument-je-spreman-događaj){:target="_blank"}
+5. [jQuery efekti i animacije](./Poglavlja/JQuery/README.md#65-jquery-efekti-i-animacije){:target="_blank"}
 
-4. [jQuery selektori](./Poglavlja/JQuery/README.md#64-jquery-selektori){:target="_blank"}
-
-5. [jQuery metodi zasnovani na događajima](./Poglavlja/JQuery/README.md#65-jquery-metodi-zasnovani-na-događajima){:target="_blank"}
-
-6. [jQuery efekti i animacije](./Poglavlja/JQuery/README.md#66-jquery-efekti-i-animacije){:target="_blank"}
-
-    1. [Korišćenje funkcionalnosti reda](./Poglavlja/JQuery/README.md#661-korišćenje-funkcionalnosti-reda){:target="_blank"}
+    1. [Korišćenje funkcionalnosti reda](./Poglavlja/JQuery/README.md#651-korišćenje-funkcionalnosti-reda){:target="_blank"}
     
-    2. [Implementiranje animacija korišćenjem funkcija povratnog poziva](./Poglavlja/JQuery/README.md#662-implementiranje-animacija-korišćenjem-funkcija-povratnog-poziva){:target="_blank"}
+    2. [Implementiranje animacija korišćenjem funkcija povratnog poziva](./Poglavlja/JQuery/README.md#652-implementiranje-animacija-korišćenjem-funkcija-povratnog-poziva){:target="_blank"}
 
-7. [Lančanje metoda](./Poglavlja/JQuery/README.md#67-lančanje-metoda){:target="_blank"}
+6. [Lančanje metoda](./Poglavlja/JQuery/README.md#66-lančanje-metoda){:target="_blank"}
 
-8. [Upravljanje DOM stablom](./Poglavlja/JQuery/README.md#68-upravljanje-dom-stablom){:target="_blank"}
+7. [Upravljanje DOM stablom](./Poglavlja/JQuery/README.md#67-upravljanje-dom-stablom){:target="_blank"}
 
-9. [Upravljanje stilovima](./Poglavlja/JQuery/README.md#69-upravljanje-stilovima){:target="_blank"}
+8. [Upravljanje stilovima](./Poglavlja/JQuery/README.md#68-upravljanje-stilovima){:target="_blank"}
 
-    1. [Upravljanje modelom kutije](./Poglavlja/JQuery/README.md#691-upravljanje-modelom-kutije){:target="_blank"}
+    1. [Upravljanje modelom kutije](./Poglavlja/JQuery/README.md#681-upravljanje-modelom-kutije){:target="_blank"}
 
-10. [AJAX zahtevi](./Poglavlja/JQuery/README.md#610--ajax-zahtevi){:target="_blank"}
+9. [AJAX zahtevi](./Poglavlja/JQuery/README.md#69--ajax-zahtevi){:target="_blank"}
 
 ## Deo 4 - Programiranje serverskih veb aplikacija
 

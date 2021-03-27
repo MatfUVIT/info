@@ -1816,18 +1816,18 @@ Iako jednostavan, ovaj primer ilustruje važan koncept, a to je kreiranje komuni
 ![](./Zadaci/zadatak1/postavke.png)
 2. Napisati funkciju `prikažiSveKnjige(nizKnjiga)` koja prikazuje knjige iz prosleđenog niza u `div` elementu čiji je identifikator `preporuceneKnjige`. Ako ovakav element ne postoji, prikazati korisniku poruku u obaveštajnom prozoru. Koristiti funkciju napisanu pod 1.
 
-Rešenje zadatka možete pronaći [ovde](https://github.com/MatfUVIT/UVIT/blob/master/vezbe/knjiga/Poglavlja/JSDOM/Zadaci/zadatak1/).
+Rešenje zadatka možete pronaći [ovde](https://github.com/MatfUVIT/UVIT/blob/master/vezbe/knjiga/Poglavlja/WebAPI/Zadaci/zadatak1/).
 
 > Zadatak 2: Napisati HTML datoteku koja sadrži dva naslova, "Types" i "Toppings", praznu tabelu ispod prvog naslova i praznu listu ispod drugog naslova. Napisati JavaScript kod koji šalje asinhroni HTTP GET zahtev na <a href="https://codepen.io/chriscoyier/pen/EAIJj.js">https://codepen.io/chriscoyier/pen/EAIJj.js</a>. U slučaju da je sve prošlo bez greške, prikazati podatke iz odgovora u formatu kao na narednoj slici. U slučaju neuspešnog zahteva ispisati odgovarajuću poruku.
 
 ![](./Zadaci/zadatak2/postavke.png)
 
-Rešenje zadatka možete pronaći [ovde](https://github.com/MatfUVIT/UVIT/blob/master/vezbe/knjiga/Poglavlja/JSDOM/Zadaci/zadatak2/).
+Rešenje zadatka možete pronaći [ovde](https://github.com/MatfUVIT/UVIT/blob/master/vezbe/knjiga/Poglavlja/WebAPI/Zadaci/zadatak2/).
 
 <div class="domaci-zadatak">
     <span class="naslov">Domaći zadatak 1</span> 
     <div class="tekst">
-        <p>Neka je data datoteka <a href="https://github.com/MatfUVIT/UVIT/blob/master/vezbe/knjiga/Poglavlja/JSDOM/Domaci/Resursi/zadatak1/index.html">index.html</a> koja predstavlja osnovu klijentske veb aplikacije.</p>
+        <p>Neka je data datoteka <a href="https://github.com/MatfUVIT/UVIT/blob/master/vezbe/knjiga/Poglavlja/WebAPI/Domaci/Resursi/zadatak1/index.html">index.html</a> koja predstavlja osnovu klijentske veb aplikacije.</p>
 
 <p>Zadatak je da implementiramo klijentsku veb aplikaciju koja ispunjava naredni opis. Klikom na dugme “Prikaži podatke” na stranici se prikazuju informacije o studentima u vidu tabele. Prelaskom miša preko neke od ćelija u prvoj koloni (odnosno, ćelija koje sadrže indekse), želimo da se postavi pozadinska boja te ćelije na sivu. Klikom na neku od ćelija koja sadrži indeks, želimo da se u elementu pored tabele prikažu informacije o odabranom studentu.</p>
 
@@ -1971,7 +1971,7 @@ Rešenje zadatka možete pronaći [ovde](https://github.com/MatfUVIT/UVIT/blob/m
 <div class="domaci-zadatak">
     <span class="naslov">Domaći zadatak 5</span> 
     <div class="tekst">
-        Neka je data datoteka <a href="https://github.com/MatfUVIT/UVIT/blob/master/vezbe/knjiga/Poglavlja/JSDOM/Domaci/Resursi/zadatak2/index.html">index.html</a> koja predstavlja osnovu klijentske veb aplikacije. Stilovi su dati u datoteci <a href="https://github.com/MatfUVIT/UVIT/blob/master/vezbe/knjiga/Poglavlja/JSDOM/Domaci/Resursi/zadatak2/index.css">index.css</a>. Zadatak je da implementiramo klijentsku veb aplikaciju koja ispunjava naredni opis. Korisnik treba da unese datum u polje "Odaberite datum" i tekst u polje "Unesite podsetnik". Klikom na dugme "Unesi novi podsetnik" na stranici se prikazuje nova stavka "To-do" liste. Prikaz aplikacije je dat na narednoj slici.
+        Neka je data datoteka <a href="https://github.com/MatfUVIT/UVIT/blob/master/vezbe/knjiga/Poglavlja/WebAPI/Domaci/Resursi/zadatak2/index.html">index.html</a> koja predstavlja osnovu klijentske veb aplikacije. Stilovi su dati u datoteci <a href="https://github.com/MatfUVIT/UVIT/blob/master/vezbe/knjiga/Poglavlja/WebAPI/Domaci/Resursi/zadatak2/index.css">index.css</a>. Zadatak je da implementiramo klijentsku veb aplikaciju koja ispunjava naredni opis. Korisnik treba da unese datum u polje "Odaberite datum" i tekst u polje "Unesite podsetnik". Klikom na dugme "Unesi novi podsetnik" na stranici se prikazuje nova stavka "To-do" liste. Prikaz aplikacije je dat na narednoj slici.
         <img style="max-width: 100%;" src="./Domaci/Resursi/todo.png" alt="">
         <p><strong>Implementacioni detalji zadatka</strong></p>
 
