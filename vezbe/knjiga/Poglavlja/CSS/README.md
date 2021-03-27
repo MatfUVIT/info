@@ -1176,7 +1176,7 @@ Za više informacijama o temama koje su obrađene u ovoj sekciji, možete poseti
 <div class="domaci-zadatak">
     <span class="naslov">Domaći zadatak 2</span> 
     <p class="tekst">
-        Napisati HTML i CSS kod koji odgovara stranici na narednoj slici. Familiju fontova koja se koristi u zadatku moguće je pronaći na <a href="./Resursi/zadatak2_font.ttf">ovoj lokaciji</a>. Pomoću validatora osigurati se da je kod napisan u skladu sa HTML5 i CSS3 standardom.
+        Napisati HTML i CSS kod koji odgovara stranici na narednoj slici. Familiju fontova koja se koristi u zadatku moguće je pronaći na <a href="./Domaci/Resursi/zadatak2_font.ttf">ovoj lokaciji</a>. Pomoću validatora osigurati se da je kod napisan u skladu sa HTML5 i CSS3 standardom.
     </p>
     <img style="max-width: 100%;" src="./Domaci/Slike/zadatak2.png" alt="">
 </div>
@@ -2504,7 +2504,7 @@ Za više informacijama o temama koje su obrađene u ovoj sekciji, možete poseti
 <div class="domaci-zadatak">
     <span class="naslov">Domaći zadatak 6</span> 
     <div class="tekst">
-        Napisati HTML i CSS kod koji odgovara stranici na narednoj slici. Pomoću validatora osigurati se da je kod napisan u skladu sa HTML5 i CSS3 standardom. Za pozadinu stranice korišcena je boja skyblue. Stranica se sastoji iz tri dela - naslovnog, glavnog i podnožja. Za naslovni deo korišcen je gradijent od boje orange do boje yellow. Za pozadinu glavnog dela korišcena je <a href="./Domaci/Resursi/ptice.png">ova slika</a>. Za pozadinu podnožja korišcen je gradijent od boje greenyellow do boje skyblue, kao i <a href="./Resursi/trava.png">ova slika</a>.
+        Napisati HTML i CSS kod koji odgovara stranici na narednoj slici. Pomoću validatora osigurati se da je kod napisan u skladu sa HTML5 i CSS3 standardom. Za pozadinu stranice korišcena je boja skyblue. Stranica se sastoji iz tri dela - naslovnog, glavnog i podnožja. Za naslovni deo korišcen je gradijent od boje orange do boje yellow. Za pozadinu glavnog dela korišcena je <a href="./Domaci/Resursi/ptice.png">ova slika</a>. Za pozadinu podnožja korišcen je gradijent od boje greenyellow do boje skyblue, kao i <a href="./Domaci/Resursi/trava.png">ova slika</a>.
     </div>
     <img style="max-width: 100%;" src="./Domaci/Slike/zadatak6.png" alt="">
 </div>
@@ -2512,7 +2512,7 @@ Za više informacijama o temama koje su obrađene u ovoj sekciji, možete poseti
 <div class="domaci-zadatak">
     <span class="naslov">Domaći zadatak 7</span> 
     <div class="tekst">
-        Napisati HTML i CSS kod koji odgovara stranici na narednoj slici. Pomoću validatora osigurati se da je kod napisan u skladu sa HTML5 i CSS3 standardom. Za pozadinu su korišćene boje rgb(5, 48, 84) i white zajedno sa slikama <a href="./Domaci/Resursi/pahulje.png">pahulja</a> i <a href="./Resursi/snesko.png">sneška</a>.
+        Napisati HTML i CSS kod koji odgovara stranici na narednoj slici. Pomoću validatora osigurati se da je kod napisan u skladu sa HTML5 i CSS3 standardom. Za pozadinu su korišćene boje rgb(5, 48, 84) i white zajedno sa slikama <a href="./Domaci/Resursi/pahulje.png">pahulja</a> i <a href="./Domaci/Resursi/snesko.png">sneška</a>.
     </div>
     <img style="max-width: 100%;" src="./Domaci/Slike/zadatak7.png" alt="">
 </div>
