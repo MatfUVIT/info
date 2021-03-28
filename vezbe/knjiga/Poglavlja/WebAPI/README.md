@@ -29,29 +29,31 @@
 
 Sada kada smo savladali osnovne koncepte jezika JavaScript, u stanju smo da primenimo stečena znanja radi kreiranja klijentskih aplikacija. U ovom uvodnom poglavlju u delu 3 - "Programiranje klijentskih veb aplikacija", diskutovaćemo o tome šta klijentske aplikacije predstavljaju iz ugla programera, kako se one implementiraju i koji su to osnovni elementi _interfejsa programiranja aplikacija_ (engl. _application programming interface_, skr. _API_) koji su nam dostupni na raspolaganju za kreiranje klijentskih aplikacija.
 
-_Klijentska aplikacija_ predstavlja veb aplikaciju koja se sastoji od skupa HTML datoteka i resursa koje te HTML datoteke koriste. Već smo videli veliki broj resursa koje jedna HTML datoteka može da koristi. Neki od primera su: CSS datoteke, slike, veb lokacije (u kontekstu veza) i JS datoteke. Zapravo, sve aplikacije koje smo do sada pravili predstavljaju klijentske aplikacije. Međutim, klijentske aplikacije se ugrubo mogu podeliti u dve vrste:
+_Klijentska aplikacija_ predstavlja veb aplikaciju koja se sastoji od skupa HTML datoteka i resursa koje te HTML datoteke koriste, a koja se izvršava na klijentskom računaru, tj. na računaru korisnika. Već smo videli veliki broj resursa koje jedna HTML datoteka može da koristi. Neki od primera su: CSS datoteke, slike, veb lokacije (u kontekstu veza) i JS datoteke. Zapravo, sve aplikacije koje smo do sada pravili predstavljaju klijentske aplikacije. Najčešće se klijentske aplikacije izvršavaju u okviru veb pregledača i takve aplikacije ćemo i mi programirati. Drugim rečima, naše klijentske aplikacije će se osloniti na različite elemente koji su implementirani u veb pregledačima, kao što je mašina za izvršavanje JavaScript koda, mašina za iscrtavanje u pogledu veb pregledača, mehanizmi za upravljanje komunikacijom putem mreže, itd. Međutim, klijentske aplikacije se ugrubo mogu podeliti u dve vrste:
 
 1. _Statičke_ klijentske aplikacije su one koje ne zahtevaju izvršavanje JavaScript koda.
 
 2. _Dinamičke_ klijentske aplikacije su one koje zahtevaju izvršavanje JavaScript koda.
 
-Mi smo do sada (sa izuzetkom poglavlja 4 - "Programski jezik JavaScript" gde smo demonstrirali elemente programskog jezika JavaScript) kreirali isključivo statičke klijentske aplikacije. Ove aplikacije su bile sačinjene od definicija strukture pomoću HTML datoteka i definicija stilova te strukture pomoću CSS datoteka, uz eventualno prikazivanje resursa poput slika ili veza. U ovom poglavlju ćemo se baviti dinamičkim klijentskim aplikacijama, odnosno, naučićemo kako da pišemo JavaScript kodove koje izvršavaju neke dinamičke aktivnosti na veb prezentaciji, na primer, menjanje stilova HTML elemenata, obrada podataka u formularu i dr.
+Mi smo do sada (sa izuzetkom poglavlja 4 - "Programski jezik JavaScript" gde smo demonstrirali elemente programskog jezika JavaScript) kreirali isključivo statičke klijentske aplikacije. Ove aplikacije su bile sačinjene od definicija strukture pomoću HTML datoteka i definicija stilova te strukture pomoću CSS datoteka, uz eventualno prikazivanje resursa poput slika ili veza. U ovom poglavlju ćemo se baviti dinamičkim klijentskim aplikacijama, odnosno, naučićemo kako da pišemo JavaScript kodove koje izvršavaju neke dinamičke aktivnosti na veb prezentaciji, na primer, menjanje stilova HTML elemenata, obrada podataka u formularu, dohvatanje podataka sa serverskih aplikacija preko mreže, i dr.
 
 ## 5.1 Web API
 
-Da bismo mogli da kreiramo dinamičke klijentske aplikacije, potrebno je da postoje funkcije ili objekti koji nam omogućavaju da implementiramo te, dinamičke funkcionalnosti. U "čistom" JavaScript jeziku koji smo videli do sada, to nije moguće. Umesto toga, moramo da se oslonimo na neke biblioteke koje nam to omogućavaju. Na primer, svi savremeni veb pregledači implementiraju skup biblioteka koja se naziva [Web API](https://developer.mozilla.org/en-US/docs/Web/API). Web API predstavlja obimnu kolekciju raznovrsnih funkcija ili objekata, podeljenih po manjim bibliotekama, koji nam omogućavaju da implementiramo raznovrsne funkcionalnosti u aplikacijama koje kodiramo u programskom jeziku JavaScript. Neke od tih funkcionalnosti su:
+Da bismo mogli da kreiramo dinamičke klijentske aplikacije, potrebno je da postoje funkcije ili objekti koji nam omogućavaju da koristimo te dinamičke funkcionalnosti u našim JavaScript aplikacijama. U "čistom" JavaScript jeziku koji smo videli do sada, to nije moguće. Umesto toga, moramo da se oslonimo na neke biblioteke koje nam to omogućavaju. Na primer, svi savremeni veb pregledači implementiraju skup biblioteka koji se naziva [Web API](https://developer.mozilla.org/en-US/docs/Web/API). Web API predstavlja obimnu kolekciju raznovrsnih funkcija ili objekata, podeljenih po manjim bibliotekama, koji nam omogućavaju da implementiramo raznovrsne funkcionalnosti u aplikacijama koje kodiramo u programskom jeziku JavaScript. Neke od tih funkcionalnosti su:
 
 - **Komunikacija sa konzolom.** Objekat `console` koji smo koristili do sada zapravo nije ugrađen u sam jezik JavaScript, već je deo biblioteke [Console API](https://developer.mozilla.org/en-US/docs/Web/API/Console_API). To je zapravo i jedini objekat koji se nalazi u ovoj biblioteci.
 
 - **Dinamičko menjanje HTML i CSS stranica.** Do sada smo sve veb stranice kodirali pisanjem HTML i CSS koda koji definišu strukturu tih stranica. Međutim, moguće je kombinacijom JavaScript jezika i biblioteke koja se zove [DOM API](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model) promeniti strukturu napisanih stranica. Na primer, možemo dodavati nove elemente, brisati postojeće, menjati njihov stil itd. U nastavku teksta ćemo koristiti ovaj API da bismo kreirali dinamičke klijentske veb aplikacije.
 
-- **Odlaganje izvršavanja funkcija.** Na primer, možemo reći JavaScript okruženju da izvrši neku funkciju nakon 5 sekundi (dakle, asinhrono). U nastavku teksta ćemo prikazati funkcije [setTimeout](https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/setTimeout) i [setInterval](https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/setInterval) kojima je moguće ovo postići.
+- **Odlaganje izvršavanja funkcija.** Na primer, možemo reći JavaScript okruženju da izvrši neku funkciju nakon 5 sekundi (ovo ponašanje i njemu slična ćemo nadalje zvati _asinhronim izvršavanjem koda_). U nastavku teksta ćemo prikazati funkcije [setTimeout](https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/setTimeout) i [setInterval](https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/setInterval) kojima je moguće ovo postići.
 
-- **Kontaktiranje serverskih aplikacija putem HTTP protokola.** Na primer, možemo kontaktirati neku serversku aplikaciju (bilo da je to aplikaciju koju smo mi implementirali ili koju je neko drugi implementirao). Ova komunikacija se može izvršiti sinhrono ili asinhrono. Međutim, u praksi se obavezno koristi asinhroni pristup kako se aplikacija ne bi blokirala. U nastavku teksta ćemo prikazati funkciju [XMLHttpRequest](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest) kojom je moguće ovo postići.
+- **Kontaktiranje serverskih aplikacija putem HTTP protokola.** Na primer, možemo kontaktirati neku serversku aplikaciju (bilo da je to aplikaciju koju smo mi implementirali ili koju je neko drugi implementirao) putem HTTP protokola i zatražiti da ta serverska aplikacija izvrši nekakvu akciju. Akcije mogu biti razne i zavise od implementacije te serverske aplikacije. Na primer, ove akcije mogu obuhvatati: dohvatanje ili skladištenje podataka u bazama podataka, dohvatanje dokumenata, slika i drugih resursa, prevođenje teksta, slanje elektronske pošte, obradu slika, itd. Ova komunikacija putem HTTP protokola se može izvršiti sinhrono ili asinhrono. Međutim, u praksi se obavezno koristi asinhroni pristup kako se aplikacija ne bi blokirala. U nastavku teksta ćemo prikazati tzv. _konstruktorsku funkciju_ [XMLHttpRequest](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest) kojom je moguće ovo postići.
 
 - **Crtanje u pogledu veb pregledača.** Postoje dva dela Web API biblioteke kojima je ovo moguće: [Canvas API](https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API) i [WebGL API](https://developer.mozilla.org/en-US/docs/Web/API/WebGL_API). O ovom API-ju neće biti reči u okviru kursa.
 
 - **Skladištenje podataka u veb pregledaču.** Iako ćemo u nastavku kursa videti zašto se podaci pretežno skladište pomoću serverskih aplikacijama na serverima, nekada je zgodno čuvati i neke podatke na strani klijenta. Za te potrebe postoji [Storage API](https://developer.mozilla.org/en-US/docs/Web/API/Storage_API) koji nudi različite mehanizme za skladištenje podataka u veb pregledačima. O ovom API-ju neće biti reči u okviru kursa.
+
+Naravno, ovaj spisak izlistava tek jedan deo obimne biblioteke Web API.
 
 ## 5.2 Dinamičko menjanje HTML i CSS stranica. DOM API. 
 
@@ -1758,7 +1760,7 @@ Zatim je potrebno formirati HTTP zahtev pozivom metoda `open`. Njegovi argumenti
 3. Bulova vrednost koja označava da li se zahtev vrši sinhrono ili asinhrono (podrazumevana vrednost je `true`, što označava asinhronost, te ga nije potrebno navesti). Metod ima i dodatne argumente za korisničko ime i lozinku.
 
 ```js
-xhr.open('GET', 'http://api.icndb.com/jokes/random');
+xhr.open('GET', 'https://jsonplaceholder.typicode.com/posts/');
 ```
 
 U ovom trenutku se mogu postaviti zaglavlja HTTP zahteva pomoću `setRequestHeader` metode, na primer, `xhr.setRequestHeader(imePolja, vrednost)`. Zatim je potrebno dodati funkcije povratnog poziva koje će vršiti nekakvu obradu pristiglog odgovora ili, ono što se često radi, obradu pri promeni stanja asinhronog zahteva. 
@@ -1807,7 +1809,179 @@ Konačno, potrebno je poslati HTTP zahtev, što se vrši metodom `send`. U zavis
 xhr.send();
 ```
 
+Celokupan kod je dat u nastavku:
+
+```js
+let xhr = new XMLHttpRequest();
+xhr.open('GET', 'https://jsonplaceholder.typicode.com/posts/');
+xhr.addEventListener('readystatechange', function() {
+  switch(xhr.readyState) {
+    case XMLHttpRequest.DONE:
+      if (xhr.status === 200) {
+        console.log(xhr.response);
+      }
+      else {
+        console.error(xhr.statusText);
+      }
+  }
+});
+xhr.send();
+```
+
 Iako jednostavan, ovaj primer ilustruje važan koncept, a to je kreiranje komunikacije između klijentskih i serverskih aplikacija korišćenjem `XMLHttpRequest` objekta. Na ovu temu ćemo se osvrnuti još jednom, kada se budemo upoznali sa kreiranjem naših serverskih aplikacija.
+
+### 5.4.1 Rad sa podacima u JSON formatu
+
+_JavaScript Object Notation_ (skr. _JSON_) predstavlja standardni format teksta koji služi za reprezentaciju podataka, zasnovan na JavaScript sintaksi zapisivanja objekata. JSON se često koristi za razmenu podataka između veb aplikacija (na primer, za slanje podataka od serverske aplikacije ka klijentskoj aplikaciji, kako bi se ti podaci prikazali na veb stranici, ili obrnuto, za slanje podataka od klijentske aplikacije ka serverskoj aplikaciji kako bi se ti podaci skladištili u nekoj bazi podataka). Iako JSON sintaksa vrlo liči na sintaksu zapisivanja JavaScript objekata, JSON se koristi potpuno nezavisno od samog jezika JavaScript, i razni programski jezici ili biblioteke implementiraju mogućnost za upravljanje podacima zapisanim u JSON formatu. Naravno, mi ćemo se u nastavku fokusirati na upotrebu JSON formata u programskom jeziku JavaScript.
+
+Kada kažemo da su neki podaci zapisani u JSON formatu, zapravo mislimo da su ti podaci zapisani u nekakvoj niski. Da bismo išta mogli da uradimo sa tim podacima, potrebno je da ih prvo pretvorimo u JavaScript objekte. Naravno, važno je da postoje mehanizmi za pretvaranje već izračunatih i pripremljenih podataka u JSON niske. 
+
+JSON niska se može čuvati u datoteci, što je u susštini obična tekstualna datoteka sa ekstenzijom `.json`. Podaci zapisani u JSON formatu imaju MIME tip `application/json`.
+
+#### Pretvaranje između JavaScript vrednosti i JSON niski
+
+Kao u prethodnom primeru kad smo dohvatali informacije sa interneta, često dobijamo kao odgovor JSON nisku, koju je potrebno da konvertujemo u odgovarajuću JavaScript vrednost. Takođe, kada želimo da pošaljemo neke podatke putem mreže, potrebno je da ih konvertujemo u JSON nisku pre slanja. Na sreću, u JavaScript jeziku postoje ugrađeni mehanizmi za obradu JSON niski. Za ove potrebe ćemo koristiti ugrađeni objekat `JSON`, dostupan u veb pregledačima, koji sadrži naredna dva metoda:
+
+- `parse()`: Prihvata JSON nisku kao parametar i vraća JavaScript vrednost kao rezultat.
+- `stringify()`: Prihvata JavaScript vrednost kao argument i vraća JSON nisku.
+
+Možemo prikazati korišćenje prvog metoda kroz ažuriranu verziju prethodnog primera. Ova verzija radi istu stvar kao i malopre - dohvata podatke sa serverske aplikacije - ali ovoga puta koristimo metod `parse()` kako bismo pretvorili rezultat u JavaScript vrednost, nad kojom možemo izvršiti nekakvu akciju:
+
+```js
+let xhr = new XMLHttpRequest();
+xhr.open('GET', 'https://jsonplaceholder.typicode.com/posts/');
+xhr.addEventListener('readystatechange', function() {
+  switch(xhr.readyState) {
+    case XMLHttpRequest.DONE:
+      if (xhr.status === 200) {
+        const stringJSON = xhr.response;
+        console.log(stringJSON, typeof stringJSON);
+        // Pretvaranje niske zapisane u JSON formatu u JavaScript vrednost
+        const posts = JSON.parse(stringJSON);
+        console.log(posts, typeof posts);
+
+        for (const post of posts) {
+          document.body.innerHTML += `<p>${post.id}. ${post.title}</p>`;
+        }
+      }
+      else {
+        console.error(xhr.statusText);
+      }
+  }
+});
+xhr.send();
+```
+
+Kao što možete pretpostaviti, `JSON.stringify()` radi na suprotan način. Naredni JavaScript kod će pretvoriti vrednost promenljive `myObj`, što je objekat koji živi u memoriji veb pregledača, u nisku `myString` koja predstavlja tekstualnu reprezentaciju tog objekta, zapisanu u JSON formatu.
+
+```js
+let myObj = { name: "Chris", age: 38 };
+console.log(myObj, typeof myObj);
+
+// Pretvaranje JavaScript vrednosti u nisku zapisanu u JSON formatu
+let myString = JSON.stringify(myObj);
+console.log(myString, typeof myString);
+```
+
+#### JSON struktura
+
+Kao što smo opisali iznad, JSON predstavlja format zapisa niske koji veoma liči na notaciju zapisivanja JavaScript objekata. U ovom formatu možemo zapisati neke osnovne tipove podataka, kao što bismo i u standardnom JavaScript objektu - niske, brojeve, nizove, Bulove vrednosti i druge objekte. Ovo nam omogućava da kreiramo kompleksne hijerarhije podataka, na primer:
+
+```json
+{
+  "squadName": "Super hero squad",
+  "homeTown": "Metro City",
+  "formed": 2016,
+  "secretBase": "Super tower",
+  "active": true,
+  "members": [
+    {
+      "name": "Molecule Man",
+      "age": 29,
+      "secretIdentity": "Dan Jukes",
+      "powers": [
+        "Radiation resistance",
+        "Turning tiny",
+        "Radiation blast"
+      ]
+    },
+    {
+      "name": "Madame Uppercut",
+      "age": 39,
+      "secretIdentity": "Jane Wilson",
+      "powers": [
+        "Million tonne punch",
+        "Damage resistance",
+        "Superhuman reflexes"
+      ]
+    },
+    {
+      "name": "Eternal Flame",
+      "age": 1000000,
+      "secretIdentity": "Unknown",
+      "powers": [
+        "Immortality",
+        "Heat Immunity",
+        "Inferno",
+        "Teleportation",
+        "Interdimensional travel"
+      ]
+    }
+  ]
+}
+```
+
+Ako bismo nisku iznad učitali u JavaScript program, a zatim ga parsirali u promenljivu `superHeroes`, onda bismo mogli da pristupimo podacima unutar parsiranog objekta korišćenjem tačka-notacije ili notacije sa uglastim zagradama. Na primer:
+
+```js
+superHeroes.homeTown
+superHeroes['active']
+```
+
+Ako želimo da pristupimo podacima koji su dublje u hijerarhiji, možemo ulančavati nazive svojstava i indekse nizova, koliko god je to neophodno. Na primer, ako želimo da pristupimo trećoj supermoći drugog heroja iz liste, to bismo uradili izrazom:
+
+```js
+superHeroes.members[1]['powers'][2]
+```
+
+#### Nizovi u JSON
+
+JSON niska ne mora sadržati samo objekte na vrhu hijerarhije podataka, već može imati i nizove. Niska koja je zapisana ispod takođe predstavlja validnu JSON nisku:
+
+```json
+[
+  {
+    "name": "Molecule Man",
+    "age": 29,
+    "secretIdentity": "Dan Jukes",
+    "powers": [
+      "Radiation resistance",
+      "Turning tiny",
+      "Radiation blast"
+    ]
+  },
+  {
+    "name": "Madame Uppercut",
+    "age": 39,
+    "secretIdentity": "Jane Wilson",
+    "powers": [
+      "Million tonne punch",
+      "Damage resistance",
+      "Superhuman reflexes"
+    ]
+  }
+]
+```
+
+Da bismo pristupili nekom podatku, potrebno je da prvo pristupimo objektu na odgovarajućem indeksu (naravno, nakon parsiranja niske). Na primer, ako je niska iznad parsirana u promenljivu `superHeroes`, onda možemo pristupiti prvoj moći prvog superheroja pomoću izraza `superHeroes[0]["powers"][0]` ili `superHeroes[0].powers[0]`.
+
+#### Napomene
+
+- JSON predstavlja format za zapisivanje podataka - on ne može da čuva vrednosti funkcija ili `undefined` vrednosti.
+- JSON zahteva da se oko svih niski navode dvostruki navodnici.
+- Za razliku od JavaScript-a gde nazivi svojstava u objektima ne moraju imati navodnike, u JSON formatu svi nazivi svojstava obavezno moraju biti obavijeni dvostrukim navodnicima.
+- Čak i jedna pogrešno zapisana zapeta ili dvotačka može da poremeti ceo format i da parsiranje ne bude uspešno. Zbog toga bi trebalo validirati niske pre slanja drugim veb aplikacijama (mada, automatski-generisane niske pomoću biblioteka će ređe imati greške). Ručno zapisane JSON niske je moguće validirati poput alata kao što je [JSONLint](http://jsonlint.com/).
+- JSON niska može čuvati i jednostavne vrednosti, ne samo nizove i objekte. Na primer, ako niska zapisana u JSON formatu sadrži samo jednu nisku ili jedan broj, onda je ona validna JSON niska.
 
 ## 5.3 Zadaci za vežbu
 
