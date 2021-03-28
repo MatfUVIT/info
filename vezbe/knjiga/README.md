@@ -171,6 +171,8 @@ Autori:
 
 4. [Komunikacija sa serverskim aplikacijama putem HTTP protokola. `XMLHttpRequest` objekti.](./Poglavlja/WebAPI/README.md#54-komunikacija-sa-serverskim-aplikacijama-putem-http-protokola-xmlhttprequest-objekti){:target="_blank"}
 
+    1. [Rad sa podacima u JSON formatu](./Poglavlja/WebAPI/README.md#541-rad-sa-podacima-u-json-formatu){:target="_blank"}
+
 ### [Poglavlje 6. Biblioteka jQuery](./Poglavlja/JQuery/README.md){:target="_blank"}
 
 1. [Instalacija jQuery biblioteke](./Poglavlja/JQuery/README.md#61-instalacija-jquery-biblioteke){:target="_blank"}
