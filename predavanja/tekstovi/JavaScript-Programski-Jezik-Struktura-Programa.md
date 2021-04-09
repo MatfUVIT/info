@@ -56,7 +56,7 @@ JаваСкрипт програми се записују коришћењем 
 `'jedna niska'`
 `true`
 `['a', 'b']`
-`{boja: 'crvena', oblik: 'paravougaonik'}` 
+`{boja: 'crvena', oblik: 'paravougaonik'}`
 &#9608;
 
 #### Идентификатори
