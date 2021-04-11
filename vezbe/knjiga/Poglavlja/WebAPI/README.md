@@ -1233,6 +1233,9 @@ Tick!
 
 ## 5.4 Komunikacija sa serverskim aplikacijama putem HTTP protokola. `XMLHttpRequest` objekti.
 
+Za izvršavanje koda u ostatku ove sekcije, neophodno je u direktorijumu gde se nalaze ovi primeri pokrenuti veb server. Ukoliko samo otvorimo `.html` datoteku u veb pregledaču, on će koristiti `file://` protokol za učitavanje te datoteke. Međutim, neki od primera koriste HTTP komunikaciju za dohvatanje podataka (kako bi se ilustrovala asinhronost akcija kroz praktične primere), te je neophodno pristupati primerima preko `http://`
+protokola. Ovo možemo najjednostavnije uraditi u alatu `Visual Studio Code`, u okviru kojeg je dostupna ekstenzija naziva `Live Server` autora Ritvik Deja (eng. Ritwick Dey). Nakon instalacije ekstenzije, potrebno je otvoriti direktorijum sa primerima u `Visual Studio Code` alatu. Zatim, desnim klikom na datoteku koju želimo da otvorimo (na primer, `index.html`) otvoriti pomoćni meni iz koga je potrebno odabrati opciju `Open with Live Server`. Alternativno, moguće je aktivirati `Live Server` klikom na dugme `Go Live` u statusnoj liniji alata. Ako se otvorio veb pregledač na adresi `http://127.0.0.1:5500/`, onda je veb server korektno pokrenut.Poželjno je otvoriti i konzolu u alatima za razvijanje.
+
 Da bismo poslali asinhroni HTTP zahtev ka nekom resursu (ovakvi zahtevi se još nazivaju i *AJAX* zahtevi, skraćeno od *Asynchronous JavaScript And XML*), potrebno je kreirati objekat klase `XMLHttpRequest`, otvoriti url ka resursu, i poslati zahtev. Nakon što se od serverske aplikacije stigne HTTP odgovor, objekat će sadržati korisne informacije poput tela HTTP odgovora i statusnog koda. Ovaj objekat prolazi kroz razna stanja, kao što je "otvorena konekcija", "finalno stanje" i dr. Svako stanje ima svoj kod.
 
 Kao što smo rekli, prvo je potrebno kreirati objekat, koji se inicijalizuje u stanje `UNSET` (kod je *0*):
