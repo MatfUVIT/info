@@ -5,9 +5,6 @@
     <title> Primer 9 </title>
     <meta charset="UTF-8">
 
-    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    
-    
     <style type="text/css">
         .greska {
             color: red;
@@ -27,45 +24,44 @@
 </head>
 
 <body>
-    <form method="" action="" id="formular" class="container" novalidate>
+    <form method="" action="" id="formular" novalidate>
         <!-- 
             Element u okviru kojeg će biti upisane informacije o 
             eventualnim greskama. 
         -->
         <div class="greska" id="greska"> </div>
 
-        <fieldset class="form-group">
+        <fieldset>
             <legend> Lični podaci </legend>
 
-            <div class="form-group">
+            <div>
                 <label for="ime_prezime"> Ime i prezime*: </label>
-                <input id="ime_prezime" type="text" placeholder="Pera Peric" maxlength="30" name="ime_prezime" required
-                    class="form-control">
+                <input id="ime_prezime" type="text" placeholder="Pera Peric" maxlength="30" name="ime_prezime" required>
             </div>
 
-            <div class="form-group">
+            <div>
                 <label for="datum_rodjenja"> Datum rođenja: </label>
-                <input id="datum_rodjenja" type="date" name="datum_rodjenja" class="form-control">
+                <input id="datum_rodjenja" type="date" name="datum_rodjenja">
             </div>
 
-            <div class="form-group">
+            <div>
                 <label for="email"> Email: </label>
-                <input id="email" name="email" type="email" class="form-control">
+                <input id="email" name="email" type="email">
             </div>
 
-            <div class="form-group">
+            <div>
                 <label for="veb_adresa"> Veb adresa: </label>
-                <input id="veb_adresa" name="veb_adresa" autocomplete="off" type="url" class="form-control">
+                <input id="veb_adresa" name="veb_adresa" autocomplete="off" type="url">
             </div>
 
-            <div class="form-group">
+            <div>
                 <label for="username"> Korisničko ime*: </label>
-                <input id="username" type="text" name="korisnicko_ime" required class="form-control">
+                <input id="username" type="text" name="korisnicko_ime" required>
             </div>
 
-            <div class="form-group">
+            <div>
                 <label for="password"> Šifra*: </label>
-                <input id="password" name="sifra" required type="password" class="form-control">
+                <input id="password" name="sifra" required type="password">
                 <p id="upozorenje" class="greska">
                     Šifra mora da sadrži makar 2 cifre!
                 </p>
@@ -73,13 +69,13 @@
 
         </fieldset>
 
-        <fieldset class="form-group">
+        <fieldset>
             <legend> Obrazovanje </legend>
 
-            <div class="form-group row">
-                <div class="col-md-6">
-                    <label for="fakultet" class="control-label"> Fakultet: </label>
-                    <select name="fakultet" id="fakultet" class="form-control">
+            <div>
+                <div>
+                    <label for="fakultet"> Fakultet: </label>
+                    <select name="fakultet" id="fakultet">
                         <option value=""> ------- </option>
                         <optgroup label="tehnički fakulteti">
                             <option value="matf"> MATF </option>
@@ -95,9 +91,9 @@
                     </select>
                 </div>
                 
-                <div class="col-md-6">
-                    <label for="univerzitet" class="control-label"> Univerzitet: </label>
-                    <input list="svi_univerziteti" id="univerzitet" name="univerzitet" type="text" class="form-control">
+                <div>
+                    <label for="univerzitet"> Univerzitet: </label>
+                    <input list="svi_univerziteti" id="univerzitet" name="univerzitet" type="text">
                     <datalist id="svi_univerziteti">
                         <option value="UBG"> Univerzitet u Beogradu </option>
                         <option value="UNS"> Univerzitet u Novom Sadu </option>
@@ -107,65 +103,65 @@
                 </div>
             </div>
 
-            <div class="form-group">
+            <div>
                 Godina studija:
 
-                <div class="form-check form-check-inline">
-                    <input name="godina" id="godina_1" value="1" type="radio" class="form-check-input">
-                    <label for="godina_1" class="form-check-label">1</label>
+                <div>
+                    <input name="godina" id="godina_1" value="1" type="radio">
+                    <label for="godina_1">1</label>
                 </div>
 
-                <div class="form-check form-check-inline">
-                    <input name="godina" id="godina_2" value="2" type="radio" class="form-check-input">
-                    <label for="godina_2" class="form-check-label">2</label>
+                <div>
+                    <input name="godina" id="godina_2" value="2" type="radio">
+                    <label for="godina_2">2</label>
                 </div>
 
-                <div class="form-check form-check-inline">
-                    <input name="godina" id="godina_3" value="3" type="radio" class="form-check-input">
-                    <label for="godina_3" class="form-check-label">3</label>
+                <div>
+                    <input name="godina" id="godina_3" value="3" type="radio">
+                    <label for="godina_3">3</label>
                 </div>
 
-                <div class="form-check form-check-inline">
-                    <input name="godina" id="godina_4" value="4" type="radio" class="form-check-input">
-                    <label for="godina_4" class="form-check-label">4</label>
+                <div>
+                    <input name="godina" id="godina_4" value="4" type="radio">
+                    <label for="godina_4">4</label>
                 </div>
             </div>
 
-            <div class="form-group">
+            <div>
                 Lista interesovanja:
 
-                <div class="form-check">
-                    <input name="veb" id="veb" type="checkbox" checked class="form-check-input">
-                    <label for="veb" class="form-check-label">veb programiranje</label>
+                <div>
+                    <input name="veb" id="veb" type="checkbox" checked>
+                    <label for="veb">veb programiranje</label>
                 </div>
 
-                <div class="form-check">
-                    <input name="paradigme" id="paradigme" type="checkbox" class="form-check-input">
-                    <label for="paradigme" class="form-check-label">programske paradigme</label>
+                <div>
+                    <input name="paradigme" id="paradigme" type="checkbox">
+                    <label for="paradigme">programske paradigme</label>
                 </div>
 
-                <div class="form-check">
-                    <input name="grafika" id="grafika" type="checkbox" class="form-check-input">
-                    <label for="grafika" class="form-check-label">računarska grafika</label>
+                <div>
+                    <input name="grafika" id="grafika" type="checkbox">
+                    <label for="grafika">računarska grafika</label>
                 </div>
 
-                <div class="form-check">
-                    <input name="algoritmi" id="algoritmi" type="checkbox" class="form-check-input">
-                    <label for="algoritmi" class="form-check-label">algoritmi</label>
+                <div>
+                    <input name="algoritmi" id="algoritmi" type="checkbox">
+                    <label for="algoritmi">algoritmi</label>
                 </div>
             </div>
 
         </fieldset>
 
-        <div class="form-group">
+        <div>
             <label for="napomena"> Napomena: </label>
             <br>
-            <textarea cols="80" rows="5" name="napomena" id="napomena" class="form-control" placeholder="Unesite napomenu..."></textarea>
+            <textarea cols="80" rows="5" name="napomena" id="napomena" placeholder="Unesite napomenu..."></textarea>
         </div>
 
-        <div class="form-group text-center">
-            <input value="pošalji podatke" type="submit" class="btn btn-primary">
-            <input value="obriši podatke" type="reset" class="btn btn-danger">
+        <div>
+            <input value="pošalji podatke" type="submit">
+            <input value="obriši podatke" type="reset">
         </div>
     </form>
 
