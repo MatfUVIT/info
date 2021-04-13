@@ -165,7 +165,6 @@ f.addEventListener('submit', function(ev) {
 
     if (!indikatorGodine) {
         greska.textContent = 'Godina studija je obavezno polje.';
-        polje.focus();
         ev.preventDefault();
         return false;
     }
