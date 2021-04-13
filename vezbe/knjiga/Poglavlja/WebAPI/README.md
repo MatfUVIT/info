@@ -1079,7 +1079,7 @@ Takođe, moguće je postaviti i osluškivače nad samim elementima formulara. Ne
 
 - Događaj `'change'` se ispaljuje kada element izgubi fokus i, pritom, vrednost polja elementa se izmenila.
 
-- Dpgađaj `'input'` se ispaljuje kada se elementu promeni vrednost. Na primer, svakim unosom ili brisanjem karaktera biće ispaljen ovaj događaj.
+- Događaj `'input'` se ispaljuje kada se elementu promeni vrednost. Na primer, svakim unosom ili brisanjem karaktera biće ispaljen ovaj događaj.
 
 Naravno, ovo su samo neki od tih događaja. Za detaljniju listu događaja možete posetiti adresu [https://developer.mozilla.org/en-US/docs/Web/Events](https://developer.mozilla.org/en-US/docs/Web/Events){:target="\_blank"}.
 
