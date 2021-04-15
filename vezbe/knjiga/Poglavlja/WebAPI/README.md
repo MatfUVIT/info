@@ -828,285 +828,7 @@ U nastavku ćemo koristiti formular koji smo ranije napravili i izgleda kao na s
 <img style="max-width: 100%;" src="./Slike/formular.png" alt="">
 </div>
 
-Odgovarajući kod za formular sa slike:
-
-```html
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Primer 9</title>
-    <meta charset="UTF-8" />
-
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-    />
-
-    <style type="text/css">
-      .greska {
-        color: red;
-        font-size: 14px;
-        margin-top: 25px;
-        margin-bottom: 25px;
-      }
-
-      fieldset legend {
-        color: orange;
-      }
-    </style>
-  </head>
-
-  <body>
-    <form method="" action="" id="formular" class="container" novalidate>
-      <!-- 
-            Element u okviru kojeg će biti upisane informacije o 
-            eventualnim greskama. 
-        -->
-      <div class="greska" id="greska"></div>
-
-      <fieldset class="form-group">
-        <legend>Lični podaci</legend>
-
-        <div class="form-group">
-          <label for="ime_prezime"> Ime i prezime*: </label>
-          <input
-            id="ime_prezime"
-            type="text"
-            placeholder="Pera Peric"
-            maxlength="30"
-            name="ime_prezime"
-            required
-            class="form-control"
-          />
-        </div>
-
-        <div class="form-group">
-          <label for="datum_rodjenja"> Datum rođenja: </label>
-          <input
-            id="datum_rodjenja"
-            type="date"
-            name="datum_rodjenja"
-            class="form-control"
-          />
-        </div>
-
-        <div class="form-group">
-          <label for="email"> Email: </label>
-          <input id="email" name="email" type="email" class="form-control" />
-        </div>
-
-        <div class="form-group">
-          <label for="veb_adresa"> Veb adresa: </label>
-          <input
-            id="veb_adresa"
-            name="veb_adresa"
-            autocomplete="off"
-            type="url"
-            class="form-control"
-          />
-        </div>
-
-        <div class="form-group">
-          <label for="username"> Korisničko ime*: </label>
-          <input
-            id="username"
-            type="text"
-            name="korisnicko_ime"
-            required
-            class="form-control"
-          />
-        </div>
-
-        <div class="form-group">
-          <label for="password"> Šifra*: </label>
-          <input
-            id="password"
-            name="sifra"
-            required
-            type="password"
-            class="form-control"
-          />
-        </div>
-      </fieldset>
-
-      <fieldset class="form-group">
-        <legend>Obrazovanje</legend>
-
-        <div class="form-group row">
-          <div class="col-md-6">
-            <label for="fakultet" class="control-label"> Fakultet: </label>
-
-            <select name="fakultet" id="fakultet" class="form-control">
-              <option value="">-------</option>
-              <optgroup label="tehnički fakulteti">
-                <option value="matf">MATF</option>
-                <option value="etf">ETF</option>
-                <option value="fon">FON</option>
-              </optgroup>
-              <optgroup label="društvene nauke">
-                <option value="f">Filološki fakultet</option>
-              </optgroup>
-              <optgroup label="umetnost">
-                <option value="fdu" selected="selected">FDU</option>
-              </optgroup>
-            </select>
-          </div>
-
-          <div class="col-md-6">
-            <label for="univerzitet" class="control-label">
-              Univerzitet:
-            </label>
-            <input
-              list="svi_univerziteti"
-              id="univerzitet"
-              name="univerzitet"
-              type="text"
-              class="form-control"
-            />
-
-            <datalist id="svi_univerziteti">
-              <option value="UBG">Univerzitet u Beogradu</option>
-              <option value="UNS">Univerzitet u Novom Sadu</option>
-              <option value="UNI">Univerzitet u Nišu</option>
-              <option value="UKG">Univerzitet u Kragujevcu</option>
-            </datalist>
-          </div>
-        </div>
-
-        <div class="form-group">
-          Godina studija:
-
-          <div class="form-check form-check-inline">
-            <input
-              name="godina"
-              id="godina_1"
-              value="1"
-              type="radio"
-              class="form-check-input"
-            />
-            <label for="godina_1" class="form-check-label"> 1 </label>
-          </div>
-
-          <div class="form-check form-check-inline">
-            <input
-              name="godina"
-              id="godina_2"
-              value="2"
-              type="radio"
-              class="form-check-input"
-            />
-            <label for="godina_2" class="form-check-label"> 2 </label>
-          </div>
-
-          <div class="form-check form-check-inline">
-            <input
-              name="godina"
-              id="godina_3"
-              value="3"
-              type="radio"
-              class="form-check-input"
-            />
-            <label for="godina_3" class="form-check-label"> 3 </label>
-          </div>
-
-          <div class="form-check form-check-inline">
-            <input
-              name="godina"
-              id="godina_4"
-              value="4"
-              type="radio"
-              class="form-check-input"
-            />
-            <label for="godina_4" class="form-check-label"> 4 </label>
-          </div>
-        </div>
-
-        <div class="form-group">
-          Lista interesovanja:
-
-          <div class="form-check">
-            <input
-              name="veb"
-              id="veb"
-              type="checkbox"
-              checked
-              class="form-check-input"
-            />
-            <label for="veb" class="form-check-label">
-              veb programiranje
-            </label>
-          </div>
-
-          <div class="form-check">
-            <input
-              name="paradigme"
-              id="paradigme"
-              type="checkbox"
-              class="form-check-input"
-            />
-            <label for="paradigme" class="form-check-label">
-              programske paradigme
-            </label>
-          </div>
-
-          <div class="form-check">
-            <input
-              name="grafika"
-              id="grafika"
-              type="checkbox"
-              class="form-check-input"
-            />
-            <label for="grafika" class="form-check-label">
-              računarska grafika
-            </label>
-          </div>
-
-          <div class="form-check">
-            <input
-              name="algoritmi"
-              id="algoritmi"
-              type="checkbox"
-              class="form-check-input"
-            />
-            <label for="algoritmi" class="form-check-label"> algoritmi </label>
-          </div>
-        </div>
-      </fieldset>
-
-      <div class="form-group">
-        <label for="napomena"> Napomena: </label>
-        <br />
-        <textarea
-          cols="80"
-          rows="5"
-          name="napomena"
-          id="napomena"
-          class="form-control"
-          placeholder="Unesite napomenu..."
-        ></textarea>
-      </div>
-
-      <div class="form-group text-center">
-        <input
-          value="pošalji podatke"
-          type="submit"
-          class="btn 
-                btn-primary"
-        />
-        <input
-          value="obriši podatke"
-          type="reset"
-          class="btn 
-                btn-danger"
-        />
-      </div>
-    </form>
-
-    <script type="text/javascript" src="index.js"></script>
-  </body>
-</html>
-```
+Odgovarajući kod za formular sa slike možete pronaći [ovde](https://github.com/MatfUVIT/UVIT/blob/master/vezbe/knjiga/Poglavlja/WebAPI/Primeri/9/index.html).
 
 Pre nego što pređemo obradu formulara, primetimo da element `form` ima postavljen atribut `novalidate`. Ovaj atribut, poput prethodno pomenutih atributa `checked` i `readonly`, ne dobija vrednost već samo navođenje tog atributa elementu označava da element ima to svojstvo. Ukoliko formularu dodamo ovaj atribut onda se neće vršiti automatska provera unetih vrednosti. Podrazumevano ponašanje je provera svakog polja da li zadovoljava uslove koji su postavljeni atributima.
 
@@ -1357,7 +1079,7 @@ Takođe, moguće je postaviti i osluškivače nad samim elementima formulara. Ne
 
 - Događaj `'change'` se ispaljuje kada element izgubi fokus i, pritom, vrednost polja elementa se izmenila.
 
-- Dpgađaj `'input'` se ispaljuje kada se elementu promeni vrednost. Na primer, svakim unosom ili brisanjem karaktera biće ispaljen ovaj događaj.
+- Događaj `'input'` se ispaljuje kada se elementu promeni vrednost. Na primer, svakim unosom ili brisanjem karaktera biće ispaljen ovaj događaj.
 
 Naravno, ovo su samo neki od tih događaja. Za detaljniju listu događaja možete posetiti adresu [https://developer.mozilla.org/en-US/docs/Web/Events](https://developer.mozilla.org/en-US/docs/Web/Events){:target="\_blank"}.
 
@@ -1406,242 +1128,7 @@ s.addEventListener('input', function () {
 });
 ```
 
-Celo rešenje je dato narednim kodom:
-
-```js
-const f = document.querySelector('#formular');
-const s = document.getElementById('password');
-
-/**
- * Izračunava broj cifara koje se nalaze u datoj niski.
- * @param {string} vrednost niska
- * @returns broj cifara u niski `vrednost`
- */
-function prebrojCifre(vrednost) {
-  let brojCifara = 0;
-  for (let i = 0; i < vrednost.length; ++i) {
-    const tekuciKarakter = vrednost.charAt(i);
-    if ('0123456789'.indexOf(tekuciKarakter) !== -1) {
-      ++brojCifara;
-    }
-  }
-
-  return brojCifara;
-}
-
-f.addEventListener('submit', function (ev) {
-  // Pomoćna promenljiva koju ćemo koristiti za
-  // dohvatanje jednog po jednog polja iz formulara
-  let polje;
-
-  // U okviru polja za grešku biće upisivane greške
-  const greska = document.querySelector('#greska');
-
-  // Provera za ime i prezime
-  polje = document.querySelector('#ime_prezime');
-  const imePrezime = polje.value.trim();
-  const maxDuzina = polje.maxLength || 30;
-  if (imePrezime === '' || imePrezime.length > maxDuzina) {
-    // Obrada greške se može sastojati od narednih koraka:
-    // 1. Prijavi korisniku da je došlo do greške (opciono, ali korisno)
-    greska.textContent = 'Nekorektna vrednost u polju za ime i prezime!';
-    // 2. Fokusiraj korisniku polje za koje validacija nije prošla (opciono, ali korisno)
-    polje.focus();
-    // 3. Spreči propagiranje događaja 'submit' nadalje (obavezno)
-    ev.preventDefault();
-    // 4. Prekini dalju validaciju (obavezno)
-    return false;
-  }
-
-  // Provera za datum rođenja
-  polje = document.querySelector('#datum_rodjenja');
-  const datumRodjenja = polje.value;
-  const godina = parseInt(datumRodjenja.substr(0, 4));
-  const mesec = parseInt(datumRodjenja.substr(5, 2));
-  const dan = parseInt(datumRodjenja.substr(8, 2));
-
-  if (
-    isNaN(dan) ||
-    isNaN(mesec) ||
-    isNaN(godina) ||
-    dan < 1 ||
-    dan > 31 ||
-    mesec < 1 ||
-    mesec > 12 ||
-    godina < 0
-  ) {
-    greska.textContent = 'Nekorektna vrednost u polju za datum rodjenja!';
-    polje.focus();
-    ev.preventDefault();
-    return false;
-  }
-
-  if (datumRodjenja.charAt(4) != '-' || datumRodjenja.charAt(7) != '-') {
-    greska.textContent = 'Datum rodjenja treba da bude u formatu gggg-mm-dd';
-    polje.focus();
-    ev.preventDefault();
-    return false;
-  }
-
-  // Provera za email
-  polje = document.querySelector('#email');
-  const email = polje.value;
-  const manki = email.indexOf('@');
-  const poslednjaTackica = email.lastIndexOf('.');
-
-  if (manki === -1 || poslednjaTackica === -1 || poslednjaTackica < manki) {
-    greska.textContent = 'Nekorektna vrednost u polju za email adresu.';
-    polje.focus();
-    ev.preventDefault();
-    return false;
-  }
-
-  // Provera za url adresu
-  polje = document.querySelector('#veb_adresa');
-  const vebAdresa = polje.value;
-
-  if (vebAdresa.substr(0, 7) != 'http://') {
-    greska.textContent = 'Nekorektna vrednost u polju za veb adresu.';
-    polje.focus();
-    ev.preventDefault();
-    return false;
-  }
-
-  // Provera za korisnicko ime
-  polje = document.querySelector('#username');
-  const korisnickoIme = polje.value.trim();
-
-  if (korisnickoIme.length < 5) {
-    greska.textContent = 'Korisnicko ime nije dovoljno dugo.';
-    polje.focus();
-    ev.preventDefault();
-    return false;
-  }
-
-  const malaSlova = [];
-  const velikaSlova = [];
-  for (let i = 0; i < 26; ++i) {
-    malaSlova[i] = String.fromCharCode(97 + i);
-    velikaSlova[i] = String.fromCharCode(65 + i);
-  }
-
-  for (let i = 0; i < korisnickoIme.length; ++i) {
-    const tekuciKarakter = korisnickoIme.charAt(i);
-
-    if (
-      malaSlova.indexOf(tekuciKarakter) === -1 &&
-      velikaSlova.indexOf(tekuciKarakter) === -1
-    ) {
-      greska.textContent = 'Nedozvoljeni karakter u polju za korisnicko ime.';
-      polje.focus();
-      ev.preventDefault();
-      return false;
-    }
-  }
-
-  // Provera za sifru
-  polje = document.querySelector('#password');
-  const sifra = polje.value.trim();
-
-  if (sifra === '') {
-    greska.textContent = 'Polje za sifru je obavezno.';
-    polje.focus();
-    ev.preventDefault();
-    return false;
-  }
-
-  const brojCifara = prebrojCifre(sifra);
-
-  if (brojCifara < 2) {
-    greska.textContent = 'Polje za sifru mora da sadrzi barem dve cifre.';
-    polje.focus();
-    ev.preventDefault();
-    return false;
-  }
-
-  // Provera za fakultet
-  polje = document.querySelector('#fakultet');
-
-  if (polje.selectedIndex === 0) {
-    greska.textContent = 'Odaberite fakultet.';
-    polje.focus();
-    ev.preventDefault();
-    return false;
-  }
-
-  // Provera za godinu studija
-  let indikatorGodine = false;
-  polje = document.querySelectorAll('input[name="godina"]');
-
-  for (let i = 0; i < polje.length; ++i) {
-    let godina = polje[i];
-
-    if (godina.checked) {
-      indikatorGodine = true;
-      break;
-    }
-  }
-
-  if (!indikatorGodine) {
-    greska.textContent = 'Godina studija je obavezno polje.';
-    polje.focus();
-    ev.preventDefault();
-    return false;
-  }
-
-  // Sve validacije su prošle!
-  return true;
-});
-
-f.addEventListener('reset', function (ev) {
-  const treba_resetovati = window.confirm('Da li zelite da ponistite unos?');
-
-  if (!treba_resetovati) {
-    ev.preventDefault();
-    return false;
-  }
-  return true;
-});
-
-s.addEventListener('focus', function () {
-  const brojCifara = prebrojCifre(this.value.trim());
-  // Ukoliko šifra ne ispunjava uslove, prikazujemo poruku.
-  if (brojCifara < 2) {
-    upozorenje.style.display = 'block';
-  }
-});
-
-s.addEventListener('blur', function () {
-  // Kada element izgubi fokus, sakrivamo poruku.
-  upozorenje.style.display = 'none';
-});
-
-s.addEventListener('change', function () {
-  const brojCifara = prebrojCifre(this.value.trim());
-  // Ukoliko šifra ne ispunjava uslove,
-  // prikazujemo poruku u obaveštajnom prozoru.
-  // Poruka se prikazuje nakon što element izgubi fokus,
-  // ukoliko je vrednost polja izmenjena.
-  if (brojCifara < 2) {
-    window.alert('Šifra mora da sadrži bar dve cifre!');
-  }
-});
-
-s.addEventListener('input', function () {
-  const upozorenje = document.getElementById('upozorenje');
-  const sifra = this.value.trim();
-  const brojCifara = prebrojCifre(sifra);
-
-  // Ukoliko šifra ne ispunjava uslove, prikazujemo poruku.
-  if (brojCifara < 2) {
-    upozorenje.style.display = 'block';
-  }
-  // Ukoliko je uslov ispunjen, sakrivamo poruku.
-  else {
-    upozorenje.style.display = 'none';
-  }
-});
-```
+Celo rešenje je dato [ovde](https://github.com/MatfUVIT/UVIT/blob/master/vezbe/knjiga/Poglavlja/WebAPI/Primeri/9/index.js).
 
 ## 5.3 Osnovni elementi asinhronog programiranja. Odlaganje izvršavanja funkcija.
 
@@ -1745,6 +1232,9 @@ Tick!
 ```
 
 ## 5.4 Komunikacija sa serverskim aplikacijama putem HTTP protokola. `XMLHttpRequest` objekti.
+
+Za izvršavanje koda u ostatku ove sekcije, neophodno je u direktorijumu gde se nalaze ovi primeri pokrenuti veb server. Ukoliko samo otvorimo `.html` datoteku u veb pregledaču, on će koristiti `file://` protokol za učitavanje te datoteke. Međutim, neki od primera koriste HTTP komunikaciju za dohvatanje podataka (kako bi se ilustrovala asinhronost akcija kroz praktične primere), te je neophodno pristupati primerima preko `http://`
+protokola. Ovo možemo najjednostavnije uraditi u alatu `Visual Studio Code`, u okviru kojeg je dostupna ekstenzija naziva `Live Server` autora Ritvik Deja (eng. Ritwick Dey). Nakon instalacije ekstenzije, potrebno je otvoriti direktorijum sa primerima u `Visual Studio Code` alatu. Zatim, desnim klikom na datoteku koju želimo da otvorimo (na primer, `index.html`) otvoriti pomoćni meni iz koga je potrebno odabrati opciju `Open with Live Server`. Alternativno, moguće je aktivirati `Live Server` klikom na dugme `Go Live` u statusnoj liniji alata. Ako se otvorio veb pregledač na adresi `http://127.0.0.1:5500/`, onda je veb server korektno pokrenut.Poželjno je otvoriti i konzolu u alatima za razvijanje.
 
 Da bismo poslali asinhroni HTTP zahtev ka nekom resursu (ovakvi zahtevi se još nazivaju i *AJAX* zahtevi, skraćeno od *Asynchronous JavaScript And XML*), potrebno je kreirati objekat klase `XMLHttpRequest`, otvoriti url ka resursu, i poslati zahtev. Nakon što se od serverske aplikacije stigne HTTP odgovor, objekat će sadržati korisne informacije poput tela HTTP odgovora i statusnog koda. Ovaj objekat prolazi kroz razna stanja, kao što je "otvorena konekcija", "finalno stanje" i dr. Svako stanje ima svoj kod.
 
@@ -1899,11 +1389,7 @@ Kao što smo opisali iznad, JSON predstavlja format zapisa niske koji veoma lič
       "name": "Molecule Man",
       "age": 29,
       "secretIdentity": "Dan Jukes",
-      "powers": [
-        "Radiation resistance",
-        "Turning tiny",
-        "Radiation blast"
-      ]
+      "powers": ["Radiation resistance", "Turning tiny", "Radiation blast"]
     },
     {
       "name": "Madame Uppercut",
@@ -1944,6 +1430,8 @@ Ako želimo da pristupimo podacima koji su dublje u hijerarhiji, možemo ulanča
 superHeroes.members[1]['powers'][2]
 ```
 
+Kod za ovaj primer možete pronaći [ovde](https://github.com/MatfUVIT/UVIT/blob/master/vezbe/knjiga/Poglavlja/WebAPI/Primeri/10/superHeroes.html).
+
 #### Nizovi u JSON
 
 JSON niska ne mora sadržati samo objekte na vrhu hijerarhije podataka, već može imati i nizove. Niska koja je zapisana ispod takođe predstavlja validnu JSON nisku:
@@ -1954,11 +1442,7 @@ JSON niska ne mora sadržati samo objekte na vrhu hijerarhije podataka, već mo�
     "name": "Molecule Man",
     "age": 29,
     "secretIdentity": "Dan Jukes",
-    "powers": [
-      "Radiation resistance",
-      "Turning tiny",
-      "Radiation blast"
-    ]
+    "powers": ["Radiation resistance", "Turning tiny", "Radiation blast"]
   },
   {
     "name": "Madame Uppercut",
@@ -1974,6 +1458,8 @@ JSON niska ne mora sadržati samo objekte na vrhu hijerarhije podataka, već mo�
 ```
 
 Da bismo pristupili nekom podatku, potrebno je da prvo pristupimo objektu na odgovarajućem indeksu (naravno, nakon parsiranja niske). Na primer, ako je niska iznad parsirana u promenljivu `superHeroes`, onda možemo pristupiti prvoj moći prvog superheroja pomoću izraza `superHeroes[0]["powers"][0]` ili `superHeroes[0].powers[0]`.
+
+Kod za ovaj primer možete pronaći [ovde](https://github.com/MatfUVIT/UVIT/blob/master/vezbe/knjiga/Poglavlja/WebAPI/Primeri/11/superHeroes.html).
 
 #### Napomene
 

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Primer 11</title>
+  </head>
+  <body>
+    <script>
+      const xhr = new XMLHttpRequest();
+      xhr.open("GET", "./superHeroes.json");
+      xhr.onreadystatechange = function () {
+        if (this.readyState === XMLHttpRequest.DONE) {
+          if (this.status === 200) {
+            superHeroesDemo(this.responseText);
+          }
+        }
+      };
+      xhr.send();
+
+      function superHeroesDemo(superHeroesString) {
+        const superHeroes = JSON.parse(superHeroesString);
+
+        console.log(superHeroes[0]["powers"][0]);
+        console.log(superHeroes[0].powers[0]);
+      }
+    </script>
+  </body>
+</html>
