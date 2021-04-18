@@ -452,20 +452,26 @@ console.log(osoba2)
 | `**`     | степен                   |
 
 Као што је већ истакнуто при опису омотавања, бројеви се може посматрати  као `Number` објекат.
+  
+У том случају на број могу да се примене следеће методе:
 
-У том случају на број могу да се примене методе дате следећом табелом:
+- `isFinite()` - враће [информацију](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/isFinite){:target="_blank"} о томе да ли се ради о коначном броју.
 
-| Метод             | Опис метода                                        |
-|:-----------------:|:--------------------------------------------------:|
-| `isFinite()`      | проверава да ли је вредност коначан број           |
-| `isInteger()`     | проверава да ли је вредност ceo број               |
-| `isNaN()`         | проверава да ли је вредност Number.NaN             |
-| `isSafeInteger()` | проверава да ли је вредност сигуран цео број       |
-| `toExponential(x)`| претвара број у експоненцијалну нотацију           |
-| `toFixed(x)`      | форматира у број са `x` цифара иза децималне тачке |
-| `toPrecision(x)`  | форматира број на прецизност `x`                   |
-| `toString()`      | враће ниска-репрезентацију обихваћене вредности    |
-| `valueOf()`       | враће вредност као примитиву                       |
+- `isInteger()` - враће [информацију](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/isInteger){:target="_blank"} о томе да ли се ради о цeлом броју.
+
+- `isNaN()` - враће [информацију](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/isNaN){:target="_blank"} о томе да ли се ради о броју `Number.NaN`.
+
+- `isSafeInteger()` - враће [информацију](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/isSafeInteger){:target="_blank"} о томе да ли се ради о сигурном цeлом броју. Сигуран цео број је цео број који може бити тачно представљен у формату IEEE-754 двоструке прецизности и чија IEEE-754 репрезентација не може бити резулата ѕаокруживања ма ког другог целог броја записаног помоћу IEEE-754. То су цели бројеви из интервала [-9 007 199 254 740 991, 9 007 199 254 740 991].
+
+- `toExponential(x)` - враће [ниску](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/toExponential){:target="_blank"} са бројем форматираним у експоненцијалној нотацији. При томе, `x` представља број цифара иза децималне тачке мантисе. Подразумевана вредност за `x` је онолико места колико је поребно да аргумент буде тачно приказан.
+
+- `toFixed(x)` - враће [ниску](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/toFixed){:target="_blank"} са бројем форматираним у фиксној нотацији. При томе, `x` представља број цифара иза децималне тачке. Подразумевана вредност за `x` је `0`.
+
+- `toPrecision(x)` - враће [ниску](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/toPrecision){:target="_blank"} са бројем форматираним на прецизност `x`. Аргумент `x` представља број значајних декаднох цифара у запису броја.
+
+- `toString()` - враће [ниску](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/toString){:target="_blank"} која представља дати број.
+
+- `valueOf()` - враће [вредност примитвног типа](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/valueOf){:target="_blank"}за дати број.
 
 Поред уграђених метода за рад са бројевима, постоје и методи за реализацију математичких функција, за рад са нискама, за рад са низовима и сл. који враћају бројчане вредности - позиви таквих метода се такође могу наћи у оквиру аритметичких израза.
 
