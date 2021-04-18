@@ -1,5 +1,6 @@
 body {
     margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 header {
@@ -32,4 +33,36 @@ h1 {
 
 p {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.form-group {
+    margin: 15px 0px;
+}
+
+.field {
+    display: block;
+    width: 100%;
+    height: 30px;
+    border: 1px solid #e4e4e4;
+    border-radius: 5px;
+}
+
+.btn {
+    display: inline-block;
+    height: 35px;
+    color: white;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+td {
+    width: 50%;
+    height: 50px;
+    border-top: 1px solid #e4e4e4;
 }
