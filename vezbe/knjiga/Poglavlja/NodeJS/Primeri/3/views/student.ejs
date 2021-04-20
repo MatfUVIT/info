@@ -11,8 +11,6 @@
         <title>Nepoznat student!</title>
     <% } %>
     <link rel="stylesheet" type="text/css" href="css/main.css" />
-    <link rel="stylesheet" type="text/css"
-        href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
 </head>
 
 <body>
@@ -26,7 +24,7 @@
             <h1>Studentska stranica za studenta <%= student.username %></h1>
 
             <h3>Informacije:</h3>
-            <table class="table">
+            <table>
             <% for (const key in student) { %>
                 <tr>
                     <td><%= key %></td>
@@ -38,8 +36,6 @@
             <h1>Ne postoje informacije za unetog studenta!</h1>
         <% } %>
     </main>
-
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 </body>
 
 </html>

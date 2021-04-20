@@ -401,8 +401,6 @@ EJS koristi identičnu sintaksu kao i svaki drugi HTML dokument. Drugim rečima,
     <title>Studentski sistem</title>
 
     <link rel="stylesheet" type="text/css" href="/css/main.css" />
-    <link rel="stylesheet" type="text/css"
-        href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
 </head>
 
 <body>
@@ -416,20 +414,19 @@ EJS koristi identičnu sintaksu kao i svaki drugi HTML dokument. Drugim rečima,
 
         <form id="getForm" action="/student" method="GET">
             <div class="form-group">
-                <label for="username" class="form-label">Korisničko ime</label>
-                <input type="text" id="username" name="username" class="form-control">
+                <label for="username">Korisničko ime</label>
+                <input type="text" id="username" name="username" class="field">
             </div>
 
             <div class="form-group">
                 <label for="password" class="form-label">Lozinka</label>
-                <input type="password" id="password" name="password" class="form-control">
+                <input type="password" id="password" name="password" class="field">
             </div>
 
-            <input type="submit" value="Uloguj se na sistem" class="btn btn-primary">
+            <input type="submit" value="Uloguj se na sistem" class="btn">
         </form>
     </main>
 
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="/js/index.js"></script>
 </body>
 
@@ -449,8 +446,6 @@ dok je kod koji koristi šablon dat u datoteci `views/index.ejs`:
     <title>Studentski sistem</title>
 
     <link rel="stylesheet" type="text/css" href="/css/main.css" />
-    <link rel="stylesheet" type="text/css"
-        href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
 </head>
 
 <body>
@@ -464,20 +459,19 @@ dok je kod koji koristi šablon dat u datoteci `views/index.ejs`:
 
         <form id="getForm" action="/student" method="GET">
             <div class="form-group">
-                <label for="username" class="form-label">Korisničko ime</label>
-                <input type="text" id="username" name="username" class="form-control">
+                <label for="username">Korisničko ime</label>
+                <input type="text" id="username" name="username" class="field">
             </div>
 
             <div class="form-group">
                 <label for="password" class="form-label">Lozinka</label>
-                <input type="password" id="password" name="password" class="form-control">
+                <input type="password" id="password" name="password" class="field">
             </div>
 
-            <input type="submit" value="Uloguj se na sistem" class="btn btn-primary">
+            <input type="submit" value="Uloguj se na sistem" class="btn">
         </form>
     </main>
 
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="/js/index.js"></script>
 </body>
 
@@ -550,16 +544,13 @@ Dajmo ceo kod šablona koji ćemo koristiti za prikaz informacija o prijavljenom
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <% if (student !== null) { %>
         <title>Dobrodošli <%= student.username %>!</title>
     <% } else { %>
         <title>Nepoznat student!</title>
     <% } %>
-
     <link rel="stylesheet" type="text/css" href="css/main.css" />
-    <link rel="stylesheet" type="text/css"
-        href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
 </head>
 
 <body>
@@ -573,8 +564,8 @@ Dajmo ceo kod šablona koji ćemo koristiti za prikaz informacija o prijavljenom
             <h1>Studentska stranica za studenta <%= student.username %></h1>
 
             <h3>Informacije:</h3>
-            <table class="table">
-            <% for (let key in student) { %>
+            <table>
+            <% for (const key in student) { %>
                 <tr>
                     <td><%= key %></td>
                     <td><%= student[key] %></td>
@@ -585,8 +576,6 @@ Dajmo ceo kod šablona koji ćemo koristiti za prikaz informacija o prijavljenom
             <h1>Ne postoje informacije za unetog studenta!</h1>
         <% } %>
     </main>
-
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 </body>
 
 </html>
