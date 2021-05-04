@@ -1,0 +1,26 @@
+{"_id":{"$oid":"5c4f1e78dedd200de0e1a6f0"}, "username": "mi17291", "password": "abcd",  "name":"Jovana", "surname":"Peric", "major":"Informatika",  "avg_grade": 8.5, "note": ""}
+{"_id":{"$oid":"5c4f1ec4dedd200de0e1a6f4"}, "username": "mi17113", "password": "1234",  "name":"Petra", "surname":"Martinovic", "major":"Informatika",  "avg_grade": 7.57, "note": ""}
+{"_id":{"$oid":"5c4f1ecfdedd200de0e1a6f5"}, "username": "mi18291", "password": "abcd",  "name":"Igor", "surname":"Jovanovic", "major":"Informatika",  "avg_grade": 9.29, "note": ""}
+{"_id":{"$oid":"5c4f1ea9dedd200de0e1a6f2"}, "username": "mi18023", "password": "1234",  "name":"Ivana", "surname":"Lekic", "major":"Informatika",  "avg_grade": 10.0, "note": ""}
+{"_id":{"$oid":"5c4f1e8fdedd200de0e1a6f1"}, "username": "mi17044", "password": "abcd",  "name":"Marko", "surname":"Ivic", "major":"Informatika",  "avg_grade": 7.36, "note": ""}
+{"_id":{"$oid":"5c4f1f76dedd200de0e1a6f9"}, "username": "mr17005", "password": "1234",  "name":"Nikola", "surname":"Vidic", "major":"Racunarstvo i informatika",  "avg_grade": 8.13, "note": ""}
+{"_id":{"$oid":"5c4f1f81dedd200de0e1a6fa"}, "username": "mr18073", "password": "abcd",  "name":"Nina", "surname":"Stankovic", "major":"Racunarstvo i informatika",  "avg_grade": 9.05, "note": ""}
+{"_id":{"$oid":"5c4f1f6cdedd200de0e1a6f8"}, "username": "mr17013", "password": "1234",  "name":"Ana", "surname":"Ivanovic", "major":"Racunarstvo i informatika",  "avg_grade": 9.31, "note": ""}
+{"_id":{"$oid":"5c4f1f8cdedd200de0e1a6fb"}, "username": "mr17331", "password": "abcd",  "name":"Mirko", "surname":"Jokic", "major":"Racunarstvo i informatika",  "avg_grade": 8.29, "note": ""}
+{"_id":{"$oid":"5c4f1fdddedd200de0e1a6fc"}, "username": "mr17201", "password": "1234",  "name":"Nikola", "surname":"Burkic", "major":"Profesor",  "avg_grade": 8.5, "note": ""}
+{"_id":{"$oid":"5c4f1feadedd200de0e1a6fd"}, "username": "ml18100", "password": "abcd",  "name":"Filip", "surname":"Lazarevic", "major":"Profesor",  "avg_grade": 7.79, "note": ""}
+{"_id":{"$oid":"5c4f1ff9dedd200de0e1a6fe"}, "username": "ml17200", "password": "1234",  "name":"Milan", "surname":"Predic", "major":"Profesor",  "avg_grade": 8.0, "note": ""}
+{"_id":{"$oid":"5c4f1edcdedd200de0e1a6f6"}, "username": "mi17234", "password": "abcd",  "name":"Ana", "surname":"Stosic", "major":"Informatika",  "avg_grade": 10.0, "note": ""}
+{"_id":{"$oid":"5c4f1f6cdedd200de0e1a6f7"}, "username": "mr18255", "password": "1234",  "name":"Nevena", "surname":"Stankovic", "major":"Racunarstvo i informatika",  "avg_grade": 10.0, "note": ""}
+{"_id":{"$oid":"5c4f2199dedd200de0e1a702"}, "username": "mv18090", "password": "abcd",  "name":"Marina", "surname":"Andrejevic", "major":"Statistika",  "avg_grade": 8.5, "note": ""}
+{"_id":{"$oid":"5c4f20d6dedd200de0e1a701"}, "username": "ml17231", "password": "1234",  "name":"Marija", "surname":"Cvetkovic", "major":"Profesor",  "avg_grade": 8.46, "note": ""}
+{"_id":{"$oid":"5c4f21c2dedd200de0e1a703"}, "username": "mn17099", "password": "abcd",  "name":"Petar", "surname":"Petkovic", "major":"Primenjena matematika",  "avg_grade": 6.9, "note": ""}
+{"_id":{"$oid":"5c4f225fdedd200de0e1a704"}, "username": "mn18125", "password": "1234",  "name":"Una", "surname":"Peric", "major":"Primenjena matematika",  "avg_grade": 8.71, "note": ""}
+{"_id":{"$oid":"5c4f226ddedd200de0e1a705"}, "username": "mn18201", "password": "abcd",  "name":"Aleksandar", "surname":"Stankovic", "major":"Primenjena matematika",  "avg_grade": 7.33, "note": ""}
+{"_id":{"$oid":"5c4f2284dedd200de0e1a706"}, "username": "mn18196", "password": "1234",  "name":"Biljana", "surname":"Dodic", "major":"Primenjena matematika",  "avg_grade": 9.16, "note": ""}
+{"_id":{"$oid":"5c4f22ffdedd200de0e1a707"}, "username": "mm17225", "password": "abcd",  "name":"Jovan", "surname":"Gvozdenovic", "major":"Teorijska matematika",  "avg_grade": 9.0, "note": ""}
+{"_id":{"$oid":"5c4f2312dedd200de0e1a708"}, "username": "mm18051", "password": "1234",  "name":"Milos", "surname":"Zoric", "major":"Teorijska matematika",  "avg_grade": 7.0, "note": ""}
+{"_id":{"$oid":"5c4f20b0dedd200de0e1a6ff"}, "username": "ml18209", "password": "abcd",  "name":"Mila", "surname":"Tatic", "major":"Profesor",  "avg_grade": 8.52, "note": ""}
+{"_id":{"$oid":"5c4f20cddedd200de0e1a700"}, "username": "ml18057", "password": "1234",  "name":"Ljubica", "surname":"Peric", "major":"Profesor",  "avg_grade": 8.64, "note": ""}
+{"_id":{"$oid":"5c4f2312dedd200de0e1a709"}, "username": "mv17003", "password": "abcd",  "name":"Goran", "surname":"Stankovic", "major":"Statistika",  "avg_grade": 7.25, "note": ""}
+{"_id":{"$oid":"5c4f1eb5dedd200de0e1a6f3"}, "username": "mi18321", "password": "1234",  "name":"Dragan", "surname":"Avramovic", "major":"Informatika",  "avg_grade": 9.87}
