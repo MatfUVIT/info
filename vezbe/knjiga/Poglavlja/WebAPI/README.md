@@ -1623,7 +1623,7 @@ Rešenje zadatka možete pronaći [ovde](https://github.com/MatfUVIT/UVIT/blob/m
 <div class="domaci-zadatak">
     <span class="naslov">Domaći zadatak 4</span> 
     <div class="tekst">
-        Napisati HTML datoteku koja sadrži formular dat na narednoj slici. Napisati JavaScript kod koji nakon klika na dugme "Izračunaj površinu" izračunava i ispisuje vrednost površine trougla. U slučaju unosa nekorektnih vrednosti, treba ispisati poruku o grešci u obaveštajnom prozoru veb pregledača. Za računanje površine koristiti Heronov obrazac. Formular doterati korišćenjem Bootstrap biblioteke.
+        Napisati HTML datoteku koja sadrži formular dat na narednoj slici. Napisati JavaScript kod koji nakon klika na dugme "Izračunaj površinu" izračunava i ispisuje vrednost površine trougla. U slučaju unosa nekorektnih vrednosti, treba ispisati poruku o grešci u obaveštajnom prozoru veb pregledača. Za računanje površine koristiti Heronov obrazac.
     </div>
     <img style="max-width: 100%;" src="./Domaci/Slike/zadatak5.png" alt="">
 </div>
