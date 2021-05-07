@@ -26,11 +26,13 @@
 **Пример.** Примери постављања својстава за објекте:
 
 ```js
-location.href = "http://www.matf.bg.ac.rs/uwit/proba.html"; //lokacija dokumenta
-document.title = "Probni dokument"; //naziv dokumenta (title)
-document.fgColor = #000000;  //boja slova
-document.bgColor = #FFFFFF;    //boja podloge
-history.length = 7;   //koliko poslednjih dokumenta da "pamti" u history
+document.title = 'Probni dokument'; //naziv dokumenta (title)
+document.bgColor = '#070707';
+document.fgColor = '#00FFFF';
+
+history.length = 7;
+
+location.href = 'http://uvit.math.rs';
 ```
 
 &#9608;
@@ -40,9 +42,11 @@ history.length = 7;   //koliko poslednjih dokumenta da "pamti" u history
 **Пример.** У програмском коду који следи, елементима на веб страни се може приступити на основу додљеног имена:
 
 ```js
-document.mojaforma;   //forma
-document.mojaforma.check1;    //check polje na formi
-document.mojaforma.button1;   //taster na formi
+let forma = document.mojaForma;
+let txt = forma.textIme;
+console.log(txt.outerHTML);
+let btn = forma.buttonOk;
+console.log(btn.outerHTML);
 ```
 
 &#9608;
