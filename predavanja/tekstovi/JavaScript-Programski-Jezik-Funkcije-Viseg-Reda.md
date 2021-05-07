@@ -1,7 +1,6 @@
-
 # УВИТ - Програмски језик ЈаваСкрипт
 
-[Владимир Филиповић](https://vladofilipovic.github.io/index-cy.html){:target="_blank"}
+[Владимир Филиповић](https://vladofilipovic.github.io/index-cy.html){:target="\_blank"}
 
 ## Функције вишег реда
 
@@ -18,22 +17,22 @@ let niz = [1, 2, 3, "mika", "zika"];
 
 // prvi način
 for (let i = 0; i < niz.length; i++) {
-    let tekuci = niz[i];
-    console.log(tekuci);
+  let tekuci = niz[i];
+  console.log(tekuci);
 }
 
 console.log("---");
 
 // drugi način, kolekcijski ciklus for-in
 for (let i in niz) {
-    let tekuci = niz[i];
-    console.log(tekuci);
+  let tekuci = niz[i];
+  console.log(tekuci);
 }
 console.log("---");
 
 // treci način, kolekcijski ciklus for-of
 for (let tekuci of niz) {
-    console.log(tekuci);
+  console.log(tekuci);
 }
 ```
 
@@ -52,7 +51,7 @@ function prikaziSvaki(niz) {
 prikaziSvaki(nizBrojeva);
 ```
 
-Ту је пролазак кроз низ (у овом случају реализован колекијским `for-of` циклусом) издвојен у посебну функцију. Међутим, активност која се извршава над сваким чланом  низа (у овој ситуацији се ради о приказу на конзолу) је инкорпорирана у оквиру те новонаправљене функције.  
+Ту је пролазак кроз низ (у овом случају реализован колекијским `for-of` циклусом) издвојен у посебну функцију. Међутим, активност која се извршава над сваким чланом низа (у овој ситуацији се ради о приказу на конзолу) је инкорпорирана у оквиру те новонаправљене функције.
 
 Пожељно је да се приказ свих елемената низа релизује тако да у посебној функцији буде реализован пролазак кроз низ и да аргумент те функције буде функција која описује шта треба урадити са елементом низа, као у коду који следи:
 
@@ -60,45 +59,44 @@ prikaziSvaki(nizBrojeva);
 let nizBrojeva = [1, 2, 3, 4, "mika", "zika"];
 
 function zaSvaki(niz, akcija) {
-    for (let x of niz)
-        akcija(x);
+  for (let x of niz) akcija(x);
 }
 
 prikazNaKonzolu = function (x) {
-    console.log(x);
+  console.log(x);
 };
 zaSvaki(nizBrojeva, prikazNaKonzolu);
 console.log("---");
 
-prikazNaKonzolu2 = (x) => console.log(x)
+prikazNaKonzolu2 = (x) => console.log(x);
 zaSvaki(nizBrojeva, prikazNaKonzolu2);
 console.log("---");
 
 zaSvaki(nizBrojeva, function (x) {
-    console.log(x)
+  console.log(x);
 });
 console.log("---");
 
 zaSvaki(nizBrojeva, (x) => console.log(x));
 ```
 
-У овом случају  funkcija `zaSvaki` као други аргумент има функцију која ће се извршити над сваким од елемената низа. Као што се види из претходног примера, та функција може бити задата функцијским изразом или ламбде изразом, при чему тај израз може бити претходно додељен променљивој, или се директно наћи у позиву функције. Функција која функционише на сличан начин већ постоји у прототипу за `Array`. &#9608;
+У овом случају funkcija `zaSvaki` као други аргумент има функцију која ће се извршити над сваким од елемената низа. Као што се види из претходног примера, та функција може бити задата функцијским изразом или ламбде изразом, при чему тај израз може бити претходно додељен променљивој, или се директно наћи у позиву функције. Функција која функционише на сличан начин већ постоји у прототипу за `Array`. &#9608;
 
 Један од најчешћих примера коришћења функција повратних позива су методи код низова. На тај начин се пружа могућност проласка кроз елементе низа, њиховог испитивања или сортирања, уз могућност да сам програмер одреди шта ће се дешавати са појединачним елементима.
 
 Постоје уграђени методи у објекту `Array` који подржавају овакав рад:
 
-| Метода         | Опис                                                                                                  |
-|----------------|-------------------------------------------------------------------------------------------------------|
-| `filter()`     | Креира нови низ са елементима који су успешно проли тест дефинисан повратним позивом |
-| `every()`      | Проверава да ли је сваки елеменат низа успешно прошао тест дефинисан повратним позивом |
-| `find()`       | Враће вредност првог елемента низа који је успешно прошао тест дат повратним позивом |
-| `findIndex()`  | Враће индекс првог елемента низа који је успешно прошао тест дат повратним позивом |
-| `forEach()`    | Позива функцију повратног позива за сваки елемент низа |
-| `map()`        | Креира нови низ који садржи резултате извршења повратног позива над сваким елементом оригиналног низа |
-| `reduce()`     | Врши редукцију вредности елемената низа на једну вредност (редукција се извршава с лева удесно) |
-| `reduceRight()`| Врши редукцију вредности елемената низа на једну вредност (редукција се извршава с десна улево)  |
-| `some()`       | Проверава да ли постоји бар неки елемент низа који је успешно прошао тест дат повратним позивом |
+| Метода          | Опис                                                                                                  |
+| --------------- | ----------------------------------------------------------------------------------------------------- |
+| `filter()`      | Креира нови низ са елементима који су успешно проли тест дефинисан повратним позивом                  |
+| `every()`       | Проверава да ли је сваки елеменат низа успешно прошао тест дефинисан повратним позивом                |
+| `find()`        | Враће вредност првог елемента низа који је успешно прошао тест дат повратним позивом                  |
+| `findIndex()`   | Враће индекс првог елемента низа који је успешно прошао тест дат повратним позивом                    |
+| `forEach()`     | Позива функцију повратног позива за сваки елемент низа                                                |
+| `map()`         | Креира нови низ који садржи резултате извршења повратног позива над сваким елементом оригиналног низа |
+| `reduce()`      | Врши редукцију вредности елемената низа на једну вредност (редукција се извршава с лева удесно)       |
+| `reduceRight()` | Врши редукцију вредности елемената низа на једну вредност (редукција се извршава с десна улево)       |
+| `some()`        | Проверава да ли постоји бар неки елемент низа који је успешно прошао тест дат повратним позивом       |
 
 На почетку се разматра једноставни сценарио: с обзиром да се често јавља потреба да се нака акција изврши над свим члановима низа, то низови већ садрже метод `forEach()` чијим се позивом обезбеђује управо таква функионалност.
 
@@ -106,7 +104,7 @@ zaSvaki(nizBrojeva, (x) => console.log(x));
 
 ```js
 let nizBrojeva = [1, 2, 3, 4, "mika", "zika"];
-nizBrojeva.forEach( (x) => console.log(x) );
+nizBrojeva.forEach((x) => console.log(x));
 ```
 
 &#9608;
@@ -115,7 +113,7 @@ nizBrojeva.forEach( (x) => console.log(x) );
 
 ```js
 let nizBrojeva = [1, 2, 3, 4, "mika", "zika"];
-nizBrojeva.forEach( (x) => console.log(x) );
+nizBrojeva.forEach((x) => console.log(x));
 ```
 
 &#9608;
@@ -126,12 +124,11 @@ nizBrojeva.forEach( (x) => console.log(x) );
 
 ```js
 function filter(array, test) {
-    let rez = [];
-    for (let i = 0; i < array.length; i++) {
-        if (test(array[i]))
-            rez.push(array[i]);
-    }
-    return rez;
+  let rez = [];
+  for (let i = 0; i < array.length; i++) {
+    if (test(array[i])) rez.push(array[i]);
+  }
+  return rez;
 }
 
 var opis = `[{"name":"Emma de Milliano","sex":"f",
@@ -245,38 +242,45 @@ let family = JSON.parse(opis);
 
 // prikaz ljudi rodjenih izmedju 1900 i 1925
 console.log(`---`);
-console.log(filter(family, function (person) {
+console.log(
+  filter(family, function (person) {
     return person.born > 1900 && person.born < 1925;
-}));
+  })
+);
 
 // prikaz ljudi rodjenih izmedju 1900 i 1925
 console.log(`---`);
-console.log(filter(family, 
-    (person) => person.born > 1900 && person.born < 1925));
+console.log(
+  filter(family, (person) => person.born > 1900 && person.born < 1925)
+);
 
 // prikaz rodjenih izmedju 1900 i 1925
 console.log(`---`);
-console.log(family.filter(
-    (x) => x.born > 1900 && x.born < 1925));
+console.log(family.filter((x) => x.born > 1900 && x.born < 1925));
 
 // prikaz muskaraca rodjenih izmedju 1900 i 1925
 console.log(`---`);
-console.log(filter(family, function (person) {
-    return person.sex == 'm' 
-            && (person.born > 1900 && person.born < 1925);
-}));
+console.log(
+  filter(family, function (person) {
+    return person.sex == "m" && person.born > 1900 && person.born < 1925;
+  })
+);
 
 // prikaz muskaraca rodjenih izmedju 1900 i 1925
 console.log(`---`);
-console.log(family.filter(
-    person => person.sex == 'm' 
-            && person.born > 1900 && person.born < 1925));
+console.log(
+  family.filter(
+    (person) => person.sex == "m" && person.born > 1900 && person.born < 1925
+  )
+);
 
 // prikaz muskaraca rodjenih izmedju 1900 i 1925
 console.log(`---`);
-console.log(family
-    .filter(person => person.sex == 'm')
-    .filter(person.born > 1900 && person.born < 1925));
+console.log(
+  family
+    .filter((person) => person.sex == "m")
+    .filter(person.born > 1900 && person.born < 1925)
+);
 ```
 
 Уочава се да је филтер у свим приказима, осим последња два, реализован коришћењем функције `filter()` коју је развио програмер. Само у последња два случаја је коришћена уграђена функција, тј. метод `filter()` објекта `Array`. Као што се види из последњег примера, коришћење уграђеног метода оомогућује приодно и лако уланчавање позива, што доводи до бољег крајњег резултата. &#9608;
@@ -285,27 +289,26 @@ console.log(family
 
 ```js
 function filter(array, test) {
-    let passed = [];
-    for (let i = 0; i < array.length; i++) {
-        if (test(array[i]))
-            passed.push(array[i]);
-    }
-    return passed;
+  let passed = [];
+  for (let i = 0; i < array.length; i++) {
+    if (test(array[i])) passed.push(array[i]);
+  }
+  return passed;
 }
 
 function map(array, transform) {
-    let mapped = [];
-    for (var i = 0; i < array.length; i++)
-        mapped.push(transform(array[i]));
-    return mapped;
+  let mapped = [];
+  for (var i = 0; i < array.length; i++) mapped.push(transform(array[i]));
+  return mapped;
 }
 
-var opis = `[{"name":"Emma de Milliano","sex":"f",
+var opis =
+  `[{"name":"Emma de Milliano","sex":"f",
 "born":1876,"died":1956,
 "father":"Petrus de Milliano","
-mother":"Sophia van Damme"},`
-/* *** */
-+ `{"name":"Carolus Haverbeke","sex":"m",
+mother":"Sophia van Damme"},` +
+  /* *** */
+  `{"name":"Carolus Haverbeke","sex":"m",
 "born":1832,"died":1905,
 "father":"Carel Haverbeke",
 "mother":"Maria van Brussel"}]`;
@@ -313,34 +316,38 @@ mother":"Sophia van Damme"},`
 let family = JSON.parse(opis);
 
 // filtriranje tako da se zadrže samo stariji od 90
-console.log('---');
+console.log("---");
 let starijiOd90 = filter(family, function (person) {
-    return person.died - person.born > 90;
+  return person.died - person.born > 90;
 });
 console.log(starijiOd90);
 
 // transformisanje starijih od 90 pomoću map
-console.log('---');
-console.log(map(starijiOd90, function (person) {
+console.log("---");
+console.log(
+  map(starijiOd90, function (person) {
     return person.name + " " + (person.died - person.born);
-}));
+  })
+);
 
 // filtriranje tako da se zadrže samo stariji od 70
-console.log('---');
-let starijiOd70 = filter(family, 
-         (person) => (person.died - person.born > 70));
+console.log("---");
+let starijiOd70 = filter(family, (person) => person.died - person.born > 70);
 console.log(starijiOd70);
 
 // transformisanje starijih od 60 pomoću map
-console.log('---');
-console.log(map(starijiOd70, 
-    (person) => ( person.name + " " + 
-                 (person.died - person.born))));
+console.log("---");
+console.log(
+  map(starijiOd70, (person) => person.name + " " + (person.died - person.born))
+);
 
 // filtriranje i transformisanje pomoću metoda niza
-console.log('---');
-console.log(family.filter(x => x.died - x.born > 70)
-                  .map(x=>x.name + " " + (x.died-x.born)));
+console.log("---");
+console.log(
+  family
+    .filter((x) => x.died - x.born > 70)
+    .map((x) => x.name + " " + (x.died - x.born))
+);
 ```
 
 Уочава се да су филтрирање и трансформација филтер (осим у последњем случају), реализовани коришћењем функција `filter()` и `map()` коју је развио програмер. Само у последњем случају су коришћене уграђене функције, тј. методИ `filter()` и `map()` објекта `Array`. Као што се види из последњег примера, коришћење уграђеног метода оомогућује приодно и лако уланчавање позива, што доводи до прегледнијег програмског кода, лакшег за одржавање. &#9608;
@@ -349,64 +356,78 @@ console.log(family.filter(x => x.died - x.born > 70)
 
 ```js
 function reduce(array, combine, start) {
-    let current = start;
-    for (let i = 0; i < array.length; i++)
-        current = combine(current, array[i]);
-    return current;
+  let current = start;
+  for (let i = 0; i < array.length; i++) current = combine(current, array[i]);
+  return current;
 }
 
 let niz = [2, 4, 3, 1, -5, 12, 7];
 
 // prikaz svih clanova niza
-console.log('--- Clanovi niza ---');
+console.log("--- Clanovi niza ---");
 console.log(niz);
 
 // odredjivanje sume svih clanova niza
-console.log('--- Suma ---');
-console.log(reduce(niz, function (a, b) {
-    return a + b;
-}, 0));
-
+console.log("--- Suma ---");
+console.log(
+  reduce(
+    niz,
+    function (a, b) {
+      return a + b;
+    },
+    0
+  )
+);
 
 // odredjivanje sume svih clanova niza
-console.log('--- Suma ---');
+console.log("--- Suma ---");
 console.log(reduce(niz, (a, b) => a + b, 0));
 
 // odredjivanje sume svih clanova niza pomocu metoda niza
-console.log('--- Suma ---');
+console.log("--- Suma ---");
 console.log(niz.reduce((a, b) => a + b, 0));
 
 // odredjivanje sume svih pozitivnih clanova niza
-console.log('--- Suma pozitivnih ---');
+console.log("--- Suma pozitivnih ---");
 console.log(niz.filter((a) => a >= 0).reduce((a, b) => a + b, 0));
 
 // odredjivanje sume svih clanova niza
-console.log('--- Proizvod ---');
+console.log("--- Proizvod ---");
 console.log(reduce(niz, (a, b) => a * b, 1));
 
 // odredjivanje minimuma svih clanova niza
-console.log('--- Minimum ---');
-console.log(reduce(niz, function (a, b) {
-    if (a < b)
-        return a;
-    return b;
-}, Infinity));
+console.log("--- Minimum ---");
+console.log(
+  reduce(
+    niz,
+    function (a, b) {
+      if (a < b) return a;
+      return b;
+    },
+    Infinity
+  )
+);
 
 // odredjivanje minimuma svih clanova niza
-console.log('--- Minimum ---');
-console.log(reduce(niz, (a, b) => (a < b) ? a : b, Infinity));
+console.log("--- Minimum ---");
+console.log(reduce(niz, (a, b) => (a < b ? a : b), Infinity));
 
 // odredjivanje maksimuma svih clanova niza
-console.log('--- Maksimum ---');
-console.log(reduce(niz, function (a, b) {
-    if (a > b)
-        return a;
-    return b;
-}, -Infinity));
+console.log("--- Maksimum ---");
+console.log(
+  reduce(
+    niz,
+    function (a, b) {
+      if (a > b) return a;
+      return b;
+    },
+    -Infinity
+  )
+);
 
 // odredjivanje maksimuma svih clanova niza
-console.log('--- Maksimum ---');
-console.log(reduce(niz, (a, b) => (a > b) ? a : b, -Infinity));
+console.log("--- Maksimum ---");
+console.log(reduce(niz, (a, b) => (a > b ? a : b), -Infinity));
 ```
 
 &#9608;
@@ -414,14 +435,13 @@ console.log(reduce(niz, (a, b) => (a > b) ? a : b, -Infinity));
 **Пример.** Филтрирање, трансформација и сумирање података:
 
 ```js
-
-let opis = 
-`[{"name":"Emma de Milliano","sex":"f",
+let opis =
+  `[{"name":"Emma de Milliano","sex":"f",
 "born":1876,"died":1956,
 "father":"Petrus de Milliano","
-mother":"Sophia van Damme"},`
-/* *** */
-+ `{"name":"Carolus Haverbeke","sex":"m",
+mother":"Sophia van Damme"},` +
+  /* *** */
+  `{"name":"Carolus Haverbeke","sex":"m",
 "born":1832,"died":1905,
 "father":"Carel Haverbeke",
 "mother":"Maria van Brussel"}]`;
@@ -429,15 +449,23 @@ mother":"Sophia van Damme"},`
 let pretci = JSON.parse(opis);
 
 function prosek(niz) {
-    function plus(a, b) { return a + b; }
-    return niz.reduce(plus) / niz.length;
+  function plus(a, b) {
+    return a + b;
+  }
+  return niz.reduce(plus) / niz.length;
 }
 
-function uzrast(p) { return p.died - p.born; }
+function uzrast(p) {
+  return p.died - p.born;
+}
 
-function jeMusko(p) { return p.sex == "m"; }
+function jeMusko(p) {
+  return p.sex == "m";
+}
 
-function jeZensko(p) { return p.sex == "f"; }
+function jeZensko(p) {
+  return p.sex == "f";
+}
 
 console.log(prosek(pretci.filter(jeMusko).map(uzrast)));
 console.log(prosek(pretci.filter(jeZensko).map(uzrast)));
@@ -452,29 +480,121 @@ console.log(prosek(pretci.filter(jeZensko).map(uzrast)));
 **Пример** Илуструје коришћење методе `Array.from`.
 
 ```js
-let objekat = 'Miki Maus';
+console.log("---");
+let objekat = "Miki Maus";
 console.log(objekat);
 
 let rezultat = Array.from(objekat);
 console.log(rezultat);
+
+console.log("---");
+objekat = { 0: 11, 1: "aaa", 2: 42 };
+console.log(objekat);
+rezultat = Array.from(objekat);
+console.log(rezultat);
+
+console.log("---");
+objekat = { 0: 11, 1: "aaa", 2: 42, length: 3 };
+console.log(objekat);
+rezultat = Array.from(objekat);
+console.log(rezultat);
+
+console.log("---");
+objekat = { 0: 11, 1: "aaa", 2: 42, 4: false, length: 3 };
+console.log(objekat);
+rezultat = Array.from(objekat);
+console.log(rezultat);
+
+console.log("---");
+objekat = { 0: 11, 1: "aaa", 2: 42, 4: false, length: 6 };
+console.log(objekat);
+rezultat = Array.from(objekat);
+console.log(rezultat);
 ```
 
- &#9608;
+&#9608;
 
 Ова функција допушта да се као њен други аргумент проследи функција (грађанин првог реда), која ће тада бити примењена на сваки од елемената .
 
 **Пример** Илуструје коришћење методе `Array.from`, при чему се на сваки елемент преко ког се итерира примењује функција - повратни позив.
 
 ```js
-let objekat = 'Miki Maus';
+console.log("---");
+let objekat = "Miki Maus";
 console.log(objekat);
+let rezultat = Array.from(objekat, (x) => x + x);
+console.log(rezultat);
 
-rezultat = Array.from(objekat, x => x + x);
+console.log("---");
+objekat = { 0: 11, 1: "AA", 2: 42, length: 3 };
+console.log(objekat);
+rezultat = Array.from(objekat, (x) => x + x);
 console.log(rezultat);
 ```
 
- &#9608;
+&#9608;
 
+**Пример** Илуструје коришћење методе `Array.from`, при чему се на сваки пар елеменат-индекс преко ког се итерира примењује функција - повратни позив која је специфицирана одговоарјућим ламбда изразом.
+
+```js
+console.log("---");
+let objekat = "Miki Maus";
+console.log(objekat);
+let rezultat = Array.from(objekat, (x, i) => x + i);
+console.log(rezultat);
+
+console.log("---");
+objekat = { 0: 11, 1: false, 2: 42, length: 3 };
+console.log(objekat);
+rezultat = Array.from(objekat, (e, i) => " [" + i + "]:" + e);
+console.log(rezultat);
+```
+
+&#9608;
+
+**Пример** Илуструје како се метод `Array.from` може искористити за креирање секвенце.
+
+```js
+const sekvenca = (n) => Array.from({ length: n }, (e, i) => i);
+
+console.log("---");
+let rezultat = sekvenca(5);
+console.log(rezultat);
+
+console.log("---");
+rezultat = sekvenca(25);
+console.log(rezultat);
+```
+
+&#9608;
+
+**Пример** Илуструје како се метод `Array.from` може искористити за креирање опсега.
+
+````js
+const opseg = (pocetak, kraj, korak) => Array.from(
+    { length: (kraj - pocetak) / korak + 1 }, (_, i) => pocetak + (i * korak));
+
+console.log("---");
+let rezultat = opseg(1, 6, 1);
+console.log(rezultat);
+
+console.log("---");
+rezultat = opseg(1, 10, 2);
+console.log(rezultat);
+
+console.log("---");
+rezultat = opseg(1, 10, 0.5);
+console.log(rezultat);
+
+console.log("---");
+rezultat = opseg(1, 10, 0.3);
+console.log(rezultat);
+
+console.log("---");
+rezultat = opseg('A'.charCodeAt(0), 'Z'.charCodeAt(0), 1).map(x => String.fromCharCode(x));
+console.log(rezultat);```
+
+ &#9608;
 
 ### Повезивање функција при позиву
 
@@ -531,7 +651,7 @@ prikaz.bind(tarzan)(1.9, 80);
 prikaz.bind(dambo)(2.5, 300);
 duskoDugousko.prikazNaKonzolu.bind(tarzan)(1.9, 80);
 duskoDugousko.prikazNaKonzolu.bind(dambo)(2.5, 300);
-```
+````
 
 &#9608;
 
@@ -545,7 +665,7 @@ duskoDugousko.prikazNaKonzolu.bind(dambo)(2.5, 300);
 
 3. Потом се проверава да ли се ради о методу објекта. АКо јесте, онда се `this` односи на објекат из ког је позвана та метода (другим речима на објекат који је "власник" методе).
 
-4. Ако ниједна од преходних провера није дала позитиван резултат, тј. ако функција чије тело која седржи `this` није конструктор, није везивана помоћу  `call()`, `apply()`, `bind()` и није метод објекта, тада кључна реч `this` означава глобални објекат (он зависи од октужења за ињвршавање, кад се програмски код извршава у прегледачу тада је `Window` глобални објекат).
+4. Ако ниједна од преходних провера није дала позитиван резултат, тј. ако функција чије тело која седржи `this` није конструктор, није везивана помоћу `call()`, `apply()`, `bind()` и није метод објекта, тада кључна реч `this` означава глобални објекат (он зависи од октужења за ињвршавање, кад се програмски код извршава у прегледачу тада је `Window` глобални објекат).
 
 **Пример.** Илустрација функције која декорише позив неке друге функције.
 
@@ -555,13 +675,13 @@ duskoDugousko.prikazNaKonzolu.bind(dambo)(2.5, 300);
 
 ```js
 const bucna = function (f) {
-    return function (arg) {
-        console.log(`poziv   '${f.name}' sa argumentom , ${arg}`);
-        let val = f(arg);
-        console.log(`pozvana '${f.name}' sa argumentom`, arg, " - rezultat ", val);
-        return val;
-    };
-}
+  return function (arg) {
+    console.log(`poziv   '${f.name}' sa argumentom , ${arg}`);
+    let val = f(arg);
+    console.log(`pozvana '${f.name}' sa argumentom`, arg, " - rezultat ", val);
+    return val;
+  };
+};
 
 bucna(Boolean)(0);
 bucna(Boolean)(2);
@@ -577,13 +697,13 @@ bucna(Math.cos)(Math.PI / 2);
 
 ```js
 const bucna2 = function (f) {
-    return function () {
-        console.log( `poziv '${f.name}' sa argumentima `, arguments);
-        let rezultat = f.apply(null, arguments);
-        console.log( `rezultat koji vrace '${f.name}' je `, rezultat);
-        return rezultat;
-    };
-}
+  return function () {
+    console.log(`poziv '${f.name}' sa argumentima `, arguments);
+    let rezultat = f.apply(null, arguments);
+    console.log(`rezultat koji vrace '${f.name}' je `, rezultat);
+    return rezultat;
+  };
+};
 
 console.log(bucna2(Boolean)(0));
 console.log(bucna2(Math.sin)(Math.PI / 2));
@@ -594,10 +714,10 @@ console.log(bucna2(Math.max)(0, -3, 2, 3));
 
 ### Литература
 
-1. Haverbeke M.: [Eloquent JavaScript](https://eloquentjavascript.net/){:target="_blank"}
+1. Haverbeke M.: [Eloquent JavaScript](https://eloquentjavascript.net/){:target="\_blank"}
 
-1. [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript){:target="_blank"} - Mozzila Developer Network (MDN)
+1. [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript){:target="\_blank"} - Mozzila Developer Network (MDN)
 
-1. Живановић, Д.: [Веб програмирање - ЈаваСкрипт](https://www.webprogramiranje.org){:target="_blank"}
+1. Живановић, Д.: [Веб програмирање - ЈаваСкрипт](https://www.webprogramiranje.org){:target="\_blank"}
 
-1. Copes F.: [Complete JavaScript Handbook](https://medium.freecodecamp.org/the-complete-javascript-handbook-f26b2c71719c){:target="_blank"}
+1. Copes F.: [Complete JavaScript Handbook](https://medium.freecodecamp.org/the-complete-javascript-handbook-f26b2c71719c){:target="\_blank"}
