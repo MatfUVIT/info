@@ -8,8 +8,6 @@ $(document).ready(function () {
         }
         if (username.length !== 7 || 
             username.charAt(0) !== 'm' || 
-            (username.charAt(1) !== 'i' &&
-            username.charAt(1) !== 'r') ||
             Number.parseInt(username.substr(2, 5)) === null) {
             window.alert('Korisničko ime nije u ispravnom formatu!');
             return false;
