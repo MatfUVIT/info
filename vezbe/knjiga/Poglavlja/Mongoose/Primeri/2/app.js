@@ -7,8 +7,6 @@ const path = require('path');
 
 // For creating expressjs applications
 const express = require('express');
-// For parsing request body
-const bodyParser = require('body-parser');
 // For manipulating connexting to database
 const mongoose = require('mongoose');
 
@@ -37,7 +35,7 @@ app.set('view engine', 'ejs');
 app.set('views', 'views');
 
 // Parsing request body
-app.use(bodyParser.urlencoded({extended: false}));
+app.use(express.urlencoded({extended: false}));
 
 // Serving public files statically
 app.use(express.static(path.join(__dirname, 'public')));
