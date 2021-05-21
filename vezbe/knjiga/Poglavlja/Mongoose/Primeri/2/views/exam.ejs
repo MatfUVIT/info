@@ -13,8 +13,6 @@
     <% } %>
 
     <link rel="stylesheet" type="text/css" href="/css/main.css" />
-    <link rel="stylesheet" type="text/css"
-        href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
 </head>
 
 <body>
@@ -53,93 +51,92 @@
             </form>
         </nav>
     </header>
-    <main class="container">
+    <main>
         <% if (student !== null && exams !== null) {  %>
         <h1>Ispiti za studenta <%= student.username %></h1>
 
-        <div class="row">
-            <div class="col-md-6">
-                <h3>Informacije:</h3>
-                <table class="table">
+        <div class="kolona">
+            <h3>Informacije:</h3>
+            <table>
+                <tr>
+                    <th> Predmet </th> 
+                    <th> Datum polaganja </th>
+                    <th> Ocena </th>
+                </tr>
+
+                <% for (let exam of exams) { 
+                    let date = exam['date'];
+                    let day = date.getDate();
+                    let month = date.getMonth() + 1;
+                    let year = date.getFullYear();
+                    let dateString = `${day}.${month}.${year}`;
+                %>
                     <tr>
-                        <th> Predmet </th> 
-                        <th> Datum polaganja </th>
-                        <th> Ocena </th>
+                        <td> <%= exam['subject'] %> </td>
+                        <td> <%= dateString %> </td>
+                        <td> <%= exam['grade'] %> </td>
                     </tr>
-
-                    <% for (let exam of exams) { 
-                        let date = exam['date'];
-                        let day = date.getDate();
-                        let month = date.getMonth() + 1;
-                        let year = date.getFullYear();
-                        let dateString = `${day}.${month}.${year}`;
-                    %>
-                        <tr>
-                            <td> <%= exam['subject'] %> </td>
-                            <td> <%= dateString %> </td>
-                            <td> <%= exam['grade'] %> </td>
-                        </tr>
-                        
-                    <%
-                        }
-                    %>
-                </table>
-            </div>
-
-            <div class="col-md-6">
-                <h3>Dodaj ispit</h3>
-                <form id="create" action="/exam/create" method="POST">
-                    <div class="form-group">
-                        <input type="text" id="username" name="username" class="form-control"
-                            value="<%= student.username %>" hidden>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="subject" class="form-label">Predmet</label>
-                        <input type="text" id="subject" name="subject" class="form-control">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="date" class="form-label">Datum polaganja</label>
-                        <input type="date" id="date" name="date" class="form-control">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="grade" class="form-label">Ocena</label>
-                        <input type="text" id="grade" name="grade" class="form-control">
-                    </div>
-
-                    <input type="submit" value="Dodaj ispit" class="btn btn-primary">
-                </form>
-                
-                <br> <br> <br> 
-                <h3>Izmeni ispite</h3>
-                <form id="update" action="/exam/update" method="POST">
-                    <div class="form-group">
-                        <input type="text" id="username" name="username" class="form-control"
-                            value="<%= student.username %>" hidden>
-                    </div>
-
-                    <input type="submit" value="Izmeni ispite" class="btn btn-primary">
-                </form>
-                
-                <br> <br> <br> 
-                <h3>Obriši ispite</h3>
-                <form id="delete" action="/exam/delete" method="POST">
-                    <div class="form-group">
-                        <input type="text" id="username" name="username" class="form-control"
-                            value="<%= student.username %>" hidden>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="subject" class="form-label">Predmet</label>
-                        <input type="text" id="subject" name="subject" class="form-control">
-                    </div>
-
-                    <input type="submit" value="Obriši ispite" class="btn btn-primary">
-                </form>
-            </div>
+                    
+                <%
+                    }
+                %>
+            </table>
         </div>
+
+        <div class="kolona desno">
+            <h3>Dodaj ispit</h3>
+            <form id="create" action="/exam/create" method="POST">
+                <div class="form-group">
+                    <input type="text" id="username" name="username" class="field"
+                        value="<%= student.username %>" hidden>
+                </div>
+
+                <div class="form-group">
+                    <label for="subject">Predmet</label>
+                    <input type="text" id="subject" name="subject" class="field">
+                </div>
+
+                <div class="form-group">
+                    <label for="date">Datum polaganja</label>
+                    <input type="date" id="date" name="date" class="field">
+                </div>
+
+                <div class="form-group">
+                    <label for="grade">Ocena</label>
+                    <input type="text" id="grade" name="grade" class="field">
+                </div>
+
+                <input type="submit" value="Dodaj ispit" class="btn">
+            </form>
+            
+            <br> <br> <br> 
+            <h3>Izmeni ispite</h3>
+            <form id="update" action="/exam/update" method="POST">
+                <div class="form-group">
+                    <input type="text" id="username" name="username" class="field"
+                        value="<%= student.username %>" hidden>
+                </div>
+
+                <input type="submit" value="Izmeni ispite" class="btn">
+            </form>
+            
+            <br> <br> <br> 
+            <h3>Obriši ispite</h3>
+            <form id="delete" action="/exam/delete" method="POST">
+                <div class="form-group">
+                    <input type="text" id="username" name="username" class="field"
+                        value="<%= student.username %>" hidden>
+                </div>
+
+                <div class="form-group">
+                    <label for="subject">Predmet</label>
+                    <input type="text" id="subject" name="subject" class="field">
+                </div>
+
+                <input type="submit" value="Obriši ispite" class="btn">
+            </form>
+        </div>
+        
         <% } else { %>
         <h1>Student nije polagao nijedan ispit!</h1>
         <% } %>

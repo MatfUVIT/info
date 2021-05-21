@@ -13,15 +13,12 @@
     <% } %>
 
     <link rel="stylesheet" type="text/css" href="/css/main.css" />
-    <link rel="stylesheet" type="text/css"
-        href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
 </head>
 
 <body>
     <header>
         <nav>
             <a href="/">Izloguj se iz sistema</a>
-
             <form action="/student" method="POST">
                 <input type="text" id="username" name="username"
                         value="<%= student.username %>" hidden>
@@ -53,10 +50,10 @@
             </form>
         </nav>
     </header>
-    <main class="container">
+    <main>
         <% if (results !== null) { %>
         <h1>Rezultati ispita</h1>
-            <table class="table">
+            <table>
                 <tr>
                     <th> Predmet </th> 
                     <th> Indeks </th>  
