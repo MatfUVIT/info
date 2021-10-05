@@ -6,29 +6,11 @@
 
 ## Виртуална машина
 
-Виртуалну машину можете преузети [са ове везе](https://1drv.ms/u/s!Agf67w2RxBDSgaQMZODYokJtkxgAMQ?e=AB8UnG){:target="_blank"}.
-
-Информације:
-
-- Потребан простор на диску:
-
-    - компресовано ~3.7GB
-
-    - распаковано ~12.4GB
-
-- Оперативни систем: Лубунту 19.04 64-битни
+Виртуалну машину можете преузети [са ове везе](https://1drv.ms/u/s!Agf67w2RxBDSgcpMHwiCxOo_hqCM4w?e=eby9kB){:target="_blank"}. За преузимање ВМ је неопходно да прво означите архиву, па затим да притиснете дугме "Download" (у супротном ће OneDrive захтевати пријављивање помоћу Microsoft налога).
 
 - Приступање систему:
-
     - корисничко име: `student`
-
     - лозинка: `student`
-
-- Упутство за увожење виртуалне машине у Oracle VM VirtualBox можете пронаћи [на овој вези](/materijali/Dodavanje postojece virtualne masine za kurs u Oracle VM VirtualBox.pdf){:target="_blank"}
-
-<!--
-- Упутство за инсталирање система за управљање базом података MongoDB за Ubuntu оперативни систем: [овде](/materijali/Инсталација система за управљање базом података MongoDB за Ubuntu оперативни систем.pdf){:target="_blank"}
--->
 
 ## Садржај курса
 
