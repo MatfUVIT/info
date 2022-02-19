@@ -8,6 +8,8 @@
 
 - Милица Гњатовић:
     - [Петак, 18ч - 20ч](https://matf.webex.com/matf/j.php?MTID=mcf5ae3fc0a97160d3b8868b1acb008e4)
+- Виктор Новаковић:
+    - [Понедељак, 17ч - 19ч](https://matf.webex.com/matf/j.php?MTID=m869bb786267a138fa4ec07fdc018aaf5)
 
 ## Снимци са часова вежби
 
