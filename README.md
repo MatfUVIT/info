@@ -22,17 +22,17 @@
 
 ## Информације о курсу
 
-* **[Основне информације](/informacije/README-2020-21.md)**
+* **[Основне информације](/informacije/README-2021-22.md)**
 
-* **[Инсталације](/INSTALACIJE-2020-21.md)**
+* **[Инсталације](/INSTALACIJE-2021-22.md)**
 
-* **[Ресурси за учење](/RESURSI-ZA-UCENJE-2020-21.md)**
+* **[Ресурси за учење](/RESURSI-ZA-UCENJE-2021-22.md)**
 
 ## Настава
 
-* **[Предавања](/predavanja/README-2020-21.md)**
+* **[Предавања](/predavanja/README-2021-22.md)**
 
-* **[Часови предавања онлајн](/predavanja/casovi-onlajn/README-2020-21.md)**
+* **[Часови предавања онлајн](/predavanja/casovi-onlajn/README-2021-22.md)**
 
 * **[Вежбе](/vezbe/README.md)**
 
