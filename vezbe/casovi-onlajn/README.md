@@ -22,6 +22,8 @@
     - биће на мојој страници
 - Милица Гњатовић:
     - [линк](https://youtube.com/playlist?list=PLHJgxDuROJ6RBk8SS2-mxjUfYN2S1FDu0)
+- Виктор Новаковић
+    - [линк](https://youtube.com/playlist?list=PL3EwE8UkBYWG9WGba-9D3c7w11bYL7758)
 
 --- 
 
