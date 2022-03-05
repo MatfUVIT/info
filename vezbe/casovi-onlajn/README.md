@@ -13,13 +13,12 @@
 - Јелена Марковић:
     - часови ће бити држани преко платформе Zoom
     - линкови за приступ биће доступни на мојој страници непосредно пре часа
-    - термин од понедељка се мења у договору са студентима и неће бити одржан 21.02.2022.
-    - [Понедељак, 13ч - 15ч](http://www.matf.bg.ac.rs/p/jelena-markovic/nastava/)
+    - [Четвртак, 10ч - 12ч](http://www.matf.bg.ac.rs/p/jelena-markovic/nastava/)
     - [Среда, 16ч - 18ч](http://www.matf.bg.ac.rs/p/jelena-markovic/nastava/)
 
 ## Снимци са часова вежби
 - Јелена Марковић:
-    - биће на мојој страници
+    - [линк](https://www.youtube.com/watch?v=rQ-6zUhnl38&list=PLRkyLrXoYp-tn8AJyJA0aOBUF0cfww4oN&index=1)
 - Милица Гњатовић:
     - [линк](https://youtube.com/playlist?list=PLHJgxDuROJ6RBk8SS2-mxjUfYN2S1FDu0)
 - Виктор Новаковић
