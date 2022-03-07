@@ -7,7 +7,7 @@
 ## Линкови за приступ часовима
 
 - Милица Гњатовић:
-    - [Петак, 18ч - 20ч](https://matf.webex.com/matf/j.php?MTID=mcf5ae3fc0a97160d3b8868b1acb008e4)
+    - [Петак, 13ч - 15ч](https://matf.webex.com/matf/j.php?MTID=mcf5ae3fc0a97160d3b8868b1acb008e4)
 - Виктор Новаковић:
     - [Понедељак, 17ч - 19ч](https://matf.webex.com/matf/j.php?MTID=m869bb786267a138fa4ec07fdc018aaf5)
 - Јелена Марковић:
