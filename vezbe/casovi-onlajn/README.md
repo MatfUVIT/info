@@ -10,6 +10,7 @@
     - [Петак, 13ч - 15ч](https://matf.webex.com/matf/j.php?MTID=mcf5ae3fc0a97160d3b8868b1acb008e4)
 - Виктор Новаковић:
     - [Понедељак, 17ч - 19ч](https://matf.webex.com/matf/j.php?MTID=m869bb786267a138fa4ec07fdc018aaf5)
+    - [Накнадни час, субота, 7. мај, 16ч - 18ч](https://matf.webex.com/matf/j.php?MTID=mf403aeaf4e26e36331634a6ab54a2026)
 - Јелена Марковић:
     - часови ће бити држани преко платформе Zoom
     - линкови за приступ биће доступни на мојој страници непосредно пре часа
@@ -21,7 +22,7 @@
     - [линк](https://www.youtube.com/watch?v=rQ-6zUhnl38&list=PLRkyLrXoYp-tn8AJyJA0aOBUF0cfww4oN&index=1)
 - Милица Гњатовић:
     - [линк](https://youtube.com/playlist?list=PLHJgxDuROJ6RBk8SS2-mxjUfYN2S1FDu0)
-- Виктор Новаковић
+- Виктор Новаковић:
     - [линк](https://youtube.com/playlist?list=PL3EwE8UkBYWG9WGba-9D3c7w11bYL7758)
 
 --- 
