@@ -50,6 +50,8 @@
 
 * [HTML Tutorial](https://www.w3schools.com/html/){:target="_blank"} - W3Schools
 
+*  [Learn HTML in Detail](https://www.scaler.com/topics/html/){:target="_blank"} - Scaler Topics
+
 * [HTML Tutorial](https://www.tutorialspoint.com/html/){:target="_blank"} - TutorialsPoint, [.pdf](/predavanja/literatura/TutorialsPoint HTML.pdf){:target="_blank"}
 
 * [HTML 5 Tutorial](https://www.tutorialspoint.com/html5/index.htm){:target="_blank"} - TutorialsPoint, [.pdf](/predavanja/literatura/TutorialsPoint HTML 5.pdf){:target="_blank"}
