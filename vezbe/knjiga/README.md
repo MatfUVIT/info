@@ -13,7 +13,7 @@ Autori:
 
 ## Deo 1 - Osnovni elementi Veba
 
-### [Poglavlje 1. Struktuiranje Veb dokumenata kroz HTML](./Poglavlja/HTML/README.md){:target="_blank"}
+### [Poglavlje 1. Strukturiranje Veb dokumenata kroz HTML](./Poglavlja/HTML/README.md){:target="_blank"}
 
 1. [Osnovni elementi HTML dokumenata](./Poglavlja/HTML/README.md#11-osnovni-elementi-html-dokumenata){:target="_blank"}
 
