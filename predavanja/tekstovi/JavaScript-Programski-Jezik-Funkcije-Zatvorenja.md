@@ -451,6 +451,10 @@ console.log(stepen());
 
 Дефинисање функције помоћу ламбда израза је уведено у ЈаваСкрипт 2015. године, како би се омогућило да се лакше и брже записују мали функцијски изрази.
 
+### Опсези и функције
+
+Будући да су функције "грађани првог реда", слично разматрању о опсезима код [променљивих](JavaScript-Programski-Jezik-Struktura-Programa.md#разматрање-опсега-променљивих){:target="\_blank"}, потребно је размотрити функционисање опсега код функција.
+
 ### Затворења за функције
 
 Чињеница да се у ЈаваСкрипту код функцијских израза функције могу третирати као вредности (функције су "грађани првог реда") у комбинација са чињеницом да се локалне везе поново креирају при сваком позиву функције доводи до интересантног питања: шта се догађа са локалном везом када функција која је креирала ту везу више није активна, тј. кад је завршила са радом?
@@ -755,8 +759,10 @@ test();
 
 1. Haverbeke M.: [Eloquent JavaScript](https://eloquentjavascript.net/){:target="_blank"}
 
-1. [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript){:target="_blank"} - Mozzila Developer Network (MDN)
+2. Симпсон К.: [You Don't Know JS: Scope & Closures](https://github.com/getify/You-Dont-Know-JS/blob/1st-ed/scope%20&%20closures/README.md#you-dont-know-js-scope--closures){:target="_blank"}
 
-1. Живановић, Д.: [Веб програмирање - ЈаваСкрипт](https://www.webprogramiranje.org/dogadjaji-u-javascript-u/){:target="_blank"}
+3. [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript){:target="_blank"} - Mozzila Developer Network (MDN)
 
-1. Copes F.: [Complete JavaScript Handbook](https://medium.freecodecamp.org/the-complete-javascript-handbook-f26b2c71719c){:target="_blank"}
+4. Живановић, Д.: [Веб програмирање - ЈаваСкрипт](https://www.webprogramiranje.org/dogadjaji-u-javascript-u/){:target="_blank"}
+
+5. Copes F.: [Complete JavaScript Handbook](https://medium.freecodecamp.org/the-complete-javascript-handbook-f26b2c71719c){:target="_blank"}
