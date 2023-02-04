@@ -70,6 +70,16 @@
 
 * Haverbeke: [Eloquent JavaScript](/predavanja/literatura/Haverbeke М. - Eloquent_JavaScript, 3rd Ed.pdf){:target="_blank"}, 3rd Edition, [веб сајт](https://eloquentjavascript.net/){:target="_blank"}
 
+* Simpson: [You Don't Know JS: Types & Grammar](https://github.com/getify/You-Dont-Know-JS/blob/1st-ed/types%20&%20grammar/README.md#you-dont-know-js-types--grammar){:target="_blank"}
+
+* Simpson: [You Don't Know JS: Scope & Closures](https://github.com/getify/You-Dont-Know-JS/blob/1st-ed/scope%20&%20closures/README.md#you-dont-know-js-scope--closures){:target="_blank"}
+
+* Simpson: [You Don't Know JS: this & Object Prototypes](https://github.com/getify/You-Dont-Know-JS/blob/1st-ed/this%20&%20object%20prototypes/README.md#you-dont-know-js-this--object-prototypes){:target="_blank"}
+
+* Simpson: [You Don't Know JS: Async & Performance](https://github.com/getify/You-Dont-Know-JS/blob/1st-ed/async%20&%20performance/README.md#you-dont-know-js-async--performance){:target="_blank"}
+
+* Simpson: [You Don't Know JS: ES6 & Beyond](https://github.com/getify/You-Dont-Know-JS/blob/1st-ed/es6%20&%20beyond/README.md#you-dont-know-js-es6--beyond){:target="_blank"}
+
 * [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript){:target="_blank"} - Mozzila Developer Network (MDN)
 
 * Тодоровић М.: [ЈаваСкрипт електронски курс](http://www.cleversolutions.rs/javascript/index.html){:target="_blank"}
