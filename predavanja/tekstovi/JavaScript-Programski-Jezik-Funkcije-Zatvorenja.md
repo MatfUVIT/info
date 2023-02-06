@@ -542,6 +542,7 @@ function foo(a) {
 foo( 2 ); // 2, 4, 12
 ```
 
+![Угњеждени опсези](assets/images/neseted-scopes.png "Угњеждени опсези"){: style="float:center"}
 
 ### Затворења за функције
 
