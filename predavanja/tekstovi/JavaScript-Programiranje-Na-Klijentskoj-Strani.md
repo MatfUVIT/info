@@ -192,6 +192,7 @@ document.querySelectorAll("p");  // pristup svim paragrafima gornjeg primera
 
 ### Догађаји код DOM објеката
 
+
 ### AJAX
 
 ## HTML компоненте
