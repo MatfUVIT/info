@@ -544,7 +544,7 @@
 
 ---
 
-**13.** Асинхрони ЈаваСкрипт **[веб страна](tekstovi/JavaScript-Programski-Jezik-Asinhrono-Programiranje.md#асинхрони-јаваскрипт){:target="\_blank"} [филм](https://www.youtube.com/watch?v=c4A5TWlpJ4M&feature=youtu.be&t=0m03s){:target="\_blank"}
+**13.** Асинхрони ЈаваСкрипт **[веб страна](tekstovi/JavaScript-Programski-Jezik-Asinhrono-Programiranje.md#асинхрони-јаваскрипт){:target="\_blank"}** [филм](https://www.youtube.com/watch?v=c4A5TWlpJ4M&feature=youtu.be&t=0m03s){:target="\_blank"}
 
 **13.1.** Типични модели извршавања програма **[веб страна](tekstovi/JavaScript-Programski-Jezik-Asinhrono-Programiranje.md#типични-модели-извршавања-програма){:target="\_blank"}** [филм](https://www.youtube.com/watch?v=c4A5TWlpJ4M&feature=youtu.be&t=0m06s){:target="\_blank"}
 
