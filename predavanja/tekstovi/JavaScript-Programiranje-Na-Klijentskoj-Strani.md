@@ -115,13 +115,25 @@ document.mojaforma.check1.name = CheckPolje1;
 
 одговарајући DOM објекат има следећу структуру:
 
-![DOM објекат за табелу](assets/images/dom-object-example.png "DOM објекат за табелу"){: width="500px" style="float:center; padding:16px"}
+![DOM објекат за табелу](assets/images/dom-object-example.gif "DOM објекат за табелу"){: width="500px" style="float:center; padding:16px"}
 
 &#9608;
 
 Следећи дијаграм показује хијеархијску структуру DOM објеката:
 
-![Хијерархија DOM објеката](assets/images/dom-object-hierarchy.png "Хијерархија DOM објеката"){: width="500px" style="float:center; padding:16px"}
+![Хијерархија DOM објеката](assets/images/dom-object-hierarchy.gif "Хијерархија DOM објеката"){: width="500px" style="float:center; padding:16px"}
+
+### Операције са DOM објекатима
+
+Са DOM-ом, ЈаваСкрипт има могућност да креира динамичке HTML стране:
+
+- Да мења елементе на HTML страни.
+- Да мења атрибуте на HTML страни.
+- Да мења све CSS стилове на HTML страни.
+- Да брише постојеће елементе и атрибуте на HTML страни.
+- Да додаје нове HTML елементе и атрибуте на страни.
+- Да реагује на све постојеће HTML догађаје на страни.
+- Да креира нове HTML догађаје на страни.
 
 ## Догађаји
 
