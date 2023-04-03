@@ -326,16 +326,12 @@ http.createServer(function (request, response) {
         }
     </script>
 </head>
-
 <body>
-
     <h2>Odgovor dobijen putem AJAX-a</h2>
     <div id="myDiv"></div>
     <input id="fileName" type="text" value="ajax.txt">
     <button type="button" onclick="loadXMLDoc()"> Pošalji AJAX zahtev</button>
-
 </body>
-
 </html>
 ```
 
