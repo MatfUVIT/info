@@ -298,7 +298,7 @@
 
 - Препоруке за дефинисање схема **[веб страна](tekstovi/Jezici-za-obelezavanje-XML-XSD){:target="\_blank"}** [филм](https://www.youtube.com/watch?v=syxQMsd9PHk&feature=youtu.be&t=1m17s){:target="\_blank"}
 
-- [Примери](https://github.com/MatfUVIT/primeri-predavanja/tree/main/sgml-dtd-xml){:target="\_blank"}
+- [Примери](https://github.com/MatfUVIT/primeri-predavanja){:target="\_blank"} директоријум `/sgml-dtd-xml`
 
 ---
 
@@ -430,9 +430,9 @@
 
 8.8.5. "Искакање" из циклуса и "прескакње" итерације
 
-- [Примери (типови и вредности)](https://github.com/MatfUVIT/primeri-predavanja/tree/main/js/p01-vrednosti-tipovi-operatori){:target="\_blank"}
+- [Примери (типови и вредности)](https://github.com/MatfUVIT/primeri-predavanja){:target="\_blank"} директоријум `/js/p01-vrednosti-tipovi-operatori`
 
-- [Примери (гранања и циклуси)](https://github.com/MatfUVIT/primeri-predavanja/tree/main/js/p02-struktura-programa){:target="\_blank"}
+- [Примери (гранања и циклуси)](https://github.com/MatfUVIT/primeri-predavanja){:target="\_blank"} direktorijum `/js/p02-struktura-programa`
 
 ---
 
@@ -466,7 +466,7 @@
 
 **9.8.** Функције и бочни ефекти **[веб страна](tekstovi/JavaScript-Programski-Jezik-Funkcije-Zatvorenja.md#функције-и-бочни-ефекти){:target="\_blank"}** [филм](https://www.youtube.com/watch?v=jbfaAUEbowc&feature=youtu.be&t=38m47s){:target="\_blank"}
 
-- [Примери](https://github.com/MatfUVIT/primeri-predavanja/tree/main/js/p03-funkcije-zatvorenja){:target="\_blank"}
+- [Примери](https://github.com/MatfUVIT/primeri-predavanja){:target="\_blank"} директоријум `/js/p03-funkcije-zatvorenja`
 
 ---
 
@@ -496,7 +496,7 @@
 
 **10.4.** ЈаваСкрипт објектна нотација - JSON **[веб страна](tekstovi/JavaScript-Programski-Jezik-Objekti-Nizovi.md#json){:target="\_blank"}** [филм](https://www.youtube.com/watch?v=A3m1SGqDwhM&feature=youtu.be&t=9m54s){:target="\_blank"}
 
-- [Примери](https://github.com/MatfUVIT/primeri-predavanja/tree/main/js/p04-objekti-nizovi){:target="\_blank"}
+- [Примери](https://github.com/MatfUVIT/primeri-predavanja){:target="\_blank"} директоријум `/js/p04-objekti-nizovi`
 
 ---
 
@@ -520,7 +520,7 @@
 
 11.2.1. Декориање помоћу функција вишег реда [филм](https://www.youtube.com/watch?v=boX-SoePMw8&feature=youtu.be&t=16m40s){:target="\_blank"}
 
-- [Примери](https://github.com/MatfUVIT/primeri-predavanja/tree/main/js/p05-funkcije-viseg-reda){:target="\_blank"}
+- [Примери](https://github.com/MatfUVIT/primeri-predavanja){:target="\_blank"} директоријум `/js/p05-funkcije-viseg-reda`
 
 ---
 
@@ -540,7 +540,7 @@
 
 **12.3.** Mетоди за постављање и читање особина **[веб страна](tekstovi/JavaScript-Programski-Jezik-Napredni-Objekti.md#методи-за-постављање-и-читање-особина){:target="\_blank"}** [филм](https://www.youtube.com/watch?v=tzN-4jGSXQU&feature=youtu.be&t=35m06s){:target="\_blank"}
 
-- [Примери](https://github.com/MatfUVIT/primeri-predavanja/tree/main/js/p06-napredni-objekti){:target="\_blank"}
+- [Примери](https://github.com/MatfUVIT/primeri-predavanja){:target="\_blank"} директоријум `/js/p06-napredni-objekti`
 
 ---
 
@@ -564,7 +564,7 @@
 
 13.2.4. Асинхроно програмирање и наредбе `async` и `await` [филм](https://www.youtube.com/watch?v=c4A5TWlpJ4M&feature=youtu.be&t=38m45s){:target="\_blank"}
 
-- [Примери](https://github.com/MatfUVIT/primeri-predavanja/tree/main/js/p07-asinhroni-js){:target="\_blank"}
+- [Примери](https://github.com/MatfUVIT/primeri-predavanja){:target="\_blank"} директоријум `/js/p07-asinhroni-js`
 
 ---
 
@@ -586,7 +586,7 @@
 
 **14.4.** Тврдње **[веб страна](tekstovi/JavaScript-Programski-Jezik-Izuzetci.md#тврдње){:target="\_blank"}** [филм](https://www.youtube.com/watch?v=7W28obY294k&feature=youtu.be&t=39m17s){:target="\_blank"}
 
-- [Примери](https://github.com/MatfUVIT/primeri-predavanja/tree/main/js/p08-rukovanje-greskama){:target="\_blank"}
+- [Примери](https://github.com/MatfUVIT/primeri-predavanja){:target="\_blank"} директоријум `/js/p08-rukovanje-greskama`
 
 **14.5.** Стилови кŏдирања у језику ЈаваСкрипт **[веб страна](tekstovi/JavaScript-Programski-Jezik-Verzije-Stilovi-Kodiranja.md#стилови-кŏдирања){:target="\_blank"}** [филм](https://www.youtube.com/watch?v=h5r-ikaopDo&feature=youtu.be&t=00m03s){:target="\_blank"}
 
@@ -614,7 +614,7 @@
 
 15.4.2 Алати за увезивање модула
 
-- [Примери](https://github.com/MatfUVIT/primeri-predavanja/tree/main/js/p10-moduli){:target="\_blank"}
+- [Примери](https://github.com/MatfUVIT/primeri-predavanja){:target="\_blank"} директоријум `/js/p10-moduli`
 
 ---
 
@@ -634,7 +634,7 @@
 
 16.3.2. Датотеке, токови и догађаји [филм](https://www.youtube.com/watch?v=bBxSTd68wPY&feature=youtu.be&t=4m32s){:target="\_blank"}
 
-- [Примери](https://github.com/MatfUVIT/primeri-predavanja/tree/main/js-nodejs){:target="\_blank"}
+- [Примери](https://github.com/MatfUVIT/primeri-predavanja){:target="\_blank"} директоријум `/js-nodejs`
 
 ---
 
@@ -664,7 +664,7 @@
 
 17.3.2. Метод POST [филм](https://www.youtube.com/watch?v=DT4x7ZcQkYo&feature=youtu.be&t=13m35s){:target="\_blank"}
 
-- [Примери](https://github.com/MatfUVIT/primeri-predavanja/tree/main/js-server-nodejs){:target="\_blank"}
+- [Примери](https://github.com/MatfUVIT/primeri-predavanja){:target="\_blank"} директоријум `/js-server-nodejs`
 
 ---
 
@@ -690,7 +690,7 @@
 
 18.5.4. Исцртавање код HTML компоненти [филм](https://www.youtube.com/watch?v=DT4x7ZcQkYo&feature=youtu.be&t=36m32s){:target="\_blank"}
 
-- [Примери](https://github.com/MatfUVIT/primeri-predavanja/tree/main/js-klijent){:target="\_blank"}
+- [Примери](https://github.com/MatfUVIT/primeri-predavanja){:target="\_blank"} директоријум `/js-klijent`
 
 ---
 
@@ -734,7 +734,7 @@
 
 19.2.6. Спајање докумената
 
-- [Примери](https://github.com/MatfUVIT/primeri-predavanja/tree/main/js-nodejs-mongodb){:target="\_blank"}
+- [Примери](https://github.com/MatfUVIT/primeri-predavanja){:target="\_blank"} директоријум `/js-nodejs-mongodb`
 
 ---
 
@@ -748,7 +748,7 @@
 
 **20.2.** Напредне `express` веб апликације
 
-- [Примери](https://github.com/MatfUVIT/primeri-predavanja/tree/main/js-server-nodejs-mongodb){:target="\_blank"}
+- [Примери](https://github.com/MatfUVIT/primeri-predavanja){:target="\_blank"} директоријум `/js-server-nodejs-mongodb`
 
 ---
 
