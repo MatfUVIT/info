@@ -198,6 +198,10 @@
 
 **4.7.** Протоколи апликативног слоја код TCP/IP - пренос датотека **[презентација](prezentacije/04 - 07 - Slojevi kod TCP-IP - application - FTP.pdf){:target="\_blank"}** [филм](https://www.youtube.com/watch?v=t9Kh_zEw3DQ&feature=youtu.be&t=19m59s){:target="\_blank"}
 
+- [Примери (Jава)](https://github.com/MatfUVIT/primeri-predavanja){:target="\_blank"} директоријум `/protokoli-java`
+
+- [Примери (nodejs)](https://github.com/MatfUVIT/primeri-predavanja){:target="\_blank"} директоријум `/protokoli-nodejs`
+
 ---
 
 **5.** Језици за обележавање **[презентација](prezentacije/05 - 01 - Jezici za obelezavanje.pdf){:target="\_blank"}** [филм](https://www.youtube.com/watch?v=t9Kh_zEw3DQ&feature=youtu.be&t=22m01s){:target="\_blank"}
@@ -306,7 +310,11 @@
 
 **6.1.** HTML 5 **[презентација](prezentacije/06 - 01 - HTML 5.pdf){:target="\_blank"}**
 
+- [Примери](https://github.com/MatfUVIT/primeri-predavanja){:target="\_blank"} директоријум `/html`
+
 **6.2.** Стилови и CSS **[презентација](prezentacije/06 - 02 - Stilovi CSS.pdf){:target="\_blank"}**
+
+- [Примери](https://github.com/MatfUVIT/primeri-predavanja){:target="\_blank"} директоријум `/html-css`
 
 ---
 
