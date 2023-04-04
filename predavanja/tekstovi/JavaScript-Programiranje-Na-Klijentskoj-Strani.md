@@ -653,7 +653,7 @@ function define(html) {
 }
 ```
 
-Овде је прво дохваћен садржај шаблона (самим тим и стила), а потом је дохваћени шаблон искоришћен (у позивом функције `define`) за дефинисање стуктуре прилагођене компоненте и регистрацију одговарајуће етикете.  
+Овде је прво дохваћен садржај шаблона (самим тим и стила), а потом је дохваћени шаблон искоришћен (позивом функције `define`) за дефинисање стуктуре прилагођене компоненте и регистрацију одговарајуће етикете.  
 
 Веб страна сада не садржи шаблон за приказ прилагођених елемената, и она има следећи облик:
 
@@ -680,13 +680,255 @@ function define(html) {
 Приликом приказа у прегледачу, ова веб страна ће имати следећи изглед:
 
 ![Прилагођени HTML елементи - одвојен шаблон](assets/images/html-components-04.png "Прилагођени HTML елементи - одвојен шаблон"){: width="500px" style="float:center; padding:16px"}
+
 &#9608;
 
-### HTML компоненте и догађаји
+### HTML компоненте, догађаји и атрибути
 
-Овде се најчешће хватају DOM догађаји и описује се како ће се руковати са њима.
+Често је јавља потреба да се хватају DOM догађаји над поједим деловима HTML компоненте која се развија и да се адекватно реагује на њих.
 
-Међутим, нису ретке ситуације када се при раду са HTML компонентама креирају и процесирајунови, догађаји, такви да не постоје код DOM-а.
+**Пример.** Креирати прилагођени елеменат који представља бројач, са могућношћу инкрементирања и декремнтирања, као и веб страну која садржи два таква бројача.
+
+Начин приказа прилагођеног елемента (тј. стил) дефинисан у датотеци `uvit-brojac-component.css`:
+
+```css
+button, p {
+    display: inline-block;
+    color: darkcyan;
+}
+```
+
+Структура прилагођеног елемента (тј. шаблон) дефинисанa je у датотеци `uvit-brojac-component.html`:
+
+```html
+<link rel="stylesheet" href="uvit-brojac-component.css">
+<button aria-label="decrement">-</button>
+    <p>0</p>
+<button aria-label="increment">+</button>
+```
+
+Динамички аспекти прилагођене компоненте `<uvit-brojac>` дефинисани су у датотеци `uvit-brojac-component.js`:
+
+```js
+fetch("uvit-brojac-component.html")
+    .then(stream => stream.text())
+    .then(text => define(text));
+
+function define(html) {
+    class Brojac extends HTMLElement {
+        set value(value) {
+            this._value = value;
+            this.valueElement.innerText = this._value;
+        }
+
+        get value() {
+            return this._value;
+        }
+
+        constructor() {
+            super();
+            this._value = 0;
+
+            var shadow = this.attachShadow({mode: 'open'});
+            shadow.innerHTML = html;
+
+            this.valueElement = shadow.querySelector('p');
+            var incrementButton = shadow.querySelectorAll('button')[1];
+            var decrementButton = shadow.querySelectorAll('button')[0];
+
+            incrementButton.onclick = () => this.value++;
+            decrementButton.onclick = () => this.value--;
+        }
+    }
+
+    customElements.define('uvit-brojac', Brojac);
+}
+```
+
+Као и у претходном примеру, прво је дохваћен садржај шаблона (самим тим и стила), а потом је дохваћени шаблон искоришћен (у функцији `define`) за дефинисање стуктуре прилагођене компоненте и регистрацију одговарајуће етикете.
+
+Овде вредност за `_value` садржи вредност бројача, и та вредност се исцртава приликом постављања бројача. У оквиру ове компоненте су хватани DOM догађаји `onclick` над дугмадима за инкрементацију и декрементацију која се налазе у оквиру ове компоненте.
+
+Веб страна садржи два независна бројача, реализована као HTML компоненте:
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Brojac</title>
+    <script src="uvit-brojac-component.js"></script>
+</head>
+<body>
+    Prvi brojac:
+    <uvit-brojac></uvit-brojac>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    Drugi brojac:
+    <uvit-brojac></uvit-brojac>
+</body>
+</html>
+```
+
+Приликом приказа у прегледачу, ова веб страна ће имати следећи изглед:
+
+![Прилагођени HTML елементи - бројачи](assets/images/html-components-05.png "Прилагођени HTML елементи - бројачи"){: width="500px" style="float:center; padding:16px"}
+
+&#9608;
+
+Међутим, нису ретке ситуације када се при раду са HTML компонентама креирају и процесирају нови догађаји. При раду са таквим догађајима, обично се консултују атрибути HTML компоненте.
+
+**Пример.** Креирати прилагођени елеменат који представља фиоку, са могућношћу отврања и затварања и могућношћу да фиока буде онемогућена. Као одговор на догађај, фиока мења текст и боју. Креирати веб страну која садржи три такве фиоке, од којих је једна онемогућена.
+
+Стил прилагођеног елемента је дефинисан у датотеци `uvit-fioka-component.css`:
+
+```css
+h2 {
+    color: white;
+    background-color: #999;
+    padding: 5px;
+}
+```
+
+Шаблон за прилагођени елеменат је дефинисан у датотеци `uvit-fioka-component.html`:
+
+```html
+<!DOCTYPE html>
+<link rel="stylesheet" href="uvit-fioka-component.css">
+<h2>
+    Fioka (separated template)!
+</h2>
+```
+
+Динамички аспекти прилагођене компоненте `<uvit-fioka>` дефинисани су у датотеци `uvit-fioka-component.js`:
+
+```js
+fetch("uvit-fioka-component.html")
+    .then(stream => stream.text())
+    .then(text => define(text));
+
+function define(html) {
+
+    class Fioka extends HTMLElement {
+        constructor() {
+            // увек у конструктору на почетку позвати super()
+            super();
+            // придруживање ДОМ сенке уз корен 
+            let senkaKoren = this.attachShadow({ mode: 'open' });
+            senkaKoren.innerHTML = html;
+            // реферисње на визуелни елеменат
+            this.statusElement = senkaKoren.querySelector('h2');
+            // постављање ослушкивача догађаја за click
+            this.addEventListener('click', e => {
+                // ако је ослушкивач онемогућен, клик се игнорише
+                if (this.disabled)
+                    return;
+                this.pomeriFioku();
+            });
+
+        }
+
+        connectedCallback() { }
+
+        disconnectedCallback() { }
+
+        // особина отворено
+        get otvoreno() {
+            return this.hasAttribute('otvoreno');
+        }
+
+        set otvoreno(val) {
+            // Reflect the value of the open property as an HTML attribute.
+            if (val) {
+                this.setAttribute('otvoreno', 'XXX');
+            } else {
+                this.removeAttribute('otvoreno');
+            }
+        }
+
+        // особина disabled
+        get disabled() {
+            return this.hasAttribute('disabled');
+        }
+
+        set disabled(val) {
+            // Reflect the value of the disabled property as an HTML attribute.
+            if (val) {
+                this.setAttribute('disabled', '');
+            } else {
+                this.removeAttribute('disabled');
+            }
+        }
+
+        static get observedAttributes() {
+            return ['disabled', 'otvoreno'];
+        }
+
+        attributeChangedCallback(name, oldValue, newValue) {
+            if (this.disabled) {
+                this.setAttribute('tabindex', '-1');
+                this.setAttribute('aria-disabled', 'true');
+            } else {
+                this.setAttribute('tabindex', '0');
+                this.setAttribute('aria-disabled', 'false');
+                if (this.otvoreno) {
+                    this.statusElement.innerHTML = "otvoreno";
+                    this.statusElement.setAttribute('style', 'background-color:green');
+                } else {
+                    this.statusElement.innerHTML = "zatvoreno";
+                    this.statusElement.setAttribute('style', 'background-color:red');
+                }
+            }
+        }
+
+        pomeriFioku() {
+            this.otvoreno = !this.otvoreno;
+            console.log(`Fioka je pomerena. Status fioke: ${this.hasAttribute('otvoreno') ? 'otvoreno' : 'zatvoreno'}`);
+        }
+
+    }
+
+    // нови елеменат
+    customElements.define('uvit-fioka', Fioka);
+}
+```
+
+Као и у претходном примеру, прво је дохваћен садржај шаблона (самим тим и стила), а потом је дохваћени шаблон искоришћен (у функцији `define`) за дефинисање стуктуре прилагођене компоненте и регистрацију одговарајуће етикете.
+
+Овде су од интереса атрибути `otvoreno` и `disabled` које описују статус фиоке. У оквиру ове компоненте је направљен ослушкивач за догађај `click` за целу компоненту, где руковалац догађаја само промени атрибуте компоненте, а потом се хвата промена посматраних вредности атрибута и као реакција не ту промену се мења изглед елемената у оквиру прилагођене компоненте.
+
+Веб страна садржи три фиоке, реализоване као HTML компоненте:
+
+```html
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+    <title>Nove HTML komponente</title>
+    <meta charset="UTF-8" />
+    <script src="uvit-fioka-component.js"></script>
+</head>
+<body>
+    <h1>Илустрација нових <code>HTML</code> компоненти</h1>
+    <p>
+        Статичан садржај веб стране...
+    </p>
+
+    <uvit-fioka otvoreno></uvit-fioka>
+    <uvit-fioka></uvit-fioka>
+    <uvit-fioka otvoreno disabled></uvit-fioka>
+</body>
+</html>
+```
+
+За прву фиоку је постављен атрибут `otvoreno`, за другу није, а за трећу је постављен и атрибут `otvoreno` и атрибут `disabled`.
+
+Приликом приказа у прегледачу, претходна веб страна ће имати следећи изглед:
+
+![Прилагођени HTML елементи - фиоке](assets/images/html-components-06.png "Прилагођени HTML елементи - фиоке"){: width="500px" style="float:center; padding:16px"}
+
+&#9608;
+
 
 ## Литература
 
