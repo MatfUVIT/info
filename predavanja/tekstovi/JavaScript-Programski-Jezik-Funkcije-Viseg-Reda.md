@@ -570,7 +570,7 @@ console.log(rezultat);
 
 **Пример** Илуструје како се метод `Array.from` може искористити за креирање опсега.
 
-````js
+```js
 const opseg = (pocetak, kraj, korak) => Array.from(
     { length: (kraj - pocetak) / korak + 1 }, (_, i) => pocetak + (i * korak));
 
@@ -592,7 +592,8 @@ console.log(rezultat);
 
 console.log("---");
 rezultat = opseg('A'.charCodeAt(0), 'Z'.charCodeAt(0), 1).map(x => String.fromCharCode(x));
-console.log(rezultat);```
+console.log(rezultat);
+```
 
  &#9608;
 
