@@ -7,6 +7,16 @@
 ## Обавештења из 2022/2023. године
 
 --------
+--------
+
+Датум објаве: 03.06.2023.
+
+## Распоред по учионицама - јун1
+
+[Линк ка распореду](https://docs.google.com/spreadsheets/d/16ANcVcCfInHReIElAOTHCjWkyLxgtwK4mF0flJGm_eA/edit?usp=sharing).
+
+--------
+
 
 Датум објаве: 03.06.2023.
 
