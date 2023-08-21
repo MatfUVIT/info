@@ -16,7 +16,7 @@
 
 [линк за приступ](https://matf.webex.com/matf/j.php?MTID=m437729b55e4ac16f49592dbd12f5403d)
 
-До тад можете погледати неке [честе грешке](/pismeni-ispiti/ceste-greske/README.md).
+До тад можете погледати неке [честе грешке](/UVIT/pismeni-ispiti/ceste-greske/).
 
 
 --------
