@@ -10,6 +10,8 @@
 
 **[Решења](resenja/README.md)**
 
+**[Честе грешке и подсетник](ceste-greske/README.md)**
+
 **[Информације](info/README.md)**
 
 ---
