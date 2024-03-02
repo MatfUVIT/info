@@ -10,9 +10,9 @@
 
 * Асистент: **[Јелена Марковић](http://www.matf.bg.ac.rs/p/jelena-markovic/pocetna/){:target="_blank"}**
 
-* Демонстратор: **Виктор Новаковић**
+* Сарадник: **[Милица Гњатовић](http://poincare.matf.bg.ac.rs/~milica.gnjatovic/){:target="_blank"}**
 
-* Демонстратор: **Милица Гњатовић**
+* Сарадник: **[Луција Миличић](http://www.matf.bg.ac.rs/p/lucija-milicic/pocetna/){:target="_blank"}**
 
 ## Званичан план и програм курса
 
