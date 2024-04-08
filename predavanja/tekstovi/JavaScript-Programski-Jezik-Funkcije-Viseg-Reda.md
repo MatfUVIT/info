@@ -427,8 +427,8 @@ console.log(reduce(niz, (a, b) => (a > b ? a : b), -Infinity));
 let opis =
   `[{"name":"Emma de Milliano","sex":"f",
 "born":1876,"died":1956,
-"father":"Petrus de Milliano","
-mother":"Sophia van Damme"},` +
+"father":"Petrus de Milliano",
+"mother":"Sophia van Damme"},` +
   /* *** */
   `{"name":"Carolus Haverbeke","sex":"m",
 "born":1832,"died":1905,
