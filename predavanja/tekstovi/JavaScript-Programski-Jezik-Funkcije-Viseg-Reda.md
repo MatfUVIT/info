@@ -109,14 +109,6 @@ nizBrojeva.forEach((x) => console.log(x));
 
 &#9608;
 
-**Пример.** Одредити суму бројева од `1` до `100`.
-
-```js
-let nizBrojeva = [1, 2, 3, 4, "mika", "zika"];
-nizBrojeva.forEach((x) => console.log(x));
-```
-
-&#9608;
 
 ### Mапирање и редукција помоћу функција вишег реда
 
