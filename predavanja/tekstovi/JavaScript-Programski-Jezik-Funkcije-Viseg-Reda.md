@@ -435,7 +435,7 @@ let opis =
 "father":"Carel Haverbeke",
 "mother":"Maria van Brussel"}]`;
 
-let pretci = JSON.parse(opis);
+let preci = JSON.parse(opis);
 
 function prosek(niz) {
   function plus(a, b) {
@@ -456,8 +456,8 @@ function jeZensko(p) {
   return p.sex == "f";
 }
 
-console.log(prosek(pretci.filter(jeMusko).map(uzrast)));
-console.log(prosek(pretci.filter(jeZensko).map(uzrast)));
+console.log(prosek(preci.filter(jeMusko).map(uzrast)));
+console.log(prosek(preci.filter(jeZensko).map(uzrast)));
 ```
 
 &#9608;
