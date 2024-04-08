@@ -124,12 +124,10 @@ function filter(array, test) {
 
 var opis = `[{"name":"Emma de Milliano","sex":"f",
 "born":1876,"died":1956,
-"father":"Petrus de Milliano","
-mother":"Sophia van Damme"},
+"father":"Petrus de Milliano","mother":"Sophia van Damme"},
 {"name": "Maria de Rycke", "sex": "f", 
 "born": 1683, "died": 1724, 
-"father": "Frederik de Rycke", "
-mother": "Laurentia van Vlaenderen"},
+"father": "Frederik de Rycke", "mother": "Laurentia van Vlaenderen"},
 {"name": "Jan van Brussel", "sex": "m", 
 "born": 1714, "died": 1748, 
 "father": "Jacobus van Brussel", 
@@ -270,7 +268,7 @@ console.log(`---`);
 console.log(
   family
     .filter((person) => person.sex == "m")
-    .filter(person.born > 1900 && person.born < 1925)
+    .filter((person) => person.born > 1900 && person.born < 1925)
 );
 ```
 
