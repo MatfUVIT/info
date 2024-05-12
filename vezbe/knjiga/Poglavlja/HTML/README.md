@@ -1452,6 +1452,131 @@ Još jedan način za semantičko obeležavanje elemenata formulara jeste upotreb
    href="./Primeri/25/index.html"
    target="_blank">Pogledaj primer uživo</a>
 
+
+## 1.11 XPath
+
+XPath (XML Path Language) je jezik koji omogućava prolazak kroz čvorove XML dokumenta. On koristi izraze da obuhvati jedan ili više čvorova. Izrazi ovog jezika se mogu koristiti u JavaScript-u, u Javi, XML-u, Python-u, C-u, C++-u. XPath je deo XSLT standarda.
+
+Sintaksa:
+
+```html
+//tagname[@attribute = ‘value’]
+```
+
+- // - traži čvor u celom dokumentu;
+- / - traži čvor počevši od korena;
+- tagname - tag čvora koji se traži (div, input, p...);
+- @ - za selektovanje atributa;
+- attribute - naziv atributa (class, id, type...);
+- value - vrednost atributa.
+
+Testiranje putanje se može raditi u developer konzoli, desni klik inspect, zatim ctrl+f. Prikaz će biti kao na narednoj slici:
+<div style="max-width: 98%;">
+<img style="max-width: 100%;" src="./Slike/xpath.png" alt="Primer korišćenja XPath">
+</div>
+
+Naredni primer će biti korišćen za prikaz mogućnosti XPath izraza:
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        .box{
+            width: 50px;
+            height: 50px;
+            background-color: red;
+            display: inline-block;
+        }
+    </style>
+    <div id="kutije">
+        <div class="box">а</div>
+        <div class="box">abc</div>
+        <div class="box">c</div>
+        <div class="box"></div>
+        <div class="box"></div>
+    </div>
+    <main id="meni">
+        <form id="prijava">
+            <label for="username">Ime: </label>
+            <input type="text" id="username">
+            <label for="password">Sifra: </label>
+            <input type="password" id="password">
+        </form>
+    </main>
+</body>
+</html>
+```
+
+#### Apsolutna putanja
+
+Apsolutna putanja počinje sa / i zahteva putanju od korenog elementa (html/xml). Na primer:
+
+- Naredni izraz daje divove koji imaju klasu _box_ a nalaze se unutar diva, koji je u body, a koji se nalazi u html elementu koji je ujedno i koren dokumenta.
+```html
+/html/body/div/div[@class='box']
+```
+
+- Naredni izraz daje divove koji imaju klasu _box_ a nalaze se unutar diva sa id-em _kutija_, koji je u body, a koji se nalazi u html elementu koji je ujedno i koren dokumenta.
+```html
+/html/body/div[@id='kutije']/div[@class='box']
+```
+
+
+#### Relativna putanja
+
+Relativne putanje počinju sa // i pretražuju ceo dokument. Na primer:
+
+- Naredni izraz daje sve divove sa klasom _box_ koji se nelaze u dokumentu.
+```html
+//div[@class='box']
+```
+
+- Naredni izraz daje div sa identifikatorom _kutije_ koji se nelazi u dokumentu.
+```html
+//div[@id='kutije']
+```
+
+- Naredni izraz daje sva input polja koja imaju tip _text_.
+```html
+//input[@type='text']
+```
+
+#### Funkcije
+
+XPath izrazi mogu da sadrže naredne funkcije:
+
+1. contains() - čvor sadrži vrednost
+    - Naredni izraz daje main elemente čiji identifikator sadži tekst _eni_.
+```html
+//main[contains(@id, 'eni')]
+```
+
+2. starts-with() - počinje sa
+    - Naredni primer daje main elemente čiji identifikator počinje sa _a_.
+```html
+//main[starts-with(@id, 'm')]
+```
+
+3. text() - element sadrži tekst
+    - Naredni primer daje div elemente koji sadže text _a_.
+```html
+//div[text() = 'a']
+```
+
+Pored funkcija, dozvoljeno je korišćenje AND i OR operatora. Na primer:
+
+```html
+//div[text() = 'a' or @class='box']
+//div[text() = 'a' and @class='box']
+```
+
+Više o ovoj temi se može daći na adresi [https://www.geeksforgeeks.org/introduction-to-xpath/](https://www.geeksforgeeks.org/introduction-to-xpath/).
+
 -----
 
 [Knjiga](../../README.md)

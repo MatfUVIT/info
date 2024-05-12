@@ -53,6 +53,8 @@ Autori:
 
 10. [Formulari](./Poglavlja/HTML/README.md#110-formulari){:target="_blank"}
 
+11. [XPath](./Poglavlja/HTML/README.md#111-formulari){:target="_blank"}
+
 ### [Poglavlje 2. Stilizovanje Veb dokumenata kroz CSS](./Poglavlja/CSS/README.md){:target="_blank"}
 
 1. [Osnovni elementi jezika CSS](./Poglavlja/CSS/README.md#21-osnovni-elementi-jezika-css){:target="_blank"}
