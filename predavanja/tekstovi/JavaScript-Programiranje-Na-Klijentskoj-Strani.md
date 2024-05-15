@@ -61,6 +61,7 @@ console.log(btn.outerHTML);
 
 ```js
 <!DOCTYPE html>
+<html>
     <head>
         <script>
             function podesi(){
