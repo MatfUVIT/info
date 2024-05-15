@@ -135,6 +135,7 @@ pokreni();
 
 Упити омогућавају претрагу и обликовање резултата претраге (у виду сортирања, пројекција, агрегирања итд.). 
 Следи једноставан упит који враћа све документе такве да одговарају особама старости 22 године. 
+Притом се резултати сортирају по имену растуће, приказују се само идентификатор и име, а исписује се максимално 3 резултата. 
 
 ```
 let {MongoClient} = require('mongodb');
@@ -147,7 +148,11 @@ async function pokreni() {
     const baza = klijent.db('mojabaza');
     const kolekcija = baza.collection('mojakolekcija');
     const upit = { starost: 22 };
-    const rez = await kolekcija.find(upit).toArray();
+    const opcijePrikaza = {
+        sort: { ime: 1 },
+        projection: { _id: 1, ime: 1 },
+      };
+    const rez = await kolekcija.find(upit, opcijePrikaza).toArray();
     console.log(rez);
   } finally {
     await klijent.close();
@@ -156,13 +161,56 @@ async function pokreni() {
 pokreni();
 ```
 
-#### Сортирање
-
 #### Брисање докумената
 
-#### Брисање колекција
+Брисање једног или више докумената се постиже позивом функције deleteOne односно deleteMany, а начин употребе је сличан као и код претраге докумената.
 
-#### Ажурирање
+```
+let {MongoClient} = require('mongodb');
+var url = "mongodb://localhost:27017";
+const klijent = new MongoClient(url);
+
+async function pokreni() {
+  try {
+    await klijent.connect();
+    const baza = klijent.db('mojabaza');
+    const kolekcija = baza.collection('mojakolekcija');
+    const upit = { starost: 22 };
+    const rez = await kolekcija.deleteOne(upit);
+    console.log("Obrisano dokumenata: "+rez.deletedCount);
+  } finally {
+    await klijent.close();
+  }
+}
+pokreni();
+```
+
+#### Ажурирање докумената
+
+Ажурирање докумената комбинује технику задавања упита претраге и додатног оператора $set који прецизира шта се у пронађеном документу (документима) мења у зависности од тога да ли се користи updateOne или updateMany. 
+
+```
+let {MongoClient} = require('mongodb');
+var url = "mongodb://localhost:27017";
+const klijent = new MongoClient(url);
+
+async function pokreni() {
+  try {
+    await klijent.connect();
+    const baza = klijent.db('mojabaza');
+    const kolekcija = baza.collection('mojakolekcija');
+    const upit = { starost: 22 };
+    const izmena = {$set: {starost: 23, izmenjen: true}};
+    const rez = await kolekcija.updateOne(upit, izmena);
+    console.log("Izmenjeno dokumenata: "+rez.modifiedCount);
+  } finally {
+    await klijent.close();
+  }
+}
+pokreni();
+```
+
+#### Брисање колекција
 
 #### Спајање докумената
 
