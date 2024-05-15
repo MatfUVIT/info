@@ -327,7 +327,7 @@ http.createServer(function (request, response) {
 }).listen(7000);
 ```
 
-Веб страна која користи AJAX има следећи облик:
+Веб страна која користи AJAX има следећи облик. (Битна напомена: наредну страницу је потребно покренути из http окружења, а не из система датотека, тј. адреса која је приказана на прегледачу не треба да почиње са апсолутном путањом до датотеке, већ са http. Да би се ово постигло, може се користити неки додатни локални веб сервер или се може направити додатни Node.js веб сервер који "хостује" ову страницу.)
 
 ```html
 <!doctype html>
@@ -348,7 +348,7 @@ http.createServer(function (request, response) {
                 if (xmlhttp.status != 200 && xmlhttp.status != 0)
                     console.log("Greška: " + xmlhttp.status + ": " + xmlhttp.statusText);
             }
-            xmlhttp.open("GET", fileName, true);
+            xmlhttp.open("GET", "http://localhost:7000/"+fileName, true);
             xmlhttp.send();
         }
     </script>
