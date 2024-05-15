@@ -60,16 +60,32 @@ console.log(btn.outerHTML);
 **Пример.** У програмском коду који следи, постављамо атрибуте ЈаваСкрипт објекте који се односе на елементе са веб стране, а чије су вредности одређене у претходном примеру.
 
 ```js
-document.mojaforma.action = "http://uvit.matf.bg.ac.rs/primeri/obrada.php";
-document.mojaforma.method = get;
-document.mojaforma.length = 5;
-document.mojaforma.button1.value = "Klikni ovde";
-document.mojaforma.button1.name = taster1;
-document.mojaforma.text1.value = "sadržaj tekst polja";
-document.mojaforma.text1.name = TekstPolje1;
-document.mojaforma.check1.defaultChecked = true;
-document.mojaforma.check1.value = on;
-document.mojaforma.check1.name = CheckPolje1;
+<!DOCTYPE html>
+    <head>
+        <script>
+            function podesi(){
+                console.log(document.mojaforma);
+                document.mojaforma.action = "http://uvit.matf.bg.ac.rs/primeri/obrada.php";
+                document.mojaforma.method = "GET";
+                document.mojaforma.length = 5;
+                document.mojaforma.button1.value = "Klikni ovde";
+                document.mojaforma.button1.name = "taster1";
+                document.mojaforma.text1.value = "sadržaj tekst polja";
+                document.mojaforma.text1.name = "TekstPolje1";
+                document.mojaforma.check1.defaultChecked = true;
+                document.mojaforma.check1.value = "on";
+                document.mojaforma.check1.name = "CheckPolje1";
+            }
+        </script>
+    </head>
+    <body onload="podesi()">
+        <form name="mojaforma">
+            <input name="button1" type="submit">
+            <input name="text1" type="text">
+            <input name="check1" type="checkbox">
+        </form>
+    </body>
+</html>
 ```
 
 &#9608;
