@@ -746,20 +746,6 @@
 
 ---
 
-**20.** Напредне серверске ЈаваСкрипт апликације **[веб страна](tekstovi/Napredne-Serverske-JavaScript-Aplikacije.md){:target="\_blank"}**
-
-**20.1.** Напредне `node` веб апликације
-
-20.1.1. Веб апликације које користе базе података
-
-20.1.2. Веб сервиси
-
-**20.2.** Напредне `express` веб апликације
-
-- [Примери](https://github.com/MatfUVIT/primeri-predavanja){:target="\_blank"} директоријум `/js-server-nodejs-mongodb`
-
----
-
 [УВИТ](../README.md)
 
 ---
