@@ -92,7 +92,7 @@ let {MongoClient} = require('mongodb');
 var url = "mongodb://localhost:27017";
 const klijent = new MongoClient(url);
 
-async function run() {
+async function pokreni() {
   try {
     await klijent.connect();
     const baza = klijent.db('mojabaza');
@@ -103,19 +103,58 @@ async function run() {
     await klijent.close();
   }
 }
-run();
+pokreni();
 });
 ```
 
 Интересантно је да MongoDB не ради ништа по питању креирања структуре док се не формира нови садржај, тј. документ, дакле, понаша се "лењо". Наиме, да смо покренули претходни програм без наредбе за убацивање новог елемента, база и колекција не би биле креиране, већ би биле стављене на "чекање" док се не направи и нови документ. 
 
-#### Колекција
+По сличном принципу је могуће убацити и више докумената истовремено, тако што ће се нови документи (објекти) проследити у виду низа. 
 
-#### Убацивање документа у колекцију
+```
+let {MongoClient} = require('mongodb');
+var url = "mongodb://localhost:27017";
+const klijent = new MongoClient(url);
 
-#### Претрага по бази
+async function pokreni() {
+  try {
+    await klijent.connect();
+    const baza = klijent.db('mojabaza');
+    const kolekcija = baza.collection('mojakolekcija');
+    const niz = [{ime: 'Marko', starost: 22}, {ime: 'Marija', starost: 24}]
+    const rezultat = await kolekcija.insertMany(niz);
+    console.log('Ubaceni dokumenti:', rezultat.insertedIds);
+  } finally {
+    await klijent.close();
+  }
+}
+pokreni();
+```
 
 #### Упити
+
+Упити омогућавају претрагу и обликовање резултата претраге (у виду сортирања, пројекција, агрегирања итд.). 
+Следи једноставан упит који враћа све документе такве да одговарају особама старости 22 године. 
+
+```
+let {MongoClient} = require('mongodb');
+var url = "mongodb://localhost:27017";
+const klijent = new MongoClient(url);
+
+async function pokreni() {
+  try {
+    await klijent.connect();
+    const baza = klijent.db('mojabaza');
+    const kolekcija = baza.collection('mojakolekcija');
+    const upit = { starost: 22 };
+    const rez = await kolekcija.find(upit).toArray();
+    console.log(rez);
+  } finally {
+    await klijent.close();
+  }
+}
+pokreni();
+```
 
 #### Сортирање
 
