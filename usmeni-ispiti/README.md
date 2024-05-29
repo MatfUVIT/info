@@ -5,6 +5,7 @@
 Овде су постављена информације о усменим испитима из предмета **Увод у веб и интернет технологије**.  
 
 ---
+[Питања за теоријски/усмени](https://github.com/MatfUVIT/info/blob/master/informacije/pitanja-2023-24.pdf)
 
 [Задаци](./zadaci/README.md)
 
