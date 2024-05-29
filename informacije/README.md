@@ -6,7 +6,7 @@
 
 ## Наставници и асистенти  
 
-* Наставник: **[проф. др Владимир Филиповић](https://vladofilipovic.github.io/index-en.html){:target="_blank"}**
+* Наставник: **[проф. др Александар Картељ](http://www.matf.bg.ac.rs/~aleksandar.kartelj){:target="_blank"}**
 
 * Асистент: **[Јелена Марковић](http://www.matf.bg.ac.rs/p/jelena-markovic/pocetna/){:target="_blank"}**
 
