@@ -126,15 +126,15 @@
 
 ---
 
-**4.** Мрежни протоколи
+**4.** Мрежни протоколи **[презентација](prezentacije/04 - 01 - Slojevi kod TCP-IP - sve.pdf){:target="\_blank"}**
 
-**4.1.** Слојеви и мрежни протоколи **[презентација](prezentacije/04 - 01 - Slojevi kod TCP-IP.pdf){:target="\_blank"}** [филм](https://www.youtube.com/watch?v=uT5Q_HVcARI&feature=youtu.be&t=0m3s){:target="\_blank"}
+**4.1.** Слојеви и мрежни протоколи [филм](https://www.youtube.com/watch?v=uT5Q_HVcARI&feature=youtu.be&t=0m3s){:target="\_blank"}
 
 4.1.1. Слојеви и протоколи код OSI и код TCP/IP модела [филм](https://www.youtube.com/watch?v=uT5Q_HVcARI&feature=youtu.be&t=2m10s){:target="\_blank"}
 
-**4.2.** Комуникација на слоју за везу хоста и мреже код TCP/IP **[презентација](prezentacije/04 - 02 - Slojevi kod TCP-IP - host-to-network.pdf){:target="\_blank"}** [филм](https://www.youtube.com/watch?v=uT5Q_HVcARI&feature=youtu.be&t=9m13s){:target="\_blank"}
+**4.2.** Комуникација на слоју за везу хоста и мреже код TCP/IP  [филм](https://www.youtube.com/watch?v=uT5Q_HVcARI&feature=youtu.be&t=9m13s){:target="\_blank"}
 
-**4.3.** Комуникација на међумрежном слоју код TCP/IP **[презентација](prezentacije/04 - 03 - Slojevi kod TCP-IP - internet.pdf){:target="\_blank"}** [филм](https://www.youtube.com/watch?v=uT5Q_HVcARI&feature=youtu.be&t=16m32s){:target="\_blank"}
+**4.3.** Комуникација на међумрежном слоју код TCP/IP [филм](https://www.youtube.com/watch?v=uT5Q_HVcARI&feature=youtu.be&t=16m32s){:target="\_blank"}
 
 4.3.1. IP протокол [филм](https://www.youtube.com/watch?v=uT5Q_HVcARI&feature=youtu.be&t=19m02s){:target="\_blank"}
 
@@ -148,7 +148,7 @@
 
 4.3.6. Рутирање [филм](https://www.youtube.com/watch?v=OIyI8sMBi7E&feature=youtu.be&t=12m45s){:target="\_blank"}
 
-**4.4.** Комуникација на транспортном слоју код TCP/IP **[презентација](prezentacije/04 - 04 - Slojevi kod TCP-IP - transport.pdf){:target="\_blank"}** [филм](https://www.youtube.com/watch?v=OIyI8sMBi7E&feature=youtu.be&t=17m42s){:target="\_blank"}
+**4.4.** Комуникација на транспортном слоју код TCP/IP [филм](https://www.youtube.com/watch?v=OIyI8sMBi7E&feature=youtu.be&t=17m42s){:target="\_blank"}
 
 4.4.1. TCP протокол [филм](https://www.youtube.com/watch?v=OIyI8sMBi7E&feature=youtu.be&t=26m17s){:target="\_blank"}
 
@@ -164,7 +164,7 @@
 
 - Пример програма за UDP комуникацију [филм](https://www.youtube.com/watch?v=9dOuY8pigsk&feature=youtu.be&t=12m44s){:target="\_blank"}
 
-**4.5.** Протоколи апликативног слоја код TCP/IP - веб протоколи **[презентација](prezentacije/04 - 05 - Slojevi kod TCP-IP - application - veb.pdf){:target="\_blank"}** [филм](https://www.youtube.com/watch?v=9dOuY8pigsk&feature=youtu.be&t=23m49s){:target="\_blank"}
+**4.5.** Протоколи апликативног слоја код TCP/IP - веб протоколи [филм](https://www.youtube.com/watch?v=9dOuY8pigsk&feature=youtu.be&t=23m49s){:target="\_blank"}
 
 4.5.1. HTTP протокол и веб [филм](https://www.youtube.com/watch?v=9dOuY8pigsk&feature=youtu.be&t=30m46s){:target="\_blank"}
 
@@ -188,7 +188,7 @@
 
 - Карактеристике `HTTP/2` протокола [филм](https://www.youtube.com/watch?v=t9Kh_zEw3DQ&feature=youtu.be&t=10m01s){:target="\_blank"}
 
-**4.6.** Протоколи апликативног слоја код TCP/IP - електронска пошта **[презентација](prezentacije/04 - 06 - Slojevi kod TCP-IP - application - email.pdf){:target="\_blank"}** [филм](https://www.youtube.com/watch?v=t9Kh_zEw3DQ&feature=youtu.be&t=14m32s){:target="\_blank"}
+**4.6.** Протоколи апликативног слоја код TCP/IP - електронска пошта  [филм](https://www.youtube.com/watch?v=t9Kh_zEw3DQ&feature=youtu.be&t=14m32s){:target="\_blank"}
 
 4.6.1. SMTP [филм](https://www.youtube.com/watch?v=t9Kh_zEw3DQ&feature=youtu.be&t=15m54s){:target="\_blank"}
 
@@ -196,7 +196,7 @@
 
 4.6.3. IMAP [филм](https://www.youtube.com/watch?v=t9Kh_zEw3DQ&feature=youtu.be&t=18m51s){:target="\_blank"}
 
-**4.7.** Протоколи апликативног слоја код TCP/IP - пренос датотека **[презентација](prezentacije/04 - 07 - Slojevi kod TCP-IP - application - FTP.pdf){:target="\_blank"}** [филм](https://www.youtube.com/watch?v=t9Kh_zEw3DQ&feature=youtu.be&t=19m59s){:target="\_blank"}
+**4.7.** Протоколи апликативног слоја код TCP/IP - пренос датотека [филм](https://www.youtube.com/watch?v=t9Kh_zEw3DQ&feature=youtu.be&t=19m59s){:target="\_blank"}
 
 - [Примери (Jава)](https://github.com/MatfUVIT/primeri-predavanja){:target="\_blank"} директоријум `/protokoli-java`
 
@@ -204,7 +204,7 @@
 
 ---
 
-**5.** Језици за обележавање **[презентација](prezentacije/05 - 01 - Jezici za obelezavanje.pdf){:target="\_blank"}** [филм](https://www.youtube.com/watch?v=t9Kh_zEw3DQ&feature=youtu.be&t=22m01s){:target="\_blank"}
+**5.** Језици за обележавање **[презентација](prezentacije/05 - 01 - Jezici za obelezavanje - sve.pdf){:target="\_blank"}** [филм](https://www.youtube.com/watch?v=t9Kh_zEw3DQ&feature=youtu.be&t=22m01s){:target="\_blank"}
 
 **5.1.** Рад са текстуалним документима [филм](https://www.youtube.com/watch?v=t9Kh_zEw3DQ&feature=youtu.be&t=22m20s){:target="\_blank"}
 
@@ -212,7 +212,7 @@
 
 5.1.2. Експлицитно обележавање текста [филм](https://www.youtube.com/watch?v=t9Kh_zEw3DQ&feature=youtu.be&t=25m48s){:target="\_blank"}
 
-**5.2.** Стандадни општи језик за обележавање (SGML) **[презентација](prezentacije/05 - 02 - Jezici za obelezavanje - SGML.pdf){:target="\_blank"}** [филм](https://www.youtube.com/watch?v=t9Kh_zEw3DQ&feature=youtu.be&t=33m00s){:target="\_blank"}
+**5.2.** Стандадни општи језик за обележавање (SGML) [филм](https://www.youtube.com/watch?v=t9Kh_zEw3DQ&feature=youtu.be&t=33m00s){:target="\_blank"}
 
 5.2.1. Карактеристике и историјат SGML [филм](https://www.youtube.com/watch?v=t9Kh_zEw3DQ&feature=youtu.be&t=33m04s){:target="\_blank"}
 
@@ -232,7 +232,7 @@
 
 - DTD и атрибути [филм](https://www.youtube.com/watch?v=r8Il8a-xx5Q&feature=youtu.be&t=0m3s){:target="\_blank"}
 
-**5.3.** Прошириви језик за обележавање - XML **[презентација](prezentacije/05 - 03 - Jezici za obelezavanje - XML.pdf){:target="\_blank"}** [филм](https://www.youtube.com/watch?v=r8Il8a-xx5Q&feature=youtu.be&t=8m46s){:target="\_blank"}
+**5.3.** Прошириви језик за обележавање - XML [филм](https://www.youtube.com/watch?v=r8Il8a-xx5Q&feature=youtu.be&t=8m46s){:target="\_blank"}
 
 5.3.1. Опис XML-а [филм](https://www.youtube.com/watch?v=r8Il8a-xx5Q&feature=youtu.be&t=8m46s){:target="\_blank"}
 
@@ -306,9 +306,9 @@
 
 ---
 
-**6.** HTML, стилови и CSS
+**6.** HTML, стилови и CSS **[презентација](prezentacije/06 - HTML5 i CSS.pdf){:target="\_blank"}**
 
-**6.1.** HTML 5 **[презентација](prezentacije/06 - 01 - HTML 5.pdf){:target="\_blank"}**
+**6.1.** HTML 5 
 
 - [Примери](https://github.com/MatfUVIT/primeri-predavanja){:target="\_blank"} директоријум `/html`
 
