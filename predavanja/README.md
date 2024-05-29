@@ -312,7 +312,7 @@
 
 - [Примери](https://github.com/MatfUVIT/primeri-predavanja){:target="\_blank"} директоријум `/html`
 
-**6.2.** Стилови и CSS **[презентација](prezentacije/06 - 02 - Stilovi CSS.pdf){:target="\_blank"}**
+**6.2.** Стилови и CSS
 
 - [Примери](https://github.com/MatfUVIT/primeri-predavanja){:target="\_blank"} директоријум `/html-css`
 
