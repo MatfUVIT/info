@@ -12,7 +12,7 @@
 
 ### Јун1 - резултати
 
-Резултате испита у предроку можете наћу у наредној [табели](https://docs.google.com/spreadsheets/d/10-xV932js3WEJs-bfDFesJ84niDrdbGDiVOK5V_2KiQ/edit?gid=21610645#gid=21610645).
+Резултате испита у јун1 можете наћи у наредној [табели](https://docs.google.com/spreadsheets/d/10-xV932js3WEJs-bfDFesJ84niDrdbGDiVOK5V_2KiQ/edit?gid=21610645#gid=21610645).
 Увид у радове ће се обавити путем мејла (писати свом асистенту).
 
 
