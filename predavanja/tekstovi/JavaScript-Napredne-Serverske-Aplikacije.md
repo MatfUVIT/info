@@ -23,7 +23,7 @@
 
 1. Костић М.: [Развој веб апликација помоћу MEAN стека](http://www.racunarstvo.matf.bg.ac.rs/MasterRadovi/2017_06_18_Mirjana_Kostic/rad.pdf){:target="_blank"}, Мастер рад, Универзитет у Београду, Математички факултет.
 
-1. [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript){:target="_blank"} - Mozzila Developer Network (MDN)
+1. [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript){:target="_blank"} - Mozilla Developer Network (MDN)
 
 1. Живановић, Д.: [Веб програмирање - ЈаваСкрипт](https://www.webprogramiranje.org/dogadjaji-u-javascript-u/){:target="_blank"}
 
