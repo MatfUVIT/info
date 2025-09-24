@@ -10,7 +10,7 @@
 
 Резултате испита у јуну 1 можете наћу у наредној табели
 
-[Резултати](https://docs.google.com/spreadsheets/d/1BqujF8LEiyJYspNoHsxI9j_vpg_LGk82-Ao-bMj0K6s/edit?usp=sharing) )(таб јун 1)
+[Резултати](https://docs.google.com/spreadsheets/d/1BqujF8LEiyJYspNoHsxI9j_vpg_LGk82-Ao-bMj0K6s/edit?usp=sharing) (таб јун 1)
 
 **Напомена:** Додатни поени се рачунају тек када се оствари праг на испиту.
 
