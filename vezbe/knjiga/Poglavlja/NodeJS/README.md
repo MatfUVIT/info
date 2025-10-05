@@ -40,7 +40,7 @@ _Paketi_ (engl. _package_) predstavljaju delove koda koji se mogu distribuirati 
 
 ### 7.1.2 Node upravljač paketima
 
-Rad na ovakav način zahteva infrastrukturu - mesto za skladištenje i pronalaženje paketa, kao i jednostavan način za njihovo instaliranje i ažuriranje. U svetu JavaScript  jezika, ovakva infrastruktura je obezbeđena od strane NPM (https://npmjs.org). NPM predstavlja dve stvari:
+Rad na ovakav način zahteva infrastrukturu - mesto za skladištenje i pronalaženje paketa, kao i jednostavan način za njihovo instaliranje i ažuriranje. U svetu JavaScript jezika, ovakva infrastruktura je obezbeđena od strane NPM \([https://npmjs.org](https://npmjs.org "npm")\). NPM predstavlja dve stvari:
 
 1. Veb servis odakle je moguće preuzeti postojeće pakete i postaviti nove.
 
