@@ -1,18 +1,18 @@
 # Информације о курсу -- Увод у веб и интернет технологије @ Математички факултет
 
-## Академска година 2021/22
+## Академска година 2025/26
 
 [УВИТ](../README.md)
 
 ## Наставници и асистенти  
 
-* Наставник: **[проф. др Александар Картељ](http://www.matf.bg.ac.rs/~aleksandar.kartelj){:target="_blank"}**
+* Наставник: **[проф. др Владимир Филиповић](https://vladofilipovic.github.io/index-cy.html){:target="_blank"}**
 
-* Асистент: **[Јелена Марковић](http://www.matf.bg.ac.rs/p/jelena-markovic/pocetna/){:target="_blank"}**
+* Асистент: **[Луција Миличић](http://www.matf.bg.ac.rs/p/lucija-milicic/pocetna/){:target="_blank"}**
 
-* Сарадник: **[Милица Гњатовић](http://poincare.matf.bg.ac.rs/~milica.gnjatovic/){:target="_blank"}**
+* Сарадник: **Јован Рајшић**
 
-* Сарадник: **[Луција Миличић](http://www.matf.bg.ac.rs/p/lucija-milicic/pocetna/){:target="_blank"}**
+* Сарадник: **Ђурђа Милошевић**
 
 ## Званичан план и програм курса
 
@@ -196,27 +196,29 @@
 
 ## Термини за консултације у академској 2021/22. години
 
-* проф. др Владимир Филиповић: четвртком у 17 сати. Да би се консултације одржале, потребно је најавити се преко електорнске поште најкасније до среде у 12 сати. За консултације ће се користити моја Webex соба, на aдреси [https://matf.webex.com/meet/vladaf](https://matf.webex.com/meet/vladaf){:target="_blank"}.
+* проф. др Владимир Филиповић: ---.
 
-* Јелена Марковић: ---.
+* Луција Миличић: ---.
 
-* Виктор Новаковић: ---.
+* Јован Рајшић: ---.
 
-* Милица Гњатовић: ---.
+* Ђурђа Милошевић: ---.
 
 ## Аутори веб страна курса
 
 *[проф. др Владимир Филиповић](https://vladofilipovic.github.io/index-en.html){:target="_blank"}*
 
+*[проф. др Александар Картељ](https://poincare.matf.bg.ac.rs/~aleksandar.kartelj/){:target="_blank"}*
+
 *[Ања Букуров](http://poincare.matf.bg.ac.rs/~anja_bukurov/){:target="_blank"}*
 
 *[Никола Ајзенхамер](http://poincare.matf.bg.ac.rs/~nikola_ajzenhamer/){:target="_blank"}*
 
-*[Јелена Марковић](http://www.matf.bg.ac.rs/p/jelena-markovic/pocetna/){:target="_blank"}*
+*[Луција Миличић](http://www.matf.bg.ac.rs/p/lucija-milicic/pocetna/){:target="_blank"}*
 
-*Виктор Новаковић*
+*Јован Рајшић*
 
-*Милица Гњатовић*
+*Ђурђа Милошевић*
 
 ---
 
