@@ -9,6 +9,7 @@
 ### Резултати колоквијума 
 
 Резултате колоквијума можете погледати на следећем линку: [Резултати](https://docs.google.com/spreadsheets/d/1hXfwle8UZnMlCEPiPwxfI_Wv8kSTHC7Z64IfLkexQuw/edit?usp=sharing)
+
 За увид у рад обратити се мејлом асистенту код ког сте распоређени.
 
 -------
